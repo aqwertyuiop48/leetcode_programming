@@ -1,0 +1,15 @@
+/*
+ * @lc app=leetcode id=4 lang=java
+ *
+ * [4] Median of Two Sorted Arrays
+ */
+
+// @lc code=start
+// semicolons : 1
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        return IntStream.concat(Arrays.stream(nums1), Arrays.stream(nums2)).sorted().skip((nums1.length + nums2.length - 1) / 2).limit(2 - (nums1.length + nums2.length) % 2).average().orElse(0);
+    }
+}
+// @lc code=end
+
