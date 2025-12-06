@@ -1,4 +1,4 @@
-# leetcode_programming
+# leetcode_programming from vs code (extension : 力扣 LeetCode)
 
 - Got to https://leetcode.com/
 - Network tab -> Headers -> Cookie (copy the entire thing for login)

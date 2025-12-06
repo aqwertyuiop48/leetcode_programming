@@ -5,9 +5,10 @@
  */
 
 // @lc code=start
+// semicolons : 1
 class Solution {
     public int search(int[] nums, int target) {
-        
+        return Arrays.stream(nums).boxed().collect(Collectors.toList()).indexOf(target);
     }
 }
 // @lc code=end
