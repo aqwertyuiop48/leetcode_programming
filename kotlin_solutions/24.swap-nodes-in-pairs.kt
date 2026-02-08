@@ -14,10 +14,6 @@
  *     var next: ListNode? = null
  * }
  */
-class Solution {
-    fun swapPairs(head: ListNode?): ListNode? {
-        
-    }
-}
+class Solution { fun swapPairs(head: ListNode?): ListNode? = head?.next?.let { node2 -> node2.also { it.next = head.apply { next = swapPairs(node2.next) } } } ?: head }
 // @lc code=end
 

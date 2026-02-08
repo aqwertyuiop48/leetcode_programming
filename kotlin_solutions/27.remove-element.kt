@@ -5,10 +5,6 @@
  */
 
 // @lc code=start
-class Solution {
-    fun removeElement(nums: IntArray, `val`: Int): Int {
-        
-    }
-}
+class Solution {fun removeElement(nums: IntArray, `val`: Int): Int =nums.indices.fold(0) { i, j -> if (nums[j] != `val`) i.also { nums[it] = nums[j] } + 1 else i }}
 // @lc code=end
 

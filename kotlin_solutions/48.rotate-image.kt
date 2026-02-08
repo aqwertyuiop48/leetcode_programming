@@ -4,11 +4,5 @@
  * [48] Rotate Image
  */
 
-// @lc code=start
-class Solution {
-    fun rotate(matrix: Array<IntArray>): Unit {
-        
-    }
-}
-// @lc code=end
+class Solution {fun rotate(matrix: Array<IntArray>): Unit = matrix.apply { (0 until size).forEach { i -> (i + 1 until size).forEach { j -> this[i][j] = this[j][i].also { this[j][i] = this[i][j] } }.also { this[i] = this[i].reversed().toIntArray() } } }.let { }}
 

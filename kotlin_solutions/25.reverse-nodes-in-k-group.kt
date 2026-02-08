@@ -14,10 +14,6 @@
  *     var next: ListNode? = null
  * }
  */
-class Solution {
-    fun reverseKGroup(head: ListNode?, k: Int): ListNode? {
-        
-    }
-}
+class Solution {fun reverseKGroup(head: ListNode?, k: Int): ListNode? = head?.let {generateSequence(it) { it.next }.toList().chunked(k).map { if (it.size == k) it.asReversed() else it }.flatten().let { nodes -> nodes.also { it.zipWithNext().forEach { (a, b) -> a.next = b } }.also { it.last().next = null }.first() }}}
 // @lc code=end
 

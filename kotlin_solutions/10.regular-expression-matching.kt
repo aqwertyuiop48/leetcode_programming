@@ -5,10 +5,6 @@
  */
 
 // @lc code=start
-class Solution {
-    fun isMatch(s: String, p: String): Boolean {
-        
-    }
-}
+class Solution {fun isMatch(s: String, p: String): Boolean {return Regex("^" + p + "$").matches(s)}}
 // @lc code=end
 

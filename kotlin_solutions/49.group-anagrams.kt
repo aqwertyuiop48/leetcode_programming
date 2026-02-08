@@ -4,11 +4,4 @@
  * [49] Group Anagrams
  */
 
-// @lc code=start
-class Solution {
-    fun groupAnagrams(strs: Array<String>): List<List<String>> {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun groupAnagrams(strs: Array<String>): List<List<String>> = strs.groupBy { it.toCharArray().sorted().joinToString() }.values.toList()}

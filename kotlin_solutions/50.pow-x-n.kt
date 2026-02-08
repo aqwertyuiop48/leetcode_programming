@@ -4,11 +4,4 @@
  * [50] Pow(x, n)
  */
 
-// @lc code=start
-class Solution {
-    fun myPow(x: Double, n: Int): Double {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun myPow(x: Double, n: Int): Double {return Math.pow(x, n.toDouble())}}

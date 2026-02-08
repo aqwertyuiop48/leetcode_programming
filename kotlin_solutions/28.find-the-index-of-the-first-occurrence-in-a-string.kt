@@ -5,10 +5,6 @@
  */
 
 // @lc code=start
-class Solution {
-    fun strStr(haystack: String, needle: String): Int {
-        
-    }
-}
+class Solution {fun strStr(haystack: String, needle: String): Int =(0..haystack.length - needle.length).firstOrNull { haystack.substring(it, it + needle.length) == needle } ?: -1}
 // @lc code=end
 

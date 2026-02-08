@@ -5,10 +5,6 @@
  */
 
 // @lc code=start
-class Solution {
-    fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
-        
-    }
-}
+class Solution {fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double =(nums1 + nums2).sorted().let {if (it.size % 2 == 1) it[it.size / 2].toDouble() else (it[it.size / 2 - 1] + it[it.size / 2]) / 2.0}}
 // @lc code=end
 
