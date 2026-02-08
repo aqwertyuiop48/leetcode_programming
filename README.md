@@ -1,7 +1,13 @@
 # leetcode_programming from vs code (extension : 力扣 LeetCode)
 
+- extension link: https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode
+- git repo: https://github.com/LeetCode-OpenSource/vscode-leetcode
 - Got to https://leetcode.com/
 - Network tab -> Headers -> Cookie (copy the entire thing for login)
+
+- For leetcode cli
+    - npm install -g leetcode-cli && leetcode user -l  (login with username and cookie)
+    - chmod +x script.sh && ./script.sh
 
 - Rakuten Internship : https://drive.google.com/drive/u/0/folders/1Tt7xlilnJ6LLNdOH03DVhOckNWyY93aP
 - Capstone project:

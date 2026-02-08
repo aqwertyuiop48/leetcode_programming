@@ -1,0 +1,1 @@
+for f in kotlin_solutions/*.kt; do leetcode submit "$f"; sleep 7; done
