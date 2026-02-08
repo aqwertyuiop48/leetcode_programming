@@ -4,11 +4,5 @@
  * [38] Count and Say
  */
 
-// @lc code=start
-class Solution {
-    fun countAndSay(n: Int): String {
-        
-    }
-}
-// @lc code=end
+class Solution {fun countAndSay(n: Int): String = (1 until n).fold("1") { res, _ -> Regex("(.)\\1*").findAll(res).fold("") { acc, m -> acc + m.value.length + m.value[0] } }}
 

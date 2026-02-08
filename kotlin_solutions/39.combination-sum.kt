@@ -3,12 +3,5 @@
  *
  * [39] Combination Sum
  */
-
-// @lc code=start
-class Solution {
-    fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
-        
-    }
-}
-// @lc code=end
+class Solution {fun combinationSum(candidates: IntArray, target: Int, acc: List<Int> = listOf()): List<List<Int>> = candidates.filter { acc.isEmpty() || it >= acc.last() }.flatMap { c -> (target - c).run { when { this == 0 -> listOf(acc + c) this < 0 -> listOf() else -> combinationSum(candidates, this, acc + c) } } }}
 

@@ -4,11 +4,5 @@
  * [33] Search in Rotated Sorted Array
  */
 
-// @lc code=start
-class Solution {
-    fun search(nums: IntArray, target: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun search(nums: IntArray, target: Int): Int {return nums.indexOf(target)}}
 

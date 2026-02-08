@@ -4,11 +4,5 @@
  * [43] Multiply Strings
  */
 
-// @lc code=start
-class Solution {
-    fun multiply(num1: String, num2: String): String {
-        
-    }
-}
-// @lc code=end
+class Solution {fun multiply(num1: String, num2: String): String {return (java.math.BigInteger(num1)*java.math.BigInteger(num2)).toString()}}
 

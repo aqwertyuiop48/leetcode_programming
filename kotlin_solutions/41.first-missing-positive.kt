@@ -4,11 +4,5 @@
  * [41] First Missing Positive
  */
 
-// @lc code=start
-class Solution {
-    fun firstMissingPositive(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun firstMissingPositive(nums: IntArray): Int = (1..nums.size + 1).firstOrNull { n -> !nums.contains(n) } ?: 1}
 

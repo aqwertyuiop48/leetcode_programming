@@ -4,11 +4,5 @@
  * [42] Trapping Rain Water
  */
 
-// @lc code=start
-class Solution {
-    fun trap(height: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun trap(height: IntArray): Int = height.runningReduce(::maxOf).zip(height.reversed().runningReduce(::maxOf).reversed()).mapIndexed { i, (l, r) -> minOf(l, r) - height[i] }.sum()}
 

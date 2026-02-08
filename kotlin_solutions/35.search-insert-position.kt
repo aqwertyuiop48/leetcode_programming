@@ -4,11 +4,4 @@
  * [35] Search Insert Position
  */
 
-// @lc code=start
-class Solution {
-    fun searchInsert(nums: IntArray, target: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun searchInsert(nums: IntArray, target: Int): Int = nums.binarySearch(target).let { if (it >= 0) it else -it - 1 }}
