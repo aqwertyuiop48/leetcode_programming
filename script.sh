@@ -1,1 +1,5 @@
-for f in kotlin_solutions/*.kt; do leetcode submit "$f"; sleep 7; done
+for f in $(ls -v kotlin_solutions/*.kt); do 
+    echo "Submitting: $f"
+    leetcode submit "$f"
+    sleep 7
+done
