@@ -1,5 +1,7 @@
 # leetcode_programming from vs code (extension : 力扣 LeetCode)
 
+- Leetcode userID: 9zBRyP9hkZ
+- Leetcode email: testuserduplicatek@gmail.com
 - extension link: https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode
 - git repo: https://github.com/LeetCode-OpenSource/vscode-leetcode
 - Got to https://leetcode.com/
