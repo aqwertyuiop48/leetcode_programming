@@ -8,7 +8,7 @@
 - Network tab -> Headers -> Cookie (copy the entire thing for login)
 
 - For leetcode cli (reference: https://fantasy.tistory.com/entry/leetcode-cli-cookie-login)
-    - npm install -g leetcode-tools/leetcode-cli && leetcode user -c <<< "YOUR_USERNAME
+    - npm install -g leetcode-tools/leetcode-cli && leetcode user -c <<< "YOUR_USERNAME<br>
 YOUR_COOKIE_STRING"
     - chmod +x script.sh && ./script.sh
 
