@@ -4,21 +4,5 @@
  * [101] Symmetric Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun isSymmetric(root: TreeNode?): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution{fun isSymmetric(root:TreeNode?):Boolean=root?.let{DeepRecursiveFunction<Pair<TreeNode?,TreeNode?>,Boolean>{(l,r)->when{l==null&&r==null->{true}l==null||r==null->{false}l.`val`!=r.`val`->{false}else->callRecursive(l.left to r.right)&&callRecursive(l.right to r.left)}}.invoke(it.left to it.right)}?:true}
 
