@@ -4,11 +4,4 @@
  * [205] Isomorphic Strings
  */
 
-// @lc code=start
-class Solution {
-    fun isIsomorphic(s: String, t: String): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun isIsomorphic(s: String, t: String): Boolean =(s.indices.all { i ->s.indexOf(s[i]) == t.indexOf(t[i])} && s.toSet().size == t.toSet().size)}

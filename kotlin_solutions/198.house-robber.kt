@@ -4,11 +4,4 @@
  * [198] House Robber
  */
 
-// @lc code=start
-class Solution {
-    fun rob(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun rob(nums: IntArray): Int = nums.fold(0 to 0) { (prev2, prev1), num -> prev1 to maxOf(prev1, prev2 + num) }.second }

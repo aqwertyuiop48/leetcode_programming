@@ -4,34 +4,4 @@
  * [173] Binary Search Tree Iterator
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class BSTIterator(root: TreeNode?) {
-
-    fun next(): Int {
-        
-    }
-
-    fun hasNext(): Boolean {
-        
-    }
-
-}
-
-/**
- * Your BSTIterator object will be instantiated and called as such:
- * var obj = BSTIterator(root)
- * var param_1 = obj.next()
- * var param_2 = obj.hasNext()
- */
-// @lc code=end
-
+class BSTIterator(root: TreeNode?, val stack: MutableList<TreeNode> = mutableListOf<TreeNode>().apply { generateSequence(root) { it?.left }.forEach { it?.let { add(it) } } }) {fun next(): Int = stack.removeLast().apply { generateSequence(right) { it?.left }.forEach { it?.let { stack.add(it) } } }.`val` fun hasNext(): Boolean = stack.isNotEmpty()}

@@ -4,20 +4,5 @@
  * [206] Reverse Linked List
  */
 
-// @lc code=start
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
-class Solution {
-    fun reverseList(head: ListNode?): ListNode? {
-        
-    }
-}
-// @lc code=end
+class Solution {fun reverseList(head: ListNode?): ListNode? =generateSequence(null as ListNode? to head) { (prev, curr) ->curr?.next?.let { next -> curr.also { it.next = prev } to next }?: curr?.let { it.also { it.next = prev } to null }}.last().first}
 

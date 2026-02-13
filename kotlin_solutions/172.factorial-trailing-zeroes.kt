@@ -4,11 +4,4 @@
  * [172] Factorial Trailing Zeroes
  */
 
-// @lc code=start
-class Solution {
-    fun trailingZeroes(n: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun trailingZeroes(n: Int): Int =generateSequence(n / 5) { it / 5 }.takeWhile { it > 0 }.sum()}

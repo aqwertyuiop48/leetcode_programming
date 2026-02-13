@@ -4,11 +4,5 @@
  * [169] Majority Element
  */
 
-// @lc code=start
-class Solution {
-    fun majorityElement(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun majorityElement(ar: IntArray) = ar.find { n -> ar.count { it == n } > ar.size / 2 }}
 

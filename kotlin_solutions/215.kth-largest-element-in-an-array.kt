@@ -4,11 +4,5 @@
  * [215] Kth Largest Element in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun findKthLargest(nums: IntArray, k: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun findKthLargest(nums: IntArray, k: Int): Int =nums.sortedDescending()[k - 1]}
 

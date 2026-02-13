@@ -4,34 +4,5 @@
  * [155] Min Stack
  */
 
-// @lc code=start
-class MinStack() {
 
-    fun push(`val`: Int) {
-        
-    }
-
-    fun pop() {
-        
-    }
-
-    fun top(): Int {
-        
-    }
-
-    fun getMin(): Int {
-        
-    }
-
-}
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * var obj = MinStack()
- * obj.push(`val`)
- * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
- */
-// @lc code=end
-
+class MinStack(private val s: MutableList<Pair<Int, Int>> = mutableListOf(), val push: (Int) -> Boolean = { v -> s.add(v to minOf(v, s.lastOrNull()?.second ?: v)) }, val pop: () -> Any? = { s.removeLastOrNull() }, val top: () -> Int = { s.last().first }, val getMin: () -> Int = { s.last().second })

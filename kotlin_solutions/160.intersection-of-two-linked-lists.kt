@@ -4,21 +4,5 @@
  * [160] Intersection of Two Linked Lists
  */
 
-// @lc code=start
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
-
-class Solution {
-    fun getIntersectionNode(headA:ListNode?, headB:ListNode?):ListNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun getIntersectionNode(headA: ListNode?, headB: ListNode?): ListNode? = generateSequence(headA to headB) { (currA, currB) -> (currA != currB).takeIf { it }?.let { (if (currA == null) headB else currA.next) to (if (currB == null) headA else currB.next) } }.last().first }
 

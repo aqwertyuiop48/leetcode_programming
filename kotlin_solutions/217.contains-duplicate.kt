@@ -4,11 +4,4 @@
  * [217] Contains Duplicate
  */
 
-// @lc code=start
-class Solution {
-    fun containsDuplicate(nums: IntArray): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun containsDuplicate(nums: IntArray): Boolean =nums.toSet().size != nums.size}

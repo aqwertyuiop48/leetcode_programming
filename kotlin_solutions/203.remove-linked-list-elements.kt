@@ -4,20 +4,5 @@
  * [203] Remove Linked List Elements
  */
 
-// @lc code=start
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
-class Solution {
-    fun removeElements(head: ListNode?, `val`: Int): ListNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun removeElements(head: ListNode?, `val`: Int): ListNode? = ListNode(0).apply { next = head }.let { dummy -> generateSequence(dummy) { it.next } .forEach { node -> while (node.next?.`val` == `val`) node.next = node.next?.next } .run{dummy.next} } }
 

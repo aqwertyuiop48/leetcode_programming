@@ -4,11 +4,4 @@
  * [202] Happy Number
  */
 
-// @lc code=start
-class Solution {
-    fun isHappy(n: Int): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun isHappy(n: Int): Boolean = generateSequence(n to mutableSetOf<Int>()) { (num, seen) -> (num.toString().map { it.digitToInt() }.sumOf { it * it }).let { next -> (next to seen.apply { add(num) }).takeIf { next !in seen && next != 1 } } }.last().let { (num, _) -> num == 1 || num.toString().map { it.digitToInt() }.sumOf { it * it } == 1 } }

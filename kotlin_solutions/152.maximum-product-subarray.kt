@@ -4,11 +4,4 @@
  * [152] Maximum Product Subarray
  */
 
-// @lc code=start
-class Solution {
-    fun maxProduct(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun maxProduct(nums: IntArray) = nums.fold(Triple(1, 1, nums[0])) { t, x -> listOf(x, x * t.first, x * t.second).let { (a, b, c) -> Triple(listOf(a, b, c).maxOrNull()!!, listOf(a, b, c).minOrNull()!!, maxOf(t.third, listOf(a, b, c).maxOrNull()!!)) } }.run { third } }

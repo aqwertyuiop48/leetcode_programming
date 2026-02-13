@@ -4,11 +4,4 @@
  * [171] Excel Sheet Column Number
  */
 
-// @lc code=start
-class Solution {
-    fun titleToNumber(columnTitle: String): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun titleToNumber(title: String): Int =title.fold(0) { acc, c -> acc * 26 + c.toInt() - 64 }}

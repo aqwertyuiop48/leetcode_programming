@@ -4,11 +4,4 @@
  * [164] Maximum Gap
  */
 
-// @lc code=start
-class Solution {
-    fun maximumGap(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun maximumGap(nums: IntArray): Int = if (nums.size < 2) 0 else nums.sorted().zipWithNext { a, b -> b - a }.maxOrNull() ?: 0}

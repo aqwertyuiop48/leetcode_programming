@@ -4,11 +4,4 @@
  * [219] Contains Duplicate II
  */
 
-// @lc code=start
-class Solution {
-    fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean =nums.withIndex().groupBy { it.value }.any { (_, indices) -> indices.zipWithNext { a, b -> b.index - a.index }.any { it <= k } }}

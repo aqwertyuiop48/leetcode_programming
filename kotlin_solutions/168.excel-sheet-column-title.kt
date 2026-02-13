@@ -4,11 +4,4 @@
  * [168] Excel Sheet Column Title
  */
 
-// @lc code=start
-class Solution {
-    fun convertToTitle(columnNumber: Int): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun convertToTitle(columnNumber: Int) = generateSequence(columnNumber - 1) { (it / 26) - 1 } .takeWhile { it >= 0 } .distinct() .fold("") { acc, i -> acc + ('A' + i % 26) } .reversed() }

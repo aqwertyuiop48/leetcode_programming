@@ -4,11 +4,4 @@
  * [229] Majority Element II
  */
 
-// @lc code=start
-class Solution {
-    fun majorityElement(nums: IntArray): List<Int> {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun majorityElement(nums: IntArray) = nums.groupBy { it }.filter { it.value.size > nums.size / 3}.keys.toList()}

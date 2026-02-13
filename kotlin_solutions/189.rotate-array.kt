@@ -4,11 +4,4 @@
  * [189] Rotate Array
  */
 
-// @lc code=start
-class Solution {
-    fun rotate(nums: IntArray, k: Int): Unit {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun rotate(nums: IntArray, k: Int): Unit =(k % nums.size).let { steps ->nums.reverse().also{nums.reverse(0, steps)}.also{nums.reverse(steps, nums.size)}}}

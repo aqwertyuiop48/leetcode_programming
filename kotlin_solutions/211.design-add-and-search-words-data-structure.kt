@@ -4,24 +4,5 @@
  * [211] Design Add and Search Words Data Structure
  */
 
-// @lc code=start
-class WordDictionary() {
-
-    fun addWord(word: String) {
-        
-    }
-
-    fun search(word: String): Boolean {
-        
-    }
-
-}
-
-/**
- * Your WordDictionary object will be instantiated and called as such:
- * var obj = WordDictionary()
- * obj.addWord(word)
- * var param_2 = obj.search(word)
- */
-// @lc code=end
+class WordDictionary(private val root: Node = Node()) { data class Node(val children: MutableMap<Char, Node> = mutableMapOf(), var isEnd: Boolean = false) fun addWord(word: String): Unit = word.fold(root) { node, c -> node.children.getOrPut(c) { Node() } }.apply { isEnd = true }.let { } fun search(word: String): Boolean = DeepRecursiveFunction<Pair<Node?, Int>, Boolean> { (node, i) -> when { node == null -> {false} i == word.length -> {node.isEnd} word[i] == '.' -> {node.children.values.any { callRecursive(it to i + 1) }} else -> callRecursive(node.children[word[i]] to i + 1) } }.invoke(root to 0) }
 

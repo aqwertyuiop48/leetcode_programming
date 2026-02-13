@@ -4,34 +4,4 @@
  * [225] Implement Stack using Queues
  */
 
-// @lc code=start
-class MyStack() {
-
-    fun push(x: Int) {
-        
-    }
-
-    fun pop(): Int {
-        
-    }
-
-    fun top(): Int {
-        
-    }
-
-    fun empty(): Boolean {
-        
-    }
-
-}
-
-/**
- * Your MyStack object will be instantiated and called as such:
- * var obj = MyStack()
- * obj.push(x)
- * var param_2 = obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.empty()
- */
-// @lc code=end
-
+class MyStack(private val q: ArrayDeque<Int> = ArrayDeque()) { fun push(x: Int) = q.add(x).also { (1 until q.size).forEach { q.add(q.removeFirst()) } } fun pop(): Int = q.removeFirst() fun top(): Int = q.first() fun empty(): Boolean = q.isEmpty() }

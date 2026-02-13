@@ -4,11 +4,5 @@
  * [190] Reverse Bits
  */
 
-// @lc code=start
-class Solution {
-    fun reverseBits(n: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun reverseBits(n: Int): Int =(0..31).fold(0) { result, i -> result or ((n shr i and 1) shl (31 - i)) }}
 

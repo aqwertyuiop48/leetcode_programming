@@ -4,11 +4,5 @@
  * [191] Number of 1 Bits
  */
 
-// @lc code=start
-class Solution {
-    fun hammingWeight(n: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun hammingWeight(n: Int): Int =generateSequence(n) { it ushr 1 }.takeWhile { it > 0 }.count { it and 1 == 1 }}
 
