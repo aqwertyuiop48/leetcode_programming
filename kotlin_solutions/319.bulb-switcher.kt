@@ -4,11 +4,4 @@
  * [319] Bulb Switcher
  */
 
-// @lc code=start
-class Solution {
-    fun bulbSwitch(n: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun bulbSwitch(n: Int) = Math.sqrt(n.toDouble()).toInt()}

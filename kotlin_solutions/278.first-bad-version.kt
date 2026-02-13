@@ -4,14 +4,4 @@
  * [278] First Bad Version
  */
 
-// @lc code=start
-/* The isBadVersion API is defined in the parent class VersionControl.
-      fun isBadVersion(version: Int) : Boolean {} */
-
-class Solution: VersionControl() {
-    override fun firstBadVersion(n: Int) : Int {
-        
-	}
-}
-// @lc code=end
-
+class Solution : VersionControl() {override fun firstBadVersion(n: Int) = generateSequence(Triple(1, n, -1)) { (left, right, answer) -> if (left > right) null else (left + (right - left) / 2).let { mid -> if (isBadVersion(mid)) Triple(left, mid - 1, mid) else Triple(mid + 1, right, answer) } }.last().third}

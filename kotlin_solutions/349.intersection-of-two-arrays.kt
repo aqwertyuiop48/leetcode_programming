@@ -4,11 +4,4 @@
  * [349] Intersection of Two Arrays
  */
 
-// @lc code=start
-class Solution {
-    fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun intersection(nums1: IntArray, nums2: IntArray): IntArray = nums1.toSet().intersect(nums2.toSet()).toIntArray()}

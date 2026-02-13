@@ -4,11 +4,4 @@
  * [338] Counting Bits
  */
 
-// @lc code=start
-class Solution {
-    fun countBits(n: Int): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun countBits(n: Int): IntArray = IntArray(n + 1) { it.countOneBits() }}

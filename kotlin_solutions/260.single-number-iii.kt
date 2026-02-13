@@ -4,11 +4,4 @@
  * [260] Single Number III
  */
 
-// @lc code=start
-class Solution {
-    fun singleNumber(nums: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun singleNumber(nums: IntArray): IntArray = nums.reduce { acc, num -> acc xor num }.let { xor2no -> (xor2no and -xor2no).let { lowestBit -> intArrayOf( nums.filter { lowestBit and it == 0 }.fold(0) { acc, num -> acc xor num }, nums.filter { lowestBit and it != 0 }.fold(0) { acc, num -> acc xor num } ) } } }

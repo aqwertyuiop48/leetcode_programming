@@ -4,11 +4,4 @@
  * [292] Nim Game
  */
 
-// @lc code=start
-class Solution {
-    fun canWinNim(n: Int): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun canWinNim(n: Int) = n % 4 != 0}

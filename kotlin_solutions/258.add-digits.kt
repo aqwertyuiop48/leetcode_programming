@@ -4,11 +4,5 @@
  * [258] Add Digits
  */
 
-// @lc code=start
-class Solution {
-    fun addDigits(num: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun addDigits(num: Int): Int = if (num < 10) num else addDigits((num / 10) + (num % 10))}
 

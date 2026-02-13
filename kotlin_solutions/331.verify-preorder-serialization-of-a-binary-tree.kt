@@ -4,11 +4,5 @@
  * [331] Verify Preorder Serialization of a Binary Tree
  */
 
-// @lc code=start
-class Solution {
-    fun isValidSerialization(preorder: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution {fun isValidSerialization(preorder: String) = preorder.split(",").fold(1 to true) { (slots, valid), str -> if (!valid || slots <= 0) (slots to false) else ((slots - 1 + if (str != "#") 2 else 0) to true) }.let { (slots, valid) -> valid && slots == 0 }}
 

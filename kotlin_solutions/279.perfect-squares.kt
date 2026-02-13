@@ -4,11 +4,4 @@
  * [279] Perfect Squares
  */
 
-// @lc code=start
-class Solution {
-    fun numSquares(n: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun numSquares(n: Int) = (1..n).fold(IntArray(n + 1) { it }) { dp, i -> (1..(Math.sqrt(i.toDouble()).toInt())).forEach { j -> dp[i] = minOf(dp[i], dp[i - j * j] + 1) }.let { dp } }[n]}

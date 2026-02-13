@@ -4,11 +4,4 @@
  * [334] Increasing Triplet Subsequence
  */
 
-// @lc code=start
-class Solution {
-    fun increasingTriplet(nums: IntArray): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun increasingTriplet(nums: IntArray): Boolean = nums.fold(Int.MAX_VALUE to Int.MAX_VALUE) { (first, second), num -> when { num <= first -> {num to second} num <= second -> {first to num} else -> return true } }.let { false }}

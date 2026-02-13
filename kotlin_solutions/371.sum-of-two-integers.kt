@@ -4,11 +4,4 @@
  * [371] Sum of Two Integers
  */
 
-// @lc code=start
-class Solution {
-    fun getSum(a: Int, b: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+import java.math.BigInteger class Solution { fun getSum(a: Int, b: Int): Int { return BigInteger.valueOf(a.toLong()) .add(BigInteger.valueOf(b.toLong())) .toInt() } }

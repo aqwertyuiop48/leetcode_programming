@@ -4,11 +4,4 @@
  * [268] Missing Number
  */
 
-// @lc code=start
-class Solution {
-    fun missingNumber(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun missingNumber(nums: IntArray): Int {return (nums.size * (nums.size + 1) / 2) - nums.sum()}}

@@ -4,11 +4,4 @@
  * [367] Valid Perfect Square
  */
 
-// @lc code=start
-class Solution {
-    fun isPerfectSquare(num: Int): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun isPerfectSquare(num: Int): Boolean = generateSequence(1L) { it + 1 }.first { it * it >= num }.let { it * it == num.toLong() }}

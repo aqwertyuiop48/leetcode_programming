@@ -4,34 +4,4 @@
  * [355] Design Twitter
  */
 
-// @lc code=start
-class Twitter() {
-
-    fun postTweet(userId: Int, tweetId: Int) {
-        
-    }
-
-    fun getNewsFeed(userId: Int): List<Int> {
-        
-    }
-
-    fun follow(followerId: Int, followeeId: Int) {
-        
-    }
-
-    fun unfollow(followerId: Int, followeeId: Int) {
-        
-    }
-
-}
-
-/**
- * Your Twitter object will be instantiated and called as such:
- * var obj = Twitter()
- * obj.postTweet(userId,tweetId)
- * var param_2 = obj.getNewsFeed(userId)
- * obj.follow(followerId,followeeId)
- * obj.unfollow(followerId,followeeId)
- */
-// @lc code=end
-
+class Twitter( private var time: Int = 0, private val tweets: MutableMap<Int, MutableList<Pair<Int, Int>>> = mutableMapOf(), private val following: MutableMap<Int, MutableSet<Int>> = mutableMapOf() ) { fun postTweet(userId: Int, tweetId: Int) = tweets.getOrPut(userId) { mutableListOf() }.add(time++ to tweetId) fun getNewsFeed(userId: Int): List<Int> = (following[userId]?.plus(userId) ?: setOf(userId)).flatMap { tweets[it] ?: emptyList() }.sortedByDescending { it.first }.take(10).map { it.second } fun follow(followerId: Int, followeeId: Int) = following.getOrPut(followerId) { mutableSetOf() }.add(followeeId) fun unfollow(followerId: Int, followeeId: Int) = following[followerId]?.remove(followeeId) }

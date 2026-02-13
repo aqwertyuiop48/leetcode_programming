@@ -4,21 +4,5 @@
  * [230] Kth Smallest Element in a BST
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun kthSmallest(root: TreeNode?, k: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun kthSmallest(root: TreeNode?, k: Int): Int { return toList(root).sorted()[k - 1] } private fun toList(node: TreeNode?): List<Int> { return node?.let { listOf(it.`val`) + toList(it.left) + toList(it.right) } ?: emptyList() } }
 

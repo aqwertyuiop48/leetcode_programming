@@ -4,11 +4,4 @@
  * [321] Create Maximum Number
  */
 
-// @lc code=start
-class Solution {
-    fun maxNumber(nums1: IntArray, nums2: IntArray, k: Int): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution { private fun solve(nums: IntArray, k: Int): IntArray = IntArray(k).apply { nums.indices.fold(0) { len, i -> generateSequence(len) { l -> (l - 1).takeIf { l > 0 && l + nums.size - i > k && this[l - 1] < nums[i] } }.last().also { l -> if (l < k) this[l] = nums[i] }.let { l -> if (l < k) l + 1 else l } } } fun compare(nums1: IntArray, start1: Int, nums2: IntArray, start2: Int): Boolean = generateSequence(start1 to start2) { (s1, s2) -> (s1 + 1 to s2 + 1).takeIf { s1 < nums1.size && s2 < nums2.size && nums1[s1] == nums2[s2] } }.last().let { (s1, s2) -> if (s1 < nums1.size && s2 < nums2.size) nums1[s1] > nums2[s2] else s1 != nums1.size } fun maxNumber(nums1: IntArray, nums2: IntArray, k: Int): IntArray = (maxOf(k - nums2.size, 0)..minOf(nums1.size, k)).fold(IntArray(k)) { ans, i -> solve(nums1, i).let { res1 -> solve(nums2, k - i).let { res2 -> intArrayOf(0, 0, 0).let { ptr -> IntArray(k).apply { generateSequence { ptr.takeIf { it[0] < res1.size && it[1] < res2.size } }.forEach { if (compare(res1, ptr[0], res2, ptr[1])) this[ptr[2]++] = res1[ptr[0]++] else this[ptr[2]++] = res2[ptr[1]++] }.run { generateSequence { ptr[0].takeIf { it < res1.size } }.forEach { this@apply[ptr[2]++] = res1[ptr[0]++] }.run { generateSequence { ptr[1].takeIf { it < res2.size } }.forEach { this@apply[ptr[2]++] = res2[ptr[1]++] } } } } }.let { res -> if (!compare(ans, 0, res, 0)) res else ans } } } } }

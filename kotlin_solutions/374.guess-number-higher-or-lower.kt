@@ -4,20 +4,4 @@
  * [374] Guess Number Higher or Lower
  */
 
-// @lc code=start
-/** 
- * The API guess is defined in the parent class.
- * @param  num   your guess
- * @return 	     -1 if num is higher than the picked number
- *			      1 if num is lower than the picked number
- *               otherwise return 0
- * fun guess(num:Int):Int {}
- */
-
-class Solution:GuessGame() {
-    override fun guessNumber(n:Int):Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution:GuessGame() { override fun guessNumber(n:Int):Int { return bs(1, n) } tailrec fun bs(left: Int, right: Int): Int { return (left + (right - left) / 2).let { mid -> when { guess(mid) == 0 -> {mid} guess(mid) == 1 -> {bs(mid + 1, right)} else -> bs(left, mid - 1) } } } }

@@ -4,11 +4,4 @@
  * [344] Reverse String
  */
 
-// @lc code=start
-class Solution {
-    fun reverseString(s: CharArray): Unit {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun reverseString(s: CharArray): Unit = (0 until s.size / 2).forEach { i -> s[i] = s[s.size - 1 - i].also { s[s.size - 1 - i] = s[i] } }}

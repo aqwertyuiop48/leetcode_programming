@@ -4,11 +4,4 @@
  * [238] Product of Array Except Self
  */
 
-// @lc code=start
-class Solution {
-    fun productExceptSelf(nums: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun productExceptSelf(nums: IntArray): IntArray = nums.runningFold(1) { prod, num -> prod * num }.let { pre -> nums.reversed().runningFold(1) { prod, num -> prod * num }.reversed().let { suf -> nums.indices.map { pre[it] * suf[it + 1] }.toIntArray() } } }

@@ -4,11 +4,5 @@
  * [274] H-Index
  */
 
-// @lc code=start
-class Solution {
-    fun hIndex(citations: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun hIndex(citations: IntArray) = citations.sortedDescending().withIndex().lastOrNull { (i, citation) -> citation >= i + 1 }?.let { it.index + 1 } ?: 0}
 

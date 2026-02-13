@@ -4,24 +4,5 @@
  * [352] Data Stream as Disjoint Intervals
  */
 
-// @lc code=start
-class SummaryRanges() {
-
-    fun addNum(value: Int) {
-        
-    }
-
-    fun getIntervals(): Array<IntArray> {
-        
-    }
-
-}
-
-/**
- * Your SummaryRanges object will be instantiated and called as such:
- * var obj = SummaryRanges()
- * obj.addNum(value)
- * var param_2 = obj.getIntervals()
- */
-// @lc code=end
+class SummaryRanges(private val intervals: MutableSet<Int> = sortedSetOf<Int>()) { fun addNum(value: Int) = intervals.add(value) fun getIntervals(): Array<IntArray> = intervals.fold(mutableListOf<IntArray>()) { acc, num -> acc.apply { if (isEmpty() || last()[1] + 1 < num) add(intArrayOf(num, num)) else last()[1] = num } }.toTypedArray()}
 

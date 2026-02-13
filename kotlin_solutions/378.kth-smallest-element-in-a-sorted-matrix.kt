@@ -4,11 +4,4 @@
  * [378] Kth Smallest Element in a Sorted Matrix
  */
 
-// @lc code=start
-class Solution {
-    fun kthSmallest(matrix: Array<IntArray>, k: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun kthSmallest(matrix: Array<IntArray>, k: Int): Int = matrix.flatMap { it.asIterable() }.sorted()[k - 1]}

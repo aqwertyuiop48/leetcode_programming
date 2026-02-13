@@ -4,21 +4,4 @@
  * [337] House Robber III
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun rob(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun rob(root: TreeNode?): Int = DeepRecursiveFunction<TreeNode?, Pair<Int, Int>> { node -> node?.let { dfs -> callRecursive(dfs.left).let { (leftRob, leftNotRob) -> callRecursive(dfs.right).let { (rightRob, rightNotRob) -> (dfs.`val` + leftNotRob + rightNotRob) to maxOf(leftRob, leftNotRob) + maxOf(rightRob, rightNotRob) } } } ?: (0 to 0) }.invoke(root).let { (rob, notRob) -> maxOf(rob, notRob) }}

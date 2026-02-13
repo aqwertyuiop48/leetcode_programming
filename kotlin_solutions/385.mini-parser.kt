@@ -4,39 +4,4 @@
  * [385] Mini Parser
  */
 
-// @lc code=start
-/**
- * // This is the interface that allows for creating nested lists.
- * // You should not implement it, or speculate about its implementation
- * class NestedInteger {
- *     // Constructor initializes an empty nested list.
- *     constructor()
- *
- *     // Constructor initializes a single integer.
- *     constructor(value: Int)
- *
- *     // @return true if this NestedInteger holds a single integer, rather than a nested list.
- *     fun isInteger(): Boolean
- *
- *     // @return the single integer that this NestedInteger holds, if it holds a single integer
- *     // Return null if this NestedInteger holds a nested list
- *     fun getInteger(): Int?
- *
- *     // Set this NestedInteger to hold a single integer.
- *     fun setInteger(value: Int): Unit
- *
- *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.
- *     fun add(ni: NestedInteger): Unit
- *
- *     // @return the nested list that this NestedInteger holds, if it holds a nested list
- *     // Return null if this NestedInteger holds a single integer
- *     fun getList(): List<NestedInteger>?
- * }
- */
-class Solution {
-    fun deserialize(s: String): NestedInteger {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun deserialize(s: String): NestedInteger = s.takeIf { it[0] != '[' }?.toInt()?.let { NestedInteger().also { ni -> ni.setInteger(it) } } ?: generateSequence(Triple(NestedInteger(), 0, mutableListOf<NestedInteger>())) { (resNi, i, st) -> i.takeIf { it < s.length }?.let { idx -> s[idx].let { c -> Triple(resNi, idx, st).let { state -> if (c != ',') when { c == '-' || c.isDigit() -> {(if (c == '-') -1 to (idx + 1) else 1 to idx).let { (sign, start) -> generateSequence(0 to start) { (num, j) -> s[j].takeIf { it.isDigit() }?.let { num * 10 + it.digitToInt() to (j + 1) } }.last().let { (num, j) -> Triple(resNi, j - 1, st.apply { last().add(NestedInteger().also { it.setInteger(num * sign) }) }) } }} c == '[' -> {Triple(resNi, idx, st.apply { add(NestedInteger()) })} else -> st.removeLast().let { removed -> Triple(if (st.isEmpty()) removed else resNi.also { st.last().add(removed) }, idx, st) } } else state }.let { (r, newIdx, newSt) -> Triple(r, newIdx + 1, newSt) } } } }.last().first }

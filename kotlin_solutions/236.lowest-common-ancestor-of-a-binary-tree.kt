@@ -4,19 +4,5 @@
  * [236] Lowest Common Ancestor of a Binary Tree
  */
 
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int = 0) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-
-class Solution {
-    fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution {fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? = root?.let { if (it == p || it == q) it else lowestCommonAncestor(it.left, p, q).let { left -> lowestCommonAncestor(it.right, p, q).let { right -> if (left != null && right != null) root else left ?: right } } }}
 

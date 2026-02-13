@@ -4,11 +4,4 @@
  * [283] Move Zeroes
  */
 
-// @lc code=start
-class Solution {
-    fun moveZeroes(nums: IntArray): Unit {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun moveZeroes(nums: IntArray) = nums.indices.fold(0) { nonZeroIdx, i -> if (nums[i] != 0) nums[nonZeroIdx].also { temp -> nums[nonZeroIdx] = nums[i] }.also { temp -> nums[i] = temp }.let { nonZeroIdx + 1 } else nonZeroIdx }.let { }}

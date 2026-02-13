@@ -4,11 +4,4 @@
  * [386] Lexicographical Numbers
  */
 
-// @lc code=start
-class Solution {
-    fun lexicalOrder(n: Int): List<Int> {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun lexicalOrder(n: Int): List<Int> = (1..n).map { it.toString() }.sorted().map { it.toInt() }}

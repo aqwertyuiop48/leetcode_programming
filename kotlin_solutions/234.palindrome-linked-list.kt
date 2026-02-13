@@ -4,20 +4,5 @@
  * [234] Palindrome Linked List
  */
 
-// @lc code=start
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
-class Solution {
-    fun isPalindrome(head: ListNode?): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution {fun isPalindrome(head: ListNode?): Boolean = generateSequence(head) { it.next }.map { it.`val` }.toList().let { it == it.reversed() }}
 

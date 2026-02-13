@@ -3,12 +3,5 @@
  *
  * [290] Word Pattern
  */
-
-// @lc code=start
-class Solution {
-    fun wordPattern(pattern: String, s: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution {fun wordPattern(pattern: String, s: String): Boolean = s.split(" ").let { words -> pattern.length == words.size && pattern.toList().zip(words).run { groupBy { it.first }.all { it.value.map { p -> p.second }.distinct().size == 1 } && groupBy { it.second }.all { it.value.map { p -> p.first }.distinct().size == 1 } } }}
 

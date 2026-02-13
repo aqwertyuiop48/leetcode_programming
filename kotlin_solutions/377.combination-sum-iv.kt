@@ -4,11 +4,4 @@
  * [377] Combination Sum IV
  */
 
-// @lc code=start
-class Solution {
-    fun combinationSum4(nums: IntArray, target: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun combinationSum4(nums: IntArray, target: Int): Int = (1..target).fold(IntArray(target + 1).apply { this[0] = 1 }) { dp, i -> nums.forEach { n -> if (i >= n) dp[i] += dp[i - n] }.run{dp} }[target]}

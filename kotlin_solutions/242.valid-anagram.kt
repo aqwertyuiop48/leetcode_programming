@@ -4,11 +4,4 @@
  * [242] Valid Anagram
  */
 
-// @lc code=start
-class Solution {
-    fun isAnagram(s: String, t: String): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun isAnagram(s: String, t: String): Boolean = s.length == t.length && s.chars().sorted().toArray() .contentEquals(t.chars().sorted().toArray()) }
