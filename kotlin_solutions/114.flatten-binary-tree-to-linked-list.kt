@@ -4,21 +4,4 @@
  * [114] Flatten Binary Tree to Linked List
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun flatten(root: TreeNode?): Unit {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun flatten(root: TreeNode?): Unit = Array<TreeNode?>(1) { null }.let { prev -> DeepRecursiveFunction<TreeNode?, Unit> { node -> node?.run { callRecursive(right) .also{callRecursive(left)} .also{apply { right = prev[0].also{left = null} }.also { prev[0] = this }} } }.invoke(root) } }

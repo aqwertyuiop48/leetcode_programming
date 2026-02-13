@@ -4,20 +4,5 @@
  * [143] Reorder List
  */
 
-// @lc code=start
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
-class Solution {
-    fun reorderList(head: ListNode?): Unit {
-        
-    }
-}
-// @lc code=end
+class Solution {fun reorderList(head: ListNode?) {return (generateSequence(head){it.next}.map{it.`val`}.toList() to head).let{(li,init)->mutableListOf<Int>().apply{(0 until li.size/2).forEach{addAll(listOf(li[it],li[li.lastIndex-it]))}.also{if(li.size%2!=0)add(li[li.size/2])}}.fold(init as ListNode?){curr,value->curr?.apply{`val`=value}?.next}}}}
 

@@ -4,21 +4,5 @@
  * [129] Sum Root to Leaf Numbers
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun sumNumbers(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun sumNumbers(root: TreeNode?): Int = DeepRecursiveFunction<Pair<TreeNode?, Int>, Int> { (node, sum) -> node?.let { (sum * 10 + it.`val`).let { newSum -> if (it.left == null && it.right == null) newSum else callRecursive(it.left to newSum) + callRecursive(it.right to newSum) } } ?: 0 }.invoke(root to 0) }
 

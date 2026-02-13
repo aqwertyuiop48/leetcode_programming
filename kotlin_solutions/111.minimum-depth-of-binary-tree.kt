@@ -4,21 +4,4 @@
  * [111] Minimum Depth of Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun minDepth(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun minDepth(root: TreeNode?): Int = root?.let { when { it.left == null && it.right == null -> {1} it.left == null -> {minDepth(it.right) + 1} it.right == null -> {minDepth(it.left) + 1} else -> minOf(minDepth(it.left), minDepth(it.right)) + 1 } } ?: 0 }

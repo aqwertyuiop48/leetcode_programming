@@ -4,21 +4,5 @@
  * [108] Convert Sorted Array to Binary Search Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun sortedArrayToBST(nums: IntArray): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution{fun sortedArrayToBST(nums:IntArray):TreeNode?=nums.takeIf{it.isNotEmpty()}?.let{(it.size/2).let{mid->TreeNode(it[mid]).apply{left=sortedArrayToBST(it.copyOfRange(0,mid))}.apply{right=sortedArrayToBST(it.copyOfRange(mid+1,it.size))}}}}
 

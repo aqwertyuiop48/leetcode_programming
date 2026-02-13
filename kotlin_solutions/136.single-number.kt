@@ -4,11 +4,4 @@
  * [136] Single Number
  */
 
-// @lc code=start
-class Solution {
-    fun singleNumber(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun singleNumber(nums: IntArray): Int =nums.fold(0) { acc, num -> acc xor num }}

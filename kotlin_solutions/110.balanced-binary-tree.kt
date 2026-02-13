@@ -4,21 +4,5 @@
  * [110] Balanced Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun isBalanced(root: TreeNode?): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution { fun isBalanced(root: TreeNode?): Boolean = DeepRecursiveFunction<TreeNode?, Int> { node -> node?.let { callRecursive(it.left).let { leftHeight -> callRecursive(it.right).let { rightHeight -> if (leftHeight == -1 || rightHeight == -1 || kotlin.math.abs(leftHeight - rightHeight) > 1) -1 else maxOf(leftHeight, rightHeight) + 1 } } } ?: 0 }.invoke(root) != -1 }
 

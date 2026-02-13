@@ -4,11 +4,4 @@
  * [121] Best Time to Buy and Sell Stock
  */
 
-// @lc code=start
-class Solution {
-    fun maxProfit(prices: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun maxProfit(prices: IntArray): Int = prices.fold(Int.MAX_VALUE to 0) { (minPrice, maxProfit), price -> minOf(minPrice, price) to maxOf(maxProfit, price - minPrice) }.second }

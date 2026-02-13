@@ -4,21 +4,5 @@
  * [124] Binary Tree Maximum Path Sum
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun maxPathSum(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun maxPathSum(root: TreeNode?) = object { lateinit var post: (TreeNode?) -> Pair<Int, Int> }.apply { post = { n -> n?.let { post(it.left).let { (lm, lp) -> post(it.right).let { (rm, rp) -> Pair(maxOf(lm, rm, lp + rp + it.`val`), maxOf(0, it.`val` + maxOf(lp, rp))) } } } ?: Pair(Int.MIN_VALUE, 0) } }.run { post(root).first }}
 

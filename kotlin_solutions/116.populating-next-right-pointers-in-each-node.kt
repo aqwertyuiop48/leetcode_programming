@@ -4,20 +4,4 @@
  * [116] Populating Next Right Pointers in Each Node
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var left: Node? = null
- *     var right: Node? = null
- *     var next: Node? = null
- * }
- */
-
-class Solution {
-    fun connect(root: Node?): Node? {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun connect(root: Node?): Node? = root?.apply {left?.next = right?.also { it.next = next?.left }}?.also { _ -> connect(root.left) }?.also { _ -> connect(root.right) } ?: root}

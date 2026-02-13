@@ -4,21 +4,5 @@
  * [112] Path Sum
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun hasPathSum(root: TreeNode?, targetSum: Int): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution { fun hasPathSum(root: TreeNode?, targetSum: Int): Boolean = root?.let { (it.left == null && it.right == null && it.`val` == targetSum) || hasPathSum(it.left, targetSum - it.`val`) || hasPathSum(it.right, targetSum - it.`val`) } ?: false }
 

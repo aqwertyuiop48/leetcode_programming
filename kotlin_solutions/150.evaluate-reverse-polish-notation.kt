@@ -4,11 +4,4 @@
  * [150] Evaluate Reverse Polish Notation
  */
 
-// @lc code=start
-class Solution {
-    fun evalRPN(tokens: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun evalRPN(tokens: Array<String>): Int = tokens.fold(mutableListOf<Int>()) { stack, token -> when (token) { "+", "-", "*", "/" -> stack.apply { removeLast().let { b -> removeLast().let { a -> add(when (token) { "+" -> a + b "-" -> a - b "*" -> a * b else -> a / b }) } } } else -> stack.apply { add(token.toInt()) } } }.last() }

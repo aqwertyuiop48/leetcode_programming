@@ -4,11 +4,4 @@
  * [128] Longest Consecutive Sequence
  */
 
-// @lc code=start
-class Solution {
-    fun longestConsecutive(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun longestConsecutive(nums: IntArray): Int = nums.toSet().let { set -> set.filter { it - 1 !in set }.maxOfOrNull { start -> generateSequence(start) { it + 1 }.takeWhile { it in set }.count() } ?: 0 } }

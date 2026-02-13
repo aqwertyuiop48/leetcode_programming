@@ -4,18 +4,5 @@
  * [133] Clone Graph
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var neighbors: ArrayList<Node?> = ArrayList<Node?>()
- * }
- */
-
-class Solution {
-    fun cloneGraph(node: Node?): Node? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun cloneGraph(node: Node?): Node? = node?.let { mutableMapOf<Node, Node>().let { map -> DeepRecursiveFunction<Node, Node> { original -> map.getOrPut(original) { Node(original.`val`) }.also { clone -> original.neighbors.forEach { neighbor -> neighbor?.let { n -> if (n !in map) callRecursive(n).also { clone.neighbors.add(map[n]!!) } else clone.neighbors.add(map[n]!!) } } } }.invoke(it) } } }
 

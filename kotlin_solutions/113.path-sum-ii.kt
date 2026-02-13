@@ -4,21 +4,5 @@
  * [113] Path Sum II
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> = mutableListOf<List<Int>>().also { result -> DeepRecursiveFunction<Triple<TreeNode?, Int, MutableList<Int>>, Unit> { (node, sum, path) -> node?.let { path.add(it.`val`).run{ if (it.left == null && it.right == null && sum == it.`val`) result.add(path.toList()) else {callRecursive(Triple(it.left, sum - it.`val`, path)).apply { callRecursive(Triple(it.right, sum - it.`val`, path)) }}.also{path.removeLast()} }} }.invoke(Triple(root, targetSum, mutableListOf())) } }
 

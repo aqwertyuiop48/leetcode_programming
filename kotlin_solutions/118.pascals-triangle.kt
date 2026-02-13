@@ -4,11 +4,5 @@
  * [118] Pascal's Triangle
  */
 
-// @lc code=start
-class Solution {
-    fun generate(numRows: Int): List<List<Int>> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun generate(numRows: Int): List<List<Int>> { return generateSequence(listOf(1)) { current -> List(current.size + 1) { current.getOrElse(it - 1) { 0 } + current.getOrElse(it) { 0 } } }.take(numRows).toList() } }
 

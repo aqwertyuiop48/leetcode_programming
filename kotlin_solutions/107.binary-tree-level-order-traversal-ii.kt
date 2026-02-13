@@ -4,21 +4,5 @@
  * [107] Binary Tree Level Order Traversal II
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun levelOrderBottom(root: TreeNode?): List<List<Int>> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun levelOrderBottom(root: TreeNode?): List<List<Int>> = root?.let { generateSequence(listOf(it)) { level -> level.flatMap { listOfNotNull(it.left, it.right) }.takeIf { it.isNotEmpty() } }.map { it.map { node -> node.`val` } }.toList().reversed() } ?: emptyList() }
 

@@ -4,21 +4,4 @@
  * [106] Construct Binary Tree from Inorder and Postorder Traversal
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? = postorder.takeIf { it.isNotEmpty() }?.let { inorder.indexOf(postorder.last()).let { rootIdx -> TreeNode(postorder.last()).apply { left = buildTree(inorder.copyOfRange(0, rootIdx), postorder.copyOfRange(0, rootIdx)) .also{right = buildTree(inorder.copyOfRange(rootIdx + 1, inorder.size), postorder.copyOfRange(rootIdx, postorder.size - 1))} } } } }

@@ -4,11 +4,5 @@
  * [125] Valid Palindrome
  */
 
-// @lc code=start
-class Solution {
-    fun isPalindrome(s: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution {fun isPalindrome(s: String): Boolean =s.filter { it.isLetterOrDigit() }.lowercase().let { it == it.reversed() }}
 
