@@ -4,11 +4,4 @@
  * [744] Find Smallest Letter Greater Than Target
  */
 
-// @lc code=start
-class Solution {
-    fun nextGreatestLetter(letters: CharArray, target: Char): Char {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun nextGreatestLetter(letters: CharArray, target: Char): Char = letters.firstOrNull { it > target } ?: letters.first() }

@@ -3,12 +3,4 @@
  *
  * [747] Largest Number At Least Twice of Others
  */
-
-// @lc code=start
-class Solution {
-    fun dominantIndex(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun dominantIndex(nums: IntArray): Int = nums.indices.maxByOrNull { nums[it] }!!.let { maxIdx -> if (nums.all { it == nums[maxIdx] || nums[maxIdx] >= 2 * it }) maxIdx else -1 } }

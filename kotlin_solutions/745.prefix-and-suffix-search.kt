@@ -4,19 +4,4 @@
  * [745] Prefix and Suffix Search
  */
 
-// @lc code=start
-class WordFilter(words: Array<String>) {
-
-    fun f(pref: String, suff: String): Int {
-        
-    }
-
-}
-
-/**
- * Your WordFilter object will be instantiated and called as such:
- * var obj = WordFilter(words)
- * var param_1 = obj.f(pref,suff)
- */
-// @lc code=end
-
+class WordFilter(words: Array<String>, val map: MutableMap<String, Int> = mutableMapOf<String, Int>().apply { words.indices.forEach { i -> (0..words[i].length).forEach { j -> (0..words[i].length).forEach { k -> this[words[i].take(j) + "#" + words[i].takeLast(k)] = i }}} }) { fun f(prefix: String, suffix: String): Int = map[prefix + "#" + suffix] ?: -1 }
