@@ -4,11 +4,4 @@
  * [500] Keyboard Row
  */
 
-// @lc code=start
-class Solution {
-    fun findWords(words: Array<String>): Array<String> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findWords(words: Array<String>) = words.filter { word -> listOf("qwertyuiop", "asdfghjkl", "zxcvbnm").map { it.toList() }.any { it.containsAll(word.lowercase().toList()) } }.toTypedArray() }

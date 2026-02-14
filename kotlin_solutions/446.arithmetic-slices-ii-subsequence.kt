@@ -4,11 +4,4 @@
  * [446] Arithmetic Slices II - Subsequence
  */
 
-// @lc code=start
-class Solution {
-    fun numberOfArithmeticSlices(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun numberOfArithmeticSlices(nums: IntArray): Int = Array(nums.size) { mutableMapOf<Long, Int>() }.let { dp -> nums.indices.sumOf { i -> (0..<i).sumOf { j -> (nums[i].toLong() - nums[j]).let { diff -> dp[j].getOrDefault(diff, 0).also { cnt -> dp[i][diff] = dp[i].getOrDefault(diff, 0) + cnt + 1 } } } } } }

@@ -4,11 +4,4 @@
  * [451] Sort Characters By Frequency
  */
 
-// @lc code=start
-class Solution {
-    fun frequencySort(s: String): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun frequencySort(s: String): String = s.groupingBy { it }.eachCount().entries.sortedByDescending { it.value } .joinToString("") { it.key.toString().repeat(it.value) } }

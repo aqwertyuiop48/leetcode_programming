@@ -4,11 +4,4 @@
  * [441] Arranging Coins
  */
 
-// @lc code=start
-class Solution {
-    fun arrangeCoins(n: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun arrangeCoins(n: Int): Int = generateSequence(n to 1) { (coins, row) -> (coins - row to row + 1).takeIf { coins >= row } }.last().second - 1 }

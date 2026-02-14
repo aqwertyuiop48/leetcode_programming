@@ -4,11 +4,5 @@
  * [396] Rotate Function
  */
 
-// @lc code=start
-class Solution {
-    fun maxRotateFunction(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun maxRotateFunction(A: IntArray): Int = A.foldIndexed(0 to 0) { i, (s, a), it -> (s + it * i) to (a + it) }.let { (s, a) -> (A.size - 1 downTo 0).fold(s to s) { (curr, m), i -> (curr - A[i] * A.size + a).let { it to maxOf(it, m) } }.second }}
 

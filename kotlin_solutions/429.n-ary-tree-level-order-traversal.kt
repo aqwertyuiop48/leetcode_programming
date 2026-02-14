@@ -4,18 +4,5 @@
  * [429] N-ary Tree Level Order Traversal
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var children: List<Node?> = listOf()
- * }
- */
-
-class Solution {
-    fun levelOrder(root: Node?): List<List<Int>> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun levelOrder(root: Node?): List<List<Int>> = root?.let { generateSequence(listOf(listOf(it))) { level -> level.last().flatMap { it.children?.filterNotNull() ?: emptyList() }.takeIf { it.isNotEmpty() }?.let { level + listOf(it) } }.last().map { nodes -> nodes.map { it.`val` } } } ?: emptyList() }
 

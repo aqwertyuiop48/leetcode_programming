@@ -4,11 +4,4 @@
  * [493] Reverse Pairs
  */
 
-// @lc code=start
-class Solution {
-    fun reversePairs(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun reversePairs(nums: IntArray): Int = nums.distinct().sorted().let { dsNums -> IntArray(dsNums.size).let { buckets -> IntArray(buckets.size * 4).apply { DeepRecursiveFunction<Triple<Int, Int, Int>, Unit> { (treeIndex, segmentLeft, segmentRight) -> if (segmentLeft == segmentRight) this@apply[treeIndex] = buckets[segmentLeft] else ((segmentLeft + segmentRight) / 2).also { mid -> callRecursive(Triple(treeIndex * 2 + 1, segmentLeft, mid)) .also{callRecursive(Triple(treeIndex * 2 + 2, mid + 1, segmentRight))} .also{this@apply[treeIndex] = this@apply[treeIndex * 2 + 1] + this@apply[treeIndex * 2 + 2]} } }(Triple(0, 0, buckets.size - 1)) }.let { tree -> object { fun query(treeIndex: Int, rangeLeft: Int, rangeRight: Int, segmentLeft: Int, segmentRight: Int): Int = when { segmentLeft > rangeRight || segmentRight < rangeLeft -> {0} segmentLeft >= rangeLeft && segmentRight <= rangeRight -> {tree[treeIndex]} else -> ((segmentLeft + segmentRight) / 2).let { mid -> query(2 * treeIndex + 1, rangeLeft, rangeRight, segmentLeft, mid) + query(2 * treeIndex + 2, rangeLeft, rangeRight, mid + 1, segmentRight) } } fun update(treeIndex: Int, segmentLeft: Int, segmentRight: Int, index: Int, newValue: Int): Unit = if (segmentLeft == segmentRight) tree[treeIndex] = newValue else ((segmentLeft + segmentRight) / 2).let { mid -> (if (index <= mid) update(2 * treeIndex + 1, segmentLeft, mid, index, newValue) else update(2 * treeIndex + 2, mid + 1, segmentRight, index, newValue)).run { tree[treeIndex] = tree[treeIndex * 2 + 1] + tree[treeIndex * 2 + 2] } } }.let { segTree -> (nums.size - 1 downTo 0).fold(0) { result, i -> (if (nums[i] > 0) (nums[i] - 1) / 2 else nums[i] / 2 - 1).let { target -> dsNums.binarySearch(target).let { if (it >= 0) it else -it - 2 } }.let { targetIndex -> result + (if (targetIndex >= 0) segTree.query(0, 0, targetIndex, 0, buckets.size - 1) else 0) }.also { dsNums.binarySearch(nums[i]).let { index -> segTree.update(0, 0, buckets.size - 1, index, ++buckets[index]) } } } } } } } }

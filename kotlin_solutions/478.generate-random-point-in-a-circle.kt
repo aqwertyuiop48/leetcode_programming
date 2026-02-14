@@ -4,19 +4,5 @@
  * [478] Generate Random Point in a Circle
  */
 
-// @lc code=start
-class Solution(radius: Double, x_center: Double, y_center: Double) {
-
-    fun randPoint(): DoubleArray {
-        
-    }
-
-}
-
-/**
- * Your Solution object will be instantiated and called as such:
- * var obj = Solution(radius, x_center, y_center)
- * var param_1 = obj.randPoint()
- */
-// @lc code=end
+class Solution(val radius: Double, val x_center: Double, val y_center: Double) { fun randPoint(): DoubleArray = generateSequence { (Math.random() * 2 - 1) * radius to (Math.random() * 2 - 1) * radius }.first { (dx, dy) -> dx * dx + dy * dy <= radius * radius } .let { (dx, dy) -> doubleArrayOf(x_center + dx, y_center + dy) } }
 

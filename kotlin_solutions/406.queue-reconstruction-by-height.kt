@@ -4,11 +4,4 @@
  * [406] Queue Reconstruction by Height
  */
 
-// @lc code=start
-class Solution {
-    fun reconstructQueue(people: Array<IntArray>): Array<IntArray> {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun reconstructQueue(people: Array<IntArray>): Array<IntArray> = people.sortedWith(compareBy<IntArray> { -it[0] }.thenBy { it[1] }).fold(mutableListOf<IntArray>()) { list, p -> list.apply { add(p[1], p) } }.toTypedArray()}

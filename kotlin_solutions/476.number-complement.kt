@@ -4,11 +4,5 @@
  * [476] Number Complement
  */
 
-// @lc code=start
-class Solution {
-    fun findComplement(num: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findComplement(num: Int): Int = num.takeHighestOneBit().let { highBit -> (highBit shl 1) - 1 xor num } }
 

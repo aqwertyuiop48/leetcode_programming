@@ -4,11 +4,5 @@
  * [392] Is Subsequence
  */
 
-// @lc code=start
-class Solution {
-    fun isSubsequence(s: String, t: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution {fun isSubsequence(s: String, t: String): Boolean = s.fold(0) { idx, c -> t.indexOf(c, idx).takeIf { it >= 0 }?.plus(1) ?: return false }.let { true }}
 

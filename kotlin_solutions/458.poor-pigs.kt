@@ -4,11 +4,4 @@
  * [458] Poor Pigs
  */
 
-// @lc code=start
-class Solution {
-    fun poorPigs(buckets: Int, minutesToDie: Int, minutesToTest: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun poorPigs(buckets: Int, minutesToDie: Int, minutesToTest: Int): Int = generateSequence(0) { it + 1 }.first { Math.pow((minutesToTest / minutesToDie + 1).toDouble(), it.toDouble()) >= buckets } }

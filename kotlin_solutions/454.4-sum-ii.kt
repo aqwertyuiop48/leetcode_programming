@@ -4,11 +4,4 @@
  * [454] 4Sum II
  */
 
-// @lc code=start
-class Solution {
-    fun fourSumCount(nums1: IntArray, nums2: IntArray, nums3: IntArray, nums4: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun fourSumCount(nums1: IntArray, nums2: IntArray, nums3: IntArray, nums4: IntArray): Int = nums1.flatMap { a -> nums2.map { b -> a + b } }.groupingBy { it }.eachCount() .let { map -> nums3.flatMap { c -> nums4.map { d -> c + d } }.sumOf { map.getOrDefault(-it, 0) } } }

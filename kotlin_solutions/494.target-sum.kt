@@ -4,11 +4,4 @@
  * [494] Target Sum
  */
 
-// @lc code=start
-class Solution {
-    fun findTargetSumWays(nums: IntArray, target: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findTargetSumWays(nums: IntArray, target: Int): Int = nums.fold(mapOf(0 to 1)) { dp, num -> mutableMapOf<Int, Int>().apply { dp.forEach { (sum, cnt) -> put(sum + num, getOrDefault(sum + num, 0) + cnt) .also{put(sum - num, getOrDefault(sum - num, 0) + cnt)} } } }.getOrDefault(target, 0) }

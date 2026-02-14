@@ -4,11 +4,4 @@
  * [442] Find All Duplicates in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun findDuplicates(nums: IntArray): List<Int> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findDuplicates(nums: IntArray): List<Int> = buildList { nums.forEach { kotlin.math.abs(it).also { x -> if (nums[x - 1] < 0) add(x) }.let { x -> nums[x - 1] *= -1 } } } }

@@ -4,11 +4,4 @@
  * [443] String Compression
  */
 
-// @lc code=start
-class Solution {
-    fun compress(chars: CharArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun compress(chars: CharArray): Int = chars.toList().fold(mutableListOf<Pair<Char, Int>>()) { acc, c -> if (acc.isEmpty() || acc.last().first != c) acc.apply { add(c to 1) } else acc.apply { this[lastIndex] = c to (last().second + 1) } }.flatMap { (c, cnt) -> listOf(c) + if (cnt > 1) cnt.toString().toList() else emptyList() }.also { it.forEachIndexed { i, c -> chars[i] = c } }.size}

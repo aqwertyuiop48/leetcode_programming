@@ -4,21 +4,4 @@
  * [437] Path Sum III
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun pathSum(root: TreeNode?, targetSum: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun pathSum(root: TreeNode?, targetSum: Int): Int = root?.let { object { fun getSumCount(node: TreeNode?, sum: Long): Int = node?.let { n -> (sum + n.`val`).let { curSum -> (if (targetSum.toLong() == curSum) 1 else 0) + getSumCount(n.left, curSum) + getSumCount(n.right, curSum) } } ?: 0 }.run { getSumCount(root, 0L) + pathSum(root.left, targetSum) + pathSum(root.right, targetSum) } } ?: 0}

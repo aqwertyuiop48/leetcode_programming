@@ -4,34 +4,4 @@
  * [432] All O`one Data Structure
  */
 
-// @lc code=start
-class AllOne() {
-
-    fun inc(key: String) {
-        
-    }
-
-    fun dec(key: String) {
-        
-    }
-
-    fun getMaxKey(): String {
-        
-    }
-
-    fun getMinKey(): String {
-        
-    }
-
-}
-
-/**
- * Your AllOne object will be instantiated and called as such:
- * var obj = AllOne()
- * obj.inc(key)
- * obj.dec(key)
- * var param_3 = obj.getMaxKey()
- * var param_4 = obj.getMinKey()
- */
-// @lc code=end
-
+class AllOne(val map: MutableMap<String, Int> = mutableMapOf()) { fun inc(key: String) = map.put(key, map.getOrDefault(key, 0) + 1) fun dec(key: String) = map[key]?.minus(1)?.let { if (it == 0) map.remove(key) else map.put(key, it) } fun getMaxKey(): String = map.maxByOrNull { it.value }?.key ?: "" fun getMinKey(): String = map.minByOrNull { it.value }?.key ?: "" }

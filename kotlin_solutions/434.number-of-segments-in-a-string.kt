@@ -4,11 +4,4 @@
  * [434] Number of Segments in a String
  */
 
-// @lc code=start
-class Solution {
-    fun countSegments(s: String): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun countSegments(s: String): Int = s.split(" ").count { it.isNotEmpty() }}

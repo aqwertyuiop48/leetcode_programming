@@ -4,11 +4,4 @@
  * [438] Find All Anagrams in a String
  */
 
-// @lc code=start
-class Solution {
-    fun findAnagrams(s: String, p: String): List<Int> {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun findAnagrams(s: String, p: String): List<Int> = p.groupingBy { it }.eachCount().let { target -> s.windowed(p.length, 1).mapIndexedNotNull { i, w -> if (w.groupingBy { it }.eachCount() == target) i else null } }}

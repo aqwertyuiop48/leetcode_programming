@@ -4,11 +4,5 @@
  * [506] Relative Ranks
  */
 
-// @lc code=start
-class Solution {
-    fun findRelativeRanks(score: IntArray): Array<String> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findRelativeRanks(s: IntArray) = Array(s.size) { i -> s.indices.count { j -> s[i] < s[j] }.let { rank -> when (rank) { 0 -> {"Gold Medal"} 1 -> {"Silver Medal"} 2 -> {"Bronze Medal"} else -> "${rank + 1}" } } } }
 

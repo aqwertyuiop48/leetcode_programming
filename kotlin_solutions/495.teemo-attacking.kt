@@ -4,11 +4,4 @@
  * [495] Teemo Attacking
  */
 
-// @lc code=start
-class Solution {
-    fun findPoisonedDuration(timeSeries: IntArray, duration: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findPoisonedDuration(timeSeries: IntArray, duration: Int): Int = timeSeries.asSequence().zipWithNext().sumOf { (a, b) -> minOf(b - a, duration) } + duration }

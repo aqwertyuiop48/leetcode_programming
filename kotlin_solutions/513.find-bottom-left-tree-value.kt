@@ -4,21 +4,5 @@
  * [513] Find Bottom Left Tree Value
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun findBottomLeftValue(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun findBottomLeftValue(root: TreeNode?) = LinkedList<TreeNode>().apply { root?.let { add(it) } }.let { q -> generateSequence { q.poll()?.also { node -> node.right?.let { q.add(it) }?.run { node.left?.let { q.add(it) } } ?: node.left?.let { q.add(it) } } }.last().`val` }}
 

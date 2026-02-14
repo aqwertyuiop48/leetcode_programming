@@ -4,11 +4,5 @@
  * [414] Third Maximum Number
  */
 
-// @lc code=start
-class Solution {
-    fun thirdMax(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun thirdMax(nums: IntArray): Int = nums.toSet().sortedDescending().let { if (it.size >= 3) it[2] else it[0] }}
 

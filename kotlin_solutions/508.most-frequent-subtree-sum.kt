@@ -4,21 +4,5 @@
  * [508] Most Frequent Subtree Sum
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun findFrequentTreeSum(root: TreeNode?): IntArray {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findFrequentTreeSum(root: TreeNode?) = HashMap<Int, Int>().let { m -> DeepRecursiveFunction<TreeNode?,Int>{t->t?.let{(callRecursive(it.left)+callRecursive(it.right)+it.`val`).also{s->m[s]=m.getOrDefault(s,0)+1}}?:0} .let { f -> m.also { f(root) }.values.maxOrNull()?.let { max -> m.filterValues { it == max }.keys.toIntArray() } ?: intArrayOf() } } }
 

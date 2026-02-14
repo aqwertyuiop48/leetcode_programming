@@ -4,11 +4,4 @@
  * [459] Repeated Substring Pattern
  */
 
-// @lc code=start
-class Solution {
-    fun repeatedSubstringPattern(s: String): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun repeatedSubstringPattern(s: String): Boolean = (s + s).substring(1, s.length * 2 - 1).contains(s) }

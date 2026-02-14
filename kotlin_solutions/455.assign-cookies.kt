@@ -4,11 +4,5 @@
  * [455] Assign Cookies
  */
 
-// @lc code=start
-class Solution {
-    fun findContentChildren(g: IntArray, s: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findContentChildren(g: IntArray, s: IntArray) = g.apply { sort() }.run { s.apply { sort() }.fold(0) { i, c -> if (i < size && get(i) <= c) i + 1 else i } } }
 

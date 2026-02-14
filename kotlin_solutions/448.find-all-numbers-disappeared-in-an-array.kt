@@ -4,11 +4,4 @@
  * [448] Find All Numbers Disappeared in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun findDisappearedNumbers(nums: IntArray): List<Int> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findDisappearedNumbers(nums: IntArray): List<Int> = nums.toSet().let { set -> (1..nums.size).filter { it !in set } } }

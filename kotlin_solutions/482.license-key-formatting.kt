@@ -4,11 +4,4 @@
  * [482] License Key Formatting
  */
 
-// @lc code=start
-class Solution {
-    fun licenseKeyFormatting(s: String, k: Int): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun licenseKeyFormatting(s: String, k: Int): String =s.replace("-", "").uppercase().reversed().chunked(k).joinToString("-").reversed()}

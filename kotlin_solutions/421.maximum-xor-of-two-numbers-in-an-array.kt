@@ -4,11 +4,5 @@
  * [421] Maximum XOR of Two Numbers in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun findMaximumXOR(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun findMaximumXOR(nums: IntArray): Int = (30 downTo 0).fold(0) { max, i -> (max or (1 shl i)).let { curr -> if (nums.map { it shr i shl i }.toSet().let { prefixes -> prefixes.any { curr xor it in prefixes } }) curr else max } }}
 

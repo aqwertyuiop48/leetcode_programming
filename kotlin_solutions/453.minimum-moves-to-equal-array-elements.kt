@@ -4,11 +4,4 @@
  * [453] Minimum Moves to Equal Array Elements
  */
 
-// @lc code=start
-class Solution {
-    fun minMoves(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun minMoves(nums: IntArray): Int =nums.sum() - nums.min()!! * nums.size}

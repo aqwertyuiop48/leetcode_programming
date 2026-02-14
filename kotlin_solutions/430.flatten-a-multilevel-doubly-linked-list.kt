@@ -4,20 +4,4 @@
  * [430] Flatten a Multilevel Doubly Linked List
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var prev: Node? = null
- *     var next: Node? = null
- *     var child: Node? = null
- * }
- */
-
-class Solution {
-    fun flatten(root: Node?): Node? {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun flatten(root: Node?): Node? = root.also { generateSequence(root) { it?.next }.forEach { node -> node?.child?.let { child -> generateSequence(child) { it?.next }.last().let { tail -> node.next?.also { oldNext -> tail.next = oldNext .also{oldNext.prev = tail} } .also{node.next = child} .also{child.prev = node} .also{node.child = null} } } } } }

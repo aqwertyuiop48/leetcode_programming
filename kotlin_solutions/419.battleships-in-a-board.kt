@@ -4,11 +4,5 @@
  * [419] Battleships in a Board
  */
 
-// @lc code=start
-class Solution {
-    fun countBattleships(board: Array<CharArray>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun countBattleships(board: Array<CharArray>): Int = board.indices.sumOf { i -> board[0].indices.count { j -> board[i][j] == 'X' && (i == 0 || board[i - 1][j] != 'X') && (j == 0 || board[i][j - 1] != 'X') } }}
 

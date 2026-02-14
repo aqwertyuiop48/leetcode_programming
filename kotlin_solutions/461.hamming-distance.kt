@@ -4,11 +4,4 @@
  * [461] Hamming Distance
  */
 
-// @lc code=start
-class Solution {
-    fun hammingDistance(x: Int, y: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun hammingDistance(x: Int, y: Int): Int = (x xor y).countOneBits() }

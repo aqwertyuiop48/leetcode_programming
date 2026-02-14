@@ -4,11 +4,4 @@
  * [462] Minimum Moves to Equal Array Elements II
  */
 
-// @lc code=start
-class Solution {
-    fun minMoves2(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun minMoves2(nums: IntArray): Int = nums.sorted().let { sorted -> sorted[sorted.size / 2].let { median -> nums.sumOf { kotlin.math.abs(it - median) } } } }

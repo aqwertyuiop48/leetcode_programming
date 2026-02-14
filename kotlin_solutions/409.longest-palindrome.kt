@@ -4,11 +4,5 @@
  * [409] Longest Palindrome
  */
 
-// @lc code=start
-class Solution {
-    fun longestPalindrome(s: String): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun longestPalindrome(s: String): Int = s.groupingBy { it }.eachCount().values.sumOf { it / 2 * 2 }.let { it + if (s.groupingBy { it }.eachCount().any { it.value % 2 == 1 }) 1 else 0 }}
 

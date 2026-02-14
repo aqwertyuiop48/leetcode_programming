@@ -4,34 +4,5 @@
  * [449] Serialize and Deserialize BST
  */
 
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-
-class Codec() {
-	// Encodes a tree to a single string.
-    fun serialize(root: TreeNode?): String {
-        
-    }
-
-    // Decodes your encoded data to tree.
-    fun deserialize(data: String): TreeNode? {
-        
-    }
-}
-
-/**
- * Your Codec object will be instantiated and called as such:
- * val ser = Codec()
- * val deser = Codec()
- * val tree: String = ser.serialize(root)
- * val ans = deser.deserialize(tree)
- * return ans
- */
-// @lc code=end
+class Codec { fun serialize(root: TreeNode?): String = root?.let { "${it.`val`} ${serialize(it.left)}${serialize(it.right)}" } ?: "" fun deserialize(data: String): TreeNode? = data.split(" ").filter { it.isNotEmpty() }.map { it.toInt() } .fold(null as TreeNode?) { root, v -> root.insert(v) } fun TreeNode?.insert(v: Int): TreeNode = this?.apply { if (v < `val`) left = left.insert(v) else right = right.insert(v) } ?: TreeNode(v) }
 

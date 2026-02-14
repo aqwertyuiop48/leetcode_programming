@@ -4,21 +4,4 @@
  * [404] Sum of Left Leaves
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun sumOfLeftLeaves(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun sumOfLeftLeaves(root: TreeNode?): Int = root?.let { (it.left?.takeIf { l -> l.left == null && l.right == null }?.`val` ?: 0) + sumOfLeftLeaves(it.left) + sumOfLeftLeaves(it.right) } ?: 0}

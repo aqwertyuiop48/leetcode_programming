@@ -4,11 +4,5 @@
  * [394] Decode String
  */
 
-// @lc code=start
-class Solution {
-    fun decodeString(s: String): String {
-        
-    }
-}
-// @lc code=end
+class Solution { companion object { private val pattern = Regex("""(\d+)\[([a-z]+)\]""") } fun decodeString(s: String): String = generateSequence(s) { s -> pattern.find(s)?.let { match -> match.destructured.let { (k, encodedString) -> s.replace(match.value, encodedString.repeat(k.toInt())) } } }.last() }
 
