@@ -4,18 +4,5 @@
  * [589] N-ary Tree Preorder Traversal
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var children: List<Node?> = listOf()
- * }
- */
-
-class Solution {
-    fun preorder(root: Node?): List<Int> {
-        
-    }
-}
-// @lc code=end
+class Solution {fun preorder(root: Node?, ans: MutableList<Int> = mutableListOf()): List<Int> = root?.also { ans.add(it.`val`) }?.children?.forEach { preorder(it, ans) }.let { ans }}
 

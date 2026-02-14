@@ -4,18 +4,5 @@
  * [590] N-ary Tree Postorder Traversal
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var children: List<Node?> = listOf()
- * }
- */
-
-class Solution {
-    fun postorder(root: Node?): List<Int> {
-        
-    }
-}
-// @lc code=end
+class Solution {fun postorder(root: Node?): List<Int> = root?.let { mutableListOf<Int>().also { postOrder -> ArrayDeque<Node>().apply { add(it) }.let { stack -> while (stack.isNotEmpty()) postOrder.add(stack.last().`val`).also { stack.removeLast().children.forEach { child -> child?.let { stack.add(it) } } } } }.reversed() } ?: emptyList()}
 

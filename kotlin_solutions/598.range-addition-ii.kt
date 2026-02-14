@@ -4,11 +4,5 @@
  * [598] Range Addition II
  */
 
-// @lc code=start
-class Solution {
-    fun maxCount(m: Int, n: Int, ops: Array<IntArray>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun maxCount(m: Int, n: Int, ops: Array<IntArray>): Int = ops.fold(m to n) { (minA, minB), op -> minOf(minA, op[0]) to minOf(minB, op[1]) }.run { first * second } }
 

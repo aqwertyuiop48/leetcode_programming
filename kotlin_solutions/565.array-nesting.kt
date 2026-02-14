@@ -4,11 +4,4 @@
  * [565] Array Nesting
  */
 
-// @lc code=start
-class Solution {
-    fun arrayNesting(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun arrayNesting(nums: IntArray): Int = BooleanArray(nums.size).let { visited -> nums.indices.maxOf { start -> generateSequence(start.takeUnless { visited[it] }) { current -> nums[current].also { visited[current] = true }.takeUnless { visited[it] } }.count() } } }

@@ -4,11 +4,5 @@
  * [561] Array Partition
  */
 
-// @lc code=start
-class Solution {
-    fun arrayPairSum(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun arrayPairSum(nums: IntArray): Int = nums.sorted().reduceIndexed { index, acc, num -> if (index % 2 == 0) acc + num else acc } }
 

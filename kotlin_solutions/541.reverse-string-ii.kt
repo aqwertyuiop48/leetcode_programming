@@ -4,11 +4,5 @@
  * [541] Reverse String II
  */
 
-// @lc code=start
-class Solution {
-    fun reverseStr(s: String, k: Int): String {
-        
-    }
-}
-// @lc code=end
+class Solution { fun reverseStr(s: String, k: Int) = s.chunked(k).mapIndexed { i, chunk -> if (i % 2 == 0) chunk.reversed() else chunk }.joinToString("") }
 

@@ -4,11 +4,4 @@
  * [575] Distribute Candies
  */
 
-// @lc code=start
-class Solution {
-    fun distributeCandies(candyType: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun distributeCandies(candyType: IntArray): Int {return minOf(candyType.toSet().size,candyType.size/2)}}

@@ -4,11 +4,4 @@
  * [581] Shortest Unsorted Continuous Subarray
  */
 
-// @lc code=start
-class Solution {
-    fun findUnsortedSubarray(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findUnsortedSubarray(nums: IntArray): Int = nums.sorted().let { sorted -> nums.indices.firstOrNull { nums[it] != sorted[it] }?.let { left -> nums.indices.lastOrNull { nums[it] != sorted[it] }?.let { right -> right - left + 1 } ?: 0 } ?: 0 } }

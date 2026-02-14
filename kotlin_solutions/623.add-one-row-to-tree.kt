@@ -4,21 +4,5 @@
  * [623] Add One Row to Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun addOneRow(root: TreeNode?, `val`: Int, depth: Int): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun addOneRow(root: TreeNode?, `val`: Int, depth: Int): TreeNode? = if (depth == 1) TreeNode(`val`).apply { left = root } else root.also { DeepRecursiveFunction<Pair<TreeNode?, Int>, Unit> { (node, d) -> node?.run { if (d == depth - 1) apply { left = TreeNode(`val`).apply { left = this@run.left } }.apply { right = TreeNode(`val`).apply { right = this@run.right } } else callRecursive(left to d + 1).run { callRecursive(right to d + 1) } } }(it to 1) } }
 

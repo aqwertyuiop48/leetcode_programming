@@ -4,11 +4,5 @@
  * [551] Student Attendance Record I
  */
 
-// @lc code=start
-class Solution {
-    fun checkRecord(s: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution { fun checkRecord(s: String) = s.count { it == 'A' } < 2 && !s.contains("LLL") }
 

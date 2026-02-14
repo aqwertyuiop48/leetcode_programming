@@ -4,11 +4,4 @@
  * [539] Minimum Time Difference
  */
 
-// @lc code=start
-class Solution {
-    fun findMinDifference(timePoints: List<String>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findMinDifference(timePoints: List<String>) = timePoints.map { it.split(":").let { (h, m) -> h.toInt() * 60 + m.toInt() } }.sorted().let { sorted -> (sorted.zipWithNext { a, b -> b - a } + (sorted.first() + 1440 - sorted.last())).min() } }

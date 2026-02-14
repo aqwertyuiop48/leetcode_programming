@@ -3,12 +3,4 @@
  *
  * [624] Maximum Distance in Arrays
  */
-
-// @lc code=start
-class Solution {
-    fun maxDistance(arrays: List<List<Int>>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun maxDistance(arrays: List<List<Int>>): Int = arrays.drop(1).fold(arrays[0].first() to arrays[0].last() to 0) { (minMax, maxDist), arr -> (minOf(minMax.first, arr.first()) to maxOf(minMax.second, arr.last())) to maxOf(maxDist, maxOf(arr.last() - minMax.first, minMax.second - arr.first())) }.second }

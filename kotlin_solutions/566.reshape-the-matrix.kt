@@ -4,11 +4,4 @@
  * [566] Reshape the Matrix
  */
 
-// @lc code=start
-class Solution {
-    fun matrixReshape(mat: Array<IntArray>, r: Int, c: Int): Array<IntArray> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun matrixReshape(mat: Array<IntArray>, r: Int, c: Int) = if (mat.size * mat[0].size != r * c) mat else mat.flatMap { it.toList() }.chunked(c).map { it.toIntArray() }.toTypedArray() }

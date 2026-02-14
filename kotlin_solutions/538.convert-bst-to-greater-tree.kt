@@ -4,21 +4,5 @@
  * [538] Convert BST to Greater Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun convertBST(root: TreeNode?): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun convertBST(root: TreeNode?) = DeepRecursiveFunction<Pair<TreeNode?, Int>, Int> { (node, sum) -> node?.let { n -> callRecursive(n.right to sum).let { rightSum -> (rightSum + n.`val`).also { n.`val` = it }.let { newVal -> callRecursive(n.left to newVal) } } } ?: sum }(root to 0).run { root } }
 

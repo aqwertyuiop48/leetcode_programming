@@ -4,11 +4,5 @@
  * [557] Reverse Words in a String III
  */
 
-// @lc code=start
-class Solution {
-    fun reverseWords(s: String): String {
-        
-    }
-}
-// @lc code=end
+class Solution {fun reverseWords(s: String) = s.split(" ").joinToString(" ") { it.reversed() }}
 

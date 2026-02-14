@@ -4,19 +4,4 @@
  * [528] Random Pick with Weight
  */
 
-// @lc code=start
-class Solution(w: IntArray) {
-
-    fun pickIndex(): Int {
-        
-    }
-
-}
-
-/**
- * Your Solution object will be instantiated and called as such:
- * var obj = Solution(w)
- * var param_1 = obj.pickIndex()
- */
-// @lc code=end
-
+class Solution(w: IntArray, val sums: List<Int> = w.runningFold(0) { acc, weight -> acc + weight }.drop(1)) { fun pickIndex() = java.util.Random().nextInt(sums.last()).let { target -> sums.binarySearch { if (it <= target) -1 else 1 }.let { if (it >= 0) it else -it - 1 } } }

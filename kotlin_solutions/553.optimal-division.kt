@@ -4,11 +4,4 @@
  * [553] Optimal Division
  */
 
-// @lc code=start
-class Solution {
-    fun optimalDivision(nums: IntArray): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun optimalDivision(nums: IntArray) = if (nums.size == 1) "${nums[0]}" else if (nums.size == 2) "${nums[0]}/${nums[1]}" else "${nums[0]}/(${nums.slice(1 until nums.size).joinToString("/")})"}

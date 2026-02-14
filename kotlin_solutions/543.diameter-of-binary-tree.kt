@@ -4,21 +4,5 @@
  * [543] Diameter of Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun diameterOfBinaryTree(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun diameterOfBinaryTree(root: TreeNode?) = DeepRecursiveFunction<TreeNode?, Pair<Int, Int>> { node -> node?.let { callRecursive(it.left).let { (leftD, leftH) -> callRecursive(it.right).let { (rightD, rightH) -> maxOf(leftD, rightD, leftH + rightH) to (maxOf(leftH, rightH) + 1) } } } ?: (0 to 0) }(root).first }
 

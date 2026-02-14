@@ -4,24 +4,5 @@
  * [535] Encode and Decode TinyURL
  */
 
-// @lc code=start
-class Codec() {
-    // Encodes a URL to a shortened URL.
-    fun encode(longUrl: String): String {
-        
-    }
-
-    // Decodes a shortened URL to its original URL.
-    fun decode(shortUrl: String): String {
-        
-    }
-}
-
-/**
- * Your Codec object will be instantiated and called as such:
- * var obj = Codec()
- * var url = obj.encode(longUrl)
- * var ans = obj.decode(url)
- */
-// @lc code=end
+class Codec(val map: MutableMap<String, String> = mutableMapOf(), var id: Int = 0) { fun encode(longUrl: String) = "http://tinyurl.com/${id}".also { map[it] = longUrl.also{id++ }} fun decode(shortUrl: String) = map[shortUrl]!! }
 

@@ -4,11 +4,5 @@
  * [521] Longest Uncommon Subsequence I
  */
 
-// @lc code=start
-class Solution {
-    fun findLUSlength(a: String, b: String): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun findLUSlength(a: String, b: String) = if (a == b) -1 else maxOf(a.length, b.length)}
 

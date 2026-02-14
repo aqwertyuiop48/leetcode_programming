@@ -4,11 +4,4 @@
  * [628] Maximum Product of Three Numbers
  */
 
-// @lc code=start
-class Solution {
-    fun maximumProduct(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun maximumProduct(nums: IntArray): Int = nums.sorted().let { s -> maxOf(s[s.lastIndex] * s[s.lastIndex - 1] * s[s.lastIndex - 2], s[0] * s[1] * s[s.lastIndex]) } }

@@ -4,21 +4,5 @@
  * [617] Merge Two Binary Trees
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun mergeTrees(root1: TreeNode?, root2: TreeNode?): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun mergeTrees(root1: TreeNode?, root2: TreeNode?): TreeNode? = when { root1 == null -> {root2} root2 == null -> {root1} else -> TreeNode(root1.`val` + root2.`val`).apply { left = mergeTrees(root1.left, root2.left).also{right = mergeTrees(root1.right, root2.right)} } } }
 

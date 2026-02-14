@@ -4,21 +4,4 @@
  * [530] Minimum Absolute Difference in BST
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun getMinimumDifference(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun getMinimumDifference(root: TreeNode?) = DeepRecursiveFunction<TreeNode?, List<Int>> { node -> node?.let { (callRecursive(it.left) + it.`val` + callRecursive(it.right)) } ?: emptyList() }(root).sorted().zipWithNext { a, b -> b - a }.min() }

@@ -4,11 +4,4 @@
  * [532] K-diff Pairs in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun findPairs(nums: IntArray, k: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findPairs(nums: IntArray, k: Int) = nums.toList().groupingBy { it }.eachCount().count { (num, count) -> if (k == 0) count > 1 else nums.contains(num + k) } }

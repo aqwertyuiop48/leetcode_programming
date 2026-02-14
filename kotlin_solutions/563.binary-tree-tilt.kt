@@ -4,21 +4,4 @@
  * [563] Binary Tree Tilt
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun findTilt(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findTilt(root: TreeNode?) = DeepRecursiveFunction<TreeNode?, Pair<Int, Int>> { n -> n?.let { callRecursive(it.left).let { l -> callRecursive(it.right).let { r -> (it.`val` + l.first + r.first) to (kotlin.math.abs(l.first - r.first) + l.second + r.second) } } } ?: (0 to 0) }(root).second }

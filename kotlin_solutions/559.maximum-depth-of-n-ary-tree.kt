@@ -4,18 +4,5 @@
  * [559] Maximum Depth of N-ary Tree
  */
 
-// @lc code=start
-/**
- * Definition for a Node.
- * class Node(var `val`: Int) {
- *     var children: List<Node?> = listOf()
- * }
- */
-
-class Solution {
-    fun maxDepth(root: Node?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun maxDepth(root: Node?): Int = if (root == null) 0 else 1 + (root.children.maxOfOrNull { maxDepth(it) } ?: 0) }
 

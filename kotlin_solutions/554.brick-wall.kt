@@ -4,11 +4,5 @@
  * [554] Brick Wall
  */
 
-// @lc code=start
-class Solution {
-    fun leastBricks(wall: List<List<Int>>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun leastBricks(wall: List<List<Int>>) = wall.size - (wall.flatMap { row -> row.dropLast(1).runningFold(0) { acc, w -> acc + w }.drop(1) }.groupingBy { it }.eachCount().maxOfOrNull { it.value } ?: 0) }
 
