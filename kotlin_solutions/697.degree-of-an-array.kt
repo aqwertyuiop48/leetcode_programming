@@ -4,11 +4,5 @@
  * [697] Degree of an Array
  */
 
-// @lc code=start
-class Solution {
-    fun findShortestSubArray(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findShortestSubArray(nums: IntArray): Int = nums.withIndex().groupBy { it.value }.let { groups -> groups.values.maxOf { it.size }.let { degree -> groups.values.filter { it.size == degree }.minOf { it.last().index - it.first().index + 1 } } } }
 

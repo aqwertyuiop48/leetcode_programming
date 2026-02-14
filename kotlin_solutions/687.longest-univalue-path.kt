@@ -4,21 +4,5 @@
  * [687] Longest Univalue Path
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun longestUnivaluePath(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun longestUnivaluePath(root: TreeNode?): Int = DeepRecursiveFunction<TreeNode?, Pair<Int, Int>> { node -> node?.let { callRecursive(it.left).let { (lMax, lPath) -> callRecursive(it.right).let { (rMax, rPath) -> (if (it.left?.`val` == it.`val`) lPath + 1 else 0).let { l -> (if (it.right?.`val` == it.`val`) rPath + 1 else 0).let { r -> maxOf(lMax, rMax, l + r) to maxOf(l, r) } } } } } ?: (0 to 0) }(root).first }
 

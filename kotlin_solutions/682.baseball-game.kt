@@ -4,11 +4,5 @@
  * [682] Baseball Game
  */
 
-// @lc code=start
-class Solution {
-    fun calPoints(operations: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun calPoints(operations: Array<String>): Int = operations.fold(mutableListOf<Int>()) { stack, op -> stack.apply { when(op) { "+" -> add(takeLast(2).sum()) "D" -> add(last() * 2) "C" -> removeLastOrNull() else -> add(op.toInt()) } } }.sum() }
 

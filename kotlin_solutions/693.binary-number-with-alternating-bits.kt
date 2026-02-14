@@ -4,11 +4,4 @@
  * [693] Binary Number with Alternating Bits
  */
 
-// @lc code=start
-class Solution {
-    fun hasAlternatingBits(n: Int): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun hasAlternatingBits(n: Int): Boolean = generateSequence(n to -1) { (num, last) -> (num shr 1).let { it to (num and 1) }.takeIf { num > 0 } }.drop(1).all { (num, last) -> (num and 1) != last } }

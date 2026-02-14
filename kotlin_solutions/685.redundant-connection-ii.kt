@@ -4,11 +4,4 @@
  * [685] Redundant Connection II
  */
 
-// @lc code=start
-class Solution {
-    fun findRedundantDirectedConnection(edges: Array<IntArray>): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findRedundantDirectedConnection(edges: Array<IntArray>): IntArray = IntArray(edges.size + 1).let { parent -> edges.asSequence().mapIndexedNotNull { i, (u, v) -> if (parent[v] != 0) i to (intArrayOf(parent[v], v) to intArrayOf(u, v)) else null.also { parent[v] = u } }.firstOrNull() }.let { candidates -> IntArray(edges.size + 1) { it }.also { root -> fun find(node: Int): Int = generateSequence(node) { n -> root[n].takeIf { it != n }?.also { root[n] = root[it] } }.last() }.run { edges.fold(null as IntArray?) { result, (u, v) -> when { result != null -> {result} candidates != null && u == candidates.second.second[0] && v == candidates.second.second[1] -> {null} else -> DeepRecursiveFunction<Int, Int> { node -> if (this@run[node] == node) node else callRecursive(this@run[node].also { this@run[node] = this@run[this@run[node]] }) }.invoke(u).let { pu -> DeepRecursiveFunction<Int, Int> { node -> if (this@run[node] == node) node else callRecursive(this@run[node].also { this@run[node] = this@run[this@run[node]] }) }.invoke(v).let { pv -> if (pu == pv) candidates?.second?.first ?: intArrayOf(u, v) else (null as IntArray?).also { this@run[pu] = pv } } } } } ?: candidates!!.second.second } } }

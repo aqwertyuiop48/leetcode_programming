@@ -4,20 +4,4 @@
  * [690] Employee Importance
  */
 
-// @lc code=start
-/*
- *	// Definition for Employee.
- *	class Employee {
- *		var id:Int = 0
- *		var importance:Int = 0
- *		var subordinates:List<Int> = listOf()
- *	}
- */
-
-class Solution {
-    fun getImportance(employees: List<Employee?>, id: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun getImportance(employees: List<Employee?>, id: Int): Int = employees.filterNotNull().associateBy { it.id }.let { map -> DeepRecursiveFunction<Int, Int> { eid -> map[eid]!!.let { it.importance + it.subordinates.sumOf { callRecursive(it) } } }(id) } }
