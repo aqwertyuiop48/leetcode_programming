@@ -4,11 +4,4 @@
  * [646] Maximum Length of Pair Chain
  */
 
-// @lc code=start
-class Solution {
-    fun findLongestChain(pairs: Array<IntArray>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findLongestChain(pairs: Array<IntArray>): Int = pairs.sortedBy { it[1] }.fold(-1001 to 0) { (lastEnd, cnt), p -> if (p[0] > lastEnd) p[1] to cnt + 1 else lastEnd to cnt }.second }

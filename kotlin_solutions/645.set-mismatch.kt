@@ -4,11 +4,4 @@
  * [645] Set Mismatch
  */
 
-// @lc code=start
-class Solution {
-    fun findErrorNums(nums: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findErrorNums(nums: IntArray): IntArray = nums.groupBy { it }.let { m -> intArrayOf(m.entries.first { it.value.size == 2 }.key, (1..nums.size).first { it !in m }) } }

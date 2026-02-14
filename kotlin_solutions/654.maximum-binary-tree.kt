@@ -4,21 +4,4 @@
  * [654] Maximum Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun constructMaximumBinaryTree(nums: IntArray): TreeNode? {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun constructMaximumBinaryTree(nums: IntArray): TreeNode? = nums.fold(ArrayDeque<TreeNode>()) { stack, num -> stack.apply { when { isEmpty() || num < last().`val` -> addLast(TreeNode(num)) else -> generateSequence(removeLast()) { curr -> if (isNotEmpty() && num > last().`val`) last().apply { right = curr }.let { removeLast() } else null }.last().let { curr -> addLast(TreeNode(num).apply { left = curr }) } } } }.let { stack -> generateSequence(if (stack.isNotEmpty()) stack.removeLast() else null) { curr -> if (stack.isNotEmpty()) stack.removeLast().apply { right = curr } else null }.lastOrNull() } }

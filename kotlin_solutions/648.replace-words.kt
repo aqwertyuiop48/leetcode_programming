@@ -4,11 +4,4 @@
  * [648] Replace Words
  */
 
-// @lc code=start
-class Solution {
-    fun replaceWords(dictionary: List<String>, sentence: String): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun replaceWords(dictionary: List<String>, sentence: String): String = sentence.split(" ").joinToString(" ") { word -> dictionary.filter { word.startsWith(it) }.minByOrNull { it.length } ?: word } }

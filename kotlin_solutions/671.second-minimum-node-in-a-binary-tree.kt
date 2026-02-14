@@ -4,21 +4,5 @@
  * [671] Second Minimum Node In a Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun findSecondMinimumValue(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findSecondMinimumValue(root: TreeNode?): Int = DeepRecursiveFunction<TreeNode?, Set<Int>> { it?.let { setOf(it.`val`) + callRecursive(it.left) + callRecursive(it.right) } ?: emptySet() }(root) .sorted().getOrNull(1) ?: -1 }
 

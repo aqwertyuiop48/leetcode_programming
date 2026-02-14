@@ -4,11 +4,4 @@
  * [647] Palindromic Substrings
  */
 
-// @lc code=start
-class Solution {
-    fun countSubstrings(s: String): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun countSubstrings(s: String): Int = s.indices.sumOf { i -> (0..minOf(i, s.lastIndex - i)).takeWhile { k -> s[i - k] == s[i + k] }.count() + (0..minOf(i, s.lastIndex - i - 1)).takeWhile { k -> s[i - k] == s[i + k + 1] }.count() } }

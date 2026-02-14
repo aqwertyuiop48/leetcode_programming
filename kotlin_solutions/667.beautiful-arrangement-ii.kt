@@ -4,11 +4,5 @@
  * [667] Beautiful Arrangement II
  */
 
-// @lc code=start
-class Solution {
-    fun constructArray(n: Int, k: Int): IntArray {
-        
-    }
-}
-// @lc code=end
+class Solution {fun constructArray(n: Int, k: Int): IntArray =IntArray(n) { i -> if (i <= k) if (i % 2 == 0) i / 2 + 1 else k - i / 2 + 1 else i + 1 }}
 

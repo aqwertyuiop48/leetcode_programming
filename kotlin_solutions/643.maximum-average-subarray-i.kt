@@ -4,11 +4,4 @@
  * [643] Maximum Average Subarray I
  */
 
-// @lc code=start
-class Solution {
-    fun findMaxAverage(nums: IntArray, k: Int): Double {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findMaxAverage(nums: IntArray, k: Int): Double = nums.take(k).sum().toDouble().let { initialSum -> (k until nums.size).fold(initialSum to initialSum) { (sum, maxSum), r -> (sum + nums[r] - nums[r - k]).let { it to maxOf(maxSum, it) } }.second / k } }

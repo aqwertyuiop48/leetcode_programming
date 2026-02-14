@@ -4,24 +4,4 @@
  * [676] Implement Magic Dictionary
  */
 
-// @lc code=start
-class MagicDictionary() {
-
-    fun buildDict(dictionary: Array<String>) {
-        
-    }
-
-    fun search(searchWord: String): Boolean {
-        
-    }
-
-}
-
-/**
- * Your MagicDictionary object will be instantiated and called as such:
- * var obj = MagicDictionary()
- * obj.buildDict(dictionary)
- * var param_2 = obj.search(searchWord)
- */
-// @lc code=end
-
+class MagicDictionary(private var words: List<String> = emptyList()) { fun buildDict(dictionary: Array<String>) = run { words = dictionary.toList() } fun search(searchWord: String): Boolean = words.any { it.length == searchWord.length && it.indices.count { i -> it[i] != searchWord[i] } == 1 } }

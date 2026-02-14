@@ -4,21 +4,4 @@
  * [662] Maximum Width of Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun widthOfBinaryTree(root: TreeNode?): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun widthOfBinaryTree(root: TreeNode?): Int = generateSequence(listOf(root to 0L)) { level -> level.flatMap { (node, pos) -> listOfNotNull(node?.left?.let { it to pos * 2 }, node?.right?.let { it to pos * 2 + 1 }) }.takeIf { it.isNotEmpty() } }.maxOf { (it.last().second - it.first().second + 1).toInt() } }
