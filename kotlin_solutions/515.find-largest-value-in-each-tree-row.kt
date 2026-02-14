@@ -4,21 +4,5 @@
  * [515] Find Largest Value in Each Tree Row
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun largestValues(root: TreeNode?): List<Int> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun largestValues(root: TreeNode?) = root?.let { LinkedList<TreeNode>().apply { offer(it) }.let { q -> mutableListOf<Int>().also { result -> generateSequence { q.takeIf { it.isNotEmpty() } }.forEach { _ -> q.size.let { n -> (0 until n).fold(Int.MIN_VALUE) { levelMax, _ -> q.poll().let { curr -> curr.left?.let { q.offer(it) } .run{curr.right?.let { q.offer(it) }} .run{maxOf(levelMax, curr.`val`)} } }.also { result.add(it) } } } } } } ?: emptyList() }
 

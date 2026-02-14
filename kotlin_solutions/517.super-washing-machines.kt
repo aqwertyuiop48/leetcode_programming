@@ -4,11 +4,5 @@
  * [517] Super Washing Machines
  */
 
-// @lc code=start
-class Solution {
-    fun findMinMoves(machines: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun findMinMoves(machines: IntArray) = machines.sum().let { sum -> machines.size.let { len -> (sum % len).takeIf { it > 0 }?.let { -1 } ?: (sum / len).let { avg -> machines.fold(0 to 0) { (ret, tmp), n -> (n - avg).let { diff -> (tmp + diff).let { newTmp -> maxOf(ret, abs(newTmp), diff) to newTmp } } }.first } } } }
 

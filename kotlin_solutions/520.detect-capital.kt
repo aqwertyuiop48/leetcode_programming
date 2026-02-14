@@ -4,11 +4,5 @@
  * [520] Detect Capital
  */
 
-// @lc code=start
-class Solution {
-    fun detectCapitalUse(word: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution { fun detectCapitalUse(word: String) = word.all { it.isUpperCase() } || word.drop(1).all { it.isLowerCase() } }
 

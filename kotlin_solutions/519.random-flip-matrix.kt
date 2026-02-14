@@ -4,24 +4,4 @@
  * [519] Random Flip Matrix
  */
 
-// @lc code=start
-class Solution(m: Int, n: Int) {
-
-    fun flip(): IntArray {
-        
-    }
-
-    fun reset() {
-        
-    }
-
-}
-
-/**
- * Your Solution object will be instantiated and called as such:
- * var obj = Solution(m, n)
- * var param_1 = obj.flip()
- * obj.reset()
- */
-// @lc code=end
-
+class Solution( private val m: Int, private val n: Int, private var total: Int = m * n, private val map: MutableMap<Int, Int> = mutableMapOf(), private val rand: kotlin.random.Random = kotlin.random.Random.Default ) { fun flip(): IntArray = rand.nextInt(total--).let { r -> map.getOrDefault(r, r) .also { map[r] = map.getOrDefault(total, total) } .run { intArrayOf(this / n, this % n) } } fun reset() = map.clear().also { total = m * n } }
