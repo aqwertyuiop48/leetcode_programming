@@ -4,19 +4,5 @@
  * [732] My Calendar III
  */
 
-// @lc code=start
-class MyCalendarThree() {
-
-    fun book(startTime: Int, endTime: Int): Int {
-        
-    }
-
-}
-
-/**
- * Your MyCalendarThree object will be instantiated and called as such:
- * var obj = MyCalendarThree()
- * var param_1 = obj.book(startTime,endTime)
- */
-// @lc code=end
+class MyCalendarThree(private val map: MutableMap<Int, Int> = mutableMapOf()) { fun book(start: Int, end: Int) = map.apply { put(start, getOrDefault(start, 0) + 1) }.apply { put(end, getOrDefault(end, 0) - 1) }.toSortedMap().values.fold(0 to 0) { (cur, max), delta -> (cur + delta) to maxOf(max, cur + delta) }.second }
 

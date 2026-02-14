@@ -4,11 +4,4 @@
  * [736] Parse Lisp Expression
  */
 
-// @lc code=start
-class Solution {
-    fun evaluate(expression: String): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun evaluate(expression: String): Int = mutableMapOf<String, MutableList<Int>>().let { scope -> DeepRecursiveFunction<String, Int> { expr -> expr.takeIf { it[0] != '(' }?.let { it.toIntOrNull() ?: scope[it]?.lastOrNull() ?: 0 } ?: expr.substring(1, expr.length - 1).let { inner -> generateSequence(0 to mutableListOf<String>()) { (i, tokens) -> (i < inner.length).takeIf { it }?.let { when { inner[i] == ' ' -> {(i + 1) to tokens} inner[i] == '(' -> {generateSequence(i + 1 to 1) { (pos, depth) -> (depth > 0 && pos < inner.length).takeIf { it }?.let { (pos + 1) to when (inner[pos]) { '(' -> {depth + 1} ')' -> {depth - 1} else -> depth } } }.first { (_, depth) -> depth == 0 }.first.let { endPos -> endPos to tokens.apply { add(inner.substring(i, endPos)) } }} else -> generateSequence(i) { pos -> (pos + 1 < inner.length && inner[pos + 1] !in " ()").takeIf { it }?.let { pos + 1 } }.last().let { endPos -> (endPos + 1) to tokens.apply { add(inner.substring(i, endPos + 1)) } } } } }.first { (i, _) -> i >= inner.length }.second.let { tokens -> when (tokens[0]) { "add" -> {callRecursive(tokens[1]) + callRecursive(tokens[2])} "mult" -> {callRecursive(tokens[1]) * callRecursive(tokens[2])} "let" -> {(1 until tokens.size - 1 step 2).fold(mutableListOf<String>()) { vars, j -> vars.apply { add(tokens[j]).run{scope.getOrPut(tokens[j]) { mutableListOf() }.add(callRecursive(tokens[j + 1]))} } }.let { vars -> callRecursive(tokens.last()).also { vars.forEach { v -> scope[v]?.removeLastOrNull() } } }} else -> 0 } } } }(expression) } }

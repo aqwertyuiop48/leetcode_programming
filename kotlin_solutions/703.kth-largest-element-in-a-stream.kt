@@ -4,19 +4,4 @@
  * [703] Kth Largest Element in a Stream
  */
 
-// @lc code=start
-class KthLargest(k: Int, nums: IntArray) {
-
-    fun add(`val`: Int): Int {
-        
-    }
-
-}
-
-/**
- * Your KthLargest object will be instantiated and called as such:
- * var obj = KthLargest(k, nums)
- * var param_1 = obj.add(`val`)
- */
-// @lc code=end
-
+class KthLargest(private val k: Int, nums: IntArray, private val minHeap: PriorityQueue<Int> = PriorityQueue<Int>().apply { nums.forEach { add(it).also { if (size > k) poll() } } }) { fun add(`val`: Int): Int = minHeap.apply { add(`val`).also { if (size > k) poll() } }.peek() }

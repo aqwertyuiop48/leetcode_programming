@@ -4,21 +4,5 @@
  * [701] Insert into a Binary Search Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun insertIntoBST(root: TreeNode?, `val`: Int): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun insertIntoBST(root: TreeNode?, `val`: Int): TreeNode? = root?.apply { if (`val` > this.`val`) right = insertIntoBST(right, `val`) else left = insertIntoBST(left, `val`) } ?: TreeNode(`val`) }
 

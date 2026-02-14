@@ -3,12 +3,4 @@
  *
  * [728] Self Dividing Numbers
  */
-
-// @lc code=start
-class Solution {
-    fun selfDividingNumbers(left: Int, right: Int): List<Int> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun selfDividingNumbers(left: Int, right: Int) = (left..right).filter { n -> n.toString().all { it != '0' && n % it.digitToInt() == 0 } } }

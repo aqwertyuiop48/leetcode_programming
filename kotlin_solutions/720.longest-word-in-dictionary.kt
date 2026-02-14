@@ -4,11 +4,5 @@
  * [720] Longest Word in Dictionary
  */
 
-// @lc code=start
-class Solution {
-    fun longestWord(words: Array<String>): String {
-        
-    }
-}
-// @lc code=end
+class Solution { fun longestWord(words: Array<String>): String = words.toSet().let { set -> words.filter { w -> (1..w.length).all { set.contains(w.take(it)) } } .sortedWith(compareByDescending<String> { it.length }.thenBy { it }) .firstOrNull() ?: "" } }
 

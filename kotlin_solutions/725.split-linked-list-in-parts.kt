@@ -4,20 +4,5 @@
  * [725] Split Linked List in Parts
  */
 
-// @lc code=start
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
-class Solution {
-    fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> = generateSequence(head) { it.next }.count().let { len -> arrayOf(head).let { current -> Array(k) { i -> (len / k + if (i < len % k) 1 else 0).let { size -> current[0].also { (1 until size).fold(current[0]) { node, _ -> node?.next }?.apply { current[0] = next.also { next = null } } } } } } } }
 

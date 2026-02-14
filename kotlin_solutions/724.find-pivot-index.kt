@@ -4,11 +4,4 @@
  * [724] Find Pivot Index
  */
 
-// @lc code=start
-class Solution {
-    fun pivotIndex(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun pivotIndex(nums: IntArray): Int = nums.sum().let { total -> nums.indices.fold(0) { left, i -> if (left == total - left - nums[i]) return i else left + nums[i] }.let { -1 }} }

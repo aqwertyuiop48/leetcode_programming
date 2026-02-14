@@ -4,11 +4,4 @@
  * [717] 1-bit and 2-bit Characters
  */
 
-// @lc code=start
-class Solution {
-    fun isOneBitCharacter(bits: IntArray): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun isOneBitCharacter(bits: IntArray): Boolean = generateSequence(0) { i -> if (i < bits.lastIndex) if (bits[i] == 1) i + 2 else i + 1 else null }.last() == bits.lastIndex }

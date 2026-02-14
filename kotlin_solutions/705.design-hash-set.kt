@@ -4,29 +4,4 @@
  * [705] Design HashSet
  */
 
-// @lc code=start
-class MyHashSet() {
-
-    fun add(key: Int) {
-        
-    }
-
-    fun remove(key: Int) {
-        
-    }
-
-    fun contains(key: Int): Boolean {
-        
-    }
-
-}
-
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * var obj = MyHashSet()
- * obj.add(key)
- * obj.remove(key)
- * var param_3 = obj.contains(key)
- */
-// @lc code=end
-
+class MyHashSet(private val buckets: Array<MutableList<Int>> = Array(1000) { mutableListOf<Int>() }) { fun add(key: Int) = buckets[key % 1000].apply { if (key !in this) add(key) }.let { } fun remove(key: Int) = buckets[key % 1000].remove(key).let { } fun contains(key: Int): Boolean = key in buckets[key % 1000] }

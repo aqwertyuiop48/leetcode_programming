@@ -4,19 +4,4 @@
  * [729] My Calendar I
  */
 
-// @lc code=start
-class MyCalendar() {
-
-    fun book(startTime: Int, endTime: Int): Boolean {
-        
-    }
-
-}
-
-/**
- * Your MyCalendar object will be instantiated and called as such:
- * var obj = MyCalendar()
- * var param_1 = obj.book(startTime,endTime)
- */
-// @lc code=end
-
+class MyCalendar(private val events: MutableList<Pair<Int, Int>> = mutableListOf()) { fun book(start: Int, end: Int) = events.none { (s, e) -> maxOf(start, s) < minOf(end, e) }.also { if (it) events.add(start to end) } }

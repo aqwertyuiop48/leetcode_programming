@@ -4,11 +4,4 @@
  * [709] To Lower Case
  */
 
-// @lc code=start
-class Solution {
-    fun toLowerCase(s: String): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun toLowerCase(s: String): String = s.map { if (it in 'A'..'Z') it + 32 else it }.joinToString("")}
