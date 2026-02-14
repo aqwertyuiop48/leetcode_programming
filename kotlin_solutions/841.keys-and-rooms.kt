@@ -4,11 +4,5 @@
  * [841] Keys and Rooms
  */
 
-// @lc code=start
-class Solution {
-    fun canVisitAllRooms(rooms: List<List<Int>>): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution { fun canVisitAllRooms(rooms: List<List<Int>>): Boolean = rooms.size.let { n -> BooleanArray(n) { false }.let { used -> DeepRecursiveFunction<Int, Unit> { room -> used[room].takeIf { !it }?.let { used[room] = true }?.let { _ -> rooms[room].forEach { next -> callRecursive(next) } } }.invoke(0).let { _ -> used.all { it } } } } }
 

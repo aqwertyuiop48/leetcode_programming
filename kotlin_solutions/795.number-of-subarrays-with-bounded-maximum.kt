@@ -4,11 +4,4 @@
  * [795] Number of Subarrays with Bounded Maximum
  */
 
-// @lc code=start
-class Solution {
-    fun numSubarrayBoundedMax(nums: IntArray, left: Int, right: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun numSubarrayBoundedMax(nums: IntArray, left: Int, right: Int): Int = nums.indices.fold(Triple(0, -1, -1)) { (count, lastValid, lastInvalid), i -> when { nums[i] in left..right -> {Triple(count + i - lastInvalid, i, lastInvalid)} nums[i] < left -> {Triple(count + maxOf(lastValid - lastInvalid, 0), lastValid, lastInvalid)} else -> Triple(count, lastValid, i) } }.first }

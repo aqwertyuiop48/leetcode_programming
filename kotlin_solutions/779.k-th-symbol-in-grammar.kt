@@ -4,11 +4,4 @@
  * [779] K-th Symbol in Grammar
  */
 
-// @lc code=start
-class Solution {
-    fun kthGrammar(n: Int, k: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun kthGrammar(n: Int, k: Int): Int = (k - 1).let { it.countOneBits() and 1 }}

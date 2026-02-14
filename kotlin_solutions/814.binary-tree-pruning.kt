@@ -4,21 +4,4 @@
  * [814] Binary Tree Pruning
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun pruneTree(root: TreeNode?): TreeNode? {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun pruneTree(root: TreeNode?): TreeNode? = root?.let { node -> node.apply { left = pruneTree(left).also{right = pruneTree(right)} } .takeIf { it.left != null || it.right != null || it.`val` != 0 } }}

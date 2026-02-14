@@ -4,11 +4,4 @@
  * [810] Chalkboard XOR Game
  */
 
-// @lc code=start
-class Solution {
-    fun xorGame(nums: IntArray): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun xorGame(nums: IntArray): Boolean { return nums.reduce { x, y -> x xor y } == 0 || (nums.size and 1 == 0) } }

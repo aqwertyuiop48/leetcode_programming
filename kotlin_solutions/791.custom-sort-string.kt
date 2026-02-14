@@ -4,11 +4,4 @@
  * [791] Custom Sort String
  */
 
-// @lc code=start
-class Solution {
-    fun customSortString(order: String, s: String): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun customSortString(order: String, s: String): String = order.withIndex().associate { it.value to it.index }.let { orderMap -> s.toList().sortedWith(compareBy { orderMap.getOrElse(it) { order.length + s.indexOf(it) } }).joinToString("") } }

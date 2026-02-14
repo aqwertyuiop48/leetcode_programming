@@ -4,11 +4,4 @@
  * [771] Jewels and Stones
  */
 
-// @lc code=start
-class Solution {
-    fun numJewelsInStones(jewels: String, stones: String): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun numJewelsInStones(jewels: String, stones: String): Int = jewels.toSet().let { j -> stones.count { it in j } } }

@@ -4,11 +4,5 @@
  * [781] Rabbits in Forest
  */
 
-// @lc code=start
-class Solution {
-    fun numRabbits(answers: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun numRabbits(answers: IntArray): Int = answers.toList().groupingBy { it }.eachCount().entries.sumOf { (k, v) -> (v + k) / (k + 1) * (k + 1) } }
 

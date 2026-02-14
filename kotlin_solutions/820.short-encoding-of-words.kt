@@ -4,11 +4,4 @@
  * [820] Short Encoding of Words
  */
 
-// @lc code=start
-class Solution {
-    fun minimumLengthEncoding(words: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun minimumLengthEncoding(words: Array<String>): Int = words.distinct().sortedByDescending { it.length }.fold(mutableSetOf<String>()) { set, word -> set.apply { if (none { it.endsWith(word) }) add(word) } }.sumOf { it.length + 1 } }

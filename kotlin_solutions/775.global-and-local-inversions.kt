@@ -4,11 +4,4 @@
  * [775] Global and Local Inversions
  */
 
-// @lc code=start
-class Solution {
-    fun isIdealPermutation(nums: IntArray): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun isIdealPermutation(A: IntArray): Boolean = A.withIndex().all { (i, v) -> (i - v) in -1..1 } }

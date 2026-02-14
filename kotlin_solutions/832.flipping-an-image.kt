@@ -4,11 +4,4 @@
  * [832] Flipping an Image
  */
 
-// @lc code=start
-class Solution {
-    fun flipAndInvertImage(image: Array<IntArray>): Array<IntArray> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun flipAndInvertImage(image: Array<IntArray>): Array<IntArray> = image.apply { forEach { row -> row.reverse().also{row.indices.forEach { row[it] = 1 - row[it] }} } } }

@@ -4,11 +4,4 @@
  * [766] Toeplitz Matrix
  */
 
-// @lc code=start
-class Solution {
-    fun isToeplitzMatrix(matrix: Array<IntArray>): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun isToeplitzMatrix(matrix: Array<IntArray>) = matrix.indices.all { i -> matrix[0].indices.all { j -> i == 0 || j == 0 || matrix[i][j] == matrix[i-1][j-1] } }}

@@ -4,11 +4,4 @@
  * [826] Most Profit Assigning Work
  */
 
-// @lc code=start
-class Solution {
-    fun maxProfitAssignment(difficulty: IntArray, profit: IntArray, worker: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun maxProfitAssignment(difficulties: IntArray, profits: IntArray, workers: IntArray): Int = difficulties.zip(profits).sortedBy { it.first }.let { jobs -> jobs.fold(mutableListOf<Pair<Int, Int>>()) { acc, (d, p) -> acc.apply { add(d to maxOf(p, acc.lastOrNull()?.second ?: 0)) } }.let { maxJobs -> workers.sumOf { worker -> maxJobs.lastOrNull { it.first <= worker }?.second ?: 0 } } }}

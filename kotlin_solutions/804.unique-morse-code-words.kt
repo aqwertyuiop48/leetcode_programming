@@ -4,11 +4,4 @@
  * [804] Unique Morse Code Words
  */
 
-// @lc code=start
-class Solution {
-    fun uniqueMorseRepresentations(words: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun uniqueMorseRepresentations(words: Array<String>): Int = arrayOf(".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..").let { m -> words.map { w -> w.map { m[it - 'a'] }.joinToString("") }.toSet().size } }

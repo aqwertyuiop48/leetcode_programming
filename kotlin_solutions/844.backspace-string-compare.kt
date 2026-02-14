@@ -4,11 +4,5 @@
  * [844] Backspace String Compare
  */
 
-// @lc code=start
-class Solution {
-    fun backspaceCompare(s: String, t: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution { fun backspaceCompare(s: String, t: String): Boolean = s.fold(mutableListOf<Char>()) { acc, c -> acc.apply { if (c == '#') { if (isNotEmpty()) removeAt(lastIndex) } else add(c) } }.let { sProcessed -> t.fold(mutableListOf<Char>()) { acc, c -> acc.apply { if (c == '#') { if (isNotEmpty()) removeAt(lastIndex) } else add(c) } }.let { tProcessed -> sProcessed == tProcessed } } }
 

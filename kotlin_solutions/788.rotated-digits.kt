@@ -4,11 +4,5 @@
  * [788] Rotated Digits
  */
 
-// @lc code=start
-class Solution {
-    fun rotatedDigits(n: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun rotatedDigits(n: Int): Int = (1..n).count { num -> num.toString().let { s -> s.none { it in "347" } && s.any { it in "2569" } } } }
 

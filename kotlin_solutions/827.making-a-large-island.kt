@@ -4,11 +4,4 @@
  * [827] Making A Large Island
  */
 
-// @lc code=start
-class Solution {
-    fun largestIsland(grid: Array<IntArray>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun largestIsland(grid: Array<IntArray>): Int? = grid.takeIf { it.isNotEmpty() }?.let { g -> g.size.let { R -> g[0].size.let { C -> IntArray(R * C) { it }.let { parent -> IntArray(R * C) { 1 }.let { size -> DeepRecursiveFunction<Int, Int> { x -> if (parent[x] == x) x else callRecursive(parent[x]).also { parent[x] = it } }.let { find -> { a: Int, b: Int -> find.invoke(a).let { rA -> find.invoke(b).let { rB -> if (rA != rB) (if (size[rA] >= size[rB]) rA to rB else rB to rA).let { (big, small) -> size.apply { this[big] += this[small] }.run { parent[small] = big } } else Unit } } }.let { union -> g.indices.flatMap { r -> g[r].indices.filter { c -> g[r][c] == 1 }.map { c -> r to c } }.onEach { (r, c) -> listOf(0 to 1, 0 to -1, 1 to 0, -1 to 0).map { (dr, dc) -> r + dr to c + dc }.filter { (nr, nc) -> nr in 0 until R && nc in 0 until C && g[nr][nc] == 1 }.forEach { (nr, nc) -> union(r * C + c, nr * C + nc) } }.let { maxOf(size.maxOrNull() ?: 1, g.indices.flatMap { r -> g[r].indices.filter { c -> g[r][c] == 0 }.map { c -> r to c } }.maxOfOrNull { (r, c) -> listOf(0 to 1, 0 to -1, 1 to 0, -1 to 0).map { (dr, dc) -> r + dr to c + dc }.filter { (nr, nc) -> nr in 0 until R && nc in 0 until C && g[nr][nc] == 1 }.map { (nr, nc) -> find.invoke(nr * C + nc) }.distinct().sumOf { size[it] } + 1 } ?: 0) } } } } } } } ?: 0}}

@@ -4,11 +4,4 @@
  * [822] Card Flipping Game
  */
 
-// @lc code=start
-class Solution {
-    fun flipgame(fronts: IntArray, backs: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun flipgame(fronts: IntArray, backs: IntArray): Int = fronts.indices.map { fronts[it] to backs[it] }.let { pairs -> pairs.filter { it.first == it.second }.map { it.first }.toSet().let { invalid -> (fronts.toSet() + backs.toSet()).filterNot { it in invalid }.minOrNull() ?: 0 } } }

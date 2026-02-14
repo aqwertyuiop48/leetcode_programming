@@ -4,11 +4,4 @@
  * [792] Number of Matching Subsequences
  */
 
-// @lc code=start
-class Solution {
-    fun numMatchingSubseq(s: String, words: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun numMatchingSubseq(s: String, words: Array<String>): Int = words.count { word -> word.fold(0) { sIndex, char -> s.indexOf(char, sIndex).takeIf { it >= 0 }?.plus(1) ?: return@count false }.let { true } } }

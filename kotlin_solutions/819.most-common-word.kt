@@ -4,11 +4,4 @@
  * [819] Most Common Word
  */
 
-// @lc code=start
-class Solution {
-    fun mostCommonWord(paragraph: String, banned: Array<String>): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun mostCommonWord(paragraph: String, banned: Array<String>): String = banned.toSet().let { b -> paragraph.lowercase().split(Regex("\\W+")).filter { it.isNotEmpty() && it !in b }.groupingBy { it }.eachCount().maxByOrNull { it.value }!!.key } }

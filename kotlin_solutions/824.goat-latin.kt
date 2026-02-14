@@ -4,11 +4,4 @@
  * [824] Goat Latin
  */
 
-// @lc code=start
-class Solution {
-    fun toGoatLatin(sentence: String): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun toGoatLatin(sentence: String): String = sentence.split(" ").mapIndexed { i, w -> (if (w[0].lowercaseChar() in "aeiou") w else w.drop(1) + w[0]) + "ma" + "a".repeat(i + 1) }.joinToString(" ") }

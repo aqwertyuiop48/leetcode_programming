@@ -4,11 +4,4 @@
  * [848] Shifting Letters
  */
 
-// @lc code=start
-class Solution {
-    fun shiftingLetters(s: String, shifts: IntArray): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun shiftingLetters(str: String, shifts: IntArray): String = str.toCharArray().let { chars -> chars.indices.reversed().fold(0) { c, i -> (c + shifts[i]).let { newC -> (newC % 26).also { finalC -> chars[i] = ((chars[i] - 'a' + finalC) % 26 + 'a'.code).toChar() } } }.let { String(chars) } } }
