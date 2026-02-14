@@ -4,18 +4,5 @@
  * [863] All Nodes Distance K in Binary Tree
  */
 
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int = 0) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun distanceK(root: TreeNode?, target: TreeNode?, k: Int): List<Int> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun distanceK(root: TreeNode?, target: TreeNode?, k: Int) = { graph: MutableMap<Int, MutableList<Int>> -> DeepRecursiveFunction<TreeNode?, Unit> { node -> node?.also { n -> n.left?.also { leftNode -> graph.getOrPut(n.`val`) { mutableListOf() }.add(leftNode.`val`).run { graph.getOrPut(leftNode.`val`) { mutableListOf() }.add(n.`val`) }.run { callRecursive(leftNode) } } .run{n.right?.also { rightNode -> graph.getOrPut(n.`val`) { mutableListOf() }.add(rightNode.`val`).run { graph.getOrPut(rightNode.`val`) { mutableListOf() }.add(n.`val`) }.run { callRecursive(rightNode) } }} } }(root).run { generateSequence(listOf(target!!.`val`) to setOf(target.`val`)) { (curr, vis) -> curr.flatMap { graph[it].orEmpty() }.filter { it !in vis }.takeIf { it.isNotEmpty() }?.run { this to (vis + this) } }.drop(k).firstOrNull()?.first.orEmpty() } }(mutableMapOf()) }
 
