@@ -4,11 +4,4 @@
  * [2553] Separate the Digits in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun separateDigits(nums: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun separateDigits(n: IntArray) = n.joinToString("").map { it-'0' }}

@@ -4,11 +4,4 @@
  * [3721] Longest Balanced Subarray II
  */
 
-// @lc code=start
-class Solution {
-    fun longestBalanced(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { class SegTree(val n: Int, val mint: IntArray = IntArray(4 * n), val maxt: IntArray = IntArray(4 * n), val lazy: IntArray = IntArray(4 * n)) { fun push(node: Int, st: Int, end: Int): Unit = if (lazy[node] != 0) lazy[node].let { lazyVal -> Unit.also { mint[node] = mint[node] + lazyVal }.also { maxt[node] = maxt[node] + lazyVal }.also { if (st != end) Unit.also { lazy[2 * node + 1] = lazy[2 * node + 1] + lazyVal }.also { lazy[2 * node + 2] = lazy[2 * node + 2] + lazyVal } }.also { lazy[node] = 0 } } else Unit fun updateRange(node: Int, l: Int, r: Int, ql: Int, qr: Int, `val`: Int): Unit = push(node, l, r).run { if (l > qr || r < ql) Unit else if (l >= ql && r <= qr) Unit.also { lazy[node] = lazy[node] + `val` }.run { push(node, l, r) } else ((l + r) / 2).let { mid -> updateRange(2 * node + 1, l, mid, ql, qr, `val`).run { updateRange(2 * node + 2, mid + 1, r, ql, qr, `val`) }.run { mint[node] = minOf(mint[2 * node + 1], mint[2 * node + 2]).also { maxt[node] = maxOf(maxt[2 * node + 1], maxt[2 * node + 2]) } } } } fun leftmostz(node: Int, l: Int, r: Int): Int = push(node, l, r).run { if (mint[node] > 0 || maxt[node] < 0) -1 else if (l == r) if (mint[node] == 0) l else -1 else ((l + r) / 2).let { mid -> leftmostz(2 * node + 1, l, mid).let { left -> if (left != -1) left else leftmostz(2 * node + 2, mid + 1, r) } } } } fun longestBalanced(nums: IntArray) = if (nums.isEmpty()) 0 else nums.indices.fold(Triple(SegTree(nums.size), 0, mutableMapOf<Int, Int>())) { (seg, maxl, seen), i -> (if (nums[i] and 1 == 0) 1 else -1).let { `val` -> seen[nums[i]]?.let { seg.updateRange(0, 0, nums.size - 1, 0, it, -`val`) }.run { seg.updateRange(0, 0, nums.size - 1, 0, i, `val`) }.run { seen[nums[i]] = i }.run { seg.leftmostz(0, 0, nums.size - 1) }.let { zidx -> Triple(seg, if (zidx != -1 && zidx <= i) maxOf(maxl, i - zidx + 1) else maxl, seen) } } }.second }

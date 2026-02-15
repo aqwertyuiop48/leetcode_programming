@@ -4,11 +4,5 @@
  * [2578] Split With Minimum Sum
  */
 
-// @lc code=start
-class Solution {
-    fun splitNum(num: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun splitNum(num: Int) = num.toString().toList().sorted().joinToString("").let { sorted -> sorted.filterIndexed { i, _ -> i % 2 == 0 }.toInt() + sorted.filterIndexed { i, _ -> i % 2 != 0 }.toInt() }}
 

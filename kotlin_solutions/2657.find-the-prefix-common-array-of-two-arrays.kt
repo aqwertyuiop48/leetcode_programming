@@ -4,11 +4,4 @@
  * [2657] Find the Prefix Common Array of Two Arrays
  */
 
-// @lc code=start
-class Solution {
-    fun findThePrefixCommonArray(A: IntArray, B: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun findThePrefixCommonArray(A: IntArray, B: IntArray) = A.indices.map { i -> A.take(i + 1).toSet().intersect(B.take(i + 1).toSet()).size }.toIntArray()}

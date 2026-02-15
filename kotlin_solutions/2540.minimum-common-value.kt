@@ -4,11 +4,4 @@
  * [2540] Minimum Common Value
  */
 
-// @lc code=start
-class Solution {
-    fun getCommon(nums1: IntArray, nums2: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun getCommon(nums1: IntArray, nums2: IntArray) = nums1.toSet().intersect(nums2.toSet()).minOrNull() ?: -1}

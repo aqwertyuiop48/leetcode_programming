@@ -4,11 +4,5 @@
  * [2545] Sort the Students by Their Kth Score
  */
 
-// @lc code=start
-class Solution {
-    fun sortTheStudents(score: Array<IntArray>, k: Int): Array<IntArray> {
-        
-    }
-}
-// @lc code=end
+class Solution {fun sortTheStudents(score: Array<IntArray>, k: Int) = score.sortedByDescending { it[k] }.toTypedArray()}
 

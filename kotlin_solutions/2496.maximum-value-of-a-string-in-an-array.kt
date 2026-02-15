@@ -4,11 +4,5 @@
  * [2496] Maximum Value of a String in an Array
  */
 
-// @lc code=start
-class Solution {
-    fun maximumValue(strs: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun maximumValue(strs: Array<String>) = strs.maxOf { it.toIntOrNull() ?: it.length }}
 

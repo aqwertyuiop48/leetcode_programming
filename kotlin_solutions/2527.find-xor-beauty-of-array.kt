@@ -4,11 +4,4 @@
  * [2527] Find Xor-Beauty of Array
  */
 
-// @lc code=start
-class Solution {
-    fun xorBeauty(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun xorBeauty(nums: IntArray) = nums.reduce { acc, num -> acc xor num }}

@@ -4,11 +4,4 @@
  * [2535] Difference Between Element Sum and Digit Sum of an Array
  */
 
-// @lc code=start
-class Solution {
-    fun differenceOfSum(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun differenceOfSum(nums: IntArray): Int = nums.sumOf{ number -> abs( number - number.toString().sumOf { it - '0' }) } }

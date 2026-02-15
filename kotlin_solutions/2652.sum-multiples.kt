@@ -4,11 +4,4 @@
  * [2652] Sum Multiples
  */
 
-// @lc code=start
-class Solution {
-    fun sumOfMultiples(n: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun sumOfMultiples(n: Int) = (3..n).filter { it % 3 == 0 || it % 5 == 0 || it % 7 == 0 }.sum()}

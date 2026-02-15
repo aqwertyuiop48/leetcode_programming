@@ -4,11 +4,4 @@
  * [2587] Rearrange Array to Maximize Prefix Score
  */
 
-// @lc code=start
-class Solution {
-    fun maxScore(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun maxScore(nums: IntArray) = nums.sortedDescending().fold(0L to 0) { (sum, count), num -> (sum + num).let { newSum -> newSum to if (newSum > 0) count + 1 else count } }.second}

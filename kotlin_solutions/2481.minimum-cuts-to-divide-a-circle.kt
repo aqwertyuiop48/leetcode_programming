@@ -4,11 +4,4 @@
  * [2481] Minimum Cuts to Divide a Circle
  */
 
-// @lc code=start
-class Solution {
-    fun numberOfCuts(n: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun numberOfCuts(n: Int): Int =if (n == 1) 0 else if (n % 2 == 0) n / 2 else n}

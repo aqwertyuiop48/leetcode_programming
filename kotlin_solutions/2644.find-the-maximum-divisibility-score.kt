@@ -4,11 +4,4 @@
  * [2644] Find the Maximum Divisibility Score
  */
 
-// @lc code=start
-class Solution {
-    fun maxDivScore(nums: IntArray, divisors: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun maxDivScore(nums: IntArray, divisors: IntArray) = divisors.sorted().map { div -> nums.count { it % div == 0 } }.let { counts -> divisors.sorted()[counts.indexOf(counts.maxOrNull())] }}

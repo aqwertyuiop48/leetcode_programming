@@ -4,11 +4,4 @@
  * [2582] Pass the Pillow
  */
 
-// @lc code=start
-class Solution {
-    fun passThePillow(n: Int, time: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun passThePillow(n: Int, time: Int): Int {return if(time/(n-1)%2 == 0) 1+time%(n-1) else n-time%(n-1)}}

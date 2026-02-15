@@ -4,11 +4,4 @@
  * [2520] Count the Digits That Divide a Number
  */
 
-// @lc code=start
-class Solution {
-    fun countDigits(num: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun countDigits(num: Int) = num.toString().count { num % it.digitToInt() == 0 }}

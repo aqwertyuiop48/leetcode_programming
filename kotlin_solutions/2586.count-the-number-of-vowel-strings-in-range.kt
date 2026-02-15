@@ -4,11 +4,5 @@
  * [2586] Count the Number of Vowel Strings in Range
  */
 
-// @lc code=start
-class Solution {
-    fun vowelStrings(words: Array<String>, left: Int, right: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun vowelStrings(words: Array<String>, left: Int, right: Int) = words.slice(left..right).count { it.first() in "aeiou" && it.last() in "aeiou" }}
 

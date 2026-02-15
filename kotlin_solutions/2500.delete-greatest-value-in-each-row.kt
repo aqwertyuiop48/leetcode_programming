@@ -4,11 +4,5 @@
  * [2500] Delete Greatest Value in Each Row
  */
 
-// @lc code=start
-class Solution {
-    fun deleteGreatestValue(grid: Array<IntArray>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun deleteGreatestValue(grid: Array<IntArray>) = grid.onEach { it.sort() }.let { g -> (0 until g[0].size).sumOf { j -> g.maxOf { it[j] } } }}
 

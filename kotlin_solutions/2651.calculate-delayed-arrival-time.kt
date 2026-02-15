@@ -4,11 +4,4 @@
  * [2651] Calculate Delayed Arrival Time
  */
 
-// @lc code=start
-class Solution {
-    fun findDelayedArrivalTime(arrivalTime: Int, delayedTime: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun findDelayedArrivalTime(arrivalTime: Int, delayedTime: Int): Int { return (arrivalTime + delayedTime)%24 } }

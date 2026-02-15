@@ -4,11 +4,4 @@
  * [2595] Number of Even and Odd Bits
  */
 
-// @lc code=start
-class Solution {
-    fun evenOddBit(n: Int): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun evenOddBit(n: Int) = intArrayOf(n.and(0b0101010101).countOneBits(), n.and(0b1010101010).countOneBits())}

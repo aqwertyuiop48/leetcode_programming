@@ -4,11 +4,5 @@
  * [2506] Count Pairs Of Similar Strings
  */
 
-// @lc code=start
-class Solution {
-    fun similarPairs(words: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun similarPairs(words: Array<String>) = words.map { it.toSet().sorted().joinToString("") }.groupingBy { it }.eachCount().values.sumOf { it * (it - 1) / 2 }}
 

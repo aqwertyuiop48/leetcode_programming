@@ -4,11 +4,5 @@
  * [2544] Alternating Digit Sum
  */
 
-// @lc code=start
-class Solution {
-    fun alternateDigitSum(n: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution {fun alternateDigitSum(n: Int) = n.toString().mapIndexed { i, c -> c.digitToInt() * if (i % 2 == 0) 1 else -1 }.sum()}
 

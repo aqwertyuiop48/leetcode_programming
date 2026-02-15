@@ -4,21 +4,5 @@
  * [2583] Kth Largest Sum in a Binary Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun kthLargestLevelSum(root: TreeNode?, k: Int): Long {
-        
-    }
-}
-// @lc code=end
+class Solution {fun kthLargestLevelSum(root: TreeNode?, k: Int) = root?.let { generateSequence(listOf(it)) { level -> level.flatMap { listOfNotNull(it.left, it.right) }.takeIf { it.isNotEmpty() } }.map { level -> level.sumOf { it.`val`.toLong() } }.sortedDescending().elementAtOrNull(k - 1) ?: -1L } ?: 0L}
 

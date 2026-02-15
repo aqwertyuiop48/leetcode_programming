@@ -4,11 +4,5 @@
  * [2490] Circular Sentence
  */
 
-// @lc code=start
-class Solution {
-    fun isCircularSentence(sentence: String): Boolean {
-        
-    }
-}
-// @lc code=end
+class Solution {fun isCircularSentence(sentence: String) = sentence.split(" ").let { it.zipWithNext().all { (a, b) -> a.last() == b.first() } && it.first().first() == it.last().last() }}
 

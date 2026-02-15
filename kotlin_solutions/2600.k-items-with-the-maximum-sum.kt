@@ -4,11 +4,4 @@
  * [2600] K Items With the Maximum Sum
  */
 
-// @lc code=start
-class Solution {
-    fun kItemsWithMaximumSum(numOnes: Int, numZeros: Int, numNegOnes: Int, k: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun kItemsWithMaximumSum(numOnes: Int, numZeros: Int, numNegOnes: Int, k: Int) = if (k <= numOnes) k else if (k <= numOnes + numZeros) numOnes else numOnes - minOf(k - numOnes - numZeros, numNegOnes)}

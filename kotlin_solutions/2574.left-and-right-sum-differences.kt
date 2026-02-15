@@ -4,11 +4,5 @@
  * [2574] Left and Right Sum Differences
  */
 
-// @lc code=start
-class Solution {
-    fun leftRightDifference(nums: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
+class Solution {fun leftRightDifference(nums: IntArray) = nums.indices.map { i -> Math.abs(nums.take(i).sum() - nums.drop(i + 1).sum()) }.toIntArray()}
 

@@ -4,11 +4,4 @@
  * [2562] Find the Array Concatenation Value
  */
 
-// @lc code=start
-class Solution {
-    fun findTheArrayConcVal(nums: IntArray): Long {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun findTheArrayConcVal(nums: IntArray) = generateSequence(Triple(0, nums.size - 1, 0L)) { (l, r, con) -> if (l > r) null else Triple(l + 1, r - 1, con + (if (l == r) nums[l].toString() else nums[l].toString() + nums[r].toString()).toInt()) }.last().third}

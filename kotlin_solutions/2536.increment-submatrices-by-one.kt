@@ -4,11 +4,4 @@
  * [2536] Increment Submatrices by One
  */
 
-// @lc code=start
-class Solution {
-    fun rangeAddQueries(n: Int, queries: Array<IntArray>): Array<IntArray> {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun rangeAddQueries(n: Int, queries: Array<IntArray>) = Array(n) { IntArray(n) }.also { matrix -> queries.forEach { q -> (q[0]..q[2]).forEach { j -> (q[1]..q[3]).forEach { k -> matrix[j][k]++ } } } }}

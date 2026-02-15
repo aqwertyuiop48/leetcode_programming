@@ -4,11 +4,4 @@
  * [2656] Maximum Sum With Exactly K Elements 
  */
 
-// @lc code=start
-class Solution {
-    fun maximizeSum(nums: IntArray, k: Int): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun maximizeSum(nums: IntArray, k: Int) = nums.maxOrNull()?.let { it * k + k * (k - 1) / 2 } ?: 0}
