@@ -4,21 +4,5 @@
  * [865] Smallest Subtree with all the Deepest Nodes
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun subtreeWithAllDeepest(root: TreeNode?): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun subtreeWithAllDeepest(root: TreeNode?) = DeepRecursiveFunction<TreeNode?, Pair<TreeNode?, Int>> { node -> node?.let { callRecursive(it.left).let { l -> callRecursive(it.right).let { r -> when { l.second > r.second ->{l} r.second > l.second -> {r} else -> node to l.second }.let { it.first to it.second + 1 } } } } ?: (null to 0) }(root).first }
 

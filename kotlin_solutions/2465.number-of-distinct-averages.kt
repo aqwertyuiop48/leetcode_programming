@@ -4,11 +4,4 @@
  * [2465] Number of Distinct Averages
  */
 
-// @lc code=start
-class Solution {
-    fun distinctAverages(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun distinctAverages(nums: IntArray): Int = nums.sorted().let { s -> s.indices.take(s.size / 2).map { (s[it] + s[s.lastIndex - it]) / 2.0 }.distinct().size } }

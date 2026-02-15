@@ -4,11 +4,4 @@
  * [2469] Convert the Temperature
  */
 
-// @lc code=start
-class Solution {
-    fun convertTemperature(celsius: Double): DoubleArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun convertTemperature(celsius: Double): DoubleArray = doubleArrayOf(celsius + 273.15, celsius * 1.80 + 32.00)}

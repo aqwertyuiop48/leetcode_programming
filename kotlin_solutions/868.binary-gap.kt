@@ -4,11 +4,5 @@
  * [868] Binary Gap
  */
 
-// @lc code=start
-class Solution {
-    fun binaryGap(n: Int): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun binaryGap(n: Int) = n.toString(2).mapIndexedNotNull { i, c -> i.takeIf { c == '1' } }.zipWithNext { a, b -> b - a }.maxOrNull() ?: 0 }
 

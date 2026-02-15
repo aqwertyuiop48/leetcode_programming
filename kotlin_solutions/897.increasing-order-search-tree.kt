@@ -4,21 +4,5 @@
  * [897] Increasing Order Search Tree
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun increasingBST(root: TreeNode?): TreeNode? {
-        
-    }
-}
-// @lc code=end
+class Solution { fun increasingBST(root: TreeNode?, tail: TreeNode? = null): TreeNode? = root?.let { increasingBST(it.left, TreeNode(it.`val`).apply { right = increasingBST(it.right, tail) }) } ?: tail }
 

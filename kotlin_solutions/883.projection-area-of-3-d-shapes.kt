@@ -4,11 +4,4 @@
  * [883] Projection Area of 3D Shapes
  */
 
-// @lc code=start
-class Solution {
-    fun projectionArea(grid: Array<IntArray>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun projectionArea(grid: Array<IntArray>) = grid.sumOf { it.count { v -> v > 0 } } + grid.sumOf { it.max()!! } + grid[0].indices.sumOf { c -> grid.maxOf { it[c] } } }

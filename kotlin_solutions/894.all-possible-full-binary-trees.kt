@@ -4,21 +4,5 @@
  * [894] All Possible Full Binary Trees
  */
 
-// @lc code=start
-/**
- * Example:
- * var ti = TreeNode(5)
- * var v = ti.`val`
- * Definition for a binary tree node.
- * class TreeNode(var `val`: Int) {
- *     var left: TreeNode? = null
- *     var right: TreeNode? = null
- * }
- */
-class Solution {
-    fun allPossibleFBT(n: Int): List<TreeNode?> {
-        
-    }
-}
-// @lc code=end
+class Solution { fun allPossibleFBT(n: Int) = { memo: MutableMap<Int, List<TreeNode?>> -> DeepRecursiveFunction<Int, List<TreeNode?>> { num -> if (num % 2 == 0) emptyList() else if (num == 1) listOf(TreeNode(0)) else memo.getOrPut(num) { (1 until num step 2).flatMap { leftSize -> callRecursive(leftSize).flatMap { l -> callRecursive(num - 1 - leftSize).map { r -> TreeNode(0).apply { left = l.also{right = r }} } } } } }(n) }(mutableMapOf()) }
 

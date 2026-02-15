@@ -4,11 +4,4 @@
  * [888] Fair Candy Swap
  */
 
-// @lc code=start
-class Solution {
-    fun fairCandySwap(aliceSizes: IntArray, bobSizes: IntArray): IntArray {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun fairCandySwap(aliceSizes: IntArray, bobSizes: IntArray) = ((aliceSizes.sum() - bobSizes.sum()) / 2).let { diff -> bobSizes.toSet().let { bobSet -> aliceSizes.first { it - diff in bobSet }.let { intArrayOf(it, it - diff) } } } }

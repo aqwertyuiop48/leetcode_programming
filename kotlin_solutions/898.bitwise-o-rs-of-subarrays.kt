@@ -4,11 +4,4 @@
  * [898] Bitwise ORs of Subarrays
  */
 
-// @lc code=start
-class Solution {
-    fun subarrayBitwiseORs(arr: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun subarrayBitwiseORs(arr: IntArray): Int = arr.fold(mutableSetOf<Int>() to emptySet<Int>()) { (all, current), e -> (current.map { it or e } + e).toSet().also(all::addAll).let { all to it } }.first.size }

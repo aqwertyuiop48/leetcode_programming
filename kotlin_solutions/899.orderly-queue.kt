@@ -4,11 +4,4 @@
  * [899] Orderly Queue
  */
 
-// @lc code=start
-class Solution {
-    fun orderlyQueue(s: String, k: Int): String {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun orderlyQueue(s: String, k: Int) = if (k > 1) s.toList().sorted().joinToString("") else (0 until s.length).minOf { s.substring(it) + s.substring(0, it) } }

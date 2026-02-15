@@ -4,19 +4,4 @@
  * [900] RLE Iterator
  */
 
-// @lc code=start
-class RLEIterator(encoding: IntArray) {
-
-    fun next(n: Int): Int {
-        
-    }
-
-}
-
-/**
- * Your RLEIterator object will be instantiated and called as such:
- * var obj = RLEIterator(encoding)
- * var param_1 = obj.next(n)
- */
-// @lc code=end
-
+class RLEIterator(encoding: IntArray, private val encodingArr: IntArray = encoding.copyOf(), private var cursor: Int = 0) {fun next(n: Int): Int = generateSequence(n) { remaining -> (cursor < encodingArr.size).takeIf { it }?.let { if (encodingArr[cursor] >= remaining) null.also { encodingArr[cursor] -= remaining } else (remaining - encodingArr[cursor]).also { cursor += 2 } } }.last().let { if (cursor < encodingArr.size) encodingArr[cursor + 1] else -1 }}

@@ -4,11 +4,4 @@
  * [896] Monotonic Array
  */
 
-// @lc code=start
-class Solution {
-    fun isMonotonic(nums: IntArray): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun isMonotonic(nums: IntArray) = nums.asSequence().zipWithNext().let { pairs -> pairs.all { it.first <= it.second } || pairs.all { it.first >= it.second } } }

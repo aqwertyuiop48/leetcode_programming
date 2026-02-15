@@ -4,11 +4,4 @@
  * [884] Uncommon Words from Two Sentences
  */
 
-// @lc code=start
-class Solution {
-    fun uncommonFromSentences(s1: String, s2: String): Array<String> {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun uncommonFromSentences(s1: String, s2: String) = (s1.split(" ") + s2.split(" ")).groupingBy { it }.eachCount().filter { it.value == 1 }.keys.toTypedArray() }

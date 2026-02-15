@@ -4,11 +4,4 @@
  * [2446] Determine if Two Events Have Conflict
  */
 
-// @lc code=start
-class Solution {
-    fun haveConflict(event1: Array<String>, event2: Array<String>): Boolean {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun haveConflict(event1: Array<String>, event2: Array<String>): Boolean = event1[0].compareTo(event2[1]) <= 0 && event2[0].compareTo(event1[1]) <= 0}

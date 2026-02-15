@@ -4,11 +4,4 @@
  * [893] Groups of Special-Equivalent Strings
  */
 
-// @lc code=start
-class Solution {
-    fun numSpecialEquivGroups(words: Array<String>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun numSpecialEquivGroups(words: Array<String>) = words.map { word -> word.filterIndexed { i, _ -> i % 2 == 0 }.toList().sorted().joinToString("") + "|" + word.filterIndexed { i, _ -> i % 2 == 1 }.toList().sorted().joinToString("") }.toSet().size }

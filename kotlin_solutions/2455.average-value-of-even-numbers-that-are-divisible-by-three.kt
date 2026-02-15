@@ -4,11 +4,4 @@
  * [2455] Average Value of Even Numbers That Are Divisible by Three
  */
 
-// @lc code=start
-class Solution {
-    fun averageValue(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution {fun averageValue(nums: IntArray): Int =nums.asSequence().filter { it % 6 == 0 }.average().toInt()}

@@ -4,11 +4,4 @@
  * [892] Surface Area of 3D Shapes
  */
 
-// @lc code=start
-class Solution {
-    fun surfaceArea(grid: Array<IntArray>): Int {
-        
-    }
-}
-// @lc code=end
-
+class Solution { fun surfaceArea(grid: Array<IntArray>) = grid.indices.sumOf { i -> grid[0].indices.sumOf { j -> if (grid[i][j] == 0) 0 else 2 + grid[i][j] * 4 - (if (i > 0) 2 * minOf(grid[i][j], grid[i-1][j]) else 0) - (if (j > 0) 2 * minOf(grid[i][j], grid[i][j-1]) else 0) } } }

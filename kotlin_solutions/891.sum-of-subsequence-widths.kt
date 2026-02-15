@@ -4,11 +4,5 @@
  * [891] Sum of Subsequence Widths
  */
 
-// @lc code=start
-class Solution {
-    fun sumSubseqWidths(nums: IntArray): Int {
-        
-    }
-}
-// @lc code=end
+class Solution { fun sumSubseqWidths(nums: IntArray) = nums.sorted().let { sorted -> sorted.indices.fold(0L to 1L) { (sum, pow), i -> ((sum + (sorted[i] - sorted[sorted.lastIndex - i]) * pow) % 1000000007 to (pow * 2 % 1000000007)) }.first.let { (it + 1000000007) % 1000000007 }.toInt() } }
 
