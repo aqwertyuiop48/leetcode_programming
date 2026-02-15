@@ -5,4 +5,4 @@
  */
 
 
-class Solution {fun characterReplacement(s: String, k: Int): Int = s.indices.fold(0 to (0 to mutableMapOf<Char, Int>())) { (maxLen, state), r -> state.let { (l, cnt) -> cnt.apply { this[s[r]] = getOrDefault(s[r], 0) + 1 }.let { map -> generateSequence(l to map) { (left, m) -> if (r - left + 1 - (m.values.maxOrNull() ?: 0) > k) (left + 1 to m.apply { this[s[left]] = this[s[left]]!! - 1 }) else null }.last().let { (newL, newMap) -> maxOf(maxLen, r - newL + 1) to (newL to newMap) } } } }.first}
+class Solution { fun originalDigits(s: String): String = s.groupingBy { it }.eachCount().toMutableMap().let { cnt -> listOf( "zero" to 'z' to 0, "two" to 'w' to 2, "four" to 'u' to 4, "six" to 'x' to 6, "eight" to 'g' to 8, "one" to 'o' to 1, "three" to 'h' to 3, "five" to 'f' to 5, "seven" to 's' to 7, "nine" to 'i' to 9 ).map { (wordChar, digit) -> wordChar.let { (word, uniqueChar) -> (cnt[uniqueChar] ?: 0).also { c -> word.forEach { cnt[it] = (cnt[it] ?: 0) - c } }.let { c -> digit to c } } }.sortedBy { it.first }.flatMap { (d, c) -> List(maxOf(0, c)) { d.toString() } }.joinToString("") } }
