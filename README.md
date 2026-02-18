@@ -3,6 +3,26 @@
 ## NOTE: All .ipynb files to be executed in Google Colab
 ### 
 
+<pre>
+'''
+Add the Secret to Colab
+- Open your Colab notebook.
+- Click the Key icon on the left-hand toolbar.
+- Click "Add new secret".Set the Name (e.g., LEETCODE_USERNAME) and paste your token into the Value field.
+- Important: Toggle the "Notebook access" switch to ON for that specific secret.
+
+For leetcode cli (reference: https://fantasy.tistory.com/entry/leetcode-cli-cookie-login)
+
+Secrets used here:
+LEETCODE_USERNAME
+LEETCODE_USERNAME_2
+LEETCODE_USERNAME_3
+LEETCODE_TOKEN
+LEETCODE_TOKEN_2
+LEETCODE_TOKEN_3
+'''
+</pre>
+
 - Leetcode userID: 9zBRyP9hkZ
 - Leetcode email: testuserduplicatek@gmail.com
 - extension link: https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode
