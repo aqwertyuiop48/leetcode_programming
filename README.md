@@ -23,6 +23,24 @@ LEETCODE_TOKEN_3
 '''
 </pre>
 
+<pre>
+To run all scripts together:
+
+!git clone https://github.com/aqwertyuiop48/leetcode_programming.git
+# !pip install nbmerge
+# !nbmerge leetcode_programming/kotlin_code/*.ipynb > all_kotlin_solutions.ipynb
+
+%run leetcode_programming/kotlin_code/leetcode_8.ipynb
+%run leetcode_programming/kotlin_code/leetcode_7.ipynb
+%run leetcode_programming/kotlin_code/leetcode_6.ipynb
+%run leetcode_programming/kotlin_code/leetcode_5.ipynb
+%run leetcode_programming/kotlin_code/leetcode_4.ipynb
+%run leetcode_programming/kotlin_code/leetcode_3.ipynb
+%run leetcode_programming/kotlin_code/leetcode_2.ipynb
+
+# %run leetcode_programming/kotlin_code/retry_1_to_8.ipynb
+</pre>
+
 - Leetcode userID: 9zBRyP9hkZ
 - Leetcode email: testuserduplicatek@gmail.com
 - extension link: https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode
