@@ -1,0 +1,40 @@
+name: Run PyGithub Script for trigger_gitforcode_debug
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for trigger'
+        required: false
+
+permissions:
+  contents: read     # Standard read permission is usually enough here
+  actions: write     # Needed if you manage B's own workflows, but not strictly needed to trigger A's
+  statuses: write
+
+jobs:
+  python-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PyGithub
+        run: pip install PyGithub
+
+      - name: Run the Python Script
+        env:
+          # THIS IS THE MISSING PIECE:
+          # Maps the GitHub Secret to the OS environment variable
+          GITFORCODE_DEBUG_PAT_TRIGGER_TOKEN: ${{ secrets.GITFORCODE_DEBUG_PAT_TRIGGER_TOKEN }}
+        run: python trigger_gitforcode_debug.py
