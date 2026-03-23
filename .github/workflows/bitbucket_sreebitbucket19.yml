@@ -1,0 +1,21 @@
+name: Trigger Bitbucket Pipeline
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  trigger-bitbucket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Bitbucket API (Bearer Token Mode)
+        run: |
+          curl -i -sS -X POST \
+            -H "Authorization: Bearer ${{ secrets.BITBUCKET_FIRST_REPO_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            "https://api.bitbucket.org/2.0/repositories/sreebitbucket19/first_repo/pipelines/" \
+            -d '{
+              "target": {
+                "ref_type": "branch",
+                "type": "pipeline_ref_target",
+                "ref_name": "main"
+              }
+            }'
