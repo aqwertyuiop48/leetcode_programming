@@ -1,0 +1,24 @@
+name: Trigger Gitlab Pipeline
+on:
+  workflow_dispatch: # Manual trigger
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+permissions:
+  contents: write    # Needed to read/write code
+  actions: write     # Mandatory to trigger/manage workflows
+  statuses: write    # Optional: to update commit checkmarks
+
+jobs:
+  trigger-gitlab:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call GitLab Trigger API
+        run: |
+          curl -X POST \
+            -F token=${{ secrets.GITLAB_FIRST_REPO_TOKEN }} \
+            -F ref=main \
+            "https://gitlab.com/api/v4/projects/69610523/trigger/pipeline"
