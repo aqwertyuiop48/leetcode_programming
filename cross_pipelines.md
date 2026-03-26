@@ -5,6 +5,8 @@
 
 ## Bitbucket from Github
 - https://github.com/aqwertyuiop48/leetcode_programming/blob/main/.github/workflows/bitbucket_sreebitbucket19.yml
+- https://github.com/aqwertyuiop48/leetcode_programming/blob/main/.github/workflows/bitbucket_sreebitbucket19.yml#L23
 
 ## Gitlab from Github
 - https://github.com/aqwertyuiop48/leetcode_programming/blob/main/.github/workflows/gitlab_sreegithub19.yml
+- https://github.com/aqwertyuiop48/leetcode_programming/blob/main/.github/workflows/gitlab_sreegithub19.yml#L26

@@ -22,3 +22,17 @@ jobs:
             -F token=${{ secrets.GITLAB_FIRST_REPO_TOKEN }} \
             -F ref=main \
             "https://gitlab.com/api/v4/projects/69610523/trigger/pipeline"
+
+      - name: Trigger GitLab Pipeline
+        env:
+          # glab needs a Personal/Project Access Token, not just a Trigger Token
+          GITLAB_TOKEN: ${{ secrets.GITLAB_FULL_API_TOKEN }}
+        run: |
+          curl -sSL https://raw.githubusercontent.com/gitlabhq/cli/main/scripts/install.sh | sudo sh
+          # -R specifies the Project ID or Path
+          # --ref specifies the branch
+          # --track follows the pipeline progress in your terminal logs
+          glab pipeline create \
+            -R 69610523 \
+            --ref main \
+            --track
