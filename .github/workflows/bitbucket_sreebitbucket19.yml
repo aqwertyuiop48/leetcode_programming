@@ -1,5 +1,9 @@
 name: Trigger Bitbucket Pipeline
 on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch: # Manual trigger
 
 jobs:
@@ -25,16 +29,18 @@ jobs:
           curl -LO "https://acli.atlassian.com/linux/latest/acli_linux_amd64/acli"
           chmod +x ./acli
 
-      - name: Trigger Pipeline
+      - name: Trigger Bitbucket Pipeline
         env:
-          # Use your Atlassian API Token and the Email associated with it
           BITBUCKET_FIRST_REPO_TOKEN: ${{ secrets.BITBUCKET_FIRST_REPO_TOKEN }}
           BITBUCKET_EMAIL: cpadmaja2003@gmail.com
         run: |
-          # Note: --action triggerPipeline is the standard ACLI syntax
-          ./acli bitbucket --action triggerPipeline \
-            --workspace "sreebitbucket19" \
-            --repository "first_repo" \
-            --branch "main" \
-            --user "$BITBUCKET_EMAIL" \
-            --password "$BITBUCKET_FIRST_REPO_TOKEN"
+          curl -X POST -is -u "$BITBUCKET_EMAIL:$BITBUCKET_FIRST_REPO_TOKEN" \
+            -H 'Content-Type: application/json' \
+            "https://api.bitbucket.org/2.0/repositories/sreebitbucket19/first_repo/pipelines/" \
+            -d '{
+              "target": {
+                "ref_type": "branch",
+                "type": "pipeline_ref_target",
+                "ref_name": "main"
+              }
+            }'
