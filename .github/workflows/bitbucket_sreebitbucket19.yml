@@ -31,8 +31,8 @@ jobs:
 
       - name: Trigger Pipeline via Appfire ACLI
         env:
-          BITBUCKET_APP_PASSWORD: ${{ secrets.BITBUCKET_APP_PASSWORD }}
-          BITBUCKET_EMAIL: cpadmaja2003@gmail.com
+          # Assuming this secret holds your Repository Access Token
+          BITBUCKET_FIRST_REPO_TOKEN: ${{ secrets.BITBUCKET_FIRST_REPO_TOKEN }} 
         run: |
           docker run --rm bobswiftapps/acli:latest \
             acli bitbucketcloud \
@@ -40,5 +40,4 @@ jobs:
             --workspace "sreebitbucket19" \
             --repository "first_repo" \
             --branch "main" \
-            --user "$BITBUCKET_EMAIL" \
-            --password "$BITBUCKET_APP_PASSWORD"
+            --token "$BITBUCKET_FIRST_REPO_TOKEN"
