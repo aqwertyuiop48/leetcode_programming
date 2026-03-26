@@ -35,4 +35,4 @@ jobs:
           sudo dpkg -i glab_1.90.0_linux_amd64.deb
           
           # 3. Trigger the pipeline
-          glab ci run -R 69610523 -b main
+          glab ci run -R "sreegithub19/first_repo" -b main

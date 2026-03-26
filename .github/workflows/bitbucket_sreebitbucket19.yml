@@ -34,11 +34,9 @@ jobs:
           BITBUCKET_FIRST_REPO_TOKEN: ${{ secrets.BITBUCKET_FIRST_REPO_TOKEN }}
           BITBUCKET_EMAIL: cpadmaja2003@gmail.com
         run: |
-          # We use bobswiftapps/acli which has the Java CLI pre-installed
-          # Note: We use 'bitbucketcloud' as the client for bitbucket.org
           docker run --rm bobswiftapps/acli:latest \
             acli bitbucketcloud \
-            --action triggerPipeline \
+            --action startPipeline \
             --workspace "sreebitbucket19" \
             --repository "first_repo" \
             --branch "main" \
