@@ -35,10 +35,4 @@ jobs:
           sudo dpkg -i glab_1.90.0_linux_amd64.deb
           
           # 3. Trigger the pipeline
-          # -R: Project ID
-          # --ref: Branch name
-          # --track: Stream logs and wait for completion
-          glab pipeline create \
-            -R 69610523 \
-            --ref main \
-            --track
+          glab ci run -R 69610523 -b main
