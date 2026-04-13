@@ -4,7 +4,6 @@
  * [32] Longest Valid Parentheses
  */
 
-// @lc code=start
 record Solution() {
     public int longestValidParentheses(String s) {
         if (new int[]{0, 0, 0, 0, 0} instanceof int[] st)
@@ -37,5 +36,3 @@ record Solution() {
         return Integer.parseInt(System.getProperty("ans", "0")); 
     }
 }
-// @lc code=end
-

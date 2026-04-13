@@ -4,11 +4,4 @@
  * [3646] Next Special Palindrome Number
  */
 
-// @lc code=start
-class Solution {
-    public long specialPalindrome(long n) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { record Context(List<Long> l, Set<Long> s, int[] v, char[][] c) {} public long specialPalindrome(long n) { return n == 0 ? 1L : ((List<Long>) System.getProperties().computeIfAbsent("C", k -> Stream.of(new Context(new ArrayList<>(), new HashSet<>(), new int[3], new char[1][])) .peek(ctx -> IntStream.range(2, 17).forEach(i -> Stream.of((i % 2 == 0) ? new int[]{2, 4, 6, 8} : new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}).forEach(srcArr -> IntStream.range(0, 1 << srcArr.length) .mapToObj(mask -> IntStream.range(0, srcArr.length).filter(k_idx -> (mask & (1 << k_idx)) != 0).map(k_idx -> srcArr[k_idx]).toArray()) .filter(subset -> Arrays.stream(subset).sum() == i) .filter(subset -> Arrays.stream(subset).map(val -> val % 2).sum() <= ((i % 2 == 0) ? srcArr.length : 1)) .forEach(subset -> Stream.of(0).filter(dump -> (ctx.v[0] = Arrays.stream(subset).filter(v -> v % 2 == 1).findFirst().orElse(0)) >= 0 && (ctx.c[0] = Arrays.stream(subset).mapToObj(v -> String.valueOf(v).repeat(v / 2)).collect(Collectors.joining()).toCharArray()) != null && (IntStream.of(0).peek(d -> Arrays.sort(ctx.c[0])).count() > -1) && IntStream.range(0, 400000).allMatch(iter -> (ctx.s.add(Long.valueOf(new String(ctx.c[0]) + (ctx.v[0] > 0 ? String.valueOf(ctx.v[0]) : "") + new StringBuilder(new String(ctx.c[0])).reverse().toString())) || true) && (ctx.v[1] = IntStream.range(0, ctx.c[0].length - 1).map(x -> ctx.c[0].length - 2 - x).filter(idx -> ctx.c[0][idx] < ctx.c[0][idx + 1]).findFirst().orElse(-1)) != -1 && (ctx.v[2] = IntStream.range(0, ctx.c[0].length).map(x -> ctx.c[0].length - 1 - x).filter(idx -> ctx.c[0][idx] > ctx.c[0][ctx.v[1]]).findFirst().orElse(0)) >= 0 && ((ctx.c[0][ctx.v[1]] ^= ctx.c[0][ctx.v[2]]) | (ctx.c[0][ctx.v[2]] ^= ctx.c[0][ctx.v[1]]) | (ctx.c[0][ctx.v[1]] ^= ctx.c[0][ctx.v[2]])) >= 0 && IntStream.range(0, (ctx.c[0].length - 1 - ctx.v[1]) / 2).allMatch(z -> ((ctx.c[0][ctx.v[1] + 1 + z] ^= ctx.c[0][ctx.c[0].length - 1 - z]) | (ctx.c[0][ctx.c[0].length - 1 - z] ^= ctx.c[0][ctx.v[1] + 1 + z]) | (ctx.c[0][ctx.v[1] + 1 + z] ^= ctx.c[0][ctx.c[0].length - 1 - z])) >= 0 ) ) ).count()) ) )) .peek(ctx -> ctx.l.addAll(ctx.s)) .peek(ctx -> ctx.l.sort(null)) .map(Context::l).findFirst().get() )).get(Stream.of(n).map(val -> Collections.binarySearch((List<Long>)System.getProperties().get("C"), val)).map(idx -> idx >= 0 ? idx + 1 : ~idx).findFirst().get()); } }

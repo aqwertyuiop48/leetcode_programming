@@ -4,11 +4,4 @@
  * [2127] Maximum Employees to Be Invited to a Meeting
  */
 
-// @lc code=start
-class Solution {
-    public int maximumInvitations(int[] favorite) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maximumInvitations(int[] favorite) { return ((Function<int[], Function<int[], Function<int[], Function<int[], Integer>>>>) inDeg -> chainLen -> q -> ptrs -> IntStream.range(0, favorite.length).reduce(0, (acc, i) -> (inDeg[favorite[i]]++) * 0) * 0 == 0 && IntStream.range(0, favorite.length).reduce(0, (acc, i) -> inDeg[i] == 0 ? (q[ptrs[1]++] = i) * 0 : 0) * 0 == 0 ? ((ToIntFunction<int[]>) state -> IntStream.iterate(0, d -> ptrs[0] < ptrs[1], d -> d + 1).reduce(0, (acc, d) -> ((IntUnaryOperator) u -> ((IntUnaryOperator) v -> (chainLen[v] = Math.max(chainLen[v], chainLen[u] + 1)) * 0 + (--inDeg[v] == 0 ? (q[ptrs[1]++] = v) * 0 : 0)).applyAsInt(favorite[u]) * 0).applyAsInt(q[ptrs[0]++]) * 0) * 0 + IntStream.range(0, favorite.length).reduce(0, (acc, i) -> inDeg[i] > 0 ? ((ToIntFunction<int[]>) cycle -> IntStream.iterate(i, curr -> inDeg[curr] > 0, curr -> favorite[curr]).reduce(0, (acc2, curr) -> (inDeg[curr] = 0) * 0 + (cycle[0]++) * 0) * 0 == 0 ? (cycle[0] == 2 ? (state[1] += 2 + chainLen[i] + chainLen[favorite[i]]) * 0 : (state[0] = Math.max(state[0], cycle[0])) * 0) : 0).applyAsInt(new int[1]) : 0) * 0 == 0 ? Math.max(state[0], state[1]) : 0).applyAsInt(new int[2]) : 0).apply(new int[favorite.length]).apply(new int[favorite.length]).apply(new int[favorite.length]).apply(new int[2]); } }

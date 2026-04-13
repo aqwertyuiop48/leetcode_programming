@@ -4,11 +4,4 @@
  * [3410] Maximize Subarray Sum After Removing All Occurrences of One Element
  */
 
-// @lc code=start
-class Solution {
-    public long maxSubarraySum(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maxSubarraySum(int[] arr) { return ((Function<Integer, Long>) N -> ((Function<long[][], Long>) tree -> ((Function<BinaryOperator<long[]>, Long>) merge -> ((Function<BiFunction<Integer, Integer, Integer>, Long>) update -> (long) new Object[]{ IntStream.range(1, 2 * N).map(i -> (int)((tree[i] = new long[]{0, -1000000000000000L, -1000000000000000L, -1000000000000000L})[0] * 0)).sum(), IntStream.range(0, arr.length).map(i -> update.apply(i, arr[i])).sum(), Arrays.stream(arr).max().getAsInt() < 0 ? (long) Arrays.stream(arr).max().getAsInt() : Math.max(tree[1][3], IntStream.range(0, arr.length).boxed().collect(Collectors.groupingBy(i -> arr[i])).values().stream().filter(indices -> indices.size() < arr.length).mapToLong(indices -> (long) new Object[]{ indices.stream().mapToInt(i -> update.apply(i, 0)).sum(), tree[1][3], indices.stream().mapToInt(i -> update.apply(i, arr[indices.get(0)])).sum() }[1]).max().orElse(tree[1][3])) }[2] ).apply((idx, val) -> IntStream.iterate(N + idx, p -> p > 0, p -> p / 2).map(p -> (int)((tree[p] = p >= N ? new long[]{val, val, val, val} : merge.apply(tree[2 * p], tree[2 * p + 1]))[0] * 0)).sum()) ).apply((l, r) -> new long[]{l[0] + r[0], Math.max(l[1], l[0] + r[1]), Math.max(r[2], r[0] + l[2]), Math.max(Math.max(l[3], r[3]), l[2] + r[1])}) ).apply(new long[2 * N][4]) ).apply(IntStream.iterate(1, i -> i * 2).filter(i -> i >= arr.length).findFirst().orElse(1)); } }

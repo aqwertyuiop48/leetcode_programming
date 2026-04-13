@@ -4,11 +4,4 @@
  * [2503] Maximum Number of Points From Grid Queries
  */
 
-// @lc code=start
-class Solution {
-    public int[] maxPoints(int[][] grid, int[] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] maxPoints(int[][] grid, int[] queries) { return ((Function<int[][], Function<int[], Function<PriorityQueue<int[]>, Function<boolean[][], Function<int[], int[]>>>>>) qArr -> ans -> pq -> vis -> state -> IntStream.range(0, queries.length).map(i -> (int)IntStream.iterate(0, dummy -> !pq.isEmpty() && pq.peek()[0] < qArr[i][0], dummy -> dummy).map(dummy -> ((Function<int[], Integer>) curr -> (state[0]++) * 0 + IntStream.range(0, 4).map(d -> ((Function<int[], Integer>) dir -> curr[1]+dir[0] >= 0 && curr[1]+dir[0] < grid.length && curr[2]+dir[1] >= 0 && curr[2]+dir[1] < grid[0].length && !vis[curr[1]+dir[0]][curr[2]+dir[1]] ? (vis[curr[1]+dir[0]][curr[2]+dir[1]] = true) ? pq.add(new int[]{grid[curr[1]+dir[0]][curr[2]+dir[1]], curr[1]+dir[0], curr[2]+dir[1]}) ? 0 : 0 : 0 : 0).apply(new int[][]{{-1,0},{1,0},{0,-1},{0,1}}[d])).sum() * 0).apply(pq.poll())).sum() * 0 + (ans[qArr[i][1]] = state[0])).sum() * 0 == 0 ? ans : ans).apply(IntStream.range(0, queries.length).mapToObj(i -> new int[]{queries[i], i}).sorted((a, b) -> a[0] - b[0]).toArray(int[][]::new)).apply(new int[queries.length]).apply(((Function<PriorityQueue<int[]>, PriorityQueue<int[]>>) p -> (p.add(new int[]{grid[0][0], 0, 0}) ? p : p)).apply(new PriorityQueue<>((a, b) -> a[0] - b[0]))).apply(((Function<boolean[][], boolean[][]>) v -> (v[0][0] = true) ? v : v).apply(new boolean[grid.length][grid[0].length])).apply(new int[1]); } }

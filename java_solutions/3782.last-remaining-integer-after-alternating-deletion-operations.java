@@ -4,11 +4,8 @@
  * [3782] Last Remaining Integer After Alternating Deletion Operations
  */
 
-// @lc code=start
 class Solution {
     public long lastInteger(long n) {
-        
+        return 1 + (0xAAAAAAAAAAAAAAAAL & (n - 1)); 
     }
 }
-// @lc code=end
-

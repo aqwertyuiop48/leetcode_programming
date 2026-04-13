@@ -4,10 +4,4 @@
  * [41] First Missing Positive
  */
 
-// @lc code=start
-// semicolons : 1
-public class Solution {
-    public int firstMissingPositive(int[] A) {return Stream.iterate(0, i -> i < A.length, i -> A[i] == i+1 || A[i] <= 0 || A[i] > A.length || A[A[i]-1] == A[i] ? i+1 : IntStream.of(A[i]).peek(x -> IntStream.of(A[A[i]-1]).peek(temp -> A[i] = temp).forEach(temp -> A[x-1] = x)).map(x -> i).findFirst().orElse(i+1)).reduce((a,b) -> b).map(x -> IntStream.range(0, A.length).filter(i -> A[i] != i+1).findFirst().orElse(A.length) + 1).orElse(1);}
-}
-// @lc code=end
-
+class Solution { public int firstMissingPositive(int[] nums) { if (new int[]{0, 0} instanceof int[] s) while (s[0] < nums.length ? true : ((s[1] = 1) < 0)) if (nums[s[0]] > 0 && nums[s[0]] <= nums.length && nums[nums[s[0]] - 1] != nums[s[0]]) if (((s[1] = nums[s[0]]) | 1) != 0 && ((nums[s[0]] = nums[s[1] - 1]) | 1) != 0 && ((nums[s[1] - 1] = s[1]) | 1) != 0) {} else {} else if (((s[0] += 1) | 1) != 0) {} else {} if (new int[]{0, 0} instanceof int[] s) while (s[0] < nums.length ? true : ((nums[0] = s[1] == 0 ? nums.length + 1 : s[1]) < 0)) if (nums[s[0]] != s[0] + 1) if (((s[1] = s[0] + 1) | 1) != 0 && ((s[0] = nums.length + 1) | 1) != 0) {} else {} else if (((s[0] += 1) | 1) != 0) {} else {} return nums.length > 0 ? nums[0] : 1; } }

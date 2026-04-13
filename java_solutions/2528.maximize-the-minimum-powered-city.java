@@ -4,11 +4,4 @@
  * [2528] Maximize the Minimum Powered City
  */
 
-// @lc code=start
-class Solution {
-    public long maxPower(int[] stations, int r, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maxPower(int[] stations, int r, int k) { return ((Function<long[], Long>) pre -> ((Function<long[], Long>) search -> IntStream.iterate(0, dummy -> search[0] <= search[1], dummy -> dummy).mapToLong(dummy -> ((Function<Long, Long>) mid -> ((Function<long[], Function<long[], Long>>) track -> diff -> IntStream.range(0, stations.length).mapToLong(i -> (track[0] += diff[i]) * 0L + (pre[Math.min(stations.length, i + r + 1)] - pre[Math.max(0, i - r)] + track[0] < mid ? (diff[Math.min(stations.length, i + 2 * r + 1)] -= mid - (pre[Math.min(stations.length, i + r + 1)] - pre[Math.max(0, i - r)] + track[0])) * 0L + (track[1] += mid - (pre[Math.min(stations.length, i + r + 1)] - pre[Math.max(0, i - r)] + track[0])) * 0L + (track[0] += mid - (pre[Math.min(stations.length, i + r + 1)] - pre[Math.max(0, i - r)] + track[0])) * 0L : 0L)).sum() * 0L == 0L && track[1] <= k ? (search[2] = mid) * 0L + (search[0] = mid + 1L) * 0L : (search[1] = mid - 1L) * 0L).apply(new long[2]).apply(new long[stations.length + 2])).apply(search[0] + (search[1] - search[0]) / 2L)).sum() * 0L == 0L ? search[2] : 0L).apply(new long[]{0L, pre[stations.length] + k, 0L})).apply(((Function<long[], long[]>) p -> IntStream.range(0, stations.length).mapToLong(i -> (p[i + 1] = p[i] + stations[i]) * 0L).sum() * 0L == 0L ? p : p).apply(new long[stations.length + 1])); } }

@@ -4,11 +4,4 @@
  * [2493] Divide Nodes Into the Maximum Number of Groups
  */
 
-// @lc code=start
-class Solution {
-    public int magnificentSets(int n, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int magnificentSets(int n, int[][] edges) { return ((Function<List<List<Integer>>, Integer>) adj -> ((Function<int[], Function<boolean[], Integer>>) maxGroup -> fail -> IntStream.range(0, n).map(start -> ((Function<int[], Function<int[], Function<int[], Integer>>>) depth -> q -> state -> IntStream.iterate(0, h -> h < state[1], h -> h + 1).map(h -> adj.get(q[h]).stream().mapToInt(v -> depth[v] == -1 ? (depth[v] = depth[q[h]] + 1) * 0 + (q[state[1]++] = v) * 0 + (state[0] = Math.min(state[0], v)) * 0 + (state[2] = Math.max(state[2], depth[v])) * 0 : (depth[v] % 2 == depth[q[h]] % 2 ? (state[3] = 1) * 0 : 0)).sum() * 0).sum() * 0 == 0 ? (state[3] == 1 ? ((fail[0] = true) ? 0 : 0) : (maxGroup[state[0]] = Math.max(maxGroup[state[0]], state[2] + 1)) * 0) : 0).apply(IntStream.range(0, n).map(i -> i == start ? 0 : -1).toArray()).apply(((Function<int[], int[]>) arr -> (arr[0] = start) == start ? arr : arr).apply(new int[n])).apply(new int[]{start, 1, 0, 0})).sum() * 0 == 0 ? (fail[0] ? -1 : Arrays.stream(maxGroup).sum()) : 0).apply(new int[n]).apply(new boolean[1])).apply(Arrays.stream(edges).reduce(IntStream.range(0, n).mapToObj(i -> (List<Integer>) new ArrayList<Integer>()).collect(Collectors.toList()), (a, e) -> (a.get(e[0]-1).add(e[1]-1) ? 1 : 1) * (a.get(e[1]-1).add(e[0]-1) ? 1 : 1) == 1 ? a : a, (a, b) -> a)); } }

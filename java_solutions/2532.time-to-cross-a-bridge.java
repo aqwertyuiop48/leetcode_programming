@@ -4,11 +4,4 @@
  * [2532] Time to Cross a Bridge
  */
 
-// @lc code=start
-class Solution {
-    public int findCrossingTime(int n, int k, int[][] time) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int findCrossingTime(int n, int k, int[][] time) { return ((Function<PriorityQueue<int[]>, Function<PriorityQueue<int[]>, Function<PriorityQueue<int[]>, Function<PriorityQueue<int[]>, Function<int[], Integer>>>>>) l -> r -> ll -> rr -> s -> IntStream.range(0, time.length).map(i -> ll.add(new int[]{time[i][0] + time[i][2], i}) ? 0 : 0).sum() * 0 == 0 ? IntStream.iterate(0, dummy -> s[0] > 0 || !r.isEmpty() || !rr.isEmpty(), dummy -> dummy).map(dummy -> (rr.isEmpty() && (r.isEmpty() || r.peek()[0] > s[1]) && (s[0] == 0 || ll.isEmpty() && (l.isEmpty() || l.peek()[0] > s[1])) ? (s[1] = Math.min(s[0] > 0 && !l.isEmpty() ? l.peek()[0] : Integer.MAX_VALUE, !r.isEmpty() ? r.peek()[0] : Integer.MAX_VALUE)) * 0 : 0) + (int)IntStream.iterate(0, x -> !l.isEmpty() && l.peek()[0] <= s[1], x -> x).map(x -> ((IntUnaryOperator) i -> ll.add(new int[]{time[i][0] + time[i][2], i}) ? 0 : 0).applyAsInt(l.poll()[1])).sum() * 0 + (int)IntStream.iterate(0, x -> !r.isEmpty() && r.peek()[0] <= s[1], x -> x).map(x -> ((IntUnaryOperator) i -> rr.add(new int[]{time[i][0] + time[i][2], i}) ? 0 : 0).applyAsInt(r.poll()[1])).sum() * 0 + (!rr.isEmpty() ? ((IntUnaryOperator) i -> (s[1] += time[i][2]) * 0 + (s[0] > 0 ? (l.add(new int[]{s[1] + time[i][3], i}) ? 0 : 0) : (s[2] = Math.max(s[2], s[1])) * 0)).applyAsInt(rr.poll()[1]) : ((IntUnaryOperator) i -> (s[1] += time[i][0]) * 0 + (r.add(new int[]{s[1] + time[i][1], i}) ? 0 : 0) + (s[0]--) * 0).applyAsInt(ll.poll()[1])) * 0).sum() * 0 == 0 ? s[2] : 0 : 0).apply(new PriorityQueue<>((a, b) -> a[0] - b[0])).apply(new PriorityQueue<>((a, b) -> a[0] - b[0])).apply(new PriorityQueue<>((a, b) -> a[0] != b[0] ? b[0] - a[0] : b[1] - a[1])).apply(new PriorityQueue<>((a, b) -> a[0] != b[0] ? b[0] - a[0] : b[1] - a[1])).apply(new int[]{n, 0, 0}); } }

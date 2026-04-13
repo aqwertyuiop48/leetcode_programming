@@ -4,11 +4,4 @@
  * [2065] Maximum Path Quality of a Graph
  */
 
-// @lc code=start
-class Solution {
-    public int maximalPathQuality(int[] values, int[][] edges, int maxTime) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maximalPathQuality(int[] values, int[][] edges, int maxTime) { return ((Function<int[], Function<int[], Function<int[], Function<int[], Integer>>>>) head -> to -> nxt -> wt -> IntStream.range(0, values.length).reduce(0, (acc, i) -> (head[i] = -1) * 0) * 0 == 0 && IntStream.range(0, edges.length).reduce(0, (acc, i) -> (to[i * 2] = edges[i][1]) * 0 + (wt[i * 2] = edges[i][2]) * 0 + (nxt[i * 2] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = i * 2) * 0 + (to[i * 2 + 1] = edges[i][0]) * 0 + (wt[i * 2 + 1] = edges[i][2]) * 0 + (nxt[i * 2 + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = i * 2 + 1) * 0) * 0 == 0 ? ((Function<int[], Function<int[], Integer>>) seen -> res -> ((Function<Object[], Integer>) box -> (box[0] = (ToIntFunction<int[]>) args -> (args[0] == 0 ? (res[0] = Math.max(res[0], args[2])) * 0 : 0) + IntStream.iterate(head[args[0]], e -> e != -1, e -> nxt[e]).reduce(0, (acc, e) -> args[1] >= wt[e] ? (seen[to[e]]++ == 0 ? ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{to[e], args[1] - wt[e], args[2] + values[to[e]]}) : ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{to[e], args[1] - wt[e], args[2]})) * 0 + (seen[to[e]]--) * 0 : 0) * 0).hashCode() * 0 == 0 && (seen[0] = 1) * 0 == 0 && ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{0, maxTime, values[0]}) * 0 == 0 ? res[0] : 0).apply(new Object[1])).apply(new int[values.length]).apply(new int[1]) : 0).apply(new int[values.length]).apply(new int[edges.length * 2]).apply(new int[edges.length * 2]).apply(new int[edges.length * 2]); } }

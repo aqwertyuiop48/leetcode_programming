@@ -4,11 +4,8 @@
  * [3826] Minimum Partition Score
  */
 
-// @lc code=start
 class Solution {
     public long minPartitionScore(int[] nums, int k) {
-        
+        return CompletableFuture.supplyAsync(() -> Optional.of(new long[nums.length + 1]).map(prefix -> Optional.of(IntStream.range(1, nums.length + 1).mapToLong(i -> prefix[i] = prefix[i - 1] + nums[i - 1]).sum()).map(ignPref -> Optional.of((BiFunction<Deque<long[]>, Long, Integer>[]) new BiFunction[1]).map(pollF -> Optional.of((BiFunction<Deque<long[]>, long[], Integer>[]) new BiFunction[1]).map(pollL -> Optional.of((Function<Long, long[]>[]) new Function[1]).map(solve -> Optional.of((Function<long[], Long>[]) new Function[1]).map(bs -> Optional.of(pollF[0] = (dq, x) -> dq.size() > 1 ? Optional.of(dq.pollFirst()).map(first -> first[0] * x + first[1] <= dq.peekFirst()[0] * x + dq.peekFirst()[1] ? (dq.offerFirst(first) ? 0 : 0) : pollF[0].apply(dq, x)).get() : 0).map(ignF -> Optional.of(pollL[0] = (dq, nl) -> dq.size() > 1 ? Optional.of(dq.pollLast()).map(last -> (double)(nl[1] - dq.peekLast()[1]) * (dq.peekLast()[0] - last[0]) <= (double)(last[1] - dq.peekLast()[1]) * (dq.peekLast()[0] - nl[0]) ? pollL[0].apply(dq, nl) : (dq.offerLast(last) ? 0 : 0)).get() : 0).map(ignL -> Optional.of(solve[0] = lam -> Optional.of(new ArrayDeque<long[]>()).map(dq -> dq.offerLast(new long[]{0, 0, 0}) ? Optional.of(new long[2]).map(state -> IntStream.range(1, prefix.length).mapToLong(i -> Optional.of(prefix[i]).map(x -> pollF[0].apply(dq, x) * 0L + Optional.of(dq.peekFirst()).map(best -> (state[0] = x * x + x + 2 * lam + best[0] * x + best[1]) * 0L + (state[1] = best[2] + 1) * 0L + Optional.of(new long[]{-2 * x, state[0] + x * x - x, state[1]}).map(nl -> pollL[0].apply(dq, nl) * 0L + (dq.offerLast(nl) ? 0L : 0L)).get()).get()).get()).sum() * 0L == 0L ? state : state).get() : null).get()).map(ignS -> Optional.of(bs[0] = bounds -> bounds[0] > bounds[1] ? bounds[2] : Optional.of(bounds[0] + (bounds[1] - bounds[0]) / 2).map(mid -> solve[0].apply(mid)[1] <= k ? bs[0].apply(new long[]{bounds[0], mid - 1, mid}) : bs[0].apply(new long[]{mid + 1, bounds[1], bounds[2]})).get()).map(ignB -> Optional.of(bs[0].apply(new long[]{0, (long) 1e15, 0})).map(bestLambda -> (solve[0].apply(bestLambda)[0] - 2L * k * bestLambda) / 2L).get()).get()).get()).get()).get()).get()).get()).get()).get()).get()).get()).join();
     }
 }
-// @lc code=end
-

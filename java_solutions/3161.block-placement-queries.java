@@ -4,11 +4,4 @@
  * [3161] Block Placement Queries
  */
 
-// @lc code=start
-class Solution {
-    public List<Boolean> getResults(int[][] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public List<Boolean> getResults(int[][] queries) { return ((Function<Integer, List<Boolean>>) N -> ((Function<int[], List<Boolean>>) tree -> ((Function<TreeSet<Integer>, List<Boolean>>) obs -> ((Function<Object[], List<Boolean>>) box -> obs.add(0) ? Arrays.stream(queries).flatMap(q -> q[0] == 1 ? Stream.<Boolean>of(((Function<Integer, Boolean>) prev -> ((Function<Integer, Boolean>) next -> ((Function<int[], Integer>) box[0]).apply(new int[]{1, 0, N, q[1], q[1] - prev}) * 0 + (next != null ? ((Function<int[], Integer>) box[0]).apply(new int[]{1, 0, N, next, next - q[1]}) * 0 : 0) + (obs.add(q[1]) ? 0 : 0) == 0 ? null : null).apply(obs.higher(q[1]))).apply(obs.lower(q[1]))).filter(Objects::nonNull) : Stream.of(((Function<Integer, Boolean>) prev -> Math.max(((Function<int[], Integer>) box[1]).apply(new int[]{1, 0, N, 0, prev}), q[1] - prev) >= q[2]).apply(obs.floor(q[1])))).collect(Collectors.toList()) : null).apply(((Function<Object[], Object[]>) b -> (b[0] = (Function<int[], Integer>) state -> state[1] == state[2] ? (tree[state[0]] = state[4]) : (((state[3] <= (state[1] + state[2]) / 2 ? ((Function<int[], Integer>) b[0]).apply(new int[]{2 * state[0], state[1], (state[1] + state[2]) / 2, state[3], state[4]}) : ((Function<int[], Integer>) b[0]).apply(new int[]{2 * state[0] + 1, (state[1] + state[2]) / 2 + 1, state[2], state[3], state[4]})) * 0) + (tree[state[0]] = Math.max(tree[2 * state[0]], tree[2 * state[0] + 1])))) != null && (b[1] = (Function<int[], Integer>) state -> state[3] > state[2] || state[4] < state[1] ? 0 : state[3] <= state[1] && state[4] >= state[2] ? tree[state[0]] : Math.max(((Function<int[], Integer>) b[1]).apply(new int[]{2 * state[0], state[1], (state[1] + state[2]) / 2, state[3], state[4]}), ((Function<int[], Integer>) b[1]).apply(new int[]{2 * state[0] + 1, (state[1] + state[2]) / 2 + 1, state[2], state[3], state[4]}))) != null ? b : b).apply(new Object[2]))).apply(new TreeSet<>())).apply(new int[4 * N + 4])).apply(Arrays.stream(queries).mapToInt(q -> q[1]).max().orElse(0) + 1); } }

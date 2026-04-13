@@ -4,11 +4,4 @@
  * [2290] Minimum Obstacle Removal to Reach Corner
  */
 
-// @lc code=start
-class Solution {
-    public int minimumObstacles(int[][] grid) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumObstacles(int[][] grid) { return ((Function<int[], Function<int[], Function<int[], Function<PriorityQueue<int[]>, Integer>>>>) dr -> dc -> dist -> pq -> IntStream.iterate(0, dummy -> !pq.isEmpty(), dummy -> dummy + 1).mapToObj(dummy -> pq.poll()).filter(curr -> curr[0] <= dist[curr[1] * grid[0].length + curr[2]]).mapToInt(curr -> curr[1] == grid.length - 1 && curr[2] == grid[0].length - 1 ? curr[0] : IntStream.range(0, 4).filter(d -> curr[1] + dr[d] >= 0 && curr[1] + dr[d] < grid.length && curr[2] + dc[d] >= 0 && curr[2] + dc[d] < grid[0].length).map(d -> dist[(curr[1] + dr[d]) * grid[0].length + curr[2] + dc[d]] > curr[0] + grid[curr[1] + dr[d]][curr[2] + dc[d]] ? (dist[(curr[1] + dr[d]) * grid[0].length + curr[2] + dc[d]] = curr[0] + grid[curr[1] + dr[d]][curr[2] + dc[d]]) * 0 + (pq.offer(new int[]{curr[0] + grid[curr[1] + dr[d]][curr[2] + dc[d]], curr[1] + dr[d], curr[2] + dc[d]}) ? 0 : 0) : 0).sum() * 0 - 1).filter(res -> res >= 0).findFirst().orElse(-1)).apply(new int[]{0, 1, 0, -1}).apply(new int[]{1, 0, -1, 0}).apply(IntStream.range(0, grid.length * grid[0].length).map(i -> i == 0 ? 0 : 1000000000).toArray()).apply(((Function<PriorityQueue<int[]>, PriorityQueue<int[]>>) q -> q.offer(new int[]{0, 0, 0}) ? q : q).apply(new PriorityQueue<>(Comparator.comparingInt(a -> a[0])))); } }

@@ -4,11 +4,4 @@
  * [3213] Construct String with Minimum Cost
  */
 
-// @lc code=start
-class Solution {
-    public int minimumCost(String target, String[] words, int[] costs) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumCost(String target, String[] words, int[] costs) { return ((Function<Integer, Integer>) N -> ((Function<long[], Integer>) P -> ((Function<long[], Integer>) H -> ((Function<int[], Integer>) lengths -> ((Function<Map<Long, Integer>, Integer>) map -> ((Function<long[][], Integer>) pairs -> ((Function<long[], Integer>) sortedHashes -> ((Function<int[], Integer>) sortedCosts -> ((Function<int[], Integer>) dp -> ((IntUnaryOperator) initDummy -> ((Function<int[], Integer>) state -> IntStream.range(0, N * lengths.length).reduce(0, (dummy, idx) -> (state[0] = N - 1 - idx / lengths.length) * 0 == 0 && (state[1] = lengths[idx % lengths.length]) * 0 == 0 && (state[0] + state[1] <= N) ? (((state[2] = Arrays.binarySearch(sortedHashes, (H[state[0] + state[1]] - H[state[0]] * P[state[1]]) * 313L + state[1])) >= 0 && dp[state[0] + state[1]] != Integer.MAX_VALUE ? (dp[state[0]] = Math.min(dp[state[0]], dp[state[0] + state[1]] + sortedCosts[state[2]])) * 0 : 0)) : 0) * 0 == 0 ? (dp[0] == Integer.MAX_VALUE ? -1 : dp[0]) : 0).apply(new int[3])).applyAsInt(IntStream.range(0, N).reduce(0, (dummy, i) -> (int)((P[i+1] = P[i] * 313L) * 0L + (H[i+1] = H[i] * 313L + target.charAt(i)) * 0L)))).apply(IntStream.rangeClosed(0, N).map(i -> i == N ? 0 : Integer.MAX_VALUE).toArray())).apply(IntStream.range(0, pairs.length).map(i -> (int)pairs[i][1]).toArray())).apply(IntStream.range(0, pairs.length).mapToLong(i -> pairs[i][0]).toArray())).apply(map.entrySet().stream().map(e -> new long[]{e.getKey(), e.getValue()}).sorted((a, b) -> Long.compare(a[0], b[0])).toArray(long[][]::new))).apply(IntStream.range(0, words.length).boxed().collect(Collectors.toMap(i -> words[i].chars().mapToLong(c -> (long)c).reduce(0L, (h, c) -> h * 313L + c) * 313L + words[i].length(), i -> costs[i], Math::min)))).apply(Arrays.stream(words).mapToInt(String::length).distinct().toArray())).apply(new long[N + 1])).apply(((Function<long[], long[]>) arr -> (arr[0] = 1L) * 0 == 0 ? arr : arr).apply(new long[N + 1]))).apply(target.length()); } }

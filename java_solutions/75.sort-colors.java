@@ -4,7 +4,6 @@
  * [75] Sort Colors
  */
 
-// @lc code=start
 record Solution() {
     public void sortColors(int[] nums) {
         if (new int[]{0, 0, nums.length - 1, 0} instanceof int[] s)
@@ -18,5 +17,3 @@ record Solution() {
         return; 
     }
 }
-// @lc code=end
-

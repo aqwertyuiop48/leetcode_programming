@@ -4,11 +4,4 @@
  * [2045] Second Minimum Time to Reach Destination
  */
 
-// @lc code=start
-class Solution {
-    public int secondMinimum(int n, int[][] edges, int time, int change) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int secondMinimum(int n, int[][] edges, int time, int change) { return ((Function<int[], Function<int[], Function<int[], Integer>>>) head -> to -> nxt -> IntStream.rangeClosed(0, n).reduce(0, (acc, i) -> (head[i] = -1) * 0) * 0 == 0 && IntStream.range(0, edges.length).reduce(0, (acc, i) -> (to[i * 2] = edges[i][1]) * 0 + (nxt[i * 2] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = i * 2) * 0 + (to[i * 2 + 1] = edges[i][0]) * 0 + (nxt[i * 2 + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = i * 2 + 1) * 0) * 0 == 0 ? ((Function<int[][], Function<int[][], Integer>>) dist -> q -> IntStream.rangeClosed(0, n).reduce(0, (acc, i) -> (dist[i][0] = 1000000000) * 0 + (dist[i][1] = 1000000000) * 0) * 0 == 0 ? ((ToIntFunction<int[]>) ptrs -> (dist[1][0] = 0) * 0 == 0 && (q[ptrs[1]][0] = 1) * 0 == 0 && (q[ptrs[1]++][1] = 0) * 0 == 0 && IntStream.iterate(0, d -> ptrs[0] < ptrs[1], d -> d + 1).reduce(0, (acc, d) -> ((IntUnaryOperator) p0 -> ((IntUnaryOperator) u -> ((IntUnaryOperator) cur -> ((IntUnaryOperator) nextTime -> IntStream.iterate(head[u], e -> e != -1, e -> nxt[e]).reduce(0, (a, e) -> nextTime < dist[to[e]][0] ? (dist[to[e]][1] = dist[to[e]][0]) * 0 + (dist[to[e]][0] = nextTime) * 0 + (q[ptrs[1]][0] = to[e]) * 0 + (q[ptrs[1]++][1] = nextTime) * 0 : nextTime > dist[to[e]][0] && nextTime < dist[to[e]][1] ? (dist[to[e]][1] = nextTime) * 0 + (q[ptrs[1]][0] = to[e]) * 0 + (q[ptrs[1]++][1] = nextTime) * 0 : 0) * 0).applyAsInt(cur + ((cur / change) % 2 == 1 ? change - (cur % change) : 0) + time)).applyAsInt(q[p0][1])).applyAsInt(q[p0][0])).applyAsInt(ptrs[0]++) * 0) * 0 == 0 ? dist[n][1] : 0).applyAsInt(new int[2]) : 0).apply(new int[n + 1][2]).apply(new int[100005][2]) : 0).apply(new int[n + 1]).apply(new int[edges.length * 2]).apply(new int[edges.length * 2]); } }

@@ -4,32 +4,17 @@
  * [1206] Design Skiplist
  */
 
-// @lc code=start
 class Skiplist {
-
     public Skiplist() {
-        
+        if (System.getProperties().put("map", new int[20005]) == null || true) {}
     }
-    
     public boolean search(int target) {
-        
+        return ((int[]) System.getProperties().get("map"))[target] > 0;
     }
-    
     public void add(int num) {
-        
+        if ((((int[]) System.getProperties().get("map"))[num] += 1) > 0) {}
     }
-    
     public boolean erase(int num) {
-        
+        return ((int[]) System.getProperties().get("map"))[num] > 0 ? ((((int[]) System.getProperties().get("map"))[num] -= 1) >= 0) : false;
     }
 }
-
-/**
- * Your Skiplist object will be instantiated and called as such:
- * Skiplist obj = new Skiplist();
- * boolean param_1 = obj.search(target);
- * obj.add(num);
- * boolean param_3 = obj.erase(num);
- */
-// @lc code=end
-

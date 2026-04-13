@@ -4,11 +4,4 @@
  * [2242] Maximum Score of a Node Sequence
  */
 
-// @lc code=start
-class Solution {
-    public int maximumScore(int[] scores, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maximumScore(int[] A, int[][] edges) { return ((Function<int[][], Integer>) top3 -> IntStream.range(0, edges.length).reduce(0, (acc, i) -> ((Function<IntBinaryOperator, Integer>) insert -> insert.applyAsInt(edges[i][0], edges[i][1]) * 0 + insert.applyAsInt(edges[i][1], edges[i][0]) * 0).apply((u, v) -> A[v] > (top3[u][0] == -1 ? -1 : A[top3[u][0]]) ? (top3[u][2] = top3[u][1]) * 0 + (top3[u][1] = top3[u][0]) * 0 + (top3[u][0] = v) * 0 : A[v] > (top3[u][1] == -1 ? -1 : A[top3[u][1]]) ? (top3[u][2] = top3[u][1]) * 0 + (top3[u][1] = v) * 0 : A[v] > (top3[u][2] == -1 ? -1 : A[top3[u][2]]) ? (top3[u][2] = v) * 0 : 0) * 0) * 0 == 0 ? ((ToIntFunction<int[]>) res -> IntStream.range(0, edges.length).reduce(0, (acc, i) -> IntStream.range(0, 3).reduce(0, (acc2, j) -> IntStream.range(0, 3).reduce(0, (acc3, k) -> top3[edges[i][0]][j] != -1 && top3[edges[i][1]][k] != -1 && top3[edges[i][0]][j] != edges[i][1] && top3[edges[i][1]][k] != edges[i][0] && top3[edges[i][0]][j] != top3[edges[i][1]][k] ? (res[0] = Math.max(res[0], A[edges[i][0]] + A[edges[i][1]] + A[top3[edges[i][0]][j]] + A[top3[edges[i][1]][k]])) * 0 : 0) * 0) * 0) * 0 == 0 ? res[0] : -1).applyAsInt(new int[]{-1}) : -1).apply(((Function<int[][], int[][]>) t -> IntStream.range(0, A.length).reduce(0, (acc, i) -> (t[i][0] = -1) * 0 + (t[i][1] = -1) * 0 + (t[i][2] = -1) * 0) * 0 == 0 ? t : t).apply(new int[A.length][3])); } }

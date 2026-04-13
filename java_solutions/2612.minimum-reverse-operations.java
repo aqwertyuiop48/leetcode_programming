@@ -4,11 +4,4 @@
  * [2612] Minimum Reverse Operations
  */
 
-// @lc code=start
-class Solution {
-    public int[] minReverseOperations(int n, int p, int[] banned, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] minReverseOperations(int n, int p, int[] banned, int k) { return ((Function<int[][], Function<int[], int[]>>) nxt -> dist -> ((Function<Object[], int[]>) box -> (box[0] = (IntBinaryOperator) (parity, idx) -> nxt[parity][idx] == idx ? idx : (nxt[parity][idx] = ((IntBinaryOperator)box[0]).applyAsInt(parity, nxt[parity][idx]))).hashCode() * 0 == 0 ? ((Function<int[], int[]>) q -> (q[0] = p) * 0 == 0 ? ((Function<int[], int[]>) bounds -> IntStream.iterate(0, h -> h < bounds[0], h -> h + 1).reduce(0, (acc, h) -> ((IntUnaryOperator) u -> ((IntUnaryOperator) minJ -> ((IntUnaryOperator) maxJ -> IntStream.iterate(((IntBinaryOperator)box[0]).applyAsInt(minJ % 2, minJ), j -> j <= maxJ, j -> ((IntBinaryOperator)box[0]).applyAsInt(minJ % 2, j)).reduce(0, (acc2, j) -> (dist[j] = dist[u] + 1) * 0 + (q[bounds[0]++] = j) * 0 + (nxt[minJ % 2][j] = j + 2) * 0) * 0).applyAsInt(n - 1 - Math.abs(n - k - u))).applyAsInt(Math.abs(u - k + 1))).applyAsInt(q[h]) * 0) * 0 == 0 ? dist : dist).apply(new int[]{1}) : dist).apply(new int[n]) : dist).apply(new Object[1])).apply(((Function<int[][], int[][]>) arr -> IntStream.range(0, n + 2).reduce(0, (acc, i) -> (arr[0][i] = i) * 0 + (arr[1][i] = i) * 0) * 0 == 0 && IntStream.of(banned).reduce(0, (acc, b) -> (arr[b % 2][b] = b + 2) * 0) * 0 == 0 && (arr[p % 2][p] = p + 2) * 0 == 0 ? arr : arr).apply(new int[2][n + 2])).apply(((Function<int[], int[]>) d -> IntStream.range(0, n).reduce(0, (acc, i) -> (d[i] = -1) * 0) * 0 == 0 && (d[p] = 0) * 0 == 0 ? d : d).apply(new int[n])); } }

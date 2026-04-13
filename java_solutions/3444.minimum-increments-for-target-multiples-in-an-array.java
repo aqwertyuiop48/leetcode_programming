@@ -4,11 +4,4 @@
  * [3444] Minimum Increments for Target Multiples in an Array
  */
 
-// @lc code=start
-class Solution {
-    public int minimumIncrements(int[] nums, int[] target) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumIncrements(int[] nums, int[] target) { return (int)(long) Optional.of(new Object[]{new long[1 << target.length], new long[1 << target.length], new long[1 << target.length], new LongBinaryOperator[1], new LongBinaryOperator[1], new long[]{Long.MAX_VALUE / 2}, new Object[1]}).map(st -> (((LongBinaryOperator[])st[3])[0] = (a, b) -> b == 0 ? a : ((LongBinaryOperator[])st[3])[0].applyAsLong(b, a % b)) != null ? st : st).map(st -> (((LongBinaryOperator[])st[4])[0] = (a, b) -> a / ((LongBinaryOperator[])st[3])[0].applyAsLong(a, b) * b) != null ? st : st).map(st -> IntStream.range(1, 1 << target.length).mapToLong(mask -> (((long[])st[0])[mask] = 1L) * 0L + IntStream.range(0, target.length).filter(j -> (mask & (1 << j)) != 0).mapToLong(j -> (((long[])st[0])[mask] = ((LongBinaryOperator[])st[4])[0].applyAsLong(((long[])st[0])[mask], target[j])) * 0L).sum()).sum() == 0 ? st : st).map(st -> IntStream.range(1, 1 << target.length).mapToLong(i -> (((long[])st[1])[i] = ((long[])st[5])[0]) * 0L).sum() == 0 ? st : st).map(st -> Arrays.stream(nums).mapToLong(x -> IntStream.range(0, 1 << target.length).mapToLong(i -> (((long[])st[2])[i] = ((long[])st[1])[i]) * 0L).sum() + IntStream.range(1, 1 << target.length).mapToLong(mask -> LongStream.of(x % ((long[])st[0])[mask] == 0 ? 0L : ((long[])st[0])[mask] - (x % ((long[])st[0])[mask])).map(cost -> IntStream.range(0, 1 << target.length).mapToLong(old -> (((long[])st[2])[old | mask] = Math.min(((long[])st[2])[old | mask], ((long[])st[1])[old] + cost)) * 0L).sum()).sum()).sum() + ((((Object[])st[6])[0] = st[1]) != null ? 0L : 0L) + ((st[1] = st[2]) != null ? 0L : 0L) + ((st[2] = ((Object[])st[6])[0]) != null ? 0L : 0L)).sum() == 0 ? st : st).map(st -> ((long[])st[1])[(1 << target.length) - 1]).get(); } }

@@ -4,11 +4,4 @@
  * [1994] The Number of Good Subsets
  */
 
-// @lc code=start
-class Solution {
-    public int numberOfGoodSubsets(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int numberOfGoodSubsets(int[] nums) { return ((Function<int[], Function<int[], Function<int[], Function<long[], Integer>>>>) primes -> count -> masked -> dp -> (dp[0] = 1) * 0 == 0 && IntStream.of(nums).reduce(0, (a, x) -> (count[x]++) * 0) * 0 == 0 && IntStream.rangeClosed(2, 30).reduce(0, (a, i) -> ((ToIntFunction<int[]>) temp -> IntStream.range(0, 10).reduce(0, (a2, j) -> ((ToIntFunction<int[]>) cnt -> IntStream.iterate(0, d -> temp[0] % primes[j] == 0, d -> d + 1).reduce(0, (a3, d) -> (temp[0] /= primes[j]) * 0 + (cnt[0]++) * 0) * 0 == 0 && cnt[0] > 1 ? (masked[i] = -1) * 0 : cnt[0] == 1 && masked[i] != -1 ? (masked[i] |= (1 << j)) * 0 : 0).applyAsInt(new int[]{0})) * 0).applyAsInt(new int[]{i}) * 0) * 0 == 0 && IntStream.rangeClosed(2, 30).reduce(0, (a, i) -> count[i] == 0 || masked[i] == -1 ? 0 : ((Function<long[], Integer>) next -> IntStream.range(0, 1024).reduce(0, (a2, m) -> (m & masked[i]) == 0 ? (int)((next[m | masked[i]] = (next[m | masked[i]] + dp[m] * count[i]) % 1000000007) * 0L) : 0) * 0 == 0 && IntStream.range(0, 1024).reduce(0, (a2, m) -> (int)((dp[m] = next[m]) * 0L)) * 0 == 0 ? 0 : 0).apply(dp.clone()) * 0) * 0 == 0 ? (int)( (IntStream.range(1, 1024).mapToLong(i -> dp[i]).sum() % 1000000007) * IntStream.range(0, count[1]).mapToLong(i -> 2).reduce(1L, (a, b) -> (a * b) % 1000000007) % 1000000007 ) : 0).apply(new int[]{2,3,5,7,11,13,17,19,23,29}).apply(new int[31]).apply(new int[31]).apply(new long[1024]); } }

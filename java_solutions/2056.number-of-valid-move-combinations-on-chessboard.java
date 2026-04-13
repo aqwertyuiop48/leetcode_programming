@@ -4,11 +4,4 @@
  * [2056] Number of Valid Move Combinations On Chessboard
  */
 
-// @lc code=start
-class Solution {
-    public int countCombinations(String[] pieces, int[][] positions) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int countCombinations(String[] pieces, int[][] positions) { return ((Function<int[][], Function<int[], Function<int[], Integer>>>) DIRS -> type -> moves -> ((Function<Object[], Integer>) box -> (box[0] = (IntUnaryOperator) idx -> idx == pieces.length ? (IntStream.rangeClosed(1, 7).anyMatch(t -> IntStream.range(0, pieces.length).anyMatch(i -> IntStream.range(0, i).anyMatch(j -> positions[i][0] + Math.min(t, moves[i] % 10) * DIRS[moves[i] / 10][0] == positions[j][0] + Math.min(t, moves[j] % 10) * DIRS[moves[j] / 10][0] && positions[i][1] + Math.min(t, moves[i] % 10) * DIRS[moves[i] / 10][1] == positions[j][1] + Math.min(t, moves[j] % 10) * DIRS[moves[j] / 10][1]))) ? 0 : 1) : IntStream.range(0, 9).filter(dir -> dir == 0 || (type[idx] == 0 && dir <= 4) || (type[idx] == 1 && dir >= 5) || type[idx] == 2).flatMap(dir -> IntStream.rangeClosed(dir == 0 ? 0 : 1, dir == 0 ? 0 : 7).filter(dist -> positions[idx][0] + DIRS[dir][0] * dist >= 1 && positions[idx][0] + DIRS[dir][0] * dist <= 8 && positions[idx][1] + DIRS[dir][1] * dist >= 1 && positions[idx][1] + DIRS[dir][1] * dist <= 8).map(dist -> (moves[idx] = dir * 10 + dist) * 0 + ((IntUnaryOperator)box[0]).applyAsInt(idx + 1))).sum()).hashCode() * 0 == 0 ? ((IntUnaryOperator)box[0]).applyAsInt(0) : 0).apply(new Object[1])).apply(new int[][]{{0,0}, {1,0}, {-1,0}, {0,1}, {0,-1}, {1,1}, {1,-1}, {-1,1}, {-1,-1}}).apply(IntStream.range(0, pieces.length).map(i -> pieces[i].charAt(0) == 'r' ? 0 : pieces[i].charAt(0) == 'b' ? 1 : 2).toArray()).apply(new int[pieces.length]); } }

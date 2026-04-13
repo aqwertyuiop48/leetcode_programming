@@ -4,27 +4,16 @@
  * [2102] Sequentially Ordinal Rank Tracker
  */
 
-// @lc code=start
-class SORTracker {
-
+record SORTracker(PriorityQueue<String> topK, PriorityQueue<String> rest) {
     public SORTracker() {
-        
+        this(new PriorityQueue<>(Comparator.reverseOrder()), new PriorityQueue<>());
     }
     
     public void add(String name, int score) {
-        
+        if (topK.offer((9999999 - score) + name) && rest.offer(topK.poll())) {}
     }
     
     public String get() {
-        
+        return topK.offer(rest.poll()) ? topK.peek().substring(7) : "";
     }
 }
-
-/**
- * Your SORTracker object will be instantiated and called as such:
- * SORTracker obj = new SORTracker();
- * obj.add(name,score);
- * String param_2 = obj.get();
- */
-// @lc code=end
-

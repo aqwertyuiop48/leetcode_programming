@@ -4,11 +4,4 @@
  * [3448] Count Substrings Divisible By Last Digit
  */
 
-// @lc code=start
-class Solution {
-    public long countSubstrings(String s) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long countSubstrings(String s) { return Optional.of(new Object[]{new long[4], new long[3], new long[9], new long[6][7], new int[1]}).map(st -> IntStream.range(0, s.length()).mapToLong(j -> (((int[])st[4])[0] = s.charAt(j) - '0') * 0L + (((long[])st[0])[1] = (((long[])st[0])[1] * 10 + ((int[])st[4])[0]) % 3) * 0L + (((long[])st[0])[2] = (((long[])st[0])[2] * 10 + ((int[])st[4])[0]) % 7) * 0L + (((long[])st[0])[3] = (((long[])st[0])[3] * 10 + ((int[])st[4])[0]) % 9) * 0L + (((long[])st[0])[0] += ( ((int[])st[4])[0] == 0 ? 0L : (((int[])st[4])[0] == 1 || ((int[])st[4])[0] == 2 || ((int[])st[4])[0] == 5) ? (j + 1L) : ((int[])st[4])[0] == 4 ? (j == 0 ? 1L : (((s.charAt(j - 1) - '0') * 10 + ((int[])st[4])[0]) % 4 == 0 ? j + 1L : 1L)) : ((int[])st[4])[0] == 8 ? (j == 0 ? 1L : j == 1 ? (((s.charAt(0) - '0') * 10 + 8) % 8 == 0 ? 2L : 1L) : (((s.charAt(j - 2) - '0') * 100 + (s.charAt(j - 1) - '0') * 10 + 8) % 8 == 0 ? j - 1L : 0L) + (((s.charAt(j - 1) - '0') * 10 + 8) % 8 == 0 ? 1L : 0L) + 1L) : (((int[])st[4])[0] == 3 || ((int[])st[4])[0] == 6) ? ((((long[])st[0])[1] == 0 ? 1L : 0L) + ((long[])st[1])[(int)((long[])st[0])[1]]) : ((int[])st[4])[0] == 9 ? ((((long[])st[0])[3] == 0 ? 1L : 0L) + ((long[])st[2])[(int)((long[])st[0])[3]]) : ((int[])st[4])[0] == 7 ? ((((long[])st[0])[2] == 0 ? 1L : 0L) + ((long[][])st[3])[j % 6][(int)((((long[])st[0])[2] * 1) % 7)] + ((long[][])st[3])[(j % 6 + 5) % 6][(int)((((long[])st[0])[2] * 5) % 7)] + ((long[][])st[3])[(j % 6 + 4) % 6][(int)((((long[])st[0])[2] * 4) % 7)] + ((long[][])st[3])[(j % 6 + 3) % 6][(int)((((long[])st[0])[2] * 6) % 7)] + ((long[][])st[3])[(j % 6 + 2) % 6][(int)((((long[])st[0])[2] * 2) % 7)] + ((long[][])st[3])[(j % 6 + 1) % 6][(int)((((long[])st[0])[2] * 3) % 7)]) : 0L )) * 0L + (((long[])st[1])[(int)((long[])st[0])[1]]++) * 0L + (((long[][])st[3])[j % 6][(int)((long[])st[0])[2]]++) * 0L + (((long[])st[2])[(int)((long[])st[0])[3]]++) * 0L ).sum() == 0 ? ((long[])st[0])[0] : ((long[])st[0])[0] ).get(); } }

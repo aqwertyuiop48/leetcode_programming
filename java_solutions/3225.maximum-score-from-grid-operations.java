@@ -4,11 +4,4 @@
  * [3225] Maximum Score From Grid Operations
  */
 
-// @lc code=start
-class Solution {
-    public long maximumScore(int[][] grid) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maximumScore(int[][] grid) { return ((Function<Integer, Long>) N -> ((Function<long[][], Long>) pref -> ((Function<long[], Long>) dp -> ((Function<Object[], Long>) box -> ((Function<Function<int[], Long>, Long>) dfs -> dfs.apply(new int[]{0, 0, 0})).apply((Function<int[], Long>) (box[0] = (Function<int[], Long>) state -> state[0] >= N ? 0L : dp[state[0] * (N + 1) * (N + 1) + state[1] * (N + 1) + state[2]] != -1L ? dp[state[0] * (N + 1) * (N + 1) + state[1] * (N + 1) + state[2]] : (dp[state[0] * (N + 1) * (N + 1) + state[1] * (N + 1) + state[2]] = Math.max(pref[state[2]][state[0]] + ((Function<int[], Long>) box[0]).apply(new int[]{state[0] + 1, 0, state[1]}), Math.max(state[0] + 1 < N ? IntStream.range(state[1], N).mapToLong(i -> pref[i + 1][state[0]] - pref[state[1]][state[0]] + ((Function<int[], Long>) box[0]).apply(new int[]{state[0] + 1, i + 1, 0})).max().orElse(-1L) : -1L, IntStream.range(0, N).mapToLong(i -> Math.max(0L, pref[state[2]][state[0]] - pref[i + 1][state[0]]) + ((Function<int[], Long>) box[0]).apply(new int[]{state[0] + 1, 0, i + 1})).max().orElse(-1L))))))).apply(new Object[1])).apply(IntStream.range(0, (N + 1) * (N + 1) * (N + 1)).mapToLong(i -> -1L).toArray())).apply(IntStream.rangeClosed(0, N).mapToObj(i -> IntStream.range(0, N).mapToLong(c -> IntStream.range(0, i).mapToLong(r -> grid[r][c]).sum()).toArray()).toArray(long[][]::new))).apply(grid.length); } }

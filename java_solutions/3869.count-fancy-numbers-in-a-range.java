@@ -4,11 +4,8 @@
  * [3869] Count Fancy Numbers in a Range
  */
 
-// @lc code=start
 class Solution {
     public long countFancy(long l, long r) {
-        
+        return CompletableFuture.supplyAsync(() -> Optional.of(new IntPredicate[1]).map(isgood -> Optional.of(isgood[0] = sum -> Optional.of(String.valueOf(sum)).map(s -> s.length() == 1 || IntStream.range(1, s.length()).noneMatch(idx -> s.charAt(idx) <= s.charAt(idx - 1)) || IntStream.range(1, s.length()).noneMatch(idx -> s.charAt(idx) >= s.charAt(idx - 1))).get()).map(ig -> Optional.of((Function<Object[], Long>[]) new Function[1]).map(solve -> Optional.of(solve[0] = args -> ((Integer)args[1] == ((String)args[0]).length()) ? (((Integer)args[5] == 0) ? 0L : (((Integer)args[3] == 0 || (Integer)args[3] == 1 || (Integer)args[3] == 2) ? 1L : (isgood[0].test((Integer)args[6]) ? 1L : 0L))) : (((Long[][][][][][])args[7])[(Integer)args[1]][(Integer)args[2] + 1][(Integer)args[3]][(Integer)args[4]][(Integer)args[5]][(Integer)args[6]] != null ? ((Long[][][][][][])args[7])[(Integer)args[1]][(Integer)args[2] + 1][(Integer)args[3]][(Integer)args[4]][(Integer)args[5]][(Integer)args[6]] : (((Long[][][][][][])args[7])[(Integer)args[1]][(Integer)args[2] + 1][(Integer)args[3]][(Integer)args[4]][(Integer)args[5]][(Integer)args[6]] = IntStream.rangeClosed(0, ((Integer)args[4] == 1) ? ((String)args[0]).charAt((Integer)args[1]) - '0' : 9).mapToLong(d -> ((Integer)args[5] == 0 && d == 0) ? solve[0].apply(new Object[]{args[0], (Integer)args[1] + 1, -1, 0, (((Integer)args[4] == 1 && d == (((Integer)args[4] == 1) ? ((String)args[0]).charAt((Integer)args[1]) - '0' : 9)) ? 1 : 0), 0, args[6], args[7]}) : solve[0].apply(new Object[]{args[0], (Integer)args[1] + 1, d, ((Integer)args[5] == 0) ? 0 : (((Integer)args[3] == 3) ? 3 : (((Integer)args[3] == 0) ? (d > (Integer)args[2] ? 1 : (d < (Integer)args[2] ? 2 : 3)) : (((Integer)args[3] == 1) ? (d > (Integer)args[2] ? 1 : 3) : (d < (Integer)args[2] ? 2 : 3)))), (((Integer)args[4] == 1 && d == (((Integer)args[4] == 1) ? ((String)args[0]).charAt((Integer)args[1]) - '0' : 9)) ? 1 : 0), 1, (Integer)args[6] + d, args[7]})).sum()))).map(sv -> Map.of("ans", solve[0].apply(new Object[]{String.valueOf(r), 0, -1, 0, 1, 0, 0, new Long[String.valueOf(r).length()][11][4][2][2][200]}) - solve[0].apply(new Object[]{String.valueOf(l - 1), 0, -1, 0, 1, 0, 0, new Long[String.valueOf(l - 1).length()][11][4][2][2][200]})).get("ans")).get()).get()).get()).get()).join();
     }
 }
-// @lc code=end
-

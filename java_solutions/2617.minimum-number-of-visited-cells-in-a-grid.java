@@ -4,11 +4,4 @@
  * [2617] Minimum Number of Visited Cells in a Grid
  */
 
-// @lc code=start
-class Solution {
-    public int minimumVisitedCells(int[][] grid) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumVisitedCells(int[][] grid) { return ((ToIntFunction<int[]>) dim -> dim[0] * dim[1] == 1 ? 1 : ((ToIntFunction<int[][]>) state -> ((ToIntFunction<Object[]>) box -> (box[0] = (IntBinaryOperator) (i, j) -> state[0][i * (dim[1] + 1) + j] == j ? j : (state[0][i * (dim[1] + 1) + j] = ((IntBinaryOperator)box[0]).applyAsInt(i, state[0][i * (dim[1] + 1) + j]))).hashCode() * 0 + (box[1] = (IntBinaryOperator) (j, i) -> state[1][j * (dim[0] + 1) + i] == i ? i : (state[1][j * (dim[0] + 1) + i] = ((IntBinaryOperator)box[1]).applyAsInt(j, state[1][j * (dim[0] + 1) + i]))).hashCode() * 0 == 0 ? ((ToIntFunction<int[]>) bounds -> IntStream.iterate(0, h -> h < bounds[0] && state[3][dim[0] * dim[1] - 1] == 0, h -> h + 1).reduce(0, (acc, h) -> ((IntUnaryOperator) u -> ((IntUnaryOperator) r -> ((IntUnaryOperator) c -> IntStream.iterate(((IntBinaryOperator)box[0]).applyAsInt(r, c + 1), k -> k <= c + grid[r][c] && k < dim[1], k -> ((IntBinaryOperator)box[0]).applyAsInt(r, k)).reduce(0, (acc2, k) -> (state[3][r * dim[1] + k] = state[3][u] + 1) * 0 + (state[2][bounds[0]++] = r * dim[1] + k) * 0 + (state[0][r * (dim[1] + 1) + k] = k + 1) * 0 + (state[1][k * (dim[0] + 1) + r] = r + 1) * 0) * 0 + IntStream.iterate(((IntBinaryOperator)box[1]).applyAsInt(c, r + 1), k -> k <= r + grid[r][c] && k < dim[0], k -> ((IntBinaryOperator)box[1]).applyAsInt(c, k)).reduce(0, (acc2, k) -> (state[3][k * dim[1] + c] = state[3][u] + 1) * 0 + (state[2][bounds[0]++] = k * dim[1] + c) * 0 + (state[0][k * (dim[1] + 1) + c] = c + 1) * 0 + (state[1][c * (dim[0] + 1) + k] = k + 1) * 0) * 0).applyAsInt(u % dim[1])).applyAsInt(u / dim[1])).applyAsInt(state[2][h]) * 0) * 0 == 0 ? (state[3][dim[0] * dim[1] - 1] == 0 ? -1 : state[3][dim[0] * dim[1] - 1]) : -1).applyAsInt(new int[]{1}) : -1).applyAsInt(new Object[2])).applyAsInt(new int[][]{IntStream.range(0, dim[0] * (dim[1] + 1)).map(i -> i % (dim[1] + 1)).toArray(), IntStream.range(0, dim[1] * (dim[0] + 1)).map(i -> i % (dim[0] + 1)).toArray(), new int[dim[0] * dim[1]], ((Function<int[], int[]>) d -> (d[0] = 1) * 0 == 0 ? d : d).apply(new int[dim[0] * dim[1]])})).applyAsInt(new int[]{grid.length, grid[0].length}); } }

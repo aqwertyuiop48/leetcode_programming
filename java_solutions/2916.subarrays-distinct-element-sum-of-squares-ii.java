@@ -4,11 +4,4 @@
  * [2916] Subarrays Distinct Element Sum of Squares II
  */
 
-// @lc code=start
-class Solution {
-    public int sumCounts(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int sumCounts(int[] nums) { return ((Function<long[], Integer>) seg -> ((Function<long[], Integer>) segsq -> ((Function<long[], Integer>) lazy -> ((Function<Map<Integer, Integer>, Integer>) prev -> ((Function<Object[], Integer>) box -> ((Function<long[], Integer>) ans -> (box[0] = (Function<int[], Integer>) state -> ((Function<Long, Integer>) len -> (int)((lazy[state[0]] != 0 ? (segsq[state[0]] = (segsq[state[0]] + len * (lazy[state[0]] * lazy[state[0]] % 1000000007L) % 1000000007L + 2L * lazy[state[0]] * seg[state[0]] % 1000000007L) % 1000000007L) * 0L + (seg[state[0]] = (seg[state[0]] + len * lazy[state[0]]) % 1000000007L) * 0L + (state[1] != state[2] ? (lazy[state[0] << 1] += lazy[state[0]]) * 0L + (lazy[(state[0] << 1) | 1] += lazy[state[0]]) * 0L : 0L) + (lazy[state[0]] = 0) * 0L : 0L)) == 0 && (state[1] > state[2] || state[1] > state[4] || state[2] < state[3]) ? 0 : (state[3] <= state[1] && state[2] <= state[4] ? (int)((segsq[state[0]] = (segsq[state[0]] + len % 1000000007L + 2L * seg[state[0]]) % 1000000007L) * 0L + (seg[state[0]] = (seg[state[0]] + len) % 1000000007L) * 0L + (state[1] != state[2] ? (lazy[state[0] << 1] += 1) * 0L + (lazy[(state[0] << 1) | 1] += 1) * 0L : 0L)) : ((Function<Integer, Integer>) mid -> ((Function<int[], Integer>)box[0]).apply(new int[]{state[0] << 1, state[1], mid, state[3], state[4]}) * 0 + ((Function<int[], Integer>)box[0]).apply(new int[]{(state[0] << 1) | 1, mid + 1, state[2], state[3], state[4]}) * 0 + (int)((seg[state[0]] = (seg[state[0] << 1] + seg[(state[0] << 1) | 1]) % 1000000007L) * 0L) + (int)((segsq[state[0]] = (segsq[state[0] << 1] + segsq[(state[0] << 1) | 1]) % 1000000007L) * 0L)).apply((state[1] + state[2]) >> 1))).apply((long)(state[2] - state[1] + 1))) != null && (IntStream.iterate(nums.length - 1, i -> i >= 0, i -> i - 1).mapToLong(i -> ((Function<int[], Integer>)box[0]).apply(new int[]{1, 1, nums.length, i + 1, prev.getOrDefault(nums[i], nums.length + 1) - 1}) * 0L + (prev.put(nums[i], i + 1) == null ? 0L : 0L) + (ans[0] = (ans[0] + segsq[1]) % 1000000007L) * 0L).sum() * 0L == 0L) ? (int) ans[0] : 0).apply(new long[1])).apply(new Object[1])).apply(new HashMap<>())).apply(new long[4 * nums.length + 4])).apply(new long[4 * nums.length + 4])).apply(new long[4 * nums.length + 4]); } }

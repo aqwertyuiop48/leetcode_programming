@@ -4,11 +4,8 @@
  * [3534] Path Existence Queries in a Graph II
  */
 
-// @lc code=start
 class Solution {
     public int[] pathExistenceQueries(int n, int[] nums, int maxDiff, int[][] queries) {
-        
+        return Optional.of(new Object[]{new long[n], new int[n], new int[n][33 - Integer.numberOfLeadingZeros(n)], new int[queries.length], new int[]{33 - Integer.numberOfLeadingZeros(n)}, new IntBinaryOperator[1]}).map((Object[] st) -> IntStream.range(0, n).map(i -> (int)(((long[])st[0])[i] = (((long)nums[i] << 32) | (long)i)) * 0).sum() == 0 ? st : st).map((Object[] st) -> ((st[0] = Arrays.stream((long[])st[0]).sorted().toArray()) != null) ? st : st).map((Object[] st) -> (((IntBinaryOperator[])st[5])[0] = (IntBinaryOperator) ((lo, target) -> Optional.of(new int[]{lo, n, 0}).map((int[] b) -> IntStream.range(0, 18).map(step -> b[0] < b[1] ? ((b[2] = (b[0] + b[1]) >>> 1) * 0 + ((((long[])st[0])[b[2]] >>> 32) <= target ? (b[0] = b[2] + 1) * 0 : (b[1] = b[2]) * 0)) : 0).sum() * 0 + b[0] - 1).get())) != null ? st : st).map((Object[] st) -> IntStream.range(0, n).map(i -> (((int[])st[1])[(int)(((long[])st[0])[i] & 0xFFFFFFFFL)] = i) * 0 + (((int[][])st[2])[i][0] = ((IntBinaryOperator[])st[5])[0].applyAsInt(i, (int)((((long[])st[0])[i] >>> 32) + maxDiff))) * 0).sum() == 0 ? st : st).map((Object[] st) -> IntStream.range(1, ((int[])st[4])[0]).map(j -> IntStream.range(0, n).map(i -> (((int[][])st[2])[i][j] = ((int[][])st[2])[ ((int[][])st[2])[i][j - 1] ][j - 1]) * 0).sum()).sum() == 0 ? st : st).map((Object[] st) -> IntStream.range(0, queries.length).map(q -> (((int[])st[3])[q] = Optional.of(new int[]{ Math.min(((int[])st[1])[queries[q][0]], ((int[])st[1])[queries[q][1]]), Math.max(((int[])st[1])[queries[q][0]], ((int[])st[1])[queries[q][1]]) }).map((int[] uv) -> uv[0] == uv[1] ? 0 : (((int[][])st[2])[uv[0]][((int[])st[4])[0] - 1] < uv[1] ? -1 : (Optional.of(new int[]{uv[0]}).map((int[] curr) -> IntStream.range(0, ((int[])st[4])[0]).map(inv_j -> ((int[])st[4])[0] - 1 - inv_j).map(j -> ((int[][])st[2])[curr[0]][j] < uv[1] ? (curr[0] = ((int[][])st[2])[curr[0]][j]) * 0 + (1 << j) : 0).sum() + 1).get()))).get()) * 0).sum() == 0 ? st : st).map((Object[] st) -> (int[])st[3]).get();
     }
 }
-// @lc code=end
-

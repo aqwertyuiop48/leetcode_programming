@@ -4,11 +4,4 @@
  * [3710] Maximum Partition Factor
  */
 
-// @lc code=start
-class Solution {
-    public int maxPartitionFactor(int[][] points) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maxPartitionFactor(int[][] points) { return points.length == 2 ? 0 : (int) Stream.<long[]>of(new long[]{0, 0, 0, 0}) .peek(b -> b[1] = Arrays.stream(points).mapToLong(p1 -> Arrays.stream(points).mapToLong(p2 -> (long) Math.abs(p1[0] - p2[0]) + Math.abs(p1[1] - p2[1])).max().orElse(0)).max().orElse(0) + 1) .mapToLong(b -> IntStream.range(0, 64).filter(i -> b[0] < b[1]) .peek(i -> b[2] = (b[0] + b[1]) >>> 1) .peek(i -> b[3] = Stream.<Object[]>of(new Object[]{new ArrayList[points.length], new int[points.length], new ArrayDeque<Integer>()}) .peek(st -> IntStream.range(0, points.length).forEach(idx -> ((List[]) st[0])[idx] = new ArrayList<Integer>())) .peek(st -> IntStream.range(0, points.length).allMatch(u -> IntStream.range(u + 1, points.length).filter(v -> (long) Math.abs(points[u][0] - points[v][0]) + Math.abs(points[u][1] - points[v][1]) < b[2]).allMatch(v -> ((List) ((List[]) st[0])[u]).add(v) && ((List) ((List[]) st[0])[v]).add(u)))) .peek(st -> Arrays.fill((int[]) st[1], -1)) .filter(st -> IntStream.range(0, points.length).allMatch(start -> ((int[]) st[1])[start] != -1 || ((List[]) st[0])[start].isEmpty() || Stream.of(0).peek(ignore -> ((Deque<Integer>) st[2]).add(start)).peek(ignore -> ((int[]) st[1])[start] = 0).allMatch(ignore -> Stream.generate(() -> ((Deque<Integer>) st[2]).poll()).takeWhile(Objects::nonNull).allMatch(curr -> ((List) ((List[]) st[0])[curr]).stream().allMatch(next -> ((int[]) st[1])[(int) next] == ((int[]) st[1])[curr] ? false : (((int[]) st[1])[(int) next] != -1 || (((int[]) st[1])[(int) next] = 1 - ((int[]) st[1])[curr]) >= -1 && ((Deque<Integer>) st[2]).add((int) next))))))) .count() > 0 ? 1 : 0) .peek(i -> b[0] = (b[3] == 1 ? b[2] + 1 : b[0])) .peek(i -> b[1] = (b[3] == 1 ? b[1] : b[2])) .count() * 0 + b[0] - 1) .findFirst().getAsLong(); } }

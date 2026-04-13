@@ -4,11 +4,4 @@
  * [2977] Minimum Cost to Convert String II
  */
 
-// @lc code=start
-class Solution {
-    public long minimumCost(String source, String target, String[] original, String[] changed, int[] cost) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long minimumCost(String source, String target, String[] original, String[] changed, int[] cost) { return ((Function<Map<String, Integer>, Function<int[], Function<long[][], Function<int[], Function<long[], Long>>>>>) id -> sz -> dist -> lens -> dp -> IntStream.range(0, original.length).map(i -> (int)((dist[id.computeIfAbsent(original[i], k -> sz[0]++)][id.computeIfAbsent(changed[i], k -> sz[0]++)] = Math.min(dist[id.get(original[i])][id.get(changed[i])], cost[i])) * 0)).sum() * 0L + IntStream.range(0, sz[0]).map(k -> IntStream.range(0, sz[0]).map(i -> dist[i][k] != Long.MAX_VALUE ? IntStream.range(0, sz[0]).map(j -> dist[k][j] != Long.MAX_VALUE ? (int)((dist[i][j] = Math.min(dist[i][j], dist[i][k] + dist[k][j])) * 0) : 0).sum() : 0).sum()).sum() * 0L + IntStream.range(0, source.length()).map(i -> dp[i] != Long.MAX_VALUE ? (source.charAt(i) == target.charAt(i) ? (int)((dp[i + 1] = Math.min(dp[i + 1], dp[i])) * 0) : 0) + Arrays.stream(lens).map(L -> i + L <= source.length() && id.containsKey(source.substring(i, i + L)) && id.containsKey(target.substring(i, i + L)) && dist[id.get(source.substring(i, i + L))][id.get(target.substring(i, i + L))] != Long.MAX_VALUE ? (int)((dp[i + L] = Math.min(dp[i + L], dp[i] + dist[id.get(source.substring(i, i + L))][id.get(target.substring(i, i + L))])) * 0) : 0).sum() : 0).sum() * 0L == 0L ? (dp[source.length()] == Long.MAX_VALUE ? -1L : dp[source.length()]) : 0L).apply(new HashMap<>()).apply(new int[1]).apply(IntStream.range(0, 201).mapToObj(i -> LongStream.range(0, 201).map(j -> i == j ? 0L : Long.MAX_VALUE).toArray()).toArray(long[][]::new)).apply(Arrays.stream(original).mapToInt(String::length).distinct().toArray()).apply(LongStream.rangeClosed(0, source.length()).map(i -> i == 0 ? 0L : Long.MAX_VALUE).toArray()); } }

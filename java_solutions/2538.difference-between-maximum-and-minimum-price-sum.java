@@ -4,11 +4,4 @@
  * [2538] Difference Between Maximum and Minimum Price Sum
  */
 
-// @lc code=start
-class Solution {
-    public long maxOutput(int n, int[][] edges, int[] price) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maxOutput(int n, int[][] edges, int[] price) { return ((Function<int[], Long>) head -> ((Function<int[], Long>) to -> ((Function<int[], Long>) next -> ((Function<long[], Long>) res -> ((Function<Object[], Long>) box -> (IntStream.range(0, edges.length).map(i -> (to[2 * i] = edges[i][1]) * 0 + (next[2 * i] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = 2 * i) * 0 + (to[2 * i + 1] = edges[i][0]) * 0 + (next[2 * i + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = 2 * i + 1) * 0).sum() * 0 == 0) && (box[0] = (Function<int[], long[]>) s -> ((Function<long[], long[]>) state -> IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).mapToObj(e -> ((Function<int[], long[]>)box[0]).apply(new int[]{to[e], s[0]})).mapToLong(child -> (res[0] = Math.max(res[0], Math.max(state[0] + child[1], state[1] + child[0]))) * 0L + (state[0] = Math.max(state[0], child[0] + price[s[0]])) * 0L + (state[1] = Math.max(state[1], child[1] + price[s[0]])) * 0L).sum() * 0L == 0L ? state : state).apply(new long[]{price[s[0]], 0})) != null && ((Function<int[], long[]>)box[0]).apply(new int[]{0, -1}) != null ? res[0] : 0).apply(new Object[1])).apply(new long[1])).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(IntStream.range(0, n).map(i -> -1).toArray()); } }

@@ -4,11 +4,4 @@
  * [3464] Maximize the Distance Between Points on a Square
  */
 
-// @lc code=start
-class Solution {
-    public int maxDistance(int side, int[][] points, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maxDistance(int side, int[][] points, int k) { return Optional.of(new Object[]{new long[points.length], new long[points.length * 2], new long[]{0, 2L * side}, 4L * side}).map(st -> IntStream.range(0, points.length).map(i -> (int)((((long[])st[0])[i] = points[i][1] == 0 ? points[i][0] : (points[i][0] == side ? (long)side + points[i][1] : (points[i][1] == side ? 2L * side + (side - points[i][0]) : 3L * side + (side - points[i][1])))) * 0) ).sum() == 0 ? st : st ).map(st -> ((st[0] = Arrays.stream((long[])st[0]).sorted().toArray()) != null) ? st : st ).map(st -> IntStream.range(0, points.length).map(i -> (int)((((long[])st[1])[i] = ((long[])st[0])[i]) * 0) + (int)((((long[])st[1])[i + points.length] = ((long[])st[0])[i] + (long)st[3]) * 0) ).sum() == 0 ? st : st ).map(st -> LongStream.iterate(0L, dummy -> ((long[])st[2])[0] < ((long[])st[2])[1], dummy -> LongStream.of(((long[])st[2])[0] + (((long[])st[2])[1] - ((long[])st[2])[0] + 1) / 2).map(mid -> IntStream.range(0, points.length).anyMatch(start -> IntStream.of(IntStream.range(1, k).reduce(start, (curr, step) -> curr < 0 ? -1 : IntStream.of(Arrays.binarySearch((long[])st[1], curr + 1, start + points.length, ((long[])st[1])[curr] + mid)) .map(idx -> idx >= 0 ? idx : -idx - 1) .map(idx -> idx >= start + points.length ? -1 : idx) .findFirst().getAsInt() )).filter(curr -> curr >= 0 && ((long[])st[1])[start] + (long)st[3] - ((long[])st[1])[curr] >= mid).findFirst().isPresent() ) ? (((long[])st[2])[0] = mid) * 0L : (((long[])st[2])[1] = mid - 1) * 0L ).sum() ).count() == 0 ? st : st ).map(st -> (int)((long[])st[2])[0]).get(); } }

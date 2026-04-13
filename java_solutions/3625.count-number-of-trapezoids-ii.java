@@ -4,11 +4,4 @@
  * [3625] Count Number of Trapezoids II
  */
 
-// @lc code=start
-class Solution {
-    public int countTrapezoids(int[][] points) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int countTrapezoids(int[][] points) { return ((Function<Object[], Integer>) s -> ((s[3] = (BiFunction<Integer, Integer, Integer>) (a, b) -> b == 0 ? Math.abs(a) : ((BiFunction<Integer, Integer, Integer>)s[3]).apply(b, a % b)) != null) && ((s[4] = (Function<Integer, Map<Integer, Integer>>) k -> new HashMap<>()) != null) && ((s[5] = (BiFunction<Integer, Integer, Integer>) Integer::sum) != null) && IntStream.range(0, points.length).allMatch(i -> ((Function<int[], Boolean>) vars -> IntStream.range(i + 1, points.length).allMatch(j -> ((vars[0] = points[j][0] - points[i][0]) > Integer.MIN_VALUE) && ((vars[1] = points[j][1] - points[i][1]) > Integer.MIN_VALUE) && ((vars[0] < 0 || (vars[0] == 0 && vars[1] < 0)) ? ((vars[0] = -vars[0]) > Integer.MIN_VALUE && (vars[1] = -vars[1]) > Integer.MIN_VALUE) : true) && ((vars[2] = ((BiFunction<Integer, Integer, Integer>)s[3]).apply(vars[0], Math.abs(vars[1]))) > 0) && ((vars[3] = vars[0] / vars[2]) > Integer.MIN_VALUE) && ((vars[4] = vars[1] / vars[2]) > Integer.MIN_VALUE) && ((vars[5] = vars[3] * points[i][1] - vars[4] * points[i][0]) > Integer.MIN_VALUE) && (((Map<Integer, Map<Integer, Integer>>)s[1]) .computeIfAbsent((vars[3] << 12) | (vars[4] + 2000), (Function<Integer, Map<Integer, Integer>>)s[4]) .merge(vars[5], 1, (BiFunction<Integer, Integer, Integer>)s[5]) != null) && (((Map<Integer, Map<Integer, Integer>>)s[2]) .computeIfAbsent((vars[0] << 12) | (vars[1] + 2000), (Function<Integer, Map<Integer, Integer>>)s[4]) .merge(vars[5], 1, (BiFunction<Integer, Integer, Integer>)s[5]) != null) ) ).apply(new int[6]) ) ? (int) (((Function<Map<Integer, Map<Integer, Integer>>, Long>) map -> map.values().stream().mapToLong(inner -> ((LongFunction<Long>) sum -> (sum * sum - inner.values().stream().mapToLong(v -> (long)v * v).sum()) / 2 ).apply(inner.values().stream().mapToLong(v -> v).sum()) ).sum() ).apply((Map)s[1]) - ((Function<Map<Integer, Map<Integer, Integer>>, Long>) map -> map.values().stream().mapToLong(inner -> ((LongFunction<Long>) sum -> (sum * sum - inner.values().stream().mapToLong(v -> (long)v * v).sum()) / 2 ).apply(inner.values().stream().mapToLong(v -> v).sum()) ).sum() ).apply((Map)s[2]) / 2) : 0 ).apply(new Object[]{ points, new HashMap<Integer, Map<Integer, Integer>>(), new HashMap<Integer, Map<Integer, Integer>>(), null, null, null }); } }

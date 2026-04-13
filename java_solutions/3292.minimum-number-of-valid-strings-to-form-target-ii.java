@@ -4,11 +4,4 @@
  * [3292] Minimum Number of Valid Strings to Form Target II
  */
 
-// @lc code=start
-class Solution {
-    public int minValidStrings(String[] words, String target) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minValidStrings(String[] words, String target) { return ((Function<int[], Integer>) jmp -> Arrays.stream(words).map(String::toCharArray).mapToInt(wc -> ((Function<int[], Integer>) pi -> ((Function<int[], Integer>) currPi -> IntStream.range(1, wc.length).map(i -> IntStream.iterate(0, x -> currPi[0] > 0 && wc[i] != wc[currPi[0]], x -> x + 1).map(x -> currPi[0] = pi[currPi[0] - 1]).sum() * 0 + (pi[i] = (currPi[0] = (wc[i] == wc[currPi[0]] ? currPi[0] + 1 : currPi[0]))) * 0).sum()).apply(new int[]{0}) * 0 + ((Function<int[], Integer>) currMatch -> IntStream.range(0, target.length()).map(i -> IntStream.iterate(0, x -> currMatch[0] > 0 && target.charAt(i) != wc[currMatch[0]], x -> x + 1).map(x -> currMatch[0] = pi[currMatch[0] - 1]).sum() * 0 + ((Function<Integer, Integer>) nj -> (nj > 0 ? (jmp[i - nj + 1] = Math.max(jmp[i - nj + 1], nj)) * 0 : 0) == 0 ? (currMatch[0] = (nj == wc.length ? pi[nj - 1] : nj)) * 0 : 0).apply(target.charAt(i) == wc[currMatch[0]] ? currMatch[0] + 1 : currMatch[0])).sum()).apply(new int[]{0}) * 0).apply(new int[wc.length])).sum() * 0 == 0 ? ((Function<int[], Integer>) state -> IntStream.range(0, target.length()).map(i -> (i > state[1]) ? 0 : ((state[2] = Math.max(state[2], i + jmp[i])) * 0 == 0 && i == state[1]) ? (state[0]++ * 0 == 0 && (state[1] = state[2]) * 0 == 0 ? 0 : 0) : 0).sum() * 0 == 0 && state[1] >= target.length() ? state[0] : -1).apply(new int[]{0, 0, 0}) : -1).apply(new int[target.length()]); } }

@@ -4,11 +4,4 @@
  * [3435] Frequencies of Shortest Supersequences
  */
 
-// @lc code=start
-class Solution {
-    public List<List<Integer>> supersequences(String[] words) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public List<List<Integer>> supersequences(String[] words) { return Optional.of(new Object[]{new int[26], new int[26], new int[1], new Object[1], new IntBinaryOperator[1], new int[1]}).map((Object[] st) -> IntStream.range(0, 26).map((int i) -> (((int[])st[0])[i] = -1) * 0).sum() == 0 ? st : st).map((Object[] st) -> Arrays.stream(words).mapToInt((String w) -> ((((int[])st[0])[w.charAt(0) - 'a'] == -1 ? (((int[])st[0])[w.charAt(0) - 'a'] = ((int[])st[2])[0]++) : 0) * 0) + ((((int[])st[0])[w.charAt(1) - 'a'] == -1 ? (((int[])st[0])[w.charAt(1) - 'a'] = ((int[])st[2])[0]++) : 0) * 0)).sum() == 0 ? st : st).map((Object[] st) -> Arrays.stream(words).mapToInt((String w) -> (((int[])st[1])[((int[])st[0])[w.charAt(1) - 'a']] |= (1 << ((int[])st[0])[w.charAt(0) - 'a'])) * 0).sum() == 0 ? st : st).map((Object[] st) -> (((Object[])st[3])[0] = new int[1 << ((int[])st[2])[0]]) != null ? st : st).map((Object[] st) -> (((IntBinaryOperator[])st[4])[0] = (int mask, int bits) -> bits == 0 ? 0 : ((((int[])st[1])[Integer.numberOfTrailingZeros(bits)] & mask) == 0 && ((int[])((Object[])st[3])[0])[mask ^ (1 << Integer.numberOfTrailingZeros(bits))] == 1 ? 1 : ((IntBinaryOperator)(((IntBinaryOperator[])st[4])[0])).applyAsInt(mask, bits & (bits - 1)))) != null ? st : st).map((Object[] st) -> ((((int[])((Object[])st[3])[0])[0] = 1) == 1) && IntStream.range(1, 1 << ((int[])st[2])[0]).map((int mask) -> (((int[])((Object[])st[3])[0])[mask] = ((IntBinaryOperator)(((IntBinaryOperator[])st[4])[0])).applyAsInt(mask, mask)) * 0).sum() == 0 ? st : st).map((Object[] st) -> (((int[])st[5])[0] = IntStream.range(0, 1 << ((int[])st[2])[0]).filter((int mask) -> ((int[])((Object[])st[3])[0])[mask] == 1).map((int mask) -> Integer.bitCount(mask)).max().orElse(0)) >= 0 ? st : st).map((Object[] st) -> IntStream.range(0, 1 << ((int[])st[2])[0]).filter((int mask) -> ((int[])((Object[])st[3])[0])[mask] == 1 && Integer.bitCount(mask) == ((int[])st[5])[0]).mapToObj((int mask) -> IntStream.range(0, 26).mapToObj((int c) -> ((int[])st[0])[c] == -1 ? 0 : (mask & (1 << ((int[])st[0])[c])) != 0 ? 1 : 2).collect(Collectors.toList())).collect(Collectors.toList())).get(); } }

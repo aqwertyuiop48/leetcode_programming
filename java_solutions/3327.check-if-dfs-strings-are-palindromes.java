@@ -4,11 +4,4 @@
  * [3327] Check if DFS Strings Are Palindromes
  */
 
-// @lc code=start
-class Solution {
-    public boolean[] findAnswer(int[] parent, String s) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public boolean[] findAnswer(int[] parent, String s) { return ((Function<List[], Function<int[], Function<int[], Function<char[], Function<int[], Function<long[], Function<long[], Function<long[], Function<boolean[], boolean[]>>>>>>>>>) t -> start -> end -> post -> timer -> p -> h -> rh -> ans -> ((Function<Function<Object[], Integer>, boolean[]>) dfs -> (boolean[]) ((Object[]) new Object[]{ IntStream.range(1, parent.length).map(i -> ((List<Integer>) t[parent[i]]).add(i) ? 0 : 0).sum(), dfs.apply(new Object[]{dfs, 0}), p[0] = 1, IntStream.range(0, parent.length).map(i -> (int)( (p[i+1] = (p[i] * 131L) % 1000000007L) * 0L + (h[i+1] = (h[i] * 131L + post[i]) % 1000000007L) * 0L )).sum(), IntStream.iterate(parent.length - 1, i -> i - 1).limit(parent.length).map(i -> (int)( (rh[i] = (rh[i+1] * 131L + post[i]) % 1000000007L) * 0L )).sum(), IntStream.range(0, parent.length).map(i -> (ans[i] = ((((h[end[i] + 1] - h[start[i]] * p[end[i] - start[i] + 1]) % 1000000007L + 1000000007L) % 1000000007L) == (((rh[start[i]] - rh[end[i] + 1] * p[end[i] - start[i] + 1]) % 1000000007L + 1000000007L) % 1000000007L))) ? 0 : 0).sum(), ans })[6] ).apply(args -> (int) ((Object[]) new Object[]{ start[(int)args[1]] = timer[0], ((List<Integer>) t[(int)args[1]]).stream().mapToInt(v -> ((Function<Object[], Integer>)args[0]).apply(new Object[]{args[0], v})).sum(), post[timer[0]] = s.charAt((int)args[1]), end[(int)args[1]] = timer[0]++ })[0]) ).apply(IntStream.range(0, parent.length).mapToObj(i -> new ArrayList<Integer>()).toArray(List[]::new)).apply(new int[parent.length]).apply(new int[parent.length]).apply(new char[parent.length]).apply(new int[]{0}).apply(new long[parent.length + 1]).apply(new long[parent.length + 1]).apply(new long[parent.length + 1]).apply(new boolean[parent.length]); } }

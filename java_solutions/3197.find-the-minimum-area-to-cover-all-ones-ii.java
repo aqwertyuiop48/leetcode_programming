@@ -4,11 +4,4 @@
  * [3197] Find the Minimum Area to Cover All Ones II
  */
 
-// @lc code=start
-class Solution {
-    public int minimumSum(int[][] grid) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumSum(int[][] A) { return ((IntFunction<Integer>) N -> ((IntFunction<Integer>) M -> ((Function<Function<int[], Integer>, Integer>) area -> IntStream.of(IntStream.range(1, N).flatMap(i -> IntStream.range(i + 1, N).map(j -> area.apply(new int[]{0, i, 0, M}) + area.apply(new int[]{i, j, 0, M}) + area.apply(new int[]{j, N, 0, M}))).min().orElse(Integer.MAX_VALUE), IntStream.range(1, M).flatMap(i -> IntStream.range(i + 1, M).map(j -> area.apply(new int[]{0, N, 0, i}) + area.apply(new int[]{0, N, i, j}) + area.apply(new int[]{0, N, j, M}))).min().orElse(Integer.MAX_VALUE), IntStream.range(1, N).flatMap(i -> IntStream.range(1, M).map(j -> area.apply(new int[]{0, i, 0, M}) + area.apply(new int[]{i, N, 0, j}) + area.apply(new int[]{i, N, j, M}))).min().orElse(Integer.MAX_VALUE), IntStream.range(1, N).flatMap(i -> IntStream.range(1, M).map(j -> area.apply(new int[]{0, i, 0, j}) + area.apply(new int[]{0, i, j, M}) + area.apply(new int[]{i, N, 0, M}))).min().orElse(Integer.MAX_VALUE), IntStream.range(1, M).flatMap(j -> IntStream.range(1, N).map(i -> area.apply(new int[]{0, N, 0, j}) + area.apply(new int[]{0, i, j, M}) + area.apply(new int[]{i, N, j, M}))).min().orElse(Integer.MAX_VALUE), IntStream.range(1, M).flatMap(j -> IntStream.range(1, N).map(i -> area.apply(new int[]{0, i, 0, j}) + area.apply(new int[]{i, N, 0, j}) + area.apply(new int[]{0, N, j, M}))).min().orElse(Integer.MAX_VALUE)).min().getAsInt()).apply(b -> ((Function<int[], Integer>) state -> IntStream.range(b[0], b[1]).reduce(0, (dummy, r) -> IntStream.range(b[2], b[3]).reduce(0, (dummy2, c) -> A[r][c] == 1 ? ((state[0] = Math.min(state[0], c)) * 0 + (state[1] = Math.min(state[1], r)) * 0 + (state[2] = Math.max(state[2], c)) * 0 + (state[3] = Math.max(state[3], r)) * 0) : 0) * 0) * 0 == 0 ? (state[2] == -1 ? 0 : (state[2] - state[0] + 1) * (state[3] - state[1] + 1)) : 0).apply(new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE, -1, -1}))).apply(A[0].length)).apply(A.length); } }

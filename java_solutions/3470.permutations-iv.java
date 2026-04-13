@@ -4,11 +4,8 @@
  * [3470] Permutations IV
  */
 
-// @lc code=start
 class Solution {
     public int[] permute(int n, long k) {
-        
+        return Optional.of(new Object[]{new int[n], new long[]{k}, new boolean[n + 1], new long[]{1L, 1L, 2L, 6L, 24L, 120L, 720L, 5040L, 40320L, 362880L, 3628800L, 39916800L, 479001600L}, new long[1], new LongUnaryOperator[1], new int[1]}).map((Object[] st) -> (((LongUnaryOperator[])st[5])[0] = (args) -> args < 0 ? ((~args) >= 13 ? Long.MAX_VALUE : ((long[])st[3])[(int)(~args)] * ((long[])st[3])[(int)(~args)]) : Optional.of(((LongUnaryOperator[])st[5])[0].applyAsLong(~(((args >> 32) - (args & 0xFFFFFFFFL)) / 2))).map(fSq -> fSq == Long.MAX_VALUE ? Long.MAX_VALUE : fSq * ((args & 0xFFFFFFFFL) % 2 == 0 ? ((args >> 32) - (args & 0xFFFFFFFFL) + 1) / 2 : 1)).get()) != null ? st : st).map((Object[] st) -> (int)(Optional.of(((LongUnaryOperator[])st[5])[0].applyAsLong(~(n / 2 - 1))).map(t -> t >= Long.MAX_VALUE / Math.max(1, n / 2) ? Long.MAX_VALUE : t * (n / 2)).map(t -> (((long[])st[4])[0] = n % 2 == 0 ? (t >= Long.MAX_VALUE / Math.max(1, n) ? Long.MAX_VALUE : t * n) : ((LongUnaryOperator[])st[5])[0].applyAsLong(((long)n << 32) | 0L))).get() * 0) == 0 ? st : st).filter((Object[] st) -> ((long[])st[1])[0] <= ((long[])st[4])[0]).map((Object[] st) -> IntStream.range(0, n).map(i -> Optional.of((n % 2 == 0 && i == 0) ? Optional.of(((LongUnaryOperator[])st[5])[0].applyAsLong(~(n / 2 - 1))).map(t -> t >= Long.MAX_VALUE / Math.max(1, n / 2) ? Long.MAX_VALUE : t * (n / 2)).get() : ((LongUnaryOperator[])st[5])[0].applyAsLong(((long)(n % 2 == 0 ? n - 1 : n) << 32) | (long)(n % 2 == 0 ? i : i + 1))).map(term -> Optional.of(new Object[]{term, (n % 2 == 0 && i == 0) ? -1 : (n % 2 == 0 ? 1 - (((int[])st[0])[i == 0 ? 0 : i - 1] % 2) : 1 - (i % 2))}).map(vars -> (int)((((long[])st[1])[0] %= ((long[])st[4])[0]) * 0) + (int)((((long[])st[1])[0] = ((long[])st[1])[0] == 0 ? ((long[])st[4])[0] : ((long[])st[1])[0]) * 0) + (int)((((int[])st[6])[0] = (int)((((long[])st[1])[0] - 1) / (long)vars[0])) * 0) + (int)((((int[])st[0])[i] = IntStream.rangeClosed(1, n).filter(x -> !((boolean[])st[2])[x] && ((int)vars[1] == -1 || x % 2 == (int)vars[1])).filter(x -> ((int[])st[6])[0]-- == 0).findFirst().getAsInt()) * 0) + (int)((((boolean[])st[2])[((int[])st[0])[i]] = true) ? 0 : 0) + (int)((((long[])st[4])[0] = (long)vars[0]) * 0)).get()).get()).sum() == 0 ? ((int[])st[0]) : ((int[])st[0])).orElse(new int[0]);
     }
 }
-// @lc code=end
-

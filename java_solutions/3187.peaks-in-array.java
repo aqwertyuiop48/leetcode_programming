@@ -4,11 +4,4 @@
  * [3187] Peaks in Array
  */
 
-// @lc code=start
-class Solution {
-    public List<Integer> countOfPeaks(int[] nums, int[][] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public List<Integer> countOfPeaks(int[] nums, int[][] queries) { return ((Function<Integer, List<Integer>>) N -> ((Function<int[], List<Integer>>) bit -> ((Function<int[], List<Integer>>) peaks -> ((Function<IntUnaryOperator, List<Integer>>) isPeak -> ((Function<IntUnaryOperator, List<Integer>>) updateNode -> ((Function<IntUnaryOperator, List<Integer>>) queryBIT -> IntStream.range(0, N).reduce(0, (acc, i) -> acc + updateNode.applyAsInt(i) * 0) * 0 == 0 ? IntStream.range(0, queries.length).mapToObj(qi -> queries[qi][0] == 1 ? (queries[qi][1] + 1 <= queries[qi][2] - 1 ? queryBIT.applyAsInt(queries[qi][2]) - queryBIT.applyAsInt(queries[qi][1] + 1) : 0) : (nums[queries[qi][1]] = queries[qi][2]) * 0 + updateNode.applyAsInt(queries[qi][1] - 1) * 0 + updateNode.applyAsInt(queries[qi][1]) * 0 + updateNode.applyAsInt(queries[qi][1] + 1) * 0 - 1).filter(res -> res != -1).collect(Collectors.toList()) : null).apply((IntUnaryOperator) i -> IntStream.iterate(i, j -> j > 0, j -> j - (j & -j)).map(j -> bit[j]).sum())).apply((IntUnaryOperator) i -> (i >= 0 && i < N ? ((IntUnaryOperator) np -> np != peaks[i] ? IntStream.iterate(i + 1, j -> j <= N, j -> j + (j & -j)).reduce(0, (acc, j) -> (bit[j] += np - peaks[i]) * 0) * 0 + (peaks[i] = np) * 0 : 0).applyAsInt(isPeak.applyAsInt(i)) : 0))).apply((IntUnaryOperator) i -> (i > 0 && i < N - 1 && nums[i] > nums[i - 1] && nums[i] > nums[i + 1] ? 1 : 0))).apply(new int[N])).apply(new int[N + 1])).apply(nums.length); } }

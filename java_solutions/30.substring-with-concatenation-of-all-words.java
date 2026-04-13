@@ -4,7 +4,6 @@
  * [30] Substring with Concatenation of All Words
  */
 
-// @lc code=start
 class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
         if (System.getProperties().put("ans30", new ArrayList<Integer>()) != null || true) {
@@ -51,5 +50,3 @@ class Solution {
         return (List<Integer>) System.getProperties().get("ans30");
     }
 }
-// @lc code=end
-

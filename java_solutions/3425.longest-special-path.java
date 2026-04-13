@@ -4,11 +4,4 @@
  * [3425] Longest Special Path
  */
 
-// @lc code=start
-class Solution {
-    public int[] longestSpecialPath(int[][] edges, int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] longestSpecialPath(int[][] e, int[] n) { return ((Function<List<List<int[]>>, int[]>) g -> ((Function<BiFunction<BiFunction, Object[], Object>, int[]>) dfs -> (int[]) dfs.apply(dfs, new Object[]{0, -1, 0, IntStream.generate(() -> -1).limit(Arrays.stream(n).max().orElse(0) + 1).toArray(), new ArrayList<int[]>(), new int[]{0, 1}, 0})).apply((f, state) -> ((Function<Integer, int[]>) oldPos -> ((Function<Integer, int[]>) newSIdx -> ((Function<Integer, int[]>) curLen -> ((Function<Integer, int[]>) curNodes -> (int[]) new Object[]{((List<int[]>)state[4]).add(new int[]{(int)state[0], (int)state[2]}), ((int[])state[3])[n[(int)state[0]]] = ((List<int[]>)state[4]).size() - 1, curLen > ((int[])state[5])[0] || (curLen == ((int[])state[5])[0] && curNodes < ((int[])state[5])[1]) ? (((int[])state[5])[0] = curLen) + (((int[])state[5])[1] = curNodes) : 0, g.get((int)state[0]).stream().filter(edge -> edge[0] != (int)state[1]).mapToInt(edge -> ((int[])f.apply(f, new Object[]{edge[0], (int)state[0], (int)state[2] + edge[1], state[3], state[4], state[5], newSIdx}))[0] * 0).sum(), ((int[])state[3])[n[(int)state[0]]] = oldPos, ((List<int[]>)state[4]).remove(((List<int[]>)state[4]).size() - 1), (int[])state[5]}[6]).apply(((List<int[]>)state[4]).size() - newSIdx + 1)).apply(newSIdx == 0 ? (int)state[2] : (newSIdx == ((List<int[]>)state[4]).size() ? 0 : (int)state[2] - ((List<int[]>)state[4]).get(newSIdx)[1]))).apply(oldPos >= (int)state[6] ? oldPos + 1 : (int)state[6])).apply(((int[])state[3])[n[(int)state[0]]]))).apply(IntStream.range(0, n.length).mapToObj(i -> (List<int[]>)new ArrayList<int[]>()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> Arrays.stream(e).mapToInt(edge -> list.get(edge[0]).add(new int[]{edge[1], edge[2]}) && list.get(edge[1]).add(new int[]{edge[0], edge[2]}) ? 1 : 1).sum() >= 0 ? list : list))); } }

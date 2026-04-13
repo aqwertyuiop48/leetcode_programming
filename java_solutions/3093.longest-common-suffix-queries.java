@@ -4,11 +4,4 @@
  * [3093] Longest Common Suffix Queries
  */
 
-// @lc code=start
-class Solution {
-    public int[] stringIndices(String[] wordsContainer, String[] wordsQuery) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] stringIndices(String[] wordsContainer, String[] wordsQuery) { return ((Function<BiFunction<Integer, Integer, Integer>, int[]>) best -> ((Function<Object[], int[]>) root -> Arrays.stream(wordsQuery).mapToInt(q -> ((Function<Object[], Integer>) state -> ((IntUnaryOperator) dummy -> (Integer) state[1]).applyAsInt(IntStream.range(0, q.length()).map(j -> q.length() - 1 - j).map(j -> ((Function<Integer, Integer>) c -> state[0] != null && ((Object[])state[0])[c] != null ? (((state[0] = ((Object[])state[0])[c]) != null ? ((state[1] = ((Object[])state[0])[26]) != null ? 0 : 0) : 0)) : ((state[0] = null) == null ? 0 : 0)).apply(q.charAt(j) - 'a')).sum() * 0)).apply(new Object[]{root, root[26]})).toArray()).apply(IntStream.range(0, wordsContainer.length).boxed().reduce(new Object[27], (rt, i) -> ((Function<Object[][], Object[]>) ptr -> ((IntUnaryOperator) dummy -> 0).applyAsInt((ptr[0][26] = best.apply((Integer)ptr[0][26], i)) != null ? IntStream.range(0, wordsContainer[i].length()).map(j -> wordsContainer[i].length() - 1 - j).map(j -> ((Function<Integer, Integer>) c -> (ptr[0] = (Object[]) (ptr[0][c] == null ? (ptr[0][c] = new Object[27]) : ptr[0][c])) != null ? ((ptr[0][26] = best.apply((Integer)ptr[0][26], i)) != null ? 0 : 0) : 0).apply(wordsContainer[i].charAt(j) - 'a')).sum() * 0 : 0) == 0 ? rt : rt).apply(new Object[][]{rt}), (a, b) -> a))).apply((a, b) -> a == null ? b : b == null ? a : (wordsContainer[a].length() != wordsContainer[b].length() ? (wordsContainer[a].length() < wordsContainer[b].length() ? a : b) : (a < b ? a : b))); } }

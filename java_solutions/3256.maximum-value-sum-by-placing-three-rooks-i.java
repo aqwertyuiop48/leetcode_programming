@@ -4,11 +4,4 @@
  * [3256] Maximum Value Sum by Placing Three Rooks I
  */
 
-// @lc code=start
-class Solution {
-    public long maximumValueSum(int[][] board) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maximumValueSum(int[][] board) { return ((Function<Integer, Long>) M -> ((Function<Integer, Long>) N -> ((Function<long[], Long>) sorted -> ((Function<int[], Long>) rCount -> ((Function<int[], Long>) cCount -> ((Function<long[], Long>) top -> IntStream.range(0, M * N).map(i -> M * N - 1 - i).reduce(0, (acc, i) -> top[15] < 15 && rCount[(int)((sorted[i] >> 16) & 0xFFFF)] < 3 && cCount[(int)(sorted[i] & 0xFFFF)] < 3 ? (rCount[(int)((sorted[i] >> 16) & 0xFFFF)]++) * 0 + (cCount[(int)(sorted[i] & 0xFFFF)]++) * 0 + (int)((top[(int)top[15]++] = sorted[i]) * 0) : 0) * 0 == 0 ? IntStream.range(0, (int)top[15]).mapToLong(i -> IntStream.range(i + 1, (int)top[15]).mapToLong(j -> IntStream.range(j + 1, (int)top[15]).mapToLong(k -> ((top[i] >> 16) & 0xFFFF) != ((top[j] >> 16) & 0xFFFF) && ((top[i] >> 16) & 0xFFFF) != ((top[k] >> 16) & 0xFFFF) && ((top[j] >> 16) & 0xFFFF) != ((top[k] >> 16) & 0xFFFF) && (top[i] & 0xFFFF) != (top[j] & 0xFFFF) && (top[i] & 0xFFFF) != (top[k] & 0xFFFF) && (top[j] & 0xFFFF) != (top[k] & 0xFFFF) ? (top[i] >> 32) + (top[j] >> 32) + (top[k] >> 32) - 3000000000L : -30000000000L).max().orElse(-30000000000L)).max().orElse(-30000000000L)).max().orElse(-30000000000L) : -30000000000L).apply(new long[16])).apply(new int[N])).apply(new int[M])).apply(IntStream.range(0, M * N).mapToLong(i -> (((long)board[i / N][i % N] + 1000000000L) << 32) | ((long)(i / N) << 16) | (i % N)).sorted().toArray())).apply(board[0].length)).apply(board.length).longValue(); } }

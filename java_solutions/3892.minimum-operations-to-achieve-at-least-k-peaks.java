@@ -4,11 +4,4 @@
  * [3892] Minimum Operations to Achieve At Least K Peaks
  */
 
-// @lc code=start
-class Solution {
-    public int minOperations(int[] nums, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minOperations(int[] nums, int k) { return k > nums.length / 2 ? -1 : k == 0 ? 0 : nums.length == 2 ? (nums[0] == nums[1] ? 1 : 0) : ((Function<int[], Integer>) cost -> ((Function<int[], Integer>) dp -> ((Function<Object[], Integer>) box -> (box[0] = (ToIntFunction<int[]>) args -> args[1] == 0 ? 0 : args[0] > args[2] ? 100000007 : dp[args[0] * (k + 1) + args[1]] != -1 ? dp[args[0] * (k + 1) + args[1]] : (dp[args[0] * (k + 1) + args[1]] = Math.min(cost[args[0]] + ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{args[0] + 2, args[1] - 1, args[2]}), ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{args[0] + 1, args[1], args[2]})))).hashCode() * 0 == 0 ? ((ToIntFunction<int[]>) ans -> IntStream.range(0, (nums.length + 1) * (k + 1)).reduce(0, (acc, i) -> (dp[i] = -1) * 0) * 0 == 0 && (ans[0] = ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{1, k, nums.length - 1})) * 0 == 0 && IntStream.range(0, (nums.length + 1) * (k + 1)).reduce(0, (acc, i) -> (dp[i] = -1) * 0) * 0 == 0 && (ans[1] = cost[0] + ((ToIntFunction<int[]>)box[0]).applyAsInt(new int[]{2, k - 1, nums.length - 2})) * 0 == 0 ? (Math.min(ans[0], ans[1]) >= 100000000 ? -1 : Math.min(ans[0], ans[1])) : 0).applyAsInt(new int[2]) : 0).apply(new Object[1])).apply(new int[(nums.length + 1) * (k + 1)])).apply(IntStream.range(0, nums.length).map(i -> Math.max(0, Math.max(nums[(i - 1 + nums.length) % nums.length], nums[(i + 1) % nums.length]) + 1 - nums[i])).toArray()); } }

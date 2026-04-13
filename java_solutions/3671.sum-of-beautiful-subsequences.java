@@ -4,11 +4,4 @@
  * [3671] Sum of Beautiful Subsequences
  */
 
-// @lc code=start
-class Solution {
-    public int totalBeauty(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int totalBeauty(int[] nums) { return Stream.of(nums) .map(n -> new Object[] { new int[][] { new int[70002], new int[n.length], new int[n.length + 1], new int[70002], new int[n.length + 1] }, new int[8] }) .peek(obj -> { if (obj[0] instanceof int[][] s && obj[1] instanceof int[] v && s[0] instanceof int[] head && s[1] instanceof int[] next && s[2] instanceof int[] bit && s[3] instanceof int[] f && s[4] instanceof int[] hist) { while (v[0] < 70002) { if ((head[v[0]++] = -1) != 0) {} } if ((v[0] = 0) == 0) {} while (v[0] < nums.length) { if ((next[v[0]] = head[nums[v[0]]]) > -2 && (head[nums[v[0]]] = v[0]++) > -2) {} } if ((v[1] = 1) > 0) {} while (v[1] < 70002) { if ((v[3] = v[1]) > -1) {} while (v[3] < 70002) { if ((v[0] = head[v[3]]) > -2) {} while (v[0] != -1) { if ((v[4] = 0) == 0 && (v[5] = v[0]) > -1) {} while (v[5] > 0) { if ((v[4] += bit[v[5]]) >= 1000000007 && (v[4] -= 1000000007) > -1) {} if ((v[5] -= v[5] & -v[5]) > -2) {} } if (++v[4] >= 1000000007 && (v[4] = 0) > -1) {} if ((f[v[1]] += v[4]) >= 1000000007 && (f[v[1]] -= 1000000007) > -1) {} if ((v[5] = (hist[v[2]++] = v[0] + 1)) > -1) {} while (v[5] <= nums.length) { if ((bit[v[5]] += v[4]) >= 1000000007 && (bit[v[5]] -= 1000000007) > -1) {} if ((v[5] += v[5] & -v[5]) > -1) {} } if ((v[0] = next[v[0]]) > -2) {} } if ((v[3] += v[1]) > -1) {} } while (v[2] > 0) { if ((v[5] = hist[--v[2]]) > -1) {} while (v[5] <= nums.length) { if ((bit[v[5]] = 0) > -1 && (v[5] += v[5] & -v[5]) > -1) {} } } if ((v[1]++) > -1 && (v[2] = 0) == 0) {} } if ((v[1] = 70001) > 0) {} while (v[1] > 0) { if ((v[6] = 2 * v[1]) > -1) {} while (v[6] < 70002) { if ((f[v[1]] -= f[v[6]]) < 0 && (f[v[1]] += 1000000007) > -1) {} if ((v[6] += v[1]) > -1) {} } if ((v[7] = (int)((v[7] + (long) v[1] * f[v[1]--]) % 1000000007)) > -1) {} } } }) .mapToInt(obj -> ((int[])((Object[])obj)[1])[7]) .findFirst() .getAsInt(); } }

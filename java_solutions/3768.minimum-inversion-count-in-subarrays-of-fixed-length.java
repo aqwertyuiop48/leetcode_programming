@@ -4,11 +4,4 @@
  * [3768] Minimum Inversion Count in Subarrays of Fixed Length
  */
 
-// @lc code=start
-class Solution {
-    public long minInversionCount(int[] nums, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long minInversionCount(int[] nums, int k) { return Stream.<Object[]>of(new Object[]{ IntStream.of(nums).distinct().sorted().toArray(), null, null, new long[]{0, Long.MAX_VALUE}, null, null }).filter(s -> ((s[1] = IntStream.of(nums).map(v -> Arrays.binarySearch((int[])s[0], v) + 1).toArray()) != null) && ((s[2] = new long[((int[])s[0]).length + 2]) != null) && ((s[4] = (BiFunction<Integer, Integer, Boolean>) (i, v) -> i >= ((long[])s[2]).length || ((((long[])s[2])[i] += v) > Long.MIN_VALUE && ((BiFunction<Integer, Integer, Boolean>)s[4]).apply(i + (i & -i), v)) ) != null) && ((s[5] = (Function<Integer, Long>) i -> i <= 0 ? 0L : ((long[])s[2])[i] + ((Function<Integer, Long>)s[5]).apply(i - (i & -i)) ) != null) ).map(s -> IntStream.range(0, nums.length).allMatch(i -> Stream.of(0).allMatch(z -> (i < k || Stream.of(((int[])s[1])[i - k]).allMatch(out -> ((BiFunction<Integer, Integer, Boolean>)s[4]).apply(out, -1) && (((long[])s[3])[0] -= ((Function<Integer, Long>)s[5]).apply(out - 1)) > Long.MIN_VALUE )) && Stream.of(((int[])s[1])[i]).allMatch(in -> (((long[])s[3])[0] += (Math.min(i, k - 1) - ((Function<Integer, Long>)s[5]).apply(in))) > Long.MIN_VALUE && ((BiFunction<Integer, Integer, Boolean>)s[4]).apply(in, 1) ) && (i < k - 1 || (((long[])s[3])[1] = Math.min(((long[])s[3])[1], ((long[])s[3])[0])) > Long.MIN_VALUE) ) ) ? ((long[])s[3])[1] : 0L).findFirst().get(); } }

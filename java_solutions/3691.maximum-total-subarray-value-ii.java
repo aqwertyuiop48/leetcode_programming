@@ -4,11 +4,4 @@
  * [3691] Maximum Total Subarray Value II
  */
 
-// @lc code=start
-class Solution {
-    public long maxTotalValue(int[] nums, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maxTotalValue(int[] nums, int k) { return Stream.<Object[]>of(new Object[]{nums, (int) (Math.log(nums.length) / Math.log(2)) + 1, null, null, new int[nums.length + 1], new PriorityQueue<long[]>((a, b) -> Long.compare(b[0], a[0])), new HashSet<Long>(), new long[1]}) .peek(s -> IntStream.range(2, ((int[]) s[0]).length + 1).allMatch(i -> (((int[]) s[4])[i] = ((int[]) s[4])[i / 2] + 1) >= 0)) .peek(s -> s[2] = new int[(int) s[1]][((int[]) s[0]).length]).peek(s -> s[3] = new int[(int) s[1]][((int[]) s[0]).length]) .peek(s -> IntStream.range(0, ((int[]) s[0]).length).allMatch(i -> (((int[][]) s[2])[0][i] = ((int[][]) s[3])[0][i] = ((int[]) s[0])[i]) >= -2e9)) .peek(s -> IntStream.range(1, (int) s[1]).allMatch(j -> IntStream.range(0, ((int[]) s[0]).length - (1 << j) + 1).allMatch(i -> (((int[][]) s[2])[j][i] = Math.max(((int[][]) s[2])[j - 1][i], ((int[][]) s[2])[j - 1][i + (1 << (j - 1))])) >= -2e9 && (((int[][]) s[3])[j][i] = Math.min(((int[][]) s[3])[j - 1][i], ((int[][]) s[3])[j - 1][i + (1 << (j - 1))])) >= -2e9))) .peek(s -> Stream.of(((int[]) s[4])[((int[]) s[0]).length]).allMatch(j -> ((PriorityQueue<long[]>) s[5]).add(new long[]{(long) Math.max(((int[][]) s[2])[j][0], ((int[][]) s[2])[j][((int[]) s[0]).length - (1 << j)]) - Math.min(((int[][]) s[3])[j][0], ((int[][]) s[3])[j][((int[]) s[0]).length - (1 << j)]), 0, ((int[]) s[0]).length - 1}) && ((HashSet<Long>) s[6]).add(((long) 0 << 31) | (((int[]) s[0]).length - 1)))) .map(s -> IntStream.range(0, k).allMatch(i -> ((PriorityQueue<long[]>) s[5]).isEmpty() ? false : Stream.of(((PriorityQueue<long[]>) s[5]).poll()).allMatch(t -> (((long[]) s[7])[0] += t[0]) >= -9e18 && Stream.of(new int[][]{{(int) t[1] + 1, (int) t[2]}, {(int) t[1], (int) t[2] - 1}}).allMatch(r -> (r[0] > r[1] || !((HashSet<Long>) s[6]).add(((long) r[0] << 31) | r[1])) || Stream.of(((int[]) s[4])[r[1] - r[0] + 1]).allMatch(j -> ((PriorityQueue<long[]>) s[5]).add(new long[]{(long) Math.max(((int[][]) s[2])[j][r[0]], ((int[][]) s[2])[j][r[1] - (1 << j) + 1]) - Math.min(((int[][]) s[3])[j][r[0]], ((int[][]) s[3])[j][r[1] - (1 << j) + 1]), r[0], r[1]}))))) ? ((long[]) s[7])[0] : ((long[]) s[7])[0]).findFirst().get(); } }

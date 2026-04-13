@@ -19,4 +19,3 @@ class Solution {
         return prices.length > 0 ? prices[0] : 0;
     }
 }
-

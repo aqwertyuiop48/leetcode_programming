@@ -4,11 +4,4 @@
  * [2935] Maximum Strong Pair XOR II
  */
 
-// @lc code=start
-class Solution {
-    public int maximumStrongPairXor(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maximumStrongPairXor(int[] A) { return ((Function<int[], Integer>) sorted -> ((Function<int[], Function<int[], Function<int[], Function<int[], Integer>>>>) child0 -> child1 -> count -> sz -> ((Function<IntBinaryOperator, Function<IntUnaryOperator, Integer>>) update -> query -> ((Function<int[], Integer>) state -> IntStream.range(0, sorted.length).reduce(0, (acc, j) -> update.applyAsInt(sorted[j], 1) * 0 + IntStream.iterate(0, dummy -> sorted[j] > 2 * sorted[state[0]], dummy -> dummy + 1).reduce(0, (acc2, dummy) -> update.applyAsInt(sorted[state[0]++], -1) * 0) * 0 + (state[1] = Math.max(state[1], query.applyAsInt(sorted[j]))) * 0) * 0 == 0 ? state[1] : 0).apply(new int[2])).apply((IntBinaryOperator) (val, dir) -> IntStream.iterate(20, bit -> bit >= 0, bit -> bit - 1).reduce(0, (u, bit) -> ((val >> bit) & 1) == 0 ? ((child0[u] == 0 ? (child0[u] = sz[0]++) : 0) * 0 + (count[child0[u]] += dir) * 0 + child0[u]) : ((child1[u] == 0 ? (child1[u] = sz[0]++) : 0) * 0 + (count[child1[u]] += dir) * 0 + child1[u])) * 0).apply((IntUnaryOperator) val -> (int) (LongStream.iterate(20, bit -> bit >= 0, bit -> bit - 1).reduce(0L, (st, bit) -> ((val >> bit) & 1) == 0 ? (child1[(int)(st >>> 21)] != 0 && count[child1[(int)(st >>> 21)]] > 0 ? (((long)child1[(int)(st >>> 21)] << 21) | ((st & 0x1FFFFF) | (1L << bit))) : (((long)child0[(int)(st >>> 21)] << 21) | (st & 0x1FFFFF))) : (child0[(int)(st >>> 21)] != 0 && count[child0[(int)(st >>> 21)]] > 0 ? (((long)child0[(int)(st >>> 21)] << 21) | ((st & 0x1FFFFF) | (1L << bit))) : (((long)child1[(int)(st >>> 21)] << 21) | (st & 0x1FFFFF)))) & 0x1FFFFF))).apply(new int[1100000]).apply(new int[1100000]).apply(new int[1100000]).apply(new int[]{1})).apply(IntStream.of(A).sorted().toArray()); } }

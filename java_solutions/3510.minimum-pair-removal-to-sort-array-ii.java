@@ -4,11 +4,8 @@
  * [3510] Minimum Pair Removal to Sort Array II
  */
 
-// @lc code=start
 class Solution {
     public int minimumPairRemoval(int[] nums) {
-        
+        return Optional.of(new Object[]{new long[nums.length], new int[nums.length], new int[nums.length], new long[nums.length], new int[2], null}).map((Object[] st) -> (st[5] = new TreeSet<Integer>((a, b) -> ((long[])st[3])[a] != ((long[])st[3])[b] ? Long.compare(((long[])st[3])[a], ((long[])st[3])[b]) : Integer.compare(a, b))) != null ? st : st).map((Object[] st) -> IntStream.range(0, nums.length).map(i -> (int)(((long[])st[0])[i] = nums[i]) * 0 + (((int[])st[1])[i] = i - 1) * 0 + (((int[])st[2])[i] = i == nums.length - 1 ? -1 : i + 1) * 0 + (int)(((long[])st[3])[i] = i == nums.length - 1 ? Long.MAX_VALUE : (long)nums[i] + nums[i + 1]) * 0).sum() == 0 ? st : st).map((Object[] st) -> IntStream.range(0, nums.length - 1).map(i -> (((long[])st[0])[i] > ((long[])st[0])[i + 1] ? (((int[])st[4])[0] += 1) * 0 : 0) + (((TreeSet<Integer>)st[5]).add(i) ? 0 : 0)).sum() == 0 ? st : st).map((Object[] st) -> IntStream.iterate(0, dummy -> ((int[])st[4])[0] > 0, dummy -> dummy + 1).map(dummy -> Optional.of(((TreeSet<Integer>)st[5]).pollFirst()).map(best -> Optional.of(new int[]{((int[])st[2])[best], ((int[])st[1])[best], ((int[])st[2])[((int[])st[2])[best]]}).map((int[] adj) -> (((TreeSet<Integer>)st[5]).remove(adj[0]) ? 0 : 0) + (adj[1] != -1 ? (((TreeSet<Integer>)st[5]).remove(adj[1]) ? 0 : 0) : 0) + (((long[])st[0])[best] > ((long[])st[0])[adj[0]] ? (((int[])st[4])[0] -= 1) * 0 : 0) + (adj[2] != -1 && ((long[])st[0])[adj[0]] > ((long[])st[0])[adj[2]] ? (((int[])st[4])[0] -= 1) * 0 : 0) + (adj[1] != -1 && ((long[])st[0])[adj[1]] > ((long[])st[0])[best] ? (((int[])st[4])[0] -= 1) * 0 : 0) + (int)((((long[])st[0])[best] += ((long[])st[0])[adj[0]]) * 0) + ((((int[])st[2])[best] = adj[2]) * 0) + (adj[2] != -1 ? ((((int[])st[1])[adj[2]] = best) * 0) + (((long[])st[0])[best] > ((long[])st[0])[adj[2]] ? (((int[])st[4])[0] += 1) * 0 : 0) + (int)((((long[])st[3])[best] = ((long[])st[0])[best] + ((long[])st[0])[adj[2]]) * 0) + (((TreeSet<Integer>)st[5]).add(best) ? 0 : 0) : 0) + (adj[1] != -1 ? (((long[])st[0])[adj[1]] > ((long[])st[0])[best] ? (((int[])st[4])[0] += 1) * 0 : 0) + (int)((((long[])st[3])[adj[1]] = ((long[])st[0])[adj[1]] + ((long[])st[0])[best]) * 0) + (((TreeSet<Integer>)st[5]).add(adj[1]) ? 0 : 0) : 0) + ((((int[])st[4])[1] += 1) * 0)).get()).get()).sum() == 0 ? st : st).map((Object[] st) -> ((int[])st[4])[1]).get();
     }
 }
-// @lc code=end
-

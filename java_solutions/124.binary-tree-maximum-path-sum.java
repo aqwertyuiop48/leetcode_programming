@@ -4,7 +4,6 @@
  * [124] Binary Tree Maximum Path Sum
  */
 
-
 class Solution {
     public int maxPathSum(TreeNode root) {
         if (System.getProperties().put("ans124", Integer.MIN_VALUE) != null || true) {

@@ -4,11 +4,4 @@
  * [3013] Divide an Array Into Subarrays With Minimum Cost II
  */
 
-// @lc code=start
-class Solution {
-    public long minimumCost(int[] nums, int k, int dist) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long minimumCost(int[] nums, int k, int dist) { return ((Function<long[], Long>) st -> ((Function<TreeMap<Integer, Integer>, Function<TreeMap<Integer, Integer>, Long>>) low -> high -> ((Function<Object[], Long>) box -> ((Function<BiFunction<TreeMap<Integer, Integer>, Integer, Integer>, Function<BiFunction<TreeMap<Integer, Integer>, Integer, Boolean>, Long>>) addMap -> remMap -> (box[2] = (Function<Object[], Integer>) bx -> (st[0] > Math.min(st[3], st[0] + st[1]) ? ((IntUnaryOperator) lx -> (int)((st[0]--) * 0 + (st[2] -= lx) * 0 + addMap.apply(high, lx) * 0 + (st[1]++) * 0 + ((Function<Object[], Integer>) box[2]).apply(bx))).applyAsInt(low.lastKey() + (remMap.apply(low, low.lastKey()) ? 0 : 0)) : (st[0] < Math.min(st[3], st[0] + st[1]) && st[1] > 0 ? ((IntUnaryOperator) hx -> (int)((st[1]--) * 0 + addMap.apply(low, hx) * 0 + (st[0]++) * 0 + (st[2] += hx) * 0 + ((Function<Object[], Integer>) box[2]).apply(bx))).applyAsInt(high.firstKey() + (remMap.apply(high, high.firstKey()) ? 0 : 0)) : 0))) != null && (box[3] = (IntUnaryOperator) x -> (int)((st[0] == 0 || x <= low.lastKey() ? addMap.apply(low, x) * 0 + (st[0]++) * 0 + (st[2] += x) * 0 : addMap.apply(high, x) * 0 + (st[1]++) * 0) + ((Function<Object[], Integer>) box[2]).apply(box))) != null && (box[4] = (IntUnaryOperator) x -> (int)((remMap.apply(low, x) ? (st[0]--) * 0 + (st[2] -= x) * 0 : remMap.apply(high, x) ? (st[1]--) * 0 : 0) + ((Function<Object[], Integer>) box[2]).apply(box))) != null ? ((LongUnaryOperator) dummy -> IntStream.rangeClosed(1, 1 + dist).map(i -> ((IntUnaryOperator) box[3]).applyAsInt(nums[i])).sum() * 0 == 0 ? Math.min(st[2], nums.length - dist <= 2 ? Long.MAX_VALUE : IntStream.range(2, nums.length - dist).mapToLong(i -> ((IntUnaryOperator) box[4]).applyAsInt(nums[i - 1]) * 0L + ((IntUnaryOperator) box[3]).applyAsInt(nums[i + dist]) * 0L + st[2]).min().orElse(Long.MAX_VALUE)) + nums[0] : 0L).applyAsLong(0) : 0L).apply((mp, x) -> mp.put(x, mp.getOrDefault(x, 0) + 1) == null ? 0 : 0).apply((mp, x) -> mp.containsKey(x) ? (mp.get(x) == 1 ? (mp.remove(x) == null || true) : (mp.put(x, mp.get(x) - 1) == null || true)) : false)).apply(new Object[5])).apply(new TreeMap<>()).apply(new TreeMap<>())).apply(new long[]{0, 0, 0L, (long) k - 1}); } }

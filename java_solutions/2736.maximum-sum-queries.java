@@ -4,11 +4,4 @@
  * [2736] Maximum Sum Queries
  */
 
-// @lc code=start
-class Solution {
-    public int[] maximumSumQueries(int[] nums1, int[] nums2, int[][] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] maximumSumQueries(int[] nums1, int[] nums2, int[][] queries) { return ((Function<int[][], Function<int[][], int[]>>) pairs -> qs -> ((Function<int[], Function<int[][], int[]>>) state -> stack -> ((Function<int[], int[]>) ans -> IntStream.range(0, qs.length).map(i -> (int)IntStream.iterate(0, dummy -> state[0] < pairs.length && pairs[state[0]][0] >= qs[i][0], dummy -> dummy + 1).map(dummy -> (int)IntStream.iterate(0, d2 -> state[1] > 0 && stack[state[1]-1][1] <= pairs[state[0]][0] + pairs[state[0]][1], d2 -> d2 + 1).map(d2 -> state[1]--).sum() * 0 + ((state[1] == 0 || stack[state[1]-1][0] < pairs[state[0]][1]) ? (stack[state[1]][0] = pairs[state[0]][1]) * 0 + (stack[state[1]][1] = pairs[state[0]][0] + pairs[state[0]][1]) * 0 + state[1]++ : 0) * 0 + state[0]++).sum() * 0 + ((Function<int[], Integer>) bs -> ans[qs[i][2]] = (int)IntStream.iterate(0, dummy -> bs[0] <= bs[1], dummy -> dummy + 1).map(dummy -> ((Function<Integer, Integer>) mid -> stack[mid][0] >= qs[i][1] ? (bs[2] = stack[mid][1]) * 0 + (bs[1] = mid - 1) * 0 : (bs[0] = mid + 1) * 0).apply(bs[0] + (bs[1] - bs[0]) / 2)).sum() * 0 == 0 ? bs[2] : bs[2]).apply(new int[]{0, state[1] - 1, -1}) * 0).sum() * 0 == 0 ? ans : ans).apply(new int[qs.length])).apply(new int[2]).apply(new int[pairs.length][2])).apply(IntStream.range(0, nums1.length).mapToObj(i -> new int[]{nums1[i], nums2[i]}).sorted((a, b) -> Integer.compare(b[0], a[0])).toArray(int[][]::new)).apply(IntStream.range(0, queries.length).mapToObj(i -> new int[]{queries[i][0], queries[i][1], i}).sorted((a, b) -> Integer.compare(b[0], a[0])).toArray(int[][]::new)); } }

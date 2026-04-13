@@ -4,11 +4,4 @@
  * [3235] Check if the Rectangle Corner Is Reachable
  */
 
-// @lc code=start
-class Solution {
-    public boolean canReachCorner(int xCorner, int yCorner, int[][] circles) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public boolean canReachCorner(int X, int Y, int[][] A) { return ((IntPredicate) n -> ((Predicate<int[]>) f -> ((Predicate<IntUnaryOperator[]>) findWrap -> (findWrap[0] = i -> f[i] == i ? i : (f[i] = findWrap[0].applyAsInt(f[i]))) != null && ((Predicate<IntBinaryOperator>) union -> IntStream.range(0, n).reduce(0, (acc, i) -> ((Function<long[], Integer>) vars -> ( ( ((long)A[i][0] - vars[0])*((long)A[i][0] - vars[0]) + ((long)A[i][1] - Y)*((long)A[i][1] - Y) <= (long)A[i][2]*A[i][2] || (long)A[i][0]*A[i][0] + ((long)A[i][1] - vars[1])*((long)A[i][1] - vars[1]) <= (long)A[i][2]*A[i][2] ) ? union.applyAsInt(n, i) : 0 ) * 0 + ( ( ((long)A[i][0] - vars[0])*((long)A[i][0] - vars[0]) + (long)A[i][1]*A[i][1] <= (long)A[i][2]*A[i][2] || ((long)A[i][0] - X)*((long)A[i][0] - X) + ((long)A[i][1] - vars[1])*((long)A[i][1] - vars[1]) <= (long)A[i][2]*A[i][2] ) ? union.applyAsInt(n + 1, i) : 0 ) * 0 + IntStream.range(0, i).reduce(0, (acc2, j) -> ((long)A[i][0] - A[j][0]) * ((long)A[i][0] - A[j][0]) + ((long)A[i][1] - A[j][1]) * ((long)A[i][1] - A[j][1]) <= ((long)A[i][2] + A[j][2]) * ((long)A[i][2] + A[j][2]) && ((long)A[i][0] * A[j][2] + (long)A[j][0] * A[i][2] <= (long)X * (A[i][2] + A[j][2])) && ((long)A[i][1] * A[j][2] + (long)A[j][1] * A[i][2] <= (long)Y * (A[i][2] + A[j][2])) ? union.applyAsInt(i, j) : 0) * 0 ).apply(new long[]{ Math.max(0L, Math.min((long)X, (long)A[i][0])), Math.max(0L, Math.min((long)Y, (long)A[i][1])) }) * 0) * 0 == 0 && findWrap[0].applyAsInt(n) != findWrap[0].applyAsInt(n + 1)).test((a, b) -> f[findWrap[0].applyAsInt(a)] = findWrap[0].applyAsInt(b))).test(new IntUnaryOperator[1])).test(IntStream.range(0, n + 2).toArray())).test(A.length); } }

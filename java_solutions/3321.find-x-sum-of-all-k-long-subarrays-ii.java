@@ -4,11 +4,4 @@
  * [3321] Find X-Sum of All K-Long Subarrays II
  */
 
-// @lc code=start
-class Solution {
-    public long[] findXSum(int[] nums, int k, int x) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long[] findXSum(int[] nums, int k, int x) { return ((Function<Map<Integer, Integer>, long[]>) cnt -> ((Function<TreeSet<int[]>, long[]>) top -> ((Function<TreeSet<int[]>, long[]>) rest -> ((Function<long[], long[]>) topSum -> ((Function<long[], long[]>) ans -> ((Function<Function<Integer, Integer>, long[]>) insert -> ((Function<Function<Integer, Integer>, long[]>) erase -> (long[]) new Object[]{ IntStream.range(0, k).map(i -> insert.apply(nums[i])).sum(), ans[0] = topSum[0], IntStream.range(k, nums.length).map(i -> erase.apply(nums[i - k]) + insert.apply(nums[i]) + (int)((ans[i - k + 1] = topSum[0]) * 0)).sum(), ans }[3] ).apply(v -> !cnt.containsKey(v) ? 0 : ((Function<Integer, Integer>) oldF -> new Object[]{ top.remove(new int[]{oldF, v}) ? (topSum[0] -= (long)oldF * v) : rest.remove(new int[]{oldF, v}), oldF == 1 ? cnt.remove(v) : (cnt.put(v, oldF - 1) == null || rest.add(new int[]{oldF - 1, v})), top.size() < x && !rest.isEmpty() ? new Object[]{ top.add(rest.first()), topSum[0] += (long)rest.first()[0] * rest.first()[1], rest.remove(rest.first()) } : null }.length * 0).apply(cnt.get(v))) ).apply(v -> ((Function<Integer, Integer>) oldF -> new Object[]{ oldF > 0 ? (top.remove(new int[]{oldF, v}) ? (topSum[0] -= (long)oldF * v) : rest.remove(new int[]{oldF, v})) : false, cnt.put(v, oldF + 1), top.add(new int[]{oldF + 1, v}), topSum[0] += (long)(oldF + 1) * v, top.size() > x ? new Object[]{ rest.add(top.last()), topSum[0] -= (long)top.last()[0] * top.last()[1], top.remove(top.last()) } : null }.length * 0).apply(cnt.getOrDefault(v, 0))) ).apply(new long[nums.length - k + 1]) ).apply(new long[1]) ).apply(new TreeSet<int[]>((a, b) -> a[0] != b[0] ? Integer.compare(b[0], a[0]) : Integer.compare(b[1], a[1]))) ).apply(new TreeSet<int[]>((a, b) -> a[0] != b[0] ? Integer.compare(b[0], a[0]) : Integer.compare(b[1], a[1]))) ).apply(new HashMap<>()); } }

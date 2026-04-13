@@ -4,11 +4,4 @@
  * [2646] Minimize the Total Price of the Trips
  */
 
-// @lc code=start
-class Solution {
-    public int minimumTotalPrice(int n, int[][] edges, int[] price, int[][] trips) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumTotalPrice(int n, int[][] edges, int[] price, int[][] trips) { return ((Function<int[], Integer>) head -> ((Function<int[], Integer>) to -> ((Function<int[], Integer>) next -> ((Function<int[], Integer>) count -> ((Function<Object[], Integer>) box -> (IntStream.range(0, edges.length).map(i -> (to[2 * i] = edges[i][1]) * 0 + (next[2 * i] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = 2 * i) * 0 + (to[2 * i + 1] = edges[i][0]) * 0 + (next[2 * i + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = 2 * i + 1) * 0).sum() * 0 == 0) && (box[0] = (Function<int[], Integer>) s -> s[0] == s[2] ? (count[s[0]]++ * 0 + 1) : IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).map(e -> ((Function<int[], Integer>)box[0]).apply(new int[]{to[e], s[0], s[2]})).filter(res -> res == 1).findFirst().orElse(0) == 1 ? (count[s[0]]++ * 0 + 1) : 0) != null && (box[1] = (Function<int[], int[]>) s -> ((Function<int[], int[]>) acc -> new int[]{count[s[0]] * price[s[0]] + acc[1], count[s[0]] * price[s[0]] / 2 + acc[0]}).apply(IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).mapToObj(e -> ((Function<int[], int[]>)box[1]).apply(new int[]{to[e], s[0]})).reduce(new int[]{0, 0}, (a, b) -> new int[]{a[0] + b[0], a[1] + Math.min(b[0], b[1])}))) != null && IntStream.range(0, trips.length).map(i -> ((Function<int[], Integer>)box[0]).apply(new int[]{trips[i][0], -1, trips[i][1]})).sum() * 0 == 0 ? ((Function<int[], Integer>) res -> Math.min(res[0], res[1])).apply(((Function<int[], int[]>)box[1]).apply(new int[]{0, -1})) : 0).apply(new Object[2])).apply(new int[n])).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(IntStream.range(0, n).map(i -> -1).toArray()); } }

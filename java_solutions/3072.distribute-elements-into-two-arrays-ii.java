@@ -4,11 +4,4 @@
  * [3072] Distribute Elements Into Two Arrays II
  */
 
-// @lc code=start
-class Solution {
-    public int[] resultArray(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] resultArray(int[] nums) { return ((Function<int[], Function<int[], Function<ArrayList<Integer>, Function<ArrayList<Integer>, int[]>>>>) a1 -> a2 -> s1 -> s2 -> ((Function<BiFunction<ArrayList<Integer>, Integer, Integer>, int[]>) counter -> IntStream.range(2, nums.length).reduce(0, (dummy, i) -> ((IntUnaryOperator) c1 -> ((IntUnaryOperator) c2 -> (s1.size() - c1 > s2.size() - c2) || (s1.size() - c1 == s2.size() - c2 && s1.size() <= s2.size()) ? (s1.addAll(c1, List.of(nums[i])) ? 1 : 1) * (a1[a1[0]++] = nums[i]) * 0 : (s2.addAll(c2, List.of(nums[i])) ? 1 : 1) * (a2[a2[0]++] = nums[i]) * 0).applyAsInt(counter.apply(s2, nums[i]))).applyAsInt(counter.apply(s1, nums[i]))) * 0 == 0 ? IntStream.concat(Arrays.stream(a1, 1, a1[0]), Arrays.stream(a2, 1, a2[0])).toArray() : null).apply(((Function<Object[], BiFunction<ArrayList<Integer>, Integer, Integer>>) box -> (list, val) -> ((Function<int[], Integer>) (box[0] = (Function<int[], Integer>) state -> state[0] <= state[1] ? (list.get(state[0] + (state[1] - state[0]) / 2) > val ? ((Function<int[], Integer>) box[0]).apply(new int[]{state[0], state[0] + (state[1] - state[0]) / 2 - 1}) : ((Function<int[], Integer>) box[0]).apply(new int[]{state[0] + (state[1] - state[0]) / 2 + 1, state[1]})) : state[0])).apply(new int[]{0, list.size() - 1})).apply(new Object[1]))).apply(((Function<int[], int[]>) arr -> (arr[0] = 2) * 0 + (arr[1] = nums[0]) * 0 == 0 ? arr : arr).apply(new int[nums.length + 1])).apply(((Function<int[], int[]>) arr -> (arr[0] = 2) * 0 + (arr[1] = nums[1]) * 0 == 0 ? arr : arr).apply(new int[nums.length + 1])).apply(new ArrayList<>(List.of(nums[0]))).apply(new ArrayList<>(List.of(nums[1]))); } }

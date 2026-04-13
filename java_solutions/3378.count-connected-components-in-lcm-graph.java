@@ -4,11 +4,4 @@
  * [3378] Count Connected Components in LCM Graph
  */
 
-// @lc code=start
-class Solution {
-    public int countComponents(int[] nums, int threshold) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int countComponents(int[] nums, int threshold) { return ((Function<int[], Integer>) goodNums -> goodNums.length == 0 ? nums.length : ((Function<int[], Function<int[], Function<int[], Integer>>>) parent -> comps -> present -> ((Function<Function<Object[], Integer>, Integer>) find -> Arrays.stream(goodNums).flatMap(d -> IntStream.iterate(d, i -> i <= threshold, i -> i + d).map(i -> present[i] == -1 ? (present[i] = present[d]) * 0 : ((BiFunction<Integer, Integer, Integer>) (pu, pv) -> pu.intValue() != pv.intValue() ? (parent[pu] = pv) * 0 + (comps[0]--) * 0 : 0).apply(find.apply(new Object[]{find, present[i]}), find.apply(new Object[]{find, present[d]})))).sum() * 0 + comps[0] + nums.length - goodNums.length).apply((Function<Object[], Integer>) args -> parent[(int)args[1]] == (int)args[1] ? (int)args[1] : (parent[(int)args[1]] = ((Function<Object[], Integer>)args[0]).apply(new Object[]{args[0], parent[(int)args[1]]})))).apply(IntStream.range(0, goodNums.length).toArray()).apply(new int[]{goodNums.length}).apply(((Function<int[], int[]>) p -> IntStream.range(0, goodNums.length).map(i -> p[goodNums[i]] = i).sum() * 0 == 0 ? p : p).apply(IntStream.generate(() -> -1).limit(threshold + 1).toArray()))).apply(Arrays.stream(nums).filter(n -> n <= threshold).toArray()); } }

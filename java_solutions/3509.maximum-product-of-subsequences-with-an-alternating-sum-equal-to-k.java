@@ -4,11 +4,8 @@
  * [3509] Maximum Product of Subsequences With an Alternating Sum Equal to K
  */
 
-// @lc code=start
 class Solution {
     public int maxProduct(int[] nums, int k, int limit) {
-        
+        return Optional.of(new Object[]{nums, k, limit, new HashMap<Long, Integer>(), new Boolean[nums.length + 1][1801][2][2], new Function[1], new Function[1]}).map((Object[] st) -> (((Function<int[], Boolean>[])st[5])[0] = (int[] args) -> args[0] >= ((int[])st[0]).length ? (args[1] == (int)st[1] && args[2] == 1) : ((Boolean[][][][])st[4])[args[0]][args[1] + 900][args[2]][args[3]] != null ? ((Boolean[][][][])st[4])[args[0]][args[1] + 900][args[2]][args[3]] : (((Boolean[][][][])st[4])[args[0]][args[1] + 900][args[2]][args[3]] = ((Function<int[], Boolean>[])st[5])[0].apply(new int[]{args[0] + 1, args[1] + (args[3] == 1 ? ((int[])st[0])[args[0]] : -((int[])st[0])[args[0]]), args[2] | (((int[])st[0])[args[0]] == 0 ? 1 : 0), 1 - args[3]}) || ((Function<int[], Boolean>[])st[5])[0].apply(new int[]{args[0] + 1, args[1], args[2], args[3]}))) != null ? st : st).map((Object[] st) -> (((Function<int[], Integer>[])st[6])[0] = (int[] args) -> (args[1] <= -40 || args[1] >= 40 || args[2] > (int)st[2]) ? -1 : args[0] >= ((int[])st[0]).length ? ((args[1] == (int)st[1] && args[2] <= (int)st[2] && args[4] == 1) ? args[2] : -1) : Optional.of(args[0] * 81L * (((long)(int)st[2] + 1) * 4L) + (args[1] + 40) * (((long)(int)st[2] + 1) * 4L) + args[2] * 4L + (args[3] * 2L + args[4])).map(key -> ((HashMap<Long, Integer>)st[3]).containsKey(key) ? ((HashMap<Long, Integer>)st[3]).get(key) : Optional.of(Math.max(((int[])st[0])[args[0]] != 0 ? ((Function<int[], Integer>[])st[6])[0].apply(new int[]{args[0] + 1, args[1] + (args[3] == 1 ? ((int[])st[0])[args[0]] : -((int[])st[0])[args[0]]), args[2] * ((int[])st[0])[args[0]], 1 - args[3], 1}) : -1, ((Function<int[], Integer>[])st[6])[0].apply(new int[]{args[0] + 1, args[1], args[2], args[3], args[4]}))).map(res -> ((HashMap<Long, Integer>)st[3]).put(key, res) == null ? res : res).get()).get()) != null ? st : st).map((Object[] st) -> Optional.of((int)st[1] > -36 && (int)st[1] < 36 ? ((Function<int[], Integer>[])st[6])[0].apply(new int[]{0, 0, 1, 1, 0}) : -1).map(ans -> ans == -1 ? (((Function<int[], Boolean>[])st[5])[0].apply(new int[]{0, 0, 0, 1}) ? 0 : ans) : ans).get()).get();
     }
 }
-// @lc code=end
-

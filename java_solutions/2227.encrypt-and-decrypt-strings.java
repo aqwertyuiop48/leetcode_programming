@@ -4,27 +4,14 @@
  * [2227] Encrypt and Decrypt Strings
  */
 
-// @lc code=start
-class Encrypter {
-
-    public Encrypter(char[] keys, String[] values, String[] dictionary) {
-        
+class Encrypter extends java.util.HashMap<Object, Object> {
+    public Encrypter(char[] k, String[] v, String[] d) {
+        if (IntStream.range(0, k.length).reduce(0, (acc, i) -> put(k[i], v[i]) != null ? 0 : 0) * 0 == 0) Stream.of(d).forEach(w -> put(encrypt(w), (int) getOrDefault(encrypt(w), 0) + 1));
     }
-    
-    public String encrypt(String word1) {
-        
+    public String encrypt(String w) {
+        return ((UnaryOperator<String>) res -> res.contains("#") ? "" : res).apply(w.chars().mapToObj(c -> (String) getOrDefault((char) c, "#")).reduce(String::concat).orElse(""));
     }
-    
-    public int decrypt(String word2) {
-        
+    public int decrypt(String w) {
+        return (int) getOrDefault(w, 0);
     }
 }
-
-/**
- * Your Encrypter object will be instantiated and called as such:
- * Encrypter obj = new Encrypter(keys, values, dictionary);
- * String param_1 = obj.encrypt(word1);
- * int param_2 = obj.decrypt(word2);
- */
-// @lc code=end
-

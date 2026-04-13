@@ -4,11 +4,4 @@
  * [2699] Modify Graph Edge Weights
  */
 
-// @lc code=start
-class Solution {
-    public int[][] modifiedGraphEdges(int n, int[][] edges, int source, int destination, int target) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[][] modifiedGraphEdges(int n, int[][] edges, int source, int destination, int target) { return ((Function<Function<Integer, Long>, int[][]>) getDist -> ((Function<Long, int[][]>) initialDist -> initialDist < target ? new int[0][0] : ((Function<boolean[], int[][]>) state -> IntStream.range(0, edges.length).filter(i -> edges[i][2] == -1).map(i -> (edges[i][2] = state[0] ? 2000000000 : 1) * 0 + (!state[0] ? (int)((LongUnaryOperator) d -> d <= target ? (long)(edges[i][2] += target - d) * 0L + ((state[0] = true) ? 0L : 0L) : 0L).applyAsLong(getDist.apply(0)) : 0)).sum() * 0 == 0 ? (state[0] ? edges : new int[0][0]) : edges).apply(new boolean[]{initialDist == target})).apply(getDist.apply(0))).apply(dummy -> ((Function<long[], Function<boolean[], Long>>) dist -> changed -> IntStream.iterate(0, step -> step < n && changed[0], step -> step + 1).map(step -> ((changed[0] = false) ? 0 : 0) + IntStream.range(0, edges.length).map(i -> edges[i][2] != -1 ? (dist[edges[i][0]] + edges[i][2] < dist[edges[i][1]] ? (int)((dist[edges[i][1]] = dist[edges[i][0]] + edges[i][2]) * 0) + ((changed[0] = true) ? 0 : 0) : 0) + (dist[edges[i][1]] + edges[i][2] < dist[edges[i][0]] ? (int)((dist[edges[i][0]] = dist[edges[i][1]] + edges[i][2]) * 0) + ((changed[0] = true) ? 0 : 0) : 0) : 0).sum()).sum() * 0 == 0 ? dist[destination] : 0L).apply(IntStream.range(0, n).mapToLong(i -> i == source ? 0 : 1000000000000L).toArray()).apply(new boolean[]{true})); } }

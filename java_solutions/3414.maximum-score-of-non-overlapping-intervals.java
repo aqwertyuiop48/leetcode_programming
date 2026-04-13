@@ -4,11 +4,4 @@
  * [3414] Maximum Score of Non-overlapping Intervals
  */
 
-// @lc code=start
-class Solution {
-    public int[] maximumWeight(List<List<Integer>> intervals) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] maximumWeight(List<List<Integer>> intervals) { return ((Function<int[][], int[]>) arr -> ((BiFunction<long[][], int[][][], int[]>) (dpW, dpL) -> (int[]) (((Object[]) new Object[]{ IntStream.rangeClosed(0, arr.length).map(i -> (dpL[i] = new int[5][]).length * 0).sum(), IntStream.rangeClosed(0, 4).map(k -> (dpL[arr.length][k] = new int[0]).length * 0).sum(), IntStream.iterate(arr.length - 1, i -> i - 1).limit(arr.length).map(i -> ((dpL[i][0] = new int[0]).length * 0) + ((IntUnaryOperator) nextIdx -> IntStream.rangeClosed(1, 4).map(k -> ((Function<Object[], Integer>) p -> ((long)p[0] > (long)p[1]) ? (int)((dpW[i][k] = (long)p[0]) - (long)p[0]) + ((dpL[i][k] = (int[])p[2]).length * 0) : ((long)p[0] < (long)p[1]) ? (int)((dpW[i][k] = (long)p[1]) - (long)p[1]) + ((dpL[i][k] = dpL[i+1][k]).length * 0) : (Arrays.compare((int[])p[2], dpL[i+1][k]) < 0) ? (int)((dpW[i][k] = (long)p[0]) - (long)p[0]) + ((dpL[i][k] = (int[])p[2]).length * 0) : (int)((dpW[i][k] = (long)p[1]) - (long)p[1]) + ((dpL[i][k] = dpL[i+1][k]).length * 0) ).apply(new Object[]{ (long)arr[i][2] + dpW[nextIdx][k-1], dpW[i+1][k], IntStream.concat(Arrays.stream(dpL[nextIdx][k-1]), IntStream.of(arr[i][3])).sorted().toArray() }) * 0 ).sum() ).applyAsInt( ((Function<Function<Object[], Integer>, Integer>) bs -> bs.apply(new Object[]{ bs, i + 1, arr.length - 1, arr[i][1], arr.length }) ).apply(p -> (int)p[1] > (int)p[2] ? (Integer)p[4] : (arr[((int)p[1] + (int)p[2]) / 2][0] > (int)p[3] ? ((Function<Object[], Integer>)p[0]).apply(new Object[]{ p[0], (int)p[1], ((int)p[1] + (int)p[2]) / 2 - 1, p[3], ((int)p[1] + (int)p[2]) / 2 }) : ((Function<Object[], Integer>)p[0]).apply(new Object[]{ p[0], ((int)p[1] + (int)p[2]) / 2 + 1, p[2], p[3], p[4] }) ) ) ) ).sum(), dpL[0][4] })[3]) ).apply(new long[arr.length + 1][5], new int[arr.length + 1][][]) ).apply(IntStream.range(0, intervals.size()).mapToObj(i -> new int[]{intervals.get(i).get(0), intervals.get(i).get(1), intervals.get(i).get(2), i}).sorted(Comparator.comparingInt(a -> a[0])).toArray(int[][]::new)); } }

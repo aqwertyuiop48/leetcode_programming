@@ -4,11 +4,4 @@
  * [2867] Count Valid Paths in a Tree
  */
 
-// @lc code=start
-class Solution {
-    public long countPaths(int n, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long countPaths(int n, int[][] edges) { return ((Function<boolean[], Function<List<List<Integer>>, Function<long[], Function<Object[], Long>>>>) notPrime -> adj -> ans -> box -> ((BiFunction<Integer, Integer, long[]>) (box[0] = (BiFunction<Integer, Integer, long[]>) (u, p) -> ((Function<long[], long[]>) v -> adj.get(u).stream().filter(y -> !y.equals(p)).map(y -> ((BiFunction<Integer, Integer, long[]>)box[0]).apply(y, u)).mapToLong(child -> (ans[0] += child[0] * v[1] + child[1] * v[0]) * 0L + (!notPrime[u] ? (v[1] += child[0]) * 0L : ((v[0] += child[0]) * 0L + (v[1] += child[1]) * 0L))).sum() * 0L == 0L ? v : v).apply(new long[]{notPrime[u] ? 1L : 0L, !notPrime[u] ? 1L : 0L}))).apply(1, 0)[0] * 0L == 0L ? ans[0] : 0L).apply(((Function<boolean[], boolean[]>) np -> (np[0] = true) && (np[1] = true) ? IntStream.rangeClosed(2, (int)Math.sqrt(n)).filter(i -> !np[i]).map(i -> (int)IntStream.iterate(i*i, j -> j <= n, j -> j + i).map(j -> (np[j] = true) ? 0 : 0).sum() * 0).sum() * 0 == 0 ? np : np : np).apply(new boolean[n + 1])).apply(Arrays.stream(edges).reduce(IntStream.rangeClosed(0, n).mapToObj(i -> (List<Integer>) new ArrayList<Integer>()).collect(Collectors.toList()), (a, e) -> (a.get(e[0]).add(e[1]) ? 1 : 1) * (a.get(e[1]).add(e[0]) ? 1 : 1) == 1 ? a : a, (a, b) -> a)).apply(new long[1]).apply(new Object[1]); } }

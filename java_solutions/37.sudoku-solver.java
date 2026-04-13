@@ -4,7 +4,6 @@
  * [37] Sudoku Solver
  */
 
-// @lc code=start
 class Solution {
     public void solveSudoku(char[][] board) {
         if (new int[]{0, 0, 0, 0} instanceof int[] v && new int[81][2] instanceof int[][] empty && new char[81] instanceof char[] state) {
@@ -50,5 +49,3 @@ class Solution {
         return;
     }
 }
-// @lc code=end
-

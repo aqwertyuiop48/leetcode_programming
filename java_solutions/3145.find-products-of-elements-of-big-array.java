@@ -4,11 +4,4 @@
  * [3145] Find Products of Elements of Big Array
  */
 
-// @lc code=start
-class Solution {
-    public int[] findProductsOfElements(long[][] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] findProductsOfElements(long[][] queries) { return ((Function<Object[], int[]>) mpBox -> ((Function<Function<long[], Long>, int[]>) modPow -> ((Function<Function<Long, long[]>, int[]>) getLowerCounts -> ((Function<Object[], int[]>) gnhBox -> ((Function<Function<long[], Long>, int[]>) getNextHigher -> ((Function<BiFunction<long[], long[], long[]>, int[]>) adjust -> Arrays.stream(queries).mapToInt(q -> ((Function<Long, Long>) n1 -> ((Function<long[], Long>) c1 -> ((Function<Long, Long>) n2 -> ((Function<long[], Long>) c2 -> modPow.apply(new long[]{2L, IntStream.range(0, 50).mapToLong(i -> (c2[i] - c1[i]) * i).sum(), q[2]})).apply(adjust.apply(getLowerCounts.apply(n2), new long[]{n2, q[1] + 1}))).apply(getNextHigher.apply(new long[]{1L, 1000000000000000L, q[1] + 1}))).apply(q[0] > 0 ? adjust.apply(getLowerCounts.apply(n1), new long[]{n1, q[0]}) : new long[51])).apply(q[0] > 0 ? getNextHigher.apply(new long[]{1L, 1000000000000000L, q[0]}) : 0L).intValue()).toArray()).apply((c, args) -> IntStream.range(0, 50).reduce(0, (dummy, i) -> c[50] < args[1] && ((args[0] >>> i) & 1L) != 0 ? (int)((c[i]++) * 0 + (c[50]++) * 0) : 0) * 0 == 0 ? c : c)).apply((Function<long[], Long>) (gnhBox[0] = (Function<long[], Long>) state -> state[0] == state[1] ? state[0] : ((Function<Long, Long>) mid -> getLowerCounts.apply(mid)[50] > state[2] ? ((Function<long[], Long>)gnhBox[0]).apply(new long[]{state[0], mid - 1, state[2]}) : ((Function<long[], Long>)gnhBox[0]).apply(new long[]{mid, state[1], state[2]})).apply(state[0] + (state[1] + 1 - state[0]) / 2)))).apply(new Object[1])).apply((Long x) -> ((Function<long[], long[]>) arr -> (arr[50] = Arrays.stream(arr).sum()) * 0 == 0 ? arr : arr).apply(IntStream.range(0, 51).mapToLong(i -> i < 50 ? (x / (2L << i)) * (1L << i) + Math.max((x % (2L << i)) - (1L << i), 0L) : 0L).toArray()))).apply((Function<long[], Long>) (mpBox[0] = (Function<long[], Long>) state -> state[1] == 0 ? 1L % state[2] : (state[1] % 2 == 1 ? (state[0] * ((Function<long[], Long>)mpBox[0]).apply(new long[]{state[0] * state[0] % state[2], state[1] / 2, state[2]})) % state[2] : ((Function<long[], Long>)mpBox[0]).apply(new long[]{state[0] * state[0] % state[2], state[1] / 2, state[2]}))))).apply(new Object[1]); } }

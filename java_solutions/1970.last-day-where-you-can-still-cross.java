@@ -4,11 +4,4 @@
  * [1970] Last Day Where You Can Still Cross
  */
 
-// @lc code=start
-class Solution {
-    public int latestDayToCross(int row, int col, int[][] cells) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int latestDayToCross(int row, int col, int[][] cells) { return ((Function<int[], Function<int[], Function<Object[], Integer>>>) parent -> grid -> box -> (box[0] = (IntUnaryOperator) x -> parent[x] == x ? x : (parent[x] = ((IntUnaryOperator)box[0]).applyAsInt(parent[x]))).hashCode() * 0 == 0 && (box[1] = (IntBinaryOperator) (x, y) -> ((IntUnaryOperator) rx -> ((IntUnaryOperator) ry -> rx != ry ? (parent[rx] = ry) * 0 : 0).applyAsInt(((IntUnaryOperator)box[0]).applyAsInt(y))).applyAsInt(((IntUnaryOperator)box[0]).applyAsInt(x))).hashCode() * 0 == 0 && IntStream.range(0, parent.length).reduce(0, (acc, i) -> (parent[i] = i) * 0) * 0 == 0 ? IntStream.iterate(cells.length - 1, i -> i >= 0, i -> i - 1).filter(i -> ((IntUnaryOperator) r -> ((IntUnaryOperator) c -> ((IntUnaryOperator) id -> (grid[id] = 1) * 0 + (r > 0 && grid[id - col] == 1 ? ((IntBinaryOperator)box[1]).applyAsInt(id, id - col) * 0 : 0) + (r < row - 1 && grid[id + col] == 1 ? ((IntBinaryOperator)box[1]).applyAsInt(id, id + col) * 0 : 0) + (c > 0 && grid[id - 1] == 1 ? ((IntBinaryOperator)box[1]).applyAsInt(id, id - 1) * 0 : 0) + (c < col - 1 && grid[id + 1] == 1 ? ((IntBinaryOperator)box[1]).applyAsInt(id, id + 1) * 0 : 0) + (r == 0 ? ((IntBinaryOperator)box[1]).applyAsInt(0, id) * 0 : 0) + (r == row - 1 ? ((IntBinaryOperator)box[1]).applyAsInt(row * col + 1, id) * 0 : 0) + (((IntUnaryOperator)box[0]).applyAsInt(0) == ((IntUnaryOperator)box[0]).applyAsInt(row * col + 1) ? 1 : 0)).applyAsInt(r * col + c + 1)).applyAsInt(cells[i][1] - 1)).applyAsInt(cells[i][0] - 1) == 1).findFirst().orElse(-1) : -1).apply(new int[row * col + 2]).apply(new int[row * col + 2]).apply(new Object[2]); } }

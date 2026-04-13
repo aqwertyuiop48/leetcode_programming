@@ -4,11 +4,4 @@
  * [3373] Maximize the Number of Target Nodes After Connecting Trees II
  */
 
-// @lc code=start
-class Solution {
-    public int[] maxTargetNodes(int[][] edges1, int[][] edges2) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] maxTargetNodes(int[][] edges1, int[][] edges2) { return ((Function<Function<int[][], int[]>, int[]>) getColors -> ((Function<int[], Function<int[], int[]>>) colorA -> colorB -> ((Function<Integer, Function<Integer, int[]>>) evenA -> maxiB -> IntStream.range(0, colorA.length).map(i -> (colorA[i] == 0 ? evenA : colorA.length - evenA) + maxiB).toArray()).apply((int) Arrays.stream(colorA).filter(c -> c == 0).count()).apply(Math.max((int) Arrays.stream(colorB).filter(c -> c == 0).count(), colorB.length - (int) Arrays.stream(colorB).filter(c -> c == 0).count()))).apply(getColors.apply(edges1)).apply(getColors.apply(edges2))).apply(edges -> ((Function<Integer, int[]>) n -> ((Function<List[], int[]>) adj -> ((Function<int[], int[]>) colors -> ((Function<int[], int[]>) q -> ((Function<int[], int[]>) tail -> (int[]) new Object[]{ Arrays.stream(edges).mapToInt(e -> ((List<Integer>)adj[e[0]]).add(e[1]) && ((List<Integer>)adj[e[1]]).add(e[0]) ? 1 : 1).sum(), IntStream.range(0, n).map(i -> ((List<Integer>)adj[q[i]]).stream().mapToInt(v -> colors[v] == -1 ? (colors[v] = colors[q[i]] ^ 1) * 0 + (q[tail[0]++] = v) * 0 + 1 : 0).sum()).sum(), colors }[2]).apply(new int[]{1})).apply(new int[n])).apply(IntStream.range(0, n).map(i -> i == 0 ? 0 : -1).toArray())).apply(IntStream.range(0, n).mapToObj(i -> new ArrayList<Integer>()).toArray(List[]::new))).apply(edges.length + 1)); } }

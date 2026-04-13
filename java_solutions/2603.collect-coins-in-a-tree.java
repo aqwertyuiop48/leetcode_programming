@@ -4,11 +4,4 @@
  * [2603] Collect Coins in a Tree
  */
 
-// @lc code=start
-class Solution {
-    public int collectTheCoins(int[] coins, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int collectTheCoins(int[] coins, int[][] edges) { return ((Function<int[], Function<int[], Function<int[], Function<int[], Integer>>>>) deg -> adj -> q -> state -> IntStream.range(0, edges.length).map(i -> (deg[edges[i][0]]++) * 0 + (deg[edges[i][1]]++) * 0 + (adj[edges[i][0]] += edges[i][1]) * 0 + (adj[edges[i][1]] += edges[i][0]) * 0).sum() * 0 == 0 ? IntStream.range(0, coins.length).filter(i -> deg[i] == 1 && coins[i] == 0).map(i -> (q[state[1]++] = i) * 0).sum() * 0 == 0 ? IntStream.iterate(0, d -> state[0] < state[1], d -> d).map(d -> ((IntUnaryOperator) u -> (deg[u]--) * 0 + (adj[adj[u]] -= u) * 0 + (--deg[adj[u]] == 1 && coins[adj[u]] == 0 ? (q[state[1]++] = adj[u]) * 0 : 0) + (state[2] += 2) * 0).applyAsInt(q[state[0]++])).sum() * 0 == 0 ? ((state[0] = 0) == 0 && (state[1] = 0) == 0) ? IntStream.range(0, coins.length).filter(i -> deg[i] == 1).map(i -> (q[state[1]++] = i) * 0).sum() * 0 == 0 ? IntStream.range(0, 2).map(layer -> ((IntUnaryOperator) sz -> IntStream.range(0, sz).map(dummy -> ((IntUnaryOperator) u -> (deg[u]--) * 0 + (adj[adj[u]] -= u) * 0 + (--deg[adj[u]] == 1 ? (q[state[1]++] = adj[u]) * 0 : 0) + (state[2] += 2) * 0).applyAsInt(q[state[0]++])).sum()).applyAsInt(state[1] - state[0])).sum() * 0 == 0 ? Math.max(0, edges.length * 2 - state[2]) : 0 : 0 : 0 : 0 : 0 : 0).apply(new int[coins.length]).apply(new int[coins.length]).apply(new int[coins.length]).apply(new int[3]); } }

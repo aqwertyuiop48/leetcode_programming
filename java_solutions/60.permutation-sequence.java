@@ -42,4 +42,3 @@ class Solution {
         return (String) System.getProperties().get("ans60");
     }
 }
-

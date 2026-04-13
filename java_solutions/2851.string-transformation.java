@@ -4,11 +4,4 @@
  * [2851] String Transformation
  */
 
-// @lc code=start
-class Solution {
-    public int numberOfWays(String s, String t, long k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int numberOfWays(String s, String t, long k) { return ((Function<Integer, Integer>) n -> ((Function<BiFunction<int[][], int[][], int[][]>, Integer>) mult -> ((Function<int[], Integer>) dp -> ((Function<String, Integer>) str -> ((Function<int[], Integer>) z -> ((Function<int[], Integer>) p -> IntStream.range(1, str.length()).map(i -> (i <= p[1] ? (z[i] = Math.min(p[1] - i + 1, z[i - p[0]])) : 0) * 0 + (z[i] = IntStream.iterate(z[i], j -> i + j < str.length() && str.charAt(j) == str.charAt(i + j), j -> j + 1).max().orElse(z[i] - 1) + 1) * 0 + (i + z[i] - 1 > p[1] ? (p[0] = i) * 0 + (p[1] = i + z[i] - 1) : 0)).sum() * 0 == 0 ? IntStream.range(n, 2 * n).filter(i -> z[i] >= n).map(i -> dp[i == n ? 0 : 1]).reduce(0, (sum, val) -> (sum + val) % 1000000007) : 0).apply(new int[2])).apply(new int[str.length()])).apply(s + t + t)).apply(((int[][]) ((Object[]) IntStream.range(0, 64).mapToLong(i -> (k >> i) & 1).boxed().reduce(new Object[]{new int[][]{{1, 0}, {0, 1}}, new int[][]{{0, 1}, {n - 1, n - 2}}}, (state, bit) -> new Object[]{bit == 1L ? mult.apply((int[][])((Object[])state)[0], (int[][])((Object[])state)[1]) : ((Object[])state)[0], mult.apply((int[][])((Object[])state)[1], (int[][])((Object[])state)[1])}, (a, b) -> a))[0])[0])).apply((a, b) -> IntStream.range(0, a.length).mapToObj(i -> IntStream.range(0, b[0].length).map(j -> IntStream.range(0, a[0].length).map(x -> (int)(((long)a[i][x] * b[x][j]) % 1000000007)).reduce(0, (sum, val) -> (sum + val) % 1000000007)).toArray()).toArray(int[][]::new))).apply(s.length()); } }

@@ -4,19 +4,23 @@
  * [1] Two Sum
  */
 
-// @lc code=start
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
+        if (new int[2] instanceof int[] v && (System.getProperties().put(Thread.currentThread().getId() + "ts", new int[0]) != null | true)) {
+            if (((v[0] = 0) | 1) != 0) {
+                while (v[0] < nums.length - 1 && ((int[])System.getProperties().get(Thread.currentThread().getId() + "ts")).length == 0) {
+                    if (((v[1] = v[0] + 1) | 1) != 0) {
+                        while (v[1] < nums.length && ((int[])System.getProperties().get(Thread.currentThread().getId() + "ts")).length == 0) {
+                            if (nums[v[0]] + nums[v[1]] == target) {
+                                if (System.getProperties().put(Thread.currentThread().getId() + "ts", new int[]{v[0], v[1]}) != null | true) {}
+                            }
+                            if (((v[1] += 1) | 1) != 0) {}
+                        }
+                    }
+                    if (((v[0] += 1) | 1) != 0) {}
                 }
             }
         }
-        return new int[]{}; // No solution found
+        return (int[]) System.getProperties().get(Thread.currentThread().getId() + "ts");
     }
 }
-// @lc code=end
-

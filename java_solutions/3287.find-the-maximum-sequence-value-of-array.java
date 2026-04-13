@@ -4,11 +4,4 @@
  * [3287] Find the Maximum Sequence Value of Array
  */
 
-// @lc code=start
-class Solution {
-    public int maxValue(int[] nums, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maxValue(int[] nums, int k) { return ((Function<Integer, Function<int[], Function<int[], Function<int[][], Function<int[][], Integer>>>>>) S -> min_i -> max_i -> dp -> dp1 -> IntStream.range(0, nums.length * S).map(idx -> (idx % S) < k * 128 ? ( (dp[k - (idx % S) / 128 - 1][(idx % S) % 128] == 1 ? dp[k - (idx % S) / 128][((idx % S) % 128) | nums[idx / S]] = 1 : 0) * 0 + (dp1[k - (idx % S) / 128 - 1][(idx % S) % 128] == 1 ? dp1[k - (idx % S) / 128][((idx % S) % 128) | nums[nums.length - 1 - idx / S]] = 1 : 0) * 0 ) : ( (dp[k][(idx % S) - k * 128] == 1 && min_i[(idx % S) - k * 128] > idx / S + 1 ? min_i[(idx % S) - k * 128] = idx / S + 1 : 0) * 0 + (dp1[k][(idx % S) - k * 128] == 1 && max_i[(idx % S) - k * 128] < nums.length - 1 - idx / S ? max_i[(idx % S) - k * 128] = nums.length - 1 - idx / S : 0) * 0 ) ).sum() * 0 + IntStream.range(0, 16384).map(idx -> min_i[idx / 128] <= max_i[idx % 128] ? (idx / 128) ^ (idx % 128) : 0).max().orElse(0)).apply((k + 1) * 128).apply(IntStream.range(0, 128).map(v -> nums.length + 1).toArray()).apply(IntStream.range(0, 128).map(v -> -1).toArray()).apply(IntStream.range(0, k + 1).mapToObj(j -> IntStream.range(0, 128).map(v -> j == 0 && v == 0 ? 1 : 0).toArray()).toArray(int[][]::new)).apply(IntStream.range(0, k + 1).mapToObj(j -> IntStream.range(0, 128).map(v -> j == 0 && v == 0 ? 1 : 0).toArray()).toArray(int[][]::new)); } }

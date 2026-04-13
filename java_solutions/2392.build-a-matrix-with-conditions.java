@@ -4,11 +4,4 @@
  * [2392] Build a Matrix With Conditions
  */
 
-// @lc code=start
-class Solution {
-    public int[][] buildMatrix(int k, int[][] rowConditions, int[][] colConditions) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[][] buildMatrix(int k, int[][] rowConditions, int[][] colConditions) { return ((Function<Function<int[][], int[]>, int[][]>) topo -> ((Function<int[], Function<int[], int[][]>>) r -> c -> r == null || c == null ? new int[0][0] : ((Function<int[], Function<int[][], int[][]>>) pos -> res -> IntStream.range(0, k).map(i -> (pos[r[i]] = i) * 0).sum() * 0 == 0 ? IntStream.range(0, k).map(i -> (res[pos[c[i]]][i] = c[i]) * 0).sum() * 0 == 0 ? res : res : res).apply(new int[k + 1]).apply(new int[k][k])).apply(topo.apply(rowConditions)).apply(topo.apply(colConditions))).apply(conds -> ((Function<int[], Function<int[][], Function<int[], Function<int[], int[]>>>>) indeg -> adj -> adjLen -> q -> Arrays.stream(conds).mapToInt(c -> (indeg[c[1]]++) * 0 + (adj[c[0]][adjLen[c[0]]++] = c[1]) * 0).sum() * 0 == 0 ? IntStream.rangeClosed(1, k).filter(i -> indeg[i] == 0).map(i -> (q[2 + q[1]++] = i) * 0).sum() * 0 == 0 ? IntStream.iterate(0, dummy -> q[0] < q[1], dummy -> dummy).map(dummy -> ((IntUnaryOperator) u -> IntStream.range(0, adjLen[u]).map(i -> --indeg[adj[u][i]] == 0 ? (q[2 + q[1]++] = adj[u][i]) * 0 : 0).sum() * 0).applyAsInt(q[2 + q[0]++])).sum() * 0 == 0 ? (q[1] == k ? Arrays.copyOfRange(q, 2, 2 + k) : null) : null : null : null).apply(new int[k + 1]).apply(new int[k + 1][conds.length]).apply(new int[k + 1]).apply(new int[k + 2])); } }

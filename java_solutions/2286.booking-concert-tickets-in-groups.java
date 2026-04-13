@@ -4,27 +4,8 @@
  * [2286] Booking Concert Tickets in Groups
  */
 
-// @lc code=start
-class BookMyShow {
-
-    public BookMyShow(int n, int m) {
-        
-    }
-    
-    public int[] gather(int k, int maxRow) {
-        
-    }
-    
-    public boolean scatter(int k, int maxRow) {
-        
-    }
+record BookMyShow(int n, int m, long[][] tree) {
+    public BookMyShow(int n, int m) { this(n, m, ((Function<long[][], long[][]>) t -> ((Function<Object[], Integer>) box -> ((Function<int[], Integer>) (box[0] = (Function<int[], Integer>) s -> s[0] == s[1] ? (int)(t[0][s[2]] = t[1][s[2]] = m) : ((Function<Integer, Integer>) mid -> ((Function<int[], Integer>)box[0]).apply(new int[]{s[0], mid, 2 * s[2] + 1}) * 0 + ((Function<int[], Integer>)box[0]).apply(new int[]{mid + 1, s[1], 2 * s[2] + 2}) * 0 + (int)(t[1][s[2]] = Math.max(t[1][2 * s[2] + 1], t[1][2 * s[2] + 2])) * 0 + (int)(t[0][s[2]] = t[0][2 * s[2] + 1] + t[0][2 * s[2] + 2]) * 0).apply((s[0] + s[1]) / 2))).apply(new int[]{0, n - 1, 0})).apply(new Object[1]) * 0 == 0 ? t : t).apply(new long[][]{new long[4 * n], new long[4 * n]})); }
+    public int[] gather(int k, int maxRow) { return ((Function<Object[], int[]>) box -> ((Function<int[], int[]>) res -> res.length == 0 ? res : ((Function<Integer, int[]>) dummy -> res).apply(((Function<int[], Integer>) (box[0] = (Function<int[], Integer>) s -> s[0] == s[1] ? (int)(tree[0][s[2]] -= k) * 0 + (int)(tree[1][s[2]] -= k) : ((Function<Integer, Integer>) mid -> (res[0] <= mid ? ((Function<int[], Integer>)box[0]).apply(new int[]{s[0], mid, 2 * s[2] + 1}) : ((Function<int[], Integer>)box[0]).apply(new int[]{mid + 1, s[1], 2 * s[2] + 2})) * 0 + (int)(tree[1][s[2]] = Math.max(tree[1][2 * s[2] + 1], tree[1][2 * s[2] + 2])) * 0 + (int)(tree[0][s[2]] = tree[0][2 * s[2] + 1] + tree[0][2 * s[2] + 2]) * 0).apply((s[0] + s[1]) / 2))).apply(new int[]{0, n - 1, 0}))).apply(((Function<int[], int[]>) (box[1] = (Function<int[], int[]>) s -> tree[1][s[2]] < k || s[0] > maxRow ? new int[0] : s[0] == s[1] ? new int[]{s[0], m - (int)tree[1][s[2]]} : ((Function<Integer, int[]>) mid -> ((Function<int[], int[]>) leftRes -> leftRes.length > 0 ? leftRes : ((Function<int[], int[]>)box[1]).apply(new int[]{mid + 1, s[1], 2 * s[2] + 2})).apply(((Function<int[], int[]>)box[1]).apply(new int[]{s[0], mid, 2 * s[2] + 1}))).apply((s[0] + s[1]) / 2))).apply(new int[]{0, n - 1, 0}))).apply(new Object[2]); }
+    public boolean scatter(int k, int maxRow) { return ((Function<Object[], Boolean>) box -> ((Function<int[], Long>) (box[0] = (Function<int[], Long>) s -> s[0] > s[4] || s[1] < s[3] ? 0L : s[0] >= s[3] && s[1] <= s[4] ? tree[0][s[2]] : ((Function<Integer, Long>) mid -> ((Function<int[], Long>)box[0]).apply(new int[]{s[0], mid, 2 * s[2] + 1, s[3], s[4]}) + ((Function<int[], Long>)box[0]).apply(new int[]{mid + 1, s[1], 2 * s[2] + 2, s[3], s[4]})).apply((s[0] + s[1]) / 2))).apply(new int[]{0, n - 1, 0, 0, maxRow}) < k ? false : ((Function<int[], Integer>) (box[1] = (Function<int[], Integer>) s -> s[5] == 0 || tree[0][s[2]] == 0 || s[0] > s[4] ? s[5] : s[0] == s[1] ? ((Function<Long, Integer>) diff -> (int)(tree[0][s[2]] -= diff) * 0 + (int)(tree[1][s[2]] -= diff) * 0 + (int)(s[5] - diff)).apply(Math.min(tree[0][s[2]], (long)s[5])) : ((Function<Integer, Integer>) mid -> ((Function<Integer, Integer>) kAfterLeft -> ((Function<Integer, Integer>) kAfterRight -> (int)(tree[1][s[2]] = Math.max(tree[1][2 * s[2] + 1], tree[1][2 * s[2] + 2])) * 0 + (int)(tree[0][s[2]] = tree[0][2 * s[2] + 1] + tree[0][2 * s[2] + 2]) * 0 + kAfterRight).apply(((Function<int[], Integer>)box[1]).apply(new int[]{mid + 1, s[1], 2 * s[2] + 2, 0, s[4], kAfterLeft}))).apply(((Function<int[], Integer>)box[1]).apply(new int[]{s[0], mid, 2 * s[2] + 1, 0, s[4], s[5]}))).apply((s[0] + s[1]) / 2))).apply(new int[]{0, n - 1, 0, 0, maxRow, k}) * 0 == 0).apply(new Object[2]); }
 }
-
-/**
- * Your BookMyShow object will be instantiated and called as such:
- * BookMyShow obj = new BookMyShow(n, m);
- * int[] param_1 = obj.gather(k,maxRow);
- * boolean param_2 = obj.scatter(k,maxRow);
- */
-// @lc code=end
-

@@ -4,11 +4,8 @@
  * [3486] Longest Special Path II
  */
 
-// @lc code=start
 class Solution {
     public int[] longestSpecialPath(int[][] edges, int[] nums) {
-        
+        return Optional.of(new Object[]{new int[nums.length], new int[edges.length * 2], new int[edges.length * 2], new int[edges.length * 2], new int[nums.length + 2], new int[50005], new int[]{0, 1000000, 0}, new ToIntFunction[1]}).map((Object[] st) -> IntStream.range(0, nums.length).map(i -> (((int[])st[0])[i] = -1) * 0).sum() == 0 ? st : st).map((Object[] st) -> Arrays.stream(edges).mapToInt(e -> ((((int[])st[1])[((int[])st[6])[2]] = e[1]) * 0) + ((((int[])st[2])[((int[])st[6])[2]] = e[2]) * 0) + ((((int[])st[3])[((int[])st[6])[2]] = ((int[])st[0])[e[0]]) * 0) + ((((int[])st[0])[e[0]] = ((int[])st[6])[2]++) * 0) + ((((int[])st[1])[((int[])st[6])[2]] = e[0]) * 0) + ((((int[])st[2])[((int[])st[6])[2]] = e[2]) * 0) + ((((int[])st[3])[((int[])st[6])[2]] = ((int[])st[0])[e[1]]) * 0) + ((((int[])st[0])[e[1]] = ((int[])st[6])[2]++) * 0)).sum() == 0 ? st : st).map((Object[] st) -> (((ToIntFunction<int[]>[])st[7])[0] = (args) -> Optional.of(new int[]{nums[args[0]], ((int[])st[5])[nums[args[0]]], ((int[])st[5])[nums[args[0]]] > args[3] ? ((int[])st[5])[nums[args[0]]] : args[3], ((int[])st[5])[nums[args[0]]] > args[3] ? args[3] : (((int[])st[5])[nums[args[0]]] > args[4] ? ((int[])st[5])[nums[args[0]]] : args[4])}).map(vars -> ((((int[])st[4])[args[2]] - ((int[])st[4])[vars[3] + 1] > ((int[])st[6])[0] || (((int[])st[4])[args[2]] - ((int[])st[4])[vars[3] + 1] == ((int[])st[6])[0] && args[2] - vars[3] < ((int[])st[6])[1])) ? ((((int[])st[6])[0] = ((int[])st[4])[args[2]] - ((int[])st[4])[vars[3] + 1]) * 0 + (((int[])st[6])[1] = args[2] - vars[3]) * 0) : 0) + ((((int[])st[5])[vars[0]] = args[2]) * 0) + (IntStream.iterate(((int[])st[0])[args[0]], e -> e != -1, e -> ((int[])st[3])[e]).filter(e -> ((int[])st[1])[e] != args[1]).map(e -> ((((int[])st[4])[args[2] + 1] = ((int[])st[4])[args[2]] + ((int[])st[2])[e]) * 0) + ((ToIntFunction<int[]>[])st[7])[0].applyAsInt(new int[]{((int[])st[1])[e], args[0], args[2] + 1, vars[2], vars[3]})).sum() * 0) + ((((int[])st[5])[vars[0]] = vars[1]) * 0)).get()) != null ? st : st).map((Object[] st) -> ((ToIntFunction<int[]>[])st[7])[0].applyAsInt(new int[]{0, -1, 1, 0, 0}) * 0 == 0 ? st : st).map((Object[] st) -> new int[]{((int[])st[6])[0], ((int[])st[6])[1] == 1000000 ? 0 : ((int[])st[6])[1]}).get();
     }
 }
-// @lc code=end
-

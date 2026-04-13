@@ -4,11 +4,4 @@
  * [3382] Maximum Area Rectangle With Point Constraints II
  */
 
-// @lc code=start
-class Solution {
-    public long maxRectangleArea(int[] xCoord, int[] yCoord) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maxRectangleArea(int[] xCoord, int[] yCoord) { return ((Function<int[], Long>) U -> ((Function<Integer, Long>) M -> ((Function<int[], Long>) tree -> ((Function<Map<Long, Integer>, Long>) pairLastX -> ((Function<TreeMap<Integer, TreeSet<Integer>>, Long>) xMap -> (long) new Object[]{ IntStream.range(0, xCoord.length).map(i -> xMap.computeIfAbsent(xCoord[i], k -> new TreeSet<>()).add(yCoord[i]) ? 1 : 1).sum(), IntStream.range(0, 2 * M).map(i -> tree[i] = -1).sum(), xMap.entrySet().stream().mapToLong(e -> (long) new Object[]{ ((Function<Integer[], Long>) ys -> IntStream.range(0, ys.length - 1).mapToLong(i -> pairLastX.get(((long)ys[i] << 32) | ys[i + 1]) != null && Stream.iterate(new int[]{Arrays.binarySearch(U, ys[i]) + M, Arrays.binarySearch(U, ys[i + 1]) + M + 1}, s -> s[0] < s[1], s -> new int[]{(s[0] + (s[0] & 1)) >> 1, (s[1] - (s[1] & 1)) >> 1}).mapToInt(s -> Math.max((s[0] & 1) == 1 ? tree[s[0]] : -1, (s[1] & 1) == 1 ? tree[s[1] - 1] : -1)).max().orElse(-1) == pairLastX.get(((long)ys[i] << 32) | ys[i + 1]).intValue() ? (long)(e.getKey() - pairLastX.get(((long)ys[i] << 32) | ys[i + 1])) * (ys[i + 1] - ys[i]) : -1L).max().orElse(-1L)).apply(e.getValue().toArray(new Integer[0])), e.getValue().stream().mapToInt(y -> IntStream.iterate(Arrays.binarySearch(U, y) + M, idx -> idx > 0, idx -> idx >> 1).map(idx -> tree[idx] = Math.max(tree[idx], e.getKey())).sum() * 0).sum(), ((Function<Integer[], Integer>) ys2 -> IntStream.range(0, ys2.length - 1).map(i -> pairLastX.put(((long)ys2[i] << 32) | ys2[i + 1], e.getKey()) == null ? 1 : 1).sum()).apply(e.getValue().toArray(new Integer[0])) }[0]).max().orElse(-1L) }[2]).apply(new TreeMap<>())).apply(new HashMap<>())).apply(new int[2 * M])).apply(U.length)).apply(Arrays.stream(yCoord).distinct().sorted().toArray()); } }

@@ -4,11 +4,4 @@
  * [2608] Shortest Cycle in a Graph
  */
 
-// @lc code=start
-class Solution {
-    public int findShortestCycle(int n, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int findShortestCycle(int n, int[][] edges) { return ((Function<int[], Function<int[], Function<int[], Integer>>>) head -> to -> nxt -> IntStream.range(0, n).reduce(0, (acc, i) -> (head[i] = -1) * 0) * 0 == 0 && IntStream.range(0, edges.length).reduce(0, (acc, i) -> (to[i * 2] = edges[i][1]) * 0 + (nxt[i * 2] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = i * 2) * 0 + (to[i * 2 + 1] = edges[i][0]) * 0 + (nxt[i * 2 + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = i * 2 + 1) * 0) * 0 == 0 ? ((Function<int[], Function<int[], Function<int[], Integer>>>) q -> dist -> parent -> ((ToIntFunction<int[]>) ans -> IntStream.range(0, n).reduce(0, (acc, start) -> IntStream.range(0, n).reduce(0, (ac, i) -> (dist[i] = -1) * 0) * 0 == 0 && (dist[start] = 0) * 0 == 0 && (parent[start] = -1) * 0 == 0 && (q[0] = start) * 0 == 0 && ((ToIntFunction<int[]>) bounds -> IntStream.iterate(0, h -> h < bounds[0], h -> h + 1).reduce(0, (acc2, h) -> ((IntUnaryOperator) u -> IntStream.iterate(head[u], e -> e != -1, e -> nxt[e]).reduce(0, (acc3, e) -> dist[to[e]] == -1 ? (dist[to[e]] = dist[u] + 1) * 0 + (parent[to[e]] = u) * 0 + (q[bounds[0]++] = to[e]) * 0 : to[e] != parent[u] ? (ans[0] = Math.min(ans[0], dist[u] + dist[to[e]] + 1)) * 0 : 0) * 0).applyAsInt(q[h]) * 0) * 0).applyAsInt(new int[]{1}) * 0 == 0 ? 0 : 0) * 0 == 0 ? (ans[0] > 100000 ? -1 : ans[0]) : -1).applyAsInt(new int[]{1000000})).apply(new int[n]).apply(new int[n]).apply(new int[n]) : -1).apply(new int[n]).apply(new int[edges.length * 2]).apply(new int[edges.length * 2]); } }

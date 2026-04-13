@@ -4,11 +4,8 @@
  * [3615] Longest Palindromic Path in Graph
  */
 
-// @lc code=start
 class Solution {
-    public int maxLen(int n, int[][] edges, String label) {
-        
+    public int maxLen(int n, int[][] edges, String labelsStr) {
+        return (int) Optional.of(new Object[]{new int[n], new int[256][], new byte[1 << 22], new IntUnaryOperator[1], new IntBinaryOperator[1]}).map((Object[] st) -> IntStream.range(0, edges.length).map(k -> (((int[])st[0])[edges[k][0]] |= (1 << edges[k][1])) * 0 + (((int[])st[0])[edges[k][1]] |= (1 << edges[k][0])) * 0).sum() == 0 ? st : st).map((Object[] st) -> (st[1] = IntStream.range(0, 256).mapToObj(packedPair -> ((packedPair >> 4) & 15) >= n || (packedPair & 15) >= n ? new int[0] : IntStream.range(0, n * n).filter(next -> (next / n) != (next % n) && labelsStr.charAt(next / n) == labelsStr.charAt(next % n) && ((((int[])st[0])[(packedPair >> 4) & 15] & (1 << (next / n))) != 0) && ((((int[])st[0])[packedPair & 15] & (1 << (next % n))) != 0)).map(next -> ((next / n) << 4) | (next % n)).toArray()).toArray(int[][]::new)) != null ? st : st).map((Object[] st) -> (((IntBinaryOperator[])st[4])[0] = (state, idx) -> idx >= ((int[][])st[1])[state & 255].length ? 0 : Math.max(((state >> 8) & (1 << (((int[][])st[1])[state & 255][idx] >> 4))) == 0 && ((state >> 8) & (1 << (((int[][])st[1])[state & 255][idx] & 15))) == 0 ? 2 + ((IntUnaryOperator[])st[3])[0].applyAsInt(((state >> 8) | (1 << (((int[][])st[1])[state & 255][idx] >> 4)) | (1 << (((int[][])st[1])[state & 255][idx] & 15))) << 8 | ((int[][])st[1])[state & 255][idx]) : 0, ((IntBinaryOperator[])st[4])[0].applyAsInt(state, idx + 1))) != null ? st : st).map((Object[] st) -> (((IntUnaryOperator[])st[3])[0] = state -> ((byte[])st[2])[state] != 0 ? ((byte[])st[2])[state] - 1 : (((byte[])st[2])[state] = (byte)(1 + ((IntBinaryOperator[])st[4])[0].applyAsInt(state, 0))) - 1) != null ? st : st).map((Object[] st) -> Math.max(IntStream.range(0, n).map(i -> 1 + ((IntUnaryOperator[])st[3])[0].applyAsInt(((1 << i) << 8) | (i << 4) | i)).max().orElse(0), IntStream.range(0, n * n).filter(pair -> (pair / n) != (pair % n) && labelsStr.charAt(pair / n) == labelsStr.charAt(pair % n) && ((((int[])st[0])[pair / n] & (1 << (pair % n))) != 0)).map(pair -> 2 + ((IntUnaryOperator[])st[3])[0].applyAsInt((((1 << (pair / n)) | (1 << (pair % n))) << 8) | ((pair / n) << 4) | (pair % n))).max().orElse(0))).get();
     }
 }
-// @lc code=end
-

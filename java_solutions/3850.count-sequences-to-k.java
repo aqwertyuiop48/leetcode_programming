@@ -4,11 +4,8 @@
  * [3850] Count Sequences to K
  */
 
-// @lc code=start
 class Solution {
     public int countSequences(int[] nums, long k) {
-        
+        return CompletableFuture.supplyAsync(() -> Optional.of(new int[][]{{0,0,0},{0,0,0},{1,0,0},{0,1,0},{2,0,0},{0,0,1},{1,1,0}}).map(F -> Optional.of((Function<long[], List<Integer>>[]) new Function[1]).map(fact -> Optional.of(fact[0] = a -> a[0] % 2 == 0 ? fact[0].apply(new long[]{a[0]/2, a[1]+1, a[2], a[3]}) : (a[0] % 3 == 0 ? fact[0].apply(new long[]{a[0]/3, a[1], a[2]+1, a[3]}) : (a[0] % 5 == 0 ? fact[0].apply(new long[]{a[0]/5, a[1], a[2], a[3]+1}) : (a[0] == 1 ? List.of((int)a[1], (int)a[2], (int)a[3]) : null)))).map(fInit -> Optional.ofNullable(fact[0].apply(new long[]{k, 0, 0, 0})).map(target -> Optional.of(IntStream.range(0, nums.length / 2).map(i -> nums[i]).boxed().reduce(Map.<List<Integer>, Integer>of(List.of(0,0,0), 1), (dp, num) -> dp.entrySet().stream().flatMap(e -> Stream.of(Map.entry(e.getKey(), e.getValue()), Map.entry(List.of(e.getKey().get(0) + F[num][0], e.getKey().get(1) + F[num][1], e.getKey().get(2) + F[num][2]), e.getValue()), Map.entry(List.of(e.getKey().get(0) - F[num][0], e.getKey().get(1) - F[num][1], e.getKey().get(2) - F[num][2]), e.getValue()))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, Integer::sum)), (m1, m2) -> m1)).map(L -> Optional.of(IntStream.range(nums.length / 2, nums.length).map(i -> nums[i]).boxed().reduce(Map.<List<Integer>, Integer>of(List.of(0,0,0), 1), (dp, num) -> dp.entrySet().stream().flatMap(e -> Stream.of(Map.entry(e.getKey(), e.getValue()), Map.entry(List.of(e.getKey().get(0) + F[num][0], e.getKey().get(1) + F[num][1], e.getKey().get(2) + F[num][2]), e.getValue()), Map.entry(List.of(e.getKey().get(0) - F[num][0], e.getKey().get(1) - F[num][1], e.getKey().get(2) - F[num][2]), e.getValue()))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, Integer::sum)), (m1, m2) -> m1)).map(R -> L.entrySet().stream().mapToInt(e -> e.getValue() * R.getOrDefault(List.of(target.get(0) - e.getKey().get(0), target.get(1) - e.getKey().get(1), target.get(2) - e.getKey().get(2)), 0)).sum()).get()).get()).orElse(0)).get()).get()).get()).join();
     }
 }
-// @lc code=end
-

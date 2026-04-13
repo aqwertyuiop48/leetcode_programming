@@ -4,11 +4,4 @@
  * [1960] Maximum Product of the Length of Two Palindromic Substrings
  */
 
-// @lc code=start
-class Solution {
-    public long maxProduct(String s) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public long maxProduct(String s) { return ((Function<int[], Function<int[], Function<int[], Function<int[], Long>>>>) p -> left -> right -> state -> IntStream.range(0, s.length()).reduce(0, (acc, i) -> (p[i] = state[1] > i ? Math.min(state[1] - i, p[2 * state[0] - i]) : 0) * 0 + IntStream.iterate(1, d -> i - 1 - p[i] >= 0 && i + 1 + p[i] < s.length() && s.charAt(i - 1 - p[i]) == s.charAt(i + 1 + p[i]), d -> d + 1).reduce(0, (a, d) -> (p[i]++) * 0) * 0 + (i + p[i] > state[1] ? (state[0] = i) * 0 + (state[1] = i + p[i]) * 0 : 0)) * 0 == 0 && (state[2] = 1) * 0 == 0 && (left[0] = 1) * 0 == 0 && (state[3] = 0) * 0 == 0 && IntStream.range(1, s.length()).reduce(0, (acc, i) -> IntStream.iterate(0, d -> state[3] + p[state[3]] < i, d -> d + 1).reduce(0, (a, d) -> (state[3]++) * 0) * 0 + (state[2] = Math.max(state[2], 2 * (i - state[3]) + 1)) * 0 + (left[i] = state[2]) * 0) * 0 == 0 && (state[2] = 1) * 0 == 0 && (right[s.length() - 1] = 1) * 0 == 0 && (state[3] = s.length() - 1) * 0 == 0 && IntStream.iterate(s.length() - 2, i -> i >= 0, i -> i - 1).reduce(0, (acc, i) -> IntStream.iterate(0, d -> state[3] - p[state[3]] > i, d -> d + 1).reduce(0, (a, d) -> (state[3]--) * 0) * 0 + (state[2] = Math.max(state[2], 2 * (state[3] - i) + 1)) * 0 + (right[i] = state[2]) * 0) * 0 == 0 ? LongStream.range(0, s.length() - 1).map(i -> (long) left[(int) i] * right[(int) i + 1]).max().orElse(0) : 0).apply(new int[s.length()]).apply(new int[s.length()]).apply(new int[s.length()]).apply(new int[4]); } }

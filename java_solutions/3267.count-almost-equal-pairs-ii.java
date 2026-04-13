@@ -4,11 +4,4 @@
  * [3267] Count Almost Equal Pairs II
  */
 
-// @lc code=start
-class Solution {
-    public int countPairs(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int countPairs(int[] nums) { return ((Function<int[], Integer>) P -> ((Function<Integer, Integer>) maxL -> ((Function<Map<Integer, Integer>, Integer>) freq -> Arrays.stream(nums).map(n -> ((Function<Integer, Integer>) currentSum -> currentSum + (freq.put(n, freq.getOrDefault(n, 0) + 1) == null ? 0 : 0) * 0).apply(IntStream.range(0, maxL * maxL * maxL * maxL).filter(idx -> (idx / (maxL * maxL * maxL)) <= ((idx / (maxL * maxL)) % maxL) && ((idx / maxL) % maxL) <= (idx % maxL)).map(idx -> ((IntUnaryOperator) n1 -> n1 - (n1 / P[(idx / maxL) % maxL] % 10) * P[(idx / maxL) % maxL] - (n1 / P[idx % maxL] % 10) * P[idx % maxL] + (n1 / P[(idx / maxL) % maxL] % 10) * P[idx % maxL] + (n1 / P[idx % maxL] % 10) * P[(idx / maxL) % maxL]).applyAsInt(n - (n / P[idx / (maxL * maxL * maxL)] % 10) * P[idx / (maxL * maxL * maxL)] - (n / P[(idx / (maxL * maxL)) % maxL] % 10) * P[(idx / (maxL * maxL)) % maxL] + (n / P[idx / (maxL * maxL * maxL)] % 10) * P[(idx / (maxL * maxL)) % maxL] + (n / P[(idx / (maxL * maxL)) % maxL] % 10) * P[idx / (maxL * maxL * maxL)])).distinct().map(v -> freq.getOrDefault(v, 0)).sum())).sum()).apply(new HashMap<>())).apply(String.valueOf(Arrays.stream(nums).max().getAsInt()).length())).apply(new int[]{1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000}); } }

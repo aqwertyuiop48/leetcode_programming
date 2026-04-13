@@ -4,11 +4,8 @@
  * [3518] Smallest Palindromic Rearrangement II
  */
 
-// @lc code=start
 class Solution {
-    public String smallestPalindrome(String s, int k) {
-        
+    public String smallestPalindrome(String inputStr, int K) {
+        return Optional.of(new Object[]{new int[26], new int[]{0, K, 0}, new int[1], new LongBinaryOperator[1], new LongSupplier[1], new char[inputStr.length() / 2]}).map((Object[] st) -> IntStream.range(0, inputStr.length()).map(i -> (((int[])st[0])[inputStr.charAt(i) - 'a']++) * 0).sum() == 0 ? st : st).map((Object[] st) -> IntStream.range(0, 26).map(i -> (((int[])st[0])[i] % 2 == 1 && ((int[])st[1])[0] == 0 ? (((int[])st[1])[0] = i + 'a') * 0 + (((int[])st[0])[i]--) * 0 : 0) + ((((int[])st[2])[0] += (((int[])st[0])[i] /= 2)) * 0)).sum() == 0 ? st : st).map((Object[] st) -> (((LongBinaryOperator[])st[3])[0] = (LongBinaryOperator) ((n, k) -> (k > n) ? 0L : LongStream.rangeClosed(1, Math.min(k, n - k)).reduce(1L, (res, i) -> res >= 1000001L ? 1000001L : res * (n - i + 1L) / i))) != null ? st : st).map((Object[] st) -> (((LongSupplier[])st[4])[0] = (LongSupplier) (() -> Optional.of(new int[]{IntStream.range(0, 26).map(i -> ((int[])st[0])[i]).sum()}).map((int[] tot) -> LongStream.range(0, 26).reduce(1L, (res, i) -> res >= 1000001L ? 1000001L : Optional.of(res * ((LongBinaryOperator[])st[3])[0].applyAsLong(tot[0], ((int[])st[0])[(int)i])).map((Long r) -> r >= 1000001L ? 1000001L : r + ((tot[0] -= ((int[])st[0])[(int)i]) * 0L)).get())).get())) != null ? st : st).map((Object[] st) -> (((int[])st[1])[1] > ((LongSupplier[])st[4])[0].getAsLong() ? (((int[])st[1])[2] = 1) * 0 : IntStream.range(0, ((int[])st[2])[0]).map(step -> IntStream.range(0, 26).filter(c -> ((int[])st[0])[c] > 0).filter(c -> Optional.of(c).map((Integer cc) -> ((((int[])st[0])[cc]--) * 0) + ((LongSupplier[])st[4])[0].getAsLong()).map((Long perms) -> perms >= ((int[])st[1])[1] ? ((((char[])st[5])[step] = (char)(c + 'a')) * 0) + 1 : ((((int[])st[1])[1] -= perms.intValue()) * 0) + ((((int[])st[0])[c]++) * 0) + 0).get() == 1).findFirst().orElse(0) * 0).sum()) == 0 ? st : st).map((Object[] st) -> ((int[])st[1])[2] == 1 ? "" : Optional.of(new String((char[])st[5])).map((String half) -> half + (((int[])st[1])[0] == 0 ? "" : String.valueOf((char)((int[])st[1])[0])) + new StringBuilder(half).reverse().toString()).get()).get();
     }
 }
-// @lc code=end
-

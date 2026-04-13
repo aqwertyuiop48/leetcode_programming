@@ -49,4 +49,3 @@ class Solution {
         return (boolean) System.getProperties().get("ans87");
     }
 }
-

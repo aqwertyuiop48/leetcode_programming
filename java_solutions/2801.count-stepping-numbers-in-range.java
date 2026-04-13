@@ -4,11 +4,4 @@
  * [2801] Count Stepping Numbers in Range
  */
 
-// @lc code=start
-class Solution {
-    public int countSteppingNumbers(String low, String high) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int countSteppingNumbers(String low, String high) { return ((Function<Object[], Integer>) box -> (((Function<String, Integer>)box[0]).apply(high) - ((Function<String, Integer>)box[0]).apply(low) + (IntStream.range(1, low.length()).allMatch(i -> Math.abs(low.charAt(i) - low.charAt(i - 1)) == 1) ? 1 : 0) + 1000000007) % 1000000007).apply(new Object[]{ (Function<String, Integer>) num -> ((Function<Object[], Integer>) innerBox -> ((Function<int[][][][], Integer>) dp -> ((Function<int[], Integer>) (innerBox[0] = (Function<int[], Integer>) state -> state[0] == num.length() ? (state[2] == 1 ? 0 : 1) : dp[state[0]][state[1]][state[2]][state[3]] != -1 ? dp[state[0]][state[1]][state[2]][state[3]] : (dp[state[0]][state[1]][state[2]][state[3]] = IntStream.rangeClosed(0, state[1] == 1 ? num.charAt(state[0]) - '0' : 9).map(d -> state[2] == 1 ? ((Function<int[], Integer>)innerBox[0]).apply(new int[]{state[0] + 1, state[1] == 1 && d == (num.charAt(state[0]) - '0') ? 1 : 0, d == 0 ? 1 : 0, d == 0 ? 10 : d}) : (Math.abs(state[3] - d) == 1 ? ((Function<int[], Integer>)innerBox[0]).apply(new int[]{state[0] + 1, state[1] == 1 && d == (num.charAt(state[0]) - '0') ? 1 : 0, 0, d}) : 0)).reduce(0, (a, b) -> (a + b) % 1000000007)))).apply(new int[]{0, 1, 1, 10})).apply(IntStream.range(0, num.length() + 1).mapToObj(i -> IntStream.range(0, 2).mapToObj(j -> IntStream.range(0, 2).mapToObj(k -> IntStream.range(0, 11).map(l -> -1).toArray()).toArray(int[][]::new)).toArray(int[][][]::new)).toArray(int[][][][]::new))).apply(new Object[1]) }); } }

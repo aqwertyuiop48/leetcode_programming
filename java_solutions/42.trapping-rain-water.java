@@ -4,7 +4,6 @@
  * [42] Trapping Rain Water
  */
 
-// @lc code=start
 class Solution {
     public int trap(int[] height) {
         if (height.length > 2 && new int[]{0, height.length - 1, 0, 0, 0} instanceof int[] s)
@@ -21,5 +20,3 @@ class Solution {
         return height.length > 2 ? height[0] : 0;
     }
 }
-// @lc code=end
-

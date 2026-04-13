@@ -4,11 +4,8 @@
  * [1835] Find XOR Sum of All Pairs Bitwise AND
  */
 
-// @lc code=start
 class Solution {
     public int getXORSum(int[] arr1, int[] arr2) {
-        
+        return Arrays.stream(arr1).reduce(0, (a, b) -> a ^ b) & Arrays.stream(arr2).reduce(0, (a, b) -> a ^ b);
     }
 }
-// @lc code=end
-

@@ -54,4 +54,3 @@ class Solution {
         return (int) System.getProperties().get("ans127");
     }
 }
-

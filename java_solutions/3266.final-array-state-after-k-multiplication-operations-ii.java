@@ -4,11 +4,4 @@
  * [3266] Final Array State After K Multiplication Operations II
  */
 
-// @lc code=start
-class Solution {
-    public int[] getFinalState(int[] nums, int k, int multiplier) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] getFinalState(int[] nums, int k, int multiplier) { return multiplier == 1 ? nums : Stream.<Object[]>of(new Object[]{ nums, k, multiplier, new PriorityQueue<long[]>((a, b) -> a[0] == b[0] ? Long.compare(a[1], b[1]) : Long.compare(a[0], b[0])), IntStream.of(nums).max().getAsInt(), 1_000_000_007L, ((Function<Object[], BiFunction<Long, Long, Long>>) box -> (BiFunction<Long, Long, Long>) (box[0] = (BiFunction<Long, Long, Long>) (Long b, Long e) -> (long)e == 0L ? 1L : ((long)e % 2L == 1L ? ((long)b * ((BiFunction<Long, Long, Long>)box[0]).apply(b, (long)e - 1L)) % 1_000_000_007L : ((BiFunction<Long, Long, Long>)box[0]).apply(((long)b * (long)b) % 1_000_000_007L, (long)e / 2L)))).apply(new Object[1]) }).map(s -> IntStream.range(0, nums.length).mapToObj(i -> ((PriorityQueue<long[]>)s[3]).add(new long[]{nums[i], i})).reduce(false, (a,b)->false) == false ? s : s).map(s -> Stream.<Object[]>iterate(s, curr -> (int)curr[1] > 0 && (int)curr[4] / ((PriorityQueue<long[]>)curr[3]).peek()[0] >= (int)curr[2], curr -> ((Function<long[], Object[]>) poll -> ((poll[0] *= (int)curr[2]) == 0 || true) && ((PriorityQueue<long[]>)curr[3]).add(poll) && ((curr[1] = (int)curr[1] - 1) instanceof Integer) ? curr : curr).apply(((PriorityQueue<long[]>)curr[3]).poll())).reduce((a, b) -> b).orElse(s)).map(s -> ((Function<Object[], Object[]>) s2 -> ((s2[7] = ((BiFunction<Long, Long, Long>)s2[6]).apply((long)(int)s2[2], (long)((int)s2[1] / nums.length))) != null) && ((s2[8] = ((BiFunction<Long, Long, Long>)s2[6]).apply((long)(int)s2[2], (long)((int)s2[1] / nums.length + 1))) != null) && ((s2[9] = (int)s2[1] % nums.length) instanceof Integer) ? s2 : s2).apply(Arrays.copyOf(s, 10))).map(s2 -> IntStream.range(0, nums.length).mapToObj(i -> ((Function<long[], Boolean>) poll -> (((int[])s2[0])[(int)poll[1]] = (int) ((poll[0] % 1_000_000_007L * (Long) (((int)s2[9]) > 0 ? s2[8] : s2[7])) % 1_000_000_007L)) * 0 == 0 && (s2[9] = (int)s2[9] - 1) != null).apply(((PriorityQueue<long[]>)s2[3]).poll())).reduce(true, (a, b) -> true) ? (int[])s2[0] : null).findFirst().get(); } }

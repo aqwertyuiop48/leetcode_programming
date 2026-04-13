@@ -4,11 +4,4 @@
  * [1889] Minimum Space Wasted From Packaging
  */
 
-// @lc code=start
-class Solution {
-    public int minWastedSpace(int[] packages, int[][] boxes) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minWastedSpace(int[] packages, int[][] boxes) { return ((Function<int[], Function<long[], Integer>>) pkg -> pre -> IntStream.range(1, pkg.length + 1).reduce(0, (acc, i) -> (int)((pre[i] = pre[i - 1] + pkg[i - 1]) * 0L)) * 0 == 0 ? ((ToIntFunction<long[]>) ans -> IntStream.range(0, boxes.length).reduce(0, (acc, i) -> ((Function<int[], Integer>) box -> pkg[pkg.length - 1] > box[box.length - 1] ? 0 : ((ToIntFunction<long[]>) state -> IntStream.of(box).reduce(0, (acc2, size) -> size < pkg[0] ? 0 : ((IntUnaryOperator) next -> (int)((state[0] += (long)(next - state[1] + 1) * size - (pre[next + 1] - pre[(int)state[1]])) * 0L + (state[1] = next + 1) * 0L)).applyAsInt(((ToIntFunction<int[]>) bounds -> IntStream.iterate(0, d -> bounds[0] < bounds[1], d -> d + 1).reduce(0, (a, d) -> ((IntUnaryOperator) mid -> pkg[mid] > size ? (bounds[1] = mid - 1) * 0 : (bounds[0] = mid) * 0).applyAsInt((bounds[0] + bounds[1] + 1) >>> 1) * 0) * 0 == 0 ? bounds[0] : 0).applyAsInt(new int[]{0, pkg.length - 1})) * 0) * 0 == 0 ? (int)((ans[0] = Math.min(ans[0], state[0])) * 0L) : 0).applyAsInt(new long[]{0L, 0L})).apply(IntStream.of(boxes[i]).sorted().toArray()) * 0) * 0 == 0 ? (ans[0] == 9000000000000000000L ? -1 : (int)(ans[0] % 1000000007L)) : -1).applyAsInt(new long[]{9000000000000000000L}) : -1).apply(IntStream.of(packages).sorted().toArray()).apply(new long[packages.length + 1]); } }

@@ -4,11 +4,4 @@
  * [2581] Count Number of Possible Root Nodes
  */
 
-// @lc code=start
-class Solution {
-    public int rootCount(int[][] edges, int[][] guesses, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int rootCount(int[][] eg, int[][] gu, int k) { return ((Function<int[], Integer>) head -> ((Function<int[], Integer>) to -> ((Function<int[], Integer>) next -> ((Function<int[], Integer>) par -> ((Function<int[], Integer>) add -> ((Function<int[], Integer>) state -> ((Function<Object[], Integer>) box -> (IntStream.range(0, eg.length).map(i -> (to[2 * i] = eg[i][1]) * 0 + (next[2 * i] = head[eg[i][0]]) * 0 + (head[eg[i][0]] = 2 * i) * 0 + (to[2 * i + 1] = eg[i][0]) * 0 + (next[2 * i + 1] = head[eg[i][1]]) * 0 + (head[eg[i][1]] = 2 * i + 1) * 0).sum() * 0 == 0) && (box[0] = (Function<int[], Integer>) s -> (par[s[0]] = s[1]) * 0 + IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).map(e -> ((Function<int[], Integer>)box[0]).apply(new int[]{to[e], s[0]})).sum() * 0) != null && ((Function<int[], Integer>)box[0]).apply(new int[]{0, -1}) * 0 == 0 && Arrays.stream(gu).mapToInt(a -> (par[a[1]] == a[0] ? (state[0]++ * 0 + add[a[1]]--) : add[a[0]]++) * 0).sum() * 0 == 0 && (box[1] = (Function<int[], Integer>) s -> IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).map(e -> (add[to[e]] += add[s[0]]) * 0 + ((Function<int[], Integer>)box[1]).apply(new int[]{to[e], s[0]})).sum() * 0) != null && ((Function<int[], Integer>)box[1]).apply(new int[]{0, -1}) * 0 == 0 ? (int) Arrays.stream(add).filter(v -> v + state[0] >= k).count() : 0).apply(new Object[2])).apply(new int[1])).apply(new int[eg.length + 1])).apply(new int[eg.length + 1])).apply(new int[eg.length * 2])).apply(new int[eg.length * 2])).apply(IntStream.range(0, eg.length + 1).map(i -> -1).toArray()); } }

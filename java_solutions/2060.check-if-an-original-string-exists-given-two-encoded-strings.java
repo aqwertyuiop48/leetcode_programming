@@ -4,11 +4,4 @@
  * [2060] Check if an Original String Exists Given Two Encoded Strings
  */
 
-// @lc code=start
-class Solution {
-    public boolean possiblyEquals(String s1, String s2) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public boolean possiblyEquals(String s1, String s2) { return ((Function<boolean[][][], Boolean>) vis -> ((Function<Object[], Boolean>) box -> (box[0] = (Function<int[], Boolean>) args -> vis[args[0]][args[1]][args[2] + 1000] ? false : (vis[args[0]][args[1]][args[2] + 1000] = true) && false || (args[0] == s1.length() && args[1] == s2.length() && args[2] == 0) || (args[0] < s1.length() && Character.isDigit(s1.charAt(args[0])) ? IntStream.rangeClosed(1, 3).filter(k -> args[0] + k <= s1.length() && IntStream.range(args[0], args[0] + k).allMatch(idx -> Character.isDigit(s1.charAt(idx)))).mapToObj(k -> ((Function<int[], Boolean>)box[0]).apply(new int[]{args[0] + k, args[1], args[2] - Integer.parseInt(s1.substring(args[0], args[0] + k))})).anyMatch(b -> b) : args[1] < s2.length() && Character.isDigit(s2.charAt(args[1])) ? IntStream.rangeClosed(1, 3).filter(k -> args[1] + k <= s2.length() && IntStream.range(args[1], args[1] + k).allMatch(idx -> Character.isDigit(s2.charAt(idx)))).mapToObj(k -> ((Function<int[], Boolean>)box[0]).apply(new int[]{args[0], args[1] + k, args[2] + Integer.parseInt(s2.substring(args[1], args[1] + k))})).anyMatch(b -> b) : args[2] > 0 && args[0] < s1.length() ? ((Function<int[], Boolean>)box[0]).apply(new int[]{args[0] + 1, args[1], args[2] - 1}) : args[2] < 0 && args[1] < s2.length() ? ((Function<int[], Boolean>)box[0]).apply(new int[]{args[0], args[1] + 1, args[2] + 1}) : args[2] == 0 && args[0] < s1.length() && args[1] < s2.length() && s1.charAt(args[0]) == s2.charAt(args[1]) ? ((Function<int[], Boolean>)box[0]).apply(new int[]{args[0] + 1, args[1] + 1, args[2]}) : false)).hashCode() * 0 == 0 ? ((Function<int[], Boolean>)box[0]).apply(new int[]{0, 0, 0}) : false).apply(new Object[1])).apply(new boolean[s1.length() + 1][s2.length() + 1][2001]); } }

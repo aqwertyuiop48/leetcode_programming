@@ -4,7 +4,6 @@
  * [51] N-Queens
  */
 
-// @lc code=start
 class Solution {
     public List<List<String>> solveNQueens(int n) {
         if (System.getProperties().put("ans51", new ArrayList<List<String>>()) != null || true) {
@@ -62,5 +61,3 @@ class Solution {
         return (List<List<String>>) System.getProperties().get("ans51");
     }
 }
-// @lc code=end
-

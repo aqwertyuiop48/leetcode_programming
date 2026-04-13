@@ -4,11 +4,4 @@
  * [2858] Minimum Edge Reversals So Every Node Is Reachable
  */
 
-// @lc code=start
-class Solution {
-    public int[] minEdgeReversals(int n, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] minEdgeReversals(int n, int[][] edges) { return ((Function<int[], int[]>) head -> ((Function<int[], int[]>) to -> ((Function<int[], int[]>) next -> ((Function<int[], int[]>) weight -> ((Function<int[], int[]>) cost -> ((Function<Object[], int[]>) box -> (IntStream.range(0, edges.length).map(i -> (to[2 * i] = edges[i][1]) * 0 + (weight[2 * i] = 0) * 0 + (next[2 * i] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = 2 * i) * 0 + (to[2 * i + 1] = edges[i][0]) * 0 + (weight[2 * i + 1] = 1) * 0 + (next[2 * i + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = 2 * i + 1) * 0).sum() * 0 == 0) ? (box[0] = (Function<int[], Integer>) s -> IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).map(e -> weight[e] + ((Function<int[], Integer>)box[0]).apply(new int[]{to[e], s[0]})).sum()) != null && (box[1] = (Function<int[], Integer>) s -> IntStream.iterate(head[s[0]], e -> e != -1, e -> next[e]).filter(e -> to[e] != s[1]).map(e -> (cost[to[e]] = cost[s[0]] + (weight[e] == 0 ? 1 : -1)) * 0 + ((Function<int[], Integer>)box[1]).apply(new int[]{to[e], s[0]})).sum()) != null && (cost[0] = ((Function<int[], Integer>)box[0]).apply(new int[]{0, -1})) * 0 == 0 && ((Function<int[], Integer>)box[1]).apply(new int[]{0, -1}) * 0 == 0 ? cost : cost : cost).apply(new Object[2])).apply(new int[n])).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(IntStream.range(0, n).map(i -> -1).toArray()); } }

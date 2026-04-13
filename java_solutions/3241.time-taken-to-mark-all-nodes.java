@@ -4,11 +4,4 @@
  * [3241] Time Taken to Mark All Nodes
  */
 
-// @lc code=start
-class Solution {
-    public int[] timeTaken(int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] timeTaken(int[][] edges) { return ((Function<Integer, int[]>) N -> ((Function<int[], int[]>) ans -> ((Function<int[][], int[]>) dp -> ((Function<int[], int[]>) degree -> ((Function<int[][], int[]>) adj -> ((Function<int[], int[]>) indices -> ((Function<Integer, int[]>) populate -> ((Function<Object[], int[]>) box1 -> ((Function<BiFunction<Integer, Integer, Integer>, int[]>) dfs -> ((Function<Object[], int[]>) box2 -> ((Function<Function<int[], Integer>, int[]>) findMax -> dfs.apply(0, -1) * 0 + findMax.apply(new int[]{0, -1, 0}) * 0 == 0 ? ans : ans).apply((Function<int[], Integer>) (box2[0] = (Function<int[], Integer>) state -> (ans[state[0]] = Math.max(dp[state[0]][0], state[2])) * 0 + Arrays.stream(adj[state[0]]).filter(j -> j != state[1]).reduce(0, (acc, j) -> ((Function<int[], Integer>) box2[0]).apply(new int[]{j, state[0], (state[0] % 2 == 1 ? 1 : 2) + Math.max(state[2], (((dp[j][0] + (j % 2 == 1 ? 1 : 2)) == dp[state[0]][0]) ? dp[state[0]][1] : dp[state[0]][0]))}) * 0)))).apply(new Object[1])).apply((BiFunction<Integer, Integer, Integer>) (box1[0] = (BiFunction<Integer, Integer, Integer>) (root, prev) -> Arrays.stream(adj[root]).filter(j -> j != prev).reduce(0, (acc, j) -> ((BiFunction<Integer, Integer, Integer>) box1[0]).apply(j, root) * 0 + ((IntUnaryOperator) curr -> curr > dp[root][0] ? (dp[root][1] = dp[root][0]) * 0 + (dp[root][0] = curr) * 0 : (curr > dp[root][1] ? (dp[root][1] = curr) * 0 : 0)).applyAsInt(dp[j][0] + (j % 2 == 1 ? 1 : 2)))))).apply(new Object[1])).apply(Arrays.stream(edges).reduce(0, (acc, e) -> (adj[e[0]][indices[e[0]]++] = e[1]) * 0 + (adj[e[1]][indices[e[1]]++] = e[0]) * 0, (a, b) -> a))).apply(new int[N])).apply(IntStream.range(0, N).mapToObj(i -> new int[degree[i]]).toArray(int[][]::new))).apply(Arrays.stream(edges).reduce(new int[N], (deg, e) -> (deg[e[0]]++ * 0) == 0 && (deg[e[1]]++ * 0) == 0 ? deg : deg, (a, b) -> a))).apply(new int[N][2])).apply(new int[N])).apply(edges.length + 1); } }

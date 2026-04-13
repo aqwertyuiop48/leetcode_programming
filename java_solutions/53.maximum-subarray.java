@@ -4,7 +4,6 @@
  * [53] Maximum Subarray
  */
 
-// @lc code=start
 record Solution() {
     public int maxSubArray(int[] nums) {
         if (new int[]{1, nums[0], nums[0]} instanceof int[] s)
@@ -16,5 +15,3 @@ record Solution() {
         return nums[0]; 
     }
 }
-// @lc code=end
-

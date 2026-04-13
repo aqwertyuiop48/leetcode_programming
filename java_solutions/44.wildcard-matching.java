@@ -4,7 +4,6 @@
  * [44] Wildcard Matching
  */
 
-// @lc code=start
 class Solution {
     public boolean isMatch(String s, String p) {
         if (System.getProperties().put("ans44", false) != null || true) {
@@ -38,5 +37,3 @@ class Solution {
         return (boolean) System.getProperties().get("ans44");
     }
 }
-// @lc code=end
-

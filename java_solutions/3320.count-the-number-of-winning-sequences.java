@@ -4,11 +4,4 @@
  * [3320] Count The Number of Winning Sequences
  */
 
-// @lc code=start
-class Solution {
-    public int countWinningSequences(String s) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int countWinningSequences(String s) { return ((Function<int[][], Integer>) C -> ((Function<int[][][], Integer>) dp -> IntStream.range(0, s.length()).mapToObj(i -> new int[]{i, s.charAt(i) == 'F' ? 0 : s.charAt(i) == 'E' ? 1 : 2}).mapToInt(info -> IntStream.range(0, 4).map(l -> IntStream.rangeClosed(Math.max(0, 1000 - info[0] - 1), Math.min(2000, 1000 + info[0] + 1)).map(sc -> dp[(info[0] + 1) % 2][l][sc] = 0).sum()).sum() * 0 + IntStream.range(0, 4).map(last -> IntStream.rangeClosed(Math.max(0, 1000 - info[0]), Math.min(2000, 1000 + info[0])).map(score -> dp[info[0] % 2][last][score] > 0 ? IntStream.range(0, 3).filter(m -> m != last && score + C[info[1]][m] >= 0 && score + C[info[1]][m] <= 2000).map(m -> dp[(info[0] + 1) % 2][m][score + C[info[1]][m]] = (dp[(info[0] + 1) % 2][m][score + C[info[1]][m]] + dp[info[0] % 2][last][score]) % 1000000007).sum() * 0 : 0).sum()).sum() * 0).sum() * 0 + IntStream.range(0, 4).map(last -> IntStream.range(1001, 2001).map(score -> dp[s.length() % 2][last][score]).reduce(0, (a, b) -> (a + b) % 1000000007)).reduce(0, (a, b) -> (a + b) % 1000000007)).apply(new int[][][]{ IntStream.range(0, 4).mapToObj(l -> IntStream.range(0, 2001).map(sc -> l == 3 && sc == 1000 ? 1 : 0).toArray()).toArray(int[][]::new), new int[4][2001] })).apply(new int[][]{{0, -1, 1}, {1, 0, -1}, {-1, 1, 0}}); } }

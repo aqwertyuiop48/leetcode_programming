@@ -4,11 +4,4 @@
  * [3203] Find Minimum Diameter After Merging Two Trees
  */
 
-// @lc code=start
-class Solution {
-    public int minimumDiameterAfterMerge(int[][] edges1, int[][] edges2) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumDiameterAfterMerge(int[][] edges1, int[][] edges2) { return ((Function<Function<int[][], Integer>, Integer>) getDia -> ((IntBinaryOperator) (d1, d2) -> Math.max(Math.max(d1, d2), (d1 + 1) / 2 + (d2 + 1) / 2 + 1)).applyAsInt(getDia.apply(edges1), getDia.apply(edges2))).apply(edges -> ((Function<Integer, Integer>) N -> edges.length == 0 ? 0 : ((Function<int[], Integer>) head -> ((Function<int[], Integer>) to -> ((Function<int[], Integer>) nxt -> IntStream.range(0, N).reduce(0, (acc, i) -> (head[i] = -1) * 0) * 0 == 0 && IntStream.range(0, edges.length).reduce(0, (acc, i) -> (to[i * 2] = edges[i][1]) * 0 + (nxt[i * 2] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = i * 2) * 0 + (to[i * 2 + 1] = edges[i][0]) * 0 + (nxt[i * 2 + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = i * 2 + 1) * 0) * 0 == 0 ? ((Function<Function<Integer, int[]>, Integer>) bfs -> bfs.apply(bfs.apply(0)[0])[1]).apply(start -> ((Function<int[], int[]>) dist -> ((Function<int[], int[]>) q -> ((Function<int[], int[]>) ptrs -> IntStream.range(0, N).reduce(0, (acc, i) -> (dist[i] = -1) * 0) * 0 == 0 && (dist[start] = 0) * 0 == 0 && (q[ptrs[1]++] = start) * 0 == 0 && IntStream.iterate(0, dummy -> ptrs[0] < ptrs[1], dummy -> dummy + 1).reduce(0, (acc, dummy) -> ((IntUnaryOperator) u -> IntStream.iterate(head[u], e -> e != -1, e -> nxt[e]).reduce(0, (acc2, e) -> dist[to[e]] == -1 ? (dist[to[e]] = dist[u] + 1) * 0 + (q[ptrs[1]++] = to[e]) * 0 : 0) * 0).applyAsInt(q[ptrs[0]++])) * 0 == 0 ? new int[]{q[ptrs[1] - 1], dist[q[ptrs[1] - 1]]} : null).apply(new int[2])).apply(new int[N])).apply(new int[N])) : 0).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(new int[N])).apply(edges.length + 1)); } }

@@ -4,11 +4,4 @@
  * [2577] Minimum Time to Visit a Cell In a Grid
  */
 
-// @lc code=start
-class Solution {
-    public int minimumTime(int[][] grid) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumTime(int[][] grid) { return grid[0][1] > 1 && grid[1][0] > 1 ? -1 : ((Function<int[], Function<int[], Integer>>) (dr -> dc -> ((Function<boolean[], Integer>) (visited -> ((Function<PriorityQueue<int[]>, Integer>) (pq -> IntStream.iterate(0, dummy -> !pq.isEmpty(), dummy -> dummy + 1).mapToObj(dummy -> pq.poll()).filter(curr -> !visited[curr[1] * grid[0].length + curr[2]]).mapToInt(curr -> curr[1] == grid.length - 1 && curr[2] == grid[0].length - 1 ? curr[0] : (visited[curr[1] * grid[0].length + curr[2]] = true) ? IntStream.range(0, 4).filter(i -> curr[1] + dr[i] >= 0 && curr[1] + dr[i] < grid.length && curr[2] + dc[i] >= 0 && curr[2] + dc[i] < grid[0].length && !visited[(curr[1] + dr[i]) * grid[0].length + curr[2] + dc[i]]).map(i -> pq.offer(new int[]{Math.max(grid[curr[1] + dr[i]][curr[2] + dc[i]] + (((grid[curr[1] + dr[i]][curr[2] + dc[i]] - curr[0]) & 1) == 0 ? 1 : 0), curr[0] + 1), curr[1] + dr[i], curr[2] + dc[i]}) ? 0 : 0).sum() * 0 - 1 : -1).filter(res -> res >= 0).findFirst().orElse(-1))).apply(((Function<PriorityQueue<int[]>, PriorityQueue<int[]>>) (q -> q.offer(new int[]{0, 0, 0}) ? q : q)).apply(new PriorityQueue<>(Comparator.comparingInt(a -> a[0])))))).apply(new boolean[grid.length * grid[0].length]))).apply(new int[]{1, -1, 0, 0}).apply(new int[]{0, 0, 1, -1}); } }

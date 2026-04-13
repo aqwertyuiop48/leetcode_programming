@@ -4,11 +4,8 @@
  * [3539] Find Sum of Array Product of Magical Sequences
  */
 
-// @lc code=start
 class Solution {
     public int magicalSum(int m, int k, int[] nums) {
-        
+        return Optional.of(new Object[]{m, k, nums.length, new int[m + 1][m + 1], new int[nums.length][m + 1], new int[2][(k + 1) * (m + 1) * (m + 1)], new int[1]}).map((Object[] st) -> IntStream.range(0, m + 1).map(i -> (((int[][])st[3])[i][0] = 1) * 0 + (((int[][])st[3])[i][i] = 1) * 0 + IntStream.range(1, i).map(j -> (((int[][])st[3])[i][j] = (((int[][])st[3])[i - 1][j - 1] + ((int[][])st[3])[i - 1][j]) % 1_000_000_007) * 0).sum() * 0).sum() == 0 ? st : st).map((Object[] st) -> IntStream.range(0, nums.length).map(i -> (((int[][])st[4])[i][0] = 1) * 0 + IntStream.range(1, m + 1).map(cnt -> (((int[][])st[4])[i][cnt] = (int)((long)((int[][])st[4])[i][cnt - 1] * nums[i] % 1_000_000_007)) * 0).sum() * 0).sum() == 0 ? st : st).map((Object[] st) -> ((((int[][])st[5])[0][0] = 1) * 0 == 0) ? st : st).map((Object[] st) -> IntStream.range(0, nums.length).map(pos -> IntStream.range(0, (k + 1) * (m + 1) * (m + 1)).map(i -> (((int[][])st[5])[(pos + 1) & 1][i] = 0) * 0).sum() * 0 + IntStream.range(0, (k + 1) * (m + 1) * (m + 1)).filter(idx -> ((int[][])st[5])[pos & 1][idx] != 0).map(idx -> Optional.of(new int[]{idx / ((m + 1) * (m + 1)), (idx / (m + 1)) % (m + 1), idx % (m + 1)}).map((int[] bcc) -> IntStream.range(0, m - bcc[2] + 1).map(cnt -> Optional.of(new int[]{bcc[0] + ((bcc[1] + cnt) & 1), (bcc[1] + cnt) / 2, bcc[2] + cnt}).map((int[] nxt) -> (nxt[0] <= k && nxt[1] <= m) ? ((((int[][])st[5])[(pos + 1) & 1][nxt[0] * (m + 1) * (m + 1) + nxt[1] * (m + 1) + nxt[2]] = (int)((((int[][])st[5])[(pos + 1) & 1][nxt[0] * (m + 1) * (m + 1) + nxt[1] * (m + 1) + nxt[2]] + (long)((int[][])st[5])[pos & 1][idx] * ((int[][])st[3])[m - bcc[2]][cnt] % 1_000_000_007 * ((int[][])st[4])[pos][cnt] % 1_000_000_007) % 1_000_000_007)) * 0) : 0).get()).sum() * 0).get()).sum() * 0).sum() == 0 ? st : st).map((Object[] st) -> IntStream.range(0, m + 1).map(carry -> (Integer.bitCount(carry) <= k) ? (((int[])st[6])[0] = (((int[])st[6])[0] + ((int[][])st[5])[nums.length & 1][(k - Integer.bitCount(carry)) * (m + 1) * (m + 1) + carry * (m + 1) + m]) % 1_000_000_007) * 0 : 0).sum() == 0 ? st : st).map((Object[] st) -> ((int[])st[6])[0]).get();
     }
 }
-// @lc code=end
-

@@ -4,11 +4,4 @@
  * [2920] Maximum Points After Collecting Coins From All Nodes
  */
 
-// @lc code=start
-class Solution {
-    public int maximumPoints(int[][] edges, int[] coins, int k) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int maximumPoints(int[][] edges, int[] coins, int k) { return ((Function<int[], Integer>) head -> ((Function<int[], Integer>) to -> ((Function<int[], Integer>) next -> ((Function<int[][], Integer>) dp -> (IntStream.range(0, edges.length).map(i -> (to[2 * i] = edges[i][1]) * 0 + (next[2 * i] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = 2 * i) * 0 + (to[2 * i + 1] = edges[i][0]) * 0 + (next[2 * i + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = 2 * i + 1) * 0).sum() * 0 == 0) ? ((Function<Object[], Integer>) box -> (box[1] = (Function<int[], Integer>) s2 -> s2[0] == -1 ? 0 : (to[s2[0]] == s2[2] ? 0 : ((Function<int[], Integer>)box[0]).apply(new int[]{to[s2[0]], s2[1], s2[3] + s2[4]})) + ((IntUnaryOperator) dummy -> (s2[0] = next[s2[0]]) * 0 == 0 ? ((Function<int[], Integer>)box[1]).apply(s2) : 0).applyAsInt(0)) != null && (box[0] = (Function<int[], Integer>) s -> s[2] >= 14 ? 0 : dp[s[0]][s[2]] != 0 ? dp[s[0]][s[2]] - 1 : ((Function<Integer, Integer>) res -> (dp[s[0]][s[2]] = res + 1) - 1).apply(Math.max((coins[s[0]] >> s[2]) - k + ((Function<int[], Integer>)box[1]).apply(new int[]{head[s[0]], s[0], s[1], s[2], 0}), (coins[s[0]] >> (s[2] + 1)) + ((Function<int[], Integer>)box[1]).apply(new int[]{head[s[0]], s[0], s[1], s[2], 1})))) != null ? ((Function<int[], Integer>)box[0]).apply(new int[]{0, -1, 0}) : 0).apply(new Object[2]) : 0).apply(new int[coins.length][15])).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(IntStream.range(0, coins.length).map(i -> -1).toArray()); } }

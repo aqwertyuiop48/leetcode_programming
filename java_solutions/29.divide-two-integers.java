@@ -4,11 +4,8 @@
  * [29] Divide Two Integers
  */
 
-// @lc code=start
 class Solution {
     public int divide(int dividend, int divisor) {
         return (dividend == Integer.MIN_VALUE && divisor == -1) ? Integer.MAX_VALUE : (int)(dividend / divisor);
     }
 }
-// @lc code=end
-

@@ -4,11 +4,4 @@
  * [2983] Palindrome Rearrangement Queries
  */
 
-// @lc code=start
-class Solution {
-    public boolean[] canMakePalindromeQueries(String s, int[][] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public boolean[] canMakePalindromeQueries(String s, int[][] queries) { return ((IntFunction<boolean[]>) half -> ((Function<int[][], Function<int[][], Function<int[], boolean[]>>>) pref1 -> pref2 -> diff -> IntStream.range(0, half).reduce(0, (acc, i) -> IntStream.range(0, 26).reduce(0, (acc2, c) -> (pref1[i+1][c] = pref1[i][c]) * 0 + (pref2[i+1][c] = pref2[i][c]) * 0) * 0 + (pref1[i+1][s.charAt(i) - 'a']++) * 0 + (pref2[i+1][s.charAt(s.length() - 1 - i) - 'a']++) * 0 + (diff[i+1] = diff[i] + (s.charAt(i) != s.charAt(s.length() - 1 - i) ? 1 : 0)) * 0) * 0 == 0 && !IntStream.range(0, 26).allMatch(c -> pref1[half][c] == pref2[half][c]) ? new boolean[queries.length] : ((Function<boolean[], boolean[]>) ans -> IntStream.range(0, queries.length).reduce(0, (acc, qIdx) -> ((IntUnaryOperator) L1 -> ((IntUnaryOperator) R1 -> ((IntUnaryOperator) L2 -> ((IntUnaryOperator) R2 -> ((Function<IntBinaryOperator, Integer>) getDiff -> (getDiff.applyAsInt(0, half - 1) == getDiff.applyAsInt(L1, R1) + getDiff.applyAsInt(L2, R2) - getDiff.applyAsInt(Math.max(L1, L2), Math.min(R1, R2)) && IntStream.range(0, 26).allMatch(c -> (L1 <= R1 ? pref1[R1 + 1][c] - pref1[L1][c] : 0) >= (L1 <= Math.min(R1, L2 - 1) ? pref2[Math.min(R1, L2 - 1) + 1][c] - pref2[L1][c] : 0) + (Math.max(L1, R2 + 1) <= R1 ? pref2[R1 + 1][c] - pref2[Math.max(L1, R2 + 1)][c] : 0) && (L2 <= R2 ? pref2[R2 + 1][c] - pref2[L2][c] : 0) >= (L2 <= Math.min(R2, L1 - 1) ? pref1[Math.min(R2, L1 - 1) + 1][c] - pref1[L2][c] : 0) + (Math.max(L2, R1 + 1) <= R2 ? pref1[R2 + 1][c] - pref1[Math.max(L2, R1 + 1)][c] : 0)) && (ans[qIdx] = true)) ? 0 : 0).apply((l, r) -> l <= r ? diff[r + 1] - diff[l] : 0)).applyAsInt(s.length() - 1 - queries[qIdx][2])).applyAsInt(s.length() - 1 - queries[qIdx][3])).applyAsInt(queries[qIdx][1])).applyAsInt(queries[qIdx][0])) * 0 == 0 ? ans : null).apply(new boolean[queries.length])).apply(new int[half + 1][26]).apply(new int[half + 1][26]).apply(new int[half + 1])).apply(s.length() / 2); } }

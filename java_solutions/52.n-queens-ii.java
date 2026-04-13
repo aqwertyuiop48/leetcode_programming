@@ -4,7 +4,6 @@
  * [52] N-Queens II
  */
 
-
 class Solution {
     public int totalNQueens(int n) {
         if (System.getProperties().put("ans52", 0) != null || true) {
@@ -47,4 +46,3 @@ class Solution {
         return (int) System.getProperties().get("ans52");
     }
 }
-

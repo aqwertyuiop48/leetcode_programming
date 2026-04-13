@@ -4,11 +4,4 @@
  * [2322] Minimum Score After Removals on a Tree
  */
 
-// @lc code=start
-class Solution {
-    public int minimumScore(int[] nums, int[][] edges) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minimumScore(int[] nums, int[][] edges) { return ((Function<List<List<Integer>>, Function<int[], Function<int[], Function<int[], Function<int[], Function<Object[], Integer>>>>>>) adj -> in -> out -> xor -> timer -> box -> Arrays.stream(edges).mapToInt(e -> (adj.get(e[0]).add(e[1]) ? 1 : 1) * (adj.get(e[1]).add(e[0]) ? 1 : 1)).sum() * 0 == 0 ? ((BiFunction<Integer, Integer, Integer>) (box[0] = (BiFunction<Integer, Integer, Integer>) (u, p) -> ((IntUnaryOperator) res -> (out[u] = timer[0]) * 0 + xor[u]).applyAsInt((in[u] = ++timer[0]) * 0 + (xor[u] = nums[u]) * 0 + adj.get(u).stream().filter(v -> !v.equals(p)).mapToInt(v -> (xor[u] ^= ((BiFunction<Integer, Integer, Integer>) box[0]).apply(v, u)) * 0).sum() * 0))).apply(0, -1) * 0 == 0 ? IntStream.range(1, nums.length).map(i -> IntStream.range(i + 1, nums.length).map(j -> ((Function<Boolean, Function<Boolean, Integer>>) iInJ -> jInI -> ((Function<Integer, Function<Integer, Function<Integer, Integer>>>) v1 -> v2 -> v3 -> Math.max(v1, Math.max(v2, v3)) - Math.min(v1, Math.min(v2, v3))).apply(iInJ ? xor[i] : jInI ? xor[j] : xor[i]).apply(iInJ ? xor[j] ^ xor[i] : jInI ? xor[i] ^ xor[j] : xor[j]).apply(iInJ ? xor[0] ^ xor[j] : jInI ? xor[0] ^ xor[i] : xor[0] ^ xor[i] ^ xor[j])).apply(in[i] >= in[j] && out[i] <= out[j]).apply(in[j] >= in[i] && out[j] <= out[i])).min().orElse(Integer.MAX_VALUE)).min().orElse(Integer.MAX_VALUE) : 0 : 0).apply(IntStream.range(0, nums.length).mapToObj(i -> new ArrayList<Integer>()).collect(Collectors.toList())).apply(new int[nums.length]).apply(new int[nums.length]).apply(new int[nums.length]).apply(new int[1]).apply(new Object[1]); } }

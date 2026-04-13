@@ -4,11 +4,4 @@
  * [2092] Find All People With Secret
  */
 
-// @lc code=start
-class Solution {
-    public List<Integer> findAllPeople(int n, int[][] meetings, int firstPerson) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public List<Integer> findAllPeople(int n, int[][] meetings, int firstPerson) { return ((Function<int[][], Function<int[], List<Integer>>>) sorted -> p -> ((Function<Object[], List<Integer>>) box -> (box[0] = (IntUnaryOperator) x -> p[x] == x ? x : (p[x] = ((IntUnaryOperator)box[0]).applyAsInt(p[x]))).hashCode() * 0 == 0 && (box[1] = (IntBinaryOperator) (x, y) -> ((IntUnaryOperator) rx -> ((IntUnaryOperator) ry -> rx == 0 ? (p[ry] = 0) * 0 : (p[rx] = ry) * 0).applyAsInt(((IntUnaryOperator)box[0]).applyAsInt(y))).applyAsInt(((IntUnaryOperator)box[0]).applyAsInt(x))).hashCode() * 0 == 0 ? ((Function<int[], List<Integer>>) start -> IntStream.rangeClosed(0, sorted.length).reduce(0, (acc, i) -> i < sorted.length && (i == start[0] || sorted[i][2] == sorted[i-1][2]) ? 0 : (IntStream.range(start[0], i).reduce(0, (a, k) -> ((IntBinaryOperator)box[1]).applyAsInt(sorted[k][0], sorted[k][1]) * 0) * 0 + IntStream.range(start[0], i).reduce(0, (a, k) -> (((IntUnaryOperator)box[0]).applyAsInt(sorted[k][0]) != 0 ? (p[sorted[k][0]] = sorted[k][0]) * 0 + (p[sorted[k][1]] = sorted[k][1]) * 0 : 0) * 0) * 0 + (start[0] = i) * 0)) * 0 == 0 ? IntStream.range(0, n).filter(i -> ((IntUnaryOperator)box[0]).applyAsInt(i) == 0).boxed().toList() : null).apply(new int[]{0}) : null).apply(new Object[2])).apply(Arrays.stream(meetings).sorted((a, b) -> a[2] - b[2]).toArray(int[][]::new)).apply(IntStream.range(0, n).map(i -> i == firstPerson || i == 0 ? 0 : i).toArray()); } }

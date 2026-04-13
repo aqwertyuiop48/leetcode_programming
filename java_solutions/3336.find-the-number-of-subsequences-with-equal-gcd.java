@@ -4,11 +4,4 @@
  * [3336] Find the Number of Subsequences With Equal GCD
  */
 
-// @lc code=start
-class Solution {
-    public int subsequencePairCount(int[] nums) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int subsequencePairCount(int[] A) { return ((Function<Integer, Integer>) M -> ((Function<int[][], Integer>) gcdTable -> ((Function<int[][], Integer>) finalDp -> IntStream.rangeClosed(1, M).map(i -> finalDp[i][i]).reduce((sum, val) -> (sum + val) % 1000000007).orElse(0)).apply(Arrays.stream(A).boxed().reduce(((Function<int[][], int[][]>) dpInit -> (int[][]) new Object[]{ dpInit[0][0] = 1, dpInit }[1]).apply(new int[M + 1][M + 1]), (dp, a) -> ((Function<int[][], int[][]>) dp2 -> (int[][]) new Object[]{ IntStream.rangeClosed(0, M).map(row -> IntStream.rangeClosed(0, M).map(col -> dp[row][col] > 0 ? (int) new Object[]{ dp2[gcdTable[row][a]][col] = (dp2[gcdTable[row][a]][col] + dp[row][col]) % 1000000007, dp2[row][gcdTable[col][a]] = (dp2[row][gcdTable[col][a]] + dp[row][col]) % 1000000007, dp2[row][col] = (dp2[row][col] + dp[row][col]) % 1000000007 }[0] * 0 : 0).sum()).sum(), dp2 }[1]).apply(new int[M + 1][M + 1]), (dpA, dpB) -> dpA))).apply(((Function<int[][], int[][]>) table -> (int[][]) new Object[]{ IntStream.rangeClosed(0, M).map(r -> IntStream.rangeClosed(0, M).map(c -> (table[r][c] = Stream.iterate(new int[]{r, c}, s -> new int[]{s[1], s[0] % s[1]}).filter(s -> s[1] == 0).findFirst().get()[0]) * 0).sum()).sum() * 0 == 0 ? table : null }[0]).apply(new int[M + 1][M + 1]))).apply(Arrays.stream(A).max().orElse(0)); } }

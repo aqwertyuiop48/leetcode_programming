@@ -4,11 +4,4 @@
  * [1896] Minimum Cost to Change the Final Value of Expression
  */
 
-// @lc code=start
-class Solution {
-    public int minOperationsToFlip(String expression) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int minOperationsToFlip(String expression) { return ((Function<int[], Function<int[], Function<int[], Function<Object[], Integer>>>>) op -> st -> ptrs -> box -> (box[0] = (IntUnaryOperator) dummy -> ((IntUnaryOperator) rcost -> ((IntUnaryOperator) rval -> ((IntUnaryOperator) lcost -> ((IntUnaryOperator) lval -> ((IntUnaryOperator) o -> (st[ptrs[1]++] = (o == '|' ? (rval == 0 && lval == 0 ? 0 : 1) : (o == '&' ? (rval == 1 && lval == 1 ? 1 : 0) : -1))) * 0 + (st[ptrs[1]++] = (o == '|' ? (rval == 0 && lval == 0 ? Math.min(rcost, lcost) : (rval == 1 && lval == 1 ? 1 + Math.min(rcost, lcost) : 1)) : (rval == 1 && lval == 1 ? Math.min(rcost, lcost) : (rval == 0 && lval == 0 ? 1 + Math.min(rcost, lcost) : 1)))) * 0).applyAsInt(op[--ptrs[0]])).applyAsInt(st[--ptrs[1]])).applyAsInt(st[--ptrs[1]])).applyAsInt(st[--ptrs[1]])).applyAsInt(st[--ptrs[1]])).hashCode() * 0 == 0 && IntStream.range(0, expression.length()).reduce(0, (acc, i) -> expression.charAt(i) == '(' ? (op[ptrs[0]++] = '(') * 0 : expression.charAt(i) == ')' ? IntStream.iterate(0, d -> op[ptrs[0]-1] != '(', d -> d + 1).reduce(0, (a, d) -> ((IntUnaryOperator)box[0]).applyAsInt(0) * 0) * 0 + (ptrs[0]--) * 0 : expression.charAt(i) == '&' || expression.charAt(i) == '|' ? IntStream.iterate(0, d -> ptrs[0] > 0 && op[ptrs[0]-1] != '(', d -> d + 1).reduce(0, (a, d) -> ((IntUnaryOperator)box[0]).applyAsInt(0) * 0) * 0 + (op[ptrs[0]++] = expression.charAt(i)) * 0 : (st[ptrs[1]++] = expression.charAt(i) - '0') * 0 + (st[ptrs[1]++] = 1) * 0) * 0 == 0 && IntStream.iterate(0, d -> ptrs[0] > 0, d -> d + 1).reduce(0, (a, d) -> ((IntUnaryOperator)box[0]).applyAsInt(0) * 0) * 0 == 0 ? st[ptrs[1]-1] : 0).apply(new int[expression.length()]).apply(new int[expression.length() * 2]).apply(new int[2]).apply(new Object[1]); } }

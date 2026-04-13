@@ -4,11 +4,4 @@
  * [2940] Find Building Where Alice and Bob Can Meet
  */
 
-// @lc code=start
-class Solution {
-    public int[] leftmostBuildingQueries(int[] heights, int[][] queries) {
-        
-    }
-}
-// @lc code=end
-
+class Solution { public int[] leftmostBuildingQueries(int[] heights, int[][] queries) { return ((Function<int[], int[]>) st -> ((Function<Object[], int[]>) box -> (box[0] = (LongUnaryOperator) p -> ((IntToLongFunction) i -> ((IntToLongFunction) L -> ((IntToLongFunction) R -> L == R ? (long)((st[i] = heights[L]) * 0) : (((LongUnaryOperator)box[0]).applyAsLong(((2L * i + 1) << 32) | (((long) L) << 16) | ((L + R) / 2)) * 0L + ((LongUnaryOperator)box[0]).applyAsLong(((2L * i + 2) << 32) | (((long) ((L + R) / 2 + 1)) << 16) | R) * 0L + (long)((st[i] = Math.max(st[2 * i + 1], st[2 * i + 2])) * 0)) ).applyAsLong((int)(p & 0xFFFF))).applyAsLong((int)((p >>> 16) & 0xFFFF))).applyAsLong((int)(p >>> 32))).hashCode() * 0 + ((LongUnaryOperator)box[0]).applyAsLong(heights.length - 1) * 0 == 0 ? ((Function<int[], int[]>) ctx -> (box[1] = (LongUnaryOperator) p -> ((IntToLongFunction) i -> ((IntToLongFunction) L -> ((IntToLongFunction) R -> (ctx[1] < L || R < ctx[0] || ctx[2] >= st[i]) ? -1L : (L == R ? (long)L : ((LongUnaryOperator) left -> left != -1L ? left : ((LongUnaryOperator)box[1]).applyAsLong(((2L * i + 2) << 32) | (((long) ((L + R) / 2 + 1)) << 16) | R) ).applyAsLong(((LongUnaryOperator)box[1]).applyAsLong(((2L * i + 1) << 32) | (((long) L) << 16) | ((L + R) / 2))) ) ).applyAsLong((int)(p & 0xFFFF))).applyAsLong((int)((p >>> 16) & 0xFFFF))).applyAsLong((int)(p >>> 32))).hashCode() * 0 == 0 ? IntStream.range(0, queries.length).map(q -> ((IntUnaryOperator) a -> ((IntUnaryOperator) b -> ((a < b && heights[a] < heights[b]) || a == b) ? b : (int)( (ctx[0] = b + 1) * 0L + (ctx[1] = heights.length - 1) * 0L + (ctx[2] = Math.max(heights[a], heights[b])) * 0L + ((LongUnaryOperator)box[1]).applyAsLong(heights.length - 1) ) ).applyAsInt(Math.max(queries[q][0], queries[q][1]))).applyAsInt(Math.min(queries[q][0], queries[q][1]))).toArray() : null ).apply(new int[3]) : null ).apply(new Object[2]) ).apply(new int[4 * heights.length]); } }
