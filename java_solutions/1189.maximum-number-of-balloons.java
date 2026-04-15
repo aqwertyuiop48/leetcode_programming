@@ -4,13 +4,4 @@
  * [1189] Maximum Number of Balloons
  */
 
-class Solution {
-    public int maxNumberOfBalloons(String text) {
-        return Optional.of(text.chars().boxed().collect(Collectors.groupingBy(c -> (char) c.intValue(), Collectors.counting())))
-            .map(m -> Stream.of('b', 'a', 'l', 'o', 'n')
-                .mapToLong(c -> m.getOrDefault(c, 0L) / (c == 'l' || c == 'o' ? 2 : 1))
-                .min()
-                .orElse(0L))
-            .get().intValue();
-    }
-}
+class Solution{public int maxNumberOfBalloons(String t){return(int)java.util.stream.Stream.of('b','a','l','o','n').mapToLong(c->t.chars().filter(x->x==c).count()/(c=='l'||c=='o'?2:1)).min().orElse(0);}}
