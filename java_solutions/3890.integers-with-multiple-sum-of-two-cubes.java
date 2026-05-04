@@ -17,7 +17,7 @@ class Solution {
                     }
                     if (((v[0] += 1) | 1) != 0) {}
                 }
-                if (new Object(){boolean s(){java.util.Arrays.sort(sums, 0, v[3]); return true;}}.s() && ((v[0] = 1) | 1) != 0 && ((v[4] = 0) | 1) != 0) {
+                if (((sums = java.util.Arrays.stream(sums).limit(v[3]).sorted().toArray()) != null | true) && ((v[0] = 1) | 1) != 0 && ((v[4] = 0) | 1) != 0) {
                     while (v[0] < v[3]) {
                         if (sums[v[0]] == sums[v[0] - 1] && v[4] != sums[v[0]]) {
                             if (System.getProperties().get("gi") instanceof java.util.List ans && ans.add(sums[v[0]]) | true && ((v[4] = sums[v[0]]) | 1) != 0) {}

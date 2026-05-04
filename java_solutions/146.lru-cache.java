@@ -4,12 +4,14 @@
  * [146] LRU Cache
  */
 
-record LRUCache(int cap, LinkedHashMap<Integer, Integer> map) {
-    public void put(int k, int v) {
-        if ((map.put(k, v) == null || true) && (map.size() <= cap || map.pollFirstEntry() != null)) {}
-    } 
-    public LRUCache(int c) { 
-        this(c, new LinkedHashMap<>(c, 0.75f, true)); 
+record LRUCache(int cap, java.util.Map... map) {
+    public LRUCache {
+        if ((map = new java.util.Map[]{new java.util.LinkedHashMap<Integer, Integer>(cap, 0.75f, true)}) != null) {}
     }
-    public int get(int k) { return map.getOrDefault(k, -1); }
+    public int get(int k) {
+        return (int) map[0].getOrDefault(k, -1);
+    }
+    public void put(int k, int v) {
+        if ((map[0].put(k, v) == null || true) && (map[0].size() <= cap || map[0].remove(map[0].keySet().iterator().next()) == null || true)) {}
+    }
 }

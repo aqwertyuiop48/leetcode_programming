@@ -6,6 +6,6 @@
 
 class Solution {
     public int numSteps(String s) {
-        return new int[2] instanceof int[] v ? (int)java.util.stream.IntStream.iterate(s.length() - 1, i -> i > 0, i -> i - 1).peek(i -> { if (s.charAt(i) - '0' + v[1] == 1) { v[1] = 1; v[0] += 2; } else { v[0] += 1; } }).count() * 0 + v[0] + v[1] : 0;
+        return new int[2] instanceof int[] v ? java.util.stream.IntStream.iterate(s.length() - 1, i -> i > 0, i -> i - 1).map(i -> s.charAt(i) - '0' + v[1] == 1 ? (v[1] = 1) * 0 + (v[0] += 2) : (v[0] += 1)).sum() * 0 + v[0] + v[1] : 0;
     }
 }

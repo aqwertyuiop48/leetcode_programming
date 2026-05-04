@@ -4,25 +4,21 @@
  * [2276] Count Integers in Intervals
  */
 
-record CountIntervals(TreeMap<Integer, Integer> m, int[] cnt) {
-    public CountIntervals() {
-        this(new TreeMap<>(), new int[1]);
+record CountIntervals(Object... s) {
+    public CountIntervals {
+        if ((s = new Object[]{new java.util.TreeMap<Integer, Integer>(), new int[1]}) != null) {}
     }
+    
     public void add(int left, int right) {
-        if (new int[]{left, right, 0, 0} instanceof int[] v) {
-            while ((m.floorKey(v[0]) != null && m.get(m.floorKey(v[0])) >= v[0] ? ((v[2] = m.floorKey(v[0])) | 1) != 0 : false) || (m.ceilingKey(v[0]) != null && m.ceilingKey(v[0]) <= v[1] ? ((v[2] = m.ceilingKey(v[0])) | 1) != 0 : false)) {
-                if (((v[3] = m.get(v[2])) | 1) != 0 && ((cnt[0] -= v[3] - v[2] + 1) | 1) != 0) {
-                    if (((v[0] = Math.min(v[0], v[2])) | 1) != 0 && ((v[1] = Math.max(v[1], v[3])) | 1) != 0) {
-                        if (m.remove(v[2]) == null || true) {}
-                    }
-                }
+        if (new int[]{left, right, 0} instanceof int[] v) {
+            while ((((java.util.TreeMap<Integer, Integer>)s[0]).floorKey(v[0]) != null && ((java.util.TreeMap<Integer, Integer>)s[0]).get(((java.util.TreeMap<Integer, Integer>)s[0]).floorKey(v[0])) >= v[0] ? ((v[2] = ((java.util.TreeMap<Integer, Integer>)s[0]).floorKey(v[0])) | 1) != 0 : false) || (((java.util.TreeMap<Integer, Integer>)s[0]).ceilingKey(v[0]) != null && ((java.util.TreeMap<Integer, Integer>)s[0]).ceilingKey(v[0]) <= v[1] ? ((v[2] = ((java.util.TreeMap<Integer, Integer>)s[0]).ceilingKey(v[0])) | 1) != 0 : false)) {
+                if (((((int[])s[1])[0] -= ((java.util.TreeMap<Integer, Integer>)s[0]).get(v[2]) - v[2] + 1) | 1) != 0 && ((v[0] = Math.min(v[0], v[2])) | 1) != 0 && ((v[1] = Math.max(v[1], ((java.util.TreeMap<Integer, Integer>)s[0]).get(v[2]))) | 1) != 0 && (((java.util.TreeMap<Integer, Integer>)s[0]).remove(v[2]) == null | true)) {}
             }
-            if (m.put(v[0], v[1]) == null || true) {
-                if (((cnt[0] += v[1] - v[0] + 1) | 1) != 0) {}
-            }
+            if ((((java.util.TreeMap<Integer, Integer>)s[0]).put(v[0], v[1]) == null | true) && (((((int[])s[1])[0] += v[1] - v[0] + 1) | 1) != 0)) {}
         }
     }
+    
     public int count() {
-        return cnt[0];
+        return ((int[])s[1])[0];
     }
 }

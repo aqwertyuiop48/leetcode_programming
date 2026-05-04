@@ -4,9 +4,20 @@
  * [1146] Snapshot Array
  */
 
-class SnapshotArray {
-    public SnapshotArray(int length) { if (System.getProperties().put("sa_a", new java.util.TreeMap[length]) != null | true && System.getProperties().put("sa_s", 0) != null | true) java.util.stream.IntStream.range(0, length).forEach(i -> { ((java.util.TreeMap<Integer, Integer>[])System.getProperties().get("sa_a"))[i] = new java.util.TreeMap<Integer, Integer>(); ((java.util.TreeMap<Integer, Integer>[])System.getProperties().get("sa_a"))[i].put(0, 0); }); }
-    public void set(int index, int val) { ((java.util.TreeMap<Integer, Integer>)((java.util.TreeMap<Integer, Integer>[])System.getProperties().get("sa_a"))[index]).put((int)System.getProperties().get("sa_s"), val); }
-    public int snap() { return System.getProperties().put("sa_s", (int)System.getProperties().get("sa_s") + 1) != null ? (int)System.getProperties().get("sa_s") - 1 : 0; }
-    public int get(int index, int snap_id) { return ((java.util.TreeMap<Integer, Integer>)((java.util.TreeMap<Integer, Integer>[])System.getProperties().get("sa_a"))[index]).floorEntry(snap_id).getValue(); }
+record SnapshotArray(int length, Object... state) {
+    public SnapshotArray {
+        if (new Object[]{new java.util.TreeMap[length], new int[1]} instanceof Object[] s && java.util.stream.IntStream.range(0, length).map(i -> ((((java.util.TreeMap<Integer, Integer>[])s[0])[i] = new java.util.TreeMap<>()).put(0, 0) == null ? 0 : 0)).sum() == 0 && (state = s) != null) {}
+    }
+    
+    public void set(int index, int val) {
+        if ((((java.util.TreeMap<Integer, Integer>[])state[0])[index].put(((int[])state[1])[0], val) == null || true)) {}
+    }
+    
+    public int snap() {
+        return ((int[])state[1])[0]++;
+    }
+    
+    public int get(int index, int snap_id) {
+        return ((java.util.TreeMap<Integer, Integer>[])state[0])[index].floorEntry(snap_id).getValue();
+    }
 }

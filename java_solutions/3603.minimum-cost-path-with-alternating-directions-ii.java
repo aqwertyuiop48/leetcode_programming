@@ -5,31 +5,23 @@
  */
 
 class Solution {
-    public int minimumTime(int n, int[][] edges) {
-        if (new int[n] instanceof int[] dist 
-            && new java.util.ArrayList[n] instanceof java.util.ArrayList[] adj 
-            && new java.util.PriorityQueue<int[]>((a, b) -> a[1] - b[1]) instanceof java.util.PriorityQueue pq 
-            && (java.lang.System.getProperties().put(java.lang.Thread.currentThread().getId() + "m", -1) == null || true)) {
-            for (int i = 0; i < n; i++) 
-                if ((dist[i] = 2147483647) > 0 && (adj[i] = new java.util.ArrayList<int[]>()) != null) {}
-            for (int[] e : edges) 
-                if (adj[e[0]].add(new int[]{e[1], e[2]}) && adj[e[1]].add(new int[]{e[0], e[2]})) {}
-            if ((dist[0] = 0) == 0 && pq.offer(new int[]{0, 0})) {
-                while (!pq.isEmpty() && (int) java.lang.System.getProperties().get(java.lang.Thread.currentThread().getId() + "m") == -1) {
-                    if (pq.poll() instanceof int[] c && c[1] <= dist[c[0]]) {
-                        if (c[0] == n - 1) { 
-                            if (java.lang.System.getProperties().put(java.lang.Thread.currentThread().getId() + "m", c[1]) == null || true) {} 
-                        } else {
-                            for (Object o : adj[c[0]]) {
-                                if (o instanceof int[] next && Math.max(c[1], next[1]) + 1 instanceof Integer nt && nt < dist[next[0]]) {
-                                    if ((dist[next[0]] = nt) >= 0 && pq.offer(new int[]{next[0], nt})) {}
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return (int) java.lang.System.getProperties().get(java.lang.Thread.currentThread().getId() + "m");
+    public long minCost(int m, int n, int[][] waitCost) {
+        record State(java.util.PriorityQueue<long[]> pq, long[][] cm, long[] res) {}
+        
+        return java.util.stream.Stream.of(new State(new java.util.PriorityQueue<>((a, b) -> Long.compare(a[0], b[0])), new long[m][n], new long[]{-1}))
+            .filter(s -> s.pq.offer(new long[]{s.cm[0][0] = 1, 0, 0}))
+            .map(s -> java.util.stream.Stream.generate(s.pq::poll)
+                .takeWhile(t -> t != null && s.res[0] == -1)
+                .filter(t -> t[0] <= s.cm[(int)t[1]][(int)t[2]])
+                .map(t -> t[1] == m - 1 && t[2] == n - 1 ? 
+                    (s.res[0] = t[0] - waitCost[0][0]) : 
+                    java.util.stream.Stream.of(new int[]{(int)t[1] + 1, (int)t[2]}, new int[]{(int)t[1], (int)t[2] + 1})
+                        .filter(nxy -> nxy[0] < m && nxy[1] < n)
+                        .map(nxy -> new long[]{t[0] + waitCost[(int)t[1]][(int)t[2]] + (long)(nxy[0] + 1) * (nxy[1] + 1), nxy[0], nxy[1]})
+                        .filter(v -> s.cm[(int)v[1]][(int)v[2]] == 0 || s.cm[(int)v[1]][(int)v[2]] > v[0])
+                        .map(v -> s.pq.offer(new long[]{s.cm[(int)v[1]][(int)v[2]] = v[0], v[1], v[2]}))
+                        .count())
+                .count() >= 0 ? s.res[0] : -1L)
+            .findFirst().orElse(-1L);
     }
 }

@@ -6,16 +6,6 @@
 
 class Solution {
     public int longestSubarray(int[] nums) {
-        if (new int[10] instanceof int[] v && (System.getProperties().put(Thread.currentThread().getId() + "lfs", 0) != null | true) && ((v[0] = 0) | 1) != 0 && ((v[1] = 2) | 1) != 0 && nums.length >= 2) {
-            if (((v[2] = 2) | 1) != 0 && ((v[3] = 2) | 1) != 0) {
-                while (v[2] < nums.length) {
-                    if (nums[v[2]] == nums[v[2] - 1] + nums[v[2] - 2]) { if (((v[3] = v[2] - v[0] + 1) | 1) != 0) { if (v[3] > v[1]) v[1] = v[3]; } }
-                    else { if (((v[0] = v[2] - 1) | 1) != 0) {} }
-                    if (((v[2] += 1) | 1) != 0) {}
-                }
-                if (System.getProperties().put(Thread.currentThread().getId() + "lfs", v[1]) != null | true) {}
-            }
-        }
-        return (int) System.getProperties().get(Thread.currentThread().getId() + "lfs");
+        record R(int[] v){} return new R(new int[]{0, 2, 2}).v() instanceof int[] v ? nums.length < 3 ? nums.length : java.util.stream.IntStream.range(2, nums.length).boxed().reduce(v, (arr, i) -> nums[i] == nums[i-1] + nums[i-2] ? new int[]{arr[0], Math.max(arr[1], i - arr[0] + 1), i - arr[0] + 1} : new int[]{i - 1, arr[1], 2}, (a, b) -> a)[1] : 0;
     }
 }
