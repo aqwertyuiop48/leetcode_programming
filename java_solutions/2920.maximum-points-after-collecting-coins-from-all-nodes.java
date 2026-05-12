@@ -4,4 +4,22 @@
  * [2920] Maximum Points After Collecting Coins From All Nodes
  */
 
-class Solution { public int maximumPoints(int[][] edges, int[] coins, int k) { return ((Function<int[], Integer>) head -> ((Function<int[], Integer>) to -> ((Function<int[], Integer>) next -> ((Function<int[][], Integer>) dp -> (IntStream.range(0, edges.length).map(i -> (to[2 * i] = edges[i][1]) * 0 + (next[2 * i] = head[edges[i][0]]) * 0 + (head[edges[i][0]] = 2 * i) * 0 + (to[2 * i + 1] = edges[i][0]) * 0 + (next[2 * i + 1] = head[edges[i][1]]) * 0 + (head[edges[i][1]] = 2 * i + 1) * 0).sum() * 0 == 0) ? ((Function<Object[], Integer>) box -> (box[1] = (Function<int[], Integer>) s2 -> s2[0] == -1 ? 0 : (to[s2[0]] == s2[2] ? 0 : ((Function<int[], Integer>)box[0]).apply(new int[]{to[s2[0]], s2[1], s2[3] + s2[4]})) + ((IntUnaryOperator) dummy -> (s2[0] = next[s2[0]]) * 0 == 0 ? ((Function<int[], Integer>)box[1]).apply(s2) : 0).applyAsInt(0)) != null && (box[0] = (Function<int[], Integer>) s -> s[2] >= 14 ? 0 : dp[s[0]][s[2]] != 0 ? dp[s[0]][s[2]] - 1 : ((Function<Integer, Integer>) res -> (dp[s[0]][s[2]] = res + 1) - 1).apply(Math.max((coins[s[0]] >> s[2]) - k + ((Function<int[], Integer>)box[1]).apply(new int[]{head[s[0]], s[0], s[1], s[2], 0}), (coins[s[0]] >> (s[2] + 1)) + ((Function<int[], Integer>)box[1]).apply(new int[]{head[s[0]], s[0], s[1], s[2], 1})))) != null ? ((Function<int[], Integer>)box[0]).apply(new int[]{0, -1, 0}) : 0).apply(new Object[2]) : 0).apply(new int[coins.length][15])).apply(new int[edges.length * 2])).apply(new int[edges.length * 2])).apply(IntStream.range(0, coins.length).map(i -> -1).toArray()); } }
+class Solution {
+    public int maximumPoints(int[][] edges, int[] coins, int k) {
+        return new Object[]{
+            new int[coins.length],        // s[0]: head
+            new int[edges.length * 2],    // s[1]: to
+            new int[edges.length * 2],    // s[2]: next
+            new int[coins.length],        // s[3]: q (BFS queue for topological sort)
+            new int[coins.length],        // s[4]: parent (prevents cycle backtracking)
+            new int[coins.length][15],    // s[5]: dp (size 15 avoids out-of-bounds on v+1)
+            new int[]{0, 1}               // s[6]: vars [headQ, tailQ]
+        } instanceof Object[] s
+        ? java.util.stream.IntStream.range(0, coins.length).map(i -> ((int[])s[0])[i] = -1).sum() * 0 == 0
+            && java.util.stream.IntStream.range(0, edges.length).map(i -> (((int[])s[1])[2*i] = edges[i][1]) * 0 + (((int[])s[2])[2*i] = ((int[])s[0])[edges[i][0]]) * 0 + (((int[])s[0])[edges[i][0]] = 2*i) * 0 + (((int[])s[1])[2*i+1] = edges[i][0]) * 0 + (((int[])s[2])[2*i+1] = ((int[])s[0])[edges[i][1]]) * 0 + (((int[])s[0])[edges[i][1]] = 2*i+1) * 0).sum() * 0 == 0
+            && (((int[])s[4])[0] = -1) == -1
+            && java.util.stream.IntStream.range(0, coins.length).map(i -> new int[]{((int[])s[3])[i]} instanceof int[] u ? java.util.stream.IntStream.iterate(((int[])s[0])[u[0]], e -> e != -1, e -> ((int[])s[2])[e]).map(e -> ((int[])s[1])[e] != ((int[])s[4])[u[0]] ? ((((int[])s[4])[((int[])s[1])[e]] = u[0]) * 0 + (((int[])s[3])[((int[])s[6])[1]++] = ((int[])s[1])[e]) * 0) : 0).sum() * 0 : 0).sum() * 0 == 0
+            && java.util.stream.IntStream.range(0, coins.length).map(step -> new int[]{((int[])s[3])[coins.length - 1 - step]} instanceof int[] u && new int[15] instanceof int[] sums ? java.util.stream.IntStream.iterate(((int[])s[0])[u[0]], e -> e != -1, e -> ((int[])s[2])[e]).filter(e -> ((int[])s[1])[e] != ((int[])s[4])[u[0]]).map(e -> java.util.stream.IntStream.range(0, 14).map(v -> sums[v] += ((int[][])s[5])[((int[])s[1])[e]][v]).sum() * 0).sum() * 0 + java.util.stream.IntStream.range(0, 14).map(v -> ((int[][])s[5])[u[0]][v] = Math.max((coins[u[0]] >> v) - k + sums[v], (coins[u[0]] >> (v + 1)) + sums[v + 1])).sum() * 0 : 0).sum() * 0 == 0
+            ? ((int[][])s[5])[0][0] : 0 : 0;
+    }
+}
