@@ -6,32 +6,16 @@
 
 class Solution {
     public long maximumScore(int[] nums, String s) {
-        if (new int[nums.length + 5] instanceof int[] heap && new int[10] instanceof int[] v && new long[5] instanceof long[] lv && (System.getProperties().put(Thread.currentThread().getId() + "mbs", 0L) != null | true)) {
-            if (((v[0] = 0) | 1) != 0 && ((v[1] = 0) | 1) != 0 && ((lv[0] = 0L) | 1) != 0) {
-                while (v[0] < nums.length) {
-                    if (((v[1] += 1) | 1) != 0 && ((v[2] = v[1]) | 1) != 0) {
-                        while (v[2] > 1 && heap[v[2] / 2] < nums[v[0]]) { if (((heap[v[2]] = heap[v[2] / 2]) | 1) != 0 && ((v[2] /= 2) | 1) != 0) {} }
-                        if (((heap[v[2]] = nums[v[0]]) | 1) != 0) {
-                            if (s.charAt(v[0]) == '1' && v[1] > 0) {
-                                if (((lv[0] += heap[1]) | 1) != 0 && ((v[3] = heap[v[1]]) | 1) != 0 && ((v[1] -= 1) | 1) != 0 && ((v[2] = 1) | 1) != 0) {
-                                    while (v[2] * 2 <= v[1]) {
-                                        if (((v[4] = v[2] * 2) | 1) != 0) {
-                                            if (v[4] + 1 <= v[1] && heap[v[4] + 1] > heap[v[4]]) { if (((v[4] += 1) | 1) != 0) {} }
-                                            if (v[3] >= heap[v[4]]) { if (((v[4] = -1) | 1) != 0) {} }
-                                            else { if (((heap[v[2]] = heap[v[4]]) | 1) != 0 && ((v[2] = v[4]) | 1) != 0) {} }
-                                        }
-                                        if (v[4] == -1) { if (((v[5] = 0) | 1) != 0) {  } }
-                                    }
-                                    if (v[1] > 0) { if (((heap[v[2]] = v[3]) | 1) != 0) {} }
-                                }
-                            }
-                        }
-                    }
-                    if (((v[0] += 1) | 1) != 0) {}
-                }
-                if (System.getProperties().put(Thread.currentThread().getId() + "mbs", lv[0]) != null | true) {}
-            }
-        }
-        return (long) System.getProperties().get(Thread.currentThread().getId() + "mbs");
+        return new Object[]{new java.util.PriorityQueue<Integer>(java.util.Collections.reverseOrder()), new long[1]} instanceof Object[] pq 
+            ? java.util.stream.IntStream.range(0, nums.length)
+                .map(i -> ((java.util.PriorityQueue<Integer>)pq[0]).offer(nums[i]) 
+                          && s.charAt(i) == '1' 
+                          && (((long[])pq[1])[0] += (long) (Integer) ((java.util.PriorityQueue<Integer>)pq[0]).poll()) > -1L
+                          ? 0 : 0)
+                .toArray().length > -1 
+                ? ((long[])pq[1])[0] 
+                : 0L
+            : 0L;
     }
 }
+

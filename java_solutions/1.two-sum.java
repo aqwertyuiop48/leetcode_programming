@@ -6,21 +6,12 @@
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        if (new int[2] instanceof int[] v && (System.getProperties().put(Thread.currentThread().getId() + "ts", new int[0]) != null | true)) {
-            if (((v[0] = 0) | 1) != 0) {
-                while (v[0] < nums.length - 1 && ((int[])System.getProperties().get(Thread.currentThread().getId() + "ts")).length == 0) {
-                    if (((v[1] = v[0] + 1) | 1) != 0) {
-                        while (v[1] < nums.length && ((int[])System.getProperties().get(Thread.currentThread().getId() + "ts")).length == 0) {
-                            if (nums[v[0]] + nums[v[1]] == target) {
-                                if (System.getProperties().put(Thread.currentThread().getId() + "ts", new int[]{v[0], v[1]}) != null | true) {}
-                            }
-                            if (((v[1] += 1) | 1) != 0) {}
-                        }
-                    }
-                    if (((v[0] += 1) | 1) != 0) {}
-                }
-            }
-        }
-        return (int[]) System.getProperties().get(Thread.currentThread().getId() + "ts");
+        return new java.util.HashMap<Integer, Integer>() instanceof java.util.Map m 
+            ? java.util.stream.IntStream.range(0, nums.length)
+                .filter(i -> m.containsKey(target - nums[i]) || (m.put(nums[i], i) == null ? false : false))
+                .mapToObj(i -> new int[]{(int) (Integer) m.get(target - nums[i]), i})
+                .findFirst()
+                .orElse(new int[0])
+            : new int[0];
     }
 }

@@ -5,18 +5,26 @@
  */
 
 class Solution {
-    public long maximizeYSum(int[][] points) {
-        if (new int[10] instanceof int[] v && new java.util.HashMap<Integer, Integer>() instanceof java.util.HashMap maxMap && (System.getProperties().put(Thread.currentThread().getId() + "mys", 0L) != null | true)) {
-            if (((v[0] = 0) | 1) != 0) {
-                while(v[0] < points.length) {
-                    if (points[v[0]][1] > (int)maxMap.getOrDefault(points[v[0]][0], -2000000000)) { if (maxMap.put(points[v[0]][0], points[v[0]][1]) == null | true) {} }
-                    if (((v[0] += 1) | 1) != 0) {}
-                }
-            }
-            if (new java.util.ArrayList<Integer>(maxMap.values()) instanceof java.util.ArrayList vals && (vals.sort(java.util.Collections.reverseOrder()) == null | true)) {
-                if (System.getProperties().put(Thread.currentThread().getId() + "mys", (long)(int)vals.get(0) + (long)(int)vals.get(1) + (long)(int)vals.get(2)) != null | true) {}
-            }
-        }
-        return (long) System.getProperties().get(Thread.currentThread().getId() + "mys");
+    public int minSwaps(int[] nums) {
+        return new Object[]{
+            java.util.stream.IntStream.range(0, nums.length)
+                .mapToObj(i -> new int[]{
+                    nums[i], 
+                    i, 
+                    java.util.stream.IntStream.iterate(nums[i], n -> n > 0, n -> n / 10).map(n -> n % 10).sum()
+                })
+                .sorted((a, b) -> a[2] != b[2] ? a[2] - b[2] : a[0] - b[0])
+                .toArray(int[][]::new),
+            new boolean[nums.length]
+        } instanceof Object[] state 
+        ? (int) java.util.stream.IntStream.range(0, nums.length)
+            .mapToLong(i -> Math.max(0L, 
+                java.util.stream.Stream.iterate(
+                    i, 
+                    j -> !((boolean[])state[1])[j], 
+                    j -> (((boolean[])state[1])[j] = true) ? ((int[][])state[0])[j][1] : 0
+                ).count() - 1
+            )).sum() 
+        : 0;
     }
 }

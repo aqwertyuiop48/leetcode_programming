@@ -5,25 +5,21 @@
  */
 
 class Solution {
+    @SuppressWarnings("unchecked")
     public java.util.List<Integer> findCoins(int[] numWays) {
-        if (new java.util.ArrayList<Integer>() instanceof java.util.ArrayList res && new long[numWays.length + 1] instanceof long[] myWays && new int[10] instanceof int[] v && (System.getProperties().put(Thread.currentThread().getId() + "fc", res) != null | true)) {
-            if (((myWays[0] = 1) | 1) != 0 && ((v[0] = 1) | 1) != 0 && ((v[2] = 1) | 1) != 0) {
-                while (v[0] <= numWays.length && v[2] == 1) {
-                    if (myWays[v[0]] == numWays[v[0] - 1] && (v[0] += 1) > -Double.MAX_VALUE) {
-}
-                    if (numWays[v[0] - 1] - myWays[v[0]] == 1) {
-                        if (res.add(v[0]) | true && ((v[1] = v[0]) | 1) != 0) {
-                            while (v[1] <= numWays.length) {
-                                if (((myWays[v[1]] += myWays[v[1] - v[0]]) | 1) != 0 && ((v[1] += 1) | 1) != 0) {}
-                            }
-                        }
-                    } else {
-                        if (((v[2] = 0) | 1) != 0 && res.removeIf(x -> true) | true) {}
-                    }
-                    if (((v[0] += 1) | 1) != 0) {}
-                }
-            }
-        }
-        return (java.util.List<Integer>) System.getProperties().get(Thread.currentThread().getId() + "fc");
+        return new Object[]{new java.util.ArrayList<Integer>(), new long[numWays.length + 1]} instanceof Object[] s 
+            && (((long[])s[1])[0] = 1) == 1
+            ? java.util.stream.IntStream.rangeClosed(1, numWays.length)
+                .map(i -> numWays[i - 1] > ((long[])s[1])[i] 
+                    && ((java.util.List<Integer>)s[0]).add(i) 
+                    && java.util.stream.IntStream.rangeClosed(i, numWays.length)
+                        .map(j -> (int)(((long[])s[1])[j] += ((long[])s[1])[j - i]))
+                        .toArray().length > -1
+                    ? 0 : 0)
+                .toArray().length > -1 
+                && java.util.stream.IntStream.range(0, numWays.length).allMatch(idx -> ((long[])s[1])[idx + 1] == numWays[idx])
+                ? (java.util.List<Integer>)s[0] 
+                : new java.util.ArrayList<Integer>()
+            : null;
     }
 }
