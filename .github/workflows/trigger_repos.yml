@@ -1,4 +1,4 @@
-name: Remote Trigger via Push (All Branches)
+name: Remote Trigger via Push (All Branches & All Workflows)
 
 on:
   push:
@@ -11,16 +11,12 @@ jobs:
   trigger_repo_a:
     runs-on: ubuntu-latest
     steps:
-      - name: Mass Branch Trigger via GH CLI
+      - name: Mass Trigger All Workflows on All Branches
         env:
-          # The GitHub CLI automatically uses this token for authentication
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
           # 1. Configuration
           TARGET_REPO="aqwertyuiop48/codeforces_script"
-          
-          # ⚠️ UPDATE THIS: The exact filename of the workflow in the target repo
-          WORKFLOW_FILE="your-workflow-file.yml" 
           
           BRANCHES=(
             "main" "javac_" "R_" "bito_" "bito1_" "c_sharp" 
@@ -29,18 +25,33 @@ jobs:
             "helidon_kotlin_" "julia_" "kotlin1_" "lua_" "main_" "matlab_"
           )
 
-          # 2. Iterate and Trigger using the API
+          # 2. Dynamically fetch all workflow filenames from the target repo
+          echo "🔍 Fetching all workflows for $TARGET_REPO..."
+          WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last')
+          
+          if [ -z "$WORKFLOWS" ]; then
+            echo "❌ No workflows found in $TARGET_REPO! Exiting."
+            exit 1
+          fi
+
+          echo "✅ Found workflows:"
+          echo "$WORKFLOWS"
+
+          # 3. Double Loop: For every branch, run every workflow
           for branch in "${BRANCHES[@]}"; do
             echo "------------------------------------------------"
-            echo "🚀 Triggering $WORKFLOW_FILE on target branch: $branch"
+            echo "🚀 TARGET BRANCH: $branch"
             
-            # The gh CLI command that replaces the git clone/push mess
-            if gh workflow run "$WORKFLOW_FILE" --repo "$TARGET_REPO" --ref "$branch"; then
-                echo "✅ Trigger successfully sent to $branch. Sleeping for 5 seconds..."
-                sleep 5
-            else
-                echo "⚠️ Failed to trigger $branch. (Check if the branch exists or if the filename is correct)."
-            fi
+            for wf in $WORKFLOWS; do
+              echo "  ➡️ Triggering workflow: $wf"
+              
+              if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
+                  echo "  ✅ Success. Sleeping for 2 seconds to respect API limits..."
+                  sleep 2
+              else
+                  echo "  ⚠️ Failed to trigger $wf on $branch. (It might not be enabled for workflow_dispatch on this branch)."
+              fi
+            done
           done
 
           echo "------------------------------------------------"
