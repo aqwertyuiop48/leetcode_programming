@@ -25,7 +25,7 @@ jobs:
           )
 
           # 3. Clone the repo (we clone the full repo so we can switch branches)
-          git clone https://${{ secrets.TRIGGER_PAT }}@$TARGET_REPO repo_dir
+          git clone https://${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@$TARGET_REPO repo_dir
           cd repo_dir
 
           # 4. Iterate through each branch
