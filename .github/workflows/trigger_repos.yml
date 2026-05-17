@@ -13,12 +13,7 @@ jobs:
           git config --global user.email "aqwertyuiop48@hotmail.com"
           git config --global user.name "GitHub Actions"
           
-          # 2. Configure Git credentials helper for HTTPS
-          git config --global credential.helper store
-          echo "https://${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@github.com" > ~/.git-credentials
-          chmod 600 ~/.git-credentials
-
-          # 3. Configuration
+          # 2. Configuration
           TARGET_REPO="github.com/aqwertyuiop48/codeforces_script.git"
           
           # List of your specific branches
@@ -29,11 +24,11 @@ jobs:
             "helidon_kotlin_" "julia_" "kotlin1_" "lua_" "main_" "matlab_"
           )
 
-          # 4. Clone the repo
-          git clone https://github.com/aqwertyuiop48/codeforces_script.git repo_dir
+          # 3. Clone the repo WITH the PAT embedded in the URL so push is pre-authenticated
+          git clone https://${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@$TARGET_REPO repo_dir
           cd repo_dir
 
-          # 5. Iterate through each branch
+          # 4. Iterate through each branch
           for branch in "${BRANCHES[@]}"; do
             echo "------------------------------------------------"
             echo "🚀 Target: $branch"
