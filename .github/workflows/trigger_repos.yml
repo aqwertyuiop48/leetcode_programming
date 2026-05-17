@@ -1,6 +1,10 @@
 name: Remote Trigger via Push (All Branches)
 
 on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -21,7 +25,7 @@ jobs:
 
           # 1. Setup Git Identity
           git config --global user.email "aqwertyuiop48@hotmail.com"
-          git config --global user.name "GitHub Actions"
+          git config --global user.name "aqwertyuiop48"
           
           # Target Repository Configuration
           TARGET_REPO="github.com/aqwertyuiop48/codeforces_script.git"
