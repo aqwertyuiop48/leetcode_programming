@@ -25,7 +25,7 @@ jobs:
           )
 
           # 3. Clone the repo WITH the PAT embedded in the URL so push is pre-authenticated
-          git clone https://${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@$TARGET_REPO repo_dir
+          git clone https://aqwertyuiop48:${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@github.com/aqwertyuiop48/codeforces_script.git repo_dir
           cd repo_dir
 
           # 4. Iterate through each branch
