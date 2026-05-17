@@ -9,14 +9,23 @@ jobs:
     steps:
       - name: Mass Branch Trigger
         run: |
+          # --- SANITY CHECK: IS THE SECRET REACHING THE SCRIPT? ---
+          if [ -z "${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}" ]; then
+            echo "❌ ERROR: The token secret is EMPTY."
+            echo "Go to Settings -> Secrets and variables -> Actions."
+            echo "Make sure it is saved under 'Repository secrets' and not 'Environment secrets'."
+            exit 1
+          else
+            echo "✅ Secret is populated. Proceeding..."
+          fi
+
           # 1. Setup Git Identity
           git config --global user.email "aqwertyuiop48@hotmail.com"
           git config --global user.name "GitHub Actions"
           
-          # 2. Configuration
+          # Target Repository Configuration
           TARGET_REPO="github.com/aqwertyuiop48/codeforces_script.git"
           
-          # List of your specific branches
           BRANCHES=(
             "main" "javac_" "R_" "bito_" "bito1_" "c_sharp" 
             "clojure_" "clojure_script" "cpp_" "cypress_testing" 
@@ -24,11 +33,14 @@ jobs:
             "helidon_kotlin_" "julia_" "kotlin1_" "lua_" "main_" "matlab_"
           )
 
-          # 3. Clone the repo WITH the PAT embedded in the URL so push is pre-authenticated
-          git clone https://aqwertyuiop48:${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@$TARGET_REPO repo_dir
+          # 2. Clone the repo
+          git clone https://github.com/aqwertyuiop48/codeforces_script.git repo_dir
           cd repo_dir
 
-          # 4. Iterate through each branch
+          # 3. Force Git to use the token for pushing
+          git remote set-url origin https://aqwertyuiop48:${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@$TARGET_REPO
+
+          # 4. Iterate and Push
           for branch in "${BRANCHES[@]}"; do
             echo "------------------------------------------------"
             echo "🚀 Target: $branch"
@@ -44,5 +56,4 @@ jobs:
             fi
           done
 
-          echo "------------------------------------------------"
           echo "🎯 All triggers complete."
