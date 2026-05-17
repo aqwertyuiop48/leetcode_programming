@@ -25,34 +25,38 @@ jobs:
             "helidon_kotlin_" "julia_" "kotlin1_" "lua_" "main_" "matlab_"
           )
 
-          # 2. Dynamically fetch all workflow filenames from the target repo
-          echo "🔍 Fetching all workflows for $TARGET_REPO..."
-          WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last')
+          gh workflow run couchbase_.yml \
+            --repo aqwertyuiop48/codeforces_script \
+            --ref main
+
+          # # 2. Dynamically fetch all workflow filenames from the target repo
+          # echo "🔍 Fetching all workflows for $TARGET_REPO..."
+          # WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last')
           
-          if [ -z "$WORKFLOWS" ]; then
-            echo "❌ No workflows found in $TARGET_REPO! Exiting."
-            exit 1
-          fi
+          # if [ -z "$WORKFLOWS" ]; then
+          #   echo "❌ No workflows found in $TARGET_REPO! Exiting."
+          #   exit 1
+          # fi
 
-          echo "✅ Found workflows:"
-          echo "$WORKFLOWS"
+          # echo "✅ Found workflows:"
+          # echo "$WORKFLOWS"
 
-          # 3. Double Loop: For every branch, run every workflow
-          for branch in "${BRANCHES[@]}"; do
-            echo "------------------------------------------------"
-            echo "🚀 TARGET BRANCH: $branch"
+          # # 3. Double Loop: For every branch, run every workflow
+          # for branch in "${BRANCHES[@]}"; do
+          #   echo "------------------------------------------------"
+          #   echo "🚀 TARGET BRANCH: $branch"
             
-            for wf in $WORKFLOWS; do
-              echo "  ➡️ Triggering workflow: $wf"
+          #   for wf in $WORKFLOWS; do
+          #     echo "  ➡️ Triggering workflow: $wf"
               
-              if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
-                  echo "  ✅ Success. Sleeping for 2 seconds to respect API limits..."
-                  sleep 2
-              else
-                  echo "  ⚠️ Failed to trigger $wf on $branch. (It might not be enabled for workflow_dispatch on this branch)."
-              fi
-            done
-          done
+          #     if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
+          #         echo "  ✅ Success. Sleeping for 2 seconds to respect API limits..."
+          #         sleep 2
+          #     else
+          #         echo "  ⚠️ Failed to trigger $wf on $branch. (It might not be enabled for workflow_dispatch on this branch)."
+          #     fi
+          #   done
+          # done
 
-          echo "------------------------------------------------"
-          echo "🎯 All triggers complete."
+          # echo "------------------------------------------------"
+          # echo "🎯 All triggers complete."
