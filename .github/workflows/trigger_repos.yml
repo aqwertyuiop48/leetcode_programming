@@ -6,6 +6,16 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for trigger'
+        required: false
+
+
+permissions:
+  contents: read     # Standard read permission is usually enough here
+  actions: write     # Needed if you manage B's own workflows, but not strictly needed to trigger A's
+  statuses: write
 
 jobs:
   trigger_repo_a:
@@ -28,35 +38,3 @@ jobs:
           gh workflow run couchbase_.yml \
             --repo aqwertyuiop48/codeforces_script \
             --ref main
-
-          # # 2. Dynamically fetch all workflow filenames from the target repo
-          # echo "🔍 Fetching all workflows for $TARGET_REPO..."
-          # WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last')
-          
-          # if [ -z "$WORKFLOWS" ]; then
-          #   echo "❌ No workflows found in $TARGET_REPO! Exiting."
-          #   exit 1
-          # fi
-
-          # echo "✅ Found workflows:"
-          # echo "$WORKFLOWS"
-
-          # # 3. Double Loop: For every branch, run every workflow
-          # for branch in "${BRANCHES[@]}"; do
-          #   echo "------------------------------------------------"
-          #   echo "🚀 TARGET BRANCH: $branch"
-            
-          #   for wf in $WORKFLOWS; do
-          #     echo "  ➡️ Triggering workflow: $wf"
-              
-          #     if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
-          #         echo "  ✅ Success. Sleeping for 2 seconds to respect API limits..."
-          #         sleep 2
-          #     else
-          #         echo "  ⚠️ Failed to trigger $wf on $branch. (It might not be enabled for workflow_dispatch on this branch)."
-          #     fi
-          #   done
-          # done
-
-          # echo "------------------------------------------------"
-          # echo "🎯 All triggers complete."
