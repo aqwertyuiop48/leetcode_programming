@@ -1,0 +1,52 @@
+name: Remote Trigger via Push (All Branches)
+
+on:
+  workflow_dispatch: # Manual trigger in Repo B
+
+jobs:
+  trigger_repo_a:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mass Branch Trigger
+        run: |
+          # 1. Setup Git Identity
+          git config --global user.email "aqwertyuiop48@hotmail.com"
+          git config --global user.name "GitHub Actions"
+
+          # 2. Configuration
+          TARGET_REPO="github.com/aqwertyuiop48/codeforces_script.git"
+          
+          # List of your specific branches
+          BRANCHES=(
+            "main" "javac_" "R_" "bito_" "bito1_" "c_sharp" 
+            "clojure_" "clojure_script" "cpp_" "cypress_testing" 
+            "cypress_testing_1" "dart_" "elm_" "helidon_java_" 
+            "helidon_kotlin_" "julia_" "kotlin1_" "lua_" "main_" "matlab_"
+          )
+
+          # 3. Clone the repo (we clone the full repo so we can switch branches)
+          git clone https://x-access-token:${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}@$TARGET_REPO repo_dir
+          cd repo_dir
+
+          # 4. Iterate through each branch
+          for branch in "${BRANCHES[@]}"; do
+            echo "------------------------------------------------"
+            echo "🚀 Target: $branch"
+            
+            # Check out the branch (create local from remote)
+            if git checkout "$branch"; then
+                # Create the empty commit
+                git commit --allow-empty -m "Remote trigger: $(date)"
+                
+                # Push back to Repo A
+                git push origin "$branch"
+                
+                echo "✅ Triggered $branch. Sleeping for 5 seconds..."
+                sleep 5
+            else
+                echo "⚠️  Branch $branch not found or could not be checked out. Skipping."
+            fi
+          done
+
+          echo "------------------------------------------------"
+          echo "🎯 All triggers complete."
