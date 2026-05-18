@@ -20,21 +20,27 @@ jobs:
   trigger_repo_a:
     runs-on: ubuntu-latest
     steps:
-      - name: Mass Trigger All Workflows on All Branches
+      - name: Mass Trigger All Workflows on All Branches dynamically
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
           # 1. Configuration
           TARGET_REPO="aqwertyuiop48/codeforces_script"
           
-          BRANCHES=(
-            "main" "javac_" "R_" "bito_" "bito1_" "c_sharp" 
-            "clojure_" "clojure_script" "cpp_" "cypress_testing" 
-            "cypress_testing_1" "dart_" "elm_" "helidon_java_" 
-            "helidon_kotlin_" "julia_" "kotlin1_" "lua_" "main_" "matlab_"
-          )
+          # 2. Fetch all branches dynamically
+          echo "🔍 Fetching all branches for $TARGET_REPO..."
+          # Note: --paginate ensures we get all branches if there are > 30
+          BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name')
+          
+          if [ -z "$BRANCHES" ]; then
+            echo "❌ No branches found! Exiting."
+            exit 1
+          fi
+          
+          echo "✅ Found branches:"
+          echo "$BRANCHES"
 
-          # 2. Fetch all workflow filenames dynamically
+          # 3. Fetch all workflow filenames dynamically
           echo "🔍 Fetching all workflows for $TARGET_REPO..."
           WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last')
           
@@ -46,17 +52,17 @@ jobs:
           echo "✅ Found workflows:"
           echo "$WORKFLOWS"
 
-          # 3. Iterate through every branch
-          for branch in "${BRANCHES[@]}"; do
+          # 4. Iterate through every branch
+          for branch in $BRANCHES; do
             echo "================================================"
             echo "🚀 TARGETING BRANCH: $branch"
             echo "================================================"
             
-            # 4. Iterate through every workflow for the current branch
+            # 5. Iterate through every workflow for the current branch
             for wf in $WORKFLOWS; do
               echo "  ➡️ Attempting to trigger workflow: $wf"
               
-              # Execute the trigger. If it fails (e.g., workflow doesn't exist on that branch), it prints a warning but keeps going.
+              # Execute the trigger. If it fails, it prints a warning but keeps going.
               if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
                   echo "  ✅ Success. Sleeping for 5 seconds..."
                   sleep 5
