@@ -1,0 +1,92 @@
+name: Mass Remote Trigger (Multi-Job Matrix)
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for trigger'
+        required: false
+
+permissions:
+  contents: read
+  actions: write
+  statuses: write
+
+jobs:
+  trigger_repos:
+    # This name will appear in the UI with the specific repo name attached
+    name: Trigger ${{ matrix.repo }}
+    runs-on: ubuntu-latest
+    
+    strategy:
+      # 'max-parallel' prevents hitting GitHub API rate limits too hard
+      max-parallel: 5 
+      # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
+      fail-fast: false
+      matrix:
+        repo: [
+          "aqwertyuiop48/angular-springboot-crud",
+          "aqwertyuiop48/http4j_java",
+          "aqwertyuiop48/my_angular_app",
+          "aqwertyuiop48/nextjs_app",
+          "aqwertyuiop48/nextjs_news_search_microservices",
+          "aqwertyuiop48/programming_languages",
+          "aqwertyuiop48/selenium_java",
+          "aqwertyuiop48/Expense_Tracker",
+          "aqwertyuiop48/testing-samples",
+          "aqwertyuiop48/automated-build-android-app-with-github-action",
+          "aqwertyuiop48/SeleniumBase",
+          "aqwertyuiop48/selenium_python_example",
+          "aqwertyuiop48/test-swing11",
+          "aqwertyuiop48/upgrad_programming",
+          "aqwertyuiop48/vercel_django_example1",
+          "aqwertyuiop48/nestjs_app",
+          "aqwertyuiop48/express_vercel_app",
+          "aqwertyuiop48/nestjs_tsx",
+          "aqwertyuiop48/node_server",
+          "aqwertyuiop48/hapijs_vercel"
+        ]
+
+    steps:
+      - name: Process Repository
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          TARGET_REPO: ${{ matrix.repo }}
+        run: |
+          echo "🔥 STARTING TRIGGER FOR: $TARGET_REPO"
+
+          # 1. Fetch all branches
+          echo "🔍 Fetching branches..."
+          BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
+          
+          if [ -z "$BRANCHES" ]; then
+            echo "⚠️ No branches found. Skipping."
+            exit 0 # Exit success so the job stays green
+          fi
+
+          # 2. Fetch all workflows
+          echo "🔍 Fetching workflows..."
+          WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
+          
+          if [ -z "$WORKFLOWS" ]; then
+            echo "⚠️ No workflows found. Skipping."
+            exit 0
+          fi
+
+          # 3. Double Loop (Branches x Workflows)
+          for branch in $BRANCHES; do
+            echo "------------------------------------------------"
+            echo "🚀 Branch: $branch"
+            
+            for wf in $WORKFLOWS; do
+              echo "  ➡️ Triggering: $wf"
+              
+              if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
+                  echo "  ✅ Success. Waiting 5s..."
+                  sleep 5
+              else
+                  echo "  ⚠️ Skipped (Check if workflow_dispatch is enabled)."
+              fi
+            done
+          done
+          echo "🎯 Finished $TARGET_REPO"
