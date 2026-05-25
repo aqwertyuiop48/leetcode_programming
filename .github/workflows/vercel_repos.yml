@@ -1,0 +1,148 @@
+name: Mass Remote Trigger (Multi-Job Matrix)
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for trigger'
+        required: false
+
+permissions:
+  contents: read
+  actions: write
+  statuses: write
+
+jobs:
+  trigger_repos:
+    # This name will appear in the UI with the specific repo name attached
+    name: Trigger ${{ matrix.repo }}
+    runs-on: ubuntu-latest
+    
+    strategy:
+      # 'max-parallel' prevents hitting GitHub API rate limits too hard
+      max-parallel: 5 
+      # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
+      fail-fast: false
+      matrix:
+        repo: [
+          "aqwertyuiop48/vuejs_training",
+          "aqwertyuiop48/vercel_flask_app",
+          "aqwertyuiop48/my_angular_app",
+          "aqwertyuiop48/nestjs_app",
+          "aqwertyuiop48/nextjs_app",
+          "aqwertyuiop48/my_react_app",
+          "aqwertyuiop48/express_vercel_app",
+          "aqwertyuiop48/vue_project",
+          "aqwertyuiop48/JavaScript-Applications",
+          "aqwertyuiop48/solid_app",
+          "aqwertyuiop48/ionic_app",
+          "aqwertyuiop48/whatsapp-2",
+          "aqwertyuiop48/jspaint",
+          "aqwertyuiop48/Video-Meeting",
+          "aqwertyuiop48/google-translate-clone",
+          "aqwertyuiop48/codepen",
+          "aqwertyuiop48/vercel_django_example1",
+          "aqwertyuiop48/koa_project",
+          "aqwertyuiop48/hapijs_vercel",
+          "aqwertyuiop48/python_server",
+          "aqwertyuiop48/node_server",
+          "aqwertyuiop48/brunch",
+          "aqwertyuiop48/stencil",
+          "aqwertyuiop48/umijs",
+          "aqwertyuiop48/ember",
+          "aqwertyuiop48/svelte",
+          "aqwertyuiop48/gatsby",
+          "aqwertyuiop48/remix",
+          "aqwertyuiop48/backbone_vercel",
+          "aqwertyuiop48/knockout_vercel",
+          "aqwertyuiop48/ts_node_server",
+          "aqwertyuiop48/ts_express_vercel_app",
+          "aqwertyuiop48/nestjs_js",
+          "aqwertyuiop48/golang_vercel",
+          "aqwertyuiop48/qwik-app",
+          "aqwertyuiop48/nestjs_tsx",
+          "aqwertyuiop48/flask_pythonanywhere",
+          "aqwertyuiop48/fastapi_python",
+          "aqwertyuiop48/apollo_graphql",
+          "aqwertyuiop48/nuxtjs-boilerplate",
+          "aqwertyuiop48/netlify-deploy",
+          "aqwertyuiop48/serverless-adonis",
+          "aqwertyuiop48/nextjs_project",
+          "aqwertyuiop48/serverless-adonis-ts",
+          "aqwertyuiop48/nx-monorepo",
+          "aqwertyuiop48/nextjs-fastapi-starter-1",
+          "aqwertyuiop48/codeforces_web",
+          "aqwertyuiop48/middleman_",
+          "aqwertyuiop48/jekyll1",
+          "aqwertyuiop48/nextjs_news_search_microservices",
+          "aqwertyuiop48/Expense_Tracker",
+          "aqwertyuiop48/angular-springboot-crud",
+          "aqwertyuiop48/spring-boot-angular-15-mysql-example",
+          "aqwertyuiop48/vuepress",
+          "aqwertyuiop48/zola",
+          "aqwertyuiop48/tanstack-start",
+          "aqwertyuiop48/vitepress",
+          "aqwertyuiop48/storybook",
+          "aqwertyuiop48/preact",
+          "aqwertyuiop48/parcel",
+          "aqwertyuiop48/polymer",
+          "aqwertyuiop48/nitro",
+          "aqwertyuiop48/ionic-angular",
+          "aqwertyuiop48/hydrogen",
+          "aqwertyuiop48/hugo",
+          "aqwertyuiop48/hono",
+          "aqwertyuiop48/hexo",
+          "aqwertyuiop48/h3",
+          "aqwertyuiop48/elysia",
+          "aqwertyuiop48/eleventy",
+          "aqwertyuiop48/docusaurus-2",
+          "aqwertyuiop48/docusaurus",
+          "aqwertyuiop48/saas-microservices",
+          "aqwertyuiop48/turborepo-with-hono",
+          "aqwertyuiop48/rust-axum",
+          "aqwertyuiop48/empathic-voice-interface-starter"
+        ]
+
+    steps:
+      - name: Process Repository
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          TARGET_REPO: ${{ matrix.repo }}
+        run: |
+          echo "🔥 STARTING TRIGGER FOR: $TARGET_REPO"
+
+          # 1. Fetch all branches
+          echo "🔍 Fetching branches..."
+          BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
+          
+          if [ -z "$BRANCHES" ]; then
+            echo "⚠️ No branches found. Skipping."
+            exit 0 # Exit success so the job stays green
+          fi
+
+          # 2. Fetch all workflows
+          echo "🔍 Fetching workflows..."
+          WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
+          
+          if [ -z "$WORKFLOWS" ]; then
+            echo "⚠️ No workflows found. Skipping."
+            exit 0
+          fi
+
+          # 3. Double Loop (Branches x Workflows)
+          for branch in $BRANCHES; do
+            echo "------------------------------------------------"
+            echo "🚀 Branch: $branch"
+            
+            for wf in $WORKFLOWS; do
+              echo "  ➡️ Triggering: $wf"
+              
+              if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
+                  echo "  ✅ Success. Waiting 5s..."
+                  sleep 8
+              else
+                  echo "  ⚠️ Skipped (Check if workflow_dispatch is enabled)."
+              fi
+            done
+          done
+          echo "🎯 Finished $TARGET_REPO"
