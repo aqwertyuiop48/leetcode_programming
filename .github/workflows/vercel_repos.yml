@@ -19,8 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     
     strategy:
-      # 'max-parallel' prevents hitting GitHub API rate limits too hard
-      max-parallel: 5 
+      # Serialize jobs to stay under Vercel's ~40-deploys-per-5min soft cap.
+      # All matrix jobs deploy to the same Vercel account, so parallelism multiplies the rate.
+      max-parallel: 1
       # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
       fail-fast: false
       matrix:
@@ -111,6 +112,22 @@ jobs:
         run: |
           echo "🔥 STARTING TRIGGER FOR: $TARGET_REPO"
 
+          # Vercel rate-limit guard: cooldown after every N deployments
+          DEPLOY_COUNT=0
+          VERCEL_BATCH_SIZE=30          # deploys before forced cooldown
+          VERCEL_COOLDOWN_SECONDS=330   # 5.5 min cooldown
+          INTER_DEPLOY_SLEEP=12         # seconds between consecutive deploys
+
+          throttle() {
+            DEPLOY_COUNT=$((DEPLOY_COUNT + 1))
+            if [ $((DEPLOY_COUNT % VERCEL_BATCH_SIZE)) -eq 0 ]; then
+              echo "⏸️  Vercel cooldown: $DEPLOY_COUNT deploys triggered. Sleeping ${VERCEL_COOLDOWN_SECONDS}s..."
+              sleep "$VERCEL_COOLDOWN_SECONDS"
+            else
+              sleep "$INTER_DEPLOY_SLEEP"
+            fi
+          }
+
           # 1. Fetch all branches
           echo "🔍 Fetching branches..."
           BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
@@ -139,10 +156,10 @@ jobs:
               git commit --allow-empty -m "chore: trigger redeploy"
               if git push origin "$branch"; then
                 echo "  ✅ Pushed."
+                throttle
               else
                 echo "  ⚠️ Push failed for $branch"
               fi
-              sleep 2
             done
             
             cd /
@@ -159,8 +176,8 @@ jobs:
               echo "  ➡️ Triggering: $wf"
               
               if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
-                  echo "  ✅ Success. Waiting 5s..."
-                  sleep 8
+                  echo "  ✅ Success."
+                  throttle
               else
                   echo "  ⚠️ Skipped (Check if workflow_dispatch is enabled)."
               fi
