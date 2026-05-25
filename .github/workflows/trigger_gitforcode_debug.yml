@@ -1,10 +1,10 @@
 name: Run PyGithub Script for trigger_gitforcode_debug
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
   workflow_dispatch:
     inputs:
       reason:

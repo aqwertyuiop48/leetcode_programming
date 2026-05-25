@@ -125,7 +125,28 @@ jobs:
           WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
           
           if [ -z "$WORKFLOWS" ]; then
-            echo "⚠️ No workflows found. Skipping."
+            echo "⚠️ No workflows found. Falling back to empty-commit push on all branches."
+            
+            TMPDIR=$(mktemp -d)
+            git clone --quiet "https://x-access-token:${GH_TOKEN}@github.com/${TARGET_REPO}.git" "$TMPDIR/repo"
+            cd "$TMPDIR/repo"
+            git config user.email "actions@github.com"
+            git config user.name "GitHub Actions Bot"
+            
+            for branch in $BRANCHES; do
+              echo "  ➡️ Empty commit on $branch"
+              git checkout "$branch" 2>/dev/null || git checkout -b "$branch" "origin/$branch"
+              git commit --allow-empty -m "chore: trigger redeploy"
+              if git push origin "$branch"; then
+                echo "  ✅ Pushed."
+              else
+                echo "  ⚠️ Push failed for $branch"
+              fi
+              sleep 2
+            done
+            
+            cd /
+            rm -rf "$TMPDIR"
             exit 0
           fi
 
