@@ -1,0 +1,49 @@
+name: Mass Render Deploy Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+
+jobs:
+  render_deploy:
+    name: Deploy ${{ matrix.app.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1 # Sequential processing to monitor logs easily
+      fail-fast: false
+      matrix:
+        app:
+          - { name: "vertx_java", service_id: "srv-d31r7rvdiees7386qm90" }
+          - { name: "micronaut_java", service_id: "srv-d31qtsjipnbc73cjitog" }
+          - { name: "quarkus_java", service_id: "srv-d31qvandiees7386i4qg" }
+          - { name: "Spring_Boot_Java", service_id: "srv-d1r7i8ripnbc73f57ag0" }
+          - { name: "helidon_java", service_id: "srv-d316a7vdiees73aitq00" }
+          - { name: "javalin_java", service_id: "srv-d31t4ubuibrs739aqgu0" }
+          - { name: "helidon_kotlin", service_id: "srv-d316asogjchc73ap1tk0" }
+          - { name: "quarkus_kotlin", service_id: "srv-d31qvqbuibrs7398jq4g" }
+          - { name: "vertx_kotlin", service_id: "srv-d31r8gjipnbc73cjtccg" }
+          - { name: "Spring_Boot_Kotlin", service_id: "srv-d2vkdd7diees738fmo1g" }
+          - { name: "ktor_kotlin", service_id: "srv-d31tgkbuibrs739b6fl0" }
+          - { name: "javalin_kotlin", service_id: "srv-d31t5m8dl3ps73fj7l20" }
+          - { name: "Micronaut_Kotlin", service_id: "srv-d30d723ipnbc73d5erig" }
+          - { name: "spring_boot_rest_API_app_maven", service_id: "srv-d31tioffte5s73fuejlg" }
+
+    steps:
+      - name: Install Render CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/render-oss/cli/main/bin/install.sh | sh
+          echo "/home/runner/.render/bin" >> $GITHUB_PATH
+
+      - name: Trigger Render Deployment
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          echo "🚀 Triggering deploy for ${{ matrix.app.name }} (${{ matrix.app.service_id }})"
+          
+          # This command will use the Render CLI to trigger the build
+          render deploys create ${{ matrix.app.service_id }} --wait --confirm
+          
+          echo "✅ Deployment for ${{ matrix.app.name }} initiated."
