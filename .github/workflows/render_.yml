@@ -12,7 +12,7 @@ jobs:
     name: Deploy ${{ matrix.app.name }}
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 1 # Sequential processing to monitor logs easily
+      max-parallel: 4 # Sequential processing to monitor logs easily
       fail-fast: false
       matrix:
         app:
