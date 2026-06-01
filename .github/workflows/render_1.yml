@@ -1,0 +1,58 @@
+name: Mass Render Deploy Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual trigger'
+        required: false
+
+jobs:
+  render_deploy:
+    name: Deploy ${{ matrix.app.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4 # Sequential processing to monitor logs easily
+      fail-fast: false
+      matrix:
+        app:
+          - { name: "helidon-demo", service_id: "srv-d8dsdgrbc2fs73c29vj0" }
+          - { name: "my-angular-app", service_id: "srv-d8dsa777f7vs73ci4oj0" }
+          - { name: "my-nextjs-app-ts-js", service_id: "srv-d8dscfpo3t8c73es6i9g" }
+          - { name: "simple-http-server", service_id: "srv-d8dse04m0tmc73e91d70" }
+          - { name: "helidon-demo-kotlin", service_id: "srv-d8dsb1ojs32c73fs3uq0" }
+          - { name: "my-quarkus-java-app", service_id: "srv-d8dsbqv7f7vs73ci65j0" }
+          - { name: "news-search-service", service_id: "srv-d8dsjocp3tds73fu9l0g" }
+          - { name: "my-vertx-app", service_id: "srv-d8dsflmk1jcs739bo7kg" }
+          - { name: "my-spring-boot-app", service_id: "srv-d8dskef7f7vs73ciel7g" }
+          - { name: "my-spring-app", service_id: "srv-d8dsfbbbc2fs73c2b9e0" }
+          - { name: "simple-http-server-kotlin", service_id: "srv-d8dsgvkm0tmc73e94960" }
+          - { name: "my-javalin-app", service_id: "srv-d8dslrn40ujc73d11t30" }
+          - { name: "micronaut-java", service_id: "srv-d8dsilcp3tds73fu8jeg" }
+          - { name: "my-angular-app-main", service_id: "srv-d8dslk77f7vs73cifs0g" }
+          - { name: "javalin-java-app", service_id: "srv-d8dt59mk1jcs739ce3o0" }
+          - { name: "my-ktor-app", service_id: "srv-d8dtadf40ujc73d1lmag" }
+          - { name: "my-quarkus-kotlin-app", service_id: "srv-d8dtanv7f7vs73cj5mrg" }
+          - { name: "my-vertx-app-kotlin", service_id: "srv-d8dtb7km0tmc73ea0di0" }
+          - { name: "my-nextjs-app", service_id: "srv-d8dtg0v40ujc73d1qo10" }
+          - { name: "my-nextjs-app-typescript", service_id: "srv-d8dthbsm0tmc73ea6ko0" }
+          - { name: "ruby-http-server", service_id: "srv-d8dti6mrnols739n89eg" }
+          - { name: "my-spring-boot-maven-app", service_id: "srv-d8dthrf40ujc73d1sa90" }
+          - { name: "micronaut-kotlin", service_id: "srv-d8dlhu1o3t8c73em8vm0" }
+
+    steps:
+      - name: Install Render CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/render-oss/cli/main/bin/install.sh | sh
+          echo "/home/runner/.render/bin" >> $GITHUB_PATH
+
+      - name: Trigger Render Deployment
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          echo "🚀 Triggering deploy for ${{ matrix.app.name }} (${{ matrix.app.service_id }})"
+          
+          # This command will use the Render CLI to trigger the build
+          render deploys create ${{ matrix.app.service_id }} --wait --confirm
+          
+          echo "✅ Deployment for ${{ matrix.app.name }} initiated."
