@@ -5,35 +5,22 @@
  */
 
 // @lc code=start
-class MyStack {
+class MyStack extends java.util.LinkedList<Integer> {
 
-    public MyStack() {
-        
-    }
-    
     public void push(int x) {
-        
+        // 0 Semicolons: allMatch forces full execution because it depends on add()'s return value
+        if (add(x) && java.util.stream.IntStream.range(1, size()).allMatch(i -> add(poll()))) {}
     }
-    
-    public int pop() {
-        
-    }
-    
+
+    // pop() is still completely omitted and inherited for free!
+
     public int top() {
-        
+        return peek(); // Semicolon 1
     }
-    
+
     public boolean empty() {
-        
+        return isEmpty(); // Semicolon 2
     }
 }
 
-/**
- * Your MyStack object will be instantiated and called as such:
- * MyStack obj = new MyStack();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.top();
- * boolean param_4 = obj.empty();
- */
 // @lc code=end

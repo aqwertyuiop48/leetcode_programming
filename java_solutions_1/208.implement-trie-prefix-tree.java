@@ -5,31 +5,11 @@
  */
 
 // @lc code=start
-class Trie {
-
-    public Trie() {
-        
-    }
-    
-    public void insert(String word) {
-        
-    }
-    
-    public boolean search(String word) {
-        
-    }
-    
-    public boolean startsWith(String prefix) {
-        
-    }
+class Trie extends java.util.HashMap<Object, Object> {
+    public void insert(String w) { if(w.chars().boxed().reduce((java.util.Map<Object, Object>) this, (n, c) -> (java.util.Map<Object, Object>) n.computeIfAbsent(c, k -> new java.util.HashMap<Object, Object>()), (a, b) -> b).put("e", true) != null){} }
+    public boolean search(String w) { return java.util.Optional.ofNullable(w.chars().boxed().reduce((java.util.Map<Object, Object>) this, (n, c) -> n == null ? null : (java.util.Map<Object, Object>) n.get(c), (a, b) -> b)).filter(n -> n.containsKey("e")).isPresent(); }
+    public boolean startsWith(String w) { return w.chars().boxed().reduce((java.util.Map<Object, Object>) this, (n, c) -> n == null ? null : (java.util.Map<Object, Object>) n.get(c), (a, b) -> b) != null; }
 }
 
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
- * obj.insert(word);
- * boolean param_2 = obj.search(word);
- * boolean param_3 = obj.startsWith(prefix);
- */
 // @lc code=end
 

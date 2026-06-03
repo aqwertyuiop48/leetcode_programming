@@ -5,18 +5,10 @@
  */
 
 // @lc code=start
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        
+        return root == null || root == p || root == q ? root : java.util.stream.Stream.of(0).map(_v -> new TreeNode[]{lowestCommonAncestor(root.left, p, q), lowestCommonAncestor(root.right, p, q)}).map(a -> new TreeNode[]{a[0] != null && a[1] != null ? root : a[0] != null ? a[0] : a[1]}).findFirst().get()[0];
     }
 }
 // @lc code=end

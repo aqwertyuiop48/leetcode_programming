@@ -5,26 +5,20 @@
  */
 
 // @lc code=start
-class WordDictionary {
+class WordDictionary extends java.util.HashMap<Character, WordDictionary> {
+    public void addWord(String w) {
+        if (w.chars().mapToObj(c -> (char) c).reduce(this, (WordDictionary n, Character c) -> n.computeIfAbsent(c, k -> new WordDictionary()), (a, b) -> b).put('\0', null) == null || true) {}
+    }
 
-    public WordDictionary() {
-        
-    }
-    
-    public void addWord(String word) {
-        
-    }
-    
-    public boolean search(String word) {
-        
+    public boolean search(String w) {
+        // 1 Semicolon: Using AtomicReference retains full generic type-safety for the lambda
+        return java.util.stream.Stream.of(new java.util.concurrent.atomic.AtomicReference<java.util.function.BiFunction<WordDictionary, Integer, Boolean>>())
+            .peek(ref -> ref.set((n, i) -> n != null && (i == w.length() ? n.containsKey('\0') : w.charAt(i) == '.' ? n.values().stream().anyMatch(child -> ref.get().apply(child, i + 1)) : ref.get().apply(n.get(w.charAt(i)), i + 1))))
+            .map(ref -> ref.get().apply(this, 0))
+            .findFirst()
+            .get();
     }
 }
 
-/**
- * Your WordDictionary object will be instantiated and called as such:
- * WordDictionary obj = new WordDictionary();
- * obj.addWord(word);
- * boolean param_2 = obj.search(word);
- */
 // @lc code=end
 

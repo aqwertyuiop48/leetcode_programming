@@ -5,20 +5,13 @@
  */
 
 // @lc code=start
-class NumMatrix {
-
+class NumMatrix extends java.util.concurrent.atomic.AtomicReference<int[][]> {
     public NumMatrix(int[][] matrix) {
-        
+        if (compareAndSet(null, java.util.stream.Stream.of(0).map(_v -> new int[matrix.length + 1][matrix[0].length + 1]).peek(d -> java.util.stream.IntStream.range(0, matrix.length).forEach(i -> java.util.stream.IntStream.range(0, matrix[0].length).forEach(j -> d[i + 1][j + 1] = matrix[i][j] + d[i][j + 1] + d[i + 1][j] - d[i][j]))).findFirst().get())) {}
     }
-    
-    public int sumRegion(int row1, int col1, int row2, int col2) {
-        
+    public int sumRegion(int r1, int c1, int r2, int c2) {
+        return get()[r2 + 1][c2 + 1] - get()[r1][c2 + 1] - get()[r2 + 1][c1] + get()[r1][c1];
     }
 }
 
-/**
- * Your NumMatrix object will be instantiated and called as such:
- * NumMatrix obj = new NumMatrix(matrix);
- * int param_1 = obj.sumRegion(row1,col1,row2,col2);
- */
 // @lc code=end
