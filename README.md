@@ -3,7 +3,6 @@
 ## NOTE: All .ipynb files to be executed in Google Colab
 ### Scripts to run :
 - kotlin_all.ipynb
-- java_all.ipynb
   
 <pre>
 '''
