@@ -44,7 +44,8 @@ jobs:
           "aqwertyuiop48/express_vercel_app",
           "aqwertyuiop48/nestjs_tsx",
           "aqwertyuiop48/node_server",
-          "aqwertyuiop48/hapijs_vercel"
+          "aqwertyuiop48/hapijs_vercel",
+          "aqwertyuiop48/profiles"
         ]
 
     steps:
