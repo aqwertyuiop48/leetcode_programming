@@ -13,15 +13,12 @@ permissions:
   statuses: write
 
 jobs:
-  trigger_repos:
-    # This name will appear in the UI with the specific repo name attached
+  # JOB 1: Triggers the first 20 repositories in parallel batches of 5
+  trigger_main_matrix:
     name: Trigger ${{ matrix.repo }}
     runs-on: ubuntu-latest
-    
     strategy:
-      # 'max-parallel' prevents hitting GitHub API rate limits too hard
       max-parallel: 5 
-      # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
       fail-fast: false
       matrix:
         repo: [
@@ -30,7 +27,6 @@ jobs:
           "aqwertyuiop48/my_angular_app",
           "aqwertyuiop48/nextjs_app",
           "aqwertyuiop48/nextjs_news_search_microservices",
-          "aqwertyuiop48/programming_languages",
           "aqwertyuiop48/selenium_java",
           "aqwertyuiop48/Expense_Tracker",
           "aqwertyuiop48/testing-samples",
@@ -55,17 +51,14 @@ jobs:
           TARGET_REPO: ${{ matrix.repo }}
         run: |
           echo "🔥 STARTING TRIGGER FOR: $TARGET_REPO"
-
-          # 1. Fetch all branches
           echo "🔍 Fetching branches..."
           BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
           
           if [ -z "$BRANCHES" ]; then
             echo "⚠️ No branches found. Skipping."
-            exit 0 # Exit success so the job stays green
+            exit 0
           fi
 
-          # 2. Fetch all workflows
           echo "🔍 Fetching workflows..."
           WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
           
@@ -74,14 +67,11 @@ jobs:
             exit 0
           fi
 
-          # 3. Double Loop (Branches x Workflows)
           for branch in $BRANCHES; do
             echo "------------------------------------------------"
             echo "🚀 Branch: $branch"
-            
             for wf in $WORKFLOWS; do
               echo "  ➡️ Triggering: $wf"
-              
               if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
                   echo "  ✅ Success. Waiting 5s..."
                   sleep 5
@@ -90,4 +80,47 @@ jobs:
               fi
             done
           done
-          echo "🎯 Finished $TARGET_REPO"
+
+  # JOB 2: Waits for all parallel jobs above to complete, then fires the final target
+  trigger_programming_languages_last:
+    name: Trigger programming_languages (Final)
+    runs-on: ubuntu-latest
+    needs: trigger_main_matrix
+    
+    steps:
+      - name: Process Final Repository
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          TARGET_REPO: "aqwertyuiop48/programming_languages"
+        run: |
+          echo "🔥 STARTING FINAL TRIGGER FOR: $TARGET_REPO"
+          echo "🔍 Fetching branches..."
+          BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
+          
+          if [ -z "$BRANCHES" ]; then
+            echo "⚠️ No branches found. Exiting."
+            exit 0
+          fi
+
+          echo "🔍 Fetching workflows..."
+          WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
+          
+          if [ -z "$WORKFLOWS" ]; then
+            echo "⚠️ No workflows found. Exiting."
+            exit 0
+          fi
+
+          for branch in $BRANCHES; do
+            echo "------------------------------------------------"
+            echo "🚀 Branch: $branch"
+            for wf in $WORKFLOWS; do
+              echo "  ➡️ Triggering: $wf"
+              if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
+                  echo "  ✅ Success. Waiting 5s..."
+                  sleep 5
+              else
+                  echo "  ⚠️ Skipped (Check if workflow_dispatch is enabled)."
+              fi
+            done
+          done
+          echo "🎯 Finished Final Repo: $TARGET_REPO"
