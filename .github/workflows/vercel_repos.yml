@@ -53,7 +53,8 @@ jobs:
           "aqwertyuiop48/stencil",
           "aqwertyuiop48/umijs",
           "aqwertyuiop48/ember",
-          "aqwertyuiop48/svelte"
+          "aqwertyuiop48/svelte",
+          "aqwertyuiop48/xmcp"
         ]
 
     steps:
