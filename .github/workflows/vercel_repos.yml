@@ -53,6 +53,7 @@ jobs:
           "aqwertyuiop48/stencil",
           "aqwertyuiop48/umijs",
           "aqwertyuiop48/ember",
+          "aqwertyuiop48/nextjs-news-search-microservices",
           "aqwertyuiop48/svelte"
         ]
 
@@ -89,50 +90,47 @@ jobs:
             exit 0 # Exit success so the job stays green
           fi
 
-          # 2. Fetch all workflows
+          # 2. Fetch all workflows (for workflow_dispatch triggers)
           echo "🔍 Fetching workflows..."
           WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
-          
-          if [ -z "$WORKFLOWS" ]; then
-            echo "⚠️ No workflows found. Falling back to empty-commit push on all branches."
-            
-            TMPDIR=$(mktemp -d)
-            git clone --quiet "https://x-access-token:${GH_TOKEN}@github.com/${TARGET_REPO}.git" "$TMPDIR/repo"
-            cd "$TMPDIR/repo"
-            git config user.email "actions@github.com"
-            git config user.name "GitHub Actions Bot"
-            
-            for branch in $BRANCHES; do
-              echo "  ➡️ Empty commit on $branch"
-              git checkout "$branch" 2>/dev/null || git checkout -b "$branch" "origin/$branch"
-              git commit --allow-empty -m "chore: trigger redeploy"
-              if git push origin "$branch"; then
-                echo "  ✅ Pushed."
-                throttle
-              else
-                echo "  ⚠️ Push failed for $branch"
-              fi
-            done
-            
-            cd /
-            rm -rf "$TMPDIR"
-            exit 0
-          fi
 
-          # 3. Double Loop (Branches x Workflows)
+          # 3. Push empty commits to trigger Vercel (and any push-based workflows)
+          echo "📦 Cloning repo for empty commits..."
+          TMPDIR=$(mktemp -d)
+          git clone --quiet "https://x-access-token:${GH_TOKEN}@github.com/${TARGET_REPO}.git" "$TMPDIR/repo"
+          cd "$TMPDIR/repo"
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions Bot"
+          
           for branch in $BRANCHES; do
             echo "------------------------------------------------"
             echo "🚀 Branch: $branch"
             
-            for wf in $WORKFLOWS; do
-              echo "  ➡️ Triggering: $wf"
-              
-              if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
-                  echo "  ✅ Success."
+            # 3a. Push empty commit (triggers Vercel + push workflows)
+            echo "  ➡️ Pushing empty commit..."
+            git checkout "$branch" 2>/dev/null || git checkout -b "$branch" "origin/$branch"
+            git commit --allow-empty -m "chore: trigger redeploy"
+            if git push origin "$branch"; then
+              echo "  ✅ Pushed. (Triggers Vercel + any push workflows)"
+              throttle
+            else
+              echo "  ⚠️ Push failed for $branch"
+            fi
+            
+            # 3b. Also trigger workflow_dispatch workflows
+            if [ -n "$WORKFLOWS" ]; then
+              for wf in $WORKFLOWS; do
+                echo "  ➡️ Triggering workflow_dispatch: $wf"
+                if gh workflow run "$wf" --repo "$TARGET_REPO" --ref "$branch"; then
+                  echo "  ✅ workflow_dispatch triggered."
                   throttle
-              else
-                  echo "  ⚠️ Skipped (Check if workflow_dispatch is enabled)."
-              fi
-            done
+                else
+                  echo "  ⚠️ Skipped (workflow_dispatch not enabled or failed)."
+                fi
+              done
+            fi
           done
+          
+          cd /
+          rm -rf "$TMPDIR"
           echo "🎯 Finished $TARGET_REPO"
