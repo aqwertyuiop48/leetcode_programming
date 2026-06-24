@@ -41,7 +41,10 @@ jobs:
           "aqwertyuiop48/nestjs_tsx",
           "aqwertyuiop48/node_server",
           "aqwertyuiop48/hapijs_vercel",
-          "aqwertyuiop48/profiles"
+          "aqwertyuiop48/profiles",
+          "aqwertyuiop48/Python",
+          "aqwertyuiop48/Java",
+          "aqwertyuiop48/Kotlin"
         ]
 
     steps:
