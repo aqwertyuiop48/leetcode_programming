@@ -53,7 +53,7 @@ jobs:
           "aqwertyuiop48/stencil",
           "aqwertyuiop48/umijs",
           "aqwertyuiop48/ember",
-          "aqwertyuiop48/nextjs-news-search-microservices",
+          "aqwertyuiop48/nextjs_news_search_microservices",
           "aqwertyuiop48/svelte",
           "aqwertyuiop48/xmcp"
         ]
