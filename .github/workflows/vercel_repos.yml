@@ -48,7 +48,56 @@ permissions:
   statuses: write
 
 jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: set-matrix
+        run: |
+          ALL_REPOS='[
+            "aqwertyuiop48/vuejs_training",
+            "aqwertyuiop48/vercel_flask_app",
+            "aqwertyuiop48/my_angular_app",
+            "aqwertyuiop48/nestjs_app",
+            "aqwertyuiop48/nextjs_app",
+            "aqwertyuiop48/my_react_app",
+            "aqwertyuiop48/express_vercel_app",
+            "aqwertyuiop48/vue_project",
+            "aqwertyuiop48/JavaScript-Applications",
+            "aqwertyuiop48/solid_app",
+            "aqwertyuiop48/ionic_app",
+            "aqwertyuiop48/whatsapp-2",
+            "aqwertyuiop48/jspaint",
+            "aqwertyuiop48/Video-Meeting",
+            "aqwertyuiop48/google-translate-clone",
+            "aqwertyuiop48/codepen",
+            "aqwertyuiop48/vercel_django_example1",
+            "aqwertyuiop48/koa_project",
+            "aqwertyuiop48/hapijs_vercel",
+            "aqwertyuiop48/python_server",
+            "aqwertyuiop48/node_server",
+            "aqwertyuiop48/brunch",
+            "aqwertyuiop48/stencil",
+            "aqwertyuiop48/umijs",
+            "aqwertyuiop48/ember",
+            "aqwertyuiop48/nextjs_news_search_microservices",
+            "aqwertyuiop48/svelte",
+            "aqwertyuiop48/xmcp"
+          ]'
+          
+          SELECTION="${{ github.event.inputs.target_repo }}"
+          
+          if [ "$SELECTION" = "ALL" ]; then
+            MATRIX_JSON=$(echo "$ALL_REPOS" | jq -c '.')
+          else
+            MATRIX_JSON=$(jq -n --arg repo "$SELECTION" '[$repo]' | jq -c '.')
+          fi
+          
+          echo "matrix=${MATRIX_JSON}" >> $GITHUB_OUTPUT
+
   trigger_repos:
+    needs: setup-matrix
     name: Trigger ${{ matrix.repo }}
     runs-on: ubuntu-latest
     
@@ -56,41 +105,10 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix:
-        repo: [
-          "aqwertyuiop48/vuejs_training",
-          "aqwertyuiop48/vercel_flask_app",
-          "aqwertyuiop48/my_angular_app",
-          "aqwertyuiop48/nestjs_app",
-          "aqwertyuiop48/nextjs_app",
-          "aqwertyuiop48/my_react_app",
-          "aqwertyuiop48/express_vercel_app",
-          "aqwertyuiop48/vue_project",
-          "aqwertyuiop48/JavaScript-Applications",
-          "aqwertyuiop48/solid_app",
-          "aqwertyuiop48/ionic_app",
-          "aqwertyuiop48/whatsapp-2",
-          "aqwertyuiop48/jspaint",
-          "aqwertyuiop48/Video-Meeting",
-          "aqwertyuiop48/google-translate-clone",
-          "aqwertyuiop48/codepen",
-          "aqwertyuiop48/vercel_django_example1",
-          "aqwertyuiop48/koa_project",
-          "aqwertyuiop48/hapijs_vercel",
-          "aqwertyuiop48/python_server",
-          "aqwertyuiop48/node_server",
-          "aqwertyuiop48/brunch",
-          "aqwertyuiop48/stencil",
-          "aqwertyuiop48/umijs",
-          "aqwertyuiop48/ember",
-          "aqwertyuiop48/nextjs_news_search_microservices",
-          "aqwertyuiop48/svelte",
-          "aqwertyuiop48/xmcp"
-        ]
+        repo: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
 
     steps:
       - name: Process Repository
-        # 🌟 FIXED: Moved the conditional check here inside the step where 'matrix' is valid!
-        if: ${{ github.event.inputs.target_repo == 'ALL' || github.event.inputs.target_repo == matrix.repo }}
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           TARGET_REPO: ${{ matrix.repo }}
