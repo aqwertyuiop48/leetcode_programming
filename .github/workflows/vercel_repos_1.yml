@@ -6,54 +6,98 @@ on:
       reason:
         description: 'Reason for trigger'
         required: false
-
+      target_repo:
+        description: 'Select a specific repository to run (or "ALL" to run everything)'
+        required: true
+        type: choice
+        default: 'ALL'
+        options:
+          - 'ALL'
+          - "aqwertyuiop48/gatsby"
+          - "aqwertyuiop48/remix"
+          - "aqwertyuiop48/backbone_vercel"
+          - "aqwertyuiop48/knockout_vercel"
+          - "aqwertyuiop48/ts_node_server"
+          - "aqwertyuiop48/ts_express_vercel_app"
+          - "aqwertyuiop48/nestjs_js"
+          - "aqwertyuiop48/golang_vercel"
+          - "aqwertyuiop48/qwik-app"
+          - "aqwertyuiop48/nestjs_tsx"
+          - "aqwertyuiop48/flask_pythonanywhere"
+          - "aqwertyuiop48/fastapi_python"
+          - "aqwertyuiop48/apollo_graphql"
+          - "aqwertyuiop48/nuxtjs-boilerplate"
+          - "aqwertyuiop48/netlify-deploy"
+          - "aqwertyuiop48/serverless-adonis"
+          - "aqwertyuiop48/nextjs_project"
+          - "aqwertyuiop48/serverless-adonis-ts"
+          - "aqwertyuiop48/nx-monorepo"
+          - "aqwertyuiop48/nextjs-fastapi-starter-1"
+          - "aqwertyuiop48/codeforces_web"
+          - "aqwertyuiop48/middleman_"
+          - "aqwertyuiop48/jekyll1"
+          - "aqwertyuiop48/Expense_Tracker"
 
 permissions:
   contents: read
   actions: write
   statuses: write
 
-
 jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: set-matrix
+        run: |
+          ALL_REPOS='[
+            "aqwertyuiop48/gatsby",
+            "aqwertyuiop48/remix",
+            "aqwertyuiop48/backbone_vercel",
+            "aqwertyuiop48/knockout_vercel",
+            "aqwertyuiop48/ts_node_server",
+            "aqwertyuiop48/ts_express_vercel_app",
+            "aqwertyuiop48/nestjs_js",
+            "aqwertyuiop48/golang_vercel",
+            "aqwertyuiop48/qwik-app",
+            "aqwertyuiop48/nestjs_tsx",
+            "aqwertyuiop48/flask_pythonanywhere",
+            "aqwertyuiop48/fastapi_python",
+            "aqwertyuiop48/apollo_graphql",
+            "aqwertyuiop48/nuxtjs-boilerplate",
+            "aqwertyuiop48/netlify-deploy",
+            "aqwertyuiop48/serverless-adonis",
+            "aqwertyuiop48/nextjs_project",
+            "aqwertyuiop48/serverless-adonis-ts",
+            "aqwertyuiop48/nx-monorepo",
+            "aqwertyuiop48/nextjs-fastapi-starter-1",
+            "aqwertyuiop48/codeforces_web",
+            "aqwertyuiop48/middleman_",
+            "aqwertyuiop48/jekyll1",
+            "aqwertyuiop48/Expense_Tracker"
+          ]'
+          
+          SELECTION="${{ github.event.inputs.target_repo }}"
+          
+          if [ "$SELECTION" = "ALL" ]; then
+            MATRIX_JSON=$(echo "$ALL_REPOS" | jq -c '.')
+          else
+            MATRIX_JSON=$(jq -n --arg repo "$SELECTION" '[$repo]' | jq -c '.')
+          fi
+          
+          echo "matrix=${MATRIX_JSON}" >> $GITHUB_OUTPUT
+
   trigger_repos:
-    # This name will appear in the UI with the specific repo name attached
+    needs: setup-matrix
     name: Trigger ${{ matrix.repo }}
     runs-on: ubuntu-latest
     
     strategy:
-      # Serialize jobs to stay under Vercel's ~40-deploys-per-5min soft cap.
-      # All matrix jobs deploy to the same Vercel account, so parallelism multiplies the rate.
       max-parallel: 1
-      # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
       fail-fast: false
       matrix:
-        repo: [
-          "aqwertyuiop48/gatsby",
-          "aqwertyuiop48/remix",
-          "aqwertyuiop48/backbone_vercel",
-          "aqwertyuiop48/knockout_vercel",
-          "aqwertyuiop48/ts_node_server",
-          "aqwertyuiop48/ts_express_vercel_app",
-          "aqwertyuiop48/nestjs_js",
-          "aqwertyuiop48/golang_vercel",
-          "aqwertyuiop48/qwik-app",
-          "aqwertyuiop48/nestjs_tsx",
-          "aqwertyuiop48/flask_pythonanywhere",
-          "aqwertyuiop48/fastapi_python",
-          "aqwertyuiop48/apollo_graphql",
-          "aqwertyuiop48/nuxtjs-boilerplate",
-          "aqwertyuiop48/netlify-deploy",
-          "aqwertyuiop48/serverless-adonis",
-          "aqwertyuiop48/nextjs_project",
-          "aqwertyuiop48/serverless-adonis-ts",
-          "aqwertyuiop48/nx-monorepo",
-          "aqwertyuiop48/nextjs-fastapi-starter-1",
-          "aqwertyuiop48/codeforces_web",
-          "aqwertyuiop48/middleman_",
-          "aqwertyuiop48/jekyll1",
-          "aqwertyuiop48/nextjs_news_search_microservices",
-          "aqwertyuiop48/Expense_Tracker"
-        ]
+        repo: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
 
     steps:
       - name: Process Repository
@@ -65,9 +109,9 @@ jobs:
 
           # Vercel rate-limit guard: cooldown after every N deployments
           DEPLOY_COUNT=0
-          VERCEL_BATCH_SIZE=30          # deploys before forced cooldown
-          VERCEL_COOLDOWN_SECONDS=330   # 5.5 min cooldown
-          INTER_DEPLOY_SLEEP=12         # seconds between consecutive deploys
+          VERCEL_BATCH_SIZE=30          
+          VERCEL_COOLDOWN_SECONDS=330   
+          INTER_DEPLOY_SLEEP=12         
 
           throttle() {
             DEPLOY_COUNT=$((DEPLOY_COUNT + 1))
@@ -85,7 +129,7 @@ jobs:
           
           if [ -z "$BRANCHES" ]; then
             echo "⚠️ No branches found. Skipping."
-            exit 0 # Exit success so the job stays green
+            exit 0 
           fi
 
           # 2. Fetch all workflows
