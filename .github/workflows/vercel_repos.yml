@@ -6,25 +6,54 @@ on:
       reason:
         description: 'Reason for trigger'
         required: false
-
+      target_repo:
+        description: 'Select a specific repository to run (or "ALL" to run everything)'
+        required: true
+        type: choice
+        default: 'ALL'
+        options:
+          - 'ALL'
+          - "aqwertyuiop48/vuejs_training"
+          - "aqwertyuiop48/vercel_flask_app"
+          - "aqwertyuiop48/my_angular_app"
+          - "aqwertyuiop48/nestjs_app"
+          - "aqwertyuiop48/nextjs_app"
+          - "aqwertyuiop48/my_react_app"
+          - "aqwertyuiop48/express_vercel_app"
+          - "aqwertyuiop48/vue_project"
+          - "aqwertyuiop48/JavaScript-Applications"
+          - "aqwertyuiop48/solid_app"
+          - "aqwertyuiop48/ionic_app"
+          - "aqwertyuiop48/whatsapp-2"
+          - "aqwertyuiop48/jspaint"
+          - "aqwertyuiop48/Video-Meeting"
+          - "aqwertyuiop48/google-translate-clone"
+          - "aqwertyuiop48/codepen"
+          - "aqwertyuiop48/vercel_django_example1"
+          - "aqwertyuiop48/koa_project"
+          - "aqwertyuiop48/hapijs_vercel"
+          - "aqwertyuiop48/python_server"
+          - "aqwertyuiop48/node_server"
+          - "aqwertyuiop48/brunch"
+          - "aqwertyuiop48/stencil"
+          - "aqwertyuiop48/umijs"
+          - "aqwertyuiop48/ember"
+          - "aqwertyuiop48/nextjs_news_search_microservices"
+          - "aqwertyuiop48/svelte"
+          - "aqwertyuiop48/xmcp"
 
 permissions:
   contents: read
   actions: write
   statuses: write
 
-
 jobs:
   trigger_repos:
-    # This name will appear in the UI with the specific repo name attached
     name: Trigger ${{ matrix.repo }}
     runs-on: ubuntu-latest
     
     strategy:
-      # Serialize jobs to stay under Vercel's ~40-deploys-per-5min soft cap.
-      # All matrix jobs deploy to the same Vercel account, so parallelism multiplies the rate.
       max-parallel: 1
-      # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
       fail-fast: false
       matrix:
         repo: [
@@ -60,18 +89,17 @@ jobs:
 
     steps:
       - name: Process Repository
+        # 🌟 FIXED: Moved the conditional check here inside the step where 'matrix' is valid!
+        if: ${{ github.event.inputs.target_repo == 'ALL' || github.event.inputs.target_repo == matrix.repo }}
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           TARGET_REPO: ${{ matrix.repo }}
         run: |
           echo "🔥 STARTING TRIGGER FOR: $TARGET_REPO"
-
-          # Vercel rate-limit guard: cooldown after every N deployments
           DEPLOY_COUNT=0
-          VERCEL_BATCH_SIZE=30          # deploys before forced cooldown
-          VERCEL_COOLDOWN_SECONDS=330   # 5.5 min cooldown
-          INTER_DEPLOY_SLEEP=12         # seconds between consecutive deploys
-
+          VERCEL_BATCH_SIZE=30          
+          VERCEL_COOLDOWN_SECONDS=330   
+          INTER_DEPLOY_SLEEP=12         
           throttle() {
             DEPLOY_COUNT=$((DEPLOY_COUNT + 1))
             if [ $((DEPLOY_COUNT % VERCEL_BATCH_SIZE)) -eq 0 ]; then
@@ -81,21 +109,18 @@ jobs:
               sleep "$INTER_DEPLOY_SLEEP"
             fi
           }
-
-          # 1. Fetch all branches
+          
           echo "🔍 Fetching branches..."
           BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
           
           if [ -z "$BRANCHES" ]; then
             echo "⚠️ No branches found. Skipping."
-            exit 0 # Exit success so the job stays green
+            exit 0 
           fi
-
-          # 2. Fetch all workflows (for workflow_dispatch triggers)
+          
           echo "🔍 Fetching workflows..."
           WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
-
-          # 3. Push empty commits to trigger Vercel (and any push-based workflows)
+          
           echo "📦 Cloning repo for empty commits..."
           TMPDIR=$(mktemp -d)
           git clone --quiet "https://x-access-token:${GH_TOKEN}@github.com/${TARGET_REPO}.git" "$TMPDIR/repo"
@@ -107,7 +132,6 @@ jobs:
             echo "------------------------------------------------"
             echo "🚀 Branch: $branch"
             
-            # 3a. Push empty commit (triggers Vercel + push workflows)
             echo "  ➡️ Pushing empty commit..."
             git checkout "$branch" 2>/dev/null || git checkout -b "$branch" "origin/$branch"
             git commit --allow-empty -m "chore: trigger redeploy"
@@ -118,7 +142,6 @@ jobs:
               echo "  ⚠️ Push failed for $branch"
             fi
             
-            # 3b. Also trigger workflow_dispatch workflows
             if [ -n "$WORKFLOWS" ]; then
               for wf in $WORKFLOWS; do
                 echo "  ➡️ Triggering workflow_dispatch: $wf"
