@@ -37,45 +37,13 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/render-oss/cli/main/bin/install.sh | sh
           echo "/home/runner/.render/bin" >> $GITHUB_PATH
 
-      - name: Check Status, Resume if Needed, and Deploy
+      - name: Trigger Render Deployment
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-          SERVICE_ID: ${{ matrix.app.service_id }}
-          APP_NAME: ${{ matrix.app.name }}
         run: |
-          echo "🔍 Checking current status for $APP_NAME ($SERVICE_ID)..."
+          echo "🚀 Triggering deploy for ${{ matrix.app.name }} (${{ matrix.app.service_id }})"
           
-          # 1. Query Render API to get the current service status
-          SERVICE_INFO=$(curl -s --request GET \
-            --url "https://api.render.com/v1/services/$SERVICE_ID" \
-            --header "Authorization: Bearer $RENDER_API_KEY" \
-            --header "Accept: application/json")
+          # This command will use the Render CLI to trigger the build
+          render deploys create ${{ matrix.app.service_id }} --wait --confirm
           
-          # Parse out the status field (grepping suspended state safely)
-          CURRENT_STATUS=$(echo "$SERVICE_INFO" | grep -o '"status":"[^"]*' | grep -o '[^"]*$')
-          echo "📊 Current Status reported by Render: [$CURRENT_STATUS]"
-
-          # 2. Check if the application is suspended
-          if [ "$CURRENT_STATUS" = "suspended" ]; then
-            echo "🛑 $APP_NAME is currently suspended. Initiating wake-up routine..."
-            
-            RESUME_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --request POST \
-              --url "https://api.render.com/v1/services/$SERVICE_ID/resume" \
-              --header "Authorization: Bearer $RENDER_API_KEY" \
-              --header "Accept: application/json")
-            
-            if [ "$RESUME_STATUS" = "202" ]; then
-              echo "🟢 Resume signal accepted (202). Sleeping 10s for cluster initialization..."
-              sleep 10
-            else
-              echo "❌ Auto-resume failed with HTTP Status: $RESUME_STATUS. Aborting deployment."
-              exit 1
-            fi
-          else
-            echo "⚡ $APP_NAME is active. Bypassing activation stage."
-          fi
-
-          # 3. Proceed with the deployment step using Render CLI
-          echo "🚀 Triggering build/deploy sequence for $APP_NAME..."
-          render deploys create $SERVICE_ID --wait --confirm
-          echo "✅ Deployment completed successfully."
+          echo "✅ Deployment for ${{ matrix.app.name }} initiated."
