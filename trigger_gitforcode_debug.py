@@ -12,7 +12,7 @@ if not TRIGGER_TOKEN:
 
 # 2. Authenticate and target Account A's repository
 g = Github(TRIGGER_TOKEN)
-target_repo_name = "Gitforcode-debug/didactic-barnacle" # Change this to the actual repo name!
+target_repo_name = "Gitforcode-debug/didactic_barnacle_programming" # Change this to the actual repo name!
 repo = g.get_repo(target_repo_name)
 
 print(f"✅ Successfully connected to: {repo.full_name}")
