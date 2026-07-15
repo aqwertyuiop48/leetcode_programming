@@ -47,3 +47,11 @@ jobs:
           render deploys create ${{ matrix.app.service_id }} --wait --confirm
           
           echo "✅ Deployment for ${{ matrix.app.name }} initiated."
+
+      - name: Trigger Remote Workflow via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          gh workflow run render_1.yml \
+            --repo aqwertyuiop48/leetcode_programming \
+            --ref main

@@ -41,3 +41,11 @@ jobs:
             --repository "first_repo" \
             --branch "main" \
             --token "$BITBUCKET_FIRST_REPO_TOKEN"
+
+      - name: Trigger Remote Workflow via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          gh workflow run gitlab_sreegithub19.yml \
+            --repo aqwertyuiop48/leetcode_programming \
+            --ref main

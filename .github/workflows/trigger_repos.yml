@@ -73,3 +73,11 @@ jobs:
           done
 
           echo "🎯 All triggers complete."
+
+      - name: Trigger Remote Workflow via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          gh workflow run trigger_repos1.yml \
+            --repo aqwertyuiop48/leetcode_programming \
+            --ref main
