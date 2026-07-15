@@ -6,54 +6,100 @@ on:
       reason:
         description: 'Reason for trigger'
         required: false
-
+      target_repo:
+        description: 'Select a specific repository to run (or "ALL" to run everything)'
+        required: true
+        type: choice
+        default: 'ALL'
+        options:
+          - 'ALL'
+          - "aqwertyuiop48/angular-springboot-crud"
+          - "aqwertyuiop48/spring-boot-angular-15-mysql-example"
+          - "aqwertyuiop48/vuepress"
+          - "aqwertyuiop48/zola"
+          - "aqwertyuiop48/tanstack-start"
+          - "aqwertyuiop48/vitepress"
+          - "aqwertyuiop48/storybook"
+          - "aqwertyuiop48/preact"
+          - "aqwertyuiop48/parcel"
+          - "aqwertyuiop48/polymer"
+          - "aqwertyuiop48/nitro"
+          - "aqwertyuiop48/ionic-angular"
+          - "aqwertyuiop48/hydrogen"
+          - "aqwertyuiop48/hugo"
+          - "aqwertyuiop48/hono"
+          - "aqwertyuiop48/hexo"
+          - "aqwertyuiop48/h3"
+          - "aqwertyuiop48/elysia"
+          - "aqwertyuiop48/eleventy"
+          - "aqwertyuiop48/docusaurus-2"
+          - "aqwertyuiop48/docusaurus"
+          - "aqwertyuiop48/saas-microservices"
+          - "aqwertyuiop48/turborepo-with-hono"
+          - "aqwertyuiop48/rust-axum"
+          - "aqwertyuiop48/empathic-voice-interface-starter"
 
 permissions:
   contents: read
   actions: write
   statuses: write
 
-
 jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: set-matrix
+        run: |
+          ALL_REPOS='[
+            "aqwertyuiop48/angular-springboot-crud",
+            "aqwertyuiop48/spring-boot-angular-15-mysql-example",
+            "aqwertyuiop48/vuepress",
+            "aqwertyuiop48/zola",
+            "aqwertyuiop48/tanstack-start",
+            "aqwertyuiop48/vitepress",
+            "aqwertyuiop48/storybook",
+            "aqwertyuiop48/preact",
+            "aqwertyuiop48/parcel",
+            "aqwertyuiop48/polymer",
+            "aqwertyuiop48/nitro",
+            "aqwertyuiop48/ionic-angular",
+            "aqwertyuiop48/hydrogen",
+            "aqwertyuiop48/hugo",
+            "aqwertyuiop48/hono",
+            "aqwertyuiop48/hexo",
+            "aqwertyuiop48/h3",
+            "aqwertyuiop48/elysia",
+            "aqwertyuiop48/eleventy",
+            "aqwertyuiop48/docusaurus-2",
+            "aqwertyuiop48/docusaurus",
+            "aqwertyuiop48/saas-microservices",
+            "aqwertyuiop48/turborepo-with-hono",
+            "aqwertyuiop48/rust-axum",
+            "aqwertyuiop48/empathic-voice-interface-starter"
+          ]'
+          
+          SELECTION="${{ github.event.inputs.target_repo }}"
+          
+          if [ "$SELECTION" = "ALL" ]; then
+            MATRIX_JSON=$(echo "$ALL_REPOS" | jq -c '.')
+          else
+            MATRIX_JSON=$(jq -n --arg repo "$SELECTION" '[$repo]' | jq -c '.')
+          fi
+          
+          echo "matrix=${MATRIX_JSON}" >> $GITHUB_OUTPUT
+
   trigger_repos:
-    # This name will appear in the UI with the specific repo name attached
+    needs: setup-matrix
     name: Trigger ${{ matrix.repo }}
     runs-on: ubuntu-latest
     
     strategy:
-      # Serialize jobs to stay under Vercel's ~40-deploys-per-5min soft cap.
-      # All matrix jobs deploy to the same Vercel account, so parallelism multiplies the rate.
       max-parallel: 1
-      # 'fail-fast: false' ensures one repo failing doesn't kill the whole workflow
       fail-fast: false
       matrix:
-        repo: [          
-          "aqwertyuiop48/angular-springboot-crud",
-          "aqwertyuiop48/spring-boot-angular-15-mysql-example",
-          "aqwertyuiop48/vuepress",
-          "aqwertyuiop48/zola",
-          "aqwertyuiop48/tanstack-start",
-          "aqwertyuiop48/vitepress",
-          "aqwertyuiop48/storybook",
-          "aqwertyuiop48/preact",
-          "aqwertyuiop48/parcel",
-          "aqwertyuiop48/polymer",
-          "aqwertyuiop48/nitro",
-          "aqwertyuiop48/ionic-angular",
-          "aqwertyuiop48/hydrogen",
-          "aqwertyuiop48/hugo",
-          "aqwertyuiop48/hono",
-          "aqwertyuiop48/hexo",
-          "aqwertyuiop48/h3",
-          "aqwertyuiop48/elysia",
-          "aqwertyuiop48/eleventy",
-          "aqwertyuiop48/docusaurus-2",
-          "aqwertyuiop48/docusaurus",
-          "aqwertyuiop48/saas-microservices",
-          "aqwertyuiop48/turborepo-with-hono",
-          "aqwertyuiop48/rust-axum",
-          "aqwertyuiop48/empathic-voice-interface-starter"
-        ]
+        repo: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
 
     steps:
       - name: Process Repository
@@ -62,13 +108,13 @@ jobs:
           TARGET_REPO: ${{ matrix.repo }}
         run: |
           echo "🔥 STARTING TRIGGER FOR: $TARGET_REPO"
-
+          
           # Vercel rate-limit guard: cooldown after every N deployments
           DEPLOY_COUNT=0
           VERCEL_BATCH_SIZE=30          # deploys before forced cooldown
           VERCEL_COOLDOWN_SECONDS=330   # 5.5 min cooldown
           INTER_DEPLOY_SLEEP=12         # seconds between consecutive deploys
-
+          
           throttle() {
             DEPLOY_COUNT=$((DEPLOY_COUNT + 1))
             if [ $((DEPLOY_COUNT % VERCEL_BATCH_SIZE)) -eq 0 ]; then
@@ -78,7 +124,7 @@ jobs:
               sleep "$INTER_DEPLOY_SLEEP"
             fi
           }
-
+          
           # 1. Fetch all branches
           echo "🔍 Fetching branches..."
           BRANCHES=$(gh api --paginate repos/$TARGET_REPO/branches --jq '.[].name' 2>/dev/null) || true
@@ -87,7 +133,7 @@ jobs:
             echo "⚠️ No branches found. Skipping."
             exit 0 # Exit success so the job stays green
           fi
-
+          
           # 2. Fetch all workflows
           echo "🔍 Fetching workflows..."
           WORKFLOWS=$(gh api repos/$TARGET_REPO/actions/workflows --jq '.workflows[].path | split("/") | last' 2>/dev/null) || true
@@ -117,7 +163,7 @@ jobs:
             rm -rf "$TMPDIR"
             exit 0
           fi
-
+          
           # 3. Double Loop (Branches x Workflows)
           for branch in $BRANCHES; do
             echo "------------------------------------------------"
