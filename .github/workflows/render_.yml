@@ -48,10 +48,19 @@ jobs:
           
           echo "✅ Deployment for ${{ matrix.app.name }} initiated."
 
+  trigger-next-workflow:
+    needs: render_deploy
+    if: always()
+    name: Trigger Next Render Workflow
+    runs-on: ubuntu-latest
+    steps:
       - name: Trigger Remote Workflow via GitHub CLI
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
+          echo "🚀 Triggering render_1.yml downstream..."
           gh workflow run render_1.yml \
             --repo aqwertyuiop48/leetcode_programming \
             --ref main
+
+

@@ -128,10 +128,17 @@ jobs:
           done
           echo "🎯 Finished Final Repo: $TARGET_REPO"
 
+  trigger-render-workflow:
+    needs: trigger_programming_languages_last
+    if: always()
+    name: Trigger Render Workflow
+    runs-on: ubuntu-latest
+    steps:
       - name: Trigger Remote Workflow via GitHub CLI
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
+          echo "🚀 Triggering render_.yml downstream..."
           gh workflow run render_.yml \
             --repo aqwertyuiop48/leetcode_programming \
             --ref main
