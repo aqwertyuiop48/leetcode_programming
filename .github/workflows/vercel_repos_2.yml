@@ -1,4 +1,4 @@
-name: Mass Remote Trigger (Multi-Job Matrix)
+name: Mass Remote Trigger (Multi-Job Matrix) vercel_2
 
 on:
   workflow_dispatch:
@@ -182,10 +182,20 @@ jobs:
           done
           echo "🎯 Finished $TARGET_REPO"
 
+  # ===================================================================
+  # Isolated Downstream Trigger Job (Executes Exactly Once After Matrix)
+  # ===================================================================
+  trigger-downstream:
+    needs: trigger_repos
+    if: always()
+    name: Call Next Chain Workflow
+    runs-on: ubuntu-latest
+    steps:
       - name: Trigger Remote Workflow via GitHub CLI
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
+          echo "🚀 Triggering trigger_repos.yml downstream..."
           gh workflow run trigger_repos.yml \
             --repo aqwertyuiop48/leetcode_programming \
             --ref main
