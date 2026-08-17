@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3566 lang=kotlin */
-class Solution { fun checkEqualPartitions(nums: IntArray, target: Long): Boolean = nums.fold(1L) { acc, x -> acc * x }.let { tot -> target * target == tot && nums.fold(setOf(1L)) { st, x -> st + st.filter { target % (it * x) == 0L }.map { it * x } }.contains(target) } }

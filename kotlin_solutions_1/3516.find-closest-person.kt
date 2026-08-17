@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3516 lang=kotlin */
-class Solution { fun findClosest(x: Int, y: Int, z: Int): Int = if (Math.abs(x - z) == Math.abs(y - z)) 0 else if (Math.abs(x - z) < Math.abs(y - z)) 1 else 2 }

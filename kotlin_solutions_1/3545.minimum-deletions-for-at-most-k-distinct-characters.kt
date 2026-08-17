@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3545 lang=kotlin */
-class Solution { fun minDeletion(s: String, k: Int): Int = s.groupingBy { it }.eachCount().values.sorted().let { freqs -> freqs.take(maxOf(0, freqs.size - k)).sum() } }

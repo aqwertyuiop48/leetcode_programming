@@ -1,6 +1,0 @@
-/*
- * @lc app=leetcode id=3311 lang=java
- *
- * [3311] Construct 2D Grid Matching Graph Layout
- */
-fun constructGridLayout(n: Int, edges: Array<IntArray>): Array<IntArray> = Array(n) { mutableListOf<Int>() }.apply { edges.forEach { e -> this[e[0]].add(e[1]).also { this[e[1]].add(e[0]) } } }.let { adj -> (0 until n).minByOrNull { adj[it].size }!!.let { start -> (adj[start].size).let { minDeg -> (if (minDeg == 1) 1 else (generateSequence(Triple(start, -1, 1)) { t -> adj[t.first].find { it != t.second && adj[it].size <= 3 }?.let { nxt -> if (adj[nxt].size == 2) null else Triple(nxt, t.first, t.third + 1) } }.last().third + 1)).let { width -> BooleanArray(n).also { vis -> vis[start] = true }.let { vis -> Array(n / width) { IntArray(width) }.apply { this[0][0] = start }.also { grid -> (1 until width).forEach { j -> grid[0][j] = adj[grid[0][j - 1]].filter { !vis[it] && adj[it].size <= 3 }.minByOrNull { adj[it].size }!!.also { vis[it] = true } } }.also { grid -> (1 until n / width).forEach { i -> (0 until width).forEach { j -> grid[i][j] = adj[grid[i - 1][j]].filter { !vis[it] }.minByOrNull { adj[it].size }!!.also { vis[it] = true } } } } } } } } }

@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3495 lang=kotlin */
-class Solution { fun minOperations(queries: Array<IntArray>): Long = LongArray(18).also { st -> (1 until 18).forEach { i -> st[i] = st[i - 1] + 3L * i * (1L shl (2 * (i - 1))) + 1 } }.let { st -> { x: Int -> if (x == 0) 0L else ((31 - Integer.numberOfLeadingZeros(x)) shr 1).let { k -> st[k] + (x - (1 shl (k shl 1))) * (k + 1L) } }.let { f -> queries.sumOf { q -> (f(q[1]) - f(q[0] - 1) + 1) shr 1 } } } }

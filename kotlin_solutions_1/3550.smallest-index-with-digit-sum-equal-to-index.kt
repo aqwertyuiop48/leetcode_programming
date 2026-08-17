@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3550 lang=kotlin */
-class Solution { fun smallestIndex(nums: IntArray): Int = nums.indices.firstOrNull { i -> nums[i].toString().sumOf { it - '0' } == i } ?: -1 }

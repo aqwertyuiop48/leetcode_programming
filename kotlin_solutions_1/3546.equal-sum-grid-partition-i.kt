@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3546 lang=kotlin */
-class Solution { fun canPartitionGrid(grid: Array<IntArray>): Boolean = grid.sumOf { row -> row.sumOf { it.toLong() } }.let { total -> total % 2L == 0L && (grid.indices.dropLast(1).runningFold(0L) { acc, r -> acc + grid[r].sumOf { it.toLong() } }.drop(1).any { it * 2 == total } || grid[0].indices.dropLast(1).runningFold(0L) { acc, c -> acc + grid.sumOf { row -> row[c].toLong() } }.drop(1).any { it * 2 == total }) } }

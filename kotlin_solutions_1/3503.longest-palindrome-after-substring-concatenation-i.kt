@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3503 lang=kotlin */
-class Solution { fun longestPalindrome(s: String, t: String): Int = (0..s.length).maxOf { i -> (i..s.length).maxOf { j -> (0..t.length).maxOf { k -> (k..t.length).maxOf { l -> (s.substring(i, j) + t.substring(k, l)).let { str -> if (str == str.reversed()) str.length else 0 } } } } } }

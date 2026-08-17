@@ -1,7 +1,0 @@
-/*
- * @lc app=leetcode id=3492 lang=kotlin
- *
- * [3492] Maximum Containers on a Ship
- */
-
-class Solution { fun maxContainers(n: Int, w: Int, maxWeight: Int): Int = minOf(n * n, maxWeight / w) }
