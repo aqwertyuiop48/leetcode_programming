@@ -4,6 +4,4 @@
  * [1713] Minimum Operations to Make a Subsequence
  */
 
-class Solution {
-    fun minOperations(target: IntArray, arr: IntArray): Int = target.indices.associateBy { target[it] }.let { pos -> IntArray(arr.size).let { lis -> arr.mapNotNull { pos[it] }.fold(0) { len, x -> java.util.Arrays.binarySearch(lis, 0, len, x).let { idx -> if (idx < 0) -idx - 1 else idx }.also { i -> lis[i] = x }.let { i -> if (i == len) len + 1 else len } }.let { target.size - it } } }
-}
+class Solution { fun minOperations(target: IntArray, arr: IntArray): Int = target.indices.associate { target[it] to it }.let { positions -> IntArray(arr.size).let { tails -> arr.asSequence().mapNotNull { positions[it] }.fold(0) { length, value -> java.util.Arrays.binarySearch(tails, 0, length, value).let { if (it < 0) -it - 1 else it }.let { index -> tails.also { it[index] = value }.let { maxOf(length, index + 1) } } }.let { target.size - it } } } }

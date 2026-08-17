@@ -4,4 +4,4 @@
  * [1665] Minimum Initial Energy to Finish Tasks
  */
 
-class Solution { fun minimumEffort(tasks: Array<IntArray>): Int = tasks.sortedBy { it[1] - it[0] }.fold(0) { e, t -> maxOf(t[1], e + t[0]) } }
+class Solution { fun minimumEffort(tasks: Array<IntArray>): Int = tasks.sortedByDescending { it[1] - it[0] }.fold(0) { e, t -> maxOf(t[1], e + t[0]) } }

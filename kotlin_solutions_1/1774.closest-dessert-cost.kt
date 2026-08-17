@@ -3,4 +3,4 @@
  *
  * [1774] Closest Dessert Cost
  */
-class Solution { fun closestCost(baseCosts: IntArray, toppingCosts: IntArray, target: Int): Int = baseCosts.flatMap { base -> toppingCosts.fold(setOf(base)) { acc, top -> acc.flatMap { listOf(it, it + top, it + 2 * top) }.filter { it <= target + (target - baseCosts.minOrNull()!!).coerceAtLeast(0) }.toSet() } }.minWithOrNull(compareBy<Int> { kotlin.math.abs(it - target) }.thenBy { it }) ?: 0 }
+class Solution { fun closestCost(baseCosts: IntArray, toppingCosts: IntArray, target: Int): Int = baseCosts.flatMap { base -> toppingCosts.fold(setOf(base)) { totals, topping -> totals.flatMap { total -> listOf(total, total + topping, total + 2 * topping) }.toSet() } }.minWithOrNull(compareBy<Int> { kotlin.math.abs(it - target) }.thenBy { it }) ?: 0 }

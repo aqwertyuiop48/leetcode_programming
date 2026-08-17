@@ -4,4 +4,4 @@
  * [1329] Sort the Matrix Diagonally
  */
 
-class Solution { fun diagonalSort(mat: Array<IntArray>): Array<IntArray> = mat.also { m -> m.indices.flatMap { r -> m[0].indices.map { c -> r to c } }.groupBy { (r, c) -> r - c }.values.forEach { diag -> diag.map { (r, c) -> m[r][c] }.sorted().zip(diag).forEach { (v, (r, c)) -> m[r][c] = v } } } }
+class Solution { fun diagonalSort(mat: Array<IntArray>): Array<IntArray> = mat.also { matrix -> matrix.indices.flatMap { row -> matrix[0].indices.map { column -> row to column } }.groupBy { it.first - it.second }.values.forEach { diagonal -> diagonal.map { matrix[it.first][it.second] }.sorted().zip(diagonal).forEach { pair -> matrix[pair.second.first][pair.second.second] = pair.first } } } }

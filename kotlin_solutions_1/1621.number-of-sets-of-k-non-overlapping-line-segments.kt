@@ -4,6 +4,4 @@
  * [1621] Number of Sets of K Non-Overlapping Line Segments
  */
 
-class Solution {
-    fun numberOfSets(n: Int, k: Int): Int = (1..2 * k).fold(1L to 1L) { (num, den), i -> (num * (n + k - i) % 1000000007) to (den * i % 1000000007) }.let { (num, den) -> ((num * java.math.BigInteger.valueOf(den).modInverse(java.math.BigInteger.valueOf(1000000007)).longValue()) % 1000000007).toInt() }
-}
+class Solution { fun numberOfSets(n: Int, k: Int): Int = (1..2 * k).fold(1L to 1L) { pair, value -> pair.first * (n + k - value) % 1000000007 to pair.second * value % 1000000007 }.let { pair -> (pair.first * pair.second.toBigInteger().modInverse(1000000007.toBigInteger()).toLong() % 1000000007).toInt() } }

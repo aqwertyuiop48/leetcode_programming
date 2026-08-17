@@ -4,4 +4,4 @@
  * [1110] Delete Nodes And Return Forest
  */
 
-class Solution { fun delNodes(root: TreeNode?, to_delete: IntArray): List<TreeNode?> = mutableListOf<TreeNode>().also { res -> to_delete.toSet().let { delSet -> DeepRecursiveFunction<Pair<TreeNode?, Boolean>, TreeNode?> { (node, isRoot) -> node?.let { n -> (n.val in delSet).let { deleted -> (if (isRoot && !deleted) res.add(n) else false).let { n.left = callRecursive(n.left to deleted) }.let { n.right = callRecursive(n.right to deleted) }.let { if (deleted) null else n } } } }.invoke(root to true) } } }
+class Solution { fun delNodes(root: TreeNode?, to_delete: IntArray): List<TreeNode?> = to_delete.toHashSet().let { set -> mutableListOf<TreeNode?>().also { res -> object { fun dfs(node: TreeNode?, isRoot: Boolean): TreeNode? = node?.also { n -> if (isRoot && !set.contains(n.`val`)) res.add(n) }?.also { n -> n.left = dfs(n.left, set.contains(n.`val`)) }?.also { n -> n.right = dfs(n.right, set.contains(n.`val`)) }?.takeUnless { set.contains(it.`val`) } }.dfs(root, true) } } }

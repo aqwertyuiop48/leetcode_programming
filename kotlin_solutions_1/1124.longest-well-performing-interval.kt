@@ -4,4 +4,6 @@
  * [1124] Longest Well-Performing Interval
  */
 
-class Solution { fun longestWPI(hours: IntArray): Int = hours.foldIndexed(Triple(0, 0, mutableMapOf<Int, Int>())) { i, (score, maxLen, map), h -> (score + if (h > 8) 1 else -1).let { s -> map.putIfAbsent(s, i) Triple( s, if (s > 0) i + 1 else maxOf(maxLen, map[s - 1]?.let { i - it } ?: 0), map ) } }.second }
+class Solution {
+    fun longestWPI(hours: IntArray): Int = HashMap<Int, Int>().let { map -> hours.foldIndexed(Triple(0, 0, map)) { i, (score, maxLen, m), h -> (score + if (h > 8) 1 else -1).let { ns -> if (ns > 0) Triple(ns, i + 1, m) else { m.putIfAbsent(ns, i).run{Triple(ns, maxOf(maxLen, if (m.containsKey(ns - 1)) i - m[ns - 1]!! else 0), m) }} } }.second }
+}

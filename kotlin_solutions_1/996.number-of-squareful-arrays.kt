@@ -5,5 +5,5 @@
  */
 
 class Solution {
-    fun numSquarefulPerms(A: IntArray): Int = A.sorted().let { nums -> DeepRecursiveFunction<Triple<Int, Int, Int>, Int> { (last, count, mask) -> if (count == nums.size) 1 else nums.indices.fold(0 to -1) { (sum, prev), i -> if ((mask and (1 shl i)) == 0 && (prev == -1 || nums[i] != nums[prev]) && (count == 0 || Math.sqrt((last + nums[i]).toDouble()).toInt().let { r -> r * r == last + nums[i] })) (sum + callRecursive(Triple(nums[i], count + 1, mask or (1 shl i)))) to nums[i] else sum to prev }.first }.invoke(Triple(-1, 0, 0)) }
+    fun numSquarefulPerms(A: IntArray): Int = A.sortedArray().let { nums -> BooleanArray(nums.size).let { used -> object { fun dfs(prev: Int, count: Int): Int = if (count == nums.size) 1 else nums.indices.fold(0) { total, i -> total + if (!used[i] && !(i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) && (prev < 0 || Math.sqrt((prev + nums[i]).toDouble()).let { s -> s.toLong() * s.toLong() == (prev + nums[i]).toLong() })) (used.set(i, true).run { dfs(nums[i], count + 1) }).also { used[i] = false } else 0 } }.dfs(-1, 0) } }
 }
