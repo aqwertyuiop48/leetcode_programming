@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1974 lang=kotlin */
+class Solution { fun minTimeToType(word: String): Int = word.length + (0 until word.length).sumOf { i -> Math.abs((if (i == 0) 'a' else word[i - 1]) - word[i]).let { diff -> Math.min(diff, 26 - diff) } } }

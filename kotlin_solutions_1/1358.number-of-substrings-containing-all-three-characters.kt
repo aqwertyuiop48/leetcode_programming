@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1358 lang=kotlin */
+class Solution { fun numberOfSubstrings(s: String): Int = s.indices.fold(intArrayOf(-1, -1, -1, 0)) { v, i -> v.also { it[s[i] - 'a'] = i }.also { it[3] += 1 + minOf(it[0], minOf(it[1], it[2])) } }[3] }

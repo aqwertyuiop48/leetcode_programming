@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2556 lang=kotlin
+ *
+ * [2556] Disconnect Path in a Binary Matrix by at Most One Flip
+ */
+
+class Solution { fun isPossibleToCutPath(grid: Array<IntArray>): Boolean = kotlin.DeepRecursiveFunction<Pair<Int, Int>, Boolean> { (r, c) -> if (r == grid.size - 1 && c == grid[0].size - 1) true else if (r >= grid.size || c >= grid[0].size || grid[r][c] == 0) false else { if (!(r == 0 && c == 0)) {grid[r][c] = 0} else{}.run{callRecursive(r + 1 to c) || callRecursive(r to c + 1)} } }.let { f -> !f(0 to 0) || !f(0 to 0) } }

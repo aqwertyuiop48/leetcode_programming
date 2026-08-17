@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2160 lang=kotlin */
+class Solution {
+    fun minimumSum(num: Int) = num.toString().map { it - '0' }.sorted().let { 10 * (it[0] + it[1]) + it[2] + it[3] }
+}

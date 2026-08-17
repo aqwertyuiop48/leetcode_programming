@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2190 lang=kotlin */
+class Solution { fun mostFrequent(nums: IntArray, key: Int): Int = nums.indices.filter { it < nums.size - 1 && nums[it] == key }.map { nums[it + 1] }.groupingBy { it }.eachCount().maxByOrNull { it.value }!!.key }

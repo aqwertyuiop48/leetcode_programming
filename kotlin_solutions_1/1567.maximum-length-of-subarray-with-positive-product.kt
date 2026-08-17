@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1567 lang=kotlin */
+class Solution { fun getMaxLen(nums: IntArray): Int = nums.fold(Triple(0, 0, 0)) { (pos, neg, maxLen), x -> if (x == 0) Triple(0, 0, maxLen) else (if (x > 0) pos + 1 else if (neg > 0) neg + 1 else 0).let { p -> Triple(p, if (x > 0) if (neg > 0) neg + 1 else 0 else pos + 1, maxOf(maxLen, p)) } }.third }

@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1217 lang=kotlin
+ *
+ * [1217] Minimum Cost to Move Chips to The Same Position
+ */
+
+class Solution {
+    fun minCostToMoveChips(position: IntArray): Int = position.count { it % 2 == 0 }.let { minOf(it, position.size - it) }
+}

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2639 lang=kotlin */
+class Solution { fun findColumnWidth(grid: Array<IntArray>): IntArray = IntArray(grid[0].size) { j -> grid.indices.maxOf { i -> grid[i][j].toString().length } } }

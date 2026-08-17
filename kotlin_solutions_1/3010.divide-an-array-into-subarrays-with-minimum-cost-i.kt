@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3010 lang=kotlin
+ *
+ * [3010] Divide an Array Into Subarrays With Minimum Cost I
+ */
+
+class Solution { fun minimumCost(nums: IntArray): Int = nums[0] + nums.drop(1).sorted().take(2).sum() }

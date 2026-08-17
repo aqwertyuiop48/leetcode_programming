@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2305 lang=kotlin */
+class Solution { fun distributeCookies(cookies: IntArray, k: Int): Int = kotlin.DeepRecursiveFunction<Pair<Int, IntArray>, Int> { (i, s) -> if (i == cookies.size) s.maxOrNull()!! else (0 until k).minOf { j -> callRecursive(i + 1 to s.copyOf().apply { this[j] += cookies[i] }) } }.invoke(0 to IntArray(k)) }

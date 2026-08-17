@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3532 lang=kotlin
+ *
+ * [3532] Path Existence Queries in a Graph I
+ */
+
+class Solution { fun pathExistenceQueries(n: Int, nums: IntArray, maxDiff: Int, queries: Array<IntArray>): BooleanArray = IntArray(n).also { comp -> (1 until n).forEach { i -> comp[i] = comp[i - 1] + if (nums[i] - nums[i - 1] > maxDiff) 1 else 0 } }.let { comp -> BooleanArray(queries.size) { i -> comp[queries[i][0]] == comp[queries[i][1]] } } }

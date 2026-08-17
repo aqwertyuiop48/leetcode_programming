@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2789 lang=kotlin */
+class Solution { fun maxArrayValue(nums: IntArray): Long = nums.foldRight(0L) { n, acc -> if (n.toLong() <= acc) acc + n else n.toLong() } }

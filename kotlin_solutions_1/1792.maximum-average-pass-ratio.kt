@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1792 lang=kotlin */
+class Solution { fun maxAverageRatio(classes: Array<IntArray>, extraStudents: Int): Double = java.util.PriorityQueue<DoubleArray> { a, b -> b[2].compareTo(a[2]) }.apply { classes.forEach { c -> offer(doubleArrayOf(c[0].toDouble(), c[1].toDouble(), (c[0] + 1.0) / (c[1] + 1.0) - c[0].toDouble() / c[1])) } }.apply { repeat(extraStudents) { poll().let { c -> offer(doubleArrayOf(c[0] + 1, c[1] + 1, (c[0] + 2) / (c[1] + 2) - (c[0] + 1) / (c[1] + 1))) } } }.sumOf { it[0] / it[1] } / classes.size }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1330 lang=kotlin
+ *
+ * [1330] Reverse Subarray To Maximize Array Value
+ */
+
+class Solution { fun maxValueAfterReverse(nums: IntArray): Int = (0 until nums.size - 1).let { range -> range.sumOf { Math.abs(nums[it] - nums[it + 1]) } + maxOf(range.fold(0) { acc, i -> maxOf(acc, Math.abs(nums[i + 1] - nums[0]) - Math.abs(nums[i] - nums[i + 1]), Math.abs(nums[i] - nums[nums.size - 1]) - Math.abs(nums[i] - nums[i + 1])) }, 2 * (range.maxOf { minOf(nums[it], nums[it + 1]) } - range.minOf { maxOf(nums[it], nums[it + 1]) })) } }

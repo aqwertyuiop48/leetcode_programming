@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2260 lang=kotlin */
+class Solution { fun minimumCardPickup(cards: IntArray): Int = cards.indices.fold(mutableMapOf<Int, Int>() to 1000001) { (m, min), i -> (m[cards[i]]?.let { kotlin.math.min(min, i - it + 1) } ?: min).let { m.apply { put(cards[i], i) } to it } }.second.let { if (it > 1000000) -1 else it } }

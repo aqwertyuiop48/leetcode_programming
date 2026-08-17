@@ -1,0 +1,5 @@
+/* @lc app=leetcode id=1129 lang=kotlin */
+
+class Solution {
+    fun shortestAlternatingPaths(n: Int, redEdges: Array<IntArray>, blueEdges: Array<IntArray>): IntArray = Array(2) { Array(n) { mutableListOf<Int>() } }.apply { redEdges.forEach { this[0][it[0]].add(it[1]) } }.apply { blueEdges.forEach { this[1][it[0]].add(it[1]) } }.let { adj -> IntArray(n) { -1 }.also { res -> Array(n) { BooleanArray(2) }.also { vis -> java.util.ArrayDeque<IntArray>().apply { add(intArrayOf(0, 0, 0)) }.apply { add(intArrayOf(0, 0, 1)) }.apply { vis[0][0] = true }.apply { vis[0][1] = true }.apply { while (isNotEmpty()) { poll().let { c -> this.apply { if (res[c[0]] == -1) res[c[0]] = c[1] }.apply { adj[1 - c[2]][c[0]].forEach { v -> if (!vis[v][1 - c[2]]) vis.apply { this[v][1 - c[2]] = true }.let { add(intArrayOf(v, c[1] + 1, 1 - c[2])) } } } } } } } } }
+}

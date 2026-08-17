@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2293 lang=kotlin */
+class Solution { fun minMaxGame(nums: IntArray): Int = generateSequence(nums) { it.takeIf { it.size > 1 }?.let { p -> IntArray(p.size / 2) { i -> if (i % 2 == 0) minOf(p[2 * i], p[2 * i + 1]) else maxOf(p[2 * i], p[2 * i + 1]) } } }.last()[0] }

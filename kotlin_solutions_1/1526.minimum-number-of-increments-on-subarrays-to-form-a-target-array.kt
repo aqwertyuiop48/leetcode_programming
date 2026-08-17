@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1526 lang=kotlin
+ *
+ * [1526] Minimum Number of Increments on Subarrays to Form a Target Array
+ */
+
+class Solution {
+    fun minNumberOperations(target: IntArray): Int = target.foldIndexed(0) { i, acc, x -> acc + maxOf(0, x - if (i == 0) 0 else target[i - 1]) }
+}

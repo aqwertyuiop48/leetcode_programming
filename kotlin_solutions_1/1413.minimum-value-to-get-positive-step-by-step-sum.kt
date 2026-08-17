@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1413 lang=kotlin
+ *
+ * [1413] Minimum Value to Get Positive Step by Step Sum
+ */
+
+class Solution { fun minStartValue(nums: IntArray): Int = maxOf(1, 1 - nums.scan(0, Int::plus).minOrNull()!!) }

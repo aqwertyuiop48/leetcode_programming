@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2288 lang=kotlin */
+class Solution { fun discountPrices(sentence: String, discount: Int): String = sentence.split(" ").joinToString(" ") { word -> if (word.startsWith('$') && word.length > 1 && word.substring(1).all { it.isDigit() }) "$%.2f".format(word.substring(1).toLong() * (100 - discount) / 100.0).let { "\$$it" } else word } }

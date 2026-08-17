@@ -1,0 +1,11 @@
+/*
+ * @lc app=leetcode id=1206 lang=kotlin
+ *
+ * [1206] Design Skiplist
+ */
+
+class Skiplist(val c: IntArray = IntArray(20005)) {
+    fun search(target: Int) = c[target] > 0
+    fun add(num: Int) { c[num]++ }
+    fun erase(num: Int) = (c[num] > 0).also { if (it) c[num]-- }
+}

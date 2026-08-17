@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2390 lang=kotlin */
+class Solution { fun removeStars(s: String): String = s.fold(StringBuilder()) { sb, c -> if (c == '*') sb.also { it.deleteCharAt(it.length - 1) } else sb.append(c) }.toString() }

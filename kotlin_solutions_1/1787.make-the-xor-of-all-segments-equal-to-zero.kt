@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1787 lang=kotlin */
+class Solution { fun minChanges(nums: IntArray, k: Int): Int = (0 until k).fold(IntArray(1024) { if (it == 0) 0 else 1000000000 }) { dp, i -> nums.filterIndexed { idx, _ -> idx % k == i }.let { group -> group.groupingBy { it }.eachCount().let { counts -> IntArray(1024) { j -> dp.minOrNull()!! + group.size }.apply { counts.forEach { (x, count) -> (0 until 1024).forEach { j -> this[j] = minOf(this[j], dp[j xor x] + group.size - count) } } } } } }[0] }

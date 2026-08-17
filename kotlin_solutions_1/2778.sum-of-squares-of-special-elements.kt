@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2778 lang=kotlin */
+class Solution { fun sumOfSquares(nums: IntArray): Int = nums.indices.filter { nums.size % (it + 1) == 0 }.sumOf { nums[it] * nums[it] } }

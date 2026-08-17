@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2079 lang=kotlin */
+class Solution { fun wateringPlants(plants: IntArray, capacity: Int): Int = plants.indices.fold(Triple(0, capacity, 0)) { (s, w, _), i -> if (w >= plants[i]) Triple(s + 1, w - plants[i], i + 1) else Triple(s + 2 * i + 1, capacity - plants[i], i + 1) }.first }

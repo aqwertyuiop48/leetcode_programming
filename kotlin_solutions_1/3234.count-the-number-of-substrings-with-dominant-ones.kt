@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3234 lang=kotlin */
+class Solution { fun numberOfSubstrings(s: String): Int = s.indices.filter { s[it] == '0' }.let { zeros -> s.length.let { n -> s.indices.sumOf { i -> zeros.binarySearch(i).let { if (it < 0) -it - 1 else it }.let { firstZ -> (if (firstZ < zeros.size) zeros[firstZ] - i else n - i) + (firstZ until minOf(zeros.size, firstZ + 201)).sumOf { k -> (k - firstZ + 1).let { cnt0 -> zeros[k].let { zIdx -> (if (k + 1 < zeros.size) zeros[k + 1] else n).let { nextZ -> maxOf(0, nextZ - maxOf(zIdx, i + cnt0 * cnt0 + cnt0 - 1)) } } } } } } } } }

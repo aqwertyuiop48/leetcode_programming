@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1255 lang=kotlin
+ *
+ * [1255] Maximum Score Words Formed by Letters
+ */
+
+class Solution { fun maxScoreWords(words: Array<String>, letters: CharArray, score: IntArray): Int = IntArray(26).also { cnt -> letters.forEach { cnt[it - 'a']++ } }.let { cnt -> (0 until (1 shl words.size)).maxOf { mask -> IntArray(26).let { cur -> words.indices.filter { (mask and (1 shl it)) != 0 }.fold(0) { s, i -> words[i].fold(s) { ws, ch -> ws + score[ch - 'a'].also { cur[ch - 'a']++ } } }.let { total -> if ((0..25).all { cur[it] <= cnt[it] }) total else 0 } } } } }

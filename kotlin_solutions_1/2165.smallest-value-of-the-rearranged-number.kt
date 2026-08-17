@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2165 lang=kotlin */
+class Solution { fun smallestNumber(num: Long): Long = num.toString().removePrefix("-").toCharArray().sorted().let { s -> if (num > 0) s.indexOfFirst { it != '0' }.let { i -> (s[i] + s.filterIndexed { idx, _ -> idx != i }.joinToString("")).toLong() } else if (num < 0) -s.reversed().joinToString("").toLong() else 0L } }

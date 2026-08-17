@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1598 lang=kotlin
+ *
+ * [1598] Crawler Log Folder
+ */
+
+class Solution {
+    fun minOperations(logs: Array<String>): Int = logs.fold(0) { d, log -> if (log == "../") maxOf(0, d - 1) else if (log == "./") d else d + 1 }
+}

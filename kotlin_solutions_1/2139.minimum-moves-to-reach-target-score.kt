@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2139 lang=kotlin */
+class Solution { fun minMoves(target: Int, maxDoubles: Int): Int = if (target == 1) 0 else if (maxDoubles == 0) target - 1 else (target % 2 + 1) + minMoves(target / 2, maxDoubles - 1) }

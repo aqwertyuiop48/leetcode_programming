@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2870 lang=kotlin */
+class Solution { fun minOperations(nums: IntArray): Int = nums.toList().groupingBy { it }.eachCount().values.let { counts -> if (counts.any { it == 1 }) -1 else counts.sumOf { (it + 2) / 3 } } }

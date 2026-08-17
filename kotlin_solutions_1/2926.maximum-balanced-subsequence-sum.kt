@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2926 lang=kotlin
+ *
+ * [2926] Maximum Balanced Subsequence Sum
+ */
+
+class Solution {
+    fun maxBalancedSubsequenceSum(nums: IntArray): Long = nums.maxOrNull()!!.toLong().let { maxVal -> if (maxVal <= 0) maxVal else java.util.TreeMap<Long, Long>().also { map -> nums.indices.forEach { i -> nums[i].toLong().takeIf { it > 0 }?.let { v -> (v - i).let { key -> ((map.floorEntry(key)?.value ?: 0L) + v).let { cur -> cur.also { map[key] = it }.also { while (map.higherEntry(key)?.takeIf { it.value <= cur }?.also { map.remove(it.key) } != null) {} } } } } } }.values.maxOrNull() ?: maxVal }
+}

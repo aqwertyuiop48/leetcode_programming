@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3445 lang=java
+ *
+ * [3445] Maximum Difference Between Even and Odd Frequency II
+ */
+class Solution { fun maxDifference(s: String, k: Int): Int = IntArray(1).also { ans -> ans[0] = Int.MIN_VALUE }.let { ans -> (0 until 25).filter { it / 5 != it % 5 }.forEach { p -> IntArray(9).also { local -> local[4] = -1 }.also { local -> (5..8).forEach { local[it] = 1000000 } }.let { local -> (0 until s.length).forEach { right -> (if (s[right] == ('0' + p / 5)) local[0]++ else 0).run { if (s[right] == ('0' + p % 5)) local[1]++ else 0 }.run { (0 until 1000000).takeWhile { right - local[4] >= k && local[1] - local[3] >= 2 }.forEach { d -> local.also { it[5 + ((it[2] and 1) shl 1 or (it[3] and 1))] = Math.min(it[5 + ((it[2] and 1) shl 1 or (it[3] and 1))], it[2] - it[3]) }.also { it[4]++ }.also { if (s[it[4]] == ('0' + p / 5)) it[2]++ }.also { if (s[it[4]] == ('0' + p % 5)) it[3]++ } } }.run { (local[5 + ((((local[0] and 1) shl 1 or (local[1] and 1)) xor 2))]).let { if (it != 1000000) ans[0] = Math.max(ans[0], local[0] - local[1] - it) } } } } }.run { ans[0] } } }

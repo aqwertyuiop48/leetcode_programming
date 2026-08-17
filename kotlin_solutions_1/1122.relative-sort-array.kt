@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1122 lang=kotlin
+ *
+ * [1122] Relative Sort Array
+ */
+
+class Solution { fun relativeSortArray(arr1: IntArray, arr2: IntArray): IntArray = arr2.withIndex().associate { it.value to it.index }.let { lookup -> arr1.sortedWith(compareBy({ lookup[it] ?: 1001 }, { it })).toIntArray() } }

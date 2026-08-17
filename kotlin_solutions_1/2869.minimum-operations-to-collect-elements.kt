@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2869 lang=kotlin */
+class Solution { fun minOperations(nums: List<Int>, k: Int): Int = nums.asReversed().scan(emptySet<Int>()) { acc, i -> if (i <= k) acc + i else acc }.indexOfFirst { it.size == k } }

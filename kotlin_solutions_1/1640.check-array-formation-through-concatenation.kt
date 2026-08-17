@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1640 lang=kotlin */
+class Solution { fun canFormArray(arr: IntArray, pieces: Array<IntArray>): Boolean = generateSequence(0) { i -> pieces.firstOrNull { it[0] == arr.getOrNull(i) }?.takeIf { p -> p.indices.all { j -> arr.getOrNull(i + j) == p[j] } }?.let { i + it.size } }.last() == arr.size }

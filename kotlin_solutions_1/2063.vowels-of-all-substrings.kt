@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2063 lang=kotlin */
+class Solution { fun countVowels(word: String): Long = word.indices.filter { word[it] in "aeiou" }.sumOf { i -> (i + 1L) * (word.length - i) } }

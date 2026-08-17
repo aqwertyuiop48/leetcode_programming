@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1944 lang=kotlin */
+class Solution { fun canSeePersonsCount(heights: IntArray): IntArray = java.util.Stack<Int>().let { stack -> IntArray(heights.size).apply { heights.indices.reversed().forEach { i -> this[i] = generateSequence { if (stack.isNotEmpty() && stack.peek() < heights[i]) stack.pop() else null }.count().let { count -> if (stack.isNotEmpty()) count + 1 else count }.also { stack.push(heights[i]) } } } } }

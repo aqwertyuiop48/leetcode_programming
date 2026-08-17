@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2580 lang=kotlin */
+class Solution { fun countWays(ranges: Array<IntArray>): Int = ranges.sortedBy { it[0] }.fold(-1 to 0) { (lastEnd, count), range -> if (range[0] > lastEnd) range[1] to count + 1 else maxOf(lastEnd, range[1]) to count }.second.let { groups -> java.math.BigInteger.valueOf(2).modPow(java.math.BigInteger.valueOf(groups.toLong()), java.math.BigInteger.valueOf(1000000007)).toInt() } }

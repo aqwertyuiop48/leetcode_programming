@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2808 lang=kotlin */
+class Solution { fun minimumSeconds(nums: List<Int>): Int = nums.indices.groupBy { nums[it] }.values.minOf { idx -> (idx.zipWithNext { a, b -> b - a } + (nums.size - idx.last() + idx.first())).maxOrNull()!! / 2 } }

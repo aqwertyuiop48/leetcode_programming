@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1123 lang=kotlin
+ *
+ * [1123] Lowest Common Ancestor of Deepest Leaves
+ */
+
+class Solution { fun lcaDeepestLeaves(root: TreeNode?): TreeNode? = DeepRecursiveFunction<TreeNode?, Pair<Int, TreeNode?>> { node -> if (node == null) 0 to null else callRecursive(node.left).let { (lDepth, lNode) -> callRecursive(node.right).let { (rDepth, rNode) -> if (lDepth == rDepth) lDepth + 1 to node else if (lDepth > rDepth) lDepth + 1 to lNode else rDepth + 1 to rNode } } }(root).second }

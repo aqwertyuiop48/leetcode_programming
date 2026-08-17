@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2080 lang=kotlin */
+class RangeFreqQuery(arr: IntArray, val m: Map<Int, List<Int>> = arr.indices.groupBy { arr[it] }) { fun query(left: Int, right: Int, value: Int): Int = m[value]?.let { it.binarySearch(right).let { ir -> if (ir < 0) -ir - 2 else ir } - it.binarySearch(left).let { il -> if (il < 0) -il - 1 else il } + 1 }?.coerceAtLeast(0) ?: 0 }

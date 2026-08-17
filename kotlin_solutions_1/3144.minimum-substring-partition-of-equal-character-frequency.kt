@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3144 lang=kotlin */
+class Solution { fun minimumSubstringsInPartition(s: String): Int = IntArray(s.length + 1) { 0 }.also { dp -> (1..s.length).forEach { i -> dp[i] = IntArray(26).let { cnt -> (i - 1 downTo 0).filter { j -> (s[j] - 'a').let { cnt[it]++ }.let { cnt.filter { it > 0 }.let { freqs -> freqs.all { it == freqs[0] } } } }.minOf { j -> dp[j] } + 1 } }[s.length] }

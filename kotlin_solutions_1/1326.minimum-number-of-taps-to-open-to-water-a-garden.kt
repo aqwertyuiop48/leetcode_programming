@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1326 lang=kotlin
+ *
+ * [1326] Minimum Number of Taps to Open to Water a Garden
+ */
+
+class Solution { fun minTaps(n: Int, ranges: IntArray): Int = IntArray(n + 1).also { maxReach -> ranges.forEachIndexed { i, r -> Math.max(0, i - r).let { s -> maxReach[s] = Math.max(maxReach[s], Math.min(n, i + r)) } } }.let { maxReach -> (0..<n).fold(Triple(0, 0, 0)) { (taps, currEnd, maxEnd), i -> if (taps == -1) Triple(-1, -1, -1) else Math.max(maxEnd, maxReach[i]).let { nextMax -> if (i == currEnd) if (nextMax <= i) Triple(-1, -1, -1) else Triple(taps + 1, nextMax, nextMax) else Triple(taps, currEnd, nextMax) } }.let { (taps, currEnd, _) -> if (currEnd < n) -1 else taps } } }

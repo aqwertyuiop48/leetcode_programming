@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2397 lang=kotlin */
+class Solution { fun maximumRows(matrix: Array<IntArray>, numSelect: Int): Int = matrix.map { r -> r.foldIndexed(0) { i, acc, bit -> acc or (bit shl i) } }.let { rowMasks -> (0 until (1 shl matrix[0].size)).filter { it.countOneBits() == numSelect }.maxOf { mask -> rowMasks.count { (it and mask.inv()) == 0 } } } }

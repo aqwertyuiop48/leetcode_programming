@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2017 lang=kotlin */
+class Solution { fun gridGame(grid: Array<IntArray>) = grid[0].map { it.toLong() }.sum().let { totalTop -> (grid[0].indices).fold(Triple(totalTop, 0L, Long.MAX_VALUE)) { (top, bot, res), i -> Triple(top - grid[0][i], bot + grid[1][i], minOf(res, maxOf(top - grid[0][i], bot))) }.third } }

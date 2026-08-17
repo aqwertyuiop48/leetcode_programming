@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3527 lang=kotlin
+ *
+ * [3527] Find the Most Common Response
+ */
+
+class Solution { fun findCommonResponse(responses: List<List<String>>): String = responses.flatMap { it.toSet() }.groupingBy { it }.eachCount().entries.maxWithOrNull(compareBy<Map.Entry<String, Int>> { it.value }.thenByDescending { it.key })?.key.orEmpty() }

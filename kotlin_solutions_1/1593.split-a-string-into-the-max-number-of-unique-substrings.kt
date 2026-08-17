@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1593 lang=kotlin
+ *
+ * [1593] Split a String Into the Max Number of Unique Substrings
+ */
+
+class Solution { fun maxUniqueSplit(s: String): Int = DeepRecursiveFunction<Pair<Int, Set<String>>, Int> { (start, seen) -> if (start == s.length) seen.size else (start + 1..s.length).maxOfOrNull { end -> s.substring(start, end).let { sub -> if (sub in seen) 0 else callRecursive(end to (seen + sub)) } } ?: 0 }(0 to emptySet()) }

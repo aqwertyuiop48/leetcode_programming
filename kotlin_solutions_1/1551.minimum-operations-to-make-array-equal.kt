@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1551 lang=kotlin
+ *
+ * [1551] Minimum Operations to Make Array Equal
+ */
+
+class Solution { fun minOperations(n: Int): Int = n * n / 4 }

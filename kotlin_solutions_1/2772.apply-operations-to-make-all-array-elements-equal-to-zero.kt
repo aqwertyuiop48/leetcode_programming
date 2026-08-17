@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2772 lang=kotlin */
+class Solution { fun checkArray(nums: IntArray, k: Int): Boolean = IntArray(nums.size + 1).let { diff -> (0 until nums.size).fold(0 to true) { (cur, ok), i -> if (!ok) 0 to false else (cur + diff[i]).let { c -> (nums[i] - c).let { needed -> if (needed < 0) 0 to false else if (needed == 0) c to true else if (i + k > nums.size) 0 to false else diff.set(i + k, diff[i + k] - needed).let { (c + needed) to true } } } }.second } }

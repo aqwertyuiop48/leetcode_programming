@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2321 lang=kotlin */
+class Solution { fun maximumsSplicedArray(nums1: IntArray, nums2: IntArray): Int = listOf(nums1 to nums2, nums2 to nums1).maxOf { (a, b) -> a.sum() + b.indices.fold(0 to 0) { (cur, mx), i -> (if (cur + b[i] - a[i] > 0) cur + b[i] - a[i] else 0).let { it to maxOf(mx, it) } }.second } }

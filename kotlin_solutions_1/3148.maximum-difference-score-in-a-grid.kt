@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3148 lang=kotlin
+ *
+ * [3148] Maximum Difference Score in a Grid
+ */
+
+class Solution { fun maxScore(grid: List<List<Int>>): Int = Array(grid.size) { IntArray(grid[0].size) }.let { minG -> grid.indices.flatMap { r -> grid[0].indices.map { c -> minOf(if (r > 0) minG[r - 1][c] else Int.MAX_VALUE, if (c > 0) minG[r][c - 1] else Int.MAX_VALUE).let { prev -> minOf(grid[r][c], prev).also { minG[r][c] = it }.let { if (r > 0 || c > 0) grid[r][c] - prev else Int.MIN_VALUE } } } }.maxOrNull()!! } }

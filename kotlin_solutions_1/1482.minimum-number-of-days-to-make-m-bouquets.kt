@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1482 lang=kotlin
+ *
+ * [1482] Minimum Number of Days to Make m Bouquets
+ */
+
+class Solution { fun minDays(bloomDay: IntArray, m: Int, k: Int): Int = if (m.toLong() * k > bloomDay.size) -1 else generateSequence(1 to 1_000_000_000) { (l, h) -> if (l <= h) ((l + h) / 2).let { mid -> bloomDay.fold(0 to 0) { (bouquets, count), day -> if (day <= mid) (if (count + 1 == k) (bouquets + 1) to 0 else bouquets to (count + 1)) else bouquets to 0 }.first.let { b -> if (b >= m) l to (mid - 1) else (mid + 1) to h } } else null }.last().first }

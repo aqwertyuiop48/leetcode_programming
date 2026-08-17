@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=929 lang=kotlin
+ *
+ * [929] Unique Email Addresses
+ */
+
+class Solution { fun numUniqueEmails(emails: Array<String>): Int = emails.map { it.split("@").let { (l, r) -> "${l.substringBefore("+").replace(".", "")}@$r" } }.distinct().size }

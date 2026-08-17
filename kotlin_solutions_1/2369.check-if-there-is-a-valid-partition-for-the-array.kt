@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2369 lang=kotlin */
+class Solution { fun validPartition(nums: IntArray): Boolean = BooleanArray(nums.size + 1).apply { this[0] = true }.let { dp -> nums.indices.drop(1).forEach { i -> if ((nums[i] == nums[i - 1] && dp[i - 1]) || (i >= 2 && nums[i] == nums[i - 1] && nums[i - 1] == nums[i - 2] && dp[i - 2]) || (i >= 2 && nums[i] == nums[i - 1] + 1 && nums[i - 1] == nums[i - 2] + 1 && dp[i - 2])) dp[i + 1] = true }.run { dp[nums.size] } } }

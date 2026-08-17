@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1880 lang=kotlin */
+class Solution { fun isSumEqual(firstWord: String, secondWord: String, targetWord: String): Boolean = listOf(firstWord, secondWord, targetWord).map { word -> word.fold(0) { acc, c -> acc * 10 + (c - 'a') } }.let { it[0] + it[1] == it[2] } }

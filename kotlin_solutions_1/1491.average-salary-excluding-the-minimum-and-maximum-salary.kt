@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1491 lang=kotlin */ class Solution { fun average(salary: IntArray): Double = salary.sorted().drop(1).dropLast(1).average() }

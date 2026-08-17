@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1592 lang=kotlin
+ *
+ * [1592] Rearrange Spaces Between Words
+ */
+
+class Solution { fun reorderSpaces(text: String): String = text.count { it == ' ' }.let { spaces -> text.trim().split(Regex("\\s+")).filter { it.isNotEmpty() }.let { words -> if (words.size == 1) words[0] + " ".repeat(spaces) else words.joinToString(" ".repeat(spaces / (words.size - 1))) + " ".repeat(spaces % (words.size - 1)) } } }

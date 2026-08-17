@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2032 lang=kotlin */
+class Solution { fun twoOutOfThree(n1: IntArray, n2: IntArray, n3: IntArray): List<Int> = (n1.distinct() + n2.distinct() + n3.distinct()).groupBy { it }.filter { it.value.size >= 2 }.keys.toList() }

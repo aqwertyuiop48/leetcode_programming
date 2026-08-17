@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1979 lang=kotlin */
+class Solution { fun findGCD(nums: IntArray): Int = nums.minOrNull()!!.let { min -> nums.maxOrNull()!!.let { max -> (object : (Int, Int) -> Int { override fun invoke(a: Int, b: Int): Int = if (b == 0) a else invoke(b, a % b) })(max, min) } } }

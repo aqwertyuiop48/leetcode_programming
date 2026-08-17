@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2731 lang=kotlin */
+class Solution { fun sumDistance(nums: IntArray, s: String, d: Int): Int = nums.indices.map { i -> nums[i].toLong() + if (s[i] == 'R') d.toLong() else -d.toLong() }.sorted().let { p -> p.foldIndexed(0L) { i, acc, v -> (acc + (v % 1000000007) * (2L * i - p.size + 1)) % 1000000007 }.let { ((it + 1000000007) % 1000000007).toInt() } } }

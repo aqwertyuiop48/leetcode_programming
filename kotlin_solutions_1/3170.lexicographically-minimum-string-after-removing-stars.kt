@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3170 lang=kotlin */
+class Solution { fun clearStars(s: String): String = Array(26) { java.util.ArrayDeque<Int>() }.let { stacks -> s.indices.forEach { i -> if (s[i] == '*') (0..25).firstOrNull { stacks[it].isNotEmpty() }?.let { stacks[it].pop() } else stacks[s[i] - 'a'].push(i) }.run { stacks.flatMap { it }.sorted().map { s[it] }.joinToString("") } } }

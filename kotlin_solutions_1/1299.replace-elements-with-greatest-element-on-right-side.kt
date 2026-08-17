@@ -1,0 +1,12 @@
+/*
+ * @lc app=leetcode id=1299 lang=kotlin
+ *
+ * [1299] Replace Elements with Greatest Element on Right Side
+ */
+
+class Solution {
+    fun replaceElements(arr: IntArray): IntArray =
+        (arr.size - 1 downTo 0).fold(-1) { maxSoFar, i ->
+            arr[i].also { arr[i] = maxSoFar }.let { maxOf(maxSoFar, it) }
+        }.let { arr }
+}

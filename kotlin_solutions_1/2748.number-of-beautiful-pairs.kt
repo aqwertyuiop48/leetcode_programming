@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2748 lang=kotlin */
+class Solution { fun countBeautifulPairs(nums: IntArray): Int = nums.indices.sumOf { i -> (i + 1 until nums.size).count { j -> (nums[i].toString()[0] - '0').let { f -> (nums[j] % 10).let { l -> (1..9).filter { k -> f % k == 0 && l % k == 0 }.maxOrNull() == 1 } } } } }

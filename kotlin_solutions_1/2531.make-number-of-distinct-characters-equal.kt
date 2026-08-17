@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2531 lang=kotlin */
+class Solution { fun isItPossible(word1: String, word2: String): Boolean = IntArray(26).apply { word1.forEach { this[it - 'a']++ } }.let { c1 -> IntArray(26).apply { word2.forEach { this[it - 'a']++ } }.let { c2 -> (0..25).any { i -> (0..25).any { j -> (c1[i] > 0 && c2[j] > 0) && c1.also { it[i]-- }.also { it[j]++ }.run { c2.also { it[j]-- }.also { it[i]++ }.run { (c1.count { it > 0 } == c2.count { it > 0 }).also { c1.also { it[i]++ }.also { it[j]-- }.run { c2.also { it[j]++ }.also { it[i]-- } } } } } } } } } }

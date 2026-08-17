@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1092 lang=kotlin
+ *
+ * [1092] Shortest Common Supersequence 
+ */
+
+class Solution {
+    fun shortestCommonSupersequence(str1: String, str2: String): String = Array(str1.length + 1) { IntArray(str2.length + 1) }.also { dp -> (1..str1.length).forEach { i -> (1..str2.length).forEach { j -> dp[i].set(j, if (str1[i - 1] == str2[j - 1]) 1 + dp[i - 1][j - 1] else maxOf(dp[i - 1][j], dp[i][j - 1])) } } }.let { dp -> intArrayOf(str1.length, str2.length).let { v -> StringBuilder().also { sb -> run { while (v[0] > 0 && v[1] > 0) if (str1[v[0] - 1] == str2[v[1] - 1]) sb.append(str1[v[0] - 1]).run { v[0]-- }.run { v[1]-- } else if (dp[v[0] - 1][v[1]] > dp[v[0]][v[1] - 1]) sb.append(str1[v[0] - 1]).run { v[0]-- } else sb.append(str2[v[1] - 1]).run { v[1]-- } }.run { while (v[0] > 0) sb.append(str1[v[0] - 1]).run { v[0]-- } }.run { while (v[1] > 0) sb.append(str2[v[1] - 1]).run { v[1]-- } } }.reverse().toString() } }
+}

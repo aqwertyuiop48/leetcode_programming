@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2399 lang=kotlin */
+class Solution { fun checkDistances(s: String, dist: IntArray): Boolean = (0..25).filter { s.contains('a' + it) }.all { s.lastIndexOf('a' + it) - s.indexOf('a' + it) - 1 == dist[it] } }

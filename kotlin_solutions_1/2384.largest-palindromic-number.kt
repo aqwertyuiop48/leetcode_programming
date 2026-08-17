@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2384 lang=kotlin */
+class Solution { fun largestPalindromic(num: String): String = num.groupingBy { it }.eachCount().let { c -> (9 downTo 0).map { it.toString() }.let { d -> d.map { it.repeat((c[it[0]] ?: 0) / 2) }.joinToString("").let { hwz -> hwz.dropWhile { it == '0' }.let { h -> d.firstOrNull { (c[it[0]] ?: 0) - (if (h.isEmpty() && it == "0") 0 else (c[it[0]] ?: 0) / 2 * 2) > 0 }.let { mid -> (h + (mid ?: "") + h.reversed()).let { res -> if (res.isEmpty()) "0" else res } } } } } } }

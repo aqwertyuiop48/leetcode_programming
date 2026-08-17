@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2645 lang=kotlin */
+class Solution { fun addMinimum(word: String): Int = word.indices.fold(1) { acc, i -> if (i > 0 && word[i] <= word[i - 1]) acc + 1 else acc }.let { it * 3 - word.length } }

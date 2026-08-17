@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1659 lang=kotlin
+ *
+ * [1659] Maximize Grid Happiness
+ */
+
+class Solution { fun getMaxGridHappiness(m: Int, n: Int, introvertsCount: Int, extrovertsCount: Int): Int = (if (m >= n) m to n else n to m).let { (R, C) -> Math.pow(3.0, (C - 1).toDouble()).toInt().let { powC1 -> (powC1 * 3).let { powC -> IntArray(26 * 7 * 7 * powC) { -1 }.let { memo -> { t1: Int, t2: Int -> if (t1 == 0 || t2 == 0) 0 else (if (t1 == 1) -30 else 20) + (if (t2 == 1) -30 else 20) }.let { calc -> DeepRecursiveFunction<Triple<Int, Pair<Int, Int>, Int>, Int> { (pos, ie, mask) -> ie.let { (I, E) -> if (pos == R * C || (I == 0 && E == 0)) 0 else memo[pos * 49 * powC + I * 7 * powC + E * powC + mask].let { cached -> if (cached != -1) cached else (callRecursive(Triple(pos + 1, I to E, (mask % powC1) * 3))).let { option0 -> (if (I > 0) maxOf(option0, 120 + calc(1, mask / powC1) + calc(1, if (pos % C > 0) mask % 3 else 0) + callRecursive(Triple(pos + 1, (I - 1) to E, (mask % powC1) * 3 + 1))) else option0).let { option1 -> (if (E > 0) maxOf(option1, 40 + calc(2, mask / powC1) + calc(2, if (pos % C > 0) mask % 3 else 0) + callRecursive(Triple(pos + 1, I to (E - 1), (mask % powC1) * 3 + 2))) else option1).also { memo[pos * 49 * powC + I * 7 * powC + E * powC + mask] = it } } } } } }.invoke(Triple(0, introvertsCount to extrovertsCount, 0)) } } } } } }

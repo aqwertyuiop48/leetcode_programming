@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1359 lang=kotlin */
+class Solution { fun countOrders(n: Int): Int = (1..n).fold(1L) { ans, i -> (ans * (2 * i - 1) * i) % 1_000_000_007 }.toInt() }

@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1605 lang=kotlin
+ *
+ * [1605] Find Valid Matrix Given Row and Column Sums
+ */
+
+class Solution {
+    fun restoreMatrix(rowSum: IntArray, colSum: IntArray): Array<IntArray> = Array(rowSum.size) { i -> IntArray(colSum.size) { j -> minOf(rowSum[i], colSum[j]).also { rowSum[i] -= it }.also { colSum[j] -= it } } }
+}

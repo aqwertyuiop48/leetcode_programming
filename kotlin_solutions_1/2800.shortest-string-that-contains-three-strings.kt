@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2800 lang=kotlin */
+class Solution { fun minimumString(a: String, b: String, c: String): String = { s1: String, s2: String -> if (s1.contains(s2)) s1 else (minOf(s1.length, s2.length) downTo 0).first { s1.endsWith(s2.take(it)) }.let { s1 + s2.drop(it) } }.let { m -> listOf(a, b, c).let { s -> listOf(listOf(0,1,2), listOf(0,2,1), listOf(1,0,2), listOf(1,2,0), listOf(2,0,1), listOf(2,1,0)).map { p -> p.map { s[it] }.reduce { acc, next -> m(acc, next) } }.minWithOrNull(compareBy<String> { it.length }.thenBy { it })!! } } }

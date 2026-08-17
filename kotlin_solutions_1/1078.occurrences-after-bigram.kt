@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1078 lang=kotlin
+ *
+ * [1078] Occurrences After Bigram
+ */
+
+class Solution {
+    fun findOcurrences(text: String, first: String, second: String): Array<String> = text.split(" ").let { words -> (0..words.size - 3).filter { words[it] == first && words[it + 1] == second }.map { words[it + 2] } }.toTypedArray()
+}

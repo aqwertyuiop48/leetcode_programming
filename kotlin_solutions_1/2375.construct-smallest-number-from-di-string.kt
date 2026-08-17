@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2375 lang=kotlin */
+class Solution { fun smallestNumber(pattern: String): String = (0..pattern.length).fold("" to "") { (res, curr), i -> if (i == pattern.length || pattern[i] == 'I') (res + (curr + (i + 1)).reversed()) to "" else res to (curr + (i + 1)) }.first }

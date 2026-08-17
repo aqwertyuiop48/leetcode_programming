@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1353 lang=kotlin */
+class Solution { fun maxEvents(events: Array<IntArray>): Int = events.sortedBy { it[0] }.let { ev -> java.util.PriorityQueue<Int>().let { pq -> IntArray(3).let { v -> run { while (v[0] < ev.size || pq.isNotEmpty()) (if (pq.isEmpty()) v[1] = maxOf(v[1], ev[v[0]][0]) else Unit).also { while (v[0] < ev.size && ev[v[0]][0] <= v[1]) pq.offer(ev[v[0]++][1]) }.also { pq.poll() }.also { v[2]++ }.also { v[1]++ }.also { while (pq.isNotEmpty() && pq.peek() < v[1]) pq.poll() } }.let { v[2] } } } } }

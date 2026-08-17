@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2221 lang=kotlin */
+class Solution { fun triangularSum(nums: IntArray): Int = (nums.size downTo 2).fold(nums) { acc, size -> IntArray(size - 1) { i -> (acc[i] + acc[i + 1]) % 10 } }[0] }

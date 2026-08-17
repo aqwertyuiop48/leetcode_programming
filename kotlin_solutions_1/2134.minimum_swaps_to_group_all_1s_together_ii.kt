@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2134 lang=kotlin */
+class Solution { fun minSwaps(nums: IntArray): Int = nums.count { it == 1 }.let { k -> if (k == 0) 0 else (nums + nums).let { d -> intArrayOf((0 until k).sumOf { d[it] }).let { cur -> (0 until nums.size).fold(cur[0]) { maxW, i -> (cur[0] + d[i + k] - d[i]).also { cur[0] = it }.let { maxOf(maxW, it) } }.let { k - it } } } } }

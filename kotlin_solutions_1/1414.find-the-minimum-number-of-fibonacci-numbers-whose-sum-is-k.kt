@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1414 lang=kotlin
+ *
+ * [1414] Find the Minimum Number of Fibonacci Numbers Whose Sum Is K
+ */
+
+class Solution { fun findMinFibonacciNumbers(k: Int): Int = generateSequence(1 to 1) { (a, b) -> b to a + b }.map { it.first }.takeWhile { it <= k }.toList().reversed().fold(k to 0) { (rem, count), fib -> if (fib <= rem) rem - fib to count + 1 else rem to count }.second }

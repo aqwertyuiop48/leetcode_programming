@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1310 lang=kotlin
+ *
+ * [1310] XOR Queries of a Subarray
+ */
+class Solution { fun xorQueries(arr: IntArray, queries: Array<IntArray>): IntArray = arr.fold(intArrayOf(0)) { acc, x -> acc + (acc.last() xor x) }.let { pref -> IntArray(queries.size) { i -> pref[queries[i][1] + 1] xor pref[queries[i][0]] } } }

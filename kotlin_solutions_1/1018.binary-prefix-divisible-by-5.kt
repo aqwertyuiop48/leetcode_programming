@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1018 lang=kotlin
+ *
+ * [1018] Binary Prefix Divisible By 5
+ */
+
+class Solution {
+    fun prefixesDivBy5(nums: IntArray): List<Boolean> = nums.runningFold(0) { acc, n -> (acc * 2 + n) % 5 }.drop(1).map { it == 0 }
+}

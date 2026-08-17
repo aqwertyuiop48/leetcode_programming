@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2799 lang=kotlin */
+class Solution { fun countCompleteSubarrays(nums: IntArray): Int = nums.toSet().size.let { k -> nums.indices.fold(Triple(0, 0, mutableMapOf<Int, Int>())) { (l, res, m), r -> m.also { it[nums[r]] = it.getOrDefault(nums[r], 0) + 1 }.let { nm -> generateSequence(l) { it + 1 }.takeWhile { nm.size == k }.onEach { cl -> nm[nums[cl]] = (nm[nums[cl]]!! - 1).also { if (it == 0) nm.remove(nums[cl]) } }.lastOrNull()?.let { Triple(it + 1, res + it + 1, nm) } ?: Triple(l, res + l, nm) } }.second } }

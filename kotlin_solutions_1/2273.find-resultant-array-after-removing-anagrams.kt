@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2273 lang=kotlin */
+class Solution { fun removeAnagrams(words: Array<String>): List<String> = words.indices.filter { i -> i == 0 || words[i].toCharArray().sorted().joinToString("") != words[i - 1].toCharArray().sorted().joinToString("") }.map { words[it] } }

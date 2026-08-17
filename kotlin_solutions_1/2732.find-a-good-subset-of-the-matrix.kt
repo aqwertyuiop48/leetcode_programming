@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2732 lang=kotlin */
+class Solution { fun goodSubsetofBinaryMatrix(grid: Array<IntArray>): List<Int> = grid.map { r -> r.indices.fold(0) { a, c -> a or (r[c] shl c) } }.let { m -> m.indexOfFirst { it == 0 }.let { if (it != -1) listOf(it) else m.indices.firstNotNullOfOrNull { i -> (i + 1 until m.size).find { j -> (m[i] and m[j]) == 0 }?.let { j -> listOf(i, j) } } ?: emptyList() }.sorted() } }

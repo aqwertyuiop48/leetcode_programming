@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1318 lang=kotlin
+ *
+ * [1318] Minimum Flips to Make a OR b Equal to c
+ */
+
+class Solution { fun minFlips(a: Int, b: Int, c: Int): Int = (a and c.inv()).countOneBits() + (b and c.inv()).countOneBits() + ((a or b).inv() and c).countOneBits() }

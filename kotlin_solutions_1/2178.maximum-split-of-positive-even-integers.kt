@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2178 lang=kotlin */
+class Solution { fun maximumEvenSplit(finalSum: Long): List<Long> = if (finalSum % 2 != 0L) emptyList() else mutableListOf<Long>().apply { longArrayOf(finalSum, 2L).also { v -> while (v[0] >= v[1]) v[0] = (v[0] - v[1]).also { add(v[1]) }.also { v[1] = v[1] + 2 } }.also { v -> if (v[0] > 0L) set(size - 1, last() + v[0]) } } }

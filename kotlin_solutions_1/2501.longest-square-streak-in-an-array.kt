@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2501 lang=kotlin */
+class Solution { fun longestSquareStreak(nums: IntArray): Int = nums.toSet().let { s -> nums.maxOf { n -> generateSequence(n.toLong()) { it * it }.takeWhile { it <= 100000 && it.toInt() in s }.count() }.let { if (it < 2) -1 else it } } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2181 lang=kotlin */
+class Solution { fun mergeNodes(head: ListNode?): ListNode? = generateSequence(head) { it.next }.filter { it.`val` == 0 }.windowed(2).map { (a, b) -> ListNode(generateSequence(a.next) { it.next }.takeWhile { it != b }.sumOf { it.`val` }) }.toList().let { list -> list.forEachIndexed { i, node -> if (i < list.size - 1) node.next = list[i + 1] }.let { if (list.isEmpty()) null else list[0] } } }

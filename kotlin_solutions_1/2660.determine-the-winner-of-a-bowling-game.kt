@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2660 lang=kotlin */
+class Solution { fun isWinner(p1: IntArray, p2: IntArray): Int = p1.indices.sumOf { i -> p1[i] * (if ((i > 0 && p1[i-1] == 10) || (i > 1 && p1[i-2] == 10)) 2 else 1) }.let { s1 -> p2.indices.sumOf { i -> p2[i] * (if ((i > 0 && p2[i-1] == 10) || (i > 1 && p2[i-2] == 10)) 2 else 1) }.let { s2 -> if (s1 > s2) 1 else if (s2 > s1) 2 else 0 } } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2215 lang=kotlin */
+class Solution { fun findDifference(nums1: IntArray, nums2: IntArray): List<List<Int>> = nums1.toSet().let { s1 -> nums2.toSet().let { s2 -> listOf(s1.filter { it !in s2 }, s2.filter { it !in s1 }) } } }

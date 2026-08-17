@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3226 lang=kotlin */
+class Solution { fun minChanges(n: Int, k: Int): Int = if ((n and k) == k) Integer.bitCount(n xor k) else -1 }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2418 lang=kotlin */
+class Solution { fun sortPeople(names: Array<String>, heights: IntArray): Array<String> = names.indices.sortedByDescending { heights[it] }.map { names[it] }.toTypedArray() }

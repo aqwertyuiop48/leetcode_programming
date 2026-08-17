@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3178 lang=kotlin */
+class Solution { fun numberOfChild(n: Int, k: Int): Int = (k / (n - 1)).let { r -> (k % (n - 1)).let { rem -> if (r % 2 == 0) rem else n - 1 - rem } } }

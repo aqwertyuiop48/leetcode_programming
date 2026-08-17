@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2319 lang=kotlin */
+class Solution { fun checkXMatrix(grid: Array<IntArray>): Boolean = grid.indices.all { i -> grid[i].indices.all { j -> if (i == j || i + j == grid.size - 1) grid[i][j] != 0 else grid[i][j] == 0 } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1317 lang=kotlin
+ *
+ * [1317] Convert Integer to the Sum of Two No-Zero Integers
+ */
+
+class Solution { fun getNoZeroIntegers(n: Int): IntArray = (1..<n).first { '0' !in "$it${n - it}" }.let { intArrayOf(it, n - it) } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2027 lang=kotlin */
+class Solution { fun minimumMoves(s: String): Int = s.indices.fold(0 to -1) { (m, l), i -> if (s[i] == 'X' && i > l) (m + 1) to (i + 2) else m to l }.first }

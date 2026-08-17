@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2710 lang=kotlin */
+class Solution { fun removeTrailingZeros(num: String): String = num.replace(Regex("0+$"), "") }

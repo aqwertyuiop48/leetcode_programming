@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3046 lang=kotlin
+ *
+ * [3046] Split the Array
+ */
+
+class Solution { fun isPossibleToSplit(nums: IntArray): Boolean = nums.groupBy { it }.all { it.value.size <= 2 } }

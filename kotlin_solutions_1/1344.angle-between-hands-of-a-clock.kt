@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1344 lang=kotlin */
+class Solution { fun angleClock(hour: Int, minutes: Int): Double = Math.abs((hour % 12) * 30.0 + minutes * 0.5 - minutes * 6.0).let { Math.min(it, 360.0 - it) } }

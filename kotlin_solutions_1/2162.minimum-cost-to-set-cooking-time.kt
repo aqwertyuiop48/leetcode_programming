@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2162 lang=kotlin */
+class Solution {
+    fun minCostSetTime(startAt: Int, moveCost: Int, pushCost: Int, targetSeconds: Int) = listOfNotNull((targetSeconds / 60 to targetSeconds % 60), (targetSeconds / 60 - 1).let { it to targetSeconds % 60 + 60 }.takeIf { it.first >= 0 }).filter { it.first <= 99 && it.second <= 99 }.map { (m, s) -> (if (m == 0) "$s" else "$m${s.toString().padStart(2, '0')}").map { it - '0' }.fold(startAt to 0) { (curr, cost), digit -> digit to (cost + pushCost + (if (digit != curr) moveCost else 0)) }.second }.minOrNull() ?: 0
+}

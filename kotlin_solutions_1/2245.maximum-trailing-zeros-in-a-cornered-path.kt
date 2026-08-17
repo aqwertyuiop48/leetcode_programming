@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2245 lang=kotlin
+ *
+ * [2245] Maximum Trailing Zeros in a Cornered Path
+ */
+
+class Solution { fun maxTrailingZeros(grid: Array<IntArray>): Int = grid.size.let { m -> grid[0].size.let { n -> Array(m) { i -> Array(n) { j -> grid[i][j].let { v -> Pair(generateSequence(v) { if (it % 2 == 0) it / 2 else null }.count() - 1, generateSequence(v) { if (it % 5 == 0) it / 5 else null }.count() - 1) } } }.let { f -> Array(m) { i -> IntArray(n + 1).apply { (0 until n).forEach { j -> this[j + 1] = this[j] + f[i][j].first } } }.let { r2 -> Array(m) { i -> IntArray(n + 1).apply { (0 until n).forEach { j -> this[j + 1] = this[j] + f[i][j].second } } }.let { r5 -> Array(n) { j -> IntArray(m + 1).apply { (0 until m).forEach { i -> this[i + 1] = this[i] + f[i][j].first } } }.let { c2 -> Array(n) { j -> IntArray(m + 1).apply { (0 until m).forEach { i -> this[i + 1] = this[i] + f[i][j].second } } }.let { c5 -> (0 until m).maxOf { i -> (0 until n).maxOf { j -> f[i][j].let { (f2, f5) -> r2[i][j + 1].let { L2 -> r5[i][j + 1].let { L5 -> (r2[i][n] - r2[i][j]).let { R2 -> (r5[i][n] - r5[i][j]).let { R5 -> c2[j][i + 1].let { T2 -> c5[j][i + 1].let { T5 -> (c2[j][m] - c2[j][i]).let { B2 -> (c5[j][m] - c5[j][i]).let { B5 -> maxOf(minOf(T2 + L2 - f2, T5 + L5 - f5), minOf(T2 + R2 - f2, T5 + R5 - f5), minOf(B2 + L2 - f2, B5 + L5 - f5), minOf(B2 + R2 - f2, B5 + R5 - f5)) } } } } } } } } } } } } } } } } }

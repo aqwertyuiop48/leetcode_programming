@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2514 lang=kotlin */
+class Solution { fun countAnagrams(s: String) = 1000000007L.let { M -> LongArray(s.length + 1).apply { this[0] = 1L }.also { f -> (1..s.length).forEach { i -> f[i] = (f[i - 1] * i) % M } }.let { f -> s.split(" ").fold(1L) { acc, word -> (acc * word.groupingBy { it }.eachCount().values.fold(f[word.length]) { a, c -> (a * java.math.BigInteger.valueOf(f[c]).modInverse(java.math.BigInteger.valueOf(M)).toLong()) % M }) % M }.toInt() } } }

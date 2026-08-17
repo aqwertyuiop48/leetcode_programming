@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2962 lang=kotlin */
+class Solution { fun countSubarrays(nums: IntArray, k: Int): Long = nums.maxOrNull()!!.let { mx -> nums.indices.filter { nums[it] == mx }.let { pos -> (k - 1 until pos.size).fold(0L) { acc, i -> acc + (pos[i - k + 1] + 1).toLong() * ((if (i + 1 < pos.size) pos[i + 1] else nums.size) - pos[i]) } } } }

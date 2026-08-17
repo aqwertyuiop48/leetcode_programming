@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1502 lang=kotlin */ class Solution { fun canMakeArithmeticProgression(arr: IntArray): Boolean = arr.sorted().let { s -> s.zipWithNext { a, b -> b - a }.distinct().size <= 1 } }

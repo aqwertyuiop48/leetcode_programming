@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2064 lang=kotlin */
+class Solution { fun minimizedMaximum(n: Int, q: IntArray): Int = kotlin.DeepRecursiveFunction<Triple<Int, Int, Int>, Int> { (l, r, a) -> if (l <= r) ((l + r) / 2).let { m -> if (q.sumOf { (it.toLong() + m - 1) / m } <= n) callRecursive(Triple(l, m - 1, m)) else callRecursive(Triple(m + 1, r, a)) } else a }.invoke(Triple(1, 100000, 0)) }

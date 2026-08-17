@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3040 lang=kotlin
+ *
+ * [3040] Maximum Number of Operations With the Same Score II
+ */
+
+class Solution { fun maxOperations(nums: IntArray): Int = listOf(nums[0] + nums[1], nums[nums.size - 2] + nums[nums.size - 1], nums[0] + nums[nums.size - 1]).maxOf { target -> Array(nums.size) { IntArray(nums.size) { -1 } }.let { dp -> DeepRecursiveFunction<Pair<Int, Int>, Int> { (i, j) -> if (j - i < 1) 0 else if (dp[i][j] != -1) dp[i][j] else maxOf(if (nums[i] + nums[i + 1] == target) 1 + callRecursive(i + 2 to j) else 0, if (nums[j - 1] + nums[j] == target) 1 + callRecursive(i to j - 2) else 0, if (nums[i] + nums[j] == target) 1 + callRecursive(i + 1 to j - 1) else 0).also { dp[i][j] = it } }(0 to nums.size - 1) } } }

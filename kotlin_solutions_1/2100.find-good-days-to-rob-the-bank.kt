@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2100 lang=kotlin */
+class Solution { fun goodDaysToRobBank(security: IntArray, time: Int): List<Int> = IntArray(security.size).let { pre -> security.indices.fold(0) { c, i -> (if (i > 0 && security[i] <= security[i - 1]) c + 1 else 0).also { pre[i] = it } }.let { IntArray(security.size).let { suf -> security.indices.reversed().fold(0) { c, i -> (if (i < security.size - 1 && security[i] <= security[i + 1]) c + 1 else 0).also { suf[i] = it } }.let { security.indices.filter { pre[it] >= time && suf[it] >= time } } } } } }

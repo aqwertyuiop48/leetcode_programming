@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2136 lang=kotlin */
+class Solution { fun earliestFullBloom(plantTime: IntArray, growTime: IntArray): Int = plantTime.indices.sortedByDescending { growTime[it] }.fold(0 to 0) { (p, b), i -> (p + plantTime[i]) to maxOf(b, p + plantTime[i] + growTime[i]) }.second }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1725 lang=kotlin
+ *
+ * [1725] Number Of Rectangles That Can Form The Largest Square
+ */
+
+class Solution { fun countGoodRectangles(rectangles: Array<IntArray>): Int = rectangles.map { minOf(it[0], it[1]) }.let { sides -> sides.count { it == sides.maxOrNull() } } }

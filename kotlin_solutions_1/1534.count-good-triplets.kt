@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1534 lang=kotlin
+ *
+ * [1534] Count Good Triplets
+ */
+
+class Solution { fun countGoodTriplets(arr: IntArray, a: Int, b: Int, c: Int): Int = (0 until arr.size - 2).sumOf { i -> (i + 1 until arr.size - 1).filter { j -> kotlin.math.abs(arr[i] - arr[j]) <= a }.sumOf { j -> (j + 1 until arr.size).count { k -> kotlin.math.abs(arr[j] - arr[k]) <= b && kotlin.math.abs(arr[i] - arr[k]) <= c } } } }

@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1779 lang=kotlin
+ *
+ * [1779] Find Nearest Point That Has the Same X or Y Coordinate
+ */
+class Solution { fun nearestValidPoint(x: Int, y: Int, points: Array<IntArray>): Int = points.indices.filter { points[it][0] == x || points[it][1] == y }.minByOrNull { kotlin.math.abs(x - points[it][0]) + kotlin.math.abs(y - points[it][1]) } ?: -1 }

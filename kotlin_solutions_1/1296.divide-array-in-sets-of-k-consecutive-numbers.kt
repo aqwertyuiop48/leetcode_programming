@@ -1,0 +1,19 @@
+/*
+ * @lc app=leetcode id=1296 lang=kotlin
+ *
+ * [1296] Divide Array in Sets of K Consecutive Numbers
+ */
+
+class Solution {
+    fun isPossibleDivide(nums: IntArray, k: Int): Boolean =
+        (nums.size % k == 0) && java.util.TreeMap<Int, Int>().run {
+            nums.forEach { compute(it) { _, v -> (v ?: 0) + 1 } }
+            keys.all { first ->
+                (this[first] ?: 0).let { count ->
+                    count == 0 || (0 until k).all { i ->
+                        (this[first + i] ?: 0) >= count && compute(first + i) { _, v -> (v ?: 0) - count } != null
+                    }
+                }
+            }
+        }
+}

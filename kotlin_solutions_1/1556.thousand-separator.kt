@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1556 lang=kotlin
+ *
+ * [1556] Thousand Separator
+ */
+
+class Solution { fun thousandSeparator(n: Int): String = n.toString().let { s -> s.indices.joinToString("") { if (it != 0 && (s.length - it) % 3 == 0) ".${s[it]}" else "${s[it]}" } } }

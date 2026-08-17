@@ -1,0 +1,5 @@
+/* @lc app=leetcode id=2502 lang=kotlin */
+class Allocator(val n: Int, val m: IntArray = IntArray(n)) {
+fun allocate(s: Int, id: Int): Int = (0..n-s).firstOrNull { i -> (i until i+s).all { m[it] == 0 } }?.also { start -> (0 until s).forEach { m[start+it] = id } } ?: -1
+fun freeMemory(id: Int): Int = (0 until n).count { (m[it] == id).also { match -> if (match) m[it] = 0 } }
+}

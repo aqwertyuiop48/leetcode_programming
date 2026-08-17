@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3090 lang=kotlin */
+class Solution { fun maximumLengthSubstring(s: String): Int = IntArray(26).let { cnt -> intArrayOf(0, 0).let { st -> s.indices.maxOf { right -> cnt[s[right] - 'a']++.let { while (cnt[s[right] - 'a'] > 2) cnt[s[st[0]++] - 'a']-- }.let { right - st[0] + 1 } } } } }

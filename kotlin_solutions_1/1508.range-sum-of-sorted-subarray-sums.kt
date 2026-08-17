@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1508 lang=kotlin
+ *
+ * [1508] Range Sum of Sorted Subarray Sums
+ */
+
+class Solution { fun rangeSum(nums: IntArray, n: Int, left: Int, right: Int): Int = nums.indices.flatMap { i -> (i until n).scan(0) { sum, j -> sum + nums[j] }.drop(1) }.sorted().subList(left - 1, right).fold(0L) { acc, x -> (acc + x) % 1000000007 }.toInt() }

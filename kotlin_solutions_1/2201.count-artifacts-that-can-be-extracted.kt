@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2201 lang=kotlin */
+class Solution { fun digArtifacts(n: Int, artifacts: Array<IntArray>, dig: Array<IntArray>): Int = dig.map { it[0] to it[1] }.toSet().let { dug -> artifacts.count { art -> (art[0]..art[2]).all { r -> (art[1]..art[3]).all { c -> dug.contains(r to c) } } } } }

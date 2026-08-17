@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2781 lang=kotlin */
+class Solution { fun longestValidSubstring(word: String, forbidden: List<String>): Int = forbidden.toSet().let { set -> word.indices.reversed().fold(0 to word.length()) { acc, l -> (l + 1..minOf(l + 10, acc.second)).find { set.contains(word.substring(l, it)) }?.let { nr -> maxOf(acc.first, nr - 1 - l) to nr - 1 } ?: (maxOf(acc.first, acc.second - l) to acc.second) }.first } }

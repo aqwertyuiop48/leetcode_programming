@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2816 lang=kotlin */
+class Solution { fun doubleIt(head: ListNode?): ListNode? = (if (head?.`val`!! > 4) ListNode(0).apply { next = head } else head).let { h -> generateSequence(h) { it.next }.forEach { n -> n.`val` = (n.`val` * 2 % 10) + (if (n.next?.let { it.`val` > 4 } == true) 1 else 0) }.run { h } } }

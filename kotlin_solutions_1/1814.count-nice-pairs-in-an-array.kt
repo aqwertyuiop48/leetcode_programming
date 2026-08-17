@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1814 lang=kotlin */
+class Solution { fun countNicePairs(nums: IntArray): Int = nums.map { it - it.toString().reversed().toInt() }.groupBy { it }.values.sumOf { it.size.toLong().let { s -> s * (s - 1) / 2 } }.let { (it % 1000000007).toInt() } }

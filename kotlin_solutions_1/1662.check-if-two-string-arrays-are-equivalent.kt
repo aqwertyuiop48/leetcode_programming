@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1662 lang=kotlin
+ *
+ * [1662] Check If Two String Arrays are Equivalent
+ */
+
+class Solution { fun arrayStringsAreEqual(word1: Array<String>, word2: Array<String>): Boolean = word1.joinToString("") == word2.joinToString("") }

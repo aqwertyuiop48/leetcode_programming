@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1460 lang=kotlin
+ *
+ * [1460] Make Two Arrays Equal by Reversing Subarrays
+ */
+
+class Solution { fun canBeEqual(target: IntArray, arr: IntArray): Boolean = target.sorted() == arr.sorted() }

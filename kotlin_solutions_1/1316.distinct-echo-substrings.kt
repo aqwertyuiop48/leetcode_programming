@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1316 lang=kotlin
+ *
+ * [1316] Distinct Echo Substrings
+ */
+
+class Solution { fun distinctEchoSubstrings(text: String): Int = (1..text.length / 2).asSequence().flatMap { len -> (0..text.length - 2 * len).asSequence().filter { text.regionMatches(it, text, it + len, len) }.map { text.substring(it, it + 2 * len) } }.toSet().size }

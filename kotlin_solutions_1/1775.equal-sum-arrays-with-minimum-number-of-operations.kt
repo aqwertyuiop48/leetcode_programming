@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1775 lang=kotlin
+ *
+ * [1775] Equal Sum Arrays With Minimum Number of Operations
+ */
+class Solution { fun minOperations(nums1: IntArray, nums2: IntArray): Int = nums1.sum().let { s1 -> nums2.sum().let { s2 -> if (s1 == s2) 0 else (if (s1 > s2) nums1.map { it - 1 } + nums2.map { 6 - it } else nums2.map { it - 1 } + nums1.map { 6 - it }).sortedDescending().fold(IndexedValue(0, kotlin.math.abs(s1 - s2))) { acc, gain -> if (acc.value <= 0) acc else IndexedValue(acc.index + 1, acc.value - gain) }.let { if (it.value <= 0) it.index else -1 } } } }

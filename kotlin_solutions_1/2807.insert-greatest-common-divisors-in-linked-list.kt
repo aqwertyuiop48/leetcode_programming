@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2807 lang=kotlin */
+class Solution { fun insertGreatestCommonDivisors(head: ListNode?): ListNode? = head?.also { h -> { a: Int, b: Int -> generateSequence(a to b) { it.second to it.first % it.second }.first { it.second == 0 }.first }.let { gcd -> generateSequence(h) { it.next?.next }.forEach { c -> c.next?.let { n -> c.next = ListNode(gcd(c.`val`, n.`val`)).also { it.next = n } } } } } }

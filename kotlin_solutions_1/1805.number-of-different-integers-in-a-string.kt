@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1805 lang=kotlin */
+class Solution { fun numDifferentIntegers(word: String): Int = word.split(Regex("[A-Za-z]+")).filter { it.isNotEmpty() }.map { java.math.BigInteger(it) }.toSet().size }

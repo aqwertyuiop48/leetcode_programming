@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2770 lang=kotlin
+ *
+ * [2770] Maximum Number of Jumps to Reach the Last Index
+ */
+
+class Solution { fun maximumJumps(nums: IntArray, target: Int): Int = IntArray(nums.size) { if (it == 0) 0 else -1 }.apply { indices.forEach { j -> if (this[j] != -1) (j + 1 until nums.size).forEach { i -> if (Math.abs(nums[i] - nums[j]) <= target) this[i] = maxOf(this[i], this[j] + 1) } } }[nums.size - 1] }

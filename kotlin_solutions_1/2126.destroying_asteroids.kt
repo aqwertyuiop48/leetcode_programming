@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2126 lang=kotlin */
+class Solution { fun asteroidsDestroyed(mass: Int, asteroids: IntArray): Boolean = asteroids.sorted().fold(mass.toLong()) { acc, a -> if (acc >= a && acc >= 0) acc + a else -1L } >= 0 }

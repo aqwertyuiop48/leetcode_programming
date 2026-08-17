@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1436 lang=kotlin
+ *
+ * [1436] Destination City
+ */
+
+class Solution { fun destCity(paths: List<List<String>>): String = paths.map { it[1] }.first { dest -> paths.none { it[0] == dest } } }

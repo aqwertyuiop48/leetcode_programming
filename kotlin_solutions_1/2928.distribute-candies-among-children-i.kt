@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2928 lang=kotlin
+ *
+ * [2928] Distribute Candies Among Children I
+ */
+
+class Solution {
+    fun distributeCandies(n: Int, limit: Int): Int = { k: Long -> if (k < 0) 0L else k * (k - 1) / 2 }.let { c -> (c(n.toLong() + 2) - 3 * c(n.toLong() - limit + 1) + 3 * c(n.toLong() - 2 * limit) - c(n.toLong() - 3 * limit - 1)).toInt() }
+}

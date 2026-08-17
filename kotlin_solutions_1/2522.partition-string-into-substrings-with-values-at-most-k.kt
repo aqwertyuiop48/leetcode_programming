@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2522 lang=kotlin */
+class Solution { fun minimumPartition(s: String, k: Int) = s.fold(0 to 0L) { (count, current), char -> (char - '0').let { digit -> if (digit > k) -1 to -1L else if (current * 10 + digit <= k) count to current * 10 + digit else (count + 1) to digit.toLong() } }.let { if (it.first == -1) -1 else it.first + 1 } }

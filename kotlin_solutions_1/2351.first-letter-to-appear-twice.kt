@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2351 lang=kotlin */
+class Solution { fun repeatedCharacter(s: String): Char = s.indices.first { i -> s.substring(0, i).contains(s[i]) }.let { s[it] } }

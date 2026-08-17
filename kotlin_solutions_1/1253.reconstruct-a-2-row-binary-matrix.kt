@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1253 lang=kotlin
+ *
+ * [1253] Reconstruct a 2-Row Binary Matrix
+ */
+
+class Solution { fun reconstructMatrix(upper: Int, lower: Int, colsum: IntArray): List<List<Int>> = IntArray(colsum.size).let { r0 -> IntArray(colsum.size).let { r1 -> colsum.indices.fold(upper to lower) { (u, l), i -> if (colsum[i] == 2) (u - 1 to l - 1).also { r0[i] = 1 }.also { r1[i] = 1 } else if (colsum[i] == 0) u to l else if (u >= l) (u - 1 to l).also { r0[i] = 1 } else (u to l - 1).also { r1[i] = 1 } }.let { (u, l) -> if (u == 0 && l == 0) listOf(r0.toList(), r1.toList()) else emptyList() } } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1553 lang=kotlin
+ *
+ * [1553] Minimum Number of Days to Eat N Oranges
+ */
+
+class Solution { fun minDays(n: Int): Int = mutableMapOf<Int, Int>().let { memo -> object { fun solve(x: Int): Int = if (x <= 1) x else memo.getOrPut(x) { 1 + minOf(x % 2 + solve(x / 2), x % 3 + solve(x / 3)) } }.solve(n) } }

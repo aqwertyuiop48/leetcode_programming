@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2517 lang=kotlin */
+class Solution { fun maximumTastiness(price: IntArray, k: Int) = price.sorted().let { p -> IntArray(2).apply { this[1] = 1000000000 }.also { b -> while (b[0] <= b[1]) ((b[0] + b[1]) / 2).let { m -> if (p.fold(1 to p[0]) { (c, last), x -> if (x - last >= m) c + 1 to x else c to last }.first >= k) b[0] = m + 1 else b[1] = m - 1 } }[1] } }

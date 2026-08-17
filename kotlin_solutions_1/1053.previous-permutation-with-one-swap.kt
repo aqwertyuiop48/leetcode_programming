@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1053 lang=kotlin
+ *
+ * [1053] Previous Permutation With One Swap
+ */
+
+class Solution {
+    fun prevPermOpt1(a: IntArray): IntArray = a.also { (a.size - 2 downTo 0).firstOrNull { i -> a[i] > a[i + 1] }?.let { i -> (i + 1..a.size - 1).first { a[it] == (a.size - 1 downTo i + 1).first { k -> a[k] < a[i] }.let { j -> a[j] } }.let { k -> a[i].also { a[i] = a[k] }.also { a[k] = it } } } }
+}

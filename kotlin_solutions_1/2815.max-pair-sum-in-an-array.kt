@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2815 lang=kotlin */
+class Solution { fun maxSum(nums: IntArray): Int = nums.groupBy { n -> n.toString().max() }.values.mapNotNull { it.sortedDescending().takeIf { it.size >= 2 }?.let { it[0] + it[1] } }.maxOrNull() ?: -1 }

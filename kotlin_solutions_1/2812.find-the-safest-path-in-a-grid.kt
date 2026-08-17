@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2812 lang=kotlin
+ *
+ * [2812] Find the Safest Path in a Grid
+ */
+
+class Solution { fun maximumSafenessFactor(grid: List<List<Int>>): Int = grid.size.let { n -> Array(n) { IntArray(n) { -1 } }.also { dist -> java.util.ArrayDeque<Pair<Int, Int>>().apply { grid.indices.forEach { r -> grid[0].indices.forEach { c -> if (grid[r][c] == 1) dist[r][c] = 0.also { add(r to c) } } } }.let { q -> while (q.isNotEmpty()) q.poll().let { (r, c) -> listOf(r - 1 to c, r + 1 to c, r to c - 1, r to c + 1).filter { (nr, nc) -> nr in 0 until n && nc in 0 until n && dist[nr][nc] == -1 }.forEach { (nr, nc) -> dist[nr][nc] = (dist[r][c] + 1).also { q.add(nr to nc) } } } } }.let { dist -> java.util.PriorityQueue<IntArray>(compareByDescending { it[0] }).apply { add(intArrayOf(dist[0][0], 0, 0)) }.let { pq -> Array(n) { BooleanArray(n) }.apply { this[0][0] = true }.let { vis -> generateSequence { if (pq.isNotEmpty()) pq.poll() else null }.firstNotNullOf { (d, r, c) -> if (r == n - 1 && c == n - 1) d else null.also { listOf(r - 1 to c, r + 1 to c, r to c - 1, r to c + 1).filter { (nr, nc) -> nr in 0 until n && nc in 0 until n && !vis[nr][nc] }.forEach { (nr, nc) -> vis[nr][nc] = true.also { pq.add(intArrayOf(minOf(d, dist[nr][nc]), nr, nc)) } } } } } } } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1943 lang=kotlin */
+class Solution { fun splitPainting(segments: Array<IntArray>): List<List<Long>> = java.util.TreeMap<Long, Long>().apply { segments.forEach { s -> put(s[0].toLong(), (get(s[0].toLong()) ?: 0L) + s[2]).also { put(s[1].toLong(), (get(s[1].toLong()) ?: 0L) - s[2]) } } }.entries.fold(mutableListOf<List<Long>>() to longArrayOf(-1, 0)) { (list, state), entry -> (list.apply { if (state[0] != -1L && state[1] > 0) add(listOf(state[0], entry.key, state[1])) } to state.apply { state[0] = entry.key }.apply { state[1] += entry.value }) }.first }

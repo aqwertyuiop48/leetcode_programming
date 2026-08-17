@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3197 lang=kotlin
+ *
+ * [3197] Find the Minimum Area to Cover All Ones II
+ */
+class Solution { fun minimumSum(A: Array<IntArray>): Int = A.size.let { n -> A[0].size.let { m -> { r1: Int, r2: Int, c1: Int, c2: Int -> (r1 until r2).flatMap { r -> (c1 until c2).filter { c -> A[r][c] == 1 }.map { c -> r to c } }.let { pts -> if (pts.isEmpty()) 0 else (pts.maxOf { it.first } - pts.minOf { it.first } + 1) * (pts.maxOf { it.second } - pts.minOf { it.second } + 1) } }.let { area -> minOf((1 until n).minOf { r1 -> (r1 + 1 until n).minOf { r2 -> area(0, r1, 0, m) + area(r1, r2, 0, m) + area(r2, n, 0, m) } }, (1 until m).minOf { c1 -> (c1 + 1 until m).minOf { c2 -> area(0, n, 0, c1) + area(0, n, c1, c2) + area(0, n, c2, m) } }, (1 until n).minOf { r -> (1 until m).minOf { c -> area(0, r, 0, m) + area(r, n, 0, c) + area(r, n, c, m) } }, (1 until n).minOf { r -> (1 until m).minOf { c -> area(0, r, 0, c) + area(0, r, c, m) + area(r, n, 0, m) } }, (1 until m).minOf { c -> (1 until n).minOf { r -> area(0, n, 0, c) + area(0, r, c, m) + area(r, n, c, m) } }, (1 until m).minOf { c -> (1 until n).minOf { r -> area(0, r, 0, c) + area(r, n, 0, c) + area(0, n, c, m) } }) } } } }

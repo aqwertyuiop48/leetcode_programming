@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2223 lang=kotlin */
+class Solution { fun sumScores(s: String): Long = s.length.let { n -> IntArray(n).let { z -> IntArray(2).let { b -> (1 until n).forEach { i -> (if (i <= b[1]) minOf(b[1] - i + 1, z[i - b[0]]) else 0).let { start -> generateSequence(start) { it + 1 }.first { it + i >= n || s[it] != s[i + it] }.also { z[i] = it } }.also { if (i + z[i] - 1 > b[1]) b[0] = i.also { b[1] = i + z[i] - 1 } } }.let { z.fold(n.toLong()) { acc, v -> acc + v } } } } }}

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2255 lang=kotlin */
+class Solution { fun countPrefixes(words: Array<String>, s: String): Int = words.count { s.startsWith(it) } }

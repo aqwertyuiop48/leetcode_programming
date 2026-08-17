@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1796 lang=kotlin */
+class Solution { fun secondHighest(s: String): Int = s.filter { it.isDigit() }.map { it - '0' }.distinct().sortedDescending().getOrNull(1) ?: -1 }

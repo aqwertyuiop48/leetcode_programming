@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2707 lang=kotlin */
+class Solution { fun minExtraChar(s: String, dictionary: Array<String>): Int = dictionary.toSet().let { dict -> (1..s.length).fold(IntArray(s.length + 1) { it }) { dp, i -> dp.apply { dp[i] = (0 until i).fold(dp[i - 1] + 1) { acc, j -> if (dict.contains(s.substring(j, i))) minOf(acc, dp[j]) else acc } } }[s.length] } }

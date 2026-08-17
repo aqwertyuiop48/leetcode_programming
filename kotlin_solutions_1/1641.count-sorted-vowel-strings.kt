@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1641 lang=kotlin */
+class Solution { fun countVowelStrings(n: Int): Int = (n + 1) * (n + 2) * (n + 3) * (n + 4) / 24 }

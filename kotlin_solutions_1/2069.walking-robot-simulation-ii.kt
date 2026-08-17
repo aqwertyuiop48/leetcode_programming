@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2069 lang=kotlin */
+class Robot(val w: Int, val h: Int, var s: Int = 0, var m: Boolean = false) { fun step(num: Int) = s.let { s += num }.also { m = true }
+fun getPos() = (2 * (w + h - 2)).let { p -> (s % p).let { r -> if (r < w) intArrayOf(r, 0) else if (r < w + h - 1) intArrayOf(w - 1, r - w + 1) else if (r < 2 * w + h - 2) intArrayOf(2 * w + h - 3 - r, h - 1) else intArrayOf(0, 2 * w + 2 * h - 4 - r) } }
+fun getDir() = (2 * (w + h - 2)).let { p -> if (!m) "East" else (s % p).let { r -> if (r == 0 && s > 0) "South" else if (r < w - 1) "East" else if (r < w + h - 2) "North" else if (r < 2 * w + h - 3) "West" else "South" } } }

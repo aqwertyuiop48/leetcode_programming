@@ -1,0 +1,34 @@
+/*
+ * @lc app=leetcode id=1036 lang=kotlin
+ *
+ * [1036] Escape a Large Maze
+ */
+
+class Solution {
+    fun isEscapePossible(blocked: Array<IntArray>, source: IntArray, target: IntArray): Boolean =
+        blocked.map { (r, c) -> r.toLong() * 1_000_000L + c }.toSet().let { blocks ->
+            { src: IntArray, dst: IntArray ->
+                ArrayDeque<Long>().apply { add(src[0].toLong() * 1_000_000L + src[1]) }.let { q ->
+                    HashSet<Long>().apply { add(src[0].toLong() * 1_000_000L + src[1]) }.let { vis ->
+                        generateSequence { q.removeFirstOrNull() }
+                            .takeWhile { vis.size <= 20000 }
+                            .any { curr ->
+                                (curr / 1_000_000L).toInt().let { r ->
+                                    (curr % 1_000_000L).toInt().let { c ->
+                                        if (r == dst[0] && c == dst[1]) true
+                                        else {
+                                            arrayOf(r + 1 to c, r - 1 to c, r to c + 1, r to c - 1).forEach { (nr, nc) ->
+                                                if (nr in 0..999999 && nc in 0..999999) (nr.toLong() * 1_000_000L + nc).let { code ->
+                                                    if (code !in blocks && vis.add(code)) q.add(code)
+                                                }
+                                            }
+                                            false
+                                        }
+                                    }
+                                }
+                            } || vis.size > 20000
+                    }
+                }
+            }.let { bfs -> bfs(source, target) && bfs(target, source) }
+        }
+}

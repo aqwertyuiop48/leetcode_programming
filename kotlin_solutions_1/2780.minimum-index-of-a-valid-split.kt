@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2780 lang=kotlin */
+class Solution { fun minimumIndex(nums: List<Int>): Int = nums.groupingBy { it }.eachCount().maxByOrNull { it.value }!!.let { maj -> nums.indices.fold(-1 to 0) { acc, i -> if (acc.first != -1) acc else (acc.second + if (nums[i] == maj.key) 1 else 0).let { cur -> if (cur * 2 > i + 1 && (maj.value - cur) * 2 > nums.size - i - 1) i to cur else -1 to cur } }.first } }

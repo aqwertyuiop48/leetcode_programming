@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2195 lang=kotlin */
+class Solution { fun minimalKSum(nums: IntArray, k: Int): Long = nums.distinct().sorted().fold(k.toLong() * (k + 1) / 2 to k.toLong()) { (s, cur), n -> if (n <= cur) (s - n + cur + 1) to (cur + 1) else s to cur }.first }

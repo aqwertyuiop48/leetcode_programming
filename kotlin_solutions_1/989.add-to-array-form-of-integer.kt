@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=989 lang=kotlin
+ *
+ * [989] Add to Array-Form of Integer
+ */
+
+class Solution {
+    fun addToArrayForm(num: IntArray, k: Int): List<Int> = (java.math.BigInteger(num.joinToString("")) + java.math.BigInteger.valueOf(k.toLong())).toString().map { it.digitToInt() }
+}

@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=2071 lang=kotlin
+ *
+ * [2071] Maximum Number of Tasks You Can Assign
+ */
+class Solution { fun maxTaskAssign(tasks: IntArray, workers: IntArray, pills: Int, strength: Int): Int = tasks.sortedArray().let { t -> workers.sortedArray().let { w -> (0..17).fold(Triple(0, minOf(t.size, w.size), 0)) { (low, high, ans), _ -> if (low <= high) { ((low + high) ushr 1).let { mid -> if (IntArray(w.size).let { dq -> intArrayOf(0, 0, w.size - 1, pills).let { state -> (mid - 1 downTo 0).all { i -> kotlin.DeepRecursiveFunction<Int, Unit> { t_i -> if (state[2] >= w.size - mid && w[state[2]] + strength >= t_i) dq.set(state[1].also { state[1]++ }, w[state[2].also { state[2]-- }]).also { callRecursive(t_i) } else Unit }.invoke(t[i]).run { if (state[0] == state[1]) false else if (dq[state[0]] >= t[i]) true.also { state[0]++ } else if (state[3] > 0) true.also { state[3]-- }.also { state[1]-- } else false } } } }) Triple(mid + 1, high, mid) else Triple(low, mid - 1, ans) } } else Triple(low, high, ans) }.third } } }

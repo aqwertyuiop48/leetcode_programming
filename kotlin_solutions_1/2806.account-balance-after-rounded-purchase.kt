@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2806 lang=kotlin */
+class Solution { fun accountBalanceAfterPurchase(purchaseAmount: Int): Int = 100 - (purchaseAmount + 5) / 10 * 10 }

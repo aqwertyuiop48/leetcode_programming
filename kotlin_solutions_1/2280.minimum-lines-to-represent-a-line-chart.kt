@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2280 lang=kotlin */
+class Solution { fun minimumLines(stockPrices: Array<IntArray>): Int = stockPrices.sortedBy { it[0] }.let { s -> if (s.size < 2) 0 else (1 until s.size - 1).fold(1) { acc, i -> if ((s[i][1].toLong() - s[i - 1][1]) * (s[i + 1][0] - s[i][0]) != (s[i + 1][1].toLong() - s[i][1]) * (s[i][0] - s[i - 1][0])) acc + 1 else acc } } }

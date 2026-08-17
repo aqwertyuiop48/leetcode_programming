@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2262 lang=kotlin */
+class Solution { fun appealSum(s: String): Long = s.indices.fold(Triple(0L, 0L, IntArray(26))) { (sum, cur, last), i -> (s[i] - 'a').let { c -> (cur + (i + 1 - last[c])).let { next -> Triple(sum + next, next, last.apply { this[c] = i + 1 }) } } }.first }

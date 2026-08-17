@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1314 lang=kotlin
+ *
+ * [1314] Matrix Block Sum
+ */
+class Solution { fun matrixBlockSum(mat: Array<IntArray>, k: Int): Array<IntArray> = mat.size.let { m -> mat[0].size.let { n -> Array(m + 1) { IntArray(n + 1) }.also { p -> (0 until m).forEach { r -> (0 until n).forEach { c -> p[r + 1][c + 1] = mat[r][c] + p[r][c + 1] + p[r + 1][c] - p[r][c] } } }.let { p -> Array(m) { r -> IntArray(n) { c -> maxOf(0, r - k).let { r1 -> maxOf(0, c - k).let { c1 -> minOf(m - 1, r + k).let { r2 -> minOf(n - 1, c + k).let { c2 -> p[r2 + 1][c2 + 1] - p[r1][c2 + 1] - p[r2 + 1][c1] + p[r1][c1] } } } } } } } } } }

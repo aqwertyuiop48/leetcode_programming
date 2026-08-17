@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2588 lang=kotlin */
+class Solution { fun beautifulSubarrays(nums: IntArray): Long = nums.fold(Triple(0L, 0, mutableMapOf(0 to 1L))) { (count, xor, map), n -> (xor xor n).let { newXor -> Triple(count + (map[newXor] ?: 0L), newXor, map.also { it[newXor] = (it[newXor] ?: 0L) + 1L }) } }.first }

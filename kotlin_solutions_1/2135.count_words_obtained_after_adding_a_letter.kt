@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2135 lang=kotlin */
+class Solution { fun wordCount(startWords: Array<String>, targetWords: Array<String>): Int = startWords.map { s -> s.fold(0) { acc, c -> acc or (1 shl (c - 'a')) } }.toSet().let { set -> targetWords.count { t -> t.fold(0) { acc, c -> acc or (1 shl (c - 'a')) }.let { mask -> (0..25).any { i -> (mask and (1 shl i) != 0) && set.contains(mask xor (1 shl i)) } } } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1051 lang=kotlin
+ *
+ * [1051] Height Checker
+ */
+
+class Solution { fun heightChecker(heights: IntArray): Int = heights.sorted().filterIndexed { i, h -> h != heights[i] }.size }

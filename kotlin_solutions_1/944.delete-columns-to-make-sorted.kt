@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=944 lang=kotlin
+ *
+ * [944] Delete Columns to Make Sorted
+ */
+
+class Solution { fun minDeletionSize(strs: Array<String>): Int = strs[0].indices.count { col -> (1 until strs.size).any { row -> strs[row][col] < strs[row - 1][col] } } }

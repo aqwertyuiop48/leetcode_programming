@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1481 lang=kotlin
+ *
+ * [1481] Least Number of Unique Integers after K Removals
+ */
+
+class Solution { fun findLeastNumOfUniqueInts(arr: IntArray, k: Int): Int = arr.groupBy { it }.values.map { it.size }.sorted().let { freqs -> freqs.fold(k to freqs.size) { (rem, count), freq -> if (rem >= freq) (rem - freq) to (count - 1) else rem to count }.second } }

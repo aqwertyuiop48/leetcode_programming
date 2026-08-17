@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2712 lang=kotlin */
+class Solution { fun minimumCost(s: String): Long = (1 until s.length).fold(0L) { acc, i -> if (s[i] != s[i - 1]) acc + minOf(i.toLong(), (s.length - i).toLong()) else acc } }

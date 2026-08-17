@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3022 lang=kotlin */
+class Solution { fun minOrAfterOperations(nums: IntArray, k: Int): Int = (30 downTo 0).fold(0) { target, j -> (target or (1 shl j)).let { mask -> nums.fold(0 to mask) { (cnt, cur), x -> (cur and x).let { next -> if ((next or target) != target) (cnt + 1) to next else cnt to mask } }.let { (cnt, _) -> if (cnt > k) target or (1 shl j) else target } } } }

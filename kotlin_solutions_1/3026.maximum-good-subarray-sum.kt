@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3026 lang=kotlin */
+class Solution { fun maximumSubarraySum(nums: IntArray, k: Int): Long = HashMap<Int, Long>().let { map -> nums.fold(0L to (null as Long?)) { (pref, maxS), x -> (pref + x).let { cur -> listOfNotNull(map[x - k], map[x + k]).minOrNull()?.let { cur - it }.let { cand -> listOfNotNull(maxS, cand).maxOrNull() }.let { newMax -> map.also { it[x] = minOf(it[x] ?: Long.MAX_VALUE, pref) }.let { cur to newMax } } } }.second ?: 0L } }

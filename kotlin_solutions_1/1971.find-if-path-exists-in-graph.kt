@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1971 lang=kotlin */
+class Solution { fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean = IntArray(n) { it }.let { p -> (object : (Int) -> Int { override fun invoke(i: Int): Int = if (p[i] == i) i else invoke(p[i]).also { p[i] = it } }).let { find -> edges.forEach { edge -> find(edge[0]).let { r1 -> find(edge[1]).let { r2 -> if (r1 != r2) p[r1] = r2 } } }.run { find(source) == find(destination) } } }

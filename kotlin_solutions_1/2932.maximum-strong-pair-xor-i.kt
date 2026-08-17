@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2932 lang=kotlin
+ *
+ * [2932] Maximum Strong Pair XOR I
+ */
+
+class Solution { fun maximumStrongPairXor(nums: IntArray): Int = nums.flatMap { x -> nums.filter { y -> Math.abs(x - y) <= Math.min(x, y) }.map { y -> x xor y } }.maxOrNull() ?: 0 }

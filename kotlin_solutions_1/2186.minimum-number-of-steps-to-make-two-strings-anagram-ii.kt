@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2186 lang=kotlin */
+class Solution { fun minSteps(s: String, t: String): Int = IntArray(26).apply { s.forEach { set(it - 'a', get(it - 'a') + 1) }.also { t.forEach { set(it - 'a', get(it - 'a') - 1) } } }.sumOf { Math.abs(it) } }

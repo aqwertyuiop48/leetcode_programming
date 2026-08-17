@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3101 lang=kotlin
+ *
+ * [3101] Count Alternating Subarrays
+ */
+
+class Solution { fun countAlternatingSubarrays(nums: IntArray): Long = nums.indices.fold(0L to 0L) { (ans, len), i -> (if (i > 0 && nums[i] == nums[i - 1]) 1L else len + 1L).let { newLen -> (ans + newLen) to newLen } }.first }

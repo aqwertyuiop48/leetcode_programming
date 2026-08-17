@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1513 lang=kotlin
+ *
+ * [1513] Number of Substrings With Only 1s
+ */
+
+class Solution { fun numSub(s: String): Int = s.split('0').fold(0L) { acc, sub -> (acc + sub.length.toLong() * (sub.length + 1) / 2) % 1000000007 }.toInt() }

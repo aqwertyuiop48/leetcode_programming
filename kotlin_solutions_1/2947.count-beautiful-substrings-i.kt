@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2947 lang=kotlin
+ *
+ * [2947] Count Beautiful Substrings I
+ */
+
+class Solution {
+    fun beautifulSubstrings(s: String, k: Int): Int = s.indices.sumOf { i -> (i until s.length).fold(0 to (0 to 0)) { (ans, counts), j -> (if (s[j] in "aeiou") counts.first + 1 to counts.second else counts.first to counts.second + 1).let { (v, c) -> (ans + if (v == c && (v * c) % k == 0) 1 else 0) to (v to c) } }.first }
+}

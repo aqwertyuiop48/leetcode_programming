@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1601 lang=kotlin
+ *
+ * [1601] Maximum Number of Achievable Transfer Requests
+ */
+
+class Solution {
+    fun maximumRequests(n: Int, requests: Array<IntArray>): Int = (0 until (1 shl requests.size)).filter { mask -> IntArray(n).also { deg -> requests.indices.forEach { i -> if ((mask and (1 shl i)) != 0) deg[requests[i][0]]--.also { deg[requests[i][1]]++ } } }.all { it == 0 } }.maxOfOrNull { it.countOneBits() } ?: 0
+}

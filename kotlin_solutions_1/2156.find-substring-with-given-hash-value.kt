@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2156 lang=kotlin */
+class Solution {
+    fun subStrHash(s: String, p: Int, m: Int, k: Int, hashValue: Int) = (1..k - 1).fold(1L) { a, _ -> a * p % m }.let { pk -> (s.length - k downTo 0).fold(-1 to 0L) { (idx, h), i -> (if (i == s.length - k) (s.length - 1 downTo s.length - k).fold(0L) { a, j -> (a * p + (s[j] - 'a' + 1)) % m } else ((h - (s[i + k] - 'a' + 1).toLong() * pk % m + m) * p + (s[i] - 'a' + 1)) % m).let { nh -> (if (nh.toInt() == hashValue) i else idx) to nh } }.let { s.substring(it.first, it.first + k) } }
+}

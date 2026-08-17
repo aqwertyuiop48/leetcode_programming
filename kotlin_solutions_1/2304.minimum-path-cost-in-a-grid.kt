@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2304 lang=kotlin */
+class Solution { fun minPathCost(grid: Array<IntArray>, moveCost: Array<IntArray>): Int = grid.indices.drop(1).fold(grid[0]) { dp, i -> IntArray(grid[0].size) { j -> grid[i][j] + dp.indices.minOf { k -> dp[k] + moveCost[grid[i - 1][k]][j] } } }.minOf { it } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2287 lang=kotlin */
+class Solution { fun rearrangeCharacters(s: String, target: String): Int = target.toSet().map { c -> s.count { it == c } / target.count { it == c } }.minOrNull() ?: 0 }

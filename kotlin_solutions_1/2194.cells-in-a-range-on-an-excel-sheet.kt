@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2194 lang=kotlin */
+class Solution { fun cellsInRange(s: String): List<String> = (s[0]..s[3]).flatMap { c -> (s[1]..s[4]).map { r -> "$c$r" } } }

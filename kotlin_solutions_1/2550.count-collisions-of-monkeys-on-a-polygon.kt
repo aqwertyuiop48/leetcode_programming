@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2550 lang=kotlin
+ *
+ * [2550] Count Collisions of Monkeys on a Polygon
+ */
+
+class Solution { fun monkeyMove(n: Int): Int = java.math.BigInteger.valueOf(2).modPow(java.math.BigInteger.valueOf(n.toLong()), java.math.BigInteger.valueOf(1000000007L)).subtract(java.math.BigInteger.valueOf(2)).add(java.math.BigInteger.valueOf(1000000007L)).mod(java.math.BigInteger.valueOf(1000000007L)).toInt() }

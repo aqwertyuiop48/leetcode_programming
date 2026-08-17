@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2316 lang=kotlin */
+class Solution { fun countPairs(n: Int, edges: Array<IntArray>): Long = IntArray(n) { it }.let { p -> kotlin.DeepRecursiveFunction<Int, Int> { i -> if (p[i] == i) i else callRecursive(p[i]).also { p[i] = it } }.let { f -> edges.forEach { e -> f.invoke(e[0]).let { ra -> f.invoke(e[1]).let { rb -> if (ra != rb) p[ra] = rb } } }.run { p.indices.map { f.invoke(it) }.groupingBy { it }.eachCount().values.sumOf { it.toLong().let { s -> s * (n - s) } } / 2 } } } }

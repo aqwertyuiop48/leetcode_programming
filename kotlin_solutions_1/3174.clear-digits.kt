@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3174 lang=kotlin */
+class Solution { fun clearDigits(s: String): String = s.fold(StringBuilder()) { sb, c -> if (c.isDigit()) sb.apply { if (isNotEmpty()) deleteCharAt(length - 1) } else sb.append(c) }.toString() }

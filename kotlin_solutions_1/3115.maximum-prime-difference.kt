@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=3115 lang=kotlin
+ *
+ * [3115] Maximum Prime Difference
+ */
+
+class Solution {
+    fun maximumPrimeDifference(nums: IntArray): Int = nums.indices.filter { x -> nums[x].let { n -> n >= 2 && (2 until n).none { n % it == 0 } } }.let { it.last() - it.first() }
+}

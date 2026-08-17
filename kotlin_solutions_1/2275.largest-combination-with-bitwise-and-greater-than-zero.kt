@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2275 lang=kotlin */
+class Solution { fun largestCombination(candidates: IntArray): Int = (0..30).maxOf { b -> candidates.count { (it shr b) and 1 == 1 } } }

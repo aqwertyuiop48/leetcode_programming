@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1646 lang=kotlin */
+class Solution { fun getMaximumGenerated(n: Int): Int = if (n == 0) 0 else IntArray(n + 1).also { nums -> (0..n).forEach { i -> nums[i] = if (i < 2) i else if (i % 2 == 0) nums[i / 2] else nums[i / 2] + nums[i / 2 + 1] } }.maxOrNull()!! }

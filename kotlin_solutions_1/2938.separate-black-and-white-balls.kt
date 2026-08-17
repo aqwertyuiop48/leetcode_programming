@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2938 lang=kotlin
+ *
+ * [2938] Separate Black and White Balls
+ */
+
+class Solution { fun minimumSteps(s: String): Long = s.fold(0L to 0L) { (ones, steps), c -> if (c == '1') (ones + 1) to steps else ones to (steps + ones) }.second }

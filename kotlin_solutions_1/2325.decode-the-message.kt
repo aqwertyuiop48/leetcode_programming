@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2325 lang=kotlin */
+class Solution { fun decodeMessage(key: String, message: String): String = mutableMapOf<Char, Char>().apply { key.filter { it != ' ' }.forEach { if (!containsKey(it)) put(it, 'a' + size) } }.let { map -> message.map { map[it] ?: it }.joinToString("") } }

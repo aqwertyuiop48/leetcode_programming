@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3038 lang=kotlin
+ *
+ * [3038] Maximum Number of Operations With the Same Score I
+ */
+
+class Solution { fun maxOperations(nums: IntArray): Int = (2 until nums.size - 1 step 2).takeWhile { i -> nums[i] + nums[i + 1] == nums[0] + nums[1] }.count() + 1 }

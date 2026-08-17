@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1477 lang=kotlin
+ *
+ * [1477] Find Two Non-overlapping Sub-arrays Each With Target Sum
+ */
+
+class Solution { fun minSumOfLengths(arr: IntArray, target: Int): Int = IntArray(arr.size) { 1e9.toInt() }.let { dp -> mutableMapOf(0 to -1).let { map -> arr.indices.fold(0 to 1e9.toInt()) { (sum, ans), i -> (sum + arr[i]).let { s -> map[s - target].let { l -> (if (l != null && l >= 0 && dp[l] < 1e9.toInt()) minOf(ans, i - l + dp[l]) else ans).also { dp[i] = minOf(if (i > 0) dp[i - 1] else 1e9.toInt(), l?.let { i - it } ?: 1e9.toInt()) }.also { map[s] = i }.let { s to it } } } }.second.let { if (it >= 1e9.toInt()) -1 else it } } } }

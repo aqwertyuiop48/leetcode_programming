@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1969 lang=kotlin */
+class Solution { fun minNonZeroProduct(p: Int): Int = ((1L shl p) - 1).let { v0 -> 1000000007L.let { mod -> ((v0 - 1).let { v2 -> (object : (Long, Long) -> Long { override fun invoke(b: Long, e: Long): Long = if (e == 0L) 1L else (invoke((b * b) % mod, e / 2) * (if (e % 2L == 1L) b else 1L)) % mod })(v2 % mod, v2 / 2) } * (v0 % mod) % mod).toInt() } } }

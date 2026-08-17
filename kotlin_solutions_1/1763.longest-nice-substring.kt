@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1763 lang=kotlin */
+class Solution { fun longestNiceSubstring(s: String): String = (0 until s.length).flatMap { i -> (i + 1..s.length).map { j -> s.substring(i, j) } }.filter { sub -> sub.all { c -> sub.contains(c.lowercaseChar()) && sub.contains(c.uppercaseChar()) } }.fold("") { a, b -> if (a.length >= b.length) a else b } }

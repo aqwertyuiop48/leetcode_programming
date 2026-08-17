@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2537 lang=kotlin */
+class Solution { fun countGood(nums: IntArray, k: Int): Long = mutableMapOf<Int, Int>().let { m -> LongArray(3).let { v -> nums.indices.forEach { i -> (m.getOrDefault(nums[i], 0)).let { p -> v[1] += p.toLong().also { m[nums[i]] = p + 1 } }.run { while (v[1] >= k) (m[nums[v[0].toInt()]]!! - 1).let { p -> v[1] -= p.toLong().also { m[nums[v[0].toInt()]] = p }.also { v[0] += 1 } } }.also { v[2] += v[0] } }.run { v[2] } } }

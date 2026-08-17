@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3041 lang=kotlin
+ *
+ * [3041] Maximize Consecutive Elements in an Array After Modification
+ */
+
+class Solution { fun maxSelectedElements(nums: IntArray): Int = HashMap<Int, Int>().let { dp -> nums.sorted().forEach { a -> dp.put(a + 1, (dp[a] ?: 0) + 1).run { dp.put(a, (dp[a - 1] ?: 0) + 1) } }.let { dp.values.maxOrNull() ?: 0 } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3014 lang=kotlin
+ *
+ * [3014] Minimum Number of Pushes to Type Word I
+ */
+
+class Solution { fun minimumPushes(word: String): Int = word.indices.sumOf { it / 8 + 1 } }

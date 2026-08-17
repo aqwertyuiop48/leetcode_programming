@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1807 lang=kotlin */
+class Solution { fun evaluate(s: String, knowledge: List<List<String>>): String = knowledge.associate { it[0] to it[1] }.let { dict -> Regex("\\(([a-z]+)\\)").replace(s) { dict[it.groupValues[1]] ?: "?" } } }

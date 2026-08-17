@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2856 lang=kotlin */
+class Solution { fun minLengthAfterRemovals(nums: List<Int>): Int = nums.groupingBy { it }.eachCount().values.maxOrNull()?.let { maxFreq -> kotlin.math.max(nums.size % 2, 2 * maxFreq - nums.size) } ?: nums.size % 2 }

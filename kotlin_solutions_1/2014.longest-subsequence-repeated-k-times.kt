@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2014 lang=kotlin */
+class Solution { fun longestSubsequenceRepeatedK(s: String, k: Int) = ('a'..'z').filter { ch -> s.count { it == ch } >= k }.let { h -> generateSequence(listOf("")) { q -> q.flatMap { curr -> h.map { curr + it } }.filter { sub -> s.fold(0) { idx, char -> if (idx < sub.length * k && char == sub[idx % sub.length]) idx + 1 else idx } == sub.length * k }.takeIf { it.isNotEmpty() } }.last().maxOfOrNull { it } ?: "" } }

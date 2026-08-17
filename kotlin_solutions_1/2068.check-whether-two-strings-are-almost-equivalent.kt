@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2068 lang=kotlin */
+class Solution { fun checkAlmostEquivalent(word1: String, word2: String): Boolean = ('a'..'z').all { c -> Math.abs(word1.count { it == c } - word2.count { it == c }) <= 3 } }

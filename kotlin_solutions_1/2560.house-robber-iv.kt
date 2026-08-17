@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2560 lang=kotlin
+ *
+ * [2560] House Robber IV
+ */
+
+class Solution { fun minCapability(nums: IntArray, k: Int): Int = (nums.minOrNull()!!..nums.maxOrNull()!!).let { r -> (1..31).fold(Triple(r.first, r.last, r.last)) { (l, h, res), _ -> if (l <= h) (l + (h - l) / 2).let { mid -> if (nums.indices.fold(0 to 0) { (c, i), _ -> if (i < nums.size) if (nums[i] <= mid) (c + 1) to (i + 2) else c to (i + 1) else c to i }.first >= k) Triple(l, mid - 1, mid) else Triple(mid + 1, h, res) } else Triple(l, h, res) }.third } }

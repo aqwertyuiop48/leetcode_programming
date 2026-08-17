@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2606 lang=kotlin */
+class Solution {
+    fun maximumCostSubstring(s: String, chars: String, vals: IntArray): Int = IntArray(26) { it + 1 }.also { v -> chars.forEachIndexed { i, c -> v.set(c - 'a', vals[i]) } }.let { v -> s.fold(0 to 0) { (m, c), ch -> (c + v[ch - 'a']).let { n -> maxOf(m, n) to maxOf(0, n) } }.first }
+}

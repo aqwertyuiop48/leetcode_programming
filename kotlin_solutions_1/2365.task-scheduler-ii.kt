@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2365 lang=kotlin */
+class Solution { fun taskSchedulerII(tasks: IntArray, space: Int): Long = tasks.fold(0L to mutableMapOf<Int, Long>()) { (time, map), task -> (maxOf(time + 1, (map[task] ?: (-space - 1).toLong()) + space + 1)).let { nextTime -> nextTime to map.also { it[task] = nextTime } } }.first }

@@ -1,0 +1,6 @@
+/* @lc app=leetcode id=2034 lang=kotlin */
+class StockPrice(val t: MutableMap<Int, Int> = mutableMapOf(), val p: java.util.TreeMap<Int, Int> = java.util.TreeMap(), var m: Int = 0) {
+fun update(ts: Int, pr: Int) = t[ts].let { o -> if (o != null) if (p[o] == 1) p.remove(o) else p.put(o, p[o]!! - 1) else null }.also { t.put(ts, pr) }.also { p.put(pr, (p[pr] ?: 0) + 1) }.also { m = maxOf(m, ts) }
+fun current() = t[m]!!
+fun maximum() = p.lastKey()
+fun minimum() = p.firstKey() }

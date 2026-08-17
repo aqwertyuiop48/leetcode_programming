@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2042 lang=kotlin */
+class Solution {
+    fun areNumbersAscending(s: String): Boolean = s.split(" ").mapNotNull { it.toIntOrNull() }.let { it.zipWithNext().all { (a, b) -> a < b } }
+}

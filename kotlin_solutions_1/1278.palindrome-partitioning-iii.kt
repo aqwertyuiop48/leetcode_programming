@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1278 lang=kotlin
+ *
+ * [1278] Palindrome Partitioning III
+ */
+
+class Solution {
+    fun palindromePartition(s: String, k: Int): Int = s.length.let { n -> Array(n + 1) { IntArray(k + 1) { 999999 } }.apply { this[0][0] = 0 }.let { dp -> (1..n).forEach { i -> (1..minOf(i, k)).forEach { j -> dp[i][j] = (j - 1 until i).minOf { m -> dp[m][j - 1] + (0..(i - 1 - m) / 2).count { s[m + it] != s[i - 1 - it] } } } }.run { dp[n][k] } } }
+}

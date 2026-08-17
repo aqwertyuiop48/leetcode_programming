@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2070 lang=kotlin */
+class Solution { fun maximumBeauty(items: Array<IntArray>, queries: IntArray): IntArray = items.sortedBy { it[0] }.let { s -> s.map { it[0] }.let { p -> s.scan(0) { a, b -> maxOf(a, b[1]) }.drop(1).let { b -> queries.map { q -> generateSequence(0 to p.size - 1) { (l, r) -> if (l <= r) ((l + r) / 2).let { m -> if (p[m] <= q) m + 1 to r else l to m - 1 } else null }.last().first.let { if (it == 0) 0 else b[it - 1] } }.toIntArray() } } } }

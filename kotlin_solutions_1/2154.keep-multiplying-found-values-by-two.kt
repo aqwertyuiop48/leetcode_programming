@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2154 lang=kotlin */
+class Solution {
+    fun findFinalValue(nums: IntArray, original: Int) = nums.toSet().let { set -> generateSequence(original) { it * 2 }.first { it !in set } }
+}

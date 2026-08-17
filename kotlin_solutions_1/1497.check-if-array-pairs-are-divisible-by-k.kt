@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1497 lang=kotlin */ class Solution { fun canArrange(arr: IntArray, k: Int): Boolean = IntArray(k).also { count -> arr.forEach { count[(it % k + k) % k]++ } }.let { count -> count[0] % 2 == 0 && (1..k / 2).all { i -> if (i * 2 == k) count[i] % 2 == 0 else count[i] == count[k - i] } } }

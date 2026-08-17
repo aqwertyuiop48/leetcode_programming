@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2663 lang=kotlin */
+class Solution { fun smallestBeautifulString(s: String, k: Int): String = s.toCharArray().let { ch -> (s.length - 1 downTo 0).firstOrNull { i -> (ch[i] - 'a' + 1 until k).firstOrNull { v -> (i < 1 || ch[i-1] != 'a' + v) && (i < 2 || ch[i-2] != 'a' + v) }?.let { v -> ch.set(i, 'a' + v).also { (i + 1 until s.length).forEach { j -> ch.set(j, (0 until k).first { v2 -> (j < 1 || ch[j-1] != 'a' + v2) && (j < 2 || ch[j-2] != 'a' + v2) }.let { 'a' + it }) } } } != null }?.let { String(ch) } ?: "" } }

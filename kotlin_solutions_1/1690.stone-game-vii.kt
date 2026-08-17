@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=1690 lang=kotlin */
+class Solution {
+    fun stoneGameVII(stones: IntArray): Int = stones.size.let { n -> IntArray(n + 1).apply { stones.forEachIndexed { i, s -> this[i+1] = this[i] + s } }.let { p -> arrayOf(IntArray(n)).apply { (2..n).forEach { l -> IntArray(n).also { next -> (0..n-l).forEach { i -> next[i] = maxOf(p[i+l]-p[i+1]-this[0][i+1], p[i+l-1]-p[i]-this[0][i]) } }.also { next -> this[0] = next } } }[0][0] } }
+}

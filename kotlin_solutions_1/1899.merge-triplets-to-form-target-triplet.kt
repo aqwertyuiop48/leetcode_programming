@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1899 lang=kotlin
+ *
+ * [1899] Merge Triplets to Form Target Triplet
+ */
+
+class Solution { fun mergeTriplets(triplets: Array<IntArray>, target: IntArray): Boolean = triplets.filter { t -> t[0] <= target[0] && t[1] <= target[1] && t[2] <= target[2] }.fold(intArrayOf(0, 0, 0)) { acc, t -> acc.apply { this[0] = maxOf(this[0], t[0]) }.apply { this[1] = maxOf(this[1], t[1]) }.apply { this[2] = maxOf(this[2], t[2]) } }.let { res -> res[0] == target[0] && res[1] == target[1] && res[2] == target[2] } }

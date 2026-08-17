@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2044 lang=kotlin */
+class Solution {
+    fun countMaxOrSubsets(nums: IntArray): Int = nums.fold(0) { a, b -> a or b }.let { max -> (1 until (1 shl nums.size)).count { m -> nums.indices.filter { (m shr it) and 1 == 1 }.fold(0) { a, b -> a or nums[b] } == max } }
+}

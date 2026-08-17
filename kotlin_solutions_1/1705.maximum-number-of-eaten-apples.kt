@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1705 lang=kotlin
+ *
+ * [1705] Maximum Number of Eaten Apples
+ */
+
+class Solution {
+    fun eatenApples(apples: IntArray, days: IntArray): Int = java.util.PriorityQueue<IntArray> { a, b -> a[0] - b[0] }.let { pq -> generateSequence(0) { it + 1 }.takeWhile { it < apples.size || !pq.isEmpty() }.fold(0) { ans, i -> (if (i < apples.size && apples[i] > 0) pq.add(intArrayOf(i + days[i], apples[i])) else true).run { generateSequence { pq.peek() }.takeWhile { it != null && it[0] <= i }.forEach { pq.poll() } }.run { if (pq.isNotEmpty()) pq.poll().let { cur -> ans + 1 + if (--cur[1] > 0) pq.add(cur).run { 0 } else 0 } else ans } } }
+}

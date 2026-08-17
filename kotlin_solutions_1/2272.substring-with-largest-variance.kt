@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2272 lang=kotlin */
+class Solution { fun largestVariance(s: String): Int = s.toSet().let { cs -> cs.flatMap { a -> cs.filter { it != a }.map { b -> s.fold(intArrayOf(0, 0, s.count { it == b }, 0)) { st, c -> (if (c == a) intArrayOf(st[0] + 1, st[1], st[2], st[3]) else if (c == b) intArrayOf(st[0], st[1] + 1, st[2] - 1, st[3]) else st).let { ns -> if (ns[1] > 0) ns[3] = maxOf(ns[3], ns[0] - ns[1]).run { ns } else ns }.let { ns -> if (ns[0] < ns[1] && ns[2] > 0) intArrayOf(0, 0, ns[2], ns[3]) else ns } }.run { this[3] } } }.maxOfOrNull { it } ?: 0 } }

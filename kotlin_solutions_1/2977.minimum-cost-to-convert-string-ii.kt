@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2977 lang=kotlin
+ *
+ * [2977] Minimum Cost to Convert String II
+ */
+
+class Solution { fun minimumCost(source: String, target: String, original: Array<String>, changed: Array<String>, cost: IntArray): Long = HashMap<String, Int>().let { id -> IntArray(1).let { sz -> Array(201) { i -> LongArray(201) { j -> if (i == j) 0L else Long.MAX_VALUE } }.let { dist -> original.map { it.length }.distinct().toIntArray().let { lens -> LongArray(source.length + 1) { if (it == 0) 0L else Long.MAX_VALUE }.let { dp -> original.indices.forEach { i -> id.getOrPut(original[i]) { sz[0]++ }.let { u -> id.getOrPut(changed[i]) { sz[0]++ }.let { v -> dist[u][v] = minOf(dist[u][v], cost[i].toLong()) } } }.also { (0 until sz[0]).forEach { k -> (0 until sz[0]).forEach { i -> if (dist[i][k] != Long.MAX_VALUE) (0 until sz[0]).forEach { j -> if (dist[k][j] != Long.MAX_VALUE) dist[i][j] = minOf(dist[i][j], dist[i][k] + dist[k][j]) } } } }.also { source.indices.forEach { i -> if (dp[i] != Long.MAX_VALUE) (if (source[i] == target[i]) dp[i + 1] = minOf(dp[i + 1], dp[i]) else Unit).also { lens.forEach { L -> if (i + L <= source.length) id[source.substring(i, i + L)]?.let { u -> id[target.substring(i, i + L)]?.let { v -> if (dist[u][v] != Long.MAX_VALUE) dp[i + L] = minOf(dp[i + L], dp[i] + dist[u][v]) } } } } } }.let { if (dp[source.length] == Long.MAX_VALUE) -1L else dp[source.length] } } } } } } }

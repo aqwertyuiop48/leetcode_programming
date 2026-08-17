@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1343 lang=kotlin */
+class Solution { fun numOfSubarrays(arr: IntArray, k: Int, threshold: Int): Int = IntArray(arr.size + 1).also { p -> arr.indices.forEach { i -> p[i + 1] = p[i] + arr[i] } }.let { p -> (0..arr.size - k).count { i -> p[i + k] - p[i] >= k * threshold } } }

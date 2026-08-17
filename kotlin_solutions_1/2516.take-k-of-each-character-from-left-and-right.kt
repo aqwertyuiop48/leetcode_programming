@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2516 lang=kotlin */
+class Solution { fun takeCharacters(s: String, k: Int) = s.groupingBy { it }.eachCount().let { tot -> if (listOf('a', 'b', 'c').any { tot.getOrDefault(it, 0) < k }) -1 else s.length - IntArray(4).let { state -> s.indices.fold(0) { maxW, j -> state.also { it[s[j] - 'a']++ }.also { while (state[s[j] - 'a'] > tot.getOrDefault(s[j], 0) - k) state[s[state[3]++] - 'a']-- }.let { maxOf(maxW, j - state[3] + 1) } } } } }

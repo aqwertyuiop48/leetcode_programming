@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1954 lang=kotlin */
+class Solution { fun minimumPerimeter(neededApples: Long): Long = generateSequence(1L) { it + 1 }.first { n -> 2 * n * (n + 1) * (2 * n + 1) >= neededApples }.let { it * 8 } }

@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2035 lang=kotlin */
+class Solution {
+    fun minimumDifference(nums: IntArray): Int = nums.size.let { n -> (n / 2).let { k -> List(k + 1) { mutableListOf<Int>() }.also { l -> List(k + 1) { mutableListOf<Int>() }.also { r -> (0 until (1 shl k)).forEach { m -> (0 until k).fold(0 to 0) { acc, j -> (acc.first + if ((m shr j) and 1 == 1) nums[j] else 0) to (acc.second + if ((m shr j) and 1 == 1) nums[j + k] else 0) }.let { (s1, s2) -> java.lang.Integer.bitCount(m).let { bc -> l[bc].add(s1).run { r[bc].add(s2) } } } } } }.let { (l, r) -> l.map { it.sorted().toIntArray() } to r.map { it.sorted().toIntArray() } }.let { (l, r) -> nums.sum().let { s -> (0..k).minOf { i -> l[i].minOf { lv -> r[k - i].let { rv -> rv.binarySearch((s - 2 * lv) / 2).let { p -> (if (p < 0) -(p + 1) else p).let { idx -> listOfNotNull(idx.takeIf { it < rv.size }, (idx - 1).takeIf { it >= 0 }).minOf { Math.abs(s - 2 * (lv + rv[it])) } } } } } } } } } }
+}

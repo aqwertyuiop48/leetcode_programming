@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2089 lang=kotlin
+ *
+ * [2089] Find Target Indices After Sorting Array
+ */
+
+class Solution {
+    fun targetIndices(nums: IntArray, target: Int): List<Int> = nums.count { it < target }.let { start -> List(nums.count { it == target }) { start + it } }
+}

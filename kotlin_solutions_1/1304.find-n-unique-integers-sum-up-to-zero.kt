@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1304 lang=kotlin
+ *
+ * [1304] Find N Unique Integers Sum up to Zero
+ */
+class Solution { fun sumZero(n: Int): IntArray = IntArray(n) { i -> i * 2 - (n - 1) } }

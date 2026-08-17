@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2315 lang=kotlin */
+class Solution { fun countAsterisks(s: String): Int = s.split('|').filterIndexed { i, _ -> i % 2 == 0 }.sumOf { it.count { c -> c == '*' } } }

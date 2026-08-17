@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2191 lang=kotlin */
+class Solution { fun sortJumbled(mapping: IntArray, nums: IntArray): IntArray = nums.toList().sortedBy { n -> n.toString().map { mapping[it - '0'] }.joinToString("").toLong() }.toIntArray() }

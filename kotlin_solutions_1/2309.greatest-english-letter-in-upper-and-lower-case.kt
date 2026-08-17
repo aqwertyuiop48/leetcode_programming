@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2309 lang=kotlin */
+class Solution { fun greatestLetter(s: String): String = s.toSet().let { set -> ('Z' downTo 'A').find { it in set && it.lowercaseChar() in set }?.toString() ?: "" } }

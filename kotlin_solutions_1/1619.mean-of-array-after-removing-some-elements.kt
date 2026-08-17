@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1619 lang=kotlin
+ *
+ * [1619] Mean of Array After Removing Some Elements
+ */
+
+class Solution {
+    fun trimMean(arr: IntArray): Double = arr.sorted().let { s -> (s.size * 5 / 100).let { k -> s.subList(k, s.size - k).average() } }
+}

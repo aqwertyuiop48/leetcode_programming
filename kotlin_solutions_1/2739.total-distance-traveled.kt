@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2739 lang=kotlin */
+class Solution { fun distanceTraveled(mainTank: Int, additionalTank: Int): Int = (mainTank + Math.min((mainTank - 1) / 4, additionalTank)) * 10 }

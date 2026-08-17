@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1639 lang=kotlin */
+class Solution { fun numWays(words: Array<String>, target: String): Int = Array(words[0].length) { i -> IntArray(26).also { f -> words.forEach { w -> f[w[i] - 'a']++ } } }.let { freq -> words[0].indices.fold(LongArray(target.length + 1).apply { this[0] = 1 }) { dp, i -> dp.also { (target.length - 1 downTo 0).forEach { j -> dp[j + 1] = (dp[j + 1] + dp[j] * freq[i][target[j] - 'a']) % 1000000007 } } }[target.length].toInt() } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2373 lang=kotlin */
+class Solution { fun largestLocal(grid: Array<IntArray>): Array<IntArray> = Array(grid.size - 2) { r -> IntArray(grid.size - 2) { c -> (r..r + 2).maxOf { i -> (c..c + 2).maxOf { j -> grid[i][j] } } } } }

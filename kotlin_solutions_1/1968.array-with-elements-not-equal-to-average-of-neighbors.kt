@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1968 lang=kotlin */
+class Solution { fun rearrangeArray(nums: IntArray): IntArray = nums.sorted().let { sorted -> IntArray(nums.size) { i -> if (i % 2 == 0) sorted[i / 2] else sorted[nums.size - 1 - i / 2] } } }

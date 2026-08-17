@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2383 lang=kotlin */
+class Solution { fun minNumberOfHours(initialEnergy: Int, initialExperience: Int, energy: IntArray, experience: IntArray): Int = energy.indices.fold(intArrayOf(initialEnergy, initialExperience, 0)) { a, i -> a.apply { (energy[i] - a[0] + 1).coerceAtLeast(0).let { dEn -> (experience[i] - a[1] + 1).coerceAtLeast(0).let { dEx -> a[2] += (dEn + dEx).also { a[0] += dEn - energy[i] }.also { a[1] += dEx + experience[i] } } } } }[2] }

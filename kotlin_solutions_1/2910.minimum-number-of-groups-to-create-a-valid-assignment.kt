@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2910 lang=kotlin
+ *
+ * [2910] Minimum Number of Groups to Create a Valid Assignment
+ */
+
+class Solution { fun minGroupsForValidAssignment(nums: IntArray): Int = nums.groupBy { it }.values.map { it.size }.let { freqs -> (freqs.minOrNull()!! downTo 1).firstNotNullOfOrNull { k -> freqs.fold(0) { acc, f -> if (acc == -1) -1 else (f / (k + 1)).let { a -> (f % (k + 1)).let { b -> if (b == 0) acc + a else if (k - b <= a) acc + a + 1 else -1 } } }.takeIf { it != -1 } } ?: 0 } }

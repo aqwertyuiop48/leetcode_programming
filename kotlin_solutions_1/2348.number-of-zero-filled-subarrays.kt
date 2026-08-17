@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2348 lang=kotlin */
+class Solution { fun zeroFilledSubarray(nums: IntArray): Long = nums.fold(0L to 0L) { (acc, cur), n -> if (n == 0) (acc + cur + 1) to (cur + 1) else acc to 0L }.first }

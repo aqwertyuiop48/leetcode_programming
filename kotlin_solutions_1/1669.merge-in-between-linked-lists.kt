@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1669 lang=kotlin
+ *
+ * [1669] Merge In Between Linked Lists
+ */
+
+class Solution { fun mergeInBetween(list1: ListNode?, a: Int, b: Int, list2: ListNode?): ListNode? = list1.also { generateSequence(list1) { it.next }.elementAt(b + 1).let { bNode -> generateSequence(list2) { it.next }.last().next = bNode }.run { generateSequence(list1) { it.next }.elementAt(a - 1).next = list2 } } }

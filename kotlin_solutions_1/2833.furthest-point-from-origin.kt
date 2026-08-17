@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2833 lang=kotlin */
+class Solution { fun furthestDistanceFromOrigin(moves: String): Int = moves.fold(0 to 0) { (d, u), c -> if (c == 'L') (d - 1 to u) else if (c == 'R') (d + 1 to u) else (d to u + 1) }.let { (d, u) -> kotlin.math.abs(d) + u } }

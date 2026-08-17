@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2405 lang=kotlin */
+class Solution { fun partitionString(s: String): Int = s.fold(0 to 1) { (mask, count), c -> (1 shl (c - 'a')).let { bit -> if (mask and bit != 0) bit to (count + 1) else (mask or bit) to count } }.second }

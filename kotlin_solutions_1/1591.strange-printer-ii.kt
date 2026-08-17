@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1591 lang=kotlin
+ *
+ * [1591] Strange Printer II
+ */
+
+class Solution {
+    fun isPrintable(targetGrid: Array<IntArray>): Boolean = targetGrid.flatMap { it.asIterable() }.toSet().let { colors -> Array(61) { IntArray(4) { if (it % 2 == 0) 100 else -1 } }.apply { targetGrid.indices.forEach { r -> targetGrid[r].indices.forEach { c -> targetGrid[r][c].let { col -> this[col].apply { this[0] = minOf(this[0], r) }.apply { this[1] = maxOf(this[1], r) }.apply { this[2] = minOf(this[2], c) }.apply { this[3] = maxOf(this[3], c) } } } } }.let { box -> Array(61) { mutableSetOf<Int>() }.let { adj -> IntArray(61).let { inDeg -> colors.forEach { col -> (box[col][0]..box[col][1]).forEach { r -> (box[col][2]..box[col][3]).forEach { c -> targetGrid[r][c].let { other -> if (other != col && adj[col].add(other)) inDeg[other]++ } } } }.run { java.util.ArrayDeque(colors.filter { inDeg[it] == 0 }).let { q -> generateSequence { q.poll() }.onEach { u -> adj[u].forEach { v -> if (inDeg[v]-- == 1) q.add(v) } }.count() == colors.size } } } } } }
+}

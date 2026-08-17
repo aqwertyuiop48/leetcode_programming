@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1406 lang=kotlin
+ *
+ * [1406] Stone Game III
+ */
+
+class Solution { fun stoneGameIII(piles: IntArray): String = IntArray(piles.size + 1).apply { (piles.size - 1 downTo 0).forEach { i -> this[i] = (1..3).filter { i + it <= piles.size }.maxOf { k -> (0 until k).sumOf { piles[i + it] } - this[i + k] } } }[0].let { if (it > 0) "Alice" else if (it < 0) "Bob" else "Tie" } }

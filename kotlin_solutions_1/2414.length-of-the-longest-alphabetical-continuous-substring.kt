@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2414 lang=kotlin */
+class Solution { fun longestContinuousSubstring(s: String): Int = s.indices.fold(0 to 0) { (maxL, curL), i -> (if (i > 0 && s[i] == s[i-1] + 1) curL + 1 else 1).let { maxOf(maxL, it) to it } }.first }

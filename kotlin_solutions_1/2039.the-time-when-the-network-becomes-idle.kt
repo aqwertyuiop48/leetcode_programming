@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2039 lang=kotlin */
+class Solution {
+    fun networkBecomesIdle(edges: Array<IntArray>, patience: IntArray): Int = patience.size.let { n -> List(n) { mutableListOf<Int>() }.also { adj -> edges.forEach { adj[it[0]].add(it[1]).run { adj[it[1]].add(it[0]) } } }.let { adj -> IntArray(n) { -1 }.also { dist -> dist[0] = 0.run { DeepRecursiveFunction<List<Int>, Unit> { q -> q.flatMap { u -> adj[u].filter { v -> if (dist[v] == -1) dist.set(v, dist[u] + 1).let { true } else false } }.takeIf { it.isNotEmpty() }?.let { callRecursive(it) } }.invoke(listOf(0)) } }.let { dist -> (1 until n).maxOf { i -> (dist[i] * 2).let { d -> d + (d - 1) / patience[i] * patience[i] } } + 1 } } }
+}

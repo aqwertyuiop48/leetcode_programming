@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3468 lang=kotlin
+ *
+ * [3468] Find the Number of Copy Arrays
+ */
+
+class Solution { fun countArrays(original: IntArray, bounds: Array<IntArray>): Int = (1 until original.size).fold(longArrayOf(bounds[0][0].toLong(), bounds[0][1].toLong())) { curr, i -> (original[i] - original[i - 1]).toLong().let { diff -> longArrayOf(maxOf(curr[0] + diff, bounds[i][0].toLong()), minOf(curr[1] + diff, bounds[i][1].toLong())) } }.let { maxOf(0L, it[1] - it[0] + 1).toInt() } }

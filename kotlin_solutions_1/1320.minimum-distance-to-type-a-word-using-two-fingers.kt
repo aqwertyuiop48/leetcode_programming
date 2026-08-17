@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1320 lang=kotlin
+ *
+ * [1320] Minimum Distance to Type a Word Using Two Fingers
+ */
+
+class Solution { fun minimumDistance(word: String): Int = (1..<word.length).fold(IntArray(27)) { dp, i -> (word[i - 1] - 'A').let { p -> (word[i] - 'A').let { c -> IntArray(27) { o -> if (o == p) (0..26).minOf { dp[it] + if (it == 26) 0 else Math.abs(it / 6 - c / 6) + Math.abs(it % 6 - c % 6) } else dp[o] + Math.abs(p / 6 - c / 6) + Math.abs(p % 6 - c % 6) } } } }.minOf { it } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2472 lang=kotlin */
+class Solution { fun maxPalindromes(s: String, k: Int): Int = IntArray(1).let { last -> (0..s.length - k).fold(0) { acc, i -> if (i < last[0]) acc else ((k..k + 1).firstOrNull { len -> i + len <= s.length && (0 until len / 2).all { x -> s[i + x] == s[i + len - 1 - x] } }?.let { len -> 1.also { last[0] = i + len } } ?: 0) + acc } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1261 lang=kotlin
+ *
+ * [1261] Find Elements in a Contaminated Binary Tree
+ */
+
+class FindElements(root: TreeNode?, val seen: Set<Int> = mutableSetOf<Int>().also { set -> DeepRecursiveFunction<Pair<TreeNode?, Int>, Unit> { (node, v) -> if (node != null) set.add(v).also { node.`val` = v }.also { callRecursive(node.left to v * 2 + 1) }.also { callRecursive(node.right to v * 2 + 2) } }(root to 0) }) { fun find(target: Int): Boolean = target in seen }

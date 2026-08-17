@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1754 lang=kotlin
+ *
+ * [1754] Largest Merge Of Two Strings
+ */
+
+class Solution { fun largestMerge(word1: String, word2: String): String = object { tailrec fun solve(w1: String, w2: String, sb: java.lang.StringBuilder): String = if (w1.isEmpty()) sb.append(w2).toString() else if (w2.isEmpty()) sb.append(w1).toString() else if (w1 > w2) solve(w1.substring(1), w2, sb.append(w1[0])) else solve(w1, w2.substring(1), sb.append(w2[0])) }.solve(word1, word2, java.lang.StringBuilder()) }

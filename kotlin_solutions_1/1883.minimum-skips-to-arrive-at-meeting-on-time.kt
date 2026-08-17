@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1883 lang=kotlin */
+class Solution { fun minSkips(dist: IntArray, speed: Int, hoursBefore: Int): Int = LongArray(dist.size + 1) { if (it == 0) 0L else 1000000000000000L }.also { dp -> dist.indices.forEach { i -> (i + 1 downTo 0).forEach { j -> dp[j] = if (i == dist.size - 1) dp[j] + dist[i] else minOf(if (j > 0) dp[j - 1] + dist[i] else 1000000000000000L, (dp[j] + dist[i] + speed - 1) / speed * speed) } } }.let { dp -> dp.indices.firstOrNull { dp[it] <= hoursBefore.toLong() * speed } ?: -1 } }

@@ -1,0 +1,16 @@
+/*
+ * @lc app=leetcode id=1031 lang=kotlin
+ *
+ * [1031] Maximum Sum of Two Non-Overlapping Subarrays
+ */
+
+class Solution {
+    fun maxSumTwoNoOverlap(nums: IntArray, firstLen: Int, secondLen: Int): Int =
+        IntArray(nums.size + 1).apply { nums.indices.forEach { this[it + 1] = this[it] + nums[it] } }.let { p ->
+            { l1: Int, l2: Int ->
+                (l1..nums.size - l2).fold(0 to 0) { (m1, ans), i ->
+                    maxOf(m1, p[i] - p[i - l1]).let { nm1 -> nm1 to maxOf(ans, nm1 + p[i + l2] - p[i]) }
+                }.second
+            }.let { f -> maxOf(f(firstLen, secondLen), f(secondLen, firstLen)) }
+        }
+}

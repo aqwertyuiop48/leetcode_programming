@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2658 lang=kotlin */
+class Solution { fun findMaxFish(grid: Array<IntArray>): Int = kotlin.DeepRecursiveFunction<Pair<Int, Int>, Int> { (r, c) -> if (r !in grid.indices || c !in grid[0].indices || grid[r][c] == 0) 0 else grid[r][c].also { grid[r][c] = 0 }.let { fish -> fish + callRecursive(r + 1 to c) + callRecursive(r - 1 to c) + callRecursive(r to c + 1) + callRecursive(r to c - 1) } }.let { dfs -> grid.indices.flatMap { r -> grid[0].indices.map { c -> if (grid[r][c] > 0) dfs.invoke(r to c) else 0 } }.maxOfOrNull { it } ?: 0 } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1997 lang=kotlin */
+class Solution { fun firstDayBeenInAllRooms(nextVisit: IntArray): Int = LongArray(nextVisit.size).apply { (1 until size).forEach { i -> this[i] = (this[i - 1] * 2 - this[nextVisit[i - 1]] + 1000000009) % 1000000007 } }.let { it[it.size - 1].toInt() } }

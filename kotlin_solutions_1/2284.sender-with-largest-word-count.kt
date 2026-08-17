@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2284 lang=kotlin */
+class Solution { fun largestWordCount(messages: Array<String>, senders: Array<String>): String = senders.indices.groupBy({ senders[it] }, { messages[it].split(" ").size }).mapValues { it.value.sum() }.let { m -> m.keys.maxWithOrNull(compareBy({ m[it] }, { it }))!! } }

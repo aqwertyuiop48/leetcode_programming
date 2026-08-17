@@ -1,0 +1,16 @@
+/*
+ * @lc app=leetcode id=1035 lang=kotlin
+ *
+ * [1035] Uncrossed Lines
+ */
+
+class Solution {
+    fun maxUncrossedLines(nums1: IntArray, nums2: IntArray): Int =
+        nums1.fold(IntArray(nums2.size + 1)) { dp, x ->
+            IntArray(nums2.size + 1).also { next ->
+                nums2.indices.forEach { j ->
+                    next[j + 1] = if (x == nums2[j]) dp[j] + 1 else maxOf(dp[j + 1], next[j])
+                }
+            }
+        }.last()
+}

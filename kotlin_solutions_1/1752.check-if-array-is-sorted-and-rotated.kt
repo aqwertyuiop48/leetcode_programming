@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1752 lang=kotlin
+ *
+ * [1752] Check if Array Is Sorted and Rotated
+ */
+
+class Solution { fun check(nums: IntArray): Boolean = nums.indices.count { nums[it] > nums[(it + 1) % nums.size] } <= 1 }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3095 lang=kotlin
+ *
+ * [3095] Shortest Subarray With OR at Least K I
+ */
+
+class Solution { fun minimumSubarrayLength(nums: IntArray, k: Int): Int = nums.indices.minOfOrNull { i -> nums.drop(i).scan(0) { cur, x -> cur or x }.drop(1).mapIndexed { idx, curOr -> if (curOr >= k) idx + 1 else Int.MAX_VALUE }.minOrNull() ?: Int.MAX_VALUE }?.takeIf { it != Int.MAX_VALUE } ?: -1 }

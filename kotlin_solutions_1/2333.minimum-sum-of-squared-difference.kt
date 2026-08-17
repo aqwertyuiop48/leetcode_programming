@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2333 lang=kotlin */
+class Solution { fun minSumSquareDiff(nums1: IntArray, nums2: IntArray, k1: Int, k2: Int): Long = IntArray(100001).apply { nums1.indices.forEach { i -> this[kotlin.math.abs(nums1[i] - nums2[i])]++ } }.let { bk -> (k1.toLong() + k2).let { kTotal -> (100000 downTo 1).fold(kTotal) { k, v -> kotlin.math.min(k, bk[v].toLong()).let { take -> bk.also { it[v] -= take.toInt() }.also { it[v - 1] += take.toInt() }.run { k - take } } }.let { bk.indices.sumOf { i -> bk[i].toLong() * i.toLong() * i } } } } }

@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3186 lang=kotlin
+ *
+ * [3186] Maximum Total Damage With Spell Casting
+ */
+class Solution { fun maximumTotalDamage(power: IntArray): Long = power.sorted().groupBy { it }.entries.map { it.key to it.key.toLong() * it.value.size }.let { u -> u.indices.fold(Triple(0, 0L, LongArray(u.size))) { (j, maxPrev, dp), i -> (j until i).takeWhile { u[i].first - u[it].first > 2 }.let { validIndices -> (j + validIndices.size).let { newJ -> validIndices.fold(maxPrev) { acc, idx -> maxOf(acc, dp[idx]) }.let { newMax -> dp.also { it[i] = maxOf(if (i > 0) dp[i - 1] else 0L, newMax + u[i].second) }.let { Triple(newJ, newMax, dp) } } } } }.third.lastOrNull() ?: 0L } }

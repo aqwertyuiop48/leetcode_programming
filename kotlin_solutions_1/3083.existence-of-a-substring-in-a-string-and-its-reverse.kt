@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3083 lang=kotlin */
+class Solution { fun isSubstringPresent(s: String): Boolean = s.reversed().let { rev -> (0..s.length - 2).any { i -> rev.contains(s.substring(i, i + 2)) } } }

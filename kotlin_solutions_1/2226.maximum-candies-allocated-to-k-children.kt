@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2226 lang=kotlin
+ *
+ * [2226] Maximum Candies Allocated to K Children
+ */
+
+class Solution {
+    fun maximumCandies(candies: IntArray, k: Long): Int = generateSequence(Triple(1L, 10000000L, 0L)) { (l, r, a) -> if (l <= r) (l + (r - l) / 2).let { m -> if (candies.sumOf { it.toLong() / m } >= k) Triple(m + 1, r, m) else Triple(l, m - 1, a) } else null }.last().third.toInt()
+}

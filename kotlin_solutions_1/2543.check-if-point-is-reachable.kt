@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2543 lang=kotlin */
+class Solution { fun isReachable(x: Int, y: Int): Boolean = generateSequence(x to y) { it.second to it.first % it.second }.first { it.second == 0 }.first.let { it and (it - 1) == 0 } }

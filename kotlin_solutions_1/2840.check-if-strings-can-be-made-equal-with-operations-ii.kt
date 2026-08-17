@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2840 lang=kotlin */
+class Solution { fun checkStrings(s1: String, s2: String): Boolean = (0..1).all { p -> s1.indices.filter { it % 2 == p }.map { s1[it] }.sorted() == s2.indices.filter { it % 2 == p }.map { s2[it] }.sorted() } }

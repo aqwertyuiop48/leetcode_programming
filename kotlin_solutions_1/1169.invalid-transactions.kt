@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1169 lang=kotlin
+ *
+ * [1169] Invalid Transactions
+ */
+
+class Solution { fun invalidTransactions(transactions: Array<String>): List<String> = transactions.map { it.split(",") }.let { t -> transactions.indices.filter { i -> t[i][2].toInt() > 1000 || transactions.indices.any { j -> i != j && t[i][0] == t[j][0] && t[i][3] != t[j][3] && Math.abs(t[i][1].toInt() - t[j][1].toInt()) <= 60 } }.map { transactions[it] } } }

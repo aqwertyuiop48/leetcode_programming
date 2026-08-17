@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1913 lang=kotlin
+ *
+ * [1913] Maximum Product Difference Between Two Pairs
+ */
+
+class Solution {
+    fun maxProductDifference(nums: IntArray): Int = nums.sorted().let { (it[it.size - 1] * it[it.size - 2]) - (it[0] * it[1]) }
+}

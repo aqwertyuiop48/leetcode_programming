@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1704 lang=kotlin */
+class Solution { fun halvesAreAlike(s: String): Boolean = s.take(s.length / 2).count { "aeiouAEIOU".contains(it) } == s.drop(s.length / 2).count { "aeiouAEIOU".contains(it) } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3136 lang=kotlin
+ *
+ * [3136] Valid Word
+ */
+
+class Solution { fun isValid(word: String): Boolean = word.length >= 3 && word.all { it.isLetterOrDigit() } && word.any { it.lowercaseChar() in "aeiou" } && word.any { it.isLetter() && it.lowercaseChar() !in "aeiou" } }

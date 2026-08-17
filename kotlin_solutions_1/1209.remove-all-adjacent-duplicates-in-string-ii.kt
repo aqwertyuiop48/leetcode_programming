@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1209 lang=kotlin
+ *
+ * [1209] Remove All Adjacent Duplicates in String II
+ */
+
+class Solution {
+    fun removeDuplicates(s: String, k: Int): String = s.fold(mutableListOf<Pair<Char, Int>>()) { st, c -> st.apply { if (isNotEmpty() && last().first == c) { if (last().second + 1 == k) removeAt(lastIndex) else set(lastIndex, c to (last().second + 1)) } else add(c to 1) } }.joinToString("") { (c, cnt) -> "$c".repeat(cnt) }
+}

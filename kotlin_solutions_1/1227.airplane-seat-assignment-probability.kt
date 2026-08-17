@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1227 lang=kotlin
+ *
+ * [1227] Airplane Seat Assignment Probability
+ */
+class Solution { fun nthPersonGetsNthSeat(n: Int): Double = if (n == 1) 1.0 else 0.5 }

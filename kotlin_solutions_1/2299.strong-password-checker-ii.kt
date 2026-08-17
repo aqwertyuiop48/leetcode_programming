@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2299 lang=kotlin */
+class Solution { fun strongPasswordCheckerII(p: String): Boolean = p.run { length >= 8 && any { it.isLowerCase() } && any { it.isUpperCase() } && any { it.isDigit() } && any { "!@#$%^&*()-+".contains(it) } && zipWithNext().none { it.first == it.second } } }

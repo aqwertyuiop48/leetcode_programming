@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2900 lang=kotlin
+ *
+ * [2900] Longest Unequal Adjacent Groups Subsequence I
+ */
+
+class Solution {
+    fun getLongestSubsequence(words: Array<String>, groups: IntArray): List<String> = words.indices.fold(mutableListOf<Int>()) { acc, i -> if (acc.isEmpty() || groups[i] != groups[acc.last()]) acc.also { it.add(i) } else acc }.map { words[it] }
+}

@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=3130 lang=kotlin
+ *
+ * [3130] Find All Possible Stable Binary Arrays II
+ */
+
+class Solution {
+    fun numberOfStableArrays(zero: Int, one: Int, limit: Int): Int = Array(zero + 1) { Array(one + 1) { LongArray(2) } }.also { dp -> (1..minOf(zero, limit)).forEach { dp[it][0][0] = 1L } }.also { dp -> (1..minOf(one, limit)).forEach { dp[0][it][1] = 1L } }.also { dp -> (1..zero).forEach { i -> (1..one).forEach { j -> dp[i][j][0] = ((dp[i - 1][j][0] + dp[i - 1][j][1] - (if (i > limit) dp[i - limit - 1][j][1] else 0L) + 1000000007) % 1000000007).also { dp[i][j][1] = (dp[i][j - 1][0] + dp[i][j - 1][1] - (if (j > limit) dp[i][j - limit - 1][0] else 0L) + 1000000007) % 1000000007 } } } }.let { dp -> ((dp[zero][one][0] + dp[zero][one][1]) % 1000000007).toInt() }
+}

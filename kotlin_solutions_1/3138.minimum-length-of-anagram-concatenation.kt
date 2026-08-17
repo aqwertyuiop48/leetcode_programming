@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3138 lang=kotlin
+ *
+ * [3138] Minimum Length of Anagram Concatenation
+ */
+
+class Solution { fun minAnagramLength(s: String): Int = (1..s.length).first { k -> s.length % k == 0 && s.chunked(k).map { chunk -> chunk.groupingBy { it }.eachCount() }.run { all { it == first() } } } }

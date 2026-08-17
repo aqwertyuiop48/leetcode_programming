@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2834 lang=kotlin */
+class Solution { fun minimumPossibleSum(n: Int, k: Int): Int = (k.toLong() / 2).let { m -> (if (n.toLong() <= m) n.toLong() * (n + 1) / 2 else m * (m + 1) / 2 + (n.toLong() - m) * (2L * k + (n.toLong() - m) - 1) / 2) % 1000000007 }.toInt() }

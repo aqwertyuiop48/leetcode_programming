@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3163 lang=kotlin */
+class Solution { fun compressedString(word: String): String = "(.)\\1{0,8}".toRegex().findAll(word).joinToString("") { "${it.value.length}${it.value[0]}" } }

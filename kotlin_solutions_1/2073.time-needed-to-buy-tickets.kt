@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2073 lang=kotlin */
+class Solution { fun timeRequiredToBuy(tickets: IntArray, k: Int): Int = tickets.indices.sumOf { i -> if (i <= k) minOf(tickets[i], tickets[k]) else minOf(tickets[i], tickets[k] - 1) } }

@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1848 lang=kotlin
+ *
+ * [1848] Minimum Distance to the Target Element
+ */
+class Solution { fun getMinDistance(nums: IntArray, target: Int, start: Int): Int = nums.indices.filter { nums[it] == target }.map { Math.abs(it - start) }.minOrNull() ?: 0 }

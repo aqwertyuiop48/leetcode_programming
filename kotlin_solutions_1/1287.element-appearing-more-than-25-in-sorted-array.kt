@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1287 lang=kotlin
+ *
+ * [1287] Element Appearing More Than 25% In Sorted Array
+ */
+
+class Solution {
+    fun findSpecialInteger(arr: IntArray): Int = arr[arr.indices.first { i -> i + arr.size / 4 < arr.size && arr[i] == arr[i + arr.size / 4] }]
+}

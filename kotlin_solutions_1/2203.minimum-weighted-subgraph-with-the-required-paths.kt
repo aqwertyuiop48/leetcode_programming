@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=2203 lang=kotlin
+ *
+ * [2203] Minimum Weighted Subgraph With the Required Paths
+ */
+class Solution { fun minimumWeight(n: Int, edges: Array<IntArray>, src1: Int, src2: Int, dest: Int): Long = Array(n) { ArrayList<Pair<Int, Long>>() }.let { adj -> Array(n) { ArrayList<Pair<Int, Long>>() }.let { radj -> edges.forEach { edge -> adj[edge[0]].add(edge[1] to edge[2].toLong()).run { radj[edge[1]].add(edge[0] to edge[2].toLong()) } }.run { { start: Int, graph: Array<ArrayList<Pair<Int, Long>>> -> LongArray(n) { 100000000000000L }.let { dist -> dist.set(start, 0L).run { java.util.PriorityQueue<Pair<Int, Long>>(compareBy { it.second }).let { pq -> pq.add(start to 0L).run { kotlin.DeepRecursiveFunction<Unit, Unit> { if (!pq.isEmpty()) pq.poll().let { (u, d) -> if (d <= dist[u]) graph[u].forEach { (v, w) -> if (dist[u] + w < dist[v]) dist.set(v, dist[u] + w).run { pq.add(v to dist[v]) } } } }.run { callRecursive(Unit) } } else Unit }.invoke(Unit) } }.run { dist } } } }.let { dijkstra -> dijkstra(src1, adj).let { d1 -> dijkstra(src2, adj).let { d2 -> dijkstra(dest, radj).let { d3 -> (0 until n).minOf { i -> d1[i] + d2[i] + d3[i] }.let { ans -> if (ans >= 100000000000000L) -1L else ans } } } } } } } } }

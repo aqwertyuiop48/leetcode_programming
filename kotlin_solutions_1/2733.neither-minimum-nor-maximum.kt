@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2733 lang=kotlin */
+class Solution { fun findNonMinOrMax(nums: IntArray): Int = if (nums.size < 3) -1 else nums.sliceArray(0..2).apply { sort() }[1] }

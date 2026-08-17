@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1281 lang=kotlin
+ *
+ * [1281] Subtract the Product and Sum of Digits of an Integer
+ */
+
+class Solution {
+    fun subtractProductAndSum(n: Int): Int = n.toString().map { it - '0' }.run { fold(1) { acc, d -> acc * d } - sum() }
+}

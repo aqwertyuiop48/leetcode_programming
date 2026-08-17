@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3547 lang=kotlin */
+class Solution { fun maxScore(n: Int, edges: Array<IntArray>): Long = n.toLong().let { n -> ((n - 1) / 2) * ((n - 1) / 2 + 1) * (2 * ((n - 1) / 2) + 1) / 3 * 2 - ((n - 1) / 2) + (n / 2 - 1) * (n / 2) * (n / 2 + 1) / 3 * 4 + n * (n - 1) + if (edges.size == n.toInt()) 2 else 0 } }

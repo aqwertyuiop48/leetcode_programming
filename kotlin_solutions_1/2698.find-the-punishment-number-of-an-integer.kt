@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2698 lang=kotlin */
+class Solution { fun punishmentNumber(n: Int): Int = (1..n).filter { i -> DeepRecursiveFunction<Pair<String, Int>, Boolean> { (s, t) -> if (t < 0) false else if (s.isEmpty()) t == 0 else (1..s.length).any { l -> callRecursive(s.substring(l) to t - s.substring(0, l).toInt()) } }.callRecursive((i * i).toString() to i) }.sumOf { it * it } }

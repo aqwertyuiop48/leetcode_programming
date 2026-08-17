@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1020 lang=kotlin
+ *
+ * [1020] Number of Enclaves
+ */
+
+class Solution {
+    fun numEnclaves(grid: Array<IntArray>): Int = DeepRecursiveFunction<Pair<Int, Int>, Unit> { (r, c) -> if (r in grid.indices && c in grid[0].indices && grid[r][c] == 1) grid[r].set(c, 0).also { callRecursive(Pair(r + 1, c)) }.also { callRecursive(Pair(r - 1, c)) }.also { callRecursive(Pair(r, c + 1)) }.also { callRecursive(Pair(r, c - 1)) } else Unit }.let { dfs -> grid.indices.forEach { r -> dfs(Pair(r, 0)).also { dfs(Pair(r, grid[0].lastIndex)) } }.run { grid[0].indices.forEach { c -> dfs(Pair(0, c)).also { dfs(Pair(grid.lastIndex, c)) } } }.run { grid.sumOf { row -> row.count { it == 1 } } } }
+}

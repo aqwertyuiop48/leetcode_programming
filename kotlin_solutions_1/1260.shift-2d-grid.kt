@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1260 lang=kotlin
+ *
+ * [1260] Shift 2D Grid
+ */
+
+class Solution { fun shiftGrid(grid: Array<IntArray>, k: Int): List<List<Int>> = (grid.size * grid[0].size).let { total -> grid.indices.map { r -> grid[0].indices.map { c -> ((r * grid[0].size + c - k % total) % total + total) % total }.map { old -> grid[old / grid[0].size][old % grid[0].size] } } } }

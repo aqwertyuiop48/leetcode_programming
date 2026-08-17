@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2614 lang=kotlin */
+class Solution { fun diagonalPrime(nums: Array<IntArray>): Int = nums.indices.flatMap { i -> listOf(nums[i][i], nums[i][nums.size - 1 - i]) }.filter { n -> n > 1 && (2..Math.sqrt(n.toDouble()).toInt()).all { n % it != 0 } }.maxOrNull() ?: 0 }

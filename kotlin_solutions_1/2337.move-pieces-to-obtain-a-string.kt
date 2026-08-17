@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2337 lang=kotlin */
+class Solution { fun canChange(start: String, target: String): Boolean = (start.replace("_", "") == target.replace("_", "")) && start.indices.filter { start[it] != '_' }.zip(target.indices.filter { target[it] != '_' }).all { (i, j) -> if (start[i] == 'L') i >= j else i <= j } }

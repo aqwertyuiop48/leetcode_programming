@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1054 lang=kotlin
+ *
+ * [1054] Distant Barcodes
+ */
+
+class Solution {
+    fun rearrangeBarcodes(barcodes: IntArray): IntArray = barcodes.toList().groupingBy { it }.eachCount().entries.sortedByDescending { it.value }.flatMap { (code, count) -> List(count) { code } }.let { sorted -> IntArray(barcodes.size).also { res -> ((0 until barcodes.size step 2) + (1 until barcodes.size step 2)).forEachIndexed { idx, targetIdx -> res[targetIdx] = sorted[idx] } } }
+}

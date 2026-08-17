@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3085 lang=kotlin */
+class Solution { fun minimumDeletions(word: String, k: Int): Int = IntArray(26).apply { word.forEach { this[it - 'a']++ } }.filter { it > 0 }.let { freqs -> freqs.minOf { target -> freqs.sumOf { f -> if (f < target) f else if (f > target + k) f - (target + k) else 0 } } } }

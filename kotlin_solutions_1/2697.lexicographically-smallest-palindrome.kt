@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2697 lang=kotlin */
+class Solution { fun makeSmallestPalindrome(s: String): String = s.toCharArray().also { c -> (0 until s.length / 2).map { i -> minOf(c[i], c[s.length - 1 - i]).also { c[i] = it }.also { c[s.length - 1 - i] = it } } }.let { String(it) } }

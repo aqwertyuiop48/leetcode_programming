@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3217 lang=kotlin */
+class Solution { fun modifiedList(nums: IntArray, head: ListNode?): ListNode? = nums.toSet().let { set -> ListNode(0).apply { next = head }.also { dummy -> generateSequence(dummy) { it.next }.forEach { curr -> while (curr.next?.`val` in set) curr.next = curr.next?.next } }.next } }

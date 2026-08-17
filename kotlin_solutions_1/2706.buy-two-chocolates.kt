@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2706 lang=kotlin */
+class Solution { fun buyChoco(prices: IntArray, money: Int): Int = prices.sorted().let { if (it[0] + it[1] <= money) money - it[0] - it[1] else money } }

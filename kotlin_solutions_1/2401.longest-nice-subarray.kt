@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2401 lang=kotlin */
+class Solution { fun longestNiceSubarray(nums: IntArray): Int = nums.indices.fold(Triple(0, 0, 0)) { (l, mask, res), r -> generateSequence(l to mask) { (curL, curM) -> if (curM and nums[r] != 0) (curL + 1) to (curM xor nums[curL]) else null }.last().let { (nL, nM) -> Triple(nL, nM or nums[r], maxOf(res, r - nL + 1)) } }.third }

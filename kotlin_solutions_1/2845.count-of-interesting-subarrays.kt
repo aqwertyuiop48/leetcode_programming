@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2845 lang=kotlin */
+class Solution { fun countInterestingSubarrays(nums: List<Int>, modulo: Int, k: Int): Long = nums.fold(Triple(0L, 0, mutableMapOf(0 to 1L))) { (count, s, map), n -> ((s + if (n % modulo == k) 1 else 0) % modulo).let { ns -> Triple(count + (map[(ns - k + modulo) % modulo] ?: 0L), ns, map.also { it[ns] = (it[ns] ?: 0L) + 1L }) } }.first }

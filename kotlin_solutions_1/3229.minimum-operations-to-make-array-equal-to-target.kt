@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3229 lang=kotlin */
+class Solution { fun minimumOperations(nums: IntArray, target: IntArray): Long = nums.indices.fold(0L to 0L) { (ans, prev), i -> (target[i].toLong() - nums[i].toLong()).let { d -> (ans + if ((d > 0) == (prev > 0) && prev != 0L) maxOf(0L, kotlin.math.abs(d) - kotlin.math.abs(prev)) else kotlin.math.abs(d)) to d } }.first }

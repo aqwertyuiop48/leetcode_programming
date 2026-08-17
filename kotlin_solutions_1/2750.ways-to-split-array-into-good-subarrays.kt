@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2750 lang=kotlin */
+class Solution { fun numberOfGoodSubarraySplits(nums: IntArray): Int = nums.indices.filter { nums[it] == 1 }.let { o -> if (o.isEmpty()) 0 else o.zipWithNext().fold(1L) { a, p -> a * (p.second - p.first) % 1000000007 }.toInt() } }

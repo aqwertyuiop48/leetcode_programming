@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2860 lang=kotlin */
+class Solution { fun countWays(nums: List<Int>): Int = nums.sorted().let { s -> (0..s.size).count { k -> (k == 0 || s[k - 1] < k) && (k == s.size || s[k] > k) } } }

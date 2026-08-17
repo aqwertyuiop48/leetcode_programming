@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2018 lang=kotlin */
+class Solution { fun placeWordInCrossword(board: Array<CharArray>, word: String) = (board.indices.map { r -> board[r].joinToString("") } + board[0].indices.map { c -> board.indices.map { r -> board[r][c] }.joinToString("") }).flatMap { it.split('#') }.filter { it.length == word.length }.any { s -> word.indices.all { i -> s[i] == ' ' || s[i] == word[i] } || word.indices.all { i -> s[i] == ' ' || s[i] == word[word.length - 1 - i] } } }

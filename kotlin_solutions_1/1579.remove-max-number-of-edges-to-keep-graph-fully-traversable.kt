@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1579 lang=kotlin
+ *
+ * [1579] Remove Max Number of Edges to Keep Graph Fully Traversable
+ */
+
+class Solution {
+    fun maxNumEdgesToRemove(n: Int, edges: Array<IntArray>): Int = DeepRecursiveFunction<Pair<IntArray, Int>, Int> { (p, x) -> if (p[x] == x) x else callRecursive(p to p[x]).also { p[x] = it } }.let { find -> { p: IntArray, u: Int, v: Int -> find(p to u).let { ru -> find(p to v).let { rv -> (ru != rv).also { if (it) p[ru] = rv } } } }.let { union -> IntArray(n + 1) { it }.let { pa -> IntArray(n + 1) { it }.let { pb -> edges.filter { it[0] == 3 }.fold(intArrayOf(0, n, n)) { st, e -> union(pa, e[1], e[2]).let { uA -> union(pb, e[1], e[2]).let { uB -> st.apply { if (uA || uB) st[0]++ }.apply { if (uA) st[1]-- }.apply { if (uB) st[2]-- } } } }.let { st3 -> edges.filter { it[0] == 1 }.fold(st3) { st, e -> union(pa, e[1], e[2]).let { uA -> st.apply { if (uA) st[0]++ }.apply { if (uA) st[1]-- } } } }.let { st1 -> edges.filter { it[0] == 2 }.fold(st1) { st, e -> union(pb, e[1], e[2]).let { uB -> st.apply { if (uB) st[0]++ }.apply { if (uB) st[2]-- } } } }.let { finalSt -> if (finalSt[1] == 1 && finalSt[2] == 1) edges.size - finalSt[0] else -1 } } } } }
+}

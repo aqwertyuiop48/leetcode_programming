@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1313 lang=kotlin
+ *
+ * [1313] Decompress Run-Length Encoded List
+ */
+class Solution { fun decompressRLElist(nums: IntArray): IntArray = (0 until nums.size step 2).flatMap { i -> List(nums[i]) { nums[i + 1] } }.toIntArray() }

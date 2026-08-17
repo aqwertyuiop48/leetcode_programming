@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2217 lang=kotlin */
+class Solution { fun kthPalindrome(queries: IntArray, intLength: Int): LongArray = Math.pow(10.0, (intLength - 1) / 2.0).toLong().let { base -> (base * 9).let { max -> LongArray(queries.size) { i -> queries[i].toLong().let { k -> if (k > max) -1L else (base + k - 1).toString().let { s -> (s + s.dropLast(intLength % 2).reversed()).toLong() } } } } } }

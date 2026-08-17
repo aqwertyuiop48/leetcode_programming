@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1028 lang=kotlin
+ *
+ * [1028] Recover a Tree From Preorder Traversal
+ */
+
+class Solution {
+    fun recoverFromPreorder(s: String): TreeNode? = Regex("""-*\d+""").findAll(s).fold(Array<TreeNode?>(1005) { null }) { stack, match -> match.value.let { str -> str.count { it == '-' }.let { depth -> TreeNode(str.drop(depth).toInt()).also { node -> stack[depth] = node }.also { node -> if (depth > 0) stack[depth - 1]?.let { parent -> if (parent.left == null) parent.left = node else parent.right = node } } } }.let { stack } }[0]
+}

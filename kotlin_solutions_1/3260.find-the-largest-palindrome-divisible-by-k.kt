@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3260 lang=java
+ *
+ * [3260] Find the Largest Palindrome Divisible by K
+ */
+class Solution { fun largestPalindrome(n: Int, k: Int): String = if (k == 1 || k == 3 || k == 9) "9".repeat(n) else if (k == 2) (if (n <= 2) "8".repeat(n) else "8" + "9".repeat(n - 2) + "8") else if (k == 4) (if (n <= 4) "8".repeat(n) else "88" + "9".repeat(n - 4) + "88") else if (k == 5) (if (n <= 2) "5".repeat(n) else "5" + "9".repeat(n - 2) + "5") else if (k == 8) (if (n <= 6) "8".repeat(n) else "888" + "9".repeat(n - 6) + "888") else if (k == 6) (if (n <= 2) "6".repeat(n) else if (n % 2 != 0) "8" + "9".repeat((n - 3) / 2) + "8" + "9".repeat((n - 3) / 2) + "8" else "8" + "9".repeat((n - 4) / 2) + "77" + "9".repeat((n - 4) / 2) + "8") else (0..9).map { 9 - it }.map { i -> if (n <= 2) i.toString().repeat(n) else if (n % 2 != 0) "9".repeat((n - 1) / 2) + i + "9".repeat((n - 1) / 2) else "9".repeat((n - 2) / 2) + i.toString() + i.toString() + "9".repeat((n - 2) / 2) }.first { s -> s.fold(0) { rem, c -> (rem * 10 + (c - '0')) % 7 } == 0 } }

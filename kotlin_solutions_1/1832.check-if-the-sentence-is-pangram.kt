@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1832 lang=kotlin
+ *
+ * [1832] Check if the Sentence Is Pangram
+ */
+
+class Solution { fun checkIfPangram(sentence: String): Boolean = sentence.filter { it in 'a'..'z' }.toSet().size == 26 }

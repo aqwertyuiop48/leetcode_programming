@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2911 lang=kotlin
+ *
+ * [2911] Minimum Changes to Make K Semi-palindromes
+ */
+
+class Solution { fun minimumChanges(s: String, k: Int): Int = Array(s.length) { i -> IntArray(s.length) { j -> if (j < i) 0 else (1 until (j - i + 1)).filter { d -> (j - i + 1) % d == 0 }.minOfOrNull { d -> (0 until d).sumOf { off -> (0 until (j - i + 1) / d / 2).count { p -> s[i + p * d + off] != s[i + ((j - i + 1) / d - 1 - p) * d + off] } } } ?: 100000 } }.let { cost -> IntArray(s.length + 1) { i -> if (i == 0) 0 else 100000 }.let { dp -> (1..k).fold(dp) { prev, p -> IntArray(s.length + 1) { i -> if (i < p) 100000 else (p - 1 until i).minOf { j -> prev[j] + cost[j][i - 1] } } }[s.length] } } }

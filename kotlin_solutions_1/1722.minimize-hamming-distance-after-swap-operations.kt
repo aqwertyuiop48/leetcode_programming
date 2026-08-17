@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1722 lang=kotlin
+ *
+ * [1722] Minimize Hamming Distance After Swap Operations
+ */
+
+class Solution { fun minimumHammingDistance(source: IntArray, target: IntArray, allowedSwaps: Array<IntArray>): Int = IntArray(source.size) { it }.let { parent -> { i: Int -> generateSequence(i) { parent[it].takeIf { p -> p != it } }.toList().also { path -> path.forEach { parent[it] = path.last() } }.last() }.let { find -> allowedSwaps.forEach { parent[find(it[0])] = find(it[1]) }.let { source.indices.groupBy { find(it) } }.let { groups -> source.size - groups.keys.sumOf { r -> groups[r]!!.let { g -> g.map { source[it] }.groupingBy { it }.eachCount().let { sMap -> g.map { target[it] }.groupingBy { it }.eachCount().let { tMap -> sMap.keys.sumOf { k -> minOf(sMap[k] ?: 0, tMap[k] ?: 0) } } } } } } } } }

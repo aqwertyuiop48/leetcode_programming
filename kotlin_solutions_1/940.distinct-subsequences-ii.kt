@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=940 lang=kotlin
+ *
+ * [940] Distinct Subsequences II
+ */
+
+class Solution {
+    fun distinctSubseqII(s: String): Int = IntArray(26) { -1 }.let { last -> IntArray(s.length + 1).apply { this[0] = 1 }.also { dp -> s.indices.forEach { i -> (s[i] - 'a').let { c -> dp[i + 1] = ((dp[i] * 2 % 1000000007).let { d -> if (last[c] != -1) (d - dp[last[c]] + 1000000007) % 1000000007 else d }).also { last[c] = i } } } }.let { dp -> (dp[s.length] - 1 + 1000000007) % 1000000007 } }
+}

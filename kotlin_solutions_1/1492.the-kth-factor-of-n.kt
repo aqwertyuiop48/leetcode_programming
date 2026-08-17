@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1492 lang=kotlin */ class Solution { fun kthFactor(n: Int, k: Int): Int = (1..n).filter { n % it == 0 }.getOrNull(k - 1) ?: -1 }

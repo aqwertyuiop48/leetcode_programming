@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1952 lang=kotlin */
+class Solution { fun isThree(n: Int): Boolean = (1..n).count { n % it == 0 } == 3 }

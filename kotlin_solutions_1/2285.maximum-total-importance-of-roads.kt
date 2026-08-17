@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2285 lang=kotlin */
+class Solution { fun maximumImportance(n: Int, roads: Array<IntArray>): Long = LongArray(n).also { d -> roads.forEach { r -> d[r[0]].let { d[r[0]] = it + 1 }.run { d[r[1]].let { d[r[1]] = it + 1 } } } }.sorted().mapIndexed { i, d -> d * (i + 1) }.sum() }

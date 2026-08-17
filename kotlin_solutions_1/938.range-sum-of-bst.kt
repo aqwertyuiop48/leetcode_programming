@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=938 lang=kotlin */
+class Solution { fun rangeSumBST(root: TreeNode?, low: Int, high: Int): Int = root?.let { if (it.`val` < low) rangeSumBST(it.right, low, high) else if (it.`val` > high) rangeSumBST(it.left, low, high) else it.`val` + rangeSumBST(it.left, low, high) + rangeSumBST(it.right, low, high) } ?: 0 }

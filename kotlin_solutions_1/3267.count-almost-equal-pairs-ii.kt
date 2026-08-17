@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3267 lang=java
+ *
+ * [3267] Count Almost Equal Pairs II
+ */
+class Solution { fun countPairs(nums: IntArray): Int = intArrayOf(1, 10, 100, 1000, 10000, 100000, 1000000, 10000000).let { P -> (nums.maxOrNull()?.toString()?.length ?: 7).let { maxL -> (maxL * maxL).let { maxL2 -> (maxL * maxL2).let { maxL3 -> (maxL * maxL3).let { maxL4 -> (0 until maxL4).filter { idx -> (idx / maxL3 <= (idx / maxL2) % maxL) && ((idx / maxL) % maxL <= idx % maxL) }.map { idx -> intArrayOf(idx / maxL3, (idx / maxL2) % maxL, (idx / maxL) % maxL, idx % maxL) }.let { validIndices -> mutableMapOf<Int, Int>().let { freq -> nums.sorted().sumOf { n -> validIndices.map { p -> (n - (n / P[p[0]] % 10) * P[p[0]] - (n / P[p[1]] % 10) * P[p[1]] + (n / P[p[0]] % 10) * P[p[1]] + (n / P[p[1]] % 10) * P[p[0]]).let { n1 -> n1 - (n1 / P[p[2]] % 10) * P[p[2]] - (n1 / P[p[3]] % 10) * P[p[3]] + (n1 / P[p[2]] % 10) * P[p[3]] + (n1 / P[p[3]] % 10) * P[p[2]] } }.distinct().sumOf { freq.getOrDefault(it, 0) }.also { freq[n] = freq.getOrDefault(n, 0) + 1 } } } } } } } } } }

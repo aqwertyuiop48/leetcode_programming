@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1137 lang=kotlin
+ *
+ * [1137] N-th Tribonacci Number
+ */
+
+class Solution { fun tribonacci(n: Int): Int = if (n == 0) 0 else if (n <= 2) 1 else generateSequence(intArrayOf(0, 1, 1)) { (a, b, c) -> intArrayOf(b, c, a + b + c) } .elementAt(n - 2)[2] }

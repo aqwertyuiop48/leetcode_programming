@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1340 lang=kotlin */
+class Solution { fun maxJumps(arr: IntArray, d: Int): Int = IntArray(arr.size) { 1 }.also { dp -> (0 until arr.size).sortedBy { arr[it] }.forEach { i -> dp[i] = 1 + maxOf((1..d).takeWhile { x -> i + x < arr.size && arr[i + x] < arr[i] }.maxOfOrNull { x -> dp[i + x] } ?: 0, (1..d).takeWhile { x -> i - x >= 0 && arr[i - x] < arr[i] }.maxOfOrNull { x -> dp[i - x] } ?: 0) } }.maxOrNull() ?: 0 }

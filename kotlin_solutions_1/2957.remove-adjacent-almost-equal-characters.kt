@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2957 lang=kotlin */
+class Solution { fun removeAlmostEqualCharacters(word: String): Int = (1 until word.length).fold(0 to false) { (ans, changed), i -> if (!changed && Math.abs(word[i] - word[i - 1]) <= 1) (ans + 1) to true else ans to false }.first }

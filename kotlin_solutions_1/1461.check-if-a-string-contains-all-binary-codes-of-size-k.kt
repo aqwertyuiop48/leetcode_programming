@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1461 lang=kotlin
+ *
+ * [1461] Check If a String Contains All Binary Codes of Size K
+ */
+
+class Solution { fun hasAllCodes(s: String, k: Int): Boolean = s.windowed(k).toSet().size == (1 shl k) }

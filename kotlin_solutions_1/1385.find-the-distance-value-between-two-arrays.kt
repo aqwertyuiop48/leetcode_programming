@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1385 lang=kotlin
+ *
+ * [1385] Find the Distance Value Between Two Arrays
+ */
+
+class Solution { fun findTheDistanceValue(arr1: IntArray, arr2: IntArray, d: Int): Int = arr1.count { a -> arr2.all { b -> Math.abs(a - b) > d } } }

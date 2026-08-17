@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3238 lang=kotlin */
+class Solution { fun winningPlayerCount(n: Int, pick: Array<IntArray>): Int = pick.groupBy { it[0] }.count { (player, picks) -> picks.groupingBy { it[1] }.eachCount().values.any { it > player } } }

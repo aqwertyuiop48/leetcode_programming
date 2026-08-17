@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3194 lang=kotlin
+ *
+ * [3194] Minimum Average of Smallest and Largest Elements
+ */
+class Solution { fun minimumAverage(nums: IntArray): Double = nums.sorted().let { s -> (0 until s.size / 2).minOf { i -> (s[i] + s[s.size - 1 - i]) / 2.0 } } }

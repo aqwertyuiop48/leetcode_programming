@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2033 lang=kotlin */
+class Solution { fun minOperations(grid: Array<IntArray>, x: Int): Int = grid.flatMap { it.toList() }.sorted().let { s -> if (s.any { (it - s[0]) % x != 0 }) -1 else s.fold(0) { a, v -> a + Math.abs(v - s[s.size / 2]) / x } } }

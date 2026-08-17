@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2370 lang=kotlin */
+class Solution { fun longestIdealString(s: String, k: Int): Int = IntArray(26).let { dp -> s.fold(0) { maxTotal, char -> (char - 'a').let { idx -> (maxOf(0, idx - k)..minOf(25, idx + k)).maxOf { dp[it] }.let { best -> (best + 1).also { dp[idx] = it } } }.let { maxOf(maxTotal, it) } } } }

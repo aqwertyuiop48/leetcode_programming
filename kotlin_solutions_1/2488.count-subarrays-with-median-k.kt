@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2488 lang=kotlin */
+class Solution { fun countSubarrays(nums: IntArray, k: Int): Int = nums.indexOf(k).let { p -> mutableMapOf(0 to 1).let { m -> (p - 1 downTo 0).fold(0) { a, i -> (a + (if (nums[i] < k) -1 else 1)).also { m[it] = (m[it] ?: 0) + 1 } }.let { (p until nums.size).fold(0L to 0) { (res, a), i -> (a + (if (nums[i] == k) 0 else if (nums[i] < k) -1 else 1)).let { na -> (res + (m[na.let { -it }] ?: 0) + (m[na.let { 1 - it }] ?: 0)) to na } }.first.toInt() } } } }

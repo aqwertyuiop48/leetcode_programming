@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2368 lang=kotlin */
+class Solution { fun reachableNodes(n: Int, edges: Array<IntArray>, restricted: IntArray): Int = restricted.toSet().let { res -> edges.filter { it[0] !in res && it[1] !in res }.flatMap { listOf(it[0] to it[1], it[1] to it[0]) }.groupBy({ it.first }, { it.second }).let { adj -> mutableSetOf(0).let { vis -> java.util.ArrayDeque<Int>().apply { add(0) }.let { q -> generateSequence { q.poll() }.onEach { u -> adj[u]?.forEach { v -> if (vis.add(v)) q.add(v) } }.lastOrNull().let { vis.size } } } } } }

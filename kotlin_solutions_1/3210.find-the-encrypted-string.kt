@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3210 lang=kotlin
+ *
+ * [3210] Find the Encrypted String
+ */
+class Solution { fun getEncryptedString(s: String, k: Int): String = CharArray(s.length) { i -> s[(i + k) % s.length] }.concatToString() }

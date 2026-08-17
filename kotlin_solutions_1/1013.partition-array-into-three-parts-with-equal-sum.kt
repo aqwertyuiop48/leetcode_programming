@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1013 lang=kotlin
+ *
+ * [1013] Partition Array Into Three Parts With Equal Sum
+ */
+
+class Solution {
+    fun canThreePartsEqualSum(arr: IntArray): Boolean = arr.sum().let { total -> total % 3 == 0 && (total / 3).let { target -> arr.fold(0 to 0) { (parts, curr), x -> (curr + x).let { next -> if (next == target) (parts + 1) to 0 else parts to next } }.first >= 3 } }
+}

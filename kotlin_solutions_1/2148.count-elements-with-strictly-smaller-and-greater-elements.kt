@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2148 lang=kotlin */
+class Solution { fun countElements(nums: IntArray): Int = nums.filter { n -> n > (nums.minOrNull() ?: 0) && n < (nums.maxOrNull() ?: 0) }.size }

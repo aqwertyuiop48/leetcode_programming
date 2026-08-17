@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1981 lang=kotlin */
+class Solution { fun minimizeTheDifference(mat: Array<IntArray>, target: Int): Int = mat.fold(java.util.TreeSet(listOf(0))) { set, row -> row.distinct().flatMap { v -> set.map { it + v } }.let { sums -> java.util.TreeSet(sums).let { newSet -> java.util.TreeSet(newSet.filter { it <= target || it == newSet.ceiling(target) }) } } }.map { Math.abs(it - target) }.minOrNull()!! }

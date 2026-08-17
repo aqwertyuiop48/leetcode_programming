@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2611 lang=kotlin */
+class Solution { fun miceAndCheese(reward1: IntArray, reward2: IntArray, k: Int): Int = reward1.indices.map { reward1[it] - reward2[it] }.sortedDescending().take(k).sum() + reward2.sum() }

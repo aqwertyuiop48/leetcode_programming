@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1079 lang=kotlin
+ *
+ * [1079] Letter Tile Possibilities
+ */
+
+class Solution {
+    fun numTilePossibilities(tiles: String): Int = DeepRecursiveFunction<IntArray, Int> { counts -> counts.indices.sumOf { i -> if (counts[i] == 0) 0 else counts[i]--.let { 1 + callRecursive(counts) }.also { counts[i]++ } } }.invoke(tiles.groupingBy { it }.eachCount().values.toIntArray())
+}

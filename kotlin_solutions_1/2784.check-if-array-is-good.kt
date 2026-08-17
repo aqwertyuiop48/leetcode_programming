@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2784 lang=kotlin */
+class Solution { fun isGood(nums: IntArray): Boolean = nums.sorted().let { s -> (s.size - 1).let { n -> s.size == n + 1 && s.last() == n && s.getOrNull(n - 1) == n && (0 until n - 1).all { s[it] == it + 1 } } } }

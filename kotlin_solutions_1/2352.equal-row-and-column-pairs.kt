@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2352 lang=kotlin */
+class Solution { fun equalPairs(grid: Array<IntArray>): Int = grid.indices.sumOf { r -> grid.indices.count { c -> grid.indices.all { i -> grid[r][i] == grid[i][c] } } } }

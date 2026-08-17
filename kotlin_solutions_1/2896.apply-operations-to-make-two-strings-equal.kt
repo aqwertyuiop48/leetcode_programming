@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2896 lang=kotlin
+ *
+ * [2896] Apply Operations to Make Two Strings Equal
+ */
+
+class Solution {
+    fun minOperations(s1: String, s2: String, x: Int): Int = s1.indices.filter { s1[it] != s2[it] }.let { l -> if (l.size % 2 != 0) -1 else if (l.isEmpty()) 0 else (1 until l.size).fold(0 to x) { (dp2, dp1), i -> dp1 to minOf(dp1 + x, dp2 + (l[i] - l[i - 1]) * 2) }.second / 2 }
+}

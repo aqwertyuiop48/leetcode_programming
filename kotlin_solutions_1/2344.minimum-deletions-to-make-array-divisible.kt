@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2344 lang=kotlin */
+class Solution { fun minOperations(A: IntArray, numsDivide: IntArray): Int = numsDivide.reduce { a, b -> java.math.BigInteger.valueOf(a.toLong()).gcd(java.math.BigInteger.valueOf(b.toLong())).toInt() }.let { g -> A.sorted().indexOfFirst { g % it == 0 } } }

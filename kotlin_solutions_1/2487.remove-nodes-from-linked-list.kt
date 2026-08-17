@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2487 lang=kotlin */
+class Solution { fun removeNodes(head: ListNode?): ListNode? = head?.let { h -> h.apply { next = removeNodes(next) }.let { if (it.next != null && it.next!!.val > it.val) it.next else it } } }

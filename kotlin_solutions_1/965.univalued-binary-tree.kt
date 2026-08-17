@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=965 lang=kotlin */
+class Solution { fun isUnivalTree(root: TreeNode?): Boolean = root == null || ((root.left?.let { it.`val` == root.`val` && isUnivalTree(it) } ?: true) && (root.right?.let { it.`val` == root.`val` && isUnivalTree(it) } ?: true)) }

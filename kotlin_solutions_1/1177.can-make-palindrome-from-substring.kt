@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1177 lang=kotlin
+ *
+ * [1177] Can Make Palindrome from Substring
+ */
+
+class Solution { fun canMakePaliQueries(s: String, queries: Array<IntArray>): List<Boolean> = IntArray(s.length + 1).also { pref -> s.indices.forEach { i -> pref[i + 1] = pref[i] xor (1 shl (s[i] - 'a')) } }.let { pref -> queries.map { q -> Integer.bitCount(pref[q[1] + 1] xor pref[q[0]]) / 2 <= q[2] } } }

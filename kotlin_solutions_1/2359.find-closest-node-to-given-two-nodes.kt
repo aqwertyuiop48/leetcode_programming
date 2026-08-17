@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2359 lang=kotlin */
+class Solution { fun closestMeetingNode(edges: IntArray, node1: Int, node2: Int): Int = listOf(node1, node2).map { start -> mutableMapOf<Int, Int>().also { dists -> generateSequence(start) { edges[it].takeIf { e -> e != -1 && e !in dists } }.forEachIndexed { i, node -> dists[node] = i } } }.run { this[0] to this[1] }.let { (d1, d2) -> edges.indices.filter { it in d1 && it in d2 }.minWithOrNull(compareBy({ maxOf(d1[it]!!, d2[it]!!) }, { it })) ?: -1 } }

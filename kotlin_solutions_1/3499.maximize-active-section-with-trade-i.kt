@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3499 lang=kotlin */
+class Solution { fun maxActiveSectionsAfterTrade(s: String): Int = ("1" + s + "1").fold(mutableListOf<Int>()) { acc, c -> if (acc.isEmpty()) acc.also { it.add(1) } else if ((acc.size % 2 == 1 && c == '1') || (acc.size % 2 == 0 && c == '0')) acc.also { it[it.lastIndex]++ } else acc.also { it.add(1) } }.let { blocks -> s.count { it == '1' } + ((2 until blocks.size - 1 step 2).maxOfOrNull { i -> maxOf(blocks[i - 1] + blocks[i + 1], ((1 until blocks.size step 2).maxOfOrNull { blocks[it] } ?: 0) - blocks[i]) } ?: 0) } }

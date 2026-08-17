@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1869 lang=kotlin */ class Solution { fun checkZeroOnes(s: String): Boolean = (s.split('0').maxOfOrNull { it.length } ?: 0) > (s.split('1').maxOfOrNull { it.length } ?: 0) }

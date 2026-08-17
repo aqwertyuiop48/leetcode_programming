@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2904 lang=kotlin
+ *
+ * [2904] Shortest and Lexicographically Smallest Beautiful String
+ */
+
+class Solution {
+    fun shortestBeautifulSubstring(s: String, k: Int): String = s.indices.flatMap { i -> (i + 1..s.length).map { j -> s.substring(i, j) } }.filter { sub -> sub.count { it == '1' } == k }.minWithOrNull(compareBy<String> { it.length }.thenBy { it }) ?: ""
+}

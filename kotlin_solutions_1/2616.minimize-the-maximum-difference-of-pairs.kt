@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2616 lang=kotlin */
+class Solution { fun minimizeMax(nums: IntArray, p: Int): Int = nums.sortedArray().let { s -> DeepRecursiveFunction<Triple<Int, Int, Int>, Int> { (l, h, r) -> if (l > h) r else (l + (h - l) / 2).let { m -> if ((0 until s.size - 1).fold(0 to 0) { (c, i), _ -> if (i < s.size - 1 && s[i + 1] - s[i] <= m) (c + 1) to (i + 2) else if (i < s.size - 1) c to (i + 1) else c to i }.first >= p) callRecursive(Triple(l, m - 1, m)) else callRecursive(Triple(m + 1, h, r)) } }.call(Triple(0, s.last() - s.first(), s.last() - s.first())) } }

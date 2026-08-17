@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3153 lang=kotlin
+ *
+ * [3153] Sum of Digit Differences of All Pairs
+ */
+
+class Solution { fun sumDigitDifferences(nums: IntArray): Long = nums[0].toString().length.let { numDigits -> (0 until numDigits).sumOf { pos -> IntArray(10).apply { nums.forEach { num -> this[num.toString()[pos] - '0']++ } }.let { counts -> nums.size.toLong() * (nums.size - 1) / 2 - counts.sumOf { c -> c.toLong() * (c - 1) / 2 } } } } }

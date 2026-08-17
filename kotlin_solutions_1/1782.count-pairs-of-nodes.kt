@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=1782 lang=kotlin
+ *
+ * [1782] Count Pairs Of Nodes
+ */
+class Solution { fun countPairs(n: Int, edges: Array<IntArray>, queries: IntArray): IntArray = IntArray(n + 1).let { deg -> mutableMapOf<Long, Int>().let { edgeCnt -> edges.forEach { e -> deg.apply { this[e[0]]++ }.apply { this[e[1]]++ }.let { ((if (e[0] < e[1]) (e[0].toLong() shl 32) or e[1].toLong() else (e[1].toLong() shl 32) or e[0].toLong())) }.let { edgeCnt[it] = (edgeCnt[it] ?: 0) + 1 } }.let { deg.copyOfRange(1, n + 1).sorted().let { sortedDeg -> queries.map { q -> IntArray(3).apply { this[1] = n - 1 }.let { arr -> arr.apply { while (this[0] < this[1]) { if (sortedDeg[this[0]] + sortedDeg[this[1]] > q) { this[2] += this[1] - this[0].also{this[1]--} } else { this[0]++ } } }.let { a -> a[2] - edgeCnt.entries.count { (k, c) -> (k shr 32).toInt().let { u -> (k and 0xffffffffL).toInt().let { v -> deg[u] + deg[v] > q && deg[u] + deg[v] - c <= q } } } } } }.toIntArray() } } } } }

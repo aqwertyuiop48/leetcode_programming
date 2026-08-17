@@ -1,0 +1,10 @@
+/*
+ * @lc app=leetcode id=1295 lang=kotlin
+ *
+ * [1295] Find Numbers with Even Number of Digits
+ */
+
+class Solution {
+    fun findNumbers(nums: IntArray): Int =
+        nums.count { "$it".length % 2 == 0 }
+}

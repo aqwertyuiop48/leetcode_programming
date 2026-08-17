@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1759 lang=kotlin */
+class Solution { fun countHomogenous(s: String): Int = IntArray(2).run { (0 until s.length).forEach { i -> (if (i > 0 && s[i] == s[i-1]) this[0] + 1 else 1).also { this[0] = it }.let { this[1] = (this[1] + it) % 1000000007 } }.let { this[1] } }

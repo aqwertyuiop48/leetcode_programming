@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2771 lang=kotlin */
+class Solution { fun maxNonDecreasingLength(nums1: IntArray, nums2: IntArray): Int = IntArray(2) { 1 }.let { dp -> nums1.indices.drop(1).fold(1) { maxL, i -> listOf(if (nums1[i] >= nums1[i - 1]) dp[0] + 1 else 1, if (nums1[i] >= nums2[i - 1]) dp[1] + 1 else 1, if (nums2[i] >= nums1[i - 1]) dp[0] + 1 else 1, if (nums2[i] >= nums2[i - 1]) dp[1] + 1 else 1).let { c -> (Math.max(c[0], c[1])).also { dp[0] = it }.run { Math.max(maxL, Math.max(dp[0], Math.max(c[2], c[3]).also { dp[1] = it })) } } } } }

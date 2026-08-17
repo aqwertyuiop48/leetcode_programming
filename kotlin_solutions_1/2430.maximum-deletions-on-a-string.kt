@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2430 lang=kotlin */
+class Solution {
+    fun deleteString(s: String): Int = Array(s.length + 1) { IntArray(s.length + 1) }.let { lcs -> IntArray(s.length).let { dp -> (s.length - 1 downTo 0).forEach { i -> (i + 1 until s.length).forEach { j -> lcs[i][j] = if (s[i] == s[j]) lcs[i + 1][j + 1] + 1 else 0 }.also { dp[i] = (i + 1 until s.length).filter { j -> (j - i).let { len -> j + len <= s.length && lcs[i][j] >= len } }.map { dp[it] + 1 }.maxOfOrNull { it } ?: 1 } }.run { dp[0] } } }
+}

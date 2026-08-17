@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2825 lang=kotlin */
+class Solution { fun canMakeSubsequence(str1: String, str2: String): Boolean = str1.indices.fold(0) { j, i -> if (j < str2.length && (str1[i] == str2[j] || (str1[i] - 'a' + 1) % 26 == (str2[j] - 'a'))) j + 1 else j } == str2.length }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1408 lang=kotlin
+ *
+ * [1408] String Matching in an Array
+ */
+
+class Solution { fun stringMatching(words: Array<String>): List<String> = words.filter { sub -> words.any { full -> sub != full && full.contains(sub) } } }

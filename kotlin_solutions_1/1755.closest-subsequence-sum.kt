@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1755 lang=kotlin
+ *
+ * [1755] Closest Subsequence Sum
+ */
+
+class Solution { fun minAbsDifference(nums: IntArray, goal: Int): Int = nums.take(nums.size / 2).fold(intArrayOf(0)) { acc, x -> acc + acc.map { it + x }.toIntArray() }.sortedArray().let { sum1 -> nums.drop(nums.size / 2).fold(intArrayOf(0)) { acc, x -> acc + acc.map { it + x }.toIntArray() }.fold(Int.MAX_VALUE) { ans, s2 -> sum1.binarySearch(goal - s2).let { idx -> if (idx >= 0) 0 else (-idx - 1).let { ins -> minOf(ans, if (ins < sum1.size) kotlin.math.abs(sum1[ins] - (goal - s2)) else Int.MAX_VALUE, if (ins > 0) kotlin.math.abs(sum1[ins - 1] - (goal - s2)) else Int.MAX_VALUE) } }.let { minOf(ans, it) } } } }

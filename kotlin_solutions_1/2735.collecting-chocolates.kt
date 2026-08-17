@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2735 lang=kotlin */
+class Solution { fun minCost(nums: IntArray, x: Int): Long = IntArray(nums.size) { 1000000001 }.let { b -> (0 until nums.size).map { k -> (0 until nums.size).sumOf { i -> Math.min(b[i], nums[(i - k + nums.size) % nums.size]).also { b[i] = it }.toLong() } + 1L * k * x }.minOf { it } } }

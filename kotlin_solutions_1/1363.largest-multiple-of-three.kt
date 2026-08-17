@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1363 lang=kotlin
+ *
+ * [1363] Largest Multiple of Three
+ */
+
+class Solution { fun largestMultipleOfThree(digits: IntArray): String = IntArray(10).apply { digits.forEach { this[it]++ } }.let { c -> { mod: Int -> listOf(mod, mod + 3, mod + 6).firstOrNull { c[it] > 0 }?.run { c[this]-- > 0 } ?: false }.let { rem -> digits.sum().let { sum -> if (sum % 3 == 1) (rem(1) || (rem(2) && rem(2))) else if (sum % 3 == 2) (rem(2) || (rem(1) && rem(1))) else true }.let { (9 downTo 0).joinToString("") { d -> "$d".repeat(c[d]) } }.let { if (it.startsWith("0")) "0" else it } } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2913 lang=kotlin
+ *
+ * [2913] Subarrays Distinct Element Sum of Squares I
+ */
+
+class Solution { fun sumCounts(nums: List<Int>): Int = nums.indices.sumOf { i -> (i until nums.size).fold(Pair(0, setOf<Int>())) { (sum, set), j -> (set + nums[j]).let { newSet -> Pair(sum + newSet.size * newSet.size, newSet) } }.first } }

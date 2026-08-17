@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2925 lang=kotlin
+ *
+ * [2925] Maximum Score After Applying Operations on a Tree
+ */
+
+class Solution {
+    fun maximumScoreAfterOperations(edges: Array<IntArray>, values: IntArray): Long = Array(values.size) { mutableListOf<Int>() }.apply { edges.forEach { (u, v) -> this[u].add(v).also { this[v].add(u) } } }.let { adj -> DeepRecursiveFunction<Pair<Int, Int>, Long> { (u, p) -> adj[u].filter { it != p }.let { children -> if (children.isEmpty()) values[u].toLong() else minOf(values[u].toLong(), children.sumOf { callRecursive(it to u) }) } }(0 to -1).let { loss0 -> values.sumOf { it.toLong() } - loss0 } }
+}

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2824 lang=kotlin */
+class Solution { fun countPairs(nums: List<Int>, target: Int): Int = nums.sorted().let { s -> generateSequence(0 to s.size - 1) { (i, j) -> if (i < j) if (s[i] + s[j] < target) (i + 1) to j else i to (j - 1) else null }.fold(0) { acc, (i, j) -> if (i < j && s[i] + s[j] < target) acc + (j - i) else acc } } }

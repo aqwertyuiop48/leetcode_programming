@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1751 lang=kotlin
+ *
+ * [1751] Maximum Number of Events That Can Be Attended II
+ */
+
+class Solution { fun maxValue(events: Array<IntArray>, k: Int): Int = events.sortedBy { it[0] }.let { sorted -> Array(events.size) { IntArray(k + 1) { -1 } }.let { memo -> object { fun dfs(i: Int, count: Int): Int = if (i >= sorted.size || count == 0) 0 else if (memo[i][count] != -1) memo[i][count] else maxOf(dfs(i + 1, count), sorted[i][2] + dfs(generateSequence(i + 1 to sorted.size) { (l, r) -> if (l < r) ((l + r) / 2).let { mid -> if (sorted[mid][0] > sorted[i][1]) l to mid else (mid + 1) to r } else null }.last().first, count - 1)).also { memo[i][count] = it } }.dfs(0, k) } } }

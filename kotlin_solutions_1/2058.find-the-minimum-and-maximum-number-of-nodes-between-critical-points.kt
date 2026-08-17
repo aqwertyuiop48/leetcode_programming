@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2058 lang=kotlin */
+class Solution { fun nodesBetweenCriticalPoints(head: ListNode?): IntArray = generateSequence(head) { it.next }.map { it.`val` }.windowed(3).mapIndexedNotNull { i, (p, c, n) -> if ((c > p && c > n) || (c < p && c < n)) i + 1 else null }.toList().let { cp -> if (cp.size < 2) intArrayOf(-1, -1) else intArrayOf(cp.zipWithNext { a, b -> b - a }.minOrNull()!!, cp.last() - cp.first()) } }

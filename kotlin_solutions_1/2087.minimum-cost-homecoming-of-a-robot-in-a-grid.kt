@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2087 lang=kotlin */
+class Solution { fun minCost(s: IntArray, h: IntArray, r: IntArray, c: IntArray): Int = (if (s[0] < h[0]) (s[0] + 1..h[0]) else (h[0] until s[0])).sumOf { r[it] } + (if (s[1] < h[1]) (s[1] + 1..h[1]) else (h[1] until s[1])).sumOf { c[it] } }

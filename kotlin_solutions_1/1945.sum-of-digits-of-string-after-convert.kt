@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1945 lang=kotlin */
+class Solution { fun getLucky(s: String, k: Int): Int = (2..k).fold(s.flatMap { (it - 'a' + 1).toString().toList() }.sumOf { it - '0' }) { res, _ -> res.toString().sumOf { it - '0' } } }

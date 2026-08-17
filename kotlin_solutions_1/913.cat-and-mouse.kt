@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=913 lang=kotlin
+ *
+ * [913] Cat and Mouse
+ */
+
+class Solution {
+    fun catMouseGame(graph: Array<IntArray>): Int = IntArray(5005).let { color -> IntArray(5005).let { degree -> IntArray(5005).let { queue -> IntArray(2).let { ptr -> graph.indices.forEach { m -> graph.indices.forEach { c -> (0..1).forEach { t -> (m * 100 + c * 2 + t).let { s -> degree.set(s, if (t == 0) graph[m].size else graph[c].count { it != 0 }) } } } }.run { (1 until graph.size).forEach { c -> (0..1).forEach { t -> (c * 2 + t).let { s1 -> color.set(s1, 1).run { queue.set(ptr.get(1).also { ptr.set(1, it + 1) }, s1) } }.run { (c * 100 + c * 2 + t).let { s2 -> color.set(s2, 2).run { queue.set(ptr.get(1).also { ptr.set(1, it + 1) }, s2) } } } } } }.run { Array<() -> Unit>(1) { {} }.let { bfs -> bfs.set(0, { if (ptr[0] < ptr[1]) queue.get(ptr.get(0).also { ptr.set(0, it + 1) }).let { s -> (s / 100).let { m -> ((s / 2) % 50).let { c -> (s % 2).let { t -> color[s].let { colorS -> if (t == 1) graph[m].forEach { mPrev -> (mPrev * 100 + c * 2 + 0).let { sPrev -> if (color[sPrev] == 0) if (colorS == 1) color.set(sPrev, 1).run { queue.set(ptr.get(1).also { ptr.set(1, it + 1) }, sPrev) } else degree.set(sPrev, degree[sPrev] - 1).run { if (degree[sPrev] == 0) color.set(sPrev, 2).run { queue.set(ptr.get(1).also { ptr.set(1, it + 1) }, sPrev) } } } } else graph[c].forEach { cPrev -> if (cPrev != 0) (m * 100 + cPrev * 2 + 1).let { sPrev -> if (color[sPrev] == 0) if (colorS == 2) color.set(sPrev, 2).run { queue.set(ptr.get(1).also { ptr.set(1, it + 1) }, sPrev) } else degree.set(sPrev, degree[sPrev] - 1).run { if (degree[sPrev] == 0) color.set(sPrev, 1).run { queue.set(ptr.get(1).also { ptr.set(1, it + 1) }, sPrev) } } } } } } } } }.run { bfs[0]() } }).run { bfs[0]() } }.run { color[100 + 4] } } } } }
+}}

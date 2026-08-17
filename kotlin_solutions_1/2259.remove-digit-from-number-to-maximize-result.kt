@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2259 lang=kotlin */
+class Solution { fun removeDigit(number: String, digit: Char): String = number.indices.filter { number[it] == digit }.map { number.removeRange(it..it) }.maxOrNull()!! }

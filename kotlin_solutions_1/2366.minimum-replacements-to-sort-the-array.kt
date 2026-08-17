@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2366 lang=kotlin */
+class Solution { fun minimumReplacement(nums: IntArray): Long = nums.indices.reversed().drop(1).fold(0L to nums.last().toLong()) { (ans, last), i -> ((nums[i] + last - 1) / last).let { k -> (ans + k - 1) to (nums[i] / k) } }.first }

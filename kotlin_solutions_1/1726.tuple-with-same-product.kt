@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1726 lang=kotlin
+ *
+ * [1726] Tuple with Same Product
+ */
+
+class Solution { fun tupleSameProduct(nums: IntArray): Int = nums.indices.flatMap { i -> (i + 1 until nums.size).map { j -> nums[i] * nums[j] } }.groupingBy { it }.eachCount().values.sumOf { v -> v * (v - 1) * 4 } }

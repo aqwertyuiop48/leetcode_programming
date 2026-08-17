@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2680 lang=kotlin */
+class Solution { fun maximumOr(nums: IntArray, k: Int) = LongArray(nums.size + 1).let { p -> LongArray(nums.size + 1).let { s -> nums.indices.forEach { i -> p[i + 1] = p[i] or nums[i].toLong() }.run { nums.indices.reversed().forEach { i -> s[i] = s[i + 1] or nums[i].toLong() } }.run { nums.indices.maxOf { i -> p[i] or (nums[i].toLong() shl k) or s[i + 1] } } } } }

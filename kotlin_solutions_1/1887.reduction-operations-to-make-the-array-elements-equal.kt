@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1887 lang=kotlin
+ *
+ * [1887] Reduction Operations to Make the Array Elements Equal
+ */
+
+class Solution { fun reductionOperations(nums: IntArray): Int = nums.sorted().let { sorted -> (1 until sorted.size).filter { sorted[it] != sorted[it - 1] }.sumOf { sorted.size - it } } }

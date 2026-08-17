@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3151 lang=kotlin
+ *
+ * [3151] Special Array I
+ */
+
+class Solution { fun isArraySpecial(nums: IntArray): Boolean = (0 until nums.size - 1).all { nums[it] % 2 != nums[it + 1] % 2 } }

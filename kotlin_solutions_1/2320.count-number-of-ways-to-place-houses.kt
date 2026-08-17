@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2320 lang=kotlin */
+class Solution { fun countHousePlacements(n: Int): Int = (1..n).fold(1L to 1L) { (a, b), _ -> b to (a + b) % 1000000007 }.second.let { (it * it) % 1000000007 }.toInt() }

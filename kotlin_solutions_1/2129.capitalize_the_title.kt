@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2129 lang=kotlin */
+class Solution { fun capitalizeTitle(title: String): String = title.split(" ").joinToString(" ") { if (it.length <= 2) it.lowercase() else it.lowercase().replaceFirstChar { c -> c.uppercase() } } }

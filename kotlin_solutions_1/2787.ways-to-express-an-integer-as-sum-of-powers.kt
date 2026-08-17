@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2787 lang=kotlin */
+class Solution { fun numberOfWays(n: Int, x: Int): Int = IntArray(n + 1).apply { this[0] = 1 }.also { dp -> (1..n).map { Math.pow(it.toDouble(), x.toDouble()).toInt() }.takeWhile { it <= n }.forEach { p -> (n downTo p).forEach { i -> dp[i] = (dp[i] + dp[i - p]) % 1000000007 } } }[n] }

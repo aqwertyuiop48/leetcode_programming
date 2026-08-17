@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2523 lang=kotlin */
+class Solution { fun closestPrimes(left: Int, right: Int) = BooleanArray(right + 1) { it < 2 }.apply { (2..Math.sqrt(right.toDouble()).toInt()).forEach { i -> if (!this[i]) (i * i..right step i).forEach { j -> this[j] = true } } }.let { isNotPrime -> (left..right).filter { !isNotPrime[it] }.let { primes -> if (primes.size < 2) intArrayOf(-1, -1) else primes.zipWithNext().minByOrNull { it.second - it.first }?.let { intArrayOf(it.first, it.second) } ?: intArrayOf(-1, -1) } } }

@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=2235 lang=kotlin
+ *
+ * [2235] Add Two Integers
+ */
+
+class Solution {
+    fun sum(num1: Int, num2: Int) = num1 + num2
+}

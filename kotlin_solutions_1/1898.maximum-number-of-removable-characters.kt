@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1898 lang=kotlin
+ *
+ * [1898] Maximum Number of Removable Characters
+ */
+
+class Solution { fun maximumRemovals(s: String, p: String, removable: IntArray): Int = object { fun check(k: Int): Boolean = BooleanArray(s.length).apply { (0 until k).forEach { this[removable[it]] = true } }.let { removed -> object { tailrec fun isSub(si: Int, pi: Int): Boolean = if (pi == p.length) true else if (si == s.length) false else isSub(si + 1, if (!removed[si] && s[si] == p[pi]) pi + 1 else pi) }.isSub(0, 0) } fun bs(l: Int, r: Int, ans: Int): Int = if (l > r) ans else ((l + r) ushr 1).let { mid -> if (check(mid)) bs(mid + 1, r, mid) else bs(l, mid - 1, ans) } }.let { it.bs(0, removable.size, 0) } }

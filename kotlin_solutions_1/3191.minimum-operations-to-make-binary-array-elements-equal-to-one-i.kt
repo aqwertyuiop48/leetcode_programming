@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3191 lang=kotlin
+ *
+ * [3191] Minimum Operations to Make Binary Array Elements Equal to One I
+ */
+class Solution { fun minOperations(nums: IntArray): Int = nums.copyOf().let { a -> (0..a.size - 3).fold(0) { ops, i -> if (a[i] == 0) (ops + 1).also { a[i] = 1 }.also { a[i + 1] = a[i + 1] xor 1 }.also { a[i + 2] = a[i + 2] xor 1 } else ops }.let { ops -> if (a[a.size - 2] == 1 && a[a.size - 1] == 1) ops else -1 } } }

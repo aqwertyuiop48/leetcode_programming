@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1416 lang=kotlin
+ *
+ * [1416] Restore The Array
+ */
+
+class Solution { fun numberOfArrays(s: String, k: Int): Int = IntArray(s.length + 1).also { it[s.length] = 1 }.let { dp -> s.indices.reversed().fold(dp) { _, i -> dp.also { if (s[i] != '0') generateSequence(i to 0L) { (j, num) -> if (j < s.length) (num * 10 + (s[j] - '0')).let { if (it <= k) (j + 1) to it else null } else null }.drop(1).forEach { (nextJ, _) -> dp[i] = (dp[i] + dp[nextJ]) % 1000000007 } } }[0] } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1700 lang=kotlin */
+class Solution { fun countStudents(students: IntArray, sandwiches: IntArray): Int = intArrayOf(students.count { it == 0 }, students.count { it == 1 }).let { c -> sandwiches.indexOfFirst { s -> (c[s] > 0).also { if (it) c[s] = c[s] - 1 }.not() }.let { if (it == -1) 0 else sandwiches.size - it } } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2769 lang=kotlin */
+class Solution { fun theMaximumAchievableX(num: Int, t: Int): Int = num + 2 * t }

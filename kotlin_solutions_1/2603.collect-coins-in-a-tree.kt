@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2603 lang=kotlin */
+class Solution {
+    fun collectTheCoins(coins: IntArray, edges: Array<IntArray>): Int = coins.size.let { n -> Array(n) { mutableSetOf<Int>() }.also { adj -> edges.forEach { adj[it[0]].add(it[1]).also { adj[it[1]].add(it[0]) } } }.let { adj -> IntArray(n) { adj[it].size }.let { deg -> generateSequence((0 until n).filter { deg[it] == 1 && coins[it] == 0 }) { q -> q.flatMap { u -> deg.set(u, 0).let { adj[u].filter { v -> deg[v] > 0 && deg.set(v, deg[v] - 1).let { deg[v] == 1 && coins[v] == 0 } } } }.takeIf { it.isNotEmpty() } }.lastOrNull().let { (0 until 2).fold((0 until n).filter { deg[it] == 1 }) { q, _ -> q.flatMap { u -> deg.set(u, 0).let { adj[u].filter { v -> deg[v] > 0 && deg.set(v, deg[v] - 1).let { deg[v] == 1 } } } } }.let { maxOf(0, edges.count { deg[it[0]] > 0 && deg[it[1]] > 0 } * 2) } } } } }
+}

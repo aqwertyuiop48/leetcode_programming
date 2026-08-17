@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3027 lang=kotlin */
+class Solution { fun numberOfPairs(points: Array<IntArray>): Int = points.sortedWith(compareBy<IntArray> { it[0] }.thenByDescending { it[1] }).let { pts -> pts.indices.sumOf { i -> (i + 1 until pts.size).fold(0 to Int.MIN_VALUE) { (cnt, maxY), j -> if (pts[j][1] <= pts[i][1] && pts[j][1] > maxY) (cnt + 1) to pts[j][1] else cnt to maxY }.first } } }

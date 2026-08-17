@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1187 lang=kotlin
+ *
+ * [1187] Make Array Strictly Increasing
+ */
+
+class Solution { fun makeArrayIncreasing(arr1: IntArray, arr2: IntArray): Int = arr2.distinct().sorted().toIntArray().let { a2 -> arr1.fold(mapOf(-1 to 0)) { dp, x -> mutableMapOf<Int, Int>().also { nextDp -> dp.forEach { (last, ops) -> takeIf { x > last }?.run { nextDp[x] = minOf(nextDp[x] ?: Int.MAX_VALUE, ops) }.also { a2.binarySearch(last + 1).let { if (it < 0) -it - 1 else it }.takeIf { it < a2.size }?.let { idx -> a2[idx].let { rep -> nextDp[rep] = minOf(nextDp[rep] ?: Int.MAX_VALUE, ops + 1) } } } } } } }.values.minOrNull() ?: -1 }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1005 lang=kotlin
+ *
+ * [1005] Maximize Sum Of Array After K Negations
+ */
+
+class Solution { fun largestSumAfterKNegations(nums: IntArray, k: Int): Int = nums.sortedArray().let { sorted -> sorted.indices.fold(k) { rem, i -> if (sorted[i] < 0 && rem > 0) (rem - 1).also { sorted[i] = -sorted[i] } else rem }.let { rem -> sorted.sum() - if (rem % 2 != 0) 2 * (sorted.minOrNull() ?: 0) else 0 } } }

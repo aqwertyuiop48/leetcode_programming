@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1539 lang=kotlin
+ *
+ * [1539] Kth Missing Positive Number
+ */
+
+class Solution { fun findKthPositive(arr: IntArray, k: Int): Int = arr.indices.firstOrNull { arr[it] - (it + 1) >= k }?.let { it + k } ?: (arr.size + k) }

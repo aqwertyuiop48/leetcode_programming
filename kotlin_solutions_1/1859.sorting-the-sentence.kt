@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1859 lang=kotlin */ class Solution { fun sortSentence(s: String): String = s.split(" ").sortedBy { it.last() }.joinToString(" ") { it.dropLast(1) } }

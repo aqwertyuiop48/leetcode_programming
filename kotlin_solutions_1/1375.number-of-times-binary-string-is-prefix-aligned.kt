@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1375 lang=kotlin
+ *
+ * [1375] Number of Times Binary String Is Prefix-Aligned
+ */
+
+class Solution { fun numTimesAllBlue(flips: IntArray): Int = flips.indices.fold(0 to 0) { (ans, mx), i -> maxOf(mx, flips[i]).let { m -> (if (m == i + 1) ans + 1 else ans) to m } }.first }

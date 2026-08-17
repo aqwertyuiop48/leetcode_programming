@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1558 lang=kotlin */
+class Solution { fun minOperations(nums: IntArray): Int = nums.sumOf { Integer.bitCount(it) } + (nums.maxOrNull()?.let { if (it > 0) 31 - Integer.numberOfLeadingZeros(it) else 0 } ?: 0) }

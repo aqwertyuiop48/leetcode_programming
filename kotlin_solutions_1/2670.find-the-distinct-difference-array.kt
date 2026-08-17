@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2670 lang=kotlin */
+class Solution { fun distinctDifferenceArray(nums: IntArray) = IntArray(nums.size) { i -> nums.slice(0..i).distinct().size - nums.slice(i + 1 until nums.size).distinct().size } }

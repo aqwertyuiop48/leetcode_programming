@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1089 lang=kotlin
+ *
+ * [1089] Duplicate Zeros
+ */
+
+class Solution {
+    fun duplicateZeros(arr: IntArray): Unit = arr.flatMap { if (it == 0) listOf(0, 0) else listOf(it) }.take(arr.size).forEachIndexed { i, v -> arr[i] = v }
+}

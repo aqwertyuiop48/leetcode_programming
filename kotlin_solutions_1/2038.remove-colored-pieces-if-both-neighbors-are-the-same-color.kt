@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2038 lang=kotlin */
+class Solution {
+    fun winnerOfGame(colors: String): Boolean = (1 until colors.length - 1).fold(0 to 0) { (a, b), i -> if (colors[i] == 'A' && colors[i - 1] == 'A' && colors[i + 1] == 'A') (a + 1) to b else if (colors[i] == 'B' && colors[i - 1] == 'B' && colors[i + 1] == 'B') a to (b + 1) else a to b }.let { it.first > it.second }
+}

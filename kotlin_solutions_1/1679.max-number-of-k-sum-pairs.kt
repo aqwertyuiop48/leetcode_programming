@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=1679 lang=kotlin */
+class Solution {
+    fun maxOperations(nums: IntArray, k: Int): Int = nums.sorted().let { s -> IntArray(3).apply { this[1] = s.size - 1 }.also { v -> while (v[0] < v[1]) if (s[v[0]] + s[v[1]] == k) v.also { it[2]++ }.also { it[0]++ }.also { it[1]-- } else if (s[v[0]] + s[v[1]] < k) v.also { it[0]++ } else v.also { it[1]-- } }.let { it[2] } }
+}

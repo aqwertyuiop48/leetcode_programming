@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2596 lang=kotlin */
+class Solution {
+    fun checkValidGrid(grid: Array<IntArray>): Boolean = grid.size.let { n -> IntArray(n * n * 2).also { p -> (0 until n).forEach { r -> (0 until n).forEach { c -> grid[r][c].let { v -> p.set(v * 2, r).also { p.set(v * 2 + 1, c) } } } } }.let { p -> grid[0][0] == 0 && (1 until n * n).all { i -> (kotlin.math.abs(p[i * 2] - p[(i - 1) * 2]) to kotlin.math.abs(p[i * 2 + 1] - p[(i - 1) * 2 + 1])).let { (dx, dy) -> (dx == 1 && dy == 2) || (dx == 2 && dy == 1) } } } }
+}

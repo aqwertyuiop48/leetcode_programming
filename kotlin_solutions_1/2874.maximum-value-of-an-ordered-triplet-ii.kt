@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2874 lang=kotlin */
+class Solution { fun maximumTripletValue(nums: IntArray): Long = nums.fold(Triple(0L, 0L, 0L)) { (mTri, mDiff, mI), x -> Triple(maxOf(mTri, mDiff * x), maxOf(mDiff, mI - x), maxOf(mI, x.toLong())) }.first }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3212 lang=kotlin */
+class Solution { fun numberOfSubmatrices(grid: Array<CharArray>): Int = grid.fold(Triple(IntArray(grid[0].size), IntArray(grid[0].size), 0)) { (px, py, ans), row -> Triple(px, py, ans + row.indices.fold(Triple(0, 0, 0)) { (rx, ry, cnt), c -> (px[c] + if (row[c] == 'X') 1 else 0).let { nx -> (py[c] + if (row[c] == 'Y') 1 else 0).let { ny -> (px[c] = nx).run { py[c] = ny }.run { Triple(rx + nx, ry + ny, cnt + if (rx + nx == ry + ny && rx + nx > 0) 1 else 0) } } } }.third) }.third }

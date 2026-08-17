@@ -1,0 +1,5 @@
+/* @lc app=leetcode id=1003 lang=kotlin */
+
+class Solution {
+    fun isValid(s: String): Boolean = generateSequence(s) { it.replace("abc", "").takeIf { next -> next != it } }.last().isEmpty()
+}

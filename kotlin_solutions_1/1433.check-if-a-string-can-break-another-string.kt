@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1433 lang=kotlin
+ *
+ * [1433] Check If a String Can Break Another String
+ */
+
+class Solution { fun checkIfCanBreak(s1: String, s2: String): Boolean = s1.toCharArray().sorted().zip(s2.toCharArray().sorted()).let { pairs -> pairs.all { (c1, c2) -> c1 >= c2 } || pairs.all { (c1, c2) -> c2 >= c1 } } }

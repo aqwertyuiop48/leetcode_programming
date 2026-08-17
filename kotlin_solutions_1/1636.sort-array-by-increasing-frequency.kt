@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1636 lang=kotlin
+ *
+ * [1636] Sort Array by Increasing Frequency
+ */
+
+class Solution { fun frequencySort(nums: IntArray): IntArray = nums.asSequence().groupingBy { it }.eachCount().let { freq -> nums.sortedWith(compareBy<Int> { freq[it] }.thenByDescending { it }).toIntArray() } }

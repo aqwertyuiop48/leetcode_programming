@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1599 lang=kotlin
+ *
+ * [1599] Maximum Profit of Operating a Centennial Wheel
+ */
+
+class Solution {
+    fun minOperationsMaxProfit(customers: IntArray, boardingCost: Int, runningCost: Int): Int = generateSequence(intArrayOf(0, 0, 0, 0, -1, 0)) { s -> if (s[0] < customers.size || s[1] > 0) (s[1] + if (s[0] < customers.size) customers[s[0]] else 0).let { wait -> minOf(4, wait).let { b -> (s[2] + b * boardingCost - runningCost).let { p -> (s[5] + 1).let { st -> s.also { s[0] = s[0] + 1 }.also { s[1] = wait - b }.also { s[2] = p }.also { s[5] = st }.also { if (p > s[3]) s.also { s[3] = p }.also { s[4] = st } } } } } } else null }.last()[4]
+}

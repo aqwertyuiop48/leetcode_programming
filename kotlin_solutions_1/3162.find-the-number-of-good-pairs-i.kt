@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3162 lang=kotlin */
+class Solution { fun numberOfPairs(nums1: IntArray, nums2: IntArray, k: Int): Int = nums1.sumOf { n1 -> nums2.count { n2 -> n1 % (n2 * k) == 0 } } }

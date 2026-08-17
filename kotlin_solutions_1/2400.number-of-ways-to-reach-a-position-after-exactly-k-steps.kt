@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2400 lang=kotlin */
+class Solution { fun numberOfWays(startPos: Int, endPos: Int, k: Int): Int = Math.abs(startPos - endPos).let { d -> if (d > k || (k - d) % 2 != 0) 0 else (1..k).fold(LongArray(k + 1).apply { this[0] = 1 }) { acc, _ -> LongArray(k + 1) { i -> (acc.getOrElse(i) { 0L } + (acc.getOrNull(i - 1) ?: 0L)) % 1000000007 } }[(k + d) / 2].toInt() } }

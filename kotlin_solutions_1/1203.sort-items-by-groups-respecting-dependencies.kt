@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1203 lang=kotlin
+ *
+ * [1203] Sort Items by Groups Respecting Dependencies
+ */
+
+class Solution { fun sortItems(n: Int, m: Int, group: IntArray, beforeItems: List<List<Int>>): IntArray = group.mapIndexed { i, g -> if (g == -1) m + i else g }.toIntArray().let { gId -> (m + n).let { totalGroups -> Array(totalGroups) { mutableListOf<Int>() }.let { gGraph -> Array(n) { mutableListOf<Int>() }.let { iGraph -> IntArray(totalGroups).let { gDeg -> IntArray(n).let { iDeg -> beforeItems.indices.forEach { i -> beforeItems[i].forEach { j -> iGraph[j].add(i).also { iDeg[i]++ }.also { if (gId[j] != gId[i]) gGraph[gId[j]].add(gId[i]).also { gDeg[gId[i]]++ } } } }.let { { nodes: List<Int>, graph: Array<MutableList<Int>>, deg: IntArray -> ArrayDeque(nodes.filter { deg[it] == 0 }).let { q -> mutableListOf<Int>().also { res -> while (q.isNotEmpty()) q.removeFirst().let { u -> res.add(u).also { graph[u].forEach { v -> if (--deg[v] == 0) q.add(v) } } } } }.let { if (it.size == nodes.size) it else emptyList() } }.let { topSort -> topSort((0 until totalGroups).toList(), gGraph, gDeg).let { gOrder -> topSort((0 until n).toList(), iGraph, iDeg).let { iOrder -> if (gOrder.isEmpty() || iOrder.isEmpty()) intArrayOf() else iOrder.groupBy { gId[it] }.let { gToItems -> gOrder.flatMap { gToItems[it] ?: emptyList() }.toIntArray() } } } } } } } } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1509 lang=kotlin
+ *
+ * [1509] Minimum Difference Between Largest and Smallest Value in Three Moves
+ */
+
+class Solution { fun minDifference(nums: IntArray): Int = if (nums.size <= 4) 0 else nums.sorted().let { a -> (0..3).minOf { i -> a[a.size - 4 + i] - a[i] } } }

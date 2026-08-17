@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2029 lang=kotlin */
+class Solution { fun stoneGameIX(stones: IntArray): Boolean = stones.fold(IntArray(3)) { a, s -> a.apply { this[s % 3]++ } }.let { c -> if (c[0] % 2 == 0) c[1] > 0 && c[2] > 0 else Math.abs(c[1] - c[2]) > 2 } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1827 lang=kotlin
+ *
+ * [1827] Minimum Operations to Make the Array Increasing
+ */
+
+class Solution { fun minOperations(nums: IntArray): Int = nums.fold(Pair(0, 0)) { (prev, ops), n -> Pair(maxOf(prev + 1, n), ops + maxOf(0, prev + 1 - n)) }.second }

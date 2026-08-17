@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3519 lang=kotlin
+ *
+ * [3519] Count Numbers with Non-Decreasing Digits 
+ */
+
+class Solution { fun countNumbers(l: String, r: String, b: Int): Int = { s: String -> if (s.startsWith("-")) 0L else java.math.BigInteger(s).toString(b).map { if (it in '0'..'9') it - '0' else it - 'a' + 10 }.let { digits -> Array(digits.size) { Array(2) { LongArray(b + 1) { -1L } } }.let { memo -> DeepRecursiveFunction<Triple<Int, Int, Int>, Long> { (pos, tight, last) -> if (pos == digits.size) 1L else if (memo[pos][tight][last] != -1L) memo[pos][tight][last] else (last..(if (tight == 1) digits[pos] else b - 1)).fold(0L) { acc, j -> (acc + callRecursive(Triple(pos + 1, if (tight == 1 && j == digits[pos]) 1 else 0, j))) % 1_000_000_007L }.also { memo[pos][tight][last] = it } }.invoke(Triple(0, 1, 0)) } } }.let { solve -> (java.math.BigInteger(l) - java.math.BigInteger.ONE).let { lMinus1 -> ((solve(r) - solve(if (lMinus1 < java.math.BigInteger.ZERO) "-1" else lMinus1.toString())) % 1_000_000_007L + 1_000_000_007L) % 1_000_000_007L }.toInt() } }

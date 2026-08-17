@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2279 lang=kotlin */
+class Solution { fun maximumBags(capacity: IntArray, rocks: IntArray, additionalRocks: Int): Int = capacity.indices.map { capacity[it] - rocks[it] }.sorted().fold(additionalRocks to 0) { (rem, count), diff -> if (rem >= diff) (rem - diff) to (count + 1) else (rem to count) }.second }

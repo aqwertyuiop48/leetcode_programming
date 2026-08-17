@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2849 lang=kotlin */
+class Solution { fun isReachableAtTime(sx: Int, sy: Int, fx: Int, fy: Int, t: Int): Boolean = kotlin.math.max(kotlin.math.abs(sx - fx), kotlin.math.abs(sy - fy)).let { d -> if (d == 0) t != 1 else d <= t } }

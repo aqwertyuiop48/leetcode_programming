@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1090 lang=kotlin
+ *
+ * [1090] Largest Values From Labels
+ */
+
+class Solution {
+    fun largestValsFromLabels(values: IntArray, labels: IntArray, numWanted: Int, useLimit: Int): Int = values.zip(labels).sortedByDescending { it.first }.fold(Triple(0, 0, HashMap<Int, Int>())) { (sum, count, map), (v, l) -> if (count < numWanted && (map[l] ?: 0) < useLimit) map.set(l, (map[l] ?: 0) + 1).run { Triple(sum + v, count + 1, map) } else Triple(sum, count, map) }.first
+}

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2573 lang=kotlin */
+class Solution { fun findTheString(lcp: Array<IntArray>): String = CharArray(lcp.size).let { s -> lcp.indices.fold('a') { c, i -> if (s[i] == '\u0000') (if (c > 'z') '{' else c.also { (0 until lcp.size).forEach { j -> if (lcp[i][j] > 0) s[j] = it } } + 1) else c }.let { lastC -> if (lastC == '{' || lcp.indices.any { i -> lcp.indices.any { j -> lcp[i][j] != (if (s[i] != s[j]) 0 else if (i == lcp.size - 1 || j == lcp.size - 1) 1 else lcp[i + 1][j + 1] + 1) } }) "" else String(s) } } }

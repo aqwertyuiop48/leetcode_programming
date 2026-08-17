@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2762 lang=kotlin */
+class Solution { fun continuousSubarrays(nums: IntArray): Long = java.util.TreeMap<Int, Int>().let { m -> IntArray(1).let { l -> nums.indices.fold(0L) { acc, r -> m.merge(nums[r], 1, Integer::sum).let { generateSequence { (m.lastKey() - m.firstKey()).takeIf { it > 2 }?.run { m.merge(nums[l[0]], -1) { a, b -> (a + b).takeIf { it > 0 } }.run { l[0]++ } } }.count() }.run { acc + (r - l[0] + 1L) } } } } }

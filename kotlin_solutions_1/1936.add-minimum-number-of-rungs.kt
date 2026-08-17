@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1936 lang=kotlin */
+class Solution { fun addRungs(rungs: IntArray, dist: Int): Int = rungs.fold(0L to 0L) { (ans, prev), rung -> (ans + (rung - prev - 1) / dist) to rung.toLong() }.first.toInt() }

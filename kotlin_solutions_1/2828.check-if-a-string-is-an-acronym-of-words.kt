@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2828 lang=kotlin */
+class Solution { fun isAcronym(words: List<String>, s: String): Boolean = words.map { it[0] }.joinToString("") == s }

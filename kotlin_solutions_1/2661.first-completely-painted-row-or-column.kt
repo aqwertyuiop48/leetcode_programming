@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2661 lang=kotlin */
+class Solution { fun firstCompleteIndex(arr: IntArray, mat: Array<IntArray>): Int = IntArray(mat.size * mat[0].size + 1).also { pos -> mat.forEachIndexed { r, row -> row.forEachIndexed { c, v -> pos[v] = r * 10000 + c } } }.let { pos -> IntArray(mat.size).let { rowC -> IntArray(mat[0].size).let { colC -> arr.indexOfFirst { v -> pos[v].let { p -> (p / 10000).let { r -> (p % 10000).let { c -> (++rowC[r] == mat[0].size || ++colC[c] == mat.size) } } } } } } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1478 lang=kotlin
+ *
+ * [1478] Allocate Mailboxes
+ */
+
+class Solution { fun minDistance(houses: IntArray, k: Int): Int = houses.sortedArray().let { h -> Array(h.size) { i -> IntArray(h.size) { j -> (i..j).sumOf { Math.abs(h[it] - h[(i + j) / 2]) } } }.let { cost -> Array(h.size + 1) { IntArray(k + 1) { 1e9.toInt() } }.apply { this[h.size][0] = 0 }.let { dp -> (h.size - 1 downTo 0).forEach { i -> (1..k).forEach { m -> (i until h.size).forEach { j -> dp[i][m] = minOf(dp[i][m], cost[i][j] + dp[j + 1][m - 1]) } } }.let { dp[0][k] } } } } }

@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1138 lang=kotlin
+ *
+ * [1138] Alphabet Board Path
+ */
+
+class Solution { fun alphabetBoardPath(t: String): String = t.fold(Pair("", Pair(0, 0))) { (ans, pos), ch -> ((ch - 'a') / 5 to (ch - 'a') % 5).let { (r, c) -> Pair( ans + "L".repeat(maxOf(0, pos.second - c)) + "U".repeat(maxOf(0, pos.first - r)) + "D".repeat(maxOf(0, r - pos.first)) + "R".repeat(maxOf(0, c - pos.second)) + "!", r to c ) } }.first }

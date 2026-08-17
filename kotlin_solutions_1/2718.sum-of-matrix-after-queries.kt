@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2718 lang=kotlin */
+class Solution { fun matrixSumQueries(n: Int, queries: Array<IntArray>): Long = queries.indices.reversed().fold(Triple(mutableSetOf<Int>(), mutableSetOf<Int>(), 0L)) { (r, c, s), i -> queries[i].let { q -> if (q[0] == 0 && r.add(q[1])) Triple(r, c, s + q[2].toLong() * (n - c.size)) else if (q[0] == 1 && c.add(q[1])) Triple(r, c, s + q[2].toLong() * (n - r.size)) else Triple(r, c, s) } }.third }

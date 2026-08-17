@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1694 lang=kotlin */
+class Solution { fun reformatNumber(number: String): String = number.replace(Regex("[\\s-]"), "").let { s -> generateSequence(0) { i -> i + if (s.length - i == 4) 2 else 3 }.takeWhile { it < s.length }.map { i -> s.substring(i, i + if (s.length - i == 4) 2 else minOf(3, s.length - i)) }.joinToString("-") } }

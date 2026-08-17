@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3327 lang=java
+ *
+ * [3327] Check if DFS Strings Are Palindromes
+ */
+fun findAnswer(parent: IntArray, s: String): BooleanArray = Array(parent.size) { mutableListOf<Int>() }.also { adj -> (1 until parent.size).forEach { adj[parent[it]].add(it) } }.let { adj -> IntArray(parent.size).let { start -> IntArray(parent.size).let { end -> CharArray(parent.size).let { tour -> IntArray(1).let { time -> object { fun dfs(u: Int): Unit = start.also { it[u] = time[0] }.run { adj[u].sortedBy { it }.forEach { dfs(it) } }.run { tour[time[0]] = s[u] }.run { end[u] = time[0]++ } }.apply { dfs(0) }.let { LongArray(parent.size + 1).apply { this[0] = 1L }.also { p -> (0 until parent.size).forEach { i -> p[i + 1] = (p[i] * 131L) % 1000000007L } }.let { p -> LongArray(parent.size + 1).also { h1 -> (0 until parent.size).forEach { i -> h1[i + 1] = (h1[i] * 131L + (tour[i].code - 'a'.code + 1)) % 1000000007L } }.let { h1 -> LongArray(parent.size + 1).also { rh -> (parent.size - 1 downTo 0).forEach { i -> rh[i] = (rh[i + 1] * 131L + (tour[i].code - 'a'.code + 1)) % 1000000007L } }.let { rh -> BooleanArray(parent.size) { i -> ((h1[end[i] + 1] - h1[start[i]] * p[end[i] - start[i] + 1]) % 1000000007L + 1000000007L) % 1000000007L == ((rh[start[i]] - rh[end[i] + 1] * p[end[i] - start[i] + 1]) % 1000000007L + 1000000007L) % 1000000007L } } } } } } } } } }

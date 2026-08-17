@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3081 lang=kotlin */
+class Solution { fun minimizeStringValue(s: String): String = IntArray(26).let { cnt -> s.forEach { if (it != '?') cnt[it - 'a']++ }.let { CharArray(s.count { it == '?' }) { (0..25).minBy { cnt[it] }.also { cnt[it]++ }.let { 'a' + it } }.apply { sort() }.let { extra -> intArrayOf(0).let { ptr -> CharArray(s.length) { i -> if (s[i] == '?') extra[ptr[0]++] else s[i] }.let(::String) } } } } }

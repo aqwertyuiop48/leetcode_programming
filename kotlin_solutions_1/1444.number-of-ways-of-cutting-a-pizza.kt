@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1444 lang=kotlin
+ *
+ * [1444] Number of Ways of Cutting a Pizza
+ */
+
+class Solution { fun ways(pizza: Array<String>, k: Int): Int = pizza.size.let { m -> pizza[0].length.let { n -> Array(m + 1) { IntArray(n + 1) }.apply { (m - 1 downTo 0).forEach { r -> (n - 1 downTo 0).forEach { c -> this[r][c] = (if (pizza[r][c] == 'A') 1 else 0) + this[r + 1][c] + this[r][c + 1] - this[r + 1][c + 1] } } }.let { apples -> Array(m) { Array(n) { IntArray(k + 1) { -1 } } }.let { memo -> DeepRecursiveFunction<Triple<Int, Int, Int>, Int> { (r, c, rem) -> if (rem == 1) if (apples[r][c] > 0) 1 else 0 else memo[r][c][rem].let { cached -> if (cached != -1) cached else (((r + 1 until m).filter { nr -> apples[r][c] - apples[nr][c] > 0 }.fold(0L) { acc, nr -> (acc + callRecursive(Triple(nr, c, rem - 1))) % 1000000007 } + (c + 1 until n).filter { nc -> apples[r][c] - apples[r][nc] > 0 }.fold(0L) { acc, nc -> (acc + callRecursive(Triple(r, nc, rem - 1))) % 1000000007 }) % 1000000007).toInt().also { memo[r][c][rem] = it } } }.invoke(Triple(0, 0, k)) } } } }}

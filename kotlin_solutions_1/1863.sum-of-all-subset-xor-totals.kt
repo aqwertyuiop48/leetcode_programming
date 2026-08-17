@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1863 lang=kotlin */ class Solution { fun subsetXORSum(nums: IntArray): Int = nums.fold(0) { a, b -> a or b } shl (nums.size - 1) }

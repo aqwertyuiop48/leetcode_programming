@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2176 lang=kotlin */
+class Solution { fun countPairs(nums: IntArray, k: Int): Int = nums.indices.sumOf { i -> (i + 1 until nums.size).count { j -> nums[i] == nums[j] && (i * j) % k == 0 } } }

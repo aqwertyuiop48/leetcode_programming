@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1473 lang=kotlin
+ *
+ * [1473] Paint House III
+ */
+
+class Solution {
+    fun minCost(houses: IntArray, cost: Array<IntArray>, m: Int, n: Int, target: Int): Int = Array(m) { Array(n + 1) { IntArray(target + 1) { -1 } } }.let { dp -> DeepRecursiveFunction<Triple<Int, Int, Int>, Int> { (i, lastColor, neigh) -> if (neigh > target) 1000000000 else if (i == m) if (neigh == target) 0 else 1000000000 else dp[i][lastColor][neigh].takeIf { it != -1 } ?: (if (houses[i] != 0) callRecursive(Triple(i + 1, houses[i], neigh + (if (houses[i] == lastColor) 0 else 1))) else (1..n).minOf { c -> cost[i][c - 1] + callRecursive(Triple(i + 1, c, neigh + (if (c == lastColor) 0 else 1))) }).also { dp[i][lastColor][neigh] = it } }.invoke(Triple(0, 0, 0)).let { if (it >= 1000000000) -1 else it } }
+}

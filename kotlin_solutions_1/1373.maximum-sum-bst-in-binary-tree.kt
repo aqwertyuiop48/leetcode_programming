@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1373 lang=kotlin
+ *
+ * [1373] Maximum Sum BST in Binary Tree
+ */
+
+class Solution { fun maxSumBST(root: TreeNode?): Int = intArrayOf(0).let { max -> DeepRecursiveFunction<TreeNode?, List<Int>> { node -> if (node == null) listOf(1, Int.MAX_VALUE, Int.MIN_VALUE, 0) else (callRecursive(node.left) to callRecursive(node.right)).let { (l, r) -> if (l[0] == 1 && r[0] == 1 && node.`val` > l[2] && node.`val` < r[1]) (l[3] + r[3] + node.`val`).also { max[0] = Math.max(max[0], it) }.let { sum -> listOf(1, Math.min(node.`val`, l[1]), Math.max(node.`val`, r[2]), sum) } else listOf(0, 0, 0, 0) } }(root).run { max[0] } } }

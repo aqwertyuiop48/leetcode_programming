@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2673 lang=kotlin */
+class Solution { fun minIncrements(n: Int, cost: IntArray) = IntArray(1).let { ans -> ((n / 2 - 1) downTo 0).forEach { i -> (i * 2 + 1).let { l -> (i * 2 + 2).let { r -> Math.abs(cost[l] - cost[r]).let { diff -> diff.also { ans[0] += it }.run { cost[i] += Math.max(cost[l], cost[r]) } } } } }.run { ans[0] } } }

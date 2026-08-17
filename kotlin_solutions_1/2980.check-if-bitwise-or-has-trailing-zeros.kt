@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2980 lang=kotlin
+ *
+ * [2980] Check if Bitwise OR Has Trailing Zeros
+ */
+
+class Solution { fun hasTrailingZeros(nums: IntArray): Boolean = nums.count { it % 2 == 0 } >= 2 }

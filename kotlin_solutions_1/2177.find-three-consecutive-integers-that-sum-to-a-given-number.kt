@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2177 lang=kotlin */
+class Solution { fun sumOfThree(num: Long): LongArray = if (num % 3 == 0L) longArrayOf(num / 3 - 1, num / 3, num / 3 + 1) else longArrayOf() }

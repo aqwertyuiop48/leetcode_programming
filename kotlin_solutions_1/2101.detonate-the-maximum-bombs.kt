@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2101 lang=kotlin */
+class Solution { fun maximumDetonation(bombs: Array<IntArray>): Int = bombs.indices.maxOf { i -> mutableSetOf(i).let { v -> generateSequence(listOf(i)) { q -> q.flatMap { c -> bombs.indices.filter { n -> n !in v && (bombs[c][0].toLong() - bombs[n][0]).let { dx -> (bombs[c][1].toLong() - bombs[n][1]).let { dy -> dx * dx + dy * dy <= bombs[c][2].toLong() * bombs[c][2] } } } }.onEach { v.addAll(it) }.takeIf { it.isNotEmpty() } }.count().run { v.size } } }

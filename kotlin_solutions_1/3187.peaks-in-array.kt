@@ -1,0 +1,6 @@
+/*
+ * @lc app=leetcode id=3187 lang=kotlin
+ *
+ * [3187] Peaks in Array
+ */
+class Solution { fun countOfPeaks(nums: IntArray, queries: Array<IntArray>): List<Int> = nums.size.let { n -> IntArray(n + 1).let { bit -> { i: Int, v: Int -> generateSequence(i + 1) { it + (it and -it) }.takeWhile { it <= n }.forEach { bit[it] += v } }.let { update -> { i: Int -> generateSequence(i) { it - (it and -it) }.takeWhile { it > 0 }.sumOf { bit[it] } }.let { query -> BooleanArray(n).also { isP -> (1 until n - 1).forEach { i -> if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) isP[i] = true.also { update(i, 1) } } }.let { isP -> { i: Int -> if (i in 1 until n - 1 && nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) 1 else 0 }.let { check -> queries.mapNotNull { q -> if (q[0] == 1) if (q[2] - q[1] < 2) 0 else query(q[2]) - query(q[1] + 1) else null.also { nums[q[1]] = q[2] }.also { (q[1] - 1..q[1] + 1).forEach { i -> if (i in 1 until n - 1) check(i).let { p -> (if (isP[i]) 1 else 0).let { old -> if (p != old) isP[i] = (p == 1).also { update(i, p - old) } } } } } } } } } } } }

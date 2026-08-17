@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1104 lang=kotlin
+ *
+ * [1104] Path In Zigzag Labelled Binary Tree
+ */
+
+class Solution { fun pathInZigZagTree(t: Int): List<Int> = generateSequence(t) { x -> ((1 shl (31 - Integer.numberOfLeadingZeros(x))) + (1 shl (32 - Integer.numberOfLeadingZeros(x))) - 1 - x) / 2 }.takeWhile { it > 0 }.toList().reversed() }

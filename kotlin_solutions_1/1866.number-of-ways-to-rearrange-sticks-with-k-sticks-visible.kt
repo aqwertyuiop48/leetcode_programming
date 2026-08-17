@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1866 lang=kotlin */ class Solution { fun rearrangeSticks(n: Int, k: Int): Int = LongArray(k + 1).apply { this[0] = 1 }.let { dp -> (1..n).forEach { i -> (minOf(i, k) downTo 1).forEach { j -> dp[j] = (dp[j - 1] + (i - 1) * dp[j]) % 1000000007 }.run { dp[0] = 0 } }.run { dp[k].toInt() } } }

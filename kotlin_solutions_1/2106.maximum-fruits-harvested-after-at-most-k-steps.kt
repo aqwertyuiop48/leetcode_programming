@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2106 lang=kotlin */
+class Solution { fun maxTotalFruits(fruits: Array<IntArray>, startPos: Int, k: Int): Int = fruits.indices.fold(Triple(0, 0, 0)) { (l, sum, maxF), r -> (sum + fruits[r][1]).let { s -> generateSequence(l to s) { (cl, cs) -> if (cl <= r && minOf(Math.abs(startPos - fruits[cl][0]) + Math.abs(fruits[r][0] - fruits[cl][0]), Math.abs(startPos - fruits[r][0]) + Math.abs(fruits[r][0] - fruits[cl][0])) > k) (cl + 1) to (cs - fruits[cl][1]) else null }.last().let { (fl, fs) -> Triple(fl, fs, maxOf(maxF, fs)) } } }.third }

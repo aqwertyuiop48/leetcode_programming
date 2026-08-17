@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=2601 lang=kotlin */
+class Solution {
+    fun primeSubOperation(nums: IntArray): Boolean = BooleanArray(1001).also { np -> np.set(0, true).also { np.set(1, true) }.also { (2..32).forEach { i -> if (!np[i]) (i * i..1000 step i).forEach { j -> np.set(j, true) } else Unit } } }.let { np -> IntArray(1).let { last -> nums.all { n -> ((n - 1 downTo 1).firstOrNull { !np[it] && n - it > last[0] }?.let { n - it } ?: n).let { it.takeIf { it > last[0] }?.also { last.set(0, it) } != null } } } }
+}

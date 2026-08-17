@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1566 lang=kotlin */
+class Solution { fun containsPattern(arr: IntArray, m: Int, k: Int): Boolean = (m * (k - 1)).let { target -> arr.indices.dropLast(m).fold(0) { count, i -> if (count == target) target else if (arr[i] == arr[i + m]) count + 1 else 0 } == target } }

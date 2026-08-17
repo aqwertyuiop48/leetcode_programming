@@ -1,0 +1,4 @@
+/* @lc app=leetcode id=968 lang=kotlin */
+class Solution {
+    fun minCameraCover(root: TreeNode?): Int = root?.let { r -> IntArray(6).apply { this[1] = 1 }.let { v -> Array<TreeNode?>(1005) { null }.apply { this[0] = r }.let { q -> run { while (v[0] < 2) { if (v[0] == 0) { if (v[2] < v[1]) { (q[v[2]]?.left?.let { q.set(v[1], it).run { v.set(1, v[1] + 1) } }).let { q[v[2]]?.right?.let { q.set(v[1], it).run { v.set(1, v[1] + 1) } } }.let { v.set(2, v[2] + 1) } } else { v.set(1, v[1] - 1).run { v.set(0, 1) } } } else { if (v[1] >= 0) { q[v[1]]?.let { curr -> v.set(4, curr.left?.`val` ?: 2).run { v.set(5, curr.right?.`val` ?: 2) }.run { if (v[4] == 0 || v[5] == 0) curr.apply { `val` = 1 }.run { v.set(3, v[3] + 1) } else if (v[4] == 1 || v[5] == 1) run { curr.`val` = 2 } else run { curr.`val` = 0 } } }.run { v.set(1, v[1] - 1) } } else { (if (r.`val` == 0) v.set(3, v[3] + 1) else Unit).run { r.`val` = v[3] }.run { v.set(0, 2) } } } } }.run { r.`val` } } } } ?: 0
+}

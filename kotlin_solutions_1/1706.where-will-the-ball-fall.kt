@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1706 lang=kotlin
+ *
+ * [1706] Where Will the Ball Fall
+ */
+
+class Solution {
+    fun findBall(grid: Array<IntArray>): IntArray = IntArray(grid[0].size) { c -> (0 until grid.size).fold(c) { col, r -> if (col == -1) -1 else grid[r][col].let { dir -> if (col + dir in 0 until grid[0].size && grid[r][col + dir] == dir) col + dir else -1 } } }
+}

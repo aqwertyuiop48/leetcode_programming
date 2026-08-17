@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1291 lang=kotlin
+ *
+ * [1291] Sequential Digits
+ */
+
+class Solution {
+    fun sequentialDigits(low: Int, high: Int): List<Int> = (1..9).flatMap { start -> (start + 1..9).map { end -> (start..end).fold(0) { num, d -> num * 10 + d } } }.filter { it in low..high }.sorted()
+}

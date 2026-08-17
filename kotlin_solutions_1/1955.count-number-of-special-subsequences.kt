@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1955 lang=kotlin */
+class Solution { fun countSpecialSubsequences(nums: IntArray): Int = nums.fold(longArrayOf(0, 0, 0)) { dp, x -> dp.apply { this[x] = (2 * this[x] + if (x == 0) 1 else this[x - 1]) % 1000000007L } }[2].toInt() }

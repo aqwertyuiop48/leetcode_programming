@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=2917 lang=kotlin
+ *
+ * [2917] Find the K-or of an Array
+ */
+
+class Solution { fun findKOr(nums: IntArray, k: Int): Int = (0 until 31).filter { bit -> nums.count { (it and (1 shl bit)) != 0 } >= k }.fold(0) { acc, bit -> acc or (1 shl bit) } }

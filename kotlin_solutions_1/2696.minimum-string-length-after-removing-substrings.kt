@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2696 lang=kotlin */
+class Solution { fun minLength(s: String): Int = s.fold(mutableListOf<Char>()) { st, c -> st.apply { add(c) }.apply { if (size >= 2 && ((st[size - 2] == 'A' && st[size - 1] == 'B') || (st[size - 2] == 'C' && st[size - 1] == 'D'))) removeAt(size - 1).run { removeAt(size - 1) } } }.size }

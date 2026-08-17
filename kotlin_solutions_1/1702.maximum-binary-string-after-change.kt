@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1702 lang=kotlin */
+class Solution { fun maximumBinaryString(binary: String): String = binary.indexOf('0').let { first -> if (first == -1) binary else (first + binary.count { it == '0' } - 1).let { zeroIdx -> String(CharArray(binary.length) { if (it == zeroIdx) '0' else '1' }) } } }

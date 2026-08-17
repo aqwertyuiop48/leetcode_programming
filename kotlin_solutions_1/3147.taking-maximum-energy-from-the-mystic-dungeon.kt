@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3147 lang=kotlin
+ *
+ * [3147] Taking Maximum Energy From the Mystic Dungeon
+ */
+
+class Solution { fun maximumEnergy(energy: IntArray, k: Int): Int = energy.copyOf().apply { (size - 1 downTo 0).forEach { i -> if (i + k < size) this[i] += this[i + k] } }.maxOrNull()!! }

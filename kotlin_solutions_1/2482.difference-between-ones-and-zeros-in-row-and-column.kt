@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2482 lang=kotlin */
+class Solution { fun onesMinusZeros(grid: Array<IntArray>): Array<IntArray> = grid.let { g -> g.size.let { n -> g[0].size.let { m -> IntArray(n) { i -> g[i].sum() }.let { r -> IntArray(m) { j -> g.indices.sumOf { i -> g[i][j] } }.let { c -> Array(n) { i -> IntArray(m) { j -> 2 * r[i] + 2 * c[j] - n - m } } } } } } } }

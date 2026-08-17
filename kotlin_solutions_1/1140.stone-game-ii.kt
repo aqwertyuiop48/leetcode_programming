@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1140 lang=kotlin
+ *
+ * [1140] Stone Game II
+ */
+
+class Solution { fun stoneGameII(p: IntArray): Int = IntArray(p.size + 1).also { s -> (p.size - 1 downTo 0).forEach { i -> s[i] = s[i + 1] + p[i] } }.let { s -> Array(p.size + 1) { IntArray(p.size + 1) }.also { dp -> (p.size - 1 downTo 0).forEach { i -> (1..p.size).forEach { m -> if (i + 2 * m >= p.size) { dp[i][m] = s[i] } else { dp[i][m] = (1..2 * m).maxOf { x -> s[i] - dp[i + x][minOf(p.size, maxOf(m, x))] } } } } }[0][1] } }

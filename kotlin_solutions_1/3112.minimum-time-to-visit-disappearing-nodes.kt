@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=3112 lang=kotlin
+ *
+ * [3112] Minimum Time to Visit Disappearing Nodes
+ */
+
+class Solution {
+    fun minimumTime(n: Int, edges: Array<IntArray>, disappear: IntArray): IntArray = Array(n) { mutableListOf<Pair<Int, Int>>() }.also { adj -> edges.forEach { (u, v, w) -> adj[u].add(v to w).also { adj[v].add(u to w) } } }.let { adj -> IntArray(n) { -1 }.also { dist -> java.util.PriorityQueue<Pair<Int, Int>>(compareBy { it.second }).apply { dist[0] = 0.also { add(0 to 0) } }.let { pq -> generateSequence { pq.poll() }.forEach { (u, d) -> if (d == dist[u]) adj[u].forEach { (v, w) -> (d + w).let { nd -> if (nd < disappear[v] && (dist[v] == -1 || nd < dist[v])) dist[v] = nd.also { pq.add(v to nd) } } } } } } }
+}

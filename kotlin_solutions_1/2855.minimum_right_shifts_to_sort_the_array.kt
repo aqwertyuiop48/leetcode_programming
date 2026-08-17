@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2855 lang=kotlin */
+class Solution { fun minimumRightShifts(nums: List<Int>): Int = (nums.indices.filter { i -> nums[i] > nums[(i + 1) % nums.size] }).let { if (it.isEmpty()) 0 else if (it.size == 1) (nums.size - 1 - it[0]) else -1 } }

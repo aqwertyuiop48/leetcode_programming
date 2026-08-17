@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2261 lang=kotlin */
+class Solution { fun countDistinct(nums: IntArray, k: Int, p: Int): Int = (0 until nums.size).flatMap { i -> nums.indices.drop(i).scan(0) { c, j -> if (nums[j] % p == 0) c + 1 else c }.drop(1).takeWhile { it <= k }.mapIndexed { idx, _ -> nums.slice(i..i + idx).joinToString(",") } }.distinct().size }

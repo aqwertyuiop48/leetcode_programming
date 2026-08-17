@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=1542 lang=kotlin
+ *
+ * [1542] Find Longest Awesome Substring
+ */
+
+class Solution { fun longestAwesome(s: String): Int = IntArray(1024) { s.length + 1 }.also { it[0] = -1 }.let { maskPos -> s.indices.fold(0 to 0) { (curMask, maxLen), i -> (curMask xor (1 shl (s[i] - '0'))).let { newMask -> (0..9).fold(maxLen.coerceAtLeast(i - maskPos[newMask])) { m, d -> m.coerceAtLeast(i - maskPos[newMask xor (1 shl d)]) }.also { if (maskPos[newMask] > s.length) maskPos[newMask] = i }.let { newMask to it } } }.second } }

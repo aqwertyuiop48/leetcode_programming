@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1093 lang=kotlin
+ *
+ * [1093] Statistics from a Large Sample
+ */
+
+class Solution {
+    fun sampleStats(count: IntArray): DoubleArray = count.sumOf { it.toLong() }.let { total -> doubleArrayOf((0..255).first { count[it] > 0 }.toDouble(), (0..255).last { count[it] > 0 }.toDouble(), (0..255).sumOf { it.toLong() * count[it] }.toDouble() / total, ((0..255).fold(0L to -1) { (acc, res), i -> if (res != -1) acc to res else if (acc + count[i] > (total - 1) / 2) acc + count[i] to i else acc + count[i] to -1 }.second + (0..255).fold(0L to -1) { (acc, res), i -> if (res != -1) acc to res else if (acc + count[i] > total / 2) acc + count[i] to i else acc + count[i] to -1 }.second) / 2.0, (0..255).maxByOrNull { count[it] }!!.toDouble()) }
+}

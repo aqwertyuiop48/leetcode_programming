@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=1575 lang=kotlin
+ *
+ * [1575] Count All Possible Routes
+ */
+
+class Solution {
+    fun countRoutes(locations: IntArray, start: Int, finish: Int, fuel: Int): Int = Array(locations.size) { IntArray(fuel + 1) }.apply { (0..fuel).forEach { f -> locations.indices.forEach { i -> this[i][f] = locations.indices.filter { it != i && f >= Math.abs(locations[i] - locations[it]) }.fold(if (i == finish) 1L else 0L) { acc, j -> (acc + this[j][f - Math.abs(locations[i] - locations[j])]) % 1000000007 }.toInt() } } }[start][fuel]
+}

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=1339 lang=kotlin */
+class Solution { fun maxProduct(root: TreeNode?): Int = mutableListOf<Long>().run { DeepRecursiveFunction<TreeNode?, Long> { n -> n?.let { it.`val` + callRecursive(it.left) + callRecursive(it.right) }?.also { add(it) } ?: 0L }(root).let { total -> maxOf { s -> s * (total - s) } % 1000000007 }.toInt() } }

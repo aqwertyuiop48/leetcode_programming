@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=2389 lang=kotlin */
+class Solution { fun answerQueries(nums: IntArray, queries: IntArray): IntArray = nums.sorted().runningFold(0L) { a, b -> a + b }.let { prefixSums -> queries.map { q -> prefixSums.indexOfLast { it <= q.toLong() } }.toIntArray() } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3086 lang=kotlin */
+class Solution { fun minimumMoves(nums: IntArray, k: Int, maxChanges: Int): Long = nums.indices.filter { nums[it] == 1 }.let { pos -> LongArray(pos.size + 1).apply { pos.indices.forEach { i -> this[i + 1] = this[i] + pos[i] } }.let { pref -> maxOf(0, k - maxChanges).let { minL -> minOf(pos.size, minOf(minL + 3, k)).let { maxL -> (minL..maxL).minOf { l -> if (l == 0) k * 2L else (0..pos.size - l).minOf { i -> pref[i + l] - pref[i + l - l / 2] - (pref[i + l / 2] - pref[i]) + (k - l) * 2L } } } } } } }
