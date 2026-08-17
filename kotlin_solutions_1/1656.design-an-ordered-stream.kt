@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1656 lang=kotlin
- *
- * [1656] Design an Ordered Stream
- */
-
-class OrderedStream(n: Int, private val s: Array<String?> = Array(n + 1) { null }, private var p: Int = 1) { fun insert(idKey: Int, value: String): List<String> = s.also { it[idKey] = value }.run { mutableListOf<String>().apply { while (p < s.size && s[p] != null) add(s[p++]!!) } } }
+/* * @lc app=leetcode id=1656 lang=kotlin * * [1656] Design an Ordered Stream */ class OrderedStream(n: Int, private val s: Array<String?> = Array(n + 1) { null }, private var p: Int = 1) { fun insert(idKey: Int, value: String): List<String> = s.also { it[idKey] = value }.run { mutableListOf<String>().apply { while (p < s.size && s[p] != null) add(s[p++]!!) } } }

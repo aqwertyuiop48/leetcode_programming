@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2023 lang=kotlin */
-class Solution { fun numOfPairs(nums: Array<String>, target: String) = nums.indices.sumOf { i -> nums.indices.count { j -> i != j && nums[i] + nums[j] == target } } }
+/* @lc app=leetcode id=2023 lang=kotlin */ class Solution { fun numOfPairs(nums: Array<String>, target: String) = nums.indices.sumOf { i -> nums.indices.count { j -> i != j && nums[i] + nums[j] == target } } }

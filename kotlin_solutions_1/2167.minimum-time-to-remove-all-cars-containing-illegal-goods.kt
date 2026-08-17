@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2167 lang=kotlin */
-class Solution { fun minimumTime(s: String): Int = s.indices.fold(0 to s.length) { (c, m), i -> minOf(c + (s[i] - '0') * 2, i + 1).let { n -> n to minOf(m, n + s.length - 1 - i) } }.second }
+/* @lc app=leetcode id=2167 lang=kotlin */ class Solution { fun minimumTime(s: String): Int = s.indices.fold(0 to s.length) { (c, m), i -> minOf(c + (s[i] - '0') * 2, i + 1).let { n -> n to minOf(m, n + s.length - 1 - i) } }.second }

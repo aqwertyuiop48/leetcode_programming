@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1410 lang=kotlin
- *
- * [1410] HTML Entity Parser
- */
-
-class Solution { fun entityParser(text: String): String = text.replace("&quot;", "\"").replace("&apos;", "'").replace("&gt;", ">").replace("&lt;", "<").replace("&frasl;", "/").replace("&amp;", "&") }
+/* * @lc app=leetcode id=1410 lang=kotlin * * [1410] HTML Entity Parser */ class Solution { fun entityParser(text: String): String = text.replace("&quot;", "\"").replace("&apos;", "'").replace("&gt;", ">").replace("&lt;", "<").replace("&frasl;", "/").replace("&amp;", "&") }

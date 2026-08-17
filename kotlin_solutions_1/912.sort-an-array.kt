@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=912 lang=kotlin
- *
- * [912] Sort an Array
- */
-
-class Solution { fun sortArray(n: IntArray): IntArray = n.sortedArray() }
+/* * @lc app=leetcode id=912 lang=kotlin * * [912] Sort an Array */ class Solution { fun sortArray(n: IntArray): IntArray = n.sortedArray() }

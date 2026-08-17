@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2760 lang=kotlin */
-class Solution { fun longestAlternatingSubarray(nums: IntArray, threshold: Int): Int = nums.indices.map { i -> if (nums[i] <= threshold && nums[i] % 2 == 0) (i + 1 until nums.size).takeWhile { j -> nums[j] <= threshold && nums[j] % 2 != nums[j - 1] % 2 }.size + 1 else 0 }.maxOrNull() ?: 0 }
+/* @lc app=leetcode id=2760 lang=kotlin */ class Solution { fun longestAlternatingSubarray(nums: IntArray, threshold: Int): Int = nums.indices.map { i -> if (nums[i] <= threshold && nums[i] % 2 == 0) (i + 1 until nums.size).takeWhile { j -> nums[j] <= threshold && nums[j] % 2 != nums[j - 1] % 2 }.size + 1 else 0 }.maxOrNull() ?: 0 }

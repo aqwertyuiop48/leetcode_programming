@@ -1,5 +1,1 @@
-/* @lc app=leetcode id=1352 lang=kotlin */
-class ProductOfNumbers(val p: MutableList<Int> = mutableListOf(1)) {
-    fun add(num: Int) = if (num == 0) p.also { it.clear() }.run { add(1) } else p.run { add(last() * num) }
-    fun getProduct(k: Int): Int = if (k >= p.size) 0 else p.last() / p[p.size - 1 - k]
-}
+/* @lc app=leetcode id=1352 lang=kotlin */ class ProductOfNumbers(val p: MutableList<Int> = mutableListOf(1)) { fun add(num: Int) = if (num == 0) p.also { it.clear() }.run { add(1) } else p.run { add(last() * num) } fun getProduct(k: Int): Int = if (k >= p.size) 0 else p.last() / p[p.size - 1 - k] }

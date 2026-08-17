@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2830 lang=kotlin */
-class Solution { fun maximizeTheProfit(n: Int, offers: List<List<Int>>): Int = offers.groupBy { it[1] }.let { map -> IntArray(n + 1).apply { (0 until n).forEach { i -> maxOf(this[i + 1], this[i]).let { this[i + 1] = it }.also { map[i]?.forEach { off -> this[i + 1] = maxOf(this[i + 1], this[off[0]] + off[2]) } } } }[n] } }
+/* @lc app=leetcode id=2830 lang=kotlin */ class Solution { fun maximizeTheProfit(n: Int, offers: List<List<Int>>): Int = offers.groupBy { it[1] }.let { map -> IntArray(n + 1).apply { (0 until n).forEach { i -> maxOf(this[i + 1], this[i]).let { this[i + 1] = it }.also { map[i]?.forEach { off -> this[i + 1] = maxOf(this[i + 1], this[off[0]] + off[2]) } } } }[n] } }

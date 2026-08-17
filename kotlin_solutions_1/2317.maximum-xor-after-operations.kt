@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2317 lang=kotlin */
-class Solution { fun maximumXOR(nums: IntArray): Int = nums.reduce { acc, i -> acc or i } }
+/* @lc app=leetcode id=2317 lang=kotlin */ class Solution { fun maximumXOR(nums: IntArray): Int = nums.reduce { acc, i -> acc or i } }

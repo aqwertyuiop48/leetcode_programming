@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1816 lang=kotlin
- *
- * [1816] Truncate Sentence
- */
-
-class Solution { fun truncateSentence(s: String, k: Int): String = s.split(" ").take(k).joinToString(" ") }
+/* * @lc app=leetcode id=1816 lang=kotlin * * [1816] Truncate Sentence */ class Solution { fun truncateSentence(s: String, k: Int): String = s.split(" ").take(k).joinToString(" ") }

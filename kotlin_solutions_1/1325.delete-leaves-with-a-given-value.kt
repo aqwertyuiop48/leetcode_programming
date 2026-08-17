@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1325 lang=kotlin
- *
- * [1325] Delete Leaves With a Given Value
- */
-
-class Solution { fun removeLeafNodes(root: TreeNode?, target: Int): TreeNode? = root?.apply { left = removeLeafNodes(left, target) }?.apply { right = removeLeafNodes(right, target) }?.takeUnless { it.left == null && it.right == null && it.`val` == target } }
+/* * @lc app=leetcode id=1325 lang=kotlin * * [1325] Delete Leaves With a Given Value */ class Solution { fun removeLeafNodes(root: TreeNode?, target: Int): TreeNode? = root?.apply { left = removeLeafNodes(left, target) }?.apply { right = removeLeafNodes(right, target) }?.takeUnless { it.left == null && it.right == null && it.`val` == target } }

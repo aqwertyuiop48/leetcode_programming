@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1175 lang=kotlin
- *
- * [1175] Prime Arrangements
- */
-
-class Solution { fun numPrimeArrangements(n: Int): Int = (2..n).count { num -> (2..Math.sqrt(num.toDouble()).toInt()).all { num % it != 0 } }.let { p -> ((1..p.toLong()).fold(1L) { a, b -> (a * b) % 1000000007 } * (1..(n - p).toLong()).fold(1L) { a, b -> (a * b) % 1000000007 }) % 1000000007 }.toInt() }
+/* * @lc app=leetcode id=1175 lang=kotlin * * [1175] Prime Arrangements */ class Solution { fun numPrimeArrangements(n: Int): Int = (2..n).count { num -> (2..Math.sqrt(num.toDouble()).toInt()).all { num % it != 0 } }.let { p -> ((1..p.toLong()).fold(1L) { a, b -> (a * b) % 1000000007 } * (1..(n - p).toLong()).fold(1L) { a, b -> (a * b) % 1000000007 }) % 1000000007 }.toInt() }

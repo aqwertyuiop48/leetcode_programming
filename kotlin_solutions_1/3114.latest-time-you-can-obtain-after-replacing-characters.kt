@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3114 lang=kotlin
- *
- * [3114] Latest Time You Can Obtain After Replacing Characters
- */
-
-class Solution {
-    fun findLatestTime(s: String): String = s.toCharArray().also { c -> if (c[0] == '?') c[0] = if (c[1] == '?' || c[1] <= '1') '1' else '0' }.also { c -> if (c[1] == '?') c[1] = if (c[0] == '1') '1' else '9' }.also { c -> if (c[3] == '?') c[3] = '5' }.also { c -> if (c[4] == '?') c[4] = '9' }.concatToString()
-}
+/* * @lc app=leetcode id=3114 lang=kotlin * * [3114] Latest Time You Can Obtain After Replacing Characters */ class Solution { fun findLatestTime(s: String): String = s.toCharArray().also { c -> if (c[0] == '?') c[0] = if (c[1] == '?' || c[1] <= '1') '1' else '0' }.also { c -> if (c[1] == '?') c[1] = if (c[0] == '1') '1' else '9' }.also { c -> if (c[3] == '?') c[3] = '5' }.also { c -> if (c[4] == '?') c[4] = '9' }.concatToString() }

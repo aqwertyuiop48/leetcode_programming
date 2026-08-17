@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2250 lang=kotlin
- *
- * [2250] Count Number of Rectangles Containing Each Point
- */
-
-class Solution { fun countRectangles(rectangles: Array<IntArray>, points: Array<IntArray>): IntArray = rectangles.groupBy({ it[1] }, { it[0] }).mapValues { it.value.sorted() }.let { hMap -> IntArray(points.size) { i -> (points[i][1]..100).sumOf { h -> hMap[h]?.let { ws -> ws.binarySearch(points[i][0]).let { if (it < 0) -it - 1 else generateSequence(it) { j -> if (j > 0 && ws[j-1] == points[i][0]) j - 1 else null }.last() }.let { ws.size - it } } ?: 0 } } } }
+/* * @lc app=leetcode id=2250 lang=kotlin * * [2250] Count Number of Rectangles Containing Each Point */ class Solution { fun countRectangles(rectangles: Array<IntArray>, points: Array<IntArray>): IntArray = rectangles.groupBy({ it[1] }, { it[0] }).mapValues { it.value.sorted() }.let { hMap -> IntArray(points.size) { i -> (points[i][1]..100).sumOf { h -> hMap[h]?.let { ws -> ws.binarySearch(points[i][0]).let { if (it < 0) -it - 1 else generateSequence(it) { j -> if (j > 0 && ws[j-1] == points[i][0]) j - 1 else null }.last() }.let { ws.size - it } } ?: 0 } } } }

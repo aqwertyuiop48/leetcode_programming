@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2016 lang=kotlin */
-class Solution { fun maximumDifference(nums: IntArray) = nums.indices.drop(1).fold(nums[0] to -1) { (minV, maxD), i -> minOf(minV, nums[i]) to maxOf(maxD, if (nums[i] > minV) nums[i] - minV else -1) }.second }
+/* @lc app=leetcode id=2016 lang=kotlin */ class Solution { fun maximumDifference(nums: IntArray) = nums.indices.drop(1).fold(nums[0] to -1) { (minV, maxD), i -> minOf(minV, nums[i]) to maxOf(maxD, if (nums[i] > minV) nums[i] - minV else -1) }.second }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2960 lang=kotlin */
-class Solution { fun countTestedDevices(batteryPercentages: IntArray): Int = batteryPercentages.fold(0) { count, b -> if (b > count) count + 1 else count } }
+/* @lc app=leetcode id=2960 lang=kotlin */ class Solution { fun countTestedDevices(batteryPercentages: IntArray): Int = batteryPercentages.fold(0) { count, b -> if (b > count) count + 1 else count } }

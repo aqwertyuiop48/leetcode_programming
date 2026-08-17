@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2171 lang=kotlin */
-class Solution { fun minimumRemoval(beans: IntArray): Long = beans.sortedArray().let { b -> b.fold(0L) { a, x -> a + x }.let { s -> s - b.indices.fold(0L) { m, i -> maxOf(m, b[i].toLong() * (b.size - i)) } } } }
+/* @lc app=leetcode id=2171 lang=kotlin */ class Solution { fun minimumRemoval(beans: IntArray): Long = beans.sortedArray().let { b -> b.fold(0L) { a, x -> a + x }.let { s -> s - b.indices.fold(0L) { m, i -> maxOf(m, b[i].toLong() * (b.size - i)) } } } }

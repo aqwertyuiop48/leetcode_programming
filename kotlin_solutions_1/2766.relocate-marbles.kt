@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2766 lang=kotlin */
-class Solution { fun relocateMarbles(nums: IntArray, moveFrom: IntArray, moveTo: IntArray): List<Int> = nums.toMutableSet().apply { moveFrom.indices.forEach { i -> if (remove(moveFrom[i])) add(moveTo[i]) } }.sorted() }
+/* @lc app=leetcode id=2766 lang=kotlin */ class Solution { fun relocateMarbles(nums: IntArray, moveFrom: IntArray, moveTo: IntArray): List<Int> = nums.toMutableSet().apply { moveFrom.indices.forEach { i -> if (remove(moveFrom[i])) add(moveTo[i]) } }.sorted() }

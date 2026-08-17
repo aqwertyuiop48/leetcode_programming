@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1723 lang=kotlin
- *
- * [1723] Find Minimum Time to Finish All Jobs
- */
-
-class Solution { fun minimumTimeRequired(jobs: IntArray, k: Int): Int = (1 shl jobs.size).let { numMasks -> IntArray(numMasks) { mask -> jobs.indices.filter { (mask and (1 shl it)) != 0 }.sumOf { jobs[it] } }.let { sum -> (1 until k).fold(sum) { dp, _ -> IntArray(numMasks) { mask -> generateSequence(mask) { ((it - 1) and mask).takeIf { sub -> sub > 0 } }.minOf { sub -> maxOf(dp[mask xor sub], sum[sub]) } } }[numMasks - 1] } } }
+/* * @lc app=leetcode id=1723 lang=kotlin * * [1723] Find Minimum Time to Finish All Jobs */ class Solution { fun minimumTimeRequired(jobs: IntArray, k: Int): Int = (1 shl jobs.size).let { numMasks -> IntArray(numMasks) { mask -> jobs.indices.filter { (mask and (1 shl it)) != 0 }.sumOf { jobs[it] } }.let { sum -> (1 until k).fold(sum) { dp, _ -> IntArray(numMasks) { mask -> generateSequence(mask) { ((it - 1) and mask).takeIf { sub -> sub > 0 } }.minOf { sub -> maxOf(dp[mask xor sub], sum[sub]) } } }[numMasks - 1] } } }

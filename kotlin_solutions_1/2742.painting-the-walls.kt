@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2742 lang=kotlin */
-class Solution { fun paintWalls(cost: IntArray, time: IntArray): Int = IntArray(cost.size + 1) { 1000000000 }.apply { this[0] = 0 }.also { dp -> cost.indices.forEach { i -> (cost.size downTo 1).forEach { j -> dp.also { it[j] = Math.min(it[j], dp[Math.max(0, j - time[i] - 1)] + cost[i]) } } } }.let { it[cost.size] } }
+/* @lc app=leetcode id=2742 lang=kotlin */ class Solution { fun paintWalls(cost: IntArray, time: IntArray): Int = IntArray(cost.size + 1) { 1000000000 }.apply { this[0] = 0 }.also { dp -> cost.indices.forEach { i -> (cost.size downTo 1).forEach { j -> dp.also { it[j] = Math.min(it[j], dp[Math.max(0, j - time[i] - 1)] + cost[i]) } } } }.let { it[cost.size] } }

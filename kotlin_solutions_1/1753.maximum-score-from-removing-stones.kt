@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1753 lang=kotlin
- *
- * [1753] Maximum Score From Removing Stones
- */
-
-class Solution { fun maximumScore(a: Int, b: Int, c: Int): Int = intArrayOf(a, b, c).sorted().let { if (it[0] + it[1] <= it[2]) it[0] + it[1] else (it[0] + it[1] + it[2]) / 2 } }
+/* * @lc app=leetcode id=1753 lang=kotlin * * [1753] Maximum Score From Removing Stones */ class Solution { fun maximumScore(a: Int, b: Int, c: Int): Int = intArrayOf(a, b, c).sorted().let { if (it[0] + it[1] <= it[2]) it[0] + it[1] else (it[0] + it[1] + it[2]) / 2 } }

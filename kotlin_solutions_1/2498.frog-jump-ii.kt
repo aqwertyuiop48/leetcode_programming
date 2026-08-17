@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2498 lang=kotlin */
-class Solution { fun maxJump(stones: IntArray): Int = if (stones.size == 2) stones[1] - stones[0] else (2 until stones.size).maxOf { maxOf(stones[it] - stones[it - 2], stones[1] - stones[0]) } }
+/* @lc app=leetcode id=2498 lang=kotlin */ class Solution { fun maxJump(stones: IntArray): Int = if (stones.size == 2) stones[1] - stones[0] else (2 until stones.size).maxOf { maxOf(stones[it] - stones[it - 2], stones[1] - stones[0]) } }

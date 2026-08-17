@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1671 lang=kotlin
- *
- * [1671] Minimum Number of Removals to Make Mountain Array
- */
-
-class Solution { fun minimumMountainRemovals(nums: IntArray): Int = IntArray(nums.size) { 1 }.also { lis -> nums.indices.forEach { i -> (0 until i).filter { nums[it] < nums[i] }.forEach { j -> lis[i] = maxOf(lis[i], lis[j] + 1) } } }.let { lis -> IntArray(nums.size) { 1 }.also { lds -> nums.indices.reversed().forEach { i -> ((i + 1) until nums.size).filter { nums[it] < nums[i] }.forEach { j -> lds[i] = maxOf(lds[i], lds[j] + 1) } } }.let { lds -> nums.size - (nums.indices.filter { lis[it] > 1 && lds[it] > 1 }.maxOfOrNull { lis[it] + lds[it] - 1 } ?: 0) } } }
+/* * @lc app=leetcode id=1671 lang=kotlin * * [1671] Minimum Number of Removals to Make Mountain Array */ class Solution { fun minimumMountainRemovals(nums: IntArray): Int = IntArray(nums.size) { 1 }.also { lis -> nums.indices.forEach { i -> (0 until i).filter { nums[it] < nums[i] }.forEach { j -> lis[i] = maxOf(lis[i], lis[j] + 1) } } }.let { lis -> IntArray(nums.size) { 1 }.also { lds -> nums.indices.reversed().forEach { i -> ((i + 1) until nums.size).filter { nums[it] < nums[i] }.forEach { j -> lds[i] = maxOf(lds[i], lds[j] + 1) } } }.let { lds -> nums.size - (nums.indices.filter { lis[it] > 1 && lds[it] > 1 }.maxOfOrNull { lis[it] + lds[it] - 1 } ?: 0) } } }

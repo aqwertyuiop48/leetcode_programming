@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2585 lang=kotlin */
-class Solution { fun waysToReachTarget(target: Int, types: Array<IntArray>): Int = types.fold(IntArray(target + 1).apply { this[0] = 1 }) { dp, type -> dp.apply { (target downTo 1).forEach { i -> (1..type[0]).forEach { k -> if (i >= k * type[1]) dp[i] = (dp[i] + dp[i - k * type[1]]) % 1000000007 } } } }[target] }
+/* @lc app=leetcode id=2585 lang=kotlin */ class Solution { fun waysToReachTarget(target: Int, types: Array<IntArray>): Int = types.fold(IntArray(target + 1).apply { this[0] = 1 }) { dp, type -> dp.apply { (target downTo 1).forEach { i -> (1..type[0]).forEach { k -> if (i >= k * type[1]) dp[i] = (dp[i] + dp[i - k * type[1]]) % 1000000007 } } } }[target] }

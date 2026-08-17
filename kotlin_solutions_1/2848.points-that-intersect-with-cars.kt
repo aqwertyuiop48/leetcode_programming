@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2848 lang=kotlin */
-class Solution { fun numberOfPoints(nums: List<List<Int>>): Int = nums.flatMap { it[0]..it[1] }.distinct().size }
+/* @lc app=leetcode id=2848 lang=kotlin */ class Solution { fun numberOfPoints(nums: List<List<Int>>): Int = nums.flatMap { it[0]..it[1] }.distinct().size }

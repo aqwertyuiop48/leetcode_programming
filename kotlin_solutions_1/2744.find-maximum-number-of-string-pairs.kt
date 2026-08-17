@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2744 lang=kotlin */
-class Solution { fun maximumNumberOfStringPairs(words: Array<String>): Int = words.indices.fold(mutableSetOf<String>() to 0) { (s, c), i -> words[i].reversed().let { r -> if (s.contains(r)) s to c + 1 else s.apply { add(words[i]) } to c } }.second }
+/* @lc app=leetcode id=2744 lang=kotlin */ class Solution { fun maximumNumberOfStringPairs(words: Array<String>): Int = words.indices.fold(mutableSetOf<String>() to 0) { (s, c), i -> words[i].reversed().let { r -> if (s.contains(r)) s to c + 1 else s.apply { add(words[i]) } to c } }.second }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1269 lang=kotlin
- *
- * [1269] Number of Ways to Stay in the Same Place After Some Steps
- */
-
-class Solution {
-    fun numWays(steps: Int, arrLen: Int): Int = minOf(steps / 2 + 1, arrLen).let { maxLen -> (1..steps).fold(IntArray(maxLen).apply { this[0] = 1 }) { dp, _ -> IntArray(maxLen) { i -> ((dp[i].toLong() + (if (i > 0) dp[i - 1] else 0) + (if (i < maxLen - 1) dp[i + 1] else 0)) % 1000000007).toInt() } }[0] }
-}
+/* * @lc app=leetcode id=1269 lang=kotlin * * [1269] Number of Ways to Stay in the Same Place After Some Steps */ class Solution { fun numWays(steps: Int, arrLen: Int): Int = minOf(steps / 2 + 1, arrLen).let { maxLen -> (1..steps).fold(IntArray(maxLen).apply { this[0] = 1 }) { dp, _ -> IntArray(maxLen) { i -> ((dp[i].toLong() + (if (i > 0) dp[i - 1] else 0) + (if (i < maxLen - 1) dp[i + 1] else 0)) % 1000000007).toInt() } }[0] } }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1922 lang=kotlin
- *
- * [1922] Count Good Numbers
- */
-
-class Solution {
-    fun countGoodNumbers(n: Long): Int = java.math.BigInteger.valueOf(5).modPow(java.math.BigInteger.valueOf((n + 1) / 2), java.math.BigInteger.valueOf(1000000007)).multiply(java.math.BigInteger.valueOf(4).modPow(java.math.BigInteger.valueOf(n / 2), java.math.BigInteger.valueOf(1000000007))).mod(java.math.BigInteger.valueOf(1000000007)).toInt()
-}
+/* * @lc app=leetcode id=1922 lang=kotlin * * [1922] Count Good Numbers */ class Solution { fun countGoodNumbers(n: Long): Int = java.math.BigInteger.valueOf(5).modPow(java.math.BigInteger.valueOf((n + 1) / 2), java.math.BigInteger.valueOf(1000000007)).multiply(java.math.BigInteger.valueOf(4).modPow(java.math.BigInteger.valueOf(n / 2), java.math.BigInteger.valueOf(1000000007))).mod(java.math.BigInteger.valueOf(1000000007)).toInt() }

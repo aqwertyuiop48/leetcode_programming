@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1043 lang=kotlin
- *
- * [1043] Partition Array for Maximum Sum
- */
-
-class Solution { fun maxSumAfterPartitioning(arr: IntArray, k: Int): Int = IntArray(arr.size + 1).also { dp -> (1..arr.size).forEach { i -> (1..minOf(i, k)).fold(0) { curMax, j -> maxOf(curMax, arr[i - j]).also { mx -> dp[i] = maxOf(dp[i], dp[i - j] + mx * j) } } } }[arr.size] }
+/* * @lc app=leetcode id=1043 lang=kotlin * * [1043] Partition Array for Maximum Sum */ class Solution { fun maxSumAfterPartitioning(arr: IntArray, k: Int): Int = IntArray(arr.size + 1).also { dp -> (1..arr.size).forEach { i -> (1..minOf(i, k)).fold(0) { curMax, j -> maxOf(curMax, arr[i - j]).also { mx -> dp[i] = maxOf(dp[i], dp[i - j] + mx * j) } } } }[arr.size] }

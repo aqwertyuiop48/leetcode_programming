@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2028 lang=kotlin */
-class Solution { fun missingRolls(rolls: IntArray, mean: Int, n: Int): IntArray = (mean * (rolls.size + n) - rolls.sum()).let { s -> if (s < n || s > 6 * n) intArrayOf() else IntArray(n) { i -> s / n + if (i < s % n) 1 else 0 } } }
+/* @lc app=leetcode id=2028 lang=kotlin */ class Solution { fun missingRolls(rolls: IntArray, mean: Int, n: Int): IntArray = (mean * (rolls.size + n) - rolls.sum()).let { s -> if (s < n || s > 6 * n) intArrayOf() else IntArray(n) { i -> s / n + if (i < s % n) 1 else 0 } } }

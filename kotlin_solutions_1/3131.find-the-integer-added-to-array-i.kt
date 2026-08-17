@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3131 lang=kotlin
- *
- * [3131] Find the Integer Added to Array I
- */
-
-class Solution {
-    fun addedInteger(nums1: IntArray, nums2: IntArray): Int = nums2.minOrNull()!! - nums1.minOrNull()!!
-}
+/* * @lc app=leetcode id=3131 lang=kotlin * * [3131] Find the Integer Added to Array I */ class Solution { fun addedInteger(nums1: IntArray, nums2: IntArray): Int = nums2.minOrNull()!! - nums1.minOrNull()!! }

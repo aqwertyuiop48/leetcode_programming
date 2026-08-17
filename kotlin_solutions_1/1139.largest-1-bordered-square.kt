@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1139 lang=kotlin
- *
- * [1139] Largest 1-Bordered Square
- */
-
-class Solution { fun largest1BorderedSquare(g: Array<IntArray>): Int = Array(g.size) { i -> IntArray(g[0].size) }.also { r -> g.indices.forEach { i -> g[0].indices.forEach { j -> r[i][j] = if (g[i][j] == 1) (if (j > 0) r[i][j - 1] else 0) + 1 else 0 } } }.let { r -> Array(g.size) { i -> IntArray(g[0].size) }.also { c -> g.indices.forEach { i -> g[0].indices.forEach { j -> c[i][j] = if (g[i][j] == 1) (if (i > 0) c[i - 1][j] else 0) + 1 else 0 } } }.let { c -> g.indices.flatMap { i -> g[0].indices.map { j -> (minOf(r[i][j], c[i][j]) downTo 1).firstOrNull { k -> r[i - k + 1][j] >= k && c[i][j - k + 1] >= k } ?: 0 } }.maxOrNull()?.let { it * it } ?: 0 } } }
+/* * @lc app=leetcode id=1139 lang=kotlin * * [1139] Largest 1-Bordered Square */ class Solution { fun largest1BorderedSquare(g: Array<IntArray>): Int = Array(g.size) { i -> IntArray(g[0].size) }.also { r -> g.indices.forEach { i -> g[0].indices.forEach { j -> r[i][j] = if (g[i][j] == 1) (if (j > 0) r[i][j - 1] else 0) + 1 else 0 } } }.let { r -> Array(g.size) { i -> IntArray(g[0].size) }.also { c -> g.indices.forEach { i -> g[0].indices.forEach { j -> c[i][j] = if (g[i][j] == 1) (if (i > 0) c[i - 1][j] else 0) + 1 else 0 } } }.let { c -> g.indices.flatMap { i -> g[0].indices.map { j -> (minOf(r[i][j], c[i][j]) downTo 1).firstOrNull { k -> r[i - k + 1][j] >= k && c[i][j - k + 1] >= k } ?: 0 } }.maxOrNull()?.let { it * it } ?: 0 } } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2681 lang=kotlin */
-class Solution { fun sumOfPower(nums: IntArray) = nums.sorted().fold(0L to 0L) { acc, x -> ((acc.first + (x.toLong() * x % 1000000007L * ((acc.second + x) % 1000000007L) % 1000000007L)) % 1000000007L) to ((acc.second * 2 + x) % 1000000007L) }.first.toInt() }
+/* @lc app=leetcode id=2681 lang=kotlin */ class Solution { fun sumOfPower(nums: IntArray) = nums.sorted().fold(0L to 0L) { acc, x -> ((acc.first + (x.toLong() * x % 1000000007L * ((acc.second + x) % 1000000007L) % 1000000007L)) % 1000000007L) to ((acc.second * 2 + x) % 1000000007L) }.first.toInt() }

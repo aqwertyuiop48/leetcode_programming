@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1096 lang=kotlin
- *
- * [1096] Brace Expansion II
- */
-
-class Solution { fun braceExpansionII(expression: String): List<String> = sortedSetOf<String>().also { res -> generateSequence(listOf(expression)) { q -> q.flatMap { exp -> exp.indexOf('}').let { right -> if (right == -1) res.add(exp).let { emptyList() } else exp.lastIndexOf('{', right).let { left -> exp.substring(left + 1, right).split(",").map { sub -> exp.substring(0, left) + sub + exp.substring(right + 1) } } } } }.takeWhile { it.isNotEmpty() }.lastOrNull() }.toList() }
+/* * @lc app=leetcode id=1096 lang=kotlin * * [1096] Brace Expansion II */ class Solution { fun braceExpansionII(expression: String): List<String> = sortedSetOf<String>().also { res -> generateSequence(listOf(expression)) { q -> q.flatMap { exp -> exp.indexOf('}').let { right -> if (right == -1) res.add(exp).let { emptyList() } else exp.lastIndexOf('{', right).let { left -> exp.substring(left + 1, right).split(",").map { sub -> exp.substring(0, left) + sub + exp.substring(right + 1) } } } } }.takeWhile { it.isNotEmpty() }.lastOrNull() }.toList() }

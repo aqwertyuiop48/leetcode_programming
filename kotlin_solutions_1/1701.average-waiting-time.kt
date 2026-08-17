@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1701 lang=kotlin */
-class Solution { fun averageWaitingTime(customers: Array<IntArray>): Double = customers.fold(longArrayOf(0L, 0L)) { st, c -> maxOf(st[0], c[0].toLong()).plus(c[1]).let { finish -> longArrayOf(finish, st[1] + finish - c[0]) } }[1].toDouble() / customers.size }
+/* @lc app=leetcode id=1701 lang=kotlin */ class Solution { fun averageWaitingTime(customers: Array<IntArray>): Double = customers.fold(longArrayOf(0L, 0L)) { st, c -> maxOf(st[0], c[0].toLong()).plus(c[1]).let { finish -> longArrayOf(finish, st[1] + finish - c[0]) } }[1].toDouble() / customers.size }

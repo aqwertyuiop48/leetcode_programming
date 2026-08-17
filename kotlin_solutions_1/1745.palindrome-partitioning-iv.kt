@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1745 lang=kotlin
- *
- * [1745] Palindrome Partitioning IV
- */
-
-class Solution { fun checkPartitioning(s: String): Boolean = Array(s.length) { BooleanArray(s.length) }.apply { for (len in 0 until s.length) for (i in 0 until s.length - len) this[i][i + len] = s[i] == s[i + len] && (len < 2 || this[i + 1][i + len - 1]) }.let { dp -> (1 until s.length - 1).any { i -> (i until s.length - 1).any { j -> dp[0][i - 1] && dp[i][j] && dp[j + 1][s.length - 1] } } } }
+/* * @lc app=leetcode id=1745 lang=kotlin * * [1745] Palindrome Partitioning IV */ class Solution { fun checkPartitioning(s: String): Boolean = Array(s.length) { BooleanArray(s.length) }.apply { for (len in 0 until s.length) for (i in 0 until s.length - len) this[i][i + len] = s[i] == s[i + len] && (len < 2 || this[i + 1][i + len - 1]) }.let { dp -> (1 until s.length - 1).any { i -> (i until s.length - 1).any { j -> dp[0][i - 1] && dp[i][j] && dp[j + 1][s.length - 1] } } } }

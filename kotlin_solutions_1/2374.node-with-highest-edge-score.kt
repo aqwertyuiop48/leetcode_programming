@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2374 lang=kotlin */
-class Solution { fun edgeScore(edges: IntArray): Int = LongArray(edges.size).apply { edges.indices.forEach { i -> this[edges[i]] = this[edges[i]] + i.toLong() } }.let { scores -> scores.indices.maxByOrNull { scores[it] }!! } }
+/* @lc app=leetcode id=2374 lang=kotlin */ class Solution { fun edgeScore(edges: IntArray): Int = LongArray(edges.size).apply { edges.indices.forEach { i -> this[edges[i]] = this[edges[i]] + i.toLong() } }.let { scores -> scores.indices.maxByOrNull { scores[it] }!! } }

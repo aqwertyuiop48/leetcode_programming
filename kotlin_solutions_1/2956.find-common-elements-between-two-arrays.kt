@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2956 lang=kotlin */
-class Solution { fun findIntersectionValues(nums1: IntArray, nums2: IntArray): IntArray = intArrayOf(nums1.count { nums2.contains(it) }, nums2.count { nums1.contains(it) }) }
+/* @lc app=leetcode id=2956 lang=kotlin */ class Solution { fun findIntersectionValues(nums1: IntArray, nums2: IntArray): IntArray = intArrayOf(nums1.count { nums2.contains(it) }, nums2.count { nums1.contains(it) }) }

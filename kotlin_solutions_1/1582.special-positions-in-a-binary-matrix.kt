@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1582 lang=kotlin
- *
- * [1582] Special Positions in a Binary Matrix
- */
-
-class Solution {
-    fun numSpecial(mat: Array<IntArray>): Int = mat.map { it.sum() }.let { rowSums -> mat[0].indices.map { c -> mat.indices.sumOf { mat[it][c] } }.let { colSums -> mat.indices.sumOf { r -> mat[0].indices.count { c -> mat[r][c] == 1 && rowSums[r] == 1 && colSums[c] == 1 } } } }
-}
+/* * @lc app=leetcode id=1582 lang=kotlin * * [1582] Special Positions in a Binary Matrix */ class Solution { fun numSpecial(mat: Array<IntArray>): Int = mat.map { it.sum() }.let { rowSums -> mat[0].indices.map { c -> mat.indices.sumOf { mat[it][c] } }.let { colSums -> mat.indices.sumOf { r -> mat[0].indices.count { c -> mat[r][c] == 1 && rowSums[r] == 1 && colSums[c] == 1 } } } } }

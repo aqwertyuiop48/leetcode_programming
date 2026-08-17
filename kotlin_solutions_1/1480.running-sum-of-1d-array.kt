@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1480 lang=kotlin
- *
- * [1480] Running Sum of 1d Array
- */
-
-class Solution { fun runningSum(nums: IntArray): IntArray = nums.also { (1 until it.size).forEach { i -> it[i] += it[i - 1] } } }
+/* * @lc app=leetcode id=1480 lang=kotlin * * [1480] Running Sum of 1d Array */ class Solution { fun runningSum(nums: IntArray): IntArray = nums.also { (1 until it.size).forEach { i -> it[i] += it[i - 1] } } }

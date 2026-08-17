@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2526 lang=kotlin */
-class DataStream(val v: Int, val k: Int, val s: IntArray = IntArray(1)) { fun consec(num: Int) = (if (num == v) (s[0] + 1).also { s[0] = it } else 0.also { s[0] = 0 }) >= k }
+/* @lc app=leetcode id=2526 lang=kotlin */ class DataStream(val v: Int, val k: Int, val s: IntArray = IntArray(1)) { fun consec(num: Int) = (if (num == v) (s[0] + 1).also { s[0] = it } else 0.also { s[0] = 0 }) >= k }

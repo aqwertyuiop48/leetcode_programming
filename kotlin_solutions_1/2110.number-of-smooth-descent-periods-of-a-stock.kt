@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2110 lang=kotlin */
-class Solution { fun getDescentPeriods(prices: IntArray): Long = prices.indices.fold(0L to 0L) { (total, len), i -> (if (i > 0 && prices[i] == prices[i - 1] - 1) len + 1 else 1L).let { (total + it) to it } }.first }
+/* @lc app=leetcode id=2110 lang=kotlin */ class Solution { fun getDescentPeriods(prices: IntArray): Long = prices.indices.fold(0L to 0L) { (total, len), i -> (if (i > 0 && prices[i] == prices[i - 1] - 1) len + 1 else 1L).let { (total + it) to it } }.first }

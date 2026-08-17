@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1106 lang=kotlin
- *
- * [1106] Parsing A Boolean Expression
- */
-
-class Solution { fun parseBoolExpr(expression: String): Boolean = generateSequence(expression) { s -> """([!&|])\(([^()]+)\)""".toRegex().replace(s) { m -> m.groupValues[1].let { op -> if (op == "!") (if (m.groupValues[2] == "t") "f" else "t") else if (op == "&") (if ('f' in m.groupValues[2]) "f" else "t") else (if ('t' in m.groupValues[2]) "t" else "f") } }.takeIf { it != s } }.last() == "t" }
+/* * @lc app=leetcode id=1106 lang=kotlin * * [1106] Parsing A Boolean Expression */ class Solution { fun parseBoolExpr(expression: String): Boolean = generateSequence(expression) { s -> """([!&|])\(([^()]+)\)""".toRegex().replace(s) { m -> m.groupValues[1].let { op -> if (op == "!") (if (m.groupValues[2] == "t") "f" else "t") else if (op == "&") (if ('f' in m.groupValues[2]) "f" else "t") else (if ('t' in m.groupValues[2]) "t" else "f") } }.takeIf { it != s } }.last() == "t" }

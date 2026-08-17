@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3069 lang=kotlin
- *
- * [3069] Distribute Elements Into Two Arrays I
- */
-
-class Solution { fun resultArray(nums: IntArray): IntArray = nums.drop(2).fold(mutableListOf(nums[0]) to mutableListOf(nums[1])) { (a1, a2), x -> if (a1.last() > a2.last()) a1.apply { add(x) } to a2 else a1 to a2.apply { add(x) } }.run { (first + second).toIntArray() } }
+/* * @lc app=leetcode id=3069 lang=kotlin * * [3069] Distribute Elements Into Two Arrays I */ class Solution { fun resultArray(nums: IntArray): IntArray = nums.drop(2).fold(mutableListOf(nums[0]) to mutableListOf(nums[1])) { (a1, a2), x -> if (a1.last() > a2.last()) a1.apply { add(x) } to a2 else a1 to a2.apply { add(x) } }.run { (first + second).toIntArray() } }

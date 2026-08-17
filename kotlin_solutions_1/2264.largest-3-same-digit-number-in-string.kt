@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2264 lang=kotlin */
-class Solution { fun largestGoodInteger(num: String): String = (9 downTo 0).map { it.toString().repeat(3) }.firstOrNull { num.contains(it) } ?: "" }
+/* @lc app=leetcode id=2264 lang=kotlin */ class Solution { fun largestGoodInteger(num: String): String = (9 downTo 0).map { it.toString().repeat(3) }.firstOrNull { num.contains(it) } ?: "" }

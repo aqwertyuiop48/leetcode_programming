@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1512 lang=kotlin
- *
- * [1512] Number of Good Pairs
- */
-
-class Solution { fun numIdenticalPairs(nums: IntArray): Int = nums.groupBy { it }.values.sumOf { it.size * (it.size - 1) / 2 } }
+/* * @lc app=leetcode id=1512 lang=kotlin * * [1512] Number of Good Pairs */ class Solution { fun numIdenticalPairs(nums: IntArray): Int = nums.groupBy { it }.values.sumOf { it.size * (it.size - 1) / 2 } }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1221 lang=kotlin
- *
- * [1221] Split a String in Balanced Strings
- */
-
-class Solution {
-    fun balancedStringSplit(s: String): Int = s.fold(0 to 0) { (b, cnt), c -> (b + if (c == 'L') 1 else -1).let { nb -> nb to (cnt + if (nb == 0) 1 else 0) } }.second
-}
+/* * @lc app=leetcode id=1221 lang=kotlin * * [1221] Split a String in Balanced Strings */ class Solution { fun balancedStringSplit(s: String): Int = s.fold(0 to 0) { (b, cnt), c -> (b + if (c == 'L') 1 else -1).let { nb -> nb to (cnt + if (nb == 0) 1 else 0) } }.second }

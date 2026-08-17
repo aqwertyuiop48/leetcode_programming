@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1110 lang=kotlin
- *
- * [1110] Delete Nodes And Return Forest
- */
-
-class Solution { fun delNodes(root: TreeNode?, to_delete: IntArray): List<TreeNode?> = to_delete.toHashSet().let { set -> mutableListOf<TreeNode?>().also { res -> object { fun dfs(node: TreeNode?, isRoot: Boolean): TreeNode? = node?.also { n -> if (isRoot && !set.contains(n.`val`)) res.add(n) }?.also { n -> n.left = dfs(n.left, set.contains(n.`val`)) }?.also { n -> n.right = dfs(n.right, set.contains(n.`val`)) }?.takeUnless { set.contains(it.`val`) } }.dfs(root, true) } } }
+/* * @lc app=leetcode id=1110 lang=kotlin * * [1110] Delete Nodes And Return Forest */ class Solution { fun delNodes(root: TreeNode?, to_delete: IntArray): List<TreeNode?> = to_delete.toHashSet().let { set -> mutableListOf<TreeNode?>().also { res -> object { fun dfs(node: TreeNode?, isRoot: Boolean): TreeNode? = node?.also { n -> if (isRoot && !set.contains(n.`val`)) res.add(n) }?.also { n -> n.left = dfs(n.left, set.contains(n.`val`)) }?.also { n -> n.right = dfs(n.right, set.contains(n.`val`)) }?.takeUnless { set.contains(it.`val`) } }.dfs(root, true) } } }

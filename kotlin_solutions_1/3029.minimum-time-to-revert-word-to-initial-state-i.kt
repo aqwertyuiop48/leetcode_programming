@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3029 lang=kotlin */
-class Solution { fun minimumTimeToInitialState(word: String, k: Int): Int = generateSequence(1) { it + 1 }.first { t -> t * k >= word.length || word.startsWith(word.substring(t * k)) } }
+/* @lc app=leetcode id=3029 lang=kotlin */ class Solution { fun minimumTimeToInitialState(word: String, k: Int): Int = generateSequence(1) { it + 1 }.first { t -> t * k >= word.length || word.startsWith(word.substring(t * k)) } }

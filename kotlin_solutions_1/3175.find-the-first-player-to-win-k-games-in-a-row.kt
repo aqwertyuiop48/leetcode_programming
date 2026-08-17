@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3175 lang=kotlin */
-class Solution { fun findWinningPlayer(skills: IntArray, k: Int): Int = (1 until skills.size).fold(0 to 0) { (champ, wins), i -> if (wins >= k) champ to wins else if (skills[i] > skills[champ]) i to 1 else champ to wins + 1 }.first }
+/* @lc app=leetcode id=3175 lang=kotlin */ class Solution { fun findWinningPlayer(skills: IntArray, k: Int): Int = (1 until skills.size).fold(0 to 0) { (champ, wins), i -> if (wins >= k) champ to wins else if (skills[i] > skills[champ]) i to 1 else champ to wins + 1 }.first }

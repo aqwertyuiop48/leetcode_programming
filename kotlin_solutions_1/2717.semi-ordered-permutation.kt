@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2717 lang=kotlin */
-class Solution { fun semiOrderedPermutation(nums: IntArray): Int = nums.indexOf(1).let { p1 -> nums.indexOf(nums.size).let { pn -> p1 + (nums.size - 1 - pn) - (if (p1 > pn) 1 else 0) } } }
+/* @lc app=leetcode id=2717 lang=kotlin */ class Solution { fun semiOrderedPermutation(nums: IntArray): Int = nums.indexOf(1).let { p1 -> nums.indexOf(nums.size).let { pn -> p1 + (nums.size - 1 - pn) - (if (p1 > pn) 1 else 0) } } }

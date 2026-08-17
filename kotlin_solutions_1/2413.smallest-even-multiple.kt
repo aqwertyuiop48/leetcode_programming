@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2413 lang=kotlin */
-class Solution { fun smallestEvenMultiple(n: Int): Int = if (n % 2 == 0) n else 2 * n }
+/* @lc app=leetcode id=2413 lang=kotlin */ class Solution { fun smallestEvenMultiple(n: Int): Int = if (n % 2 == 0) n else 2 * n }

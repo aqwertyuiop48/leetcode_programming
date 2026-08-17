@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1401 lang=kotlin
- *
- * [1401] Circle and Rectangle Overlapping
- */
-
-class Solution { fun checkOverlap(radius: Int, xCenter: Int, yCenter: Int, x1: Int, y1: Int, x2: Int, y2: Int): Boolean = (xCenter - xCenter.coerceIn(x1, x2)).let { x -> (yCenter - yCenter.coerceIn(y1, y2)).let { y -> x * x + y * y <= radius * radius } } }
+/* * @lc app=leetcode id=1401 lang=kotlin * * [1401] Circle and Rectangle Overlapping */ class Solution { fun checkOverlap(radius: Int, xCenter: Int, yCenter: Int, x1: Int, y1: Int, x2: Int, y2: Int): Boolean = (xCenter - xCenter.coerceIn(x1, x2)).let { x -> (yCenter - yCenter.coerceIn(y1, y2)).let { y -> x * x + y * y <= radius * radius } } }

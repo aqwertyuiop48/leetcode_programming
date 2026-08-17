@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1042 lang=kotlin
- *
- * [1042] Flower Planting With No Adjacent
- */
-
-class Solution { fun gardenNoAdj(n: Int, paths: Array<IntArray>): IntArray = Array(n + 1) { mutableListOf<Int>() }.also { adj -> paths.forEach { (u, v) -> adj[u].add(v).also { adj[v].add(u) } } }.let { adj -> IntArray(n).also { res -> (1..n).forEach { i -> res[i - 1] = (1..4).first { c -> adj[i].none { neighbor -> res[neighbor - 1] == c } } } } } }
+/* * @lc app=leetcode id=1042 lang=kotlin * * [1042] Flower Planting With No Adjacent */ class Solution { fun gardenNoAdj(n: Int, paths: Array<IntArray>): IntArray = Array(n + 1) { mutableListOf<Int>() }.also { adj -> paths.forEach { (u, v) -> adj[u].add(v).also { adj[v].add(u) } } }.let { adj -> IntArray(n).also { res -> (1..n).forEach { i -> res[i - 1] = (1..4).first { c -> adj[i].none { neighbor -> res[neighbor - 1] == c } } } } } }

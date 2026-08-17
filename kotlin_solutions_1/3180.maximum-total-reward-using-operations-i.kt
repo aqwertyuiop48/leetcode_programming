@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3180 lang=kotlin */
-class Solution { fun maxTotalReward(rewardValues: IntArray): Int = rewardValues.sorted().fold(BooleanArray(4000).apply { this[0] = true }) { dp, x -> dp.apply { (x - 1 downTo 0).forEach { v -> if (dp[v]) dp[v + x] = true } } }.let { dp -> dp.indices.last { dp[it] } } }
+/* @lc app=leetcode id=3180 lang=kotlin */ class Solution { fun maxTotalReward(rewardValues: IntArray): Int = rewardValues.sorted().fold(BooleanArray(4000).apply { this[0] = true }) { dp, x -> dp.apply { (x - 1 downTo 0).forEach { v -> if (dp[v]) dp[v + x] = true } } }.let { dp -> dp.indices.last { dp[it] } } }

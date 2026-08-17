@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1716 lang=kotlin
- *
- * [1716] Calculate Money in Leetcode Bank
- */
-
-class Solution {
-    fun totalMoney(n: Int): Int = (0 until n).sumOf { (it / 7 + 1) + (it % 7) }
-}
+/* * @lc app=leetcode id=1716 lang=kotlin * * [1716] Calculate Money in Leetcode Bank */ class Solution { fun totalMoney(n: Int): Int = (0 until n).sumOf { (it / 7 + 1) + (it % 7) } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1360 lang=kotlin */
-class Solution { fun daysBetweenDates(date1: String, date2: String): Int = Math.abs(java.time.LocalDate.parse(date1).toEpochDay() - java.time.LocalDate.parse(date2).toEpochDay()).toInt() }
+/* @lc app=leetcode id=1360 lang=kotlin */ class Solution { fun daysBetweenDates(date1: String, date2: String): Int = Math.abs(java.time.LocalDate.parse(date1).toEpochDay() - java.time.LocalDate.parse(date2).toEpochDay()).toInt() }

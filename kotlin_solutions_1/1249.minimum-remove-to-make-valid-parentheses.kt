@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1249 lang=kotlin
- *
- * [1249] Minimum Remove to Make Valid Parentheses
- */
-
-class Solution { fun minRemoveToMakeValid(s: String): String = java.util.ArrayDeque<Int>().let { st -> BooleanArray(s.length).also { inv -> s.indices.forEach { i -> if (s[i] == '(') st.push(i) else if (s[i] == ')') if (st.isNotEmpty()) st.pop() else inv[i] = true }.also { st.forEach { inv[it] = true } } }.let { inv -> s.filterIndexed { i, _ -> !inv[i] } } } }
+/* * @lc app=leetcode id=1249 lang=kotlin * * [1249] Minimum Remove to Make Valid Parentheses */ class Solution { fun minRemoveToMakeValid(s: String): String = java.util.ArrayDeque<Int>().let { st -> BooleanArray(s.length).also { inv -> s.indices.forEach { i -> if (s[i] == '(') st.push(i) else if (s[i] == ')') if (st.isNotEmpty()) st.pop() else inv[i] = true }.also { st.forEach { inv[it] = true } } }.let { inv -> s.filterIndexed { i, _ -> !inv[i] } } } }

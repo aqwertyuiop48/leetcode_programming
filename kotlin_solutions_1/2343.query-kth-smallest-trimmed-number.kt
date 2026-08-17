@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2343 lang=kotlin */
-class Solution { fun smallestTrimmedNumbers(nums: Array<String>, queries: Array<IntArray>): IntArray = queries.map { q -> nums.indices.map { it to nums[it].takeLast(q[1]) }.sortedWith(compareBy({ it.second }, { it.first }))[q[0] - 1].first }.toIntArray() }
+/* @lc app=leetcode id=2343 lang=kotlin */ class Solution { fun smallestTrimmedNumbers(nums: Array<String>, queries: Array<IntArray>): IntArray = queries.map { q -> nums.indices.map { it to nums[it].takeLast(q[1]) }.sortedWith(compareBy({ it.second }, { it.first }))[q[0] - 1].first }.toIntArray() }

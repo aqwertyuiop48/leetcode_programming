@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2924 lang=kotlin
- *
- * [2924] Find Champion II
- */
-
-class Solution {
-    fun findChampion(n: Int, edges: Array<IntArray>): Int = BooleanArray(n).apply { edges.forEach { this[it[1]] = true } }.let { hasIn -> (0 until n).filter { !hasIn[it] }.let { if (it.size == 1) it[0] else -1 } }
-}
+/* * @lc app=leetcode id=2924 lang=kotlin * * [2924] Find Champion II */ class Solution { fun findChampion(n: Int, edges: Array<IntArray>): Int = BooleanArray(n).apply { edges.forEach { this[it[1]] = true } }.let { hasIn -> (0 until n).filter { !hasIn[it] }.let { if (it.size == 1) it[0] else -1 } } }

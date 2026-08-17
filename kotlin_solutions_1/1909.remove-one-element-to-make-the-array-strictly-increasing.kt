@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1909 lang=kotlin */
-class Solution { fun canBeIncreasing(nums: IntArray): Boolean = nums.indices.any { skip -> nums.filterIndexed { i, _ -> i != skip }.let { f -> (0 until f.size - 1).all { i -> f[i] < f[i + 1] } } } }
+/* @lc app=leetcode id=1909 lang=kotlin */ class Solution { fun canBeIncreasing(nums: IntArray): Boolean = nums.indices.any { skip -> nums.filterIndexed { i, _ -> i != skip }.let { f -> (0 until f.size - 1).all { i -> f[i] < f[i + 1] } } } }

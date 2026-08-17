@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2972 lang=kotlin
- *
- * [2972] Count the Number of Incremovable Subarrays II
- */
-
-class Solution { fun incremovableSubarrayCount(A: IntArray): Long = (0 until A.size - 1).takeWhile { A[it] < A[it + 1] }.count().let { i -> if (i == A.size - 1) 1L * A.size * (A.size + 1) / 2 else (A.size - 1 downTo 0).takeWhile { it == A.size - 1 || A[it] < A[it + 1] }.fold(i to (i.toLong() + 2)) { (p, ans), j -> generateSequence(p) { it - 1 }.first { it < 0 || A[it] < A[j] }.let { newP -> newP to (ans + newP + 2) } }.second } }
+/* * @lc app=leetcode id=2972 lang=kotlin * * [2972] Count the Number of Incremovable Subarrays II */ class Solution { fun incremovableSubarrayCount(A: IntArray): Long = (0 until A.size - 1).takeWhile { A[it] < A[it + 1] }.count().let { i -> if (i == A.size - 1) 1L * A.size * (A.size + 1) / 2 else (A.size - 1 downTo 0).takeWhile { it == A.size - 1 || A[it] < A[it + 1] }.fold(i to (i.toLong() + 2)) { (p, ans), j -> generateSequence(p) { it - 1 }.first { it < 0 || A[it] < A[j] }.let { newP -> newP to (ans + newP + 2) } }.second } }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=961 lang=kotlin
- *
- * [961] N-Repeated Element in Size 2N Array
- */
-
-class Solution {
-    fun repeatedNTimes(nums: IntArray): Int = HashSet<Int>().let { seen -> nums.first { !seen.add(it) } }
-}
+/* * @lc app=leetcode id=961 lang=kotlin * * [961] N-Repeated Element in Size 2N Array */ class Solution { fun repeatedNTimes(nums: IntArray): Int = HashSet<Int>().let { seen -> nums.first { !seen.add(it) } } }

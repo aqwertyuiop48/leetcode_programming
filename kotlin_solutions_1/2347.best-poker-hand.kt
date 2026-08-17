@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2347 lang=kotlin */
-class Solution { fun bestHand(ranks: IntArray, suits: CharArray): String = if (suits.distinct().size == 1) "Flush" else ranks.groupBy { it }.maxOf { it.value.size }.let { if (it >= 3) "Three of a Kind" else if (it == 2) "Pair" else "High Card" } }
+/* @lc app=leetcode id=2347 lang=kotlin */ class Solution { fun bestHand(ranks: IntArray, suits: CharArray): String = if (suits.distinct().size == 1) "Flush" else ranks.groupBy { it }.maxOf { it.value.size }.let { if (it >= 3) "Three of a Kind" else if (it == 2) "Pair" else "High Card" } }

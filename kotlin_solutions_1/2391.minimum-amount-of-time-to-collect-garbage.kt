@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2391 lang=kotlin */
-class Solution { fun garbageCollection(garbage: Array<String>, travel: IntArray): Int = garbage.sumOf { it.length } + listOf('M', 'P', 'G').sumOf { type -> (0 until garbage.indexOfLast { it.contains(type) }).sumOf { travel[it] } } }
+/* @lc app=leetcode id=2391 lang=kotlin */ class Solution { fun garbageCollection(garbage: Array<String>, travel: IntArray): Int = garbage.sumOf { it.length } + listOf('M', 'P', 'G').sumOf { type -> (0 until garbage.indexOfLast { it.contains(type) }).sumOf { travel[it] } } }

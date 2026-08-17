@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1324 lang=kotlin
- *
- * [1324] Print Words Vertically
- */
-
-class Solution { fun printVertically(s: String): List<String> = s.split(" ").let { words -> (0..<words.maxOf { it.length }).map { i -> words.map { it.getOrNull(i) ?: ' ' }.joinToString("").trimEnd() } } }
+/* * @lc app=leetcode id=1324 lang=kotlin * * [1324] Print Words Vertically */ class Solution { fun printVertically(s: String): List<String> = s.split(" ").let { words -> (0..<words.maxOf { it.length }).map { i -> words.map { it.getOrNull(i) ?: ' ' }.joinToString("").trimEnd() } } }

@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=2432 lang=kotlin
- *
- * [2432] The Employee That Worked on the Longest Task
- */
-class Solution { fun hardestWorker(n: Int, logs: Array<IntArray>): Int = (0 until logs.size).map { i -> intArrayOf(logs[i][0], logs[i][1] - (if (i == 0) 0 else logs[i - 1][1])) }.maxWithOrNull(kotlin.comparisons.compareBy<IntArray>({ it[1] }, { -it[0] }))!![0] }
+/* * @lc app=leetcode id=2432 lang=kotlin * * [2432] The Employee That Worked on the Longest Task */ class Solution { fun hardestWorker(n: Int, logs: Array<IntArray>): Int = (0 until logs.size).map { i -> intArrayOf(logs[i][0], logs[i][1] - (if (i == 0) 0 else logs[i - 1][1])) }.maxWithOrNull(kotlin.comparisons.compareBy<IntArray>({ it[1] }, { -it[0] }))!![0] }

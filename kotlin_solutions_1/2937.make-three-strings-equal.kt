@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2937 lang=kotlin
- *
- * [2937] Make Three Strings Equal
- */
-
-class Solution { fun findMinimumOperations(s1: String, s2: String, s3: String): Int = (0 until minOf(s1.length, s2.length, s3.length)).takeWhile { s1[it] == s2[it] && s2[it] == s3[it] }.count().let { lcp -> if (lcp == 0) -1 else s1.length + s2.length + s3.length - 3 * lcp } }
+/* * @lc app=leetcode id=2937 lang=kotlin * * [2937] Make Three Strings Equal */ class Solution { fun findMinimumOperations(s1: String, s2: String, s3: String): Int = (0 until minOf(s1.length, s2.length, s3.length)).takeWhile { s1[it] == s2[it] && s2[it] == s3[it] }.count().let { lcp -> if (lcp == 0) -1 else s1.length + s2.length + s3.length - 3 * lcp } }

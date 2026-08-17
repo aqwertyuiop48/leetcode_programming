@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1904 lang=kotlin */
-class Solution { fun numberOfRounds(loginTime: String, logoutTime: String): Int = (loginTime.substring(0, 2).toInt() * 60 + loginTime.substring(3).toInt()).let { s -> (logoutTime.substring(0, 2).toInt() * 60 + logoutTime.substring(3).toInt()).let { e -> (if (s > e) e + 1440 else e).let { ae -> maxOf(0, ae / 15 - (s + 14) / 15) } } } }
+/* @lc app=leetcode id=1904 lang=kotlin */ class Solution { fun numberOfRounds(loginTime: String, logoutTime: String): Int = (loginTime.substring(0, 2).toInt() * 60 + loginTime.substring(3).toInt()).let { s -> (logoutTime.substring(0, 2).toInt() * 60 + logoutTime.substring(3).toInt()).let { e -> (if (s > e) e + 1440 else e).let { ae -> maxOf(0, ae / 15 - (s + 14) / 15) } } } }

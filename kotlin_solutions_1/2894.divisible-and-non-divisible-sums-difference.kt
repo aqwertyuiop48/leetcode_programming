@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2894 lang=kotlin
- *
- * [2894] Divisible and Non-divisible Sums Difference
- */
-
-class Solution { fun differenceOfSums(n: Int, m: Int): Int = n * (n + 1) / 2 - 2 * (m * (n / m) * (n / m + 1) / 2) }
+/* * @lc app=leetcode id=2894 lang=kotlin * * [2894] Divisible and Non-divisible Sums Difference */ class Solution { fun differenceOfSums(n: Int, m: Int): Int = n * (n + 1) / 2 - 2 * (m * (n / m) * (n / m + 1) / 2) }

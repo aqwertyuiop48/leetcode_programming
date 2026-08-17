@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1758 lang=kotlin
- *
- * [1758] Minimum Changes To Make Alternating Binary String
- */
-
-class Solution { fun minOperations(s: String): Int = s.indices.count { s[it] - '0' == it % 2 }.let { minOf(it, s.length - it) } }
+/* * @lc app=leetcode id=1758 lang=kotlin * * [1758] Minimum Changes To Make Alternating Binary String */ class Solution { fun minOperations(s: String): Int = s.indices.count { s[it] - '0' == it % 2 }.let { minOf(it, s.length - it) } }

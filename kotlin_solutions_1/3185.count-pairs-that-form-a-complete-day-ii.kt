@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=3185 lang=kotlin
- *
- * [3185] Count Pairs That Form a Complete Day II
- */
-class Solution { fun countCompleteDayPairs(hours: IntArray): Long = hours.fold(0L to LongArray(24)) { (ans, cnt), h -> (ans + cnt[(24 - h % 24) % 24]) to cnt.also { it[h % 24]++ } }.first }
+/* * @lc app=leetcode id=3185 lang=kotlin * * [3185] Count Pairs That Form a Complete Day II */ class Solution { fun countCompleteDayPairs(hours: IntArray): Long = hours.fold(0L to LongArray(24)) { (ans, cnt), h -> (ans + cnt[(24 - h % 24) % 24]) to cnt.also { it[h % 24]++ } }.first }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2567 lang=kotlin */
-class Solution { fun minimizeSum(nums: IntArray): Int = nums.sorted().let { minOf(it.last() - it[2], it[it.size - 2] - it[1], it[it.size - 3] - it[0]) } }
+/* @lc app=leetcode id=2567 lang=kotlin */ class Solution { fun minimizeSum(nums: IntArray): Int = nums.sorted().let { minOf(it.last() - it[2], it[it.size - 2] - it[1], it[it.size - 3] - it[0]) } }

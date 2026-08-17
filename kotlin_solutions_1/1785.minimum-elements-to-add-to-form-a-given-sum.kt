@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1785 lang=kotlin */
-class Solution { fun minElements(nums: IntArray, limit: Int, goal: Int): Int = ((Math.abs(goal.toLong() - nums.fold(0L) { acc, i -> acc + i }) + limit - 1) / limit).toInt() }
+/* @lc app=leetcode id=1785 lang=kotlin */ class Solution { fun minElements(nums: IntArray, limit: Int, goal: Int): Int = ((Math.abs(goal.toLong() - nums.fold(0L) { acc, i -> acc + i }) + limit - 1) / limit).toInt() }

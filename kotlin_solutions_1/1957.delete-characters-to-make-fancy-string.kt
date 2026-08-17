@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1957 lang=kotlin */
-class Solution { fun makeFancyString(s: String): String = s.indices.filter { i -> i < 2 || s[i] != s[i - 1] || s[i] != s[i - 2] }.map { s[it] }.joinToString("") }
+/* @lc app=leetcode id=1957 lang=kotlin */ class Solution { fun makeFancyString(s: String): String = s.indices.filter { i -> i < 2 || s[i] != s[i - 1] || s[i] != s[i - 2] }.map { s[it] }.joinToString("") }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1962 lang=kotlin */
-class Solution { fun minStoneSum(piles: IntArray, k: Int): Int = java.util.PriorityQueue<Int>(Comparator.reverseOrder()).apply { piles.forEach { add(it) } }.apply { repeat(k) { add(poll().let { it - it / 2 }) } }.sum() }
+/* @lc app=leetcode id=1962 lang=kotlin */ class Solution { fun minStoneSum(piles: IntArray, k: Int): Int = java.util.PriorityQueue<Int>(Comparator.reverseOrder()).apply { piles.forEach { add(it) } }.apply { repeat(k) { add(poll().let { it - it / 2 }) } }.sum() }

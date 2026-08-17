@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2009 lang=kotlin */
-class Solution { fun minOperations(nums: IntArray): Int = nums.size.let { n -> nums.distinct().sorted().let { u -> u.indices.maxOf { i -> u.binarySearch(u[i] + n - 1).let { if (it < 0) -it - 2 else it }.let { j -> j - i + 1 } }.let { n - it } } } }
+/* @lc app=leetcode id=2009 lang=kotlin */ class Solution { fun minOperations(nums: IntArray): Int = nums.size.let { n -> nums.distinct().sorted().let { u -> u.indices.maxOf { i -> u.binarySearch(u[i] + n - 1).let { if (it < 0) -it - 2 else it }.let { j -> j - i + 1 } }.let { n - it } } } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3168 lang=kotlin */
-class Solution { fun minimumChairs(s: String): Int = s.fold(0 to 0) { (curr, maxC), c -> (if (c == 'E') curr + 1 else curr - 1).let { n -> n to maxOf(maxC, n) } }.second }
+/* @lc app=leetcode id=3168 lang=kotlin */ class Solution { fun minimumChairs(s: String): Int = s.fold(0 to 0) { (curr, maxC), c -> (if (c == 'E') curr + 1 else curr - 1).let { n -> n to maxOf(maxC, n) } }.second }

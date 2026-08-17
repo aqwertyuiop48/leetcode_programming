@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1953 lang=kotlin */
-class Solution { fun numberOfWeeks(milestones: IntArray): Long = milestones.fold(0L to 0L) { (sum, max), x -> (sum + x) to maxOf(max, x.toLong()) }.let { (sum, max) -> if (max > sum - max + 1) (sum - max) * 2 + 1 else sum } }
+/* @lc app=leetcode id=1953 lang=kotlin */ class Solution { fun numberOfWeeks(milestones: IntArray): Long = milestones.fold(0L to 0L) { (sum, max), x -> (sum + x) to maxOf(max, x.toLong()) }.let { (sum, max) -> if (max > sum - max + 1) (sum - max) * 2 + 1 else sum } }

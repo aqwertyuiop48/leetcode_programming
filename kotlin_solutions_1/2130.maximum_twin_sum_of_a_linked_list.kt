@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2130 lang=kotlin */
-class Solution { fun pairSum(head: ListNode?): Int = generateSequence(head) { it.next }.map { it.`val` }.toList().let { list -> (0 until list.size / 2).maxOf { list[it] + list[list.size - 1 - it] } } }
+/* @lc app=leetcode id=2130 lang=kotlin */ class Solution { fun pairSum(head: ListNode?): Int = generateSequence(head) { it.next }.map { it.`val` }.toList().let { list -> (0 until list.size / 2).maxOf { list[it] + list[list.size - 1 - it] } } }

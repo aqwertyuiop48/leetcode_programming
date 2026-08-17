@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1760 lang=kotlin */
-class Solution { fun minimumSize(nums: IntArray, maxOperations: Int): Int = generateSequence(1 to 1000000000) { (l, r) -> ((l + r) / 2).let { m -> if (nums.fold(0L) { acc, n -> acc + (n - 1) / m } <= maxOperations) l to m else (m + 1) to r } }.first { it.first >= it.second }.first }
+/* @lc app=leetcode id=1760 lang=kotlin */ class Solution { fun minimumSize(nums: IntArray, maxOperations: Int): Int = generateSequence(1 to 1000000000) { (l, r) -> ((l + r) / 2).let { m -> if (nums.fold(0L) { acc, n -> acc + (n - 1) / m } <= maxOperations) l to m else (m + 1) to r } }.first { it.first >= it.second }.first }

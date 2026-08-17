@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3110 lang=kotlin
- *
- * [3110] Score of a String
- */
-
-class Solution {
-    fun scoreOfString(s: String): Int = (0 until s.length - 1).sumOf { kotlin.math.abs(s[it] - s[it + 1]) }
-}
+/* * @lc app=leetcode id=3110 lang=kotlin * * [3110] Score of a String */ class Solution { fun scoreOfString(s: String): Int = (0 until s.length - 1).sumOf { kotlin.math.abs(s[it] - s[it + 1]) } }

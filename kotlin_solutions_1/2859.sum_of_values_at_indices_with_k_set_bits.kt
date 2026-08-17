@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2859 lang=kotlin */
-class Solution { fun sumIndicesWithKSetBits(nums: List<Int>, k: Int): Int = nums.indices.filter { java.lang.Integer.bitCount(it) == k }.sumOf { nums[it] } }
+/* @lc app=leetcode id=2859 lang=kotlin */ class Solution { fun sumIndicesWithKSetBits(nums: List<Int>, k: Int): Int = nums.indices.filter { java.lang.Integer.bitCount(it) == k }.sumOf { nums[it] } }

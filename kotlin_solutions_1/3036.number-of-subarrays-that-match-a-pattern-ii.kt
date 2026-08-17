@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3036 lang=kotlin
- *
- * [3036] Number of Subarrays That Match a Pattern II
- */
-
-class Solution { fun countMatchingSubarrays(nums: IntArray, pattern: IntArray): Int = IntArray(pattern.size).also { pi -> (1 until pattern.size).fold(0) { j0, i -> generateSequence(j0) { j -> pi[j - 1] }.first { j -> j == 0 || pattern[i] == pattern[j] }.let { j -> (if (pattern[i] == pattern[j]) j + 1 else j).also { pi[i] = it } } } }.let { pi -> IntArray(nums.size - 1) { java.lang.Integer.compare(nums[it + 1], nums[it]) }.fold(0 to 0) { (j0, count), x -> generateSequence(j0) { j -> pi[j - 1] }.first { j -> j == 0 || x == pattern[j] }.let { j -> (if (x == pattern[j]) j + 1 else j).let { jNext -> if (jNext == pattern.size) (pi[jNext - 1] to count + 1) else (jNext to count) } } }.second } }
+/* * @lc app=leetcode id=3036 lang=kotlin * * [3036] Number of Subarrays That Match a Pattern II */ class Solution { fun countMatchingSubarrays(nums: IntArray, pattern: IntArray): Int = IntArray(pattern.size).also { pi -> (1 until pattern.size).fold(0) { j0, i -> generateSequence(j0) { j -> pi[j - 1] }.first { j -> j == 0 || pattern[i] == pattern[j] }.let { j -> (if (pattern[i] == pattern[j]) j + 1 else j).also { pi[i] = it } } } }.let { pi -> IntArray(nums.size - 1) { java.lang.Integer.compare(nums[it + 1], nums[it]) }.fold(0 to 0) { (j0, count), x -> generateSequence(j0) { j -> pi[j - 1] }.first { j -> j == 0 || x == pattern[j] }.let { j -> (if (x == pattern[j]) j + 1 else j).let { jNext -> if (jNext == pattern.size) (pi[jNext - 1] to count + 1) else (jNext to count) } } }.second } }

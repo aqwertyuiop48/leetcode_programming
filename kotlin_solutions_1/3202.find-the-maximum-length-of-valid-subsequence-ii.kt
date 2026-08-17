@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3202 lang=kotlin */
-class Solution { fun maximumLength(nums: IntArray, k: Int): Int = Array(k) { IntArray(k) }.let { dp -> nums.fold(0) { maxLen, num -> (num % k).let { rem -> (0 until k).fold(maxLen) { curMax, target -> ((target - rem + k) % k).let { prev -> (dp[prev][target] + 1).also { dp[rem][target] = it }.let { maxOf(curMax, it) } } } } } } }
+/* @lc app=leetcode id=3202 lang=kotlin */ class Solution { fun maximumLength(nums: IntArray, k: Int): Int = Array(k) { IntArray(k) }.let { dp -> nums.fold(0) { maxLen, num -> (num % k).let { rem -> (0 until k).fold(maxLen) { curMax, target -> ((target - rem + k) % k).let { prev -> (dp[prev][target] + 1).also { dp[rem][target] = it }.let { maxOf(curMax, it) } } } } } } }

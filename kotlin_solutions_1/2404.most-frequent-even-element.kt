@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2404 lang=kotlin */
-class Solution { fun mostFrequentEven(nums: IntArray): Int = nums.filter { it % 2 == 0 }.groupingBy { it }.eachCount().let { counts -> counts.entries.minWithOrNull(compareBy<Map.Entry<Int, Int>> { -it.value }.thenBy { it.key })?.key ?: -1 } }
+/* @lc app=leetcode id=2404 lang=kotlin */ class Solution { fun mostFrequentEven(nums: IntArray): Int = nums.filter { it % 2 == 0 }.groupingBy { it }.eachCount().let { counts -> counts.entries.minWithOrNull(compareBy<Map.Entry<Int, Int>> { -it.value }.thenBy { it.key })?.key ?: -1 } }

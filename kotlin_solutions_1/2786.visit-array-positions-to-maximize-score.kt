@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2786 lang=kotlin */
-class Solution { fun maxScore(nums: IntArray, x: Int): Long = LongArray(2) { -1e15.toLong() }.apply { this[nums[0] % 2] = nums[0].toLong() }.let { dp -> nums.drop(1).fold(dp) { d, n -> d.apply { (n % 2).let { p -> d[p] = maxOf(d[p] + n, d[1 - p] + n - x) } } }.maxOf { it } } }
+/* @lc app=leetcode id=2786 lang=kotlin */ class Solution { fun maxScore(nums: IntArray, x: Int): Long = LongArray(2) { -1e15.toLong() }.apply { this[nums[0] % 2] = nums[0].toLong() }.let { dp -> nums.drop(1).fold(dp) { d, n -> d.apply { (n % 2).let { p -> d[p] = maxOf(d[p] + n, d[1 - p] + n - x) } } }.maxOf { it } } }

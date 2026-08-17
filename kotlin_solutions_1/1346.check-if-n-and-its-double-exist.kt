@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1346 lang=kotlin */
-class Solution { fun checkIfExist(arr: IntArray): Boolean = arr.indices.any { i -> arr.indices.any { j -> i != j && arr[i] == 2 * arr[j] } } }
+/* @lc app=leetcode id=1346 lang=kotlin */ class Solution { fun checkIfExist(arr: IntArray): Boolean = arr.indices.any { i -> arr.indices.any { j -> i != j && arr[i] == 2 * arr[j] } } }

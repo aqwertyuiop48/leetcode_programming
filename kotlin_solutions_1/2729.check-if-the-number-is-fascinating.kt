@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2729 lang=kotlin */
-class Solution { fun isFascinating(n: Int): Boolean = "${n}${2 * n}${3 * n}".let { s -> s.length == 9 && s.toSet().let { it.size == 9 && !it.contains('0') } } }
+/* @lc app=leetcode id=2729 lang=kotlin */ class Solution { fun isFascinating(n: Int): Boolean = "${n}${2 * n}${3 * n}".let { s -> s.length == 9 && s.toSet().let { it.size == 9 && !it.contains('0') } } }

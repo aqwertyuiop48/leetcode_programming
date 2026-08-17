@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2350 lang=kotlin */
-class Solution { fun shortestSequence(rolls: IntArray, k: Int): Int = rolls.fold(1 to mutableSetOf<Int>()) { (ans, set), roll -> if (set.add(roll) && set.size == k) (ans + 1) to mutableSetOf() else ans to set }.first }
+/* @lc app=leetcode id=2350 lang=kotlin */ class Solution { fun shortestSequence(rolls: IntArray, k: Int): Int = rolls.fold(1 to mutableSetOf<Int>()) { (ans, set), roll -> if (set.add(roll) && set.size == k) (ans + 1) to mutableSetOf() else ans to set }.first }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2857 lang=kotlin */
-class Solution { fun countPairs(coordinates: List<List<Int>>, k: Int): Int = mutableMapOf<Long, Int>().let { m -> coordinates.sumOf { p -> (0..k).sumOf { i -> m[(p[0] xor i).toLong() shl 32 or (p[1] xor (k - i)).toLong()] ?: 0 }.also { m[p[0].toLong() shl 32 or p[1].toLong()] = (m[p[0].toLong() shl 32 or p[1].toLong()] ?: 0) + 1 } } } }
+/* @lc app=leetcode id=2857 lang=kotlin */ class Solution { fun countPairs(coordinates: List<List<Int>>, k: Int): Int = mutableMapOf<Long, Int>().let { m -> coordinates.sumOf { p -> (0..k).sumOf { i -> m[(p[0] xor i).toLong() shl 32 or (p[1] xor (k - i)).toLong()] ?: 0 }.also { m[p[0].toLong() shl 32 or p[1].toLong()] = (m[p[0].toLong() shl 32 or p[1].toLong()] ?: 0) + 1 } } } }

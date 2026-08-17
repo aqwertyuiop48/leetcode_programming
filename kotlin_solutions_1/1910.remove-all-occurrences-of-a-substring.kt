@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1910 lang=kotlin */
-class Solution { tailrec fun removeOccurrences(s: String, part: String): String = if (!s.contains(part)) s else removeOccurrences(s.replaceFirst(part, ""), part) }
+/* @lc app=leetcode id=1910 lang=kotlin */ class Solution { tailrec fun removeOccurrences(s: String, part: String): String = if (!s.contains(part)) s else removeOccurrences(s.replaceFirst(part, ""), part) }

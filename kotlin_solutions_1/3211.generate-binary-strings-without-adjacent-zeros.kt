@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3211 lang=kotlin */
-class Solution { fun validStrings(n: Int): List<String> = (1..n).fold(listOf("")) { acc, _ -> acc.flatMap { if (it.endsWith("0")) listOf(it + "1") else listOf(it + "0", it + "1") } } }
+/* @lc app=leetcode id=3211 lang=kotlin */ class Solution { fun validStrings(n: Int): List<String> = (1..n).fold(listOf("")) { acc, _ -> acc.flatMap { if (it.endsWith("0")) listOf(it + "1") else listOf(it + "0", it + "1") } } }

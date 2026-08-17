@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2363 lang=kotlin */
-class Solution { fun mergeSimilarItems(items1: Array<IntArray>, items2: Array<IntArray>): List<List<Int>> = (items1 + items2).groupBy({ it[0] }, { it[1] }).mapValues { it.value.sum() }.toSortedMap().map { listOf(it.key, it.value) } }
+/* @lc app=leetcode id=2363 lang=kotlin */ class Solution { fun mergeSimilarItems(items1: Array<IntArray>, items2: Array<IntArray>): List<List<Int>> = (items1 + items2).groupBy({ it[0] }, { it[1] }).mapValues { it.value.sum() }.toSortedMap().map { listOf(it.key, it.value) } }

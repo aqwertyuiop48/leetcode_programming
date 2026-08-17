@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2415 lang=kotlin
- *
- * [2415] Reverse Odd Levels of Binary Tree
- */
-
-class Solution { fun reverseOddLevels(root: TreeNode?): TreeNode? = root.also { if (root?.left != null) DeepRecursiveFunction<Triple<TreeNode?, TreeNode?, Int>, Unit> { (node1, node2, level) -> if (node1 != null && node2 != null) (if (level % 2 == 1) node1.`val`.let { tmp -> run { node1.`val` = node2.`val` }.run { node2.`val` = tmp } } else Unit).run { callRecursive(Triple(node1.left, node2.right, level + 1)) }.run { callRecursive(Triple(node1.right, node2.left, level + 1)) } }.invoke(Triple(root.left, root.right, 1)) } }
+/* * @lc app=leetcode id=2415 lang=kotlin * * [2415] Reverse Odd Levels of Binary Tree */ class Solution { fun reverseOddLevels(root: TreeNode?): TreeNode? = root.also { if (root?.left != null) DeepRecursiveFunction<Triple<TreeNode?, TreeNode?, Int>, Unit> { (node1, node2, level) -> if (node1 != null && node2 != null) (if (level % 2 == 1) node1.`val`.let { tmp -> run { node1.`val` = node2.`val` }.run { node2.`val` = tmp } } else Unit).run { callRecursive(Triple(node1.left, node2.right, level + 1)) }.run { callRecursive(Triple(node1.right, node2.left, level + 1)) } }.invoke(Triple(root.left, root.right, 1)) } }

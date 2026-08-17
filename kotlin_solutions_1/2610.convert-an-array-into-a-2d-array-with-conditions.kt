@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2610 lang=kotlin */
-class Solution { fun findMatrix(nums: IntArray): List<List<Int>> = nums.toList().groupingBy { it }.eachCount().let { counts -> (0 until (counts.values.maxOrNull() ?: 0)).map { i -> counts.filter { it.value > i }.keys.toList() } } }
+/* @lc app=leetcode id=2610 lang=kotlin */ class Solution { fun findMatrix(nums: IntArray): List<List<Int>> = nums.toList().groupingBy { it }.eachCount().let { counts -> (0 until (counts.values.maxOrNull() ?: 0)).map { i -> counts.filter { it.value > i }.keys.toList() } } }

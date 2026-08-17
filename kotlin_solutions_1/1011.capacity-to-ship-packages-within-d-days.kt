@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1011 lang=kotlin
- *
- * [1011] Capacity To Ship Packages Within D Days
- */
-
-class Solution {
-    fun shipWithinDays(weights: IntArray, days: Int): Int = DeepRecursiveFunction<Pair<Int, Int>, Int> { (lo, hi) -> if (lo >= hi) lo else ((lo + hi) / 2).let { mid -> if (weights.fold(1 to 0) { (d, c), w -> if (c + w > mid) (d + 1) to w else d to (c + w) }.first <= days) callRecursive(lo to mid) else callRecursive((mid + 1) to hi) } }(weights.maxOrNull()!! to weights.sum())
-}
+/* * @lc app=leetcode id=1011 lang=kotlin * * [1011] Capacity To Ship Packages Within D Days */ class Solution { fun shipWithinDays(weights: IntArray, days: Int): Int = DeepRecursiveFunction<Pair<Int, Int>, Int> { (lo, hi) -> if (lo >= hi) lo else ((lo + hi) / 2).let { mid -> if (weights.fold(1 to 0) { (d, c), w -> if (c + w > mid) (d + 1) to w else d to (c + w) }.first <= days) callRecursive(lo to mid) else callRecursive((mid + 1) to hi) } }(weights.maxOrNull()!! to weights.sum()) }

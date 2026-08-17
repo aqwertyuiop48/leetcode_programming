@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2546 lang=kotlin */
-class Solution { fun makeStringsEqual(s: String, target: String): Boolean = s.any { it == '1' } == target.any { it == '1' } }
+/* @lc app=leetcode id=2546 lang=kotlin */ class Solution { fun makeStringsEqual(s: String, target: String): Boolean = s.any { it == '1' } == target.any { it == '1' } }

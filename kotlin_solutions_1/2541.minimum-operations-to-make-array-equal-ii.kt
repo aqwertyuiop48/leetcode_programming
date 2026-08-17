@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2541 lang=kotlin */
-class Solution { fun minOperations(nums1: IntArray, nums2: IntArray, k: Int): Long = if (k == 0) if (nums1.contentEquals(nums2)) 0L else -1L else nums1.indices.map { (nums1[it] - nums2[it]).toLong() }.let { d -> if (d.any { it % k != 0L } || d.sum() != 0L) -1L else d.filter { it > 0 }.sumOf { it / k } } }
+/* @lc app=leetcode id=2541 lang=kotlin */ class Solution { fun minOperations(nums1: IntArray, nums2: IntArray, k: Int): Long = if (k == 0) if (nums1.contentEquals(nums2)) 0L else -1L else nums1.indices.map { (nums1[it] - nums2[it]).toLong() }.let { d -> if (d.any { it % k != 0L } || d.sum() != 0L) -1L else d.filter { it > 0 }.sumOf { it / k } } }

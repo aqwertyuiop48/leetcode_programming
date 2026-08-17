@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=905 lang=kotlin */
-class Solution { fun sortArrayByParity(nums: IntArray): IntArray = nums.sortedBy { it % 2 }.toIntArray() }
+/* @lc app=leetcode id=905 lang=kotlin */ class Solution { fun sortArrayByParity(nums: IntArray): IntArray = nums.sortedBy { it % 2 }.toIntArray() }

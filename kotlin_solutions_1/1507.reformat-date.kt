@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1507 lang=kotlin
- *
- * [1507] Reformat Date
- */
-
-class Solution { fun reformatDate(date: String): String = date.split(" ").let { s -> "%s-%02d-%02d".format(s[2], "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(s[1]) / 3 + 1, s[0].filter { it.isDigit() }.toInt()) } }
+/* * @lc app=leetcode id=1507 lang=kotlin * * [1507] Reformat Date */ class Solution { fun reformatDate(date: String): String = date.split(" ").let { s -> "%s-%02d-%02d".format(s[2], "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(s[1]) / 3 + 1, s[0].filter { it.isDigit() }.toInt()) } }

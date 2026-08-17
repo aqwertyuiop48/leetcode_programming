@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1009 lang=kotlin
- *
- * [1009] Complement of Base 10 Integer
- */
-
-class Solution {
-    fun bitwiseComplement(n: Int): Int = n.toString(2).map { if (it == '0') '1' else '0' }.joinToString("").toInt(2)
-}
+/* * @lc app=leetcode id=1009 lang=kotlin * * [1009] Complement of Base 10 Integer */ class Solution { fun bitwiseComplement(n: Int): Int = n.toString(2).map { if (it == '0') '1' else '0' }.joinToString("").toInt(2) }

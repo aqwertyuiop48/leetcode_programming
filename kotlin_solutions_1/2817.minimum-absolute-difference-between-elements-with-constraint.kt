@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2817 lang=kotlin */
-class Solution { fun minAbsoluteDifference(nums: List<Int>, x: Int): Int = java.util.TreeSet<Int>().let { set -> nums.indices.fold(Int.MAX_VALUE) { min, i -> if (i >= x) set.add(nums[i - x]).run { minOf(min, set.ceiling(nums[i])?.let { it - nums[i] } ?: Int.MAX_VALUE, set.floor(nums[i])?.let { nums[i] - it } ?: Int.MAX_VALUE) } else min } } }
+/* @lc app=leetcode id=2817 lang=kotlin */ class Solution { fun minAbsoluteDifference(nums: List<Int>, x: Int): Int = java.util.TreeSet<Int>().let { set -> nums.indices.fold(Int.MAX_VALUE) { min, i -> if (i >= x) set.add(nums[i - x]).run { minOf(min, set.ceiling(nums[i])?.let { it - nums[i] } ?: Int.MAX_VALUE, set.floor(nums[i])?.let { nums[i] - it } ?: Int.MAX_VALUE) } else min } } }

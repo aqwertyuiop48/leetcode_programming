@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3181 lang=kotlin */
-class Solution { fun maxTotalReward(rewardValues: IntArray): Int = rewardValues.distinct().sorted().fold(java.math.BigInteger.ONE) { bs, x -> bs.or(bs.and(java.math.BigInteger.ONE.shiftLeft(x).subtract(java.math.BigInteger.ONE)).shiftLeft(x)) }.bitLength() - 1 }
+/* @lc app=leetcode id=3181 lang=kotlin */ class Solution { fun maxTotalReward(rewardValues: IntArray): Int = rewardValues.distinct().sorted().fold(java.math.BigInteger.ONE) { bs, x -> bs.or(bs.and(java.math.BigInteger.ONE.shiftLeft(x).subtract(java.math.BigInteger.ONE)).shiftLeft(x)) }.bitLength() - 1 }

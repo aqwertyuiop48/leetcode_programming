@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2409 lang=kotlin */
-class Solution { fun countDaysTogether(aa: String, la: String, ab: String, lb: String): Int = listOf(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31).let { m -> { s: String -> m.take(s.substring(0, 2).toInt() - 1).sum() + s.substring(3).toInt() }.let { f -> maxOf(0, minOf(f(la), f(lb)) - maxOf(f(aa), f(ab)) + 1) } } }
+/* @lc app=leetcode id=2409 lang=kotlin */ class Solution { fun countDaysTogether(aa: String, la: String, ab: String, lb: String): Int = listOf(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31).let { m -> { s: String -> m.take(s.substring(0, 2).toInt() - 1).sum() + s.substring(3).toInt() }.let { f -> maxOf(0, minOf(f(la), f(lb)) - maxOf(f(aa), f(ab)) + 1) } } }

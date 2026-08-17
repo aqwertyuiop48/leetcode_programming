@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1610 lang=kotlin
- *
- * [1610] Maximum Number of Visible Points
- */
-
-class Solution {
-    fun visiblePoints(points: List<List<Int>>, angle: Int, location: List<Int>): Int = points.partition { it[0] == location[0] && it[1] == location[1] }.let { (atLoc, others) -> others.map { Math.toDegrees(Math.atan2((it[1] - location[1]).toDouble(), (it[0] - location[0]).toDouble())).let { a -> if (a < 0) a + 360 else a } }.sorted().let { angs -> (angs + angs.map { it + 360 }).let { all -> atLoc.size + (angs.indices.maxOfOrNull { i -> -all.binarySearch { if (it > angs[i] + angle) 1 else -1 } - 1 - i } ?: 0) } } }
-}
+/* * @lc app=leetcode id=1610 lang=kotlin * * [1610] Maximum Number of Visible Points */ class Solution { fun visiblePoints(points: List<List<Int>>, angle: Int, location: List<Int>): Int = points.partition { it[0] == location[0] && it[1] == location[1] }.let { (atLoc, others) -> others.map { Math.toDegrees(Math.atan2((it[1] - location[1]).toDouble(), (it[0] - location[0]).toDouble())).let { a -> if (a < 0) a + 360 else a } }.sorted().let { angs -> (angs + angs.map { it + 360 }).let { all -> atLoc.size + (angs.indices.maxOfOrNull { i -> -all.binarySearch { if (it > angs[i] + angle) 1 else -1 } - 1 - i } ?: 0) } } } }

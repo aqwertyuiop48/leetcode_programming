@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2779 lang=kotlin */
-class Solution { fun maximumBeauty(nums: IntArray, k: Int): Int = nums.sorted().let { s -> s.indices.fold(0) { j, i -> if (s[i] - s[j] > 2 * k) j + 1 else j }.let { s.size - it } } }
+/* @lc app=leetcode id=2779 lang=kotlin */ class Solution { fun maximumBeauty(nums: IntArray, k: Int): Int = nums.sorted().let { s -> s.indices.fold(0) { j, i -> if (s[i] - s[j] > 2 * k) j + 1 else j }.let { s.size - it } } }

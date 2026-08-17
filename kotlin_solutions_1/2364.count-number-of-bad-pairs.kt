@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2364 lang=kotlin */
-class Solution { fun countBadPairs(nums: IntArray): Long = nums.size.toLong().let { n -> n * (n - 1) / 2 - nums.withIndex().groupBy { it.value - it.index }.values.sumOf { it.size.toLong() * (it.size - 1) / 2 } } }
+/* @lc app=leetcode id=2364 lang=kotlin */ class Solution { fun countBadPairs(nums: IntArray): Long = nums.size.toLong().let { n -> n * (n - 1) / 2 - nums.withIndex().groupBy { it.value - it.index }.values.sumOf { it.size.toLong() * (it.size - 1) / 2 } } }

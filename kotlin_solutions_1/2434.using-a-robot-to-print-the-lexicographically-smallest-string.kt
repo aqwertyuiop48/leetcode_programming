@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=2434 lang=kotlin
- *
- * [2434] Using a Robot to Print the Lexicographically Smallest String
- */
-class Solution { fun robotWithString(s: String): String = s.indices.reversed().fold(CharArray(s.length)) { arr, i -> arr.apply { set(i, if (i == s.length - 1) s[i] else if (s[i] < get(i + 1)) s[i] else get(i + 1)) } }.let { minS -> StringBuilder().let { res -> mutableListOf<Char>().let { stack -> s.indices.forEach { i -> stack.apply { add(s[i]) }.run { while (stack.isNotEmpty() && stack.last() <= (if (i + 1 < s.length) minS[i + 1] else '{')) res.append(stack.removeAt(stack.size - 1)) } }.run { res.toString() } } } } }
+/* * @lc app=leetcode id=2434 lang=kotlin * * [2434] Using a Robot to Print the Lexicographically Smallest String */ class Solution { fun robotWithString(s: String): String = s.indices.reversed().fold(CharArray(s.length)) { arr, i -> arr.apply { set(i, if (i == s.length - 1) s[i] else if (s[i] < get(i + 1)) s[i] else get(i + 1)) } }.let { minS -> StringBuilder().let { res -> mutableListOf<Char>().let { stack -> s.indices.forEach { i -> stack.apply { add(s[i]) }.run { while (stack.isNotEmpty() && stack.last() <= (if (i + 1 < s.length) minS[i + 1] else '{')) res.append(stack.removeAt(stack.size - 1)) } }.run { res.toString() } } } } }

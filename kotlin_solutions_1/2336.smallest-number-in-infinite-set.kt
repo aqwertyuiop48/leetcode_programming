@@ -1,3 +1,1 @@
-/* @lc app=leetcode id=2336 lang=kotlin */
-class SmallestInfiniteSet(val q: java.util.PriorityQueue<Int> = java.util.PriorityQueue(), val s: java.util.HashSet<Int> = java.util.HashSet(), val c: IntArray = intArrayOf(1)) { fun popSmallest(): Int = q.poll()?.also { s.remove(it) } ?: c[0]++
-fun addBack(num: Int) = if (num < c[0] && s.add(num)) q.offer(num).let { } else Unit }
+/* @lc app=leetcode id=2336 lang=kotlin */ class SmallestInfiniteSet(val q: java.util.PriorityQueue<Int> = java.util.PriorityQueue(), val s: java.util.HashSet<Int> = java.util.HashSet(), val c: IntArray = intArrayOf(1)) { fun popSmallest(): Int = q.poll()?.also { s.remove(it) } ?: c[0]++ fun addBack(num: Int) = if (num < c[0] && s.add(num)) q.offer(num).let { } else Unit }

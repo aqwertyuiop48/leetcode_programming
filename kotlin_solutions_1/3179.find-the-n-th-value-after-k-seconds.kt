@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3179 lang=kotlin */
-class Solution { fun valueAfterKSeconds(n: Int, k: Int): Int = IntArray(n) { 1 }.apply { repeat(k) { (1 until n).forEach { i -> this[i] = (this[i] + this[i - 1]) % 1000000007 } } }[n - 1] }
+/* @lc app=leetcode id=3179 lang=kotlin */ class Solution { fun valueAfterKSeconds(n: Int, k: Int): Int = IntArray(n) { 1 }.apply { repeat(k) { (1 until n).forEach { i -> this[i] = (this[i] + this[i - 1]) % 1000000007 } } }[n - 1] }

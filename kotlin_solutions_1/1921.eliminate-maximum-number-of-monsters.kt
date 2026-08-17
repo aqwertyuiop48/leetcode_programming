@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1921 lang=kotlin
- *
- * [1921] Eliminate Maximum Number of Monsters
- */
-
-class Solution {
-    fun eliminateMaximum(dist: IntArray, speed: IntArray): Int = dist.indices.map { dist[it].toDouble() / speed[it] }.sorted().withIndex().firstOrNull { it.value <= it.index }?.index ?: dist.size
-}
+/* * @lc app=leetcode id=1921 lang=kotlin * * [1921] Eliminate Maximum Number of Monsters */ class Solution { fun eliminateMaximum(dist: IntArray, speed: IntArray): Int = dist.indices.map { dist[it].toDouble() / speed[it] }.sorted().withIndex().firstOrNull { it.value <= it.index }?.index ?: dist.size }

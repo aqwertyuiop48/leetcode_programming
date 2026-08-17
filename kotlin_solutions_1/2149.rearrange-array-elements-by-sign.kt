@@ -1,4 +1,1 @@
-/* @lc app=leetcode id=2149 lang=kotlin */
-class Solution {
-    fun rearrangeArray(nums: IntArray) = nums.filter { it > 0 }.let { pos -> nums.filter { it < 0 }.let { neg -> IntArray(nums.size) { i -> if (i % 2 == 0) pos[i / 2] else neg[i / 2] } } }
-}
+/* @lc app=leetcode id=2149 lang=kotlin */ class Solution { fun rearrangeArray(nums: IntArray) = nums.filter { it > 0 }.let { pos -> nums.filter { it < 0 }.let { neg -> IntArray(nums.size) { i -> if (i % 2 == 0) pos[i / 2] else neg[i / 2] } } } }

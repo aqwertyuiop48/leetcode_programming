@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2147 lang=kotlin */
-class Solution { fun numberOfWays(corridor: String): Int = corridor.indices.filter { corridor[it] == 'S' }.let { s -> if (s.isEmpty() || s.size % 2 != 0) 0 else s.chunked(2).windowed(2).fold(1L) { acc, pair -> acc * (pair[1][0] - pair[0][1]) % 1000000007 }.toInt() } }
+/* @lc app=leetcode id=2147 lang=kotlin */ class Solution { fun numberOfWays(corridor: String): Int = corridor.indices.filter { corridor[it] == 'S' }.let { s -> if (s.isEmpty() || s.size % 2 != 0) 0 else s.chunked(2).windowed(2).fold(1L) { acc, pair -> acc * (pair[1][0] - pair[0][1]) % 1000000007 }.toInt() } }

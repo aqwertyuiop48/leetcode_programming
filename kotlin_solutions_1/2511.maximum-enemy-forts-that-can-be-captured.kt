@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2511 lang=kotlin */
-class Solution { fun captureForts(forts: IntArray) = forts.indices.fold(0 to -1) { (res, last), i -> if (forts[i] == 0) res to last else (if (last != -1 && forts[i] != forts[last]) maxOf(res, i - last - 1) else res) to i }.first }
+/* @lc app=leetcode id=2511 lang=kotlin */ class Solution { fun captureForts(forts: IntArray) = forts.indices.fold(0 to -1) { (res, last), i -> if (forts[i] == 0) res to last else (if (last != -1 && forts[i] != forts[last]) maxOf(res, i - last - 1) else res) to i }.first }

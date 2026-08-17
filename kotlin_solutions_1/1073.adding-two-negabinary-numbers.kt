@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1073 lang=kotlin
- *
- * [1073] Adding Two Negabinary Numbers
- */
-
-class Solution {
-    fun addNegabinary(a: IntArray, b: IntArray): IntArray = generateSequence(Triple(a.size - 1, b.size - 1, 0) to 0) { (state, _) -> state.let { (i, j, carry) -> if (i < 0 && j < 0 && carry == 0) null else (carry + (if (i >= 0) a[i] else 0) + (if (j >= 0) b[j] else 0)).let { sum -> Triple(i - 1, j - 1, -(sum shr 1)) to (sum and 1) } } }.drop(1).map { it.second }.toList().reversed().dropWhile { it == 0 }.ifEmpty { listOf(0) }.toIntArray()
-}
+/* * @lc app=leetcode id=1073 lang=kotlin * * [1073] Adding Two Negabinary Numbers */ class Solution { fun addNegabinary(a: IntArray, b: IntArray): IntArray = generateSequence(Triple(a.size - 1, b.size - 1, 0) to 0) { (state, _) -> state.let { (i, j, carry) -> if (i < 0 && j < 0 && carry == 0) null else (carry + (if (i >= 0) a[i] else 0) + (if (j >= 0) b[j] else 0)).let { sum -> Triple(i - 1, j - 1, -(sum shr 1)) to (sum and 1) } } }.drop(1).map { it.second }.toList().reversed().dropWhile { it == 0 }.ifEmpty { listOf(0) }.toIntArray() }

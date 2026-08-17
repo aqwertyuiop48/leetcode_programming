@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1190 lang=kotlin
- *
- * [1190] Reverse Substrings Between Each Pair of Parentheses
- */
-
-class Solution { fun reverseParentheses(s: String): String = s.fold(mutableListOf(StringBuilder())) { st, c -> st.apply { if (c == '(') add(StringBuilder()) else if (c == ')') removeAt(st.lastIndex).reverse().let { st.last().append(it) } else st.last().append(c) } }.first().toString() }
+/* * @lc app=leetcode id=1190 lang=kotlin * * [1190] Reverse Substrings Between Each Pair of Parentheses */ class Solution { fun reverseParentheses(s: String): String = s.fold(mutableListOf(StringBuilder())) { st, c -> st.apply { if (c == '(') add(StringBuilder()) else if (c == ')') removeAt(st.lastIndex).reverse().let { st.last().append(it) } else st.last().append(c) } }.first().toString() }

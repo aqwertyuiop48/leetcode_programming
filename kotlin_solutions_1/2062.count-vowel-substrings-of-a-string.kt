@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2062 lang=kotlin */
-class Solution { fun countVowelSubstrings(word: String): Int = word.indices.sumOf { i -> (i until word.length).takeWhile { word[it] in "aeiou" }.count { j -> "aeiou".all { it in word.substring(i, j + 1) } } } }
+/* @lc app=leetcode id=2062 lang=kotlin */ class Solution { fun countVowelSubstrings(word: String): Int = word.indices.sumOf { i -> (i until word.length).takeWhile { word[it] in "aeiou" }.count { j -> "aeiou".all { it in word.substring(i, j + 1) } } } }

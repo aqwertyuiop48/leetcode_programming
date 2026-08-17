@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1080 lang=kotlin
- *
- * [1080] Insufficient Nodes in Root to Leaf Paths
- */
-
-class Solution {
-    fun sufficientSubset(root: TreeNode?, limit: Int): TreeNode? = root?.let { node -> if (node.left == null && node.right == null) { if (node.`val` < limit) null else node } else { node.also { it.left = sufficientSubset(it.left, limit - it.`val`) }.also { it.right = sufficientSubset(it.right, limit - it.`val`) }.takeUnless { it.left == null && it.right == null } } }
-}
+/* * @lc app=leetcode id=1080 lang=kotlin * * [1080] Insufficient Nodes in Root to Leaf Paths */ class Solution { fun sufficientSubset(root: TreeNode?, limit: Int): TreeNode? = root?.let { node -> if (node.left == null && node.right == null) { if (node.`val` < limit) null else node } else { node.also { it.left = sufficientSubset(it.left, limit - it.`val`) }.also { it.right = sufficientSubset(it.right, limit - it.`val`) }.takeUnless { it.left == null && it.right == null } } } }

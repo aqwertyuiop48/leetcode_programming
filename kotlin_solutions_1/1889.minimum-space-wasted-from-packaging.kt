@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1889 lang=kotlin
- *
- * [1889] Minimum Space Wasted From Packaging
- */
-
-class Solution { fun minWastedSpace(packages: IntArray, boxes: Array<IntArray>): Int = packages.sorted().let { pkg -> pkg.runningFold(0L) { acc, x -> acc + x }.toLongArray().let { pre -> object { fun f(l: Int, r: Int, b: Int): Int = if (l >= r) l else ((l + r) ushr 1).let { m -> if (pkg[m] <= b) f(m + 1, r, b) else f(l, m, b) } }.let { bs -> boxes.map { box -> box.sorted().let { sBox -> if (sBox.last() < pkg.last()) Long.MAX_VALUE else sBox.fold(0 to 0L) { (lastIdx, wasted), b -> bs.f(lastIdx, pkg.size, b).let { nextIdx -> nextIdx to (wasted + (nextIdx - lastIdx).toLong() * b - (pre[nextIdx] - pre[lastIdx])) } }.second } }.minOrNull().let { minWasted -> if (minWasted == null || minWasted == Long.MAX_VALUE) -1 else (minWasted % 1000000007).toInt() } } } } }
+/* * @lc app=leetcode id=1889 lang=kotlin * * [1889] Minimum Space Wasted From Packaging */ class Solution { fun minWastedSpace(packages: IntArray, boxes: Array<IntArray>): Int = packages.sorted().let { pkg -> pkg.runningFold(0L) { acc, x -> acc + x }.toLongArray().let { pre -> object { fun f(l: Int, r: Int, b: Int): Int = if (l >= r) l else ((l + r) ushr 1).let { m -> if (pkg[m] <= b) f(m + 1, r, b) else f(l, m, b) } }.let { bs -> boxes.map { box -> box.sorted().let { sBox -> if (sBox.last() < pkg.last()) Long.MAX_VALUE else sBox.fold(0 to 0L) { (lastIdx, wasted), b -> bs.f(lastIdx, pkg.size, b).let { nextIdx -> nextIdx to (wasted + (nextIdx - lastIdx).toLong() * b - (pre[nextIdx] - pre[lastIdx])) } }.second } }.minOrNull().let { minWasted -> if (minWasted == null || minWasted == Long.MAX_VALUE) -1 else (minWasted % 1000000007).toInt() } } } } }

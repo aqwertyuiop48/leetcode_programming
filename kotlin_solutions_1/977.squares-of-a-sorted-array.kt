@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=977 lang=kotlin
- *
- * [977] Squares of a Sorted Array
- */
-
-class Solution {
-    fun sortedSquares(nums: IntArray): IntArray = nums.map { it * it }.sorted().toIntArray()
-}
+/* * @lc app=leetcode id=977 lang=kotlin * * [977] Squares of a Sorted Array */ class Solution { fun sortedSquares(nums: IntArray): IntArray = nums.map { it * it }.sorted().toIntArray() }

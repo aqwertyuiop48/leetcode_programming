@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1154 lang=kotlin
- *
- * [1154] Day of the Year
- */
-
-class Solution { fun dayOfYear(date: String): Int = java.time.LocalDate.parse(date).dayOfYear }
+/* * @lc app=leetcode id=1154 lang=kotlin * * [1154] Day of the Year */ class Solution { fun dayOfYear(date: String): Int = java.time.LocalDate.parse(date).dayOfYear }

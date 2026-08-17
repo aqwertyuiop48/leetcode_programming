@@ -1,4 +1,1 @@
-/* @lc app=leetcode id=1685 lang=kotlin */
-class Solution {
-    fun getSumAbsoluteDifferences(nums: IntArray): IntArray = nums.sumOf { it.toLong() }.let { total -> LongArray(1).let { p -> IntArray(nums.size) { i -> (nums[i].toLong() * i - p[0] + (total - p[0] - nums[i]) - nums[i].toLong() * (nums.size - 1 - i)).toInt().also { p[0] += nums[i].toLong() } } } }
-}
+/* @lc app=leetcode id=1685 lang=kotlin */ class Solution { fun getSumAbsoluteDifferences(nums: IntArray): IntArray = nums.sumOf { it.toLong() }.let { total -> LongArray(1).let { p -> IntArray(nums.size) { i -> (nums[i].toLong() * i - p[0] + (total - p[0] - nums[i]) - nums[i].toLong() * (nums.size - 1 - i)).toInt().also { p[0] += nums[i].toLong() } } } } }

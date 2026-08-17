@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1026 lang=kotlin
- *
- * [1026] Maximum Difference Between Node and Ancestor
- */
-
-class Solution {
-    fun maxAncestorDiff(root: TreeNode?): Int = root?.let { r -> DeepRecursiveFunction<Triple<TreeNode, Int, Int>, Int> { (node, minV, maxV) -> minOf(minV, node.`val`).let { newMin -> maxOf(maxV, node.`val`).let { newMax -> if (node.left == null && node.right == null) newMax - newMin else maxOf(node.left?.let { callRecursive(Triple(it, newMin, newMax)) } ?: 0, node.right?.let { callRecursive(Triple(it, newMin, newMax)) } ?: 0) } } }.invoke(Triple(r, r.`val`, r.`val`)) } ?: 0
-}
+/* * @lc app=leetcode id=1026 lang=kotlin * * [1026] Maximum Difference Between Node and Ancestor */ class Solution { fun maxAncestorDiff(root: TreeNode?): Int = root?.let { r -> DeepRecursiveFunction<Triple<TreeNode, Int, Int>, Int> { (node, minV, maxV) -> minOf(minV, node.`val`).let { newMin -> maxOf(maxV, node.`val`).let { newMax -> if (node.left == null && node.right == null) newMax - newMin else maxOf(node.left?.let { callRecursive(Triple(it, newMin, newMax)) } ?: 0, node.right?.let { callRecursive(Triple(it, newMin, newMax)) } ?: 0) } } }.invoke(Triple(r, r.`val`, r.`val`)) } ?: 0 }

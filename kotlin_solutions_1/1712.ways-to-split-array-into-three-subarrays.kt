@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1712 lang=kotlin
- *
- * [1712] Ways to Split Array Into Three Subarrays
- */
-
-class Solution {
-    fun waysToSplit(nums: IntArray): Int = nums.scan(0, Int::plus).drop(1).let { p -> intArrayOf(1, 1).let { ptr -> (0 until nums.size - 2).fold(0L) { ans, i -> ptr.apply { this[0] = maxOf(this[0], i + 1) }.also { generateSequence { it[0] }.takeWhile { it < nums.size - 1 && p[it] < 2 * p[i] }.forEach { _ -> it[0]++ } }.apply { this[1] = maxOf(this[1], i + 1) }.also { generateSequence { it[1] }.takeWhile { it < nums.size - 1 && p[it] <= (p.last() + p[i]) / 2 }.forEach { _ -> it[1]++ } }.let { (ans + maxOf(0, it[1] - it[0])) % 1000000007 } }.toInt() } }
-}
+/* * @lc app=leetcode id=1712 lang=kotlin * * [1712] Ways to Split Array Into Three Subarrays */ class Solution { fun waysToSplit(nums: IntArray): Int = nums.scan(0, Int::plus).drop(1).let { p -> intArrayOf(1, 1).let { ptr -> (0 until nums.size - 2).fold(0L) { ans, i -> ptr.apply { this[0] = maxOf(this[0], i + 1) }.also { generateSequence { it[0] }.takeWhile { it < nums.size - 1 && p[it] < 2 * p[i] }.forEach { _ -> it[0]++ } }.apply { this[1] = maxOf(this[1], i + 1) }.also { generateSequence { it[1] }.takeWhile { it < nums.size - 1 && p[it] <= (p.last() + p[i]) / 2 }.forEach { _ -> it[1]++ } }.let { (ans + maxOf(0, it[1] - it[0])) % 1000000007 } }.toInt() } } }

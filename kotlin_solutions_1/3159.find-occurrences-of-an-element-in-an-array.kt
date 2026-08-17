@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3159 lang=kotlin */
-class Solution { fun occurrencesOfElement(nums: IntArray, queries: IntArray, x: Int): IntArray = nums.indices.filter { nums[it] == x }.let { pos -> IntArray(queries.size) { if (queries[it] <= pos.size) pos[queries[it] - 1] else -1 } } }
+/* @lc app=leetcode id=3159 lang=kotlin */ class Solution { fun occurrencesOfElement(nums: IntArray, queries: IntArray, x: Int): IntArray = nums.indices.filter { nums[it] == x }.let { pos -> IntArray(queries.size) { if (queries[it] <= pos.size) pos[queries[it] - 1] else -1 } } }

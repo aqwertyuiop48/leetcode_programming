@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1161 lang=kotlin
- *
- * [1161] Maximum Level Sum of a Binary Tree
- */
-
-class Solution { fun maxLevelSum(root: TreeNode?): Int = generateSequence(listOfNotNull(root)) { q -> q.flatMap { listOfNotNull(it.left, it.right) }.takeIf { it.isNotEmpty() } }.map { q -> q.sumOf { it.`val` } }.withIndex().maxByOrNull { it.value }!!.index + 1 }
+/* * @lc app=leetcode id=1161 lang=kotlin * * [1161] Maximum Level Sum of a Binary Tree */ class Solution { fun maxLevelSum(root: TreeNode?): Int = generateSequence(listOfNotNull(root)) { q -> q.flatMap { listOfNotNull(it.left, it.right) }.takeIf { it.isNotEmpty() } }.map { q -> q.sumOf { it.`val` } }.withIndex().maxByOrNull { it.value }!!.index + 1 }

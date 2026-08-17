@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2829 lang=kotlin */
-class Solution { fun minimumSum(n: Int, k: Int): Int = (k / 2).let { m -> if (n <= m) n * (n + 1) / 2 else m * (m + 1) / 2 + (n - m) * (2 * k + (n - m) - 1) / 2 } }
+/* @lc app=leetcode id=2829 lang=kotlin */ class Solution { fun minimumSum(n: Int, k: Int): Int = (k / 2).let { m -> if (n <= m) n * (n + 1) / 2 else m * (m + 1) / 2 + (n - m) * (2 * k + (n - m) - 1) / 2 } }

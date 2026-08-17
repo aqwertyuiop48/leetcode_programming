@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=3207 lang=kotlin
- *
- * [3207] Maximum Points After Enemy Battles
- */
-class Solution { fun maximumPoints(enemyEnergies: IntArray, currentEnergy: Int): Long = enemyEnergies.sortedArray().let { e -> if (currentEnergy < e[0]) 0L else (currentEnergy.toLong() + e.drop(1).sumOf { it.toLong() }) / e[0] } }
+/* * @lc app=leetcode id=3207 lang=kotlin * * [3207] Maximum Points After Enemy Battles */ class Solution { fun maximumPoints(enemyEnergies: IntArray, currentEnergy: Int): Long = enemyEnergies.sortedArray().let { e -> if (currentEnergy < e[0]) 0L else (currentEnergy.toLong() + e.drop(1).sumOf { it.toLong() }) / e[0] } }

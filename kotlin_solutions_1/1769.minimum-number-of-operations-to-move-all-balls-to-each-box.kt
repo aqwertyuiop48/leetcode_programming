@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1769 lang=kotlin */
-class Solution { fun minOperations(boxes: String): IntArray = IntArray(boxes.length) { i -> boxes.indices.filter { j -> boxes[j] == '1' }.sumOf { j -> kotlin.math.abs(i - j) } } }
+/* @lc app=leetcode id=1769 lang=kotlin */ class Solution { fun minOperations(boxes: String): IntArray = IntArray(boxes.length) { i -> boxes.indices.filter { j -> boxes[j] == '1' }.sumOf { j -> kotlin.math.abs(i - j) } } }

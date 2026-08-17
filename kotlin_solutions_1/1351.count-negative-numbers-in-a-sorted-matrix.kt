@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1351 lang=kotlin */
-class Solution { fun countNegatives(grid: Array<IntArray>): Int = grid.sumOf { row -> row.count { it < 0 } } }
+/* @lc app=leetcode id=1351 lang=kotlin */ class Solution { fun countNegatives(grid: Array<IntArray>): Int = grid.sumOf { row -> row.count { it < 0 } } }

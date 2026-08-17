@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2001 lang=kotlin */
-class Solution { fun interchangeableRectangles(rectangles: Array<IntArray>): Long = rectangles.groupBy { it[0].toDouble() / it[1] }.values.sumOf { it.size.toLong() * (it.size - 1) / 2 } }
+/* @lc app=leetcode id=2001 lang=kotlin */ class Solution { fun interchangeableRectangles(rectangles: Array<IntArray>): Long = rectangles.groupBy { it[0].toDouble() / it[1] }.values.sumOf { it.size.toLong() * (it.size - 1) / 2 } }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=997 lang=kotlin
- *
- * [997] Find the Town Judge
- */
-
-class Solution {
-    fun findJudge(n: Int, trust: Array<IntArray>): Int = (1..n).firstOrNull { i -> trust.count { it[1] == i } == n - 1 && trust.none { it[0] == i } } ?: -1
-}
+/* * @lc app=leetcode id=997 lang=kotlin * * [997] Find the Town Judge */ class Solution { fun findJudge(n: Int, trust: Array<IntArray>): Int = (1..n).firstOrNull { i -> trust.count { it[1] == i } == n - 1 && trust.none { it[0] == i } } ?: -1 }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1399 lang=kotlin
- *
- * [1399] Count Largest Group
- */
-
-class Solution {
-    fun countLargestGroup(n: Int): Int = (1..n).groupBy { it.toString().sumOf { c -> c - '0' } }.values.map { it.size }.let { sizes -> sizes.count { it == sizes.maxOrNull() } }
-}
+/* * @lc app=leetcode id=1399 lang=kotlin * * [1399] Count Largest Group */ class Solution { fun countLargestGroup(n: Int): Int = (1..n).groupBy { it.toString().sumOf { c -> c - '0' } }.values.map { it.size }.let { sizes -> sizes.count { it == sizes.maxOrNull() } } }

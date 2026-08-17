@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1475 lang=kotlin
- *
- * [1475] Final Prices With a Special Discount in a Shop
- */
-
-class Solution {
-    fun finalPrices(prices: IntArray): IntArray = IntArray(prices.size) { i -> prices[i] - ((i + 1 until prices.size).firstOrNull { prices[it] <= prices[i] }?.let { prices[it] } ?: 0) }
-}
+/* * @lc app=leetcode id=1475 lang=kotlin * * [1475] Final Prices With a Special Discount in a Shop */ class Solution { fun finalPrices(prices: IntArray): IntArray = IntArray(prices.size) { i -> prices[i] - ((i + 1 until prices.size).firstOrNull { prices[it] <= prices[i] }?.let { prices[it] } ?: 0) } }

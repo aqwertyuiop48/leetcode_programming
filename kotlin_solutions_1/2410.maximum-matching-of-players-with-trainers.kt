@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2410 lang=kotlin */
-class Solution { fun matchPlayersAndTrainers(players: IntArray, trainers: IntArray): Int = players.sorted().let { p -> trainers.sorted().let { t -> (0 until t.size).fold(0) { i, j -> if (i < p.size && p[i] <= t[j]) i + 1 else i } } } }
+/* @lc app=leetcode id=2410 lang=kotlin */ class Solution { fun matchPlayersAndTrainers(players: IntArray, trainers: IntArray): Int = players.sorted().let { p -> trainers.sorted().let { t -> (0 until t.size).fold(0) { i, j -> if (i < p.size && p[i] <= t[j]) i + 1 else i } } } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2968 lang=kotlin
- *
- * [2968] Apply Operations to Maximize Frequency Score
- */
-
-class Solution { fun maxFrequencyScore(nums: IntArray, k: Long): Int = nums.sorted().let { sorted -> LongArray(sorted.size + 1).apply { sorted.indices.forEach { i -> this[i + 1] = this[i] + sorted[i] } }.let { pref -> { lIdx: Int, rIdx: Int -> ((lIdx + rIdx) / 2).let { m -> sorted[m].toLong().let { v -> (v * (m - lIdx) - (pref[m] - pref[lIdx])) + ((pref[rIdx] - pref[m]) - v * (rIdx - m)) } } }.let { cost -> (2..sorted.size).fold(1 to 0) { (maxLen, lIdx), rIdx -> generateSequence(lIdx) { it + 1 }.first { cost(it, rIdx) <= k }.let { newL -> maxOf(maxLen, rIdx - newL) to newL } }.first } } } }
+/* * @lc app=leetcode id=2968 lang=kotlin * * [2968] Apply Operations to Maximize Frequency Score */ class Solution { fun maxFrequencyScore(nums: IntArray, k: Long): Int = nums.sorted().let { sorted -> LongArray(sorted.size + 1).apply { sorted.indices.forEach { i -> this[i + 1] = this[i] + sorted[i] } }.let { pref -> { lIdx: Int, rIdx: Int -> ((lIdx + rIdx) / 2).let { m -> sorted[m].toLong().let { v -> (v * (m - lIdx) - (pref[m] - pref[lIdx])) + ((pref[rIdx] - pref[m]) - v * (rIdx - m)) } } }.let { cost -> (2..sorted.size).fold(1 to 0) { (maxLen, lIdx), rIdx -> generateSequence(lIdx) { it + 1 }.first { cost(it, rIdx) <= k }.let { newL -> maxOf(maxLen, rIdx - newL) to newL } }.first } } } }

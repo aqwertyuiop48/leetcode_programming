@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2908 lang=kotlin
- *
- * [2908] Minimum Sum of Mountain Triplets I
- */
-
-class Solution { fun minimumSum(nums: IntArray): Int = IntArray(nums.size).also { left -> nums.indices.fold(Int.MAX_VALUE) { m, i -> minOf(m, nums[i]).also { left[i] = it } } }.let { left -> IntArray(nums.size).also { right -> nums.indices.reversed().fold(Int.MAX_VALUE) { m, i -> minOf(m, nums[i]).also { right[i] = it } } }.let { right -> (1 until nums.size - 1).filter { j -> left[j - 1] < nums[j] && right[j + 1] < nums[j] }.minOfOrNull { j -> left[j - 1] + nums[j] + right[j + 1] } ?: -1 } } }
+/* * @lc app=leetcode id=2908 lang=kotlin * * [2908] Minimum Sum of Mountain Triplets I */ class Solution { fun minimumSum(nums: IntArray): Int = IntArray(nums.size).also { left -> nums.indices.fold(Int.MAX_VALUE) { m, i -> minOf(m, nums[i]).also { left[i] = it } } }.let { left -> IntArray(nums.size).also { right -> nums.indices.reversed().fold(Int.MAX_VALUE) { m, i -> minOf(m, nums[i]).also { right[i] = it } } }.let { right -> (1 until nums.size - 1).filter { j -> left[j - 1] < nums[j] && right[j + 1] < nums[j] }.minOfOrNull { j -> left[j - 1] + nums[j] + right[j + 1] } ?: -1 } } }

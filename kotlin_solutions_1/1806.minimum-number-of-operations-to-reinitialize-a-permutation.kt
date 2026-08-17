@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1806 lang=kotlin */
-class Solution { fun reinitializePermutation(n: Int): Int = generateSequence(n / 2) { if (it % 2 == 0) it / 2 else n / 2 + (it - 1) / 2 }.indexOf(1) + 1 }
+/* @lc app=leetcode id=1806 lang=kotlin */ class Solution { fun reinitializePermutation(n: Int): Int = generateSequence(n / 2) { if (it % 2 == 0) it / 2 else n / 2 + (it - 1) / 2 }.indexOf(1) + 1 }

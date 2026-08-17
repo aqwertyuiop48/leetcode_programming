@@ -1,4 +1,1 @@
-/* @lc app=leetcode id=2047 lang=kotlin */
-class Solution {
-    fun countValidWords(s: String): Int = s.split(Regex("\\s+")).filter { it.isNotEmpty() }.count { it.matches(Regex("[a-z]*([a-z]-[a-z])?[a-z]*[!.,]?")) }
-}
+/* @lc app=leetcode id=2047 lang=kotlin */ class Solution { fun countValidWords(s: String): Int = s.split(Regex("\\s+")).filter { it.isNotEmpty() }.count { it.matches(Regex("[a-z]*([a-z]-[a-z])?[a-z]*[!.,]?")) } }

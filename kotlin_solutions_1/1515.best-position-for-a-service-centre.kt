@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1515 lang=kotlin
- *
- * [1515] Best Position for a Service Centre
- */
-
-class Solution {
-    fun getMinDistSum(positions: Array<IntArray>): Double = positions.map { it[0].toDouble() to it[1].toDouble() }.let { pts -> { x: Double, y: Double -> pts.sumOf { Math.hypot(it.first - x, it.second - y) } }.let { dist -> generateSequence(Triple(pts.map { it.first }.average(), pts.map { it.second }.average(), 50.0)) { (x, y, step) -> listOf(0.0 to 1.0, 0.0 to -1.0, 1.0 to 0.0, -1.0 to 0.0).map { (dx, dy) -> x + dx * step to y + dy * step }.minByOrNull { (nx, ny) -> dist(nx, ny) }!!.let { (bx, by) -> if (dist(bx, by) < dist(x, y)) Triple(bx, by, step) else Triple(x, y, step / 2.0) } }.takeWhile { it.third > 1e-7 }.last().let { (x, y, _) -> dist(x, y) } } }
-}
+/* * @lc app=leetcode id=1515 lang=kotlin * * [1515] Best Position for a Service Centre */ class Solution { fun getMinDistSum(positions: Array<IntArray>): Double = positions.map { it[0].toDouble() to it[1].toDouble() }.let { pts -> { x: Double, y: Double -> pts.sumOf { Math.hypot(it.first - x, it.second - y) } }.let { dist -> generateSequence(Triple(pts.map { it.first }.average(), pts.map { it.second }.average(), 50.0)) { (x, y, step) -> listOf(0.0 to 1.0, 0.0 to -1.0, 1.0 to 0.0, -1.0 to 0.0).map { (dx, dy) -> x + dx * step to y + dy * step }.minByOrNull { (nx, ny) -> dist(nx, ny) }!!.let { (bx, by) -> if (dist(bx, by) < dist(x, y)) Triple(bx, by, step) else Triple(x, y, step / 2.0) } }.takeWhile { it.third > 1e-7 }.last().let { (x, y, _) -> dist(x, y) } } } }

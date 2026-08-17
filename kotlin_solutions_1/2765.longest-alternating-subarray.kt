@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2765 lang=kotlin */
-class Solution { fun alternatingSubarray(nums: IntArray): Int = nums.indices.map { i -> (i + 1 until nums.size).asSequence().takeWhile { j -> nums[j] - nums[j - 1] == (if ((j - i) % 2 == 1) 1 else -1) }.lastOrNull()?.let { it - i + 1 } ?: -1 }.maxOrNull()?.takeIf { it > 1 } ?: -1 }
+/* @lc app=leetcode id=2765 lang=kotlin */ class Solution { fun alternatingSubarray(nums: IntArray): Int = nums.indices.map { i -> (i + 1 until nums.size).asSequence().takeWhile { j -> nums[j] - nums[j - 1] == (if ((j - i) % 2 == 1) 1 else -1) }.lastOrNull()?.let { it - i + 1 } ?: -1 }.maxOrNull()?.takeIf { it > 1 } ?: -1 }

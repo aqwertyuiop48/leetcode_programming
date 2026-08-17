@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2133 lang=kotlin */
-class Solution { fun checkValid(matrix: Array<IntArray>): Boolean = matrix.indices.all { i -> matrix[i].distinct().size == matrix.size && matrix.indices.map { j -> matrix[j][i] }.distinct().size == matrix.size } }
+/* @lc app=leetcode id=2133 lang=kotlin */ class Solution { fun checkValid(matrix: Array<IntArray>): Boolean = matrix.indices.all { i -> matrix[i].distinct().size == matrix.size && matrix.indices.map { j -> matrix[j][i] }.distinct().size == matrix.size } }

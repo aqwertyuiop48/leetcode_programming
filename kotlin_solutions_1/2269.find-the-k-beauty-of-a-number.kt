@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2269 lang=kotlin */
-class Solution { fun divisorSubstrings(num: Int, k: Int): Int = num.toString().let { s -> (0..s.length - k).count { i -> s.substring(i, i + k).toInt().let { d -> d != 0 && num % d == 0 } } } }
+/* @lc app=leetcode id=2269 lang=kotlin */ class Solution { fun divisorSubstrings(num: Int, k: Int): Int = num.toString().let { s -> (0..s.length - k).count { i -> s.substring(i, i + k).toInt().let { d -> d != 0 && num % d == 0 } } } }

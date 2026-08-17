@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1941 lang=kotlin */
-class Solution { fun areOccurrencesEqual(s: String): Boolean = s.groupingBy { it }.eachCount().values.distinct().size == 1 }
+/* @lc app=leetcode id=1941 lang=kotlin */ class Solution { fun areOccurrencesEqual(s: String): Boolean = s.groupingBy { it }.eachCount().values.distinct().size == 1 }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2996 lang=kotlin
- *
- * [2996] Smallest Missing Integer Greater Than Sequential Prefix Sum
- */
-
-class Solution { fun missingInteger(nums: IntArray): Int = nums.toSet().let { set -> (1 until nums.size).takeWhile { i -> nums[i] == nums[i - 1] + 1 }.fold(nums[0]) { acc, i -> acc + nums[i] }.let { sum -> generateSequence(sum) { it + 1 }.first { it !in set } } } }
+/* * @lc app=leetcode id=2996 lang=kotlin * * [2996] Smallest Missing Integer Greater Than Sequential Prefix Sum */ class Solution { fun missingInteger(nums: IntArray): Int = nums.toSet().let { set -> (1 until nums.size).takeWhile { i -> nums[i] == nums[i - 1] + 1 }.fold(nums[0]) { acc, i -> acc + nums[i] }.let { sum -> generateSequence(sum) { it + 1 }.first { it !in set } } } }

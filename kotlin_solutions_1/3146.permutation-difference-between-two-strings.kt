@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3146 lang=kotlin
- *
- * [3146] Permutation Difference between Two Strings
- */
-
-class Solution { fun findPermutationDifference(s: String, t: String): Int = s.indices.sumOf { i -> Math.abs(i - t.indexOf(s[i])) } }
+/* * @lc app=leetcode id=3146 lang=kotlin * * [3146] Permutation Difference between Two Strings */ class Solution { fun findPermutationDifference(s: String, t: String): Int = s.indices.sumOf { i -> Math.abs(i - t.indexOf(s[i])) } }

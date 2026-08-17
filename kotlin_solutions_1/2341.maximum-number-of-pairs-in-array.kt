@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2341 lang=kotlin */
-class Solution { fun numberOfPairs(nums: IntArray): IntArray = nums.groupBy { it }.values.map { it.size }.fold(intArrayOf(0, 0)) { a, c -> intArrayOf(a[0] + c / 2, a[1] + c % 2) } }
+/* @lc app=leetcode id=2341 lang=kotlin */ class Solution { fun numberOfPairs(nums: IntArray): IntArray = nums.groupBy { it }.values.map { it.size }.fold(intArrayOf(0, 0)) { a, c -> intArrayOf(a[0] + c / 2, a[1] + c % 2) } }

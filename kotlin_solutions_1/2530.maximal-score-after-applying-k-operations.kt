@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2530 lang=kotlin */
-class Solution { fun maxKelements(nums: IntArray, k: Int): Long = java.util.PriorityQueue<Int>(compareByDescending { it }).apply { nums.forEach { add(it) } }.let { pq -> (1..k).fold(0L) { acc, _ -> pq.poll().let { v -> acc + v.also { pq.add((v + 2) / 3) } } } } }
+/* @lc app=leetcode id=2530 lang=kotlin */ class Solution { fun maxKelements(nums: IntArray, k: Int): Long = java.util.PriorityQueue<Int>(compareByDescending { it }).apply { nums.forEach { add(it) } }.let { pq -> (1..k).fold(0L) { acc, _ -> pq.poll().let { v -> acc + v.also { pq.add((v + 2) / 3) } } } } }

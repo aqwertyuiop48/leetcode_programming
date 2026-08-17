@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1372 lang=kotlin
- *
- * [1372] Longest ZigZag Path in a Binary Tree
- */
-
-class Solution { fun longestZigZag(root: TreeNode?): Int = intArrayOf(0).let { max -> DeepRecursiveFunction<TreeNode?, Pair<Int, Int>> { node -> if (node == null) -1 to -1 else (callRecursive(node.left) to callRecursive(node.right)).let { (l, r) -> (l.second + 1 to r.first + 1).also { (cl, cr) -> max[0] = Math.max(max[0], Math.max(cl, cr)) } } }(root).run { max[0] } } }
+/* * @lc app=leetcode id=1372 lang=kotlin * * [1372] Longest ZigZag Path in a Binary Tree */ class Solution { fun longestZigZag(root: TreeNode?): Int = intArrayOf(0).let { max -> DeepRecursiveFunction<TreeNode?, Pair<Int, Int>> { node -> if (node == null) -1 to -1 else (callRecursive(node.left) to callRecursive(node.right)).let { (l, r) -> (l.second + 1 to r.first + 1).also { (cl, cr) -> max[0] = Math.max(max[0], Math.max(cl, cr)) } } }(root).run { max[0] } } }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3122 lang=kotlin
- *
- * [3122] Minimum Number of Operations to Satisfy Conditions
- */
-
-class Solution {
-    fun minimumOperations(grid: Array<IntArray>): Int = (0 until grid[0].size).fold(IntArray(10) { 0 }) { prevDp, col -> IntArray(10) { v -> (grid.size - grid.count { it[col] == v }) + if (col == 0) 0 else (0..9).filter { it != v }.minOf { prevDp[it] } } }.minOrNull()!!
-}
+/* * @lc app=leetcode id=3122 lang=kotlin * * [3122] Minimum Number of Operations to Satisfy Conditions */ class Solution { fun minimumOperations(grid: Array<IntArray>): Int = (0 until grid[0].size).fold(IntArray(10) { 0 }) { prevDp, col -> IntArray(10) { v -> (grid.size - grid.count { it[col] == v }) + if (col == 0) 0 else (0..9).filter { it != v }.minOf { prevDp[it] } } }.minOrNull()!! }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1521 lang=kotlin
- *
- * [1521] Find a Value of a Mysterious Function Closest to Target
- */
-
-class Solution {
-    fun closestToTarget(arr: IntArray, target: Int): Int = arr.fold(setOf<Int>() to Int.MAX_VALUE) { (active, minDiff), x -> (active.map { it and x } + x).toSet().let { next -> next to next.fold(minDiff) { acc, v -> minOf(acc, Math.abs(v - target)) } } }.second
-}
+/* * @lc app=leetcode id=1521 lang=kotlin * * [1521] Find a Value of a Mysterious Function Closest to Target */ class Solution { fun closestToTarget(arr: IntArray, target: Int): Int = arr.fold(setOf<Int>() to Int.MAX_VALUE) { (active, minDiff), x -> (active.map { it and x } + x).toSet().let { next -> next to next.fold(minDiff) { acc, v -> minOf(acc, Math.abs(v - target)) } } }.second }

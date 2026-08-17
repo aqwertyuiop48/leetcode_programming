@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1888 lang=kotlin
- *
- * [1888] Minimum Number of Flips to Make the Binary String Alternating
- */
-
-class Solution { fun minFlips(s: String): Int = (0 until 2 * s.length).fold(intArrayOf(0, 0, s.length)) { st, i -> st.also { it[0] += (if ((s[i % s.length] - '0') != (i % 2)) 1 else 0) - (if (i >= s.length && (s[i % s.length] - '0') != ((i - s.length) % 2)) 1 else 0) }.also { it[1] += (if ((s[i % s.length] - '0') != ((i + 1) % 2)) 1 else 0) - (if (i >= s.length && (s[i % s.length] - '0') != ((i - s.length + 1) % 2)) 1 else 0) }.also { if (i >= s.length - 1) it[2] = minOf(it[2], minOf(it[0], it[1])) } }[2] }
+/* * @lc app=leetcode id=1888 lang=kotlin * * [1888] Minimum Number of Flips to Make the Binary String Alternating */ class Solution { fun minFlips(s: String): Int = (0 until 2 * s.length).fold(intArrayOf(0, 0, s.length)) { st, i -> st.also { it[0] += (if ((s[i % s.length] - '0') != (i % 2)) 1 else 0) - (if (i >= s.length && (s[i % s.length] - '0') != ((i - s.length) % 2)) 1 else 0) }.also { it[1] += (if ((s[i % s.length] - '0') != ((i + 1) % 2)) 1 else 0) - (if (i >= s.length && (s[i % s.length] - '0') != ((i - s.length + 1) % 2)) 1 else 0) }.also { if (i >= s.length - 1) it[2] = minOf(it[2], minOf(it[0], it[1])) } }[2] }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1029 lang=kotlin
- *
- * [1029] Two City Scheduling
- */
-
-class Solution {
-    fun twoCitySchedCost(costs: Array<IntArray>): Int = costs.sortedBy { it[0] - it[1] }.mapIndexed { i, cost -> if (i < costs.size / 2) cost[0] else cost[1] }.sum()
-}
+/* * @lc app=leetcode id=1029 lang=kotlin * * [1029] Two City Scheduling */ class Solution { fun twoCitySchedCost(costs: Array<IntArray>): Int = costs.sortedBy { it[0] - it[1] }.mapIndexed { i, cost -> if (i < costs.size / 2) cost[0] else cost[1] }.sum() }

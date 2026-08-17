@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2164 lang=kotlin */
-class Solution { fun sortEvenOdd(nums: IntArray): IntArray = nums.filterIndexed { i, _ -> i % 2 == 0 }.sorted().let { es -> nums.filterIndexed { i, _ -> i % 2 != 0 }.sortedDescending().let { os -> IntArray(nums.size) { i -> if (i % 2 == 0) es[i / 2] else os[i / 2] } } } }
+/* @lc app=leetcode id=2164 lang=kotlin */ class Solution { fun sortEvenOdd(nums: IntArray): IntArray = nums.filterIndexed { i, _ -> i % 2 == 0 }.sorted().let { es -> nums.filterIndexed { i, _ -> i % 2 != 0 }.sortedDescending().let { os -> IntArray(nums.size) { i -> if (i % 2 == 0) es[i / 2] else os[i / 2] } } } }

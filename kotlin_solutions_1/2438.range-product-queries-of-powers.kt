@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=2438 lang=kotlin
- *
- * [2438] Range Product Queries of Powers
- */
-class Solution { fun productQueries(n: Int, queries: Array<IntArray>): IntArray = (0..30).filter { (n shr it) and 1 == 1 }.map { 1 shl it }.let { p -> IntArray(queries.size) { i -> queries[i].let { q -> (q[0]..q[1]).fold(1L) { acc, idx -> (acc * p[idx]) % 1000000007 }.toInt() } } } }
+/* * @lc app=leetcode id=2438 lang=kotlin * * [2438] Range Product Queries of Powers */ class Solution { fun productQueries(n: Int, queries: Array<IntArray>): IntArray = (0..30).filter { (n shr it) and 1 == 1 }.map { 1 shl it }.let { p -> IntArray(queries.size) { i -> queries[i].let { q -> (q[0]..q[1]).fold(1L) { acc, idx -> (acc * p[idx]) % 1000000007 }.toInt() } } } }

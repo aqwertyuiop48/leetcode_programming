@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2180 lang=kotlin */
-class Solution { fun countEven(num: Int): Int = (1..num).count { it.toString().sumOf { c -> c - '0' } % 2 == 0 } }
+/* @lc app=leetcode id=2180 lang=kotlin */ class Solution { fun countEven(num: Int): Int = (1..num).count { it.toString().sumOf { c -> c - '0' } % 2 == 0 } }

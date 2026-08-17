@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1609 lang=kotlin
- *
- * [1609] Even Odd Tree
- */
-
-class Solution {
-    fun isEvenOddTree(root: TreeNode?): Boolean = mutableListOf<Int>().let { m -> DeepRecursiveFunction<Pair<TreeNode?, Int>, Boolean> { (n, l) -> n == null || ((if (l == m.size) m.add(n.`val`) else (if (l % 2 == 0) n.`val` > m[l] else n.`val` < m[l]).also { m[l] = n.`val` }) && (n.`val` % 2 != l % 2) && callRecursive(n.left to l + 1) && callRecursive(n.right to l + 1)) }.invoke(root to 0) }
-}
+/* * @lc app=leetcode id=1609 lang=kotlin * * [1609] Even Odd Tree */ class Solution { fun isEvenOddTree(root: TreeNode?): Boolean = mutableListOf<Int>().let { m -> DeepRecursiveFunction<Pair<TreeNode?, Int>, Boolean> { (n, l) -> n == null || ((if (l == m.size) m.add(n.`val`) else (if (l % 2 == 0) n.`val` > m[l] else n.`val` < m[l]).also { m[l] = n.`val` }) && (n.`val` % 2 != l % 2) && callRecursive(n.left to l + 1) && callRecursive(n.right to l + 1)) }.invoke(root to 0) } }

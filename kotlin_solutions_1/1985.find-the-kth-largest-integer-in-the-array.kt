@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1985 lang=kotlin
- *
- * [1985] Find the Kth Largest Integer in the Array
- */
-
-class Solution { fun kthLargestNumber(nums: Array<String>, k: Int): String = nums.sortedWith(compareBy<String> { it.length }.thenBy { it }).let { it[it.size - k] } }
+/* * @lc app=leetcode id=1985 lang=kotlin * * [1985] Find the Kth Largest Integer in the Array */ class Solution { fun kthLargestNumber(nums: Array<String>, k: Int): String = nums.sortedWith(compareBy<String> { it.length }.thenBy { it }).let { it[it.size - k] } }

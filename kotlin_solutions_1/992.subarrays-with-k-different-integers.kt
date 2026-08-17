@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=992 lang=kotlin
- *
- * [992] Subarrays with K Different Integers
- */
-
-class Solution {
-    fun subarraysWithKDistinct(nums: IntArray, k: Int): Int = { target: Int -> IntArray(nums.size + 1).let { count -> intArrayOf(0, 0, 0).also { state -> nums.forEachIndexed { right, x -> Unit.also { if (count[x] == 0) state[1]++ }.also { count[x]++ }.also { while (state[1] > target) { (count[nums[state[0]]] - 1).also { count[nums[state[0]]] = it }.also { if (it == 0) state[1]-- }.also { state[0]++ } } }.also { state[2] += right - state[0] + 1 } } }[2] } }.let { atMost -> atMost(k) - atMost(k - 1) }
-}
+/* * @lc app=leetcode id=992 lang=kotlin * * [992] Subarrays with K Different Integers */ class Solution { fun subarraysWithKDistinct(nums: IntArray, k: Int): Int = { target: Int -> IntArray(nums.size + 1).let { count -> intArrayOf(0, 0, 0).also { state -> nums.forEachIndexed { right, x -> Unit.also { if (count[x] == 0) state[1]++ }.also { count[x]++ }.also { while (state[1] > target) { (count[nums[state[0]]] - 1).also { count[nums[state[0]]] = it }.also { if (it == 0) state[1]-- }.also { state[0]++ } } }.also { state[2] += right - state[0] + 1 } } }[2] } }.let { atMost -> atMost(k) - atMost(k - 1) } }

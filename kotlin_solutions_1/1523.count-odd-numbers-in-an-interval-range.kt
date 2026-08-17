@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1523 lang=kotlin
- *
- * [1523] Count Odd Numbers in an Interval Range
- */
-
-class Solution {
-    fun countOdds(low: Int, high: Int): Int = (high - low) / 2 + if (low % 2 != 0 || high % 2 != 0) 1 else 0
-}
+/* * @lc app=leetcode id=1523 lang=kotlin * * [1523] Count Odd Numbers in an Interval Range */ class Solution { fun countOdds(low: Int, high: Int): Int = (high - low) / 2 + if (low % 2 != 0 || high % 2 != 0) 1 else 0 }

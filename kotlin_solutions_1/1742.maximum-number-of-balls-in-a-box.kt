@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1742 lang=kotlin
- *
- * [1742] Maximum Number of Balls in a Box
- */
-class Solution { fun countBalls(lowLimit: Int, highLimit: Int): Int = (lowLimit..highLimit).groupingBy { n -> generateSequence(n) { if (it / 10 > 0) it / 10 else null }.sumOf { it % 10 } }.eachCount().values.maxOrNull() ?: 0 }
+/* * @lc app=leetcode id=1742 lang=kotlin * * [1742] Maximum Number of Balls in a Box */ class Solution { fun countBalls(lowLimit: Int, highLimit: Int): Int = (lowLimit..highLimit).groupingBy { n -> generateSequence(n) { if (it / 10 > 0) it / 10 else null }.sumOf { it % 10 } }.eachCount().values.maxOrNull() ?: 0 }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1790 lang=kotlin */
-class Solution { fun areAlmostEqual(s1: String, s2: String): Boolean = s1.indices.filter { s1[it] != s2[it] }.let { diff -> diff.isEmpty() || (diff.size == 2 && s1[diff[0]] == s2[diff[1]] && s1[diff[1]] == s2[diff[0]]) } }
+/* @lc app=leetcode id=1790 lang=kotlin */ class Solution { fun areAlmostEqual(s1: String, s2: String): Boolean = s1.indices.filter { s1[it] != s2[it] }.let { diff -> diff.isEmpty() || (diff.size == 2 && s1[diff[0]] == s2[diff[1]] && s1[diff[1]] == s2[diff[0]]) } }

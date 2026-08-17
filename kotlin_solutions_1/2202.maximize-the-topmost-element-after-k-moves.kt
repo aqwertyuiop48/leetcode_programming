@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2202 lang=kotlin */
-class Solution { fun maximumTop(nums: IntArray, k: Int): Int = if (nums.size == 1 && k % 2 == 1) -1 else (0 until minOf(nums.size, k - 1)).map { nums[it] }.maxOrNull().let { m -> if (k < nums.size) maxOf(m ?: -1, nums[k]) else m ?: -1 } }
+/* @lc app=leetcode id=2202 lang=kotlin */ class Solution { fun maximumTop(nums: IntArray, k: Int): Int = if (nums.size == 1 && k % 2 == 1) -1 else (0 until minOf(nums.size, k - 1)).map { nums[it] }.maxOrNull().let { m -> if (k < nums.size) maxOf(m ?: -1, nums[k]) else m ?: -1 } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2104 lang=kotlin */
-class Solution { fun subArrayRanges(nums: IntArray): Long = nums.indices.sumOf { i -> nums.indices.drop(i).fold(Triple(0L, Int.MAX_VALUE, Int.MIN_VALUE)) { acc, j -> minOf(acc.second, nums[j]).let { mn -> maxOf(acc.third, nums[j]).let { mx -> Triple(acc.first + (mx - mn).toLong(), mn, mx) } } }.first } }
+/* @lc app=leetcode id=2104 lang=kotlin */ class Solution { fun subArrayRanges(nums: IntArray): Long = nums.indices.sumOf { i -> nums.indices.drop(i).fold(Triple(0L, Int.MAX_VALUE, Int.MIN_VALUE)) { acc, j -> minOf(acc.second, nums[j]).let { mn -> maxOf(acc.third, nums[j]).let { mx -> Triple(acc.first + (mx - mn).toLong(), mn, mx) } } }.first } }

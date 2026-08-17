@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2406 lang=kotlin */
-class Solution { fun minGroups(intervals: Array<IntArray>): Int = intervals.map { it[0] }.sorted().let { s -> intervals.map { it[1] }.sorted().let { e -> s.fold(0) { j, start -> if (start > e[j]) j + 1 else j }.let { s.size - it } } } }
+/* @lc app=leetcode id=2406 lang=kotlin */ class Solution { fun minGroups(intervals: Array<IntArray>): Int = intervals.map { it[0] }.sorted().let { s -> intervals.map { it[1] }.sorted().let { e -> s.fold(0) { j, start -> if (start > e[j]) j + 1 else j }.let { s.size - it } } } }

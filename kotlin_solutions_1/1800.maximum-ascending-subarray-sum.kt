@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1800 lang=kotlin */
-class Solution { fun maxAscendingSum(nums: IntArray): Int = nums.fold(intArrayOf(0, 0, 0)) { s, n -> (if (n > s[2]) s[0] + n else n).let { cur -> intArrayOf(cur, maxOf(s[1], cur), n) } }[1] }
+/* @lc app=leetcode id=1800 lang=kotlin */ class Solution { fun maxAscendingSum(nums: IntArray): Int = nums.fold(intArrayOf(0, 0, 0)) { s, n -> (if (n > s[2]) s[0] + n else n).let { cur -> intArrayOf(cur, maxOf(s[1], cur), n) } }[1] }

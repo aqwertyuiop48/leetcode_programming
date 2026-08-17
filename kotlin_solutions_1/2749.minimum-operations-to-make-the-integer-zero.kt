@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2749 lang=kotlin */
-class Solution { fun makeTheIntegerZero(num1: Int, num2: Int): Int = (1..60).firstOrNull { k -> (num1.toLong() - k.toLong() * num2).let { d -> d >= k && java.lang.Long.bitCount(d) <= k } } ?: -1 }
+/* @lc app=leetcode id=2749 lang=kotlin */ class Solution { fun makeTheIntegerZero(num1: Int, num2: Int): Int = (1..60).firstOrNull { k -> (num1.toLong() - k.toLong() * num2).let { d -> d >= k && java.lang.Long.bitCount(d) <= k } } ?: -1 }

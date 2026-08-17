@@ -1,3 +1,1 @@
-/* @lc app=leetcode id=906 lang=kotlin */
-
-class Solution { fun superpalindromesInRange(left: String, right: String): Int = left.toLong().let { l -> right.toLong().let { r -> (1L..99999L).asSequence().flatMap { k -> k.toString().let { s -> s.reversed().let { rev -> sequenceOf((s + rev).toLong(), (s + rev.drop(1)).toLong()) } } }.filter { it <= 1000000000L }.map { it * it }.filter { it in l..r && it.toString().let { s -> s == s.reversed() } }.count() } } }
+/* @lc app=leetcode id=906 lang=kotlin */ class Solution { fun superpalindromesInRange(left: String, right: String): Int = left.toLong().let { l -> right.toLong().let { r -> (1L..99999L).asSequence().flatMap { k -> k.toString().let { s -> s.reversed().let { rev -> sequenceOf((s + rev).toLong(), (s + rev.drop(1)).toLong()) } } }.filter { it <= 1000000000L }.map { it * it }.filter { it in l..r && it.toString().let { s -> s == s.reversed() } }.count() } } }

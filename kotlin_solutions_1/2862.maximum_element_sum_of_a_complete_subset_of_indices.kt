@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2862 lang=kotlin */
-class Solution { fun maximumSum(nums: List<Int>): Long = nums.indices.groupBy { i -> (i + 1).let { n -> (2..kotlin.math.sqrt(n.toDouble()).toInt()).fold(n) { curr, d -> generateSequence(curr) { if (it % (d * d) == 0) it / (d * d) else null }.last() } } }.values.maxOf { it.sumOf { i -> nums[i].toLong() } } }
+/* @lc app=leetcode id=2862 lang=kotlin */ class Solution { fun maximumSum(nums: List<Int>): Long = nums.indices.groupBy { i -> (i + 1).let { n -> (2..kotlin.math.sqrt(n.toDouble()).toInt()).fold(n) { curr, d -> generateSequence(curr) { if (it % (d * d) == 0) it / (d * d) else null }.last() } } }.values.maxOf { it.sumOf { i -> nums[i].toLong() } } }

@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1849 lang=kotlin
- *
- * [1849] Splitting a String Into Descending Consecutive Values
- */
-class Solution { fun splitString(s: String): Boolean = Array<(Int, java.math.BigInteger) -> Boolean>(1) { { _, _ -> false } }.also { f -> f[0] = { idx, prev -> idx == s.length || (idx + 1..s.length).any { end -> java.math.BigInteger(s.substring(idx, end)).let { cur -> cur == prev - java.math.BigInteger.ONE && f[0](end, cur) } } } }.let { f -> (1 until s.length).any { i -> f[0](i, java.math.BigInteger(s.substring(0, i))) } } }
+/* * @lc app=leetcode id=1849 lang=kotlin * * [1849] Splitting a String Into Descending Consecutive Values */ class Solution { fun splitString(s: String): Boolean = Array<(Int, java.math.BigInteger) -> Boolean>(1) { { _, _ -> false } }.also { f -> f[0] = { idx, prev -> idx == s.length || (idx + 1..s.length).any { end -> java.math.BigInteger(s.substring(idx, end)).let { cur -> cur == prev - java.math.BigInteger.ONE && f[0](end, cur) } } } }.let { f -> (1 until s.length).any { i -> f[0](i, java.math.BigInteger(s.substring(0, i))) } } }

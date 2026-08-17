@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1362 lang=kotlin
- *
- * [1362] Closest Divisors
- */
-
-class Solution { fun closestDivisors(num: Int): IntArray = Math.sqrt((num + 2).toDouble()).toInt().downTo(1).first { (num + 1) % it == 0 || (num + 2) % it == 0 }.let { d -> if ((num + 1) % d == 0) intArrayOf(d, (num + 1) / d) else intArrayOf(d, (num + 2) / d) } }
+/* * @lc app=leetcode id=1362 lang=kotlin * * [1362] Closest Divisors */ class Solution { fun closestDivisors(num: Int): IntArray = Math.sqrt((num + 2).toDouble()).toInt().downTo(1).first { (num + 1) % it == 0 || (num + 2) % it == 0 }.let { d -> if ((num + 1) % d == 0) intArrayOf(d, (num + 1) / d) else intArrayOf(d, (num + 2) / d) } }

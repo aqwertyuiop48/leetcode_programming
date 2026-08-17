@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2278 lang=kotlin */
-class Solution { fun percentageLetter(s: String, letter: Char): Int = s.count { it == letter } * 100 / s.length }
+/* @lc app=leetcode id=2278 lang=kotlin */ class Solution { fun percentageLetter(s: String, letter: Char): Int = s.count { it == letter } * 100 / s.length }

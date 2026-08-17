@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3133 lang=kotlin
- *
- * [3133] Minimum Array End
- */
-
-class Solution { fun minEnd(n: Int, x: Int): Long = (n.toLong() - 1).let { nVal -> (0..62).fold(x.toLong() to 0) { (res, b), i -> if ((x.toLong() shr i) and 1L == 0L) (res or (((nVal shr b) and 1L) shl i)) to (b + 1) else res to b }.first } }
+/* * @lc app=leetcode id=3133 lang=kotlin * * [3133] Minimum Array End */ class Solution { fun minEnd(n: Int, x: Int): Long = (n.toLong() - 1).let { nVal -> (0..62).fold(x.toLong() to 0) { (res, b), i -> if ((x.toLong() shr i) and 1L == 0L) (res or (((nVal shr b) and 1L) shl i)) to (b + 1) else res to b }.first } }

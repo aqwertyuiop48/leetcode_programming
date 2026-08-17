@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1510 lang=kotlin
- *
- * [1510] Stone Game IV
- */
-
-class Solution { fun winnerSquareGame(n: Int): Boolean = BooleanArray(n + 1).also { dp -> (1..n).forEach { i -> dp[i] = generateSequence(1) { it + 1 }.takeWhile { k -> k * k <= i }.any { k -> !dp[i - k * k] } } }[n] }
+/* * @lc app=leetcode id=1510 lang=kotlin * * [1510] Stone Game IV */ class Solution { fun winnerSquareGame(n: Int): Boolean = BooleanArray(n + 1).also { dp -> (1..n).forEach { i -> dp[i] = generateSequence(1) { it + 1 }.takeWhile { k -> k * k <= i }.any { k -> !dp[i - k * k] } } }[n] }

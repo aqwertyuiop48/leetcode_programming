@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1006 lang=kotlin */
-class Solution { fun clumsy(n: Int): Int = if (n <= 2) n else if (n == 3) 6 else if (n == 4) 7 else if (n % 4 == 0) n + 1 else if (n % 4 <= 2) n + 2 else n - 1 }
+/* @lc app=leetcode id=1006 lang=kotlin */ class Solution { fun clumsy(n: Int): Int = if (n <= 2) n else if (n == 3) 6 else if (n == 4) 7 else if (n % 4 == 0) n + 1 else if (n % 4 <= 2) n + 2 else n - 1 }

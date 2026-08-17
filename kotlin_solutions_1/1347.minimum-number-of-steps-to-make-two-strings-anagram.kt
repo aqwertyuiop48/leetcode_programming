@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1347 lang=kotlin */
-class Solution { fun minSteps(s: String, t: String): Int = IntArray(26).also { c -> s.forEach { c[it - 'a']++ } }.also { c -> t.forEach { c[it - 'a']-- } }.filter { it > 0 }.sum() }
+/* @lc app=leetcode id=1347 lang=kotlin */ class Solution { fun minSteps(s: String, t: String): Int = IntArray(26).also { c -> s.forEach { c[it - 'a']++ } }.also { c -> t.forEach { c[it - 'a']-- } }.filter { it > 0 }.sum() }

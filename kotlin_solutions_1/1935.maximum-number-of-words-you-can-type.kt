@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1935 lang=kotlin */
-class Solution { fun canBeTypedWords(text: String, brokenLetters: String): Int = text.split(" ").count { word -> word.none { brokenLetters.contains(it) } } }
+/* @lc app=leetcode id=1935 lang=kotlin */ class Solution { fun canBeTypedWords(text: String, brokenLetters: String): Int = text.split(" ").count { word -> word.none { brokenLetters.contains(it) } } }

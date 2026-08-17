@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1338 lang=kotlin
- *
- * [1338] Reduce Array Size to The Half
- */
-
-class Solution { fun minSetSize(arr: IntArray): Int = arr.groupBy { it }.values.map { it.size }.sortedDescending().fold(0 to 0) { (count, sum), freq -> if (sum >= (arr.size + 1) / 2) count to sum else (count + 1) to (sum + freq) }.first }
+/* * @lc app=leetcode id=1338 lang=kotlin * * [1338] Reduce Array Size to The Half */ class Solution { fun minSetSize(arr: IntArray): Int = arr.groupBy { it }.values.map { it.size }.sortedDescending().fold(0 to 0) { (count, sum), freq -> if (sum >= (arr.size + 1) / 2) count to sum else (count + 1) to (sum + freq) }.first }

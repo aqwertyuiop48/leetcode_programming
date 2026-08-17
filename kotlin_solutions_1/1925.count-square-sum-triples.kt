@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1925 lang=kotlin
- *
- * [1925] Count Square Sum Triples
- */
-
-class Solution {
-    fun countTriples(n: Int): Int = (1..n).sumOf { a -> (1..n).count { b -> (a * a + b * b).let { sum -> kotlin.math.sqrt(sum.toDouble()).let { sqrt -> sqrt <= n && sqrt % 1.0 == 0.0 } } } }
-}
+/* * @lc app=leetcode id=1925 lang=kotlin * * [1925] Count Square Sum Triples */ class Solution { fun countTriples(n: Int): Int = (1..n).sumOf { a -> (1..n).count { b -> (a * a + b * b).let { sum -> kotlin.math.sqrt(sum.toDouble()).let { sqrt -> sqrt <= n && sqrt % 1.0 == 0.0 } } } } }

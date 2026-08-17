@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2515 lang=kotlin */
-class Solution { fun closestTarget(words: Array<String>, target: String, startIndex: Int) = words.indices.filter { words[it] == target }.map { Math.abs(it - startIndex).let { d -> minOf(d, words.size - d) } }.minOrNull() ?: -1 }
+/* @lc app=leetcode id=2515 lang=kotlin */ class Solution { fun closestTarget(words: Array<String>, target: String, startIndex: Int) = words.indices.filter { words[it] == target }.map { Math.abs(it - startIndex).let { d -> minOf(d, words.size - d) } }.minOrNull() ?: -1 }

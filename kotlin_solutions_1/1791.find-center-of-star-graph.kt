@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1791 lang=kotlin */
-class Solution { fun findCenter(edges: Array<IntArray>): Int = if (edges[0][0] == edges[1][0] || edges[0][0] == edges[1][1]) edges[0][0] else edges[0][1] }
+/* @lc app=leetcode id=1791 lang=kotlin */ class Solution { fun findCenter(edges: Array<IntArray>): Int = if (edges[0][0] == edges[1][0] || edges[0][0] == edges[1][1]) edges[0][0] else edges[0][1] }

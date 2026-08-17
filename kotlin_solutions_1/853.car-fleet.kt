@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=853 lang=kotlin */
-class Solution { fun carFleet(target: Int, pos: IntArray, speed: IntArray): Int = pos.indices.map { doubleArrayOf(pos[it].toDouble(), (target - pos[it]).toDouble() / speed[it]) } .sortedByDescending { it[0] } .fold(doubleArrayOf(0.0, 0.0)) { s, c -> if (c[1] > s[0]) doubleArrayOf(c[1], s[1] + 1.0) else s }[1].toInt() }
+/* @lc app=leetcode id=853 lang=kotlin */ class Solution { fun carFleet(target: Int, pos: IntArray, speed: IntArray): Int = pos.indices.map { doubleArrayOf(pos[it].toDouble(), (target - pos[it]).toDouble() / speed[it]) } .sortedByDescending { it[0] } .fold(doubleArrayOf(0.0, 0.0)) { s, c -> if (c[1] > s[0]) doubleArrayOf(c[1], s[1] + 1.0) else s }[1].toInt() }

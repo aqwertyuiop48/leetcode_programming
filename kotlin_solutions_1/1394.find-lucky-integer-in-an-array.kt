@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1394 lang=kotlin
- *
- * [1394] Find Lucky Integer in an Array
- */
-
-class Solution {
-    fun findLucky(arr: IntArray): Int = arr.groupBy { it }.filter { (k, v) -> k == v.size }.keys.maxOrNull() ?: -1
-}
+/* * @lc app=leetcode id=1394 lang=kotlin * * [1394] Find Lucky Integer in an Array */ class Solution { fun findLucky(arr: IntArray): Int = arr.groupBy { it }.filter { (k, v) -> k == v.size }.keys.maxOrNull() ?: -1 }

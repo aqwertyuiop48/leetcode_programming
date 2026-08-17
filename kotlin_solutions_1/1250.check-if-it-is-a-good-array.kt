@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1250 lang=kotlin
- *
- * [1250] Check If It Is a Good Array
- */
-
-class Solution { fun isGoodArray(nums: IntArray): Boolean = nums.reduce { a, b -> generateSequence(a to b) { (x, y) -> if (y == 0) null else y to (x % y) }.last().first } == 1 }
+/* * @lc app=leetcode id=1250 lang=kotlin * * [1250] Check If It Is a Good Array */ class Solution { fun isGoodArray(nums: IntArray): Boolean = nums.reduce { a, b -> generateSequence(a to b) { (x, y) -> if (y == 0) null else y to (x % y) }.last().first } == 1 }

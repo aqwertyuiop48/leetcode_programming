@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1319 lang=kotlin
- *
- * [1319] Number of Operations to Make Network Connected
- */
-
-class Solution { fun makeConnected(n: Int, connections: Array<IntArray>): Int = if (connections.size < n - 1) -1 else IntArray(n) { it }.let { p -> DeepRecursiveFunction<Int, Int> { u -> if (p[u] == u) u else callRecursive(p[u]).also { p[u] = it } }.let { find -> p.also { connections.forEach { c -> p[find(c[0])] = find(c[1]) } } }.indices.count { p[it] == it } - 1 } }
+/* * @lc app=leetcode id=1319 lang=kotlin * * [1319] Number of Operations to Make Network Connected */ class Solution { fun makeConnected(n: Int, connections: Array<IntArray>): Int = if (connections.size < n - 1) -1 else IntArray(n) { it }.let { p -> DeepRecursiveFunction<Int, Int> { u -> if (p[u] == u) u else callRecursive(p[u]).also { p[u] = it } }.let { find -> p.also { connections.forEach { c -> p[find(c[0])] = find(c[1]) } } }.indices.count { p[it] == it } - 1 } }

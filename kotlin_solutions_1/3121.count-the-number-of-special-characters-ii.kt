@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3121 lang=kotlin
- *
- * [3121] Count the Number of Special Characters II
- */
-
-class Solution {
-    fun numberOfSpecialChars(word: String): Int = ('a'..'z').count { c -> word.lastIndexOf(c).let { lastL -> lastL != -1 && word.indexOf(c.uppercaseChar()).let { firstU -> firstU != -1 && lastL < firstU } } }
-}
+/* * @lc app=leetcode id=3121 lang=kotlin * * [3121] Count the Number of Special Characters II */ class Solution { fun numberOfSpecialChars(word: String): Int = ('a'..'z').count { c -> word.lastIndexOf(c).let { lastL -> lastL != -1 && word.indexOf(c.uppercaseChar()).let { firstU -> firstU != -1 && lastL < firstU } } } }

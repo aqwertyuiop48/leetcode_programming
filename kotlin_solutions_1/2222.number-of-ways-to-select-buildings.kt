@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2222 lang=kotlin */
-class Solution { fun numberOfWays(s: String): Long = s.fold(LongArray(6)) { a, c -> a.apply { if (c == '0') a[4] = (a[4] + a[2]).also { a[3] = a[3] + a[1] }.also { a[0] = a[0] + 1 } else a[5] = (a[5] + a[3]).also { a[2] = a[2] + a[0] }.also { a[1] = a[1] + 1 } } }.let { it[4] + it[5] } }
+/* @lc app=leetcode id=2222 lang=kotlin */ class Solution { fun numberOfWays(s: String): Long = s.fold(LongArray(6)) { a, c -> a.apply { if (c == '0') a[4] = (a[4] + a[2]).also { a[3] = a[3] + a[1] }.also { a[0] = a[0] + 1 } else a[5] = (a[5] + a[3]).also { a[2] = a[2] + a[0] }.also { a[1] = a[1] + 1 } } }.let { it[4] + it[5] } }

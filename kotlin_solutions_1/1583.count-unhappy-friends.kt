@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1583 lang=kotlin
- *
- * [1583] Count Unhappy Friends
- */
-
-class Solution { fun unhappyFriends(n: Int, preferences: Array<IntArray>, pairs: Array<IntArray>): Int = IntArray(n).apply { pairs.forEach { p -> this[p[0]] = p[1].also { this[p[1]] = p[0] } } }.let { partner -> preferences.map { pref -> IntArray(n).apply { pref.indices.forEach { j -> this[pref[j]] = j } } }.let { rank -> (0 until n).count { x -> partner[x].let { y -> (0 until n).any { u -> u != x && rank[x][u] < rank[x][y] && rank[u][x] < rank[u][partner[u]] } } } } } }
+/* * @lc app=leetcode id=1583 lang=kotlin * * [1583] Count Unhappy Friends */ class Solution { fun unhappyFriends(n: Int, preferences: Array<IntArray>, pairs: Array<IntArray>): Int = IntArray(n).apply { pairs.forEach { p -> this[p[0]] = p[1].also { this[p[1]] = p[0] } } }.let { partner -> preferences.map { pref -> IntArray(n).apply { pref.indices.forEach { j -> this[pref[j]] = j } } }.let { rank -> (0 until n).count { x -> partner[x].let { y -> (0 until n).any { u -> u != x && rank[x][u] < rank[x][y] && rank[u][x] < rank[u][partner[u]] } } } } } }

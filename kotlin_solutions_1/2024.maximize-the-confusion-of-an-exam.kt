@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2024 lang=kotlin */
-class Solution { fun maxConsecutiveAnswers(answerKey: String, k: Int): Int = listOf('T', 'F').maxOf { c -> IntArray(1).let { l -> IntArray(1).let { cnt -> answerKey.indices.maxOf { r -> cnt.also { if (answerKey[r] != c) it[0]++ }.also { while (it[0] > k) if (answerKey[l[0]++] != c) it[0]-- }.let { r - l[0] + 1 } } } } } }
+/* @lc app=leetcode id=2024 lang=kotlin */ class Solution { fun maxConsecutiveAnswers(answerKey: String, k: Int): Int = listOf('T', 'F').maxOf { c -> IntArray(1).let { l -> IntArray(1).let { cnt -> answerKey.indices.maxOf { r -> cnt.also { if (answerKey[r] != c) it[0]++ }.also { while (it[0] > k) if (answerKey[l[0]++] != c) it[0]-- }.let { r - l[0] + 1 } } } } } }

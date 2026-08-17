@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2140 lang=kotlin */
-class Solution { fun mostPoints(questions: Array<IntArray>): Long = LongArray(questions.size + 1).also { dp -> (questions.size - 1 downTo 0).forEach { i -> dp.set(i, maxOf(dp[i + 1], questions[i][0].toLong() + if (i + questions[i][1] + 1 < questions.size) dp[i + questions[i][1] + 1] else 0L)) } }.let { it[0] } }
+/* @lc app=leetcode id=2140 lang=kotlin */ class Solution { fun mostPoints(questions: Array<IntArray>): Long = LongArray(questions.size + 1).also { dp -> (questions.size - 1 downTo 0).forEach { i -> dp.set(i, maxOf(dp[i + 1], questions[i][0].toLong() + if (i + questions[i][1] + 1 < questions.size) dp[i + questions[i][1] + 1] else 0L)) } }.let { it[0] } }

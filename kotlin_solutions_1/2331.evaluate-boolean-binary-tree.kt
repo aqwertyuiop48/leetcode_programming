@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2331 lang=kotlin */
-class Solution { fun evaluateTree(root: TreeNode?): Boolean = root!!.let { if (it.`val` < 2) it.`val` == 1 else if (it.`val` == 2) evaluateTree(it.left) || evaluateTree(it.right) else evaluateTree(it.left) && evaluateTree(it.right) } }
+/* @lc app=leetcode id=2331 lang=kotlin */ class Solution { fun evaluateTree(root: TreeNode?): Boolean = root!!.let { if (it.`val` < 2) it.`val` == 1 else if (it.`val` == 2) evaluateTree(it.left) || evaluateTree(it.right) else evaluateTree(it.left) && evaluateTree(it.right) } }

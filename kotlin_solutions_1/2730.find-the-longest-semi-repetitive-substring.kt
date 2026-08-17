@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2730 lang=kotlin */
-class Solution { fun longestSemiRepetitiveSubstring(s: String): Int = (0 until s.length - 1).filter { s[it] == s[it + 1] }.let { listOf(-1) + it + listOf(s.length - 1) }.let { idx -> if (idx.size <= 2) s.length else (0 until idx.size - 2).maxOf { idx[it+2] - idx[it] } } }
+/* @lc app=leetcode id=2730 lang=kotlin */ class Solution { fun longestSemiRepetitiveSubstring(s: String): Int = (0 until s.length - 1).filter { s[it] == s[it + 1] }.let { listOf(-1) + it + listOf(s.length - 1) }.let { idx -> if (idx.size <= 2) s.length else (0 until idx.size - 2).maxOf { idx[it+2] - idx[it] } } }

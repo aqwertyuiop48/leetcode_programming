@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2006 lang=kotlin */
-class Solution { fun countKDifference(nums: IntArray, k: Int): Int = nums.indices.sumOf { i -> (i + 1 until nums.size).count { j -> java.lang.Math.abs(nums[i] - nums[j]) == k } } }
+/* @lc app=leetcode id=2006 lang=kotlin */ class Solution { fun countKDifference(nums: IntArray, k: Int): Int = nums.indices.sumOf { i -> (i + 1 until nums.size).count { j -> java.lang.Math.abs(nums[i] - nums[j]) == k } } }

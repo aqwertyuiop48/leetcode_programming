@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2965 lang=kotlin */
-class Solution { fun findMissingAndRepeatedValues(grid: Array<IntArray>): IntArray = grid.flatMap { it.toList() }.groupingBy { it }.eachCount().let { counts -> intArrayOf((1..grid.size * grid.size).first { counts[it] == 2 }, (1..grid.size * grid.size).first { counts[it] == null }) } }
+/* @lc app=leetcode id=2965 lang=kotlin */ class Solution { fun findMissingAndRepeatedValues(grid: Array<IntArray>): IntArray = grid.flatMap { it.toList() }.groupingBy { it }.eachCount().let { counts -> intArrayOf((1..grid.size * grid.size).first { counts[it] == 2 }, (1..grid.size * grid.size).first { counts[it] == null }) } }

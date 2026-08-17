@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1487 lang=kotlin
- *
- * [1487] Making File Names Unique
- */
-
-class Solution { fun getFolderNames(names: Array<String>): Array<String> = mutableMapOf<String, Int>().let { map -> names.map { name -> if (!map.containsKey(name)) name.also { map[it] = 1 } else generateSequence(map[name] ?: 1) { it + 1 }.first { k -> !map.containsKey("$name($k)") }.let { k -> "$name($k)".also { map[name] = k + 1 }.also { map[it] = 1 } } }.toTypedArray() } }
+/* * @lc app=leetcode id=1487 lang=kotlin * * [1487] Making File Names Unique */ class Solution { fun getFolderNames(names: Array<String>): Array<String> = mutableMapOf<String, Int>().let { map -> names.map { name -> if (!map.containsKey(name)) name.also { map[it] = 1 } else generateSequence(map[name] ?: 1) { it + 1 }.first { k -> !map.containsKey("$name($k)") }.let { k -> "$name($k)".also { map[name] = k + 1 }.also { map[it] = 1 } } }.toTypedArray() } }

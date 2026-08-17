@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2844 lang=kotlin */
-class Solution { fun minimumOperations(num: String): Int = listOf("00", "25", "50", "75").map { t -> num.lastIndexOf(t[1]).let { j -> if (j != -1) num.substring(0, j).lastIndexOf(t[0]).let { i -> if (i != -1) num.length - i - 2 else num.length } else num.length } }.plus(num.length - if (num.contains('0')) 1 else 0).minOrNull()!! }
+/* @lc app=leetcode id=2844 lang=kotlin */ class Solution { fun minimumOperations(num: String): Int = listOf("00", "25", "50", "75").map { t -> num.lastIndexOf(t[1]).let { j -> if (j != -1) num.substring(0, j).lastIndexOf(t[0]).let { i -> if (i != -1) num.length - i - 2 else num.length } else num.length } }.plus(num.length - if (num.contains('0')) 1 else 0).minOrNull()!! }

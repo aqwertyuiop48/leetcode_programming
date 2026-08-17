@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2244 lang=kotlin
- *
- * [2244] Minimum Rounds to Complete All Tasks
- */
-
-class Solution { fun minimumRounds(tasks: IntArray): Int = tasks.toList().groupingBy { it }.eachCount().values.let { c -> if (c.any { it == 1 }) -1 else c.sumOf { (it + 2) / 3 } } }
+/* * @lc app=leetcode id=2244 lang=kotlin * * [2244] Minimum Rounds to Complete All Tasks */ class Solution { fun minimumRounds(tasks: IntArray): Int = tasks.toList().groupingBy { it }.eachCount().values.let { c -> if (c.any { it == 1 }) -1 else c.sumOf { (it + 2) / 3 } } }

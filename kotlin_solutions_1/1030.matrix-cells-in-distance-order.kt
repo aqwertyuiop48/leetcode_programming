@@ -1,12 +1,1 @@
-/*
- * @lc app=leetcode id=1030 lang=kotlin
- *
- * [1030] Matrix Cells in Distance Order
- */
-
-class Solution {
-    fun allCellsDistOrder(rows: Int, cols: Int, rCenter: Int, cCenter: Int): Array<IntArray> =
-        (0 until rows).flatMap { i -> (0 until cols).map { j -> intArrayOf(i, j) } }
-            .sortedBy { (r, c) -> kotlin.math.abs(r - rCenter) + kotlin.math.abs(c - cCenter) }
-            .toTypedArray()
-}
+/* * @lc app=leetcode id=1030 lang=kotlin * * [1030] Matrix Cells in Distance Order */ class Solution { fun allCellsDistOrder(rows: Int, cols: Int, rCenter: Int, cCenter: Int): Array<IntArray> = (0 until rows).flatMap { i -> (0 until cols).map { j -> intArrayOf(i, j) } } .sortedBy { (r, c) -> kotlin.math.abs(r - rCenter) + kotlin.math.abs(c - cCenter) } .toTypedArray() }

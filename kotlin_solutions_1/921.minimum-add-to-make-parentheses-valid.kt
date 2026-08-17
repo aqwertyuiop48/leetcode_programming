@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=921 lang=kotlin
- *
- * [921] Minimum Add to Make Parentheses Valid
- */
-
-class Solution { fun minAddToMakeValid(s: String): Int = s.fold(intArrayOf(0, 0)) { a, c -> if (c == '(') intArrayOf(a[0] + 1, a[1]) else if (a[0] > 0) intArrayOf(a[0] - 1, a[1]) else intArrayOf(a[0], a[1] + 1) }.sum() }
+/* * @lc app=leetcode id=921 lang=kotlin * * [921] Minimum Add to Make Parentheses Valid */ class Solution { fun minAddToMakeValid(s: String): Int = s.fold(intArrayOf(0, 0)) { a, c -> if (c == '(') intArrayOf(a[0] + 1, a[1]) else if (a[0] > 0) intArrayOf(a[0] - 1, a[1]) else intArrayOf(a[0], a[1] + 1) }.sum() }

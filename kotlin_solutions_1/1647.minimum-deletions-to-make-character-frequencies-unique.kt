@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1647 lang=kotlin */
-class Solution { fun minDeletions(s: String): Int = s.groupingBy { it }.eachCount().values.let { freqs -> HashSet<Int>().let { used -> freqs.sumOf { f -> generateSequence(f) { count -> if (count > 0 && !used.add(count)) count - 1 else null }.last().let { finalCount -> f - finalCount } } } } }
+/* @lc app=leetcode id=1647 lang=kotlin */ class Solution { fun minDeletions(s: String): Int = s.groupingBy { it }.eachCount().values.let { freqs -> HashSet<Int>().let { used -> freqs.sumOf { f -> generateSequence(f) { count -> if (count > 0 && !used.add(count)) count - 1 else null }.last().let { finalCount -> f - finalCount } } } } }

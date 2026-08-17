@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1652 lang=kotlin
- *
- * [1652] Defuse the Bomb
- */
-
-class Solution { fun decrypt(code: IntArray, k: Int): IntArray = IntArray(code.size) { i -> (1..Math.abs(k)).sumOf { j -> code[(i + if (k > 0) j else code.size - j) % code.size] } } }
+/* * @lc app=leetcode id=1652 lang=kotlin * * [1652] Defuse the Bomb */ class Solution { fun decrypt(code: IntArray, k: Int): IntArray = IntArray(code.size) { i -> (1..Math.abs(k)).sumOf { j -> code[(i + if (k > 0) j else code.size - j) % code.size] } } }

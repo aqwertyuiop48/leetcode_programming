@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1441 lang=kotlin
- *
- * [1441] Build an Array With Stack Operations
- */
-
-class Solution { fun buildArray(target: IntArray, n: Int): List<String> = (1..target.last()).flatMap { if (target.contains(it)) listOf("Push") else listOf("Push", "Pop") } }
+/* * @lc app=leetcode id=1441 lang=kotlin * * [1441] Build an Array With Stack Operations */ class Solution { fun buildArray(target: IntArray, n: Int): List<String> = (1..target.last()).flatMap { if (target.contains(it)) listOf("Push") else listOf("Push", "Pop") } }

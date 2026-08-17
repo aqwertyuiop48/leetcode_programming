@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2412 lang=kotlin */
-class Solution { fun minimumMoney(transactions: Array<IntArray>): Long = transactions.sumOf { maxOf(0L, it[0].toLong() - it[1]) } + (transactions.maxOfOrNull { minOf(it[0], it[1]).toLong() } ?: 0L) }
+/* @lc app=leetcode id=2412 lang=kotlin */ class Solution { fun minimumMoney(transactions: Array<IntArray>): Long = transactions.sumOf { maxOf(0L, it[0].toLong() - it[1]) } + (transactions.maxOfOrNull { minOf(it[0], it[1]).toLong() } ?: 0L) }

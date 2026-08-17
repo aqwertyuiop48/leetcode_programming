@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1992 lang=kotlin
- *
- * [1992] Find All Groups of Farmland
- */
-
-class Solution { fun findFarmland(land: Array<IntArray>): Array<IntArray> = land.indices.flatMap { r -> land[0].indices.filter { c -> land[r][c] == 1 && (r == 0 || land[r - 1][c] == 0) && (c == 0 || land[r][c - 1] == 0) }.map { c -> intArrayOf(r, c, (r until land.size).firstOrNull { land[it][c] == 0 }?.minus(1) ?: (land.size - 1), (c until land[0].size).firstOrNull { land[r][it] == 0 }?.minus(1) ?: (land[0].size - 1)) } }.toTypedArray() }
+/* * @lc app=leetcode id=1992 lang=kotlin * * [1992] Find All Groups of Farmland */ class Solution { fun findFarmland(land: Array<IntArray>): Array<IntArray> = land.indices.flatMap { r -> land[0].indices.filter { c -> land[r][c] == 1 && (r == 0 || land[r - 1][c] == 0) && (c == 0 || land[r][c - 1] == 0) }.map { c -> intArrayOf(r, c, (r until land.size).firstOrNull { land[it][c] == 0 }?.minus(1) ?: (land.size - 1), (c until land[0].size).firstOrNull { land[r][it] == 0 }?.minus(1) ?: (land[0].size - 1)) } }.toTypedArray() }

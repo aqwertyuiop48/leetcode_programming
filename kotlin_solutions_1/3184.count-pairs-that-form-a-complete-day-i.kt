@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3184 lang=kotlin */
-class Solution { fun countCompleteDayPairs(hours: IntArray): Int = IntArray(24).let { cnt -> hours.sumOf { h -> (cnt[(24 - h % 24) % 24]).also { cnt[h % 24]++ } } } }
+/* @lc app=leetcode id=3184 lang=kotlin */ class Solution { fun countCompleteDayPairs(hours: IntArray): Int = IntArray(24).let { cnt -> hours.sumOf { h -> (cnt[(24 - h % 24) % 24]).also { cnt[h % 24]++ } } } }

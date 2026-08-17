@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2380 lang=kotlin */
-class Solution { fun secondsToRemoveOccurrences(s: String): Int = s.fold(0 to 0) { (zeros, seconds), char -> if (char == '0') (zeros + 1) to seconds else if (zeros > 0) zeros to maxOf(seconds + 1, zeros) else zeros to seconds }.second }
+/* @lc app=leetcode id=2380 lang=kotlin */ class Solution { fun secondsToRemoveOccurrences(s: String): Int = s.fold(0 to 0) { (zeros, seconds), char -> if (char == '0') (zeros + 1) to seconds else if (zeros > 0) zeros to maxOf(seconds + 1, zeros) else zeros to seconds }.second }

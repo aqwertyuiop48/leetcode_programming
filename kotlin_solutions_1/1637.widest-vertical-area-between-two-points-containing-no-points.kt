@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1637 lang=kotlin
- *
- * [1637] Widest Vertical Area Between Two Points Containing No Points
- */
-
-class Solution { fun maxWidthOfVerticalArea(points: Array<IntArray>): Int = points.map { it[0] }.sorted().let { x -> (0 until x.size - 1).maxOfOrNull { x[it + 1] - x[it] } ?: 0 } }
+/* * @lc app=leetcode id=1637 lang=kotlin * * [1637] Widest Vertical Area Between Two Points Containing No Points */ class Solution { fun maxWidthOfVerticalArea(points: Array<IntArray>): Int = points.map { it[0] }.sorted().let { x -> (0 until x.size - 1).maxOfOrNull { x[it + 1] - x[it] } ?: 0 } }

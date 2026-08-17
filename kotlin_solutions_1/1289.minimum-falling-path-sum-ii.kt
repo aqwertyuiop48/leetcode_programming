@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1289 lang=kotlin
- *
- * [1289] Minimum Falling Path Sum II
- */
-
-class Solution {
-    fun minFallingPathSum(grid: Array<IntArray>): Int = grid.drop(1).fold(grid[0]) { prev, row -> IntArray(row.size) { j -> row[j] + prev.indices.filter { it != j }.minOf { prev[it] } } }.minOrNull()!!
-}
+/* * @lc app=leetcode id=1289 lang=kotlin * * [1289] Minimum Falling Path Sum II */ class Solution { fun minFallingPathSum(grid: Array<IntArray>): Int = grid.drop(1).fold(grid[0]) { prev, row -> IntArray(row.size) { j -> row[j] + prev.indices.filter { it != j }.minOf { prev[it] } } }.minOrNull()!! }

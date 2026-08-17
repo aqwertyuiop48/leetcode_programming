@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3113 lang=kotlin
- *
- * [3113] Find the Number of Subarrays Where Boundary Elements Are Maximum
- */
-
-class Solution {
-    fun numberOfSubarrays(nums: IntArray): Long = java.util.ArrayDeque<Pair<Int, Long>>().let { st -> nums.fold(0L) { acc, x -> st.apply { while (!isEmpty() && peek().first < x) pop() }.let { if (!st.isEmpty() && st.peek().first == x) (st.pop().second + 1L).also { st.push(x to it) } else 1L.also { st.push(x to 1L) } }.let { acc + it } } }
-}
+/* * @lc app=leetcode id=3113 lang=kotlin * * [3113] Find the Number of Subarrays Where Boundary Elements Are Maximum */ class Solution { fun numberOfSubarrays(nums: IntArray): Long = java.util.ArrayDeque<Pair<Int, Long>>().let { st -> nums.fold(0L) { acc, x -> st.apply { while (!isEmpty() && peek().first < x) pop() }.let { if (!st.isEmpty() && st.peek().first == x) (st.pop().second + 1L).also { st.push(x to it) } else 1L.also { st.push(x to 1L) } }.let { acc + it } } } }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2895 lang=kotlin
- *
- * [2895] Minimum Processing Time
- */
-
-class Solution {
-    fun minProcessingTime(processorTime: List<Int>, tasks: List<Int>): Int = tasks.sortedDescending().let { sortedTasks -> processorTime.sorted().mapIndexed { i, p -> p + sortedTasks[i * 4] }.maxOrNull()!! }
-}
+/* * @lc app=leetcode id=2895 lang=kotlin * * [2895] Minimum Processing Time */ class Solution { fun minProcessingTime(processorTime: List<Int>, tasks: List<Int>): Int = tasks.sortedDescending().let { sortedTasks -> processorTime.sorted().mapIndexed { i, p -> p + sortedTasks[i * 4] }.maxOrNull()!! } }

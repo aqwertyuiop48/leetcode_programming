@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1222 lang=kotlin
- *
- * [1222] Queens That Can Attack the King
- */
-
-class Solution {
-    fun queensAttacktheKing(queens: Array<IntArray>, king: IntArray): List<List<Int>> = queens.map { it[0] to it[1] }.toSet().let { qSet -> (-1..1).flatMap { dr -> (-1..1).map { dc -> dr to dc } }.filter { (dr, dc) -> dr != 0 || dc != 0 }.mapNotNull { (dr, dc) -> generateSequence(1) { it + 1 }.map { king[0] + dr * it to king[1] + dc * it }.takeWhile { (r, c) -> r in 0..7 && c in 0..7 }.firstOrNull { it in qSet }?.let { (r, c) -> listOf(r, c) } } }
-}
+/* * @lc app=leetcode id=1222 lang=kotlin * * [1222] Queens That Can Attack the King */ class Solution { fun queensAttacktheKing(queens: Array<IntArray>, king: IntArray): List<List<Int>> = queens.map { it[0] to it[1] }.toSet().let { qSet -> (-1..1).flatMap { dr -> (-1..1).map { dc -> dr to dc } }.filter { (dr, dc) -> dr != 0 || dc != 0 }.mapNotNull { (dr, dc) -> generateSequence(1) { it + 1 }.map { king[0] + dr * it to king[1] + dc * it }.takeWhile { (r, c) -> r in 0..7 && c in 0..7 }.firstOrNull { it in qSet }?.let { (r, c) -> listOf(r, c) } } } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2491 lang=kotlin */
-class Solution { fun dividePlayers(skill: IntArray): Long = skill.sorted().let { s -> (0 until s.size / 2).fold(0L to (s[0] + s.last())) { (sum, target), i -> if (sum == -1L || s[i] + s[s.size - 1 - i] != target) -1L to target else (sum + s[i].toLong() * s[s.size - 1 - i]) to target }.first } }
+/* @lc app=leetcode id=2491 lang=kotlin */ class Solution { fun dividePlayers(skill: IntArray): Long = skill.sorted().let { s -> (0 until s.size / 2).fold(0L to (s[0] + s.last())) { (sum, target), i -> if (sum == -1L || s[i] + s[s.size - 1 - i] != target) -1L to target else (sum + s[i].toLong() * s[s.size - 1 - i]) to target }.first } }

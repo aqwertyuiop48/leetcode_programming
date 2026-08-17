@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2220 lang=kotlin */
-class Solution { fun minBitFlips(start: Int, goal: Int): Int = java.lang.Integer.bitCount(start xor goal) }
+/* @lc app=leetcode id=2220 lang=kotlin */ class Solution { fun minBitFlips(start: Int, goal: Int): Int = java.lang.Integer.bitCount(start xor goal) }

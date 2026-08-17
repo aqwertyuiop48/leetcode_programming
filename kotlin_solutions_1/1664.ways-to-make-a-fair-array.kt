@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1664 lang=kotlin
- *
- * [1664] Ways to Make a Fair Array
- */
-
-class Solution { fun waysToMakeFair(nums: IntArray): Int = nums.indices.partition { it % 2 == 0 }.let { (evens, odds) -> evens.sumOf { nums[it] } to odds.sumOf { nums[it] } }.let { (totE, totO) -> nums.foldIndexed(Triple(0, 0, 0)) { i, (curE, curO, cnt), num -> Triple(curE + if (i % 2 == 0) num else 0, curO + if (i % 2 != 0) num else 0, cnt + if (curE + (totO - curO - if (i % 2 != 0) num else 0) == curO + (totE - curE - if (i % 2 == 0) num else 0)) 1 else 0) }.third } }
+/* * @lc app=leetcode id=1664 lang=kotlin * * [1664] Ways to Make a Fair Array */ class Solution { fun waysToMakeFair(nums: IntArray): Int = nums.indices.partition { it % 2 == 0 }.let { (evens, odds) -> evens.sumOf { nums[it] } to odds.sumOf { nums[it] } }.let { (totE, totO) -> nums.foldIndexed(Triple(0, 0, 0)) { i, (curE, curO, cnt), num -> Triple(curE + if (i % 2 == 0) num else 0, curO + if (i % 2 != 0) num else 0, cnt + if (curE + (totO - curO - if (i % 2 != 0) num else 0) == curO + (totE - curE - if (i % 2 == 0) num else 0)) 1 else 0) }.third } }

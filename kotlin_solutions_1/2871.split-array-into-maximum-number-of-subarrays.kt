@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2871 lang=kotlin */
-class Solution { fun maxSubarrays(nums: IntArray): Int = nums.reduce { a, b -> a and b }.let { total -> if (total > 0) 1 else nums.fold(0 to -1) { (cnt, cur), x -> if ((cur and x) == 0) (cnt + 1) to -1 else cnt to (cur and x) }.first } }
+/* @lc app=leetcode id=2871 lang=kotlin */ class Solution { fun maxSubarrays(nums: IntArray): Int = nums.reduce { a, b -> a and b }.let { total -> if (total > 0) 1 else nums.fold(0 to -1) { (cnt, cur), x -> if ((cur and x) == 0) (cnt + 1) to -1 else cnt to (cur and x) }.first } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1049 lang=kotlin
- *
- * [1049] Last Stone Weight II
- */
-
-class Solution { fun lastStoneWeightII(stones: IntArray): Int = stones.sum().let { sum -> stones.fold(setOf(0)) { set, s -> set + set.map { it + s }.filter { it <= sum / 2 } }.maxOrNull()!!.let { maxSubset -> sum - 2 * maxSubset } } }
+/* * @lc app=leetcode id=1049 lang=kotlin * * [1049] Last Stone Weight II */ class Solution { fun lastStoneWeightII(stones: IntArray): Int = stones.sum().let { sum -> stones.fold(setOf(0)) { set, s -> set + set.map { it + s }.filter { it <= sum / 2 } }.maxOrNull()!!.let { maxSubset -> sum - 2 * maxSubset } } }

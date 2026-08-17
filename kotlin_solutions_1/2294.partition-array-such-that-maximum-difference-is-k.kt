@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2294 lang=kotlin */
-class Solution { fun partitionArray(nums: IntArray, k: Int): Int = nums.sortedArray().let { s -> s.drop(1).fold(1 to s[0]) { (c, l), x -> if (x - l > k) (c + 1) to x else c to l } }.first }
+/* @lc app=leetcode id=2294 lang=kotlin */ class Solution { fun partitionArray(nums: IntArray, k: Int): Int = nums.sortedArray().let { s -> s.drop(1).fold(1 to s[0]) { (c, l), x -> if (x - l > k) (c + 1) to x else c to l } }.first }

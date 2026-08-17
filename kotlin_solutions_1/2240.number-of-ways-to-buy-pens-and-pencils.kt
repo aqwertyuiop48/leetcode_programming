@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2240 lang=kotlin
- *
- * [2240] Number of Ways to Buy Pens and Pencils
- */
-
-class Solution { fun waysToBuyPensPencils(total: Int, cost1: Int, cost2: Int): Long = (0L..total.toLong() / cost1).sumOf { (total - it * cost1) / cost2 + 1 } }
+/* * @lc app=leetcode id=2240 lang=kotlin * * [2240] Number of Ways to Buy Pens and Pencils */ class Solution { fun waysToBuyPensPencils(total: Int, cost1: Int, cost2: Int): Long = (0L..total.toLong() / cost1).sumOf { (total - it * cost1) / cost2 + 1 } }

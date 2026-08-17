@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1638 lang=kotlin */
-class Solution { fun countSubstrings(s: String, t: String): Int = s.indices.sumOf { i -> t.indices.sumOf { j -> IntArray(1).let { v -> (0 until minOf(s.length - i, t.length - j)).asSequence().takeWhile { k -> (v[0] + if (s[i + k] != t[j + k]) 1 else 0).also { v[0] = it } <= 1 }.count { v[0] == 1 } } } } }
+/* @lc app=leetcode id=1638 lang=kotlin */ class Solution { fun countSubstrings(s: String, t: String): Int = s.indices.sumOf { i -> t.indices.sumOf { j -> IntArray(1).let { v -> (0 until minOf(s.length - i, t.length - j)).asSequence().takeWhile { k -> (v[0] + if (s[i + k] != t[j + k]) 1 else 0).also { v[0] = it } <= 1 }.count { v[0] == 1 } } } } }

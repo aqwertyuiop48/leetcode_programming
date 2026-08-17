@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1584 lang=kotlin
- *
- * [1584] Min Cost to Connect All Points
- */
-
-class Solution { fun minCostConnectPoints(points: Array<IntArray>): Int = points.indices.fold(Triple(0, BooleanArray(points.size), IntArray(points.size) { 1000000000 }.apply { this[0] = 0 })) { (cost, vis, d), _ -> (0 until points.size).minByOrNull { if (vis[it]) Int.MAX_VALUE else d[it] }!!.let { u -> Triple(cost + d[u], vis.apply { vis[u] = true }, d.apply { (0 until points.size).forEach { v -> if (!vis[v]) this[v] = minOf(this[v], Math.abs(points[u][0] - points[v][0]) + Math.abs(points[u][1] - points[v][1])) } }) } }.first }
+/* * @lc app=leetcode id=1584 lang=kotlin * * [1584] Min Cost to Connect All Points */ class Solution { fun minCostConnectPoints(points: Array<IntArray>): Int = points.indices.fold(Triple(0, BooleanArray(points.size), IntArray(points.size) { 1000000000 }.apply { this[0] = 0 })) { (cost, vis, d), _ -> (0 until points.size).minByOrNull { if (vis[it]) Int.MAX_VALUE else d[it] }!!.let { u -> Triple(cost + d[u], vis.apply { vis[u] = true }, d.apply { (0 until points.size).forEach { v -> if (!vis[v]) this[v] = minOf(this[v], Math.abs(points[u][0] - points[v][0]) + Math.abs(points[u][1] - points[v][1])) } }) } }.first }

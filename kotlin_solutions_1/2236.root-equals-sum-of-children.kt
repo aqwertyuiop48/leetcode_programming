@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2236 lang=kotlin
- *
- * [2236] Root Equals Sum of Children
- */
-
-class Solution {
-    fun checkTree(root: TreeNode?) = root!!.`val` == root.left!!.`val` + root.right!!.`val`
-}
+/* * @lc app=leetcode id=2236 lang=kotlin * * [2236] Root Equals Sum of Children */ class Solution { fun checkTree(root: TreeNode?) = root!!.`val` == root.left!!.`val` + root.right!!.`val` }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2903 lang=kotlin
- *
- * [2903] Find Indices With Index and Value Difference I
- */
-
-class Solution {
-    fun findIndices(nums: IntArray, indexDiff: Int, valueDiff: Int): IntArray = nums.indices.firstNotNullOfOrNull { i -> (i + indexDiff until nums.size).firstOrNull { j -> kotlin.math.abs(nums[i] - nums[j]) >= valueDiff }?.let { j -> intArrayOf(i, j) } } ?: intArrayOf(-1, -1)
-}
+/* * @lc app=leetcode id=2903 lang=kotlin * * [2903] Find Indices With Index and Value Difference I */ class Solution { fun findIndices(nums: IntArray, indexDiff: Int, valueDiff: Int): IntArray = nums.indices.firstNotNullOfOrNull { i -> (i + indexDiff until nums.size).firstOrNull { j -> kotlin.math.abs(nums[i] - nums[j]) >= valueDiff }?.let { j -> intArrayOf(i, j) } } ?: intArrayOf(-1, -1) }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2971 lang=kotlin
- *
- * [2971] Find Polygon With the Largest Perimeter
- */
-
-class Solution { fun largestPerimeter(nums: IntArray): Long = nums.sorted().fold(0L to -1L) { (sum, maxP), x -> (sum + x) to if (sum > x) sum + x else maxP }.second }
+/* * @lc app=leetcode id=2971 lang=kotlin * * [2971] Find Polygon With the Largest Perimeter */ class Solution { fun largestPerimeter(nums: IntArray): Long = nums.sorted().fold(0L to -1L) { (sum, maxP), x -> (sum + x) to if (sum > x) sum + x else maxP }.second }

@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2239 lang=kotlin
- *
- * [2239] Find Closest Number to Zero
- */
-
-class Solution {
-    fun findClosestNumber(nums: IntArray) = nums.minWith(compareBy<Int> { Math.abs(it) }.thenByDescending { it })
-}
+/* * @lc app=leetcode id=2239 lang=kotlin * * [2239] Find Closest Number to Zero */ class Solution { fun findClosestNumber(nums: IntArray) = nums.minWith(compareBy<Int> { Math.abs(it) }.thenByDescending { it }) }

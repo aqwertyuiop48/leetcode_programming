@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1131 lang=kotlin
- *
- * [1131] Maximum of Absolute Value Expression
- */
-class Solution { fun maxAbsValExpr(arr1: IntArray, arr2: IntArray): Int = listOf(1 to 1, 1 to -1, -1 to 1, -1 to -1).maxOf { (p, q) -> arr1.indices.map { i -> p * arr1[i] + q * arr2[i] + i }.let { list -> list.maxOrNull()!! - list.minOrNull()!! } } }
+/* * @lc app=leetcode id=1131 lang=kotlin * * [1131] Maximum of Absolute Value Expression */ class Solution { fun maxAbsValExpr(arr1: IntArray, arr2: IntArray): Int = listOf(1 to 1, 1 to -1, -1 to 1, -1 to -1).maxOf { (p, q) -> arr1.indices.map { i -> p * arr1[i] + q * arr2[i] + i }.let { list -> list.maxOrNull()!! - list.minOrNull()!! } } }

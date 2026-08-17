@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1186 lang=kotlin
- *
- * [1186] Maximum Subarray Sum with One Deletion
- */
-
-class Solution { fun maximumSum(arr: IntArray): Int = (1..arr.lastIndex).fold(Triple(arr[0], -1000000000, arr[0])) { (k, i, r), idx -> arr[idx].let { x -> maxOf(i + x, k).let { ni -> maxOf(k + x, x).let { nk -> Triple(nk, ni, maxOf(r, nk, ni)) } } } }.third }
+/* * @lc app=leetcode id=1186 lang=kotlin * * [1186] Maximum Subarray Sum with One Deletion */ class Solution { fun maximumSum(arr: IntArray): Int = (1..arr.lastIndex).fold(Triple(arr[0], -1000000000, arr[0])) { (k, i, r), idx -> arr[idx].let { x -> maxOf(i + x, k).let { ni -> maxOf(k + x, x).let { nk -> Triple(nk, ni, maxOf(r, nk, ni)) } } } }.third }

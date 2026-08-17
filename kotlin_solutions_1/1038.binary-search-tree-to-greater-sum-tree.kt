@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1038 lang=kotlin
- *
- * [1038] Binary Search Tree to Greater Sum Tree
- */
-
-class Solution { fun bstToGst(root: TreeNode?): TreeNode? = IntArray(1).let { sum -> DeepRecursiveFunction<TreeNode?, Unit> { node -> if (node != null) { callRecursive(node.right) .also{sum[0] += node.`val`} .also{node.`val` = sum[0]} .also{callRecursive(node.left)} } }.invoke(root).let { root } } }
+/* * @lc app=leetcode id=1038 lang=kotlin * * [1038] Binary Search Tree to Greater Sum Tree */ class Solution { fun bstToGst(root: TreeNode?): TreeNode? = IntArray(1).let { sum -> DeepRecursiveFunction<TreeNode?, Unit> { node -> if (node != null) { callRecursive(node.right) .also{sum[0] += node.`val`} .also{node.`val` = sum[0]} .also{callRecursive(node.left)} } }.invoke(root).let { root } } }

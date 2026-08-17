@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=972 lang=kotlin
- *
- * [972] Equal Rational Numbers
- */
-
-class Solution {
-    fun isRationalEqual(s: String, t: String): Boolean = { x: String -> if (x.contains('(')) x.substring(0, x.length - 1).split('(').let { it[0] + it[1].repeat(25) }.toDouble() else x.toDouble() }.let { parse -> kotlin.math.abs(parse(s) - parse(t)) < 1e-9 }
-}
+/* * @lc app=leetcode id=972 lang=kotlin * * [972] Equal Rational Numbers */ class Solution { fun isRationalEqual(s: String, t: String): Boolean = { x: String -> if (x.contains('(')) x.substring(0, x.length - 1).split('(').let { it[0] + it[1].repeat(25) }.toDouble() else x.toDouble() }.let { parse -> kotlin.math.abs(parse(s) - parse(t)) < 1e-9 } }

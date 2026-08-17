@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2843 lang=kotlin */
-class Solution { fun countSymmetricIntegers(low: Int, high: Int): Int = (low..high).count { i -> i.toString().let { s -> s.length % 2 == 0 && s.substring(0, s.length / 2).sumOf { it - '0' } == s.substring(s.length / 2).sumOf { it - '0' } } } }
+/* @lc app=leetcode id=2843 lang=kotlin */ class Solution { fun countSymmetricIntegers(low: Int, high: Int): Int = (low..high).count { i -> i.toString().let { s -> s.length % 2 == 0 && s.substring(0, s.length / 2).sumOf { it - '0' } == s.substring(s.length / 2).sumOf { it - '0' } } } }

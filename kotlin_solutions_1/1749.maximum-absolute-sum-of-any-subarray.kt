@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1749 lang=kotlin
- *
- * [1749] Maximum Absolute Sum of Any Subarray
- */
-
-class Solution { fun maxAbsoluteSum(nums: IntArray): Int = nums.runningFold(0) { acc, x -> acc + x }.let { p -> p.maxOrNull()!! - p.minOrNull()!! } }
+/* * @lc app=leetcode id=1749 lang=kotlin * * [1749] Maximum Absolute Sum of Any Subarray */ class Solution { fun maxAbsoluteSum(nums: IntArray): Int = nums.runningFold(0) { acc, x -> acc + x }.let { p -> p.maxOrNull()!! - p.minOrNull()!! } }

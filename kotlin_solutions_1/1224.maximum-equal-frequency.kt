@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1224 lang=kotlin
- *
- * [1224] Maximum Equal Frequency
- */
-
-class Solution {
-    fun maxEqualFreq(nums: IntArray): Int = IntArray(100001).let { count -> IntArray(100001).let { freq -> nums.indices.fold(0 to 0) { (maxF, ans), i -> nums[i].let { x -> count[x].let { c -> (if (c > 0) freq[c]-- else 0).run { count[x] = c + 1 }.run { freq[c + 1]++ }.run { maxOf(maxF, c + 1) }.let { newMaxF -> (if (newMaxF == 1 || (freq[newMaxF] * newMaxF + freq[newMaxF - 1] * (newMaxF - 1) == i + 1 && freq[newMaxF] == 1) || (freq[newMaxF] * newMaxF + 1 == i + 1 && freq[1] == 1)) i + 1 else ans).let { newAns -> newMaxF to newAns } } } } }.second } }
-}
+/* * @lc app=leetcode id=1224 lang=kotlin * * [1224] Maximum Equal Frequency */ class Solution { fun maxEqualFreq(nums: IntArray): Int = IntArray(100001).let { count -> IntArray(100001).let { freq -> nums.indices.fold(0 to 0) { (maxF, ans), i -> nums[i].let { x -> count[x].let { c -> (if (c > 0) freq[c]-- else 0).run { count[x] = c + 1 }.run { freq[c + 1]++ }.run { maxOf(maxF, c + 1) }.let { newMaxF -> (if (newMaxF == 1 || (freq[newMaxF] * newMaxF + freq[newMaxF - 1] * (newMaxF - 1) == i + 1 && freq[newMaxF] == 1) || (freq[newMaxF] * newMaxF + 1 == i + 1 && freq[1] == 1)) i + 1 else ans).let { newAns -> newMaxF to newAns } } } } }.second } } }

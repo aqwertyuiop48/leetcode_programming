@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1417 lang=kotlin
- *
- * [1417] Reformat The String
- */
-
-class Solution { fun reformat(s: String): String = s.partition { it.isDigit() }.let { (d, l) -> if (Math.abs(d.length - l.length) > 1) "" else (if (d.length >= l.length) d to l else l to d).let { (a, b) -> a.zip(b).flatMap { (x, y) -> listOf(x, y) }.joinToString("") + if (a.length > b.length) a.last() else "" } } }
+/* * @lc app=leetcode id=1417 lang=kotlin * * [1417] Reformat The String */ class Solution { fun reformat(s: String): String = s.partition { it.isDigit() }.let { (d, l) -> if (Math.abs(d.length - l.length) > 1) "" else (if (d.length >= l.length) d to l else l to d).let { (a, b) -> a.zip(b).flatMap { (x, y) -> listOf(x, y) }.joinToString("") + if (a.length > b.length) a.last() else "" } } }

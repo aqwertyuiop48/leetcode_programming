@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3065 lang=kotlin */
-class Solution { fun minOperations(nums: IntArray, k: Int): Int = nums.count { it < k } }
+/* @lc app=leetcode id=3065 lang=kotlin */ class Solution { fun minOperations(nums: IntArray, k: Int): Int = nums.count { it < k } }

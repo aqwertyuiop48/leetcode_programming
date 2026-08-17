@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1764 lang=kotlin */
-class Solution { fun canChoose(groups: Array<IntArray>, nums: IntArray): Boolean = generateSequence(0 to 0) { (g, n) -> if (g < groups.size) (n..nums.size - groups[g].size).firstOrNull { i -> groups[g].indices.all { j -> nums[i + j] == groups[g][j] } }?.let { i -> (g + 1) to (i + groups[g].size) } else null }.last().first == groups.size }
+/* @lc app=leetcode id=1764 lang=kotlin */ class Solution { fun canChoose(groups: Array<IntArray>, nums: IntArray): Boolean = generateSequence(0 to 0) { (g, n) -> if (g < groups.size) (n..nums.size - groups[g].size).firstOrNull { i -> groups[g].indices.all { j -> nums[i + j] == groups[g][j] } }?.let { i -> (g + 1) to (i + groups[g].size) } else null }.last().first == groups.size }

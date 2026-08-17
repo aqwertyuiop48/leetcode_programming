@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2411 lang=kotlin */
-class Solution { fun smallestSubarrays(nums: IntArray): IntArray = IntArray(30) { -1 }.let { last -> nums.indices.reversed().map { i -> (0..29).forEach { b -> if ((nums[i] shr b) and 1 == 1) last[b] = i }.run { maxOf(1, (0..29).fold(i) { acc, b -> maxOf(acc, last[b]) } - i + 1) } }.reversed().toIntArray() } }
+/* @lc app=leetcode id=2411 lang=kotlin */ class Solution { fun smallestSubarrays(nums: IntArray): IntArray = IntArray(30) { -1 }.let { last -> nums.indices.reversed().map { i -> (0..29).forEach { b -> if ((nums[i] shr b) and 1 == 1) last[b] = i }.run { maxOf(1, (0..29).fold(i) { acc, b -> maxOf(acc, last[b]) } - i + 1) } }.reversed().toIntArray() } }

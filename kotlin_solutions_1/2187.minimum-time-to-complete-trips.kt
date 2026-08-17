@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2187 lang=kotlin */
-class Solution { fun minimumTime(time: IntArray, totalTrips: Int): Long = longArrayOf(1L, time.minOrNull()!!.toLong() * totalTrips, 0L).also { v -> while (v[0] <= v[1]) (v[0] + (v[1] - v[0]) / 2).let { m -> if (time.fold(0L) { a, t -> a + m / t } >= totalTrips.toLong()) v[2] = m.also { v[1] = m - 1 } else v[0] = m + 1 } }.let { it[2] } }
+/* @lc app=leetcode id=2187 lang=kotlin */ class Solution { fun minimumTime(time: IntArray, totalTrips: Int): Long = longArrayOf(1L, time.minOrNull()!!.toLong() * totalTrips, 0L).also { v -> while (v[0] <= v[1]) (v[0] + (v[1] - v[0]) / 2).let { m -> if (time.fold(0L) { a, t -> a + m / t } >= totalTrips.toLong()) v[2] = m.also { v[1] = m - 1 } else v[0] = m + 1 } }.let { it[2] } }

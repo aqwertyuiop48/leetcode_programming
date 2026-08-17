@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2466 lang=kotlin */
-class Solution { fun countGoodStrings(low: Int, high: Int, zero: Int, one: Int): Int = IntArray(high + 1).apply { this[0] = 1 }.let { dp -> (1..high).fold(0) { acc, i -> ((if (i >= zero) dp[i - zero] else 0) + (if (i >= one) dp[i - one] else 0)).let { dp[i] = it % 1000000007 }.run { if (i >= low) (acc + dp[i]) % 1000000007 else acc } } } }
+/* @lc app=leetcode id=2466 lang=kotlin */ class Solution { fun countGoodStrings(low: Int, high: Int, zero: Int, one: Int): Int = IntArray(high + 1).apply { this[0] = 1 }.let { dp -> (1..high).fold(0) { acc, i -> ((if (i >= zero) dp[i - zero] else 0) + (if (i >= one) dp[i - one] else 0)).let { dp[i] = it % 1000000007 }.run { if (i >= low) (acc + dp[i]) % 1000000007 else acc } } } }

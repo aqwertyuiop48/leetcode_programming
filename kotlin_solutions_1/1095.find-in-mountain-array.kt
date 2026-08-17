@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1095 lang=kotlin
- *
- * [1095] Find in Mountain Array
- */
-
-class Solution {
-    fun findInMountainArray(target: Int, mountainArr: MountainArray): Int = mountainArr.length().let { n -> intArrayOf(0, n - 1).also { v -> while (v[0] < v[1]) ((v[0] + v[1]) / 2).let { m -> if (mountainArr.get(m) < mountainArr.get(m + 1)) v[0] = m + 1 else v[1] = m } }[0].let { peak -> intArrayOf(0, peak, -1).also { v -> while (v[0] <= v[1] && v[2] == -1) ((v[0] + v[1]) / 2).let { m -> mountainArr.get(m).let { valM -> if (valM == target) v[2] = m else if (valM < target) v[0] = m + 1 else v[1] = m - 1 } } }[2].let { leftRes -> if (leftRes != -1) leftRes else intArrayOf(peak, n - 1, -1).also { v -> while (v[0] <= v[1] && v[2] == -1) ((v[0] + v[1]) / 2).let { m -> mountainArr.get(m).let { valM -> if (valM == target) v[2] = m else if (valM > target) v[0] = m + 1 else v[1] = m - 1 } } }[2] } } }
-}
+/* * @lc app=leetcode id=1095 lang=kotlin * * [1095] Find in Mountain Array */ class Solution { fun findInMountainArray(target: Int, mountainArr: MountainArray): Int = mountainArr.length().let { n -> intArrayOf(0, n - 1).also { v -> while (v[0] < v[1]) ((v[0] + v[1]) / 2).let { m -> if (mountainArr.get(m) < mountainArr.get(m + 1)) v[0] = m + 1 else v[1] = m } }[0].let { peak -> intArrayOf(0, peak, -1).also { v -> while (v[0] <= v[1] && v[2] == -1) ((v[0] + v[1]) / 2).let { m -> mountainArr.get(m).let { valM -> if (valM == target) v[2] = m else if (valM < target) v[0] = m + 1 else v[1] = m - 1 } } }[2].let { leftRes -> if (leftRes != -1) leftRes else intArrayOf(peak, n - 1, -1).also { v -> while (v[0] <= v[1] && v[2] == -1) ((v[0] + v[1]) / 2).let { m -> mountainArr.get(m).let { valM -> if (valM == target) v[2] = m else if (valM > target) v[0] = m + 1 else v[1] = m - 1 } } }[2] } } } }

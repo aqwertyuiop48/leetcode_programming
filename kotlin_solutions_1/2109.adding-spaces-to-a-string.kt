@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2109 lang=kotlin */
-class Solution { fun addSpaces(s: String, spaces: IntArray): String = (spaces.asSequence() + s.length).fold(0 to StringBuilder()) { (last, sb), curr -> curr to sb.append(s.substring(last, curr)).apply { if (curr < s.length) append(" ") } }.second.toString() }
+/* @lc app=leetcode id=2109 lang=kotlin */ class Solution { fun addSpaces(s: String, spaces: IntArray): String = (spaces.asSequence() + s.length).fold(0 to StringBuilder()) { (last, sb), curr -> curr to sb.append(s.substring(last, curr)).apply { if (curr < s.length) append(" ") } }.second.toString() }

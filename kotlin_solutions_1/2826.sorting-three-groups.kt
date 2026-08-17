@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2826 lang=kotlin */
-class Solution { fun minimumOperations(nums: List<Int>): Int = nums.fold(IntArray(4)) { dp, v -> dp.apply { if (v == 1) dp[1] = dp[1] + 1 else if (v == 2) dp[2] = maxOf(dp[1], dp[2]) + 1 else dp[3] = maxOf(dp[1], dp[2], dp[3]) + 1 } }.let { dp -> nums.size - maxOf(dp[1], dp[2], dp[3]) } }
+/* @lc app=leetcode id=2826 lang=kotlin */ class Solution { fun minimumOperations(nums: List<Int>): Int = nums.fold(IntArray(4)) { dp, v -> dp.apply { if (v == 1) dp[1] = dp[1] + 1 else if (v == 2) dp[2] = maxOf(dp[1], dp[2]) + 1 else dp[3] = maxOf(dp[1], dp[2], dp[3]) + 1 } }.let { dp -> nums.size - maxOf(dp[1], dp[2], dp[3]) } }

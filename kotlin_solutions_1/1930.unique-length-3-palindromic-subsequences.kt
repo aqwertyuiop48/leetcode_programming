@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1930 lang=kotlin */
-class Solution { fun countPalindromicSubsequence(s: String): Int = s.toSet().sumOf { c -> s.indexOf(c).let { first -> s.lastIndexOf(c).let { last -> if (last > first + 1) s.substring(first + 1, last).toSet().size else 0 } } } }
+/* @lc app=leetcode id=1930 lang=kotlin */ class Solution { fun countPalindromicSubsequence(s: String): Int = s.toSet().sumOf { c -> s.indexOf(c).let { first -> s.lastIndexOf(c).let { last -> if (last > first + 1) s.substring(first + 1, last).toSet().size else 0 } } } }

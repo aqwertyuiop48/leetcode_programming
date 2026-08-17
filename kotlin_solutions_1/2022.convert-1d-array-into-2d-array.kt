@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2022 lang=kotlin */
-class Solution { fun construct2DArray(original: IntArray, m: Int, n: Int) = if (original.size != m * n) emptyArray<IntArray>() else Array(m) { i -> original.copyOfRange(i * n, (i + 1) * n) } }
+/* @lc app=leetcode id=2022 lang=kotlin */ class Solution { fun construct2DArray(original: IntArray, m: Int, n: Int) = if (original.size != m * n) emptyArray<IntArray>() else Array(m) { i -> original.copyOfRange(i * n, (i + 1) * n) } }

@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1781 lang=kotlin
- *
- * [1781] Sum of Beauty of All Substrings
- */
-class Solution { fun beautySum(s: String): Int = s.indices.sumOf { i -> IntArray(26).let { freq -> (i until s.length).sumOf { j -> freq.apply { this[s[j] - 'a']++ }.filter { it > 0 }.let { (it.maxOrNull() ?: 0) - (it.minOrNull() ?: 0) } } } } }
+/* * @lc app=leetcode id=1781 lang=kotlin * * [1781] Sum of Beauty of All Substrings */ class Solution { fun beautySum(s: String): Int = s.indices.sumOf { i -> IntArray(26).let { freq -> (i until s.length).sumOf { j -> freq.apply { this[s[j] - 'a']++ }.filter { it > 0 }.let { (it.maxOrNull() ?: 0) - (it.minOrNull() ?: 0) } } } } }

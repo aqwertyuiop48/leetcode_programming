@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1630 lang=kotlin
- *
- * [1630] Arithmetic Subarrays
- */
-
-class Solution { fun checkArithmeticSubarrays(nums: IntArray, l: IntArray, r: IntArray): List<Boolean> = l.indices.map { i -> nums.copyOfRange(l[i], r[i] + 1).sorted().let { sub -> (2 until sub.size).all { j -> sub[j] - sub[j - 1] == sub[1] - sub[0] } } } }
+/* * @lc app=leetcode id=1630 lang=kotlin * * [1630] Arithmetic Subarrays */ class Solution { fun checkArithmeticSubarrays(nums: IntArray, l: IntArray, r: IntArray): List<Boolean> = l.indices.map { i -> nums.copyOfRange(l[i], r[i] + 1).sorted().let { sub -> (2 until sub.size).all { j -> sub[j] - sub[j - 1] == sub[1] - sub[0] } } } }

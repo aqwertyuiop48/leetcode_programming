@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=920 lang=kotlin
- *
- * [920] Number of Music Playlists
- */
-
-class Solution {
-    fun numMusicPlaylists(n: Int, goal: Int, k: Int): Int = LongArray(n + 1).apply { this[0] = 1L }.also { dp -> (1..goal).forEach { (n downTo 1).forEach { j -> dp[j] = (dp[j - 1] * (n - j + 1) + dp[j] * (if (j > k) j - k else 0)) % 1000000007L }.also { dp[0] = 0L } } }[n].toInt()
-}
+/* * @lc app=leetcode id=920 lang=kotlin * * [920] Number of Music Playlists */ class Solution { fun numMusicPlaylists(n: Int, goal: Int, k: Int): Int = LongArray(n + 1).apply { this[0] = 1L }.also { dp -> (1..goal).forEach { (n downTo 1).forEach { j -> dp[j] = (dp[j - 1] * (n - j + 1) + dp[j] * (if (j > k) j - k else 0)) % 1000000007L }.also { dp[0] = 0L } } }[n].toInt() }

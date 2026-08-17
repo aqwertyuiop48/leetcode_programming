@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1617 lang=kotlin
- *
- * [1617] Count Subtrees With Max Distance Between Cities
- */
-
-class Solution {
-    fun countSubgraphsForEachDiameter(n: Int, edges: Array<IntArray>): IntArray = Array(n) { i -> IntArray(n) { j -> if (i == j) 0 else 1000 } }.also { d -> edges.forEach { (u, v) -> d[u - 1][v - 1] = 1.also { d[v - 1][u - 1] = 1 } } }.also { d -> (0 until n).forEach { k -> (0 until n).forEach { i -> (0 until n).forEach { j -> d[i][j] = minOf(d[i][j], d[i][k] + d[k][j]) } } } }.let { d -> IntArray(n - 1).also { ans -> (1 until (1 shl n)).forEach { m -> (0 until n).filter { (m and (1 shl it)) != 0 }.let { cities -> if (cities.size >= 2 && edges.count { (u, v) -> (m and (1 shl (u - 1))) != 0 && (m and (1 shl (v - 1))) != 0 } == cities.size - 1) cities.flatMap { i -> cities.map { j -> d[i][j] } }.maxOrNull()?.let { maxD -> if (maxD > 0) ans[maxD - 1]++ } } } } }
-}
+/* * @lc app=leetcode id=1617 lang=kotlin * * [1617] Count Subtrees With Max Distance Between Cities */ class Solution { fun countSubgraphsForEachDiameter(n: Int, edges: Array<IntArray>): IntArray = Array(n) { i -> IntArray(n) { j -> if (i == j) 0 else 1000 } }.also { d -> edges.forEach { (u, v) -> d[u - 1][v - 1] = 1.also { d[v - 1][u - 1] = 1 } } }.also { d -> (0 until n).forEach { k -> (0 until n).forEach { i -> (0 until n).forEach { j -> d[i][j] = minOf(d[i][j], d[i][k] + d[k][j]) } } } }.let { d -> IntArray(n - 1).also { ans -> (1 until (1 shl n)).forEach { m -> (0 until n).filter { (m and (1 shl it)) != 0 }.let { cities -> if (cities.size >= 2 && edges.count { (u, v) -> (m and (1 shl (u - 1))) != 0 && (m and (1 shl (v - 1))) != 0 } == cities.size - 1) cities.flatMap { i -> cities.map { j -> d[i][j] } }.maxOrNull()?.let { maxD -> if (maxD > 0) ans[maxD - 1]++ } } } } } }

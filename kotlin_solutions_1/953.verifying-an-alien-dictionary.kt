@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=953 lang=kotlin
- *
- * [953] Verifying an Alien Dictionary
- */
-
-class Solution { fun isAlienSorted(words: Array<String>, order: String): Boolean = (0 until words.size - 1).all { i -> (0 until minOf(words[i].length, words[i + 1].length)).asSequence().map { j -> intArrayOf(order.indexOf(words[i][j]), order.indexOf(words[i + 1][j])) }.firstOrNull { it[0] != it[1] }?.let { it[0] < it[1] } ?: (words[i].length <= words[i + 1].length) } }
+/* * @lc app=leetcode id=953 lang=kotlin * * [953] Verifying an Alien Dictionary */ class Solution { fun isAlienSorted(words: Array<String>, order: String): Boolean = (0 until words.size - 1).all { i -> (0 until minOf(words[i].length, words[i + 1].length)).asSequence().map { j -> intArrayOf(order.indexOf(words[i][j]), order.indexOf(words[i + 1][j])) }.firstOrNull { it[0] != it[1] }?.let { it[0] < it[1] } ?: (words[i].length <= words[i + 1].length) } }

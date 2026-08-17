@@ -1,4 +1,1 @@
-/* @lc app=leetcode id=1689 lang=kotlin */
-class Solution {
-    fun minPartitions(n: String): Int = n.maxOf { it - '0' }
-}
+/* @lc app=leetcode id=1689 lang=kotlin */ class Solution { fun minPartitions(n: String): Int = n.maxOf { it - '0' } }

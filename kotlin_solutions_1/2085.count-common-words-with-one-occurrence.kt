@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2085 lang=kotlin */
-class Solution { fun countWords(words1: Array<String>, words2: Array<String>): Int = words1.groupingBy { it }.eachCount().filter { it.value == 1 }.keys.let { c1 -> words2.groupingBy { it }.eachCount().let { c2 -> c1.count { c2[it] == 1 } } } }
+/* @lc app=leetcode id=2085 lang=kotlin */ class Solution { fun countWords(words1: Array<String>, words2: Array<String>): Int = words1.groupingBy { it }.eachCount().filter { it.value == 1 }.keys.let { c1 -> words2.groupingBy { it }.eachCount().let { c2 -> c1.count { c2[it] == 1 } } } }

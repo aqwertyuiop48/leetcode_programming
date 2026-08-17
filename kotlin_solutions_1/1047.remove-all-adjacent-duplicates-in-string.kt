@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1047 lang=kotlin
- *
- * [1047] Remove All Adjacent Duplicates In String
- */
-
-class Solution { fun removeDuplicates(s: String): String = s.fold(StringBuilder()) { sb, c -> if (sb.isNotEmpty() && sb.last() == c) sb.deleteCharAt(sb.length - 1) else sb.append(c) }.toString() }
+/* * @lc app=leetcode id=1047 lang=kotlin * * [1047] Remove All Adjacent Duplicates In String */ class Solution { fun removeDuplicates(s: String): String = s.fold(StringBuilder()) { sb, c -> if (sb.isNotEmpty() && sb.last() == c) sb.deleteCharAt(sb.length - 1) else sb.append(c) }.toString() }

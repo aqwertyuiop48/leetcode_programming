@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3016 lang=kotlin */
-class Solution { fun minimumPushes(word: String): Int = word.groupingBy { it }.eachCount().values.sortedDescending().foldIndexed(0) { i, acc, count -> acc + count * (i / 8 + 1) } }
+/* @lc app=leetcode id=3016 lang=kotlin */ class Solution { fun minimumPushes(word: String): Int = word.groupingBy { it }.eachCount().values.sortedDescending().foldIndexed(0) { i, acc, count -> acc + count * (i / 8 + 1) } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2396 lang=kotlin */
-class Solution { fun isStrictlyPalindromic(n: Int): Boolean = false }
+/* @lc app=leetcode id=2396 lang=kotlin */ class Solution { fun isStrictlyPalindromic(n: Int): Boolean = false }

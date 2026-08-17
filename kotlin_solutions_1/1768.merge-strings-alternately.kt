@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1768 lang=kotlin */
-class Solution { fun mergeAlternately(word1: String, word2: String): String = (0 until maxOf(word1.length, word2.length)).joinToString("") { i -> (word1.getOrNull(i)?.toString() ?: "") + (word2.getOrNull(i)?.toString() ?: "") } }
+/* @lc app=leetcode id=1768 lang=kotlin */ class Solution { fun mergeAlternately(word1: String, word2: String): String = (0 until maxOf(word1.length, word2.length)).joinToString("") { i -> (word1.getOrNull(i)?.toString() ?: "") + (word2.getOrNull(i)?.toString() ?: "") } }

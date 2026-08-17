@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3154 lang=kotlin
- *
- * [3154] Find Number of Ways to Reach the K-th Stair
- */
-
-class Solution { fun waysToReachStair(k: Int): Int = (0..30).sumOf { j -> ((1 shl j) - k).let { d -> if (d in 0..j + 1) (0 until d).fold(1L) { acc, i -> acc * (j + 1 - i) / (i + 1) }.toInt() else 0 } } }
+/* * @lc app=leetcode id=3154 lang=kotlin * * [3154] Find Number of Ways to Reach the K-th Stair */ class Solution { fun waysToReachStair(k: Int): Int = (0..30).sumOf { j -> ((1 shl j) - k).let { d -> if (d in 0..j + 1) (0 until d).fold(1L) { acc, i -> acc * (j + 1 - i) / (i + 1) }.toInt() else 0 } } }

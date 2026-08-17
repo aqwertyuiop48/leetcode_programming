@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2902 lang=kotlin
- *
- * [2902] Count of Sub-Multisets With Bounded Sum
- */
-
-class Solution {
-    fun countSubMultisets(nums: List<Int>, l: Int, r: Int): Int = LongArray(r + 1).apply { this[0] = 1L }.let { dp -> IntArray(r + 1).apply { nums.forEach { if (it <= r) this[it]++ } }.let { freq -> (1..r).filter { freq[it] > 0 }.forEach { num -> dp.clone().let { pSum -> (num..r).forEach { i -> pSum[i] = (pSum[i] + pSum[i - num]) % 1000000007L }.also { (0..r).forEach { i -> dp[i] = (pSum[i] - (if (i >= (freq[num] + 1) * num) pSum[i - (freq[num] + 1) * num] else 0L) + 1000000007L) % 1000000007L } } } }.let { (l..r).fold(0L) { acc, i -> (acc + dp[i]) % 1000000007L }.let { ans -> ((ans * (freq[0] + 1)) % 1000000007L).toInt() } } } }
-}
+/* * @lc app=leetcode id=2902 lang=kotlin * * [2902] Count of Sub-Multisets With Bounded Sum */ class Solution { fun countSubMultisets(nums: List<Int>, l: Int, r: Int): Int = LongArray(r + 1).apply { this[0] = 1L }.let { dp -> IntArray(r + 1).apply { nums.forEach { if (it <= r) this[it]++ } }.let { freq -> (1..r).filter { freq[it] > 0 }.forEach { num -> dp.clone().let { pSum -> (num..r).forEach { i -> pSum[i] = (pSum[i] + pSum[i - num]) % 1000000007L }.also { (0..r).forEach { i -> dp[i] = (pSum[i] - (if (i >= (freq[num] + 1) * num) pSum[i - (freq[num] + 1) * num] else 0L) + 1000000007L) % 1000000007L } } } }.let { (l..r).fold(0L) { acc, i -> (acc + dp[i]) % 1000000007L }.let { ans -> ((ans * (freq[0] + 1)) % 1000000007L).toInt() } } } } }

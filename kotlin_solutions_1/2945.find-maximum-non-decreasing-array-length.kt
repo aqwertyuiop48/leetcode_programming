@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2945 lang=kotlin
- *
- * [2945] Find Maximum Non-decreasing Array Length
- */
-
-class Solution {
-    fun findMaximumLength(A: IntArray): Int = LongArray(A.size + 1).also { acc -> A.indices.forEach { i -> acc[i + 1] = acc[i] + A[i] } }.let { acc -> IntArray(A.size + 1).let { dp -> IntArray(A.size + 2).let { pre -> (1..A.size).fold(0) { mx, j -> maxOf(mx, pre[j]).also { i -> dp[j] = (dp[i] + 1).also { acc.binarySearch(2 * acc[j] - acc[i]).let { if (it < 0) -it - 1 else it }.let { nxt -> if (nxt <= A.size) pre[nxt] = maxOf(pre[nxt], j) } } } }.let { dp[A.size] } } } }
-}
+/* * @lc app=leetcode id=2945 lang=kotlin * * [2945] Find Maximum Non-decreasing Array Length */ class Solution { fun findMaximumLength(A: IntArray): Int = LongArray(A.size + 1).also { acc -> A.indices.forEach { i -> acc[i + 1] = acc[i] + A[i] } }.let { acc -> IntArray(A.size + 1).let { dp -> IntArray(A.size + 2).let { pre -> (1..A.size).fold(0) { mx, j -> maxOf(mx, pre[j]).also { i -> dp[j] = (dp[i] + 1).also { acc.binarySearch(2 * acc[j] - acc[i]).let { if (it < 0) -it - 1 else it }.let { nxt -> if (nxt <= A.size) pre[nxt] = maxOf(pre[nxt], j) } } } }.let { dp[A.size] } } } } }

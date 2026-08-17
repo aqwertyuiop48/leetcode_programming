@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2684 lang=kotlin */
-class Solution { fun maxMoves(grid: Array<IntArray>): Int = (1 until grid[0].size).fold(grid.indices.toSet() to 0) { (reachable, maxCol), c -> reachable.flatMap { r -> listOf(r - 1, r, r + 1).filter { nr -> nr in grid.indices && grid[nr][c] > grid[r][c - 1] } }.toSet().let { next -> next to if (next.isNotEmpty()) c else maxCol } }.second }
+/* @lc app=leetcode id=2684 lang=kotlin */ class Solution { fun maxMoves(grid: Array<IntArray>): Int = (1 until grid[0].size).fold(grid.indices.toSet() to 0) { (reachable, maxCol), c -> reachable.flatMap { r -> listOf(r - 1, r, r + 1).filter { nr -> nr in grid.indices && grid[nr][c] > grid[r][c - 1] } }.toSet().let { next -> next to if (next.isNotEmpty()) c else maxCol } }.second }

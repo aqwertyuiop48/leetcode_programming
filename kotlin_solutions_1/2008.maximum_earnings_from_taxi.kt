@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2008 lang=kotlin */
-class Solution { fun maxTaxiEarnings(n: Int, rides: Array<IntArray>): Long = LongArray(n + 1).let { dp -> rides.groupBy { it[1] }.let { map -> (1..n).forEach { i -> dp[i] = java.lang.Math.max(dp[i - 1], map[i]?.maxOf { r -> dp[r[0]] + r[1] - r[0] + r[2].toLong() } ?: 0L) } }.let { dp[n] } } }
+/* @lc app=leetcode id=2008 lang=kotlin */ class Solution { fun maxTaxiEarnings(n: Int, rides: Array<IntArray>): Long = LongArray(n + 1).let { dp -> rides.groupBy { it[1] }.let { map -> (1..n).forEach { i -> dp[i] = java.lang.Math.max(dp[i - 1], map[i]?.maxOf { r -> dp[r[0]] + r[1] - r[0] + r[2].toLong() } ?: 0L) } }.let { dp[n] } } }

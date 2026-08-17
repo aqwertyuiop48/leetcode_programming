@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2952 lang=kotlin
- *
- * [2952] Minimum Number of Coins to be Added
- */
-
-class Solution {
-    fun minimumAddedCoins(coins: IntArray, target: Int): Int = coins.sorted().let { sorted -> generateSequence(Triple(0L, 0, 0)) { (max, added, i) -> if (max >= target) null else if (i < sorted.size && sorted[i] <= max + 1) Triple(max + sorted[i], added, i + 1) else Triple(max * 2 + 1, added + 1, i) }.last().second }
-}
+/* * @lc app=leetcode id=2952 lang=kotlin * * [2952] Minimum Number of Coins to be Added */ class Solution { fun minimumAddedCoins(coins: IntArray, target: Int): Int = coins.sorted().let { sorted -> generateSequence(Triple(0L, 0, 0)) { (max, added, i) -> if (max >= target) null else if (i < sorted.size && sorted[i] <= max + 1) Triple(max + sorted[i], added, i + 1) else Triple(max * 2 + 1, added + 1, i) }.last().second } }

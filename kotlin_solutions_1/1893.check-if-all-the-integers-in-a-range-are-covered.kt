@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1893 lang=kotlin
- *
- * [1893] Check if All the Integers in a Range Are Covered
- */
-
-class Solution { fun isCovered(ranges: Array<IntArray>, left: Int, right: Int): Boolean = (left..right).all { i -> ranges.any { r -> i >= r[0] && i <= r[1] } } }
+/* * @lc app=leetcode id=1893 lang=kotlin * * [1893] Check if All the Integers in a Range Are Covered */ class Solution { fun isCovered(ranges: Array<IntArray>, left: Int, right: Int): Boolean = (left..right).all { i -> ranges.any { r -> i >= r[0] && i <= r[1] } } }

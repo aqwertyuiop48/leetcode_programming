@@ -1,4 +1,1 @@
-/* @lc app=leetcode id=2150 lang=kotlin */
-class Solution {
-    fun findLonely(nums: IntArray) = nums.toList().groupingBy { it }.eachCount().let { counts -> counts.filter { (k, v) -> v == 1 && !counts.containsKey(k - 1) && !counts.containsKey(k + 1) }.keys.toList() }
-}
+/* @lc app=leetcode id=2150 lang=kotlin */ class Solution { fun findLonely(nums: IntArray) = nums.toList().groupingBy { it }.eachCount().let { counts -> counts.filter { (k, v) -> v == 1 && !counts.containsKey(k - 1) && !counts.containsKey(k + 1) }.keys.toList() } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2125 lang=kotlin */
-class Solution { fun numberOfBeams(bank: Array<String>): Int = bank.map { row -> row.count { it == '1' } }.filter { it > 0 }.run { if (size < 2) 0 else zipWithNext { a, b -> a * b }.sum() } }
+/* @lc app=leetcode id=2125 lang=kotlin */ class Solution { fun numberOfBeams(bank: Array<String>): Int = bank.map { row -> row.count { it == '1' } }.filter { it > 0 }.run { if (size < 2) 0 else zipWithNext { a, b -> a * b }.sum() } }

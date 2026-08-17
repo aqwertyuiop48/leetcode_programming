@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1306 lang=kotlin
- *
- * [1306] Jump Game III
- */
-class Solution { fun canReach(arr: IntArray, start: Int): Boolean = DeepRecursiveFunction<Int, Boolean> { i -> i in arr.indices && arr[i] >= 0 && (arr[i] == 0 || arr[i].also { arr[i] = -1 }.let { v -> callRecursive(i + v) || callRecursive(i - v) }) }(start) }
+/* * @lc app=leetcode id=1306 lang=kotlin * * [1306] Jump Game III */ class Solution { fun canReach(arr: IntArray, start: Int): Boolean = DeepRecursiveFunction<Int, Boolean> { i -> i in arr.indices && arr[i] >= 0 && (arr[i] == 0 || arr[i].also { arr[i] = -1 }.let { v -> callRecursive(i + v) || callRecursive(i - v) }) }(start) }

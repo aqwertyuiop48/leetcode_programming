@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=976 lang=kotlin */
-class Solution { fun largestPerimeter(nums: IntArray): Int = nums.sortedArrayDescending().let { s -> (0..s.size - 3).firstOrNull { s[it] < s[it + 1] + s[it + 2] }?.let { s[it] + s[it + 1] + s[it + 2] } ?: 0 } }
+/* @lc app=leetcode id=976 lang=kotlin */ class Solution { fun largestPerimeter(nums: IntArray): Int = nums.sortedArrayDescending().let { s -> (0..s.size - 3).firstOrNull { s[it] < s[it + 1] + s[it + 2] }?.let { s[it] + s[it + 1] + s[it + 2] } ?: 0 } }

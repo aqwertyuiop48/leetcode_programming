@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1822 lang=kotlin
- *
- * [1822] Sign of the Product of an Array
- */
-
-class Solution { fun arraySign(nums: IntArray): Int = nums.fold(1) { acc, x -> acc * if (x > 0) 1 else if (x < 0) -1 else 0 } }
+/* * @lc app=leetcode id=1822 lang=kotlin * * [1822] Sign of the Product of an Array */ class Solution { fun arraySign(nums: IntArray): Int = nums.fold(1) { acc, x -> acc * if (x > 0) 1 else if (x < 0) -1 else 0 } }

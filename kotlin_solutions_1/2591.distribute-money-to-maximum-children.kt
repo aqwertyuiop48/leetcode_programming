@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2591 lang=kotlin */
-class Solution { fun distMoney(money: Int, children: Int): Int = if (money < children) -1 else (money > 8 * children).let { if (it) children - 1 else if (money == 8 * children) children else if (money == 8 * children - 4) children - 2 else (money - children) / 7 } }
+/* @lc app=leetcode id=2591 lang=kotlin */ class Solution { fun distMoney(money: Int, children: Int): Int = if (money < children) -1 else (money > 8 * children).let { if (it) children - 1 else if (money == 8 * children) children else if (money == 8 * children - 4) children - 2 else (money - children) / 7 } }

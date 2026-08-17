@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1560 lang=kotlin */
-class Solution { fun mostVisited(n: Int, rounds: IntArray): List<Int> = rounds.first().let { s -> rounds.last().let { e -> if (s <= e) (s..e).toList() else (1..e) + (s..n) } } }
+/* @lc app=leetcode id=1560 lang=kotlin */ class Solution { fun mostVisited(n: Int, rounds: IntArray): List<Int> = rounds.first().let { s -> rounds.last().let { e -> if (s <= e) (s..e).toList() else (1..e) + (s..n) } } }

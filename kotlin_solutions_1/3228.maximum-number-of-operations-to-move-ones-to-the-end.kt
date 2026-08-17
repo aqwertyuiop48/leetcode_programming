@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3228 lang=kotlin */
-class Solution { fun maxOperations(s: String): Int = s.fold(Triple(0, 0, ' ')) { (ans, ones, prev), c -> if (c == '1') Triple(ans, ones + 1, '1') else Triple(ans + if (prev == '1') ones else 0, ones, '0') }.first }
+/* @lc app=leetcode id=3228 lang=kotlin */ class Solution { fun maxOperations(s: String): Int = s.fold(Triple(0, 0, ' ')) { (ans, ones, prev), c -> if (c == '1') Triple(ans, ones + 1, '1') else Triple(ans + if (prev == '1') ones else 0, ones, '0') }.first }

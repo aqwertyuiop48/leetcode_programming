@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3028 lang=kotlin */
-class Solution { fun returnToBoundaryCount(nums: IntArray): Int = nums.fold(0 to 0) { (pos, cnt), x -> (pos + x).let { newPos -> newPos to (cnt + if (newPos == 0) 1 else 0) } }.second }
+/* @lc app=leetcode id=3028 lang=kotlin */ class Solution { fun returnToBoundaryCount(nums: IntArray): Int = nums.fold(0 to 0) { (pos, cnt), x -> (pos + x).let { newPos -> newPos to (cnt + if (newPos == 0) 1 else 0) } }.second }

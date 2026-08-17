@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1409 lang=kotlin
- *
- * [1409] Queries on a Permutation With Key
- */
-
-class Solution { fun processQueries(queries: IntArray, m: Int): IntArray = (1..m).toMutableList().let { p -> queries.map { q -> p.indexOf(q).also { idx -> p.add(0, p.removeAt(idx)) } }.toIntArray() } }
+/* * @lc app=leetcode id=1409 lang=kotlin * * [1409] Queries on a Permutation With Key */ class Solution { fun processQueries(queries: IntArray, m: Int): IntArray = (1..m).toMutableList().let { p -> queries.map { q -> p.indexOf(q).also { idx -> p.add(0, p.removeAt(idx)) } }.toIntArray() } }

@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1311 lang=kotlin
- *
- * [1311] Get Watched Videos by Your Friends
- */
-class Solution { fun watchedVideosByFriends(watchedVideos: List<List<String>>, friends: Array<IntArray>, id: Int, level: Int): List<String> = (0 until level).fold(setOf(id) to setOf(id)) { (curr, vis), _ -> curr.flatMap { friends[it].asIterable() }.filter { it !in vis }.toSet().let { next -> next to (vis + next) } }.first.flatMap { watchedVideos[it] }.groupingBy { it }.eachCount().entries.sortedWith(compareBy({ it.value }, { it.key })).map { it.key } }
+/* * @lc app=leetcode id=1311 lang=kotlin * * [1311] Get Watched Videos by Your Friends */ class Solution { fun watchedVideosByFriends(watchedVideos: List<List<String>>, friends: Array<IntArray>, id: Int, level: Int): List<String> = (0 until level).fold(setOf(id) to setOf(id)) { (curr, vis), _ -> curr.flatMap { friends[it].asIterable() }.filter { it !in vis }.toSet().let { next -> next to (vis + next) } }.first.flatMap { watchedVideos[it] }.groupingBy { it }.eachCount().entries.sortedWith(compareBy({ it.value }, { it.key })).map { it.key } }

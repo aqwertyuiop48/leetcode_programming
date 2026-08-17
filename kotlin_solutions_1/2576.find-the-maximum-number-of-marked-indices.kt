@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2576 lang=kotlin */
-class Solution { fun maxNumOfMarkedIndices(nums: IntArray): Int = nums.sorted().let { s -> s.indices.filter { it >= (s.size + 1) / 2 }.fold(0) { i, j -> if (i < s.size / 2 && 2 * s[i] <= s[j]) i + 1 else i } * 2 } }
+/* @lc app=leetcode id=2576 lang=kotlin */ class Solution { fun maxNumOfMarkedIndices(nums: IntArray): Int = nums.sorted().let { s -> s.indices.filter { it >= (s.size + 1) / 2 }.fold(0) { i, j -> if (i < s.size / 2 && 2 * s[i] <= s[j]) i + 1 else i } * 2 } }

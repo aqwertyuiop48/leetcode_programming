@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2897 lang=kotlin
- *
- * [2897] Apply Operations on Array to Maximize Sum of Squares
- */
-
-class Solution {
-    fun maxSum(nums: List<Int>, k: Int): Int = IntArray(31).apply { nums.forEach { num -> (0..30).forEach { b -> if ((num and (1 shl b)) != 0) this[b]++ } } }.let { count -> (1..k).fold(0L) { sum, _ -> (0..30).fold(0L) { cur, b -> if (count[b] > 0) (cur or (1L shl b)).also { count[b]-- } else cur }.let { cur -> (sum + (cur % 1000000007L) * (cur % 1000000007L)) % 1000000007L } }.toInt() }
-}
+/* * @lc app=leetcode id=2897 lang=kotlin * * [2897] Apply Operations on Array to Maximize Sum of Squares */ class Solution { fun maxSum(nums: List<Int>, k: Int): Int = IntArray(31).apply { nums.forEach { num -> (0..30).forEach { b -> if ((num and (1 shl b)) != 0) this[b]++ } } }.let { count -> (1..k).fold(0L) { sum, _ -> (0..30).fold(0L) { cur, b -> if (count[b] > 0) (cur or (1L shl b)).also { count[b]-- } else cur }.let { cur -> (sum + (cur % 1000000007L) * (cur % 1000000007L)) % 1000000007L } }.toInt() } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1829 lang=kotlin
- *
- * [1829] Maximum XOR for Each Query
- */
-
-class Solution { fun getMaximumXor(nums: IntArray, maximumBit: Int): IntArray = nums.runningFold(0, Int::xor).drop(1).reversed().map { it xor ((1 shl maximumBit) - 1) }.toIntArray() }
+/* * @lc app=leetcode id=1829 lang=kotlin * * [1829] Maximum XOR for Each Query */ class Solution { fun getMaximumXor(nums: IntArray, maximumBit: Int): IntArray = nums.runningFold(0, Int::xor).drop(1).reversed().map { it xor ((1 shl maximumBit) - 1) }.toIntArray() }

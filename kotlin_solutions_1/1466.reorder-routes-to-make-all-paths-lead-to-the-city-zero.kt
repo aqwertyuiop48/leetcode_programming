@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1466 lang=kotlin
- *
- * [1466] Reorder Routes to Make All Paths Lead to the City Zero
- */
-
-class Solution {
-    fun minReorder(n: Int, connections: Array<IntArray>): Int = Array(n) { mutableListOf<Pair<Int, Int>>() }.also { g -> connections.forEach { (u, v) -> g[u].add(v to 1).also { g[v].add(u to 0) } } }.let { g -> DeepRecursiveFunction<Pair<Int, Int>, Int> { (u, p) -> g[u].sumOf { (v, cost) -> if (v == p) 0 else cost + callRecursive(v to u) } }.invoke(0 to -1) }
-}
+/* * @lc app=leetcode id=1466 lang=kotlin * * [1466] Reorder Routes to Make All Paths Lead to the City Zero */ class Solution { fun minReorder(n: Int, connections: Array<IntArray>): Int = Array(n) { mutableListOf<Pair<Int, Int>>() }.also { g -> connections.forEach { (u, v) -> g[u].add(v to 1).also { g[v].add(u to 0) } } }.let { g -> DeepRecursiveFunction<Pair<Int, Int>, Int> { (u, p) -> g[u].sumOf { (v, cost) -> if (v == p) 0 else cost + callRecursive(v to u) } }.invoke(0 to -1) } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=860 lang=kotlin
- *
- * [860] Lemonade Change
- */
-
-class Solution { fun lemonadeChange(bills: IntArray): Boolean = bills.fold(intArrayOf(0, 0, 1)) { s, b -> if (s[2] == 0) s else if (b == 5) intArrayOf(s[0] + 1, s[1], 1) else if (b == 10) (if (s[0] > 0) intArrayOf(s[0] - 1, s[1] + 1, 1) else intArrayOf(0, 0, 0)) else (if (s[1] > 0 && s[0] > 0) intArrayOf(s[0] - 1, s[1] - 1, 1) else if (s[0] >= 3) intArrayOf(s[0] - 3, s[1], 1) else intArrayOf(0, 0, 0)) }[2] == 1 }
+/* * @lc app=leetcode id=860 lang=kotlin * * [860] Lemonade Change */ class Solution { fun lemonadeChange(bills: IntArray): Boolean = bills.fold(intArrayOf(0, 0, 1)) { s, b -> if (s[2] == 0) s else if (b == 5) intArrayOf(s[0] + 1, s[1], 1) else if (b == 10) (if (s[0] > 0) intArrayOf(s[0] - 1, s[1] + 1, 1) else intArrayOf(0, 0, 0)) else (if (s[1] > 0 && s[0] > 0) intArrayOf(s[0] - 1, s[1] - 1, 1) else if (s[0] >= 3) intArrayOf(s[0] - 3, s[1], 1) else intArrayOf(0, 0, 0)) }[2] == 1 }

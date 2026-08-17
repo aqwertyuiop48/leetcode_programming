@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1333 lang=kotlin
- *
- * [1333] Filter Restaurants by Vegan-Friendly, Price and Distance
- */
-
-class Solution { fun filterRestaurants(restaurants: Array<IntArray>, veganFriendly: Int, maxPrice: Int, maxDistance: Int): List<Int> = restaurants.filter { (veganFriendly == 0 || it[2] == 1) && it[3] <= maxPrice && it[4] <= maxDistance }.sortedWith(compareByDescending<IntArray> { it[1] }.thenByDescending { it[0] }).map { it[0] } }
+/* * @lc app=leetcode id=1333 lang=kotlin * * [1333] Filter Restaurants by Vegan-Friendly, Price and Distance */ class Solution { fun filterRestaurants(restaurants: Array<IntArray>, veganFriendly: Int, maxPrice: Int, maxDistance: Int): List<Int> = restaurants.filter { (veganFriendly == 0 || it[2] == 1) && it[3] <= maxPrice && it[4] <= maxDistance }.sortedWith(compareByDescending<IntArray> { it[1] }.thenByDescending { it[0] }).map { it[0] } }

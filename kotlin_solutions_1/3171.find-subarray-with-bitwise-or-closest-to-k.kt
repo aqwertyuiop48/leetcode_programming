@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3171 lang=kotlin */
-class Solution { fun minimumDifference(nums: IntArray, k: Int): Int = nums.fold(setOf<Int>() to Int.MAX_VALUE) { (set, minDiff), num -> (set.map { it or num }.toSet() + num).let { nextSet -> nextSet to minOf(minDiff, nextSet.minOf { Math.abs(it - k) }) } }.second }
+/* @lc app=leetcode id=3171 lang=kotlin */ class Solution { fun minimumDifference(nums: IntArray, k: Int): Int = nums.fold(setOf<Int>() to Int.MAX_VALUE) { (set, minDiff), num -> (set.map { it or num }.toSet() + num).let { nextSet -> nextSet to minOf(minDiff, nextSet.minOf { Math.abs(it - k) }) } }.second }

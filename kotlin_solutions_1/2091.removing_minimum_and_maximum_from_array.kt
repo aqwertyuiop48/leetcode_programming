@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2091 lang=kotlin
- *
- * [2091] Removing Minimum and Maximum From Array
- */
-
-class Solution {
-    fun minimumDeletions(nums: IntArray): Int = nums.indices.minBy { nums[it] }.let { i -> nums.indices.maxBy { nums[it] }.let { j -> minOf(i, j).let { low -> maxOf(i, j).let { high -> minOf(high + 1, nums.size - low, low + 1 + nums.size - high) } } } }
-}
+/* * @lc app=leetcode id=2091 lang=kotlin * * [2091] Removing Minimum and Maximum From Array */ class Solution { fun minimumDeletions(nums: IntArray): Int = nums.indices.minBy { nums[it] }.let { i -> nums.indices.maxBy { nums[it] }.let { j -> minOf(i, j).let { low -> maxOf(i, j).let { high -> minOf(high + 1, nums.size - low, low + 1 + nums.size - high) } } } } }

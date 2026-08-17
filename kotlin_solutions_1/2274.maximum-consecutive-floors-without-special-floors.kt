@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2274 lang=kotlin */
-class Solution { fun maxConsecutive(bottom: Int, top: Int, special: IntArray): Int = special.sorted().let { s -> maxOf(s[0] - bottom, top - s.last(), (1 until s.size).maxOfOrNull { s[it] - s[it - 1] - 1 } ?: 0) } }
+/* @lc app=leetcode id=2274 lang=kotlin */ class Solution { fun maxConsecutive(bottom: Int, top: Int, special: IntArray): Int = special.sorted().let { s -> maxOf(s[0] - bottom, top - s.last(), (1 until s.size).maxOfOrNull { s[it] - s[it - 1] - 1 } ?: 0) } }

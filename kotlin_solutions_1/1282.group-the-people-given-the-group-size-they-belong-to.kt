@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1282 lang=kotlin
- *
- * [1282] Group the People Given the Group Size They Belong To
- */
-
-class Solution {
-    fun groupThePeople(groupSizes: IntArray): List<List<Int>> = groupSizes.indices.groupBy { groupSizes[it] }.flatMap { (sz, list) -> list.chunked(sz) }
-}
+/* * @lc app=leetcode id=1282 lang=kotlin * * [1282] Group the People Given the Group Size They Belong To */ class Solution { fun groupThePeople(groupSizes: IntArray): List<List<Int>> = groupSizes.indices.groupBy { groupSizes[it] }.flatMap { (sz, list) -> list.chunked(sz) } }

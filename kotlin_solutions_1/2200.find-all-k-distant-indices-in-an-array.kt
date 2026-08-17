@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2200 lang=kotlin */
-class Solution { fun findKDistantIndices(nums: IntArray, key: Int, k: Int): List<Int> = nums.indices.filter { i -> (maxOf(0, i - k)..minOf(nums.size - 1, i + k)).any { nums[it] == key } } }
+/* @lc app=leetcode id=2200 lang=kotlin */ class Solution { fun findKDistantIndices(nums: IntArray, key: Int, k: Int): List<Int> = nums.indices.filter { i -> (maxOf(0, i - k)..minOf(nums.size - 1, i + k)).any { nums[it] == key } } }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3066 lang=kotlin */
-class Solution { fun minOperations(nums: IntArray, k: Int): Int = java.util.PriorityQueue<Long>().apply { nums.forEach { add(it.toLong()) } }.let { pq -> generateSequence { if (pq.size >= 2 && pq.peek() < k.toLong()) pq.poll().let { x -> pq.poll().let { y -> pq.add(minOf(x, y) * 2 + maxOf(x, y)) } } else null }.count() } }
+/* @lc app=leetcode id=3066 lang=kotlin */ class Solution { fun minOperations(nums: IntArray, k: Int): Int = java.util.PriorityQueue<Long>().apply { nums.forEach { add(it.toLong()) } }.let { pq -> generateSequence { if (pq.size >= 2 && pq.peek() < k.toLong()) pq.poll().let { x -> pq.poll().let { y -> pq.add(minOf(x, y) * 2 + maxOf(x, y)) } } else null }.count() } }

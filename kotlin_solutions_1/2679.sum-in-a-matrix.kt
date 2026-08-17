@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2679 lang=kotlin */
-class Solution { fun matrixSum(nums: Array<IntArray>) = nums.onEach { it.sort() }.let { sorted -> (0 until nums[0].size).sumOf { col -> sorted.maxOf { row -> row[col] } } } }
+/* @lc app=leetcode id=2679 lang=kotlin */ class Solution { fun matrixSum(nums: Array<IntArray>) = nums.onEach { it.sort() }.let { sorted -> (0 until nums[0].size).sumOf { col -> sorted.maxOf { row -> row[col] } } } }

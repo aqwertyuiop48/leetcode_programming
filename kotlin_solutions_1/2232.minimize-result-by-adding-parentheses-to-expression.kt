@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2232 lang=kotlin
- *
- * [2232] Minimize Result by Adding Parentheses to Expression
- */
-
-class Solution {
-    fun minimizeResult(exp: String) = exp.split("+").let { (a, b) -> a.indices.flatMap { i -> (1..b.length).map { j -> Triple(i, j, (a.substring(0, i).ifEmpty { "1" }.toLong()) * (a.substring(i).toLong() + b.substring(0, j).toLong()) * (b.substring(j).ifEmpty { "1" }.toLong())) } }.minByOrNull { it.third }!!.let { "${a.substring(0, it.first)}(${a.substring(it.first)}+${b.substring(0, it.second)})${b.substring(it.second)}" } }
-}
+/* * @lc app=leetcode id=2232 lang=kotlin * * [2232] Minimize Result by Adding Parentheses to Expression */ class Solution { fun minimizeResult(exp: String) = exp.split("+").let { (a, b) -> a.indices.flatMap { i -> (1..b.length).map { j -> Triple(i, j, (a.substring(0, i).ifEmpty { "1" }.toLong()) * (a.substring(i).toLong() + b.substring(0, j).toLong()) * (b.substring(j).ifEmpty { "1" }.toLong())) } }.minByOrNull { it.third }!!.let { "${a.substring(0, it.first)}(${a.substring(it.first)}+${b.substring(0, it.second)})${b.substring(it.second)}" } } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3142 lang=kotlin
- *
- * [3142] Check if Grid Satisfies Conditions
- */
-
-class Solution { fun satisfiesConditions(grid: Array<IntArray>): Boolean = grid.indices.all { r -> grid[0].indices.all { c -> (r + 1 >= grid.size || grid[r][c] == grid[r + 1][c]) && (c + 1 >= grid[0].size || grid[r][c] != grid[r][c + 1]) } } }
+/* * @lc app=leetcode id=3142 lang=kotlin * * [3142] Check if Grid Satisfies Conditions */ class Solution { fun satisfiesConditions(grid: Array<IntArray>): Boolean = grid.indices.all { r -> grid[0].indices.all { c -> (r + 1 >= grid.size || grid[r][c] == grid[r + 1][c]) && (c + 1 >= grid[0].size || grid[r][c] != grid[r][c + 1]) } } }

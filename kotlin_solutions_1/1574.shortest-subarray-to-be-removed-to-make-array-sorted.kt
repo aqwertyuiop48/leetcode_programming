@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1574 lang=kotlin
- *
- * [1574] Shortest Subarray to be Removed to Make Array Sorted
- */
-
-class Solution {
-    fun findLengthOfShortestSubarray(arr: IntArray): Int = (0 until arr.size - 1).takeWhile { arr[it] <= arr[it + 1] }.size.let { left -> if (left == arr.size - 1) 0 else (arr.size - 1 - (arr.size - 1 downTo 1).takeWhile { arr[it - 1] <= arr[it] }.size).let { right -> (0..left).fold(right to minOf(arr.size - 1 - left, right)) { (j, minLen), i -> generateSequence(j) { it + 1 }.first { it >= arr.size || arr[it] >= arr[i] }.let { newJ -> newJ to minOf(minLen, newJ - i - 1) } }.second } }
-}
+/* * @lc app=leetcode id=1574 lang=kotlin * * [1574] Shortest Subarray to be Removed to Make Array Sorted */ class Solution { fun findLengthOfShortestSubarray(arr: IntArray): Int = (0 until arr.size - 1).takeWhile { arr[it] <= arr[it + 1] }.size.let { left -> if (left == arr.size - 1) 0 else (arr.size - 1 - (arr.size - 1 downTo 1).takeWhile { arr[it - 1] <= arr[it] }.size).let { right -> (0..left).fold(right to minOf(arr.size - 1 - left, right)) { (j, minLen), i -> generateSequence(j) { it + 1 }.first { it >= arr.size || arr[it] >= arr[i] }.let { newJ -> newJ to minOf(minLen, newJ - i - 1) } }.second } } }

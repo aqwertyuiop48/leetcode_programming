@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1546 lang=kotlin
- *
- * [1546] Maximum Number of Non-Overlapping Subarrays With Sum Equals Target
- */
-
-class Solution { fun maxNonOverlapping(nums: IntArray, target: Int): Int = nums.fold(Triple(0, 0, mutableSetOf(0))) { (count, sum, seen), num -> (sum + num).let { newSum -> if (seen.contains(newSum - target)) Triple(count + 1, 0, mutableSetOf(0)) else Triple(count, newSum, seen.also { it.add(newSum) }) } }.first }
+/* * @lc app=leetcode id=1546 lang=kotlin * * [1546] Maximum Number of Non-Overlapping Subarrays With Sum Equals Target */ class Solution { fun maxNonOverlapping(nums: IntArray, target: Int): Int = nums.fold(Triple(0, 0, mutableSetOf(0))) { (count, sum, seen), num -> (sum + num).let { newSum -> if (seen.contains(newSum - target)) Triple(count + 1, 0, mutableSetOf(0)) else Triple(count, newSum, seen.also { it.add(newSum) }) } }.first }

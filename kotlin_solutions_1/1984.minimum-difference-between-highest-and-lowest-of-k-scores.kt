@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1984 lang=kotlin
- *
- * [1984] Minimum Difference Between Highest and Lowest of K Scores
- */
-
-class Solution { fun minimumDifference(nums: IntArray, k: Int): Int = if (k == 1) 0 else nums.sorted().let { s -> (0..s.size - k).minOf { s[it + k - 1] - s[it] } } }
+/* * @lc app=leetcode id=1984 lang=kotlin * * [1984] Minimum Difference Between Highest and Lowest of K Scores */ class Solution { fun minimumDifference(nums: IntArray, k: Int): Int = if (k == 1) 0 else nums.sorted().let { s -> (0..s.size - k).minOf { s[it + k - 1] - s[it] } } }

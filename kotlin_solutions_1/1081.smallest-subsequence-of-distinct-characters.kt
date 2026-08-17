@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1081 lang=kotlin
- *
- * [1081] Smallest Subsequence of Distinct Characters
- */
-
-class Solution {
-    fun smallestSubsequence(s: String): String = IntArray(26).also { last -> s.indices.forEach { i -> last.set(s[i] - 'a', i) } }.let { last -> BooleanArray(26).let { vis -> StringBuilder().also { sb -> s.forEachIndexed { i, c -> if (!vis[c - 'a']) { run { while (sb.isNotEmpty() && sb.last() > c && last[sb.last() - 'a'] > i) vis.set(sb.last() - 'a', false).also { sb.deleteAt(sb.length - 1) } }.run { vis.set(c - 'a', true) }.run { sb.append(c) } } } }.toString() } }
-}
+/* * @lc app=leetcode id=1081 lang=kotlin * * [1081] Smallest Subsequence of Distinct Characters */ class Solution { fun smallestSubsequence(s: String): String = IntArray(26).also { last -> s.indices.forEach { i -> last.set(s[i] - 'a', i) } }.let { last -> BooleanArray(26).let { vis -> StringBuilder().also { sb -> s.forEachIndexed { i, c -> if (!vis[c - 'a']) { run { while (sb.isNotEmpty() && sb.last() > c && last[sb.last() - 'a'] > i) vis.set(sb.last() - 'a', false).also { sb.deleteAt(sb.length - 1) } }.run { vis.set(c - 'a', true) }.run { sb.append(c) } } } }.toString() } } }

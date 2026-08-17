@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2207 lang=kotlin */
-class Solution { fun maximumSubsequenceCount(text: String, pattern: String): Long = text.fold(Triple(0L, 0L, 0L)) { acc, c -> Triple(if (c == pattern[0]) acc.first + 1 else acc.first, if (c == pattern[1]) acc.second + 1 else acc.second, if (c == pattern[1]) acc.third + acc.first else acc.third) }.let { it.third + maxOf(it.first, it.second) } }
+/* @lc app=leetcode id=2207 lang=kotlin */ class Solution { fun maximumSubsequenceCount(text: String, pattern: String): Long = text.fold(Triple(0L, 0L, 0L)) { acc, c -> Triple(if (c == pattern[0]) acc.first + 1 else acc.first, if (c == pattern[1]) acc.second + 1 else acc.second, if (c == pattern[1]) acc.third + acc.first else acc.third) }.let { it.third + maxOf(it.first, it.second) } }

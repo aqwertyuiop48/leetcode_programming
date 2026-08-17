@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1189 lang=kotlin
- *
- * [1189] Maximum Number of Balloons
- */
-
-class Solution {
-    fun maxNumberOfBalloons(text: String): Int = text.groupingBy { it }.eachCount().let { c -> minOf(c.getOrDefault('b', 0), c.getOrDefault('a', 0), c.getOrDefault('l', 0) / 2, c.getOrDefault('o', 0) / 2, c.getOrDefault('n', 0)) }
-}
+/* * @lc app=leetcode id=1189 lang=kotlin * * [1189] Maximum Number of Balloons */ class Solution { fun maxNumberOfBalloons(text: String): Int = text.groupingBy { it }.eachCount().let { c -> minOf(c.getOrDefault('b', 0), c.getOrDefault('a', 0), c.getOrDefault('l', 0) / 2, c.getOrDefault('o', 0) / 2, c.getOrDefault('n', 0)) } }

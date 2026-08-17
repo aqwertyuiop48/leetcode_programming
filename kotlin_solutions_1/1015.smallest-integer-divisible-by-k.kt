@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1015 lang=kotlin
- *
- * [1015] Smallest Integer Divisible by K
- */
-
-class Solution {
-    fun smallestRepunitDivByK(k: Int): Int = if (k % 2 == 0 || k % 5 == 0) -1 else (1..k).fold(0 to -1) { (rem, ans), len -> if (ans != -1) rem to ans else ((rem * 10 + 1) % k).let { nextRem -> nextRem to if (nextRem == 0) len else -1 } }.second
-}
+/* * @lc app=leetcode id=1015 lang=kotlin * * [1015] Smallest Integer Divisible by K */ class Solution { fun smallestRepunitDivByK(k: Int): Int = if (k % 2 == 0 || k % 5 == 0) -1 else (1..k).fold(0 to -1) { (rem, ans), len -> if (ans != -1) rem to ans else ((rem * 10 + 1) % k).let { nextRem -> nextRem to if (nextRem == 0) len else -1 } }.second }

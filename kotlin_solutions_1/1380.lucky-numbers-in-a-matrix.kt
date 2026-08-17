@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1380 lang=kotlin
- *
- * [1380] Lucky Numbers in a Matrix
- */
-
-class Solution { fun luckyNumbers(matrix: Array<IntArray>): List<Int> = matrix.map { row -> row.minOrNull()!! }.filter { minVal -> matrix[0].indices.any { c -> matrix.maxOf { row -> row[c] } == minVal } } }
+/* * @lc app=leetcode id=1380 lang=kotlin * * [1380] Lucky Numbers in a Matrix */ class Solution { fun luckyNumbers(matrix: Array<IntArray>): List<Int> = matrix.map { row -> row.minOrNull()!! }.filter { minVal -> matrix[0].indices.any { c -> matrix.maxOf { row -> row[c] } == minVal } } }

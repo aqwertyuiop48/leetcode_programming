@@ -1,14 +1,1 @@
-/*
- * @lc app=leetcode id=1670 lang=kotlin
- *
- * [1670] Design Front Middle Back Queue
- */
-
-class FrontMiddleBackQueue(val q: java.util.LinkedList<Int> = java.util.LinkedList()) {
-    fun pushFront(v: Int) = q.addFirst(v)
-    fun pushMiddle(v: Int) = q.add(q.size / 2, v)
-    fun pushBack(v: Int) = q.addLast(v)
-    fun popFront(): Int = if (q.isEmpty()) -1 else q.removeFirst()
-    fun popMiddle(): Int = if (q.isEmpty()) -1 else q.removeAt((q.size - 1) / 2)
-    fun popBack(): Int = if (q.isEmpty()) -1 else q.removeLast()
-}
+/* * @lc app=leetcode id=1670 lang=kotlin * * [1670] Design Front Middle Back Queue */ class FrontMiddleBackQueue(val q: java.util.LinkedList<Int> = java.util.LinkedList()) { fun pushFront(v: Int) = q.addFirst(v) fun pushMiddle(v: Int) = q.add(q.size / 2, v) fun pushBack(v: Int) = q.addLast(v) fun popFront(): Int = if (q.isEmpty()) -1 else q.removeFirst() fun popMiddle(): Int = if (q.isEmpty()) -1 else q.removeAt((q.size - 1) / 2) fun popBack(): Int = if (q.isEmpty()) -1 else q.removeLast() }

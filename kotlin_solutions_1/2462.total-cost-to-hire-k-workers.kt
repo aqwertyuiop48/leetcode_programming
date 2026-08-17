@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2462 lang=kotlin
- *
- * [2462] Total Cost to Hire K Workers
- */
-
-class Solution { fun totalCost(costs: IntArray, k: Int, candidates: Int): Long = java.util.PriorityQueue<Int>().let { pq1 -> java.util.PriorityQueue<Int>().let { pq2 -> intArrayOf(0, costs.size - 1).let { ptr -> longArrayOf(0L).let { total -> (1..k).forEach { _ -> generateSequence { if (pq1.size < candidates && ptr[0] <= ptr[1]) pq1.add(costs[ptr[0]++]) else null }.count().run { generateSequence { if (pq2.size < candidates && ptr[0] <= ptr[1]) pq2.add(costs[ptr[1]--]) else null }.count() }.run { (if (pq1.isNotEmpty()) pq1.peek() else Int.MAX_VALUE).let { c1 -> (if (pq2.isNotEmpty()) pq2.peek() else Int.MAX_VALUE).let { c2 -> if (c1 <= c2) total[0] += pq1.poll().toLong() else total[0] += pq2.poll().toLong() } } } }.run { total[0] } } } } } }
+/* * @lc app=leetcode id=2462 lang=kotlin * * [2462] Total Cost to Hire K Workers */ class Solution { fun totalCost(costs: IntArray, k: Int, candidates: Int): Long = java.util.PriorityQueue<Int>().let { pq1 -> java.util.PriorityQueue<Int>().let { pq2 -> intArrayOf(0, costs.size - 1).let { ptr -> longArrayOf(0L).let { total -> (1..k).forEach { _ -> generateSequence { if (pq1.size < candidates && ptr[0] <= ptr[1]) pq1.add(costs[ptr[0]++]) else null }.count().run { generateSequence { if (pq2.size < candidates && ptr[0] <= ptr[1]) pq2.add(costs[ptr[1]--]) else null }.count() }.run { (if (pq1.isNotEmpty()) pq1.peek() else Int.MAX_VALUE).let { c1 -> (if (pq2.isNotEmpty()) pq2.peek() else Int.MAX_VALUE).let { c2 -> if (c1 <= c2) total[0] += pq1.poll().toLong() else total[0] += pq2.poll().toLong() } } } }.run { total[0] } } } } } }

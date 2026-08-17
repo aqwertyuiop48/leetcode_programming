@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1541 lang=kotlin
- *
- * [1541] Minimum Insertions to Balance a Parentheses String
- */
-
-class Solution { fun minInsertions(s: String): Int = IntArray(2).let { v -> s.forEach { c -> if (c == '(') (if (v[1] % 2 != 0) (v[0] + 1).also { v[0] = it }.also { v[1] -= 1 } else 0).also { v[1] += 2 } else (v[1] - 1).also { v[1] = it }.let { if (v[1] < 0) (v[0] + 1).also { v[0] = it }.also { v[1] += 2 } } }.let { v[0] + v[1] } } }
+/* * @lc app=leetcode id=1541 lang=kotlin * * [1541] Minimum Insertions to Balance a Parentheses String */ class Solution { fun minInsertions(s: String): Int = IntArray(2).let { v -> s.forEach { c -> if (c == '(') (if (v[1] % 2 != 0) (v[0] + 1).also { v[0] = it }.also { v[1] -= 1 } else 0).also { v[1] += 2 } else (v[1] - 1).also { v[1] = it }.let { if (v[1] < 0) (v[0] + 1).also { v[0] = it }.also { v[1] += 2 } } }.let { v[0] + v[1] } } }

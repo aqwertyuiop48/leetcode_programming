@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1170 lang=kotlin
- *
- * [1170] Compare Strings by Frequency of the Smallest Character
- */
-
-class Solution { fun numSmallerByFrequency(queries: Array<String>, words: Array<String>): IntArray = words.map { w -> w.count { it == w.minOrNull() } }.let { wFreqs -> queries.map { q -> q.count { it == q.minOrNull() }.let { qf -> wFreqs.count { wf -> qf < wf } } }.toIntArray() } }
+/* * @lc app=leetcode id=1170 lang=kotlin * * [1170] Compare Strings by Frequency of the Smallest Character */ class Solution { fun numSmallerByFrequency(queries: Array<String>, words: Array<String>): IntArray = words.map { w -> w.count { it == w.minOrNull() } }.let { wFreqs -> queries.map { q -> q.count { it == q.minOrNull() }.let { qf -> wFreqs.count { wf -> qf < wf } } }.toIntArray() } }

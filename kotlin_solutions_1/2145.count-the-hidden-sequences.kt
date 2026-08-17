@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2145 lang=kotlin */
-class Solution { fun numberOfArrays(differences: IntArray, lower: Int, upper: Int): Int = differences.runningFold(0L) { acc, d -> acc + d }.let { p -> (upper.toLong() - lower - (p.maxOrNull()!! - p.minOrNull()!!) + 1).coerceAtLeast(0).toInt() } }
+/* @lc app=leetcode id=2145 lang=kotlin */ class Solution { fun numberOfArrays(differences: IntArray, lower: Int, upper: Int): Int = differences.runningFold(0L) { acc, d -> acc + d }.let { p -> (upper.toLong() - lower - (p.maxOrNull()!! - p.minOrNull()!!) + 1).coerceAtLeast(0).toInt() } }

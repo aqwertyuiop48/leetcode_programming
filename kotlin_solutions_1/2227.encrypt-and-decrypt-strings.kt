@@ -1,10 +1,1 @@
-/*
- * @lc app=leetcode id=2227 lang=kotlin
- *
- * [2227] Encrypt and Decrypt Strings
- */
-
-class Encrypter(val k: CharArray, val v: Array<String>, val d: Array<String>, val m: Map<Char, String> = k.zip(v).toMap(), val c: Map<String, Int> = d.map { w -> w.map { m[it] ?: "#" }.joinToString("") }.groupingBy { it }.eachCount()) {
-    fun encrypt(w: String) = w.map { m[it] ?: "#" }.let { if (it.contains("#")) "" else it.joinToString("") }
-    fun decrypt(w: String) = c[w] ?: 0
-}
+/* * @lc app=leetcode id=2227 lang=kotlin * * [2227] Encrypt and Decrypt Strings */ class Encrypter(val k: CharArray, val v: Array<String>, val d: Array<String>, val m: Map<Char, String> = k.zip(v).toMap(), val c: Map<String, Int> = d.map { w -> w.map { m[it] ?: "#" }.joinToString("") }.groupingBy { it }.eachCount()) { fun encrypt(w: String) = w.map { m[it] ?: "#" }.let { if (it.contains("#")) "" else it.joinToString("") } fun decrypt(w: String) = c[w] ?: 0 }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2000 lang=kotlin */
-class Solution { fun reversePrefix(word: String, ch: Char): String = word.indexOf(ch).let { i -> if (i == -1) word else word.substring(0, i + 1).reversed() + word.substring(i + 1) } }
+/* @lc app=leetcode id=2000 lang=kotlin */ class Solution { fun reversePrefix(word: String, ch: Char): String = word.indexOf(ch).let { i -> if (i == -1) word else word.substring(0, i + 1).reversed() + word.substring(i + 1) } }

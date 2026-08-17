@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=973 lang=kotlin
- *
- * [973] K Closest Points to Origin
- */
-
-class Solution { fun kClosest(points: Array<IntArray>, k: Int): Array<IntArray> = points.sortedBy { it[0] * it[0] + it[1] * it[1] }.take(k).toTypedArray() }
+/* * @lc app=leetcode id=973 lang=kotlin * * [973] K Closest Points to Origin */ class Solution { fun kClosest(points: Array<IntArray>, k: Int): Array<IntArray> = points.sortedBy { it[0] * it[0] + it[1] * it[1] }.take(k).toTypedArray() }

@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2485 lang=kotlin */
-class Solution { fun pivotInteger(n: Int): Int = (n.toLong() * (n + 1) / 2).let { s -> Math.sqrt(s.toDouble()).toLong().let { x -> if (x * x == s) x.toInt() else -1 } } }
+/* @lc app=leetcode id=2485 lang=kotlin */ class Solution { fun pivotInteger(n: Int): Int = (n.toLong() * (n + 1) / 2).let { s -> Math.sqrt(s.toDouble()).toLong().let { x -> if (x * x == s) x.toInt() else -1 } } }

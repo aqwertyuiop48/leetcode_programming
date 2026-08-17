@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1356 lang=kotlin */
-class Solution { fun sortByBits(arr: IntArray): IntArray = arr.sortedWith(compareBy({ Integer.bitCount(it) }, { it })).toIntArray() }
+/* @lc app=leetcode id=1356 lang=kotlin */ class Solution { fun sortByBits(arr: IntArray): IntArray = arr.sortedWith(compareBy({ Integer.bitCount(it) }, { it })).toIntArray() }

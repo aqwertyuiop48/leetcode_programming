@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2216 lang=kotlin */
-class Solution { fun minDeletion(nums: IntArray): Int = nums.indices.fold(0) { del, i -> if (i < nums.size - 1 && (i - del) % 2 == 0 && nums[i] == nums[i + 1]) del + 1 else del }.let { del -> del + (nums.size - del) % 2 } }
+/* @lc app=leetcode id=2216 lang=kotlin */ class Solution { fun minDeletion(nums: IntArray): Int = nums.indices.fold(0) { del, i -> if (i < nums.size - 1 && (i - del) % 2 == 0 && nums[i] == nums[i + 1]) del + 1 else del }.let { del -> del + (nums.size - del) % 2 } }

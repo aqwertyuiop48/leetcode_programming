@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1458 lang=kotlin
- *
- * [1458] Max Dot Product of Two Subsequences
- */
-
-class Solution { fun maxDotProduct(nums1: IntArray, nums2: IntArray): Int = IntArray(nums2.size + 1) { -1000000000 }.let { dp -> nums1.fold(dp) { prev, x -> nums2.foldIndexed(IntArray(nums2.size + 1) { -1000000000 }) { j, next, y -> next.also { it[j + 1] = maxOf(x * y + maxOf(0, prev[j]), prev[j + 1], next[j]) } } } }[nums2.size] }
+/* * @lc app=leetcode id=1458 lang=kotlin * * [1458] Max Dot Product of Two Subsequences */ class Solution { fun maxDotProduct(nums1: IntArray, nums2: IntArray): Int = IntArray(nums2.size + 1) { -1000000000 }.let { dp -> nums1.fold(dp) { prev, x -> nums2.foldIndexed(IntArray(nums2.size + 1) { -1000000000 }) { j, next, y -> next.also { it[j + 1] = maxOf(x * y + maxOf(0, prev[j]), prev[j + 1], next[j]) } } } }[nums2.size] }

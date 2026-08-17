@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1916 lang=kotlin
- *
- * [1916] Count Ways to Build Rooms in an Ant Colony
- */
-
-class Solution {
-    fun waysToBuildRooms(prevRoom: IntArray): Int = (1000000007L).let { MOD -> Array(prevRoom.size) { mutableListOf<Int>() }.apply { (1 until prevRoom.size).forEach { this[prevRoom[it]].add(it) } }.let { adj -> IntArray(prevRoom.size).let { size -> DeepRecursiveFunction<Int, Int> { u -> (1 + adj[u].sumOf { callRecursive(it) }).also { size[u] = it } }.invoke(0).let { (1..prevRoom.size).fold(1L to 1L) { (fact, prod), i -> (fact * i) % MOD to (prod * size[i - 1]) % MOD }.let { (fact, prod) -> object { fun pow(b: Long, e: Long): Long = if (e == 0L) 1L else (pow((b * b) % MOD, e / 2).let { if (e % 2 == 1L) (it * b) % MOD else it }) }.pow(prod, MOD - 2).let { inv -> ((fact * inv) % MOD).toInt() } } } } } }
-}
+/* * @lc app=leetcode id=1916 lang=kotlin * * [1916] Count Ways to Build Rooms in an Ant Colony */ class Solution { fun waysToBuildRooms(prevRoom: IntArray): Int = (1000000007L).let { MOD -> Array(prevRoom.size) { mutableListOf<Int>() }.apply { (1 until prevRoom.size).forEach { this[prevRoom[it]].add(it) } }.let { adj -> IntArray(prevRoom.size).let { size -> DeepRecursiveFunction<Int, Int> { u -> (1 + adj[u].sumOf { callRecursive(it) }).also { size[u] = it } }.invoke(0).let { (1..prevRoom.size).fold(1L to 1L) { (fact, prod), i -> (fact * i) % MOD to (prod * size[i - 1]) % MOD }.let { (fact, prod) -> object { fun pow(b: Long, e: Long): Long = if (e == 0L) 1L else (pow((b * b) % MOD, e / 2).let { if (e % 2 == 1L) (it * b) % MOD else it }) }.pow(prod, MOD - 2).let { inv -> ((fact * inv) % MOD).toInt() } } } } } } }

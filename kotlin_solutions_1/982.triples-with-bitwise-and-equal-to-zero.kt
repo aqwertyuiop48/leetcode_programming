@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=982 lang=kotlin
- *
- * [982] Triples with Bitwise AND Equal To Zero
- */
-
-class Solution {
-    fun countTriplets(nums: IntArray): Int = IntArray(65536).also { count -> nums.forEach { a -> nums.forEach { b -> count[a and b]++ } } }.let { count -> nums.sumOf { x -> (0 until 65536).sumOf { y -> if (x and y == 0) count[y] else 0 } } }
-}
+/* * @lc app=leetcode id=982 lang=kotlin * * [982] Triples with Bitwise AND Equal To Zero */ class Solution { fun countTriplets(nums: IntArray): Int = IntArray(65536).also { count -> nums.forEach { a -> nums.forEach { b -> count[a and b]++ } } }.let { count -> nums.sumOf { x -> (0 until 65536).sumOf { y -> if (x and y == 0) count[y] else 0 } } } }

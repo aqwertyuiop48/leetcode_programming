@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2659 lang=kotlin */
-class Solution { fun countOperationsToEmptyArray(A: IntArray): Long = A.indices.sortedBy { A[it] }.let { s -> A.size.toLong() + s.indices.drop(1).sumOf { i -> if (s[i] < s[i - 1]) (A.size - i).toLong() else 0L } } }
+/* @lc app=leetcode id=2659 lang=kotlin */ class Solution { fun countOperationsToEmptyArray(A: IntArray): Long = A.indices.sortedBy { A[it] }.let { s -> A.size.toLong() + s.indices.drop(1).sumOf { i -> if (s[i] < s[i - 1]) (A.size - i).toLong() else 0L } } }

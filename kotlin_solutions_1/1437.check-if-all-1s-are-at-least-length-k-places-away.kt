@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1437 lang=kotlin
- *
- * [1437] Check If All 1's Are at Least Length K Places Away
- */
-
-class Solution { fun kLengthApart(nums: IntArray, k: Int): Boolean = nums.indices.filter { nums[it] == 1 }.zipWithNext().all { (a, b) -> b - a > k } }
+/* * @lc app=leetcode id=1437 lang=kotlin * * [1437] Check If All 1's Are at Least Length K Places Away */ class Solution { fun kLengthApart(nums: IntArray, k: Int): Boolean = nums.indices.filter { nums[it] == 1 }.zipWithNext().all { (a, b) -> b - a > k } }

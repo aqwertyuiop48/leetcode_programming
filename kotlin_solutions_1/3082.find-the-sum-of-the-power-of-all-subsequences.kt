@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3082 lang=kotlin */
-class Solution { fun sumOfPower(nums: IntArray, k: Int): Int = IntArray(k + 1).apply { this[0] = 1 }.let { dp -> nums.forEach { x -> (k downTo 0).forEach { v -> dp[v] = ((dp[v] * 2L + if (v >= x) dp[v - x] else 0) % 1000000007).toInt() } }.let { dp[k] } } }
+/* @lc app=leetcode id=3082 lang=kotlin */ class Solution { fun sumOfPower(nums: IntArray, k: Int): Int = IntArray(k + 1).apply { this[0] = 1 }.let { dp -> nums.forEach { x -> (k downTo 0).forEach { v -> dp[v] = ((dp[v] * 2L + if (v >= x) dp[v - x] else 0) % 1000000007).toInt() } }.let { dp[k] } } }

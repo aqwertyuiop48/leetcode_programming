@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1411 lang=kotlin
- *
- * [1411] Number of Ways to Paint N × 3 Grid
- */
-
-class Solution { fun numOfWays(n: Int): Int = (1 until n).fold(longArrayOf(6L, 6L)) { (a, b), _ -> longArrayOf((3 * a + 2 * b) % 1000000007, (2 * a + 2 * b) % 1000000007) }.sum().let { (it % 1000000007).toInt() } }
+/* * @lc app=leetcode id=1411 lang=kotlin * * [1411] Number of Ways to Paint N × 3 Grid */ class Solution { fun numOfWays(n: Int): Int = (1 until n).fold(longArrayOf(6L, 6L)) { (a, b), _ -> longArrayOf((3 * a + 2 * b) % 1000000007, (2 * a + 2 * b) % 1000000007) }.sum().let { (it % 1000000007).toInt() } }

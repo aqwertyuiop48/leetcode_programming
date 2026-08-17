@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1016 lang=kotlin
- *
- * [1016] Binary String With Substrings Representing 1 To N
- */
-
-class Solution {
-    fun queryString(s: String, n: Int): Boolean = (n downTo 1).all { i -> s.contains(i.toString(2)) }
-}
+/* * @lc app=leetcode id=1016 lang=kotlin * * [1016] Binary String With Substrings Representing 1 To N */ class Solution { fun queryString(s: String, n: Int): Boolean = (n downTo 1).all { i -> s.contains(i.toString(2)) } }

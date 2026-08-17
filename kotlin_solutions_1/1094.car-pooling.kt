@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1094 lang=kotlin
- *
- * [1094] Car Pooling
- */
-
-class Solution {
-    fun carPooling(trips: Array<IntArray>, capacity: Int): Boolean = IntArray(1001).also { diff -> trips.forEach { (num, from, to) -> diff.set(from, diff[from] + num).run { diff.set(to, diff[to] - num) } } }.fold(0 to true) { (pass, ok), d -> (pass + d).let { p -> p to (ok && p <= capacity) } }.second
-}
+/* * @lc app=leetcode id=1094 lang=kotlin * * [1094] Car Pooling */ class Solution { fun carPooling(trips: Array<IntArray>, capacity: Int): Boolean = IntArray(1001).also { diff -> trips.forEach { (num, from, to) -> diff.set(from, diff[from] + num).run { diff.set(to, diff[to] - num) } } }.fold(0 to true) { (pass, ok), d -> (pass + d).let { p -> p to (ok && p <= capacity) } }.second }

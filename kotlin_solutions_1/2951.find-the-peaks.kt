@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=2951 lang=kotlin
- *
- * [2951] Find the Peaks
- */
-
-class Solution {
-    fun findPeaks(mountain: IntArray): List<Int> = (1 until mountain.size - 1).filter { i -> mountain[i] > mountain[i - 1] && mountain[i] > mountain[i + 1] }
-}
+/* * @lc app=leetcode id=2951 lang=kotlin * * [2951] Find the Peaks */ class Solution { fun findPeaks(mountain: IntArray): List<Int> = (1 until mountain.size - 1).filter { i -> mountain[i] > mountain[i - 1] && mountain[i] > mountain[i + 1] } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1446 lang=kotlin
- *
- * [1446] Consecutive Characters
- */
-
-class Solution { fun maxPower(s: String): Int = (s + " ").zipWithNext().fold(1 to 1) { (max, cur), (a, b) -> if (a == b) maxOf(max, cur + 1) to (cur + 1) else max to 1 }.first }
+/* * @lc app=leetcode id=1446 lang=kotlin * * [1446] Consecutive Characters */ class Solution { fun maxPower(s: String): Int = (s + " ").zipWithNext().fold(1 to 1) { (max, cur), (a, b) -> if (a == b) maxOf(max, cur + 1) to (cur + 1) else max to 1 }.first }

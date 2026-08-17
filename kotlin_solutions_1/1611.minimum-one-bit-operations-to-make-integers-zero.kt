@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1611 lang=kotlin
- *
- * [1611] Minimum One Bit Operations to Make Integers Zero
- */
-
-class Solution {
-    fun minimumOneBitOperations(n: Int): Int = generateSequence(n) { (it shr 1).takeIf { x -> x > 0 } }.fold(0) { acc, x -> acc xor x }
-}
+/* * @lc app=leetcode id=1611 lang=kotlin * * [1611] Minimum One Bit Operations to Make Integers Zero */ class Solution { fun minimumOneBitOperations(n: Int): Int = generateSequence(n) { (it shr 1).takeIf { x -> x > 0 } }.fold(0) { acc, x -> acc xor x } }

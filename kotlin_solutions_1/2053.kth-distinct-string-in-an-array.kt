@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2053 lang=kotlin */
-class Solution { fun kthDistinct(arr: Array<String>, k: Int): String = arr.groupBy { it }.filter { it.value.size == 1 }.keys.drop(k - 1).firstOrNull() ?: "" }
+/* @lc app=leetcode id=2053 lang=kotlin */ class Solution { fun kthDistinct(arr: Array<String>, k: Int): String = arr.groupBy { it }.filter { it.value.size == 1 }.keys.drop(k - 1).firstOrNull() ?: "" }

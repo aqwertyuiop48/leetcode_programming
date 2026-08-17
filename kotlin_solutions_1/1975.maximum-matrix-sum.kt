@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1975 lang=kotlin */
-class Solution { fun maxMatrixSum(matrix: Array<IntArray>): Long = matrix.flatMap { it.asIterable() }.run { map { Math.abs(it).toLong() }.sum().let { sum -> minOf { Math.abs(it) }.let { min -> if (count { it < 0 } % 2 != 0) sum - 2 * min else sum } } } }
+/* @lc app=leetcode id=1975 lang=kotlin */ class Solution { fun maxMatrixSum(matrix: Array<IntArray>): Long = matrix.flatMap { it.asIterable() }.run { map { Math.abs(it).toLong() }.sum().let { sum -> minOf { Math.abs(it) }.let { min -> if (count { it < 0 } % 2 != 0) sum - 2 * min else sum } } } }

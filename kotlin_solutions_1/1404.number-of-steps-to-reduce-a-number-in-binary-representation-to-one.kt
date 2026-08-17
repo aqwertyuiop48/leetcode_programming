@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1404 lang=kotlin
- *
- * [1404] Number of Steps to Reduce a Number in Binary Representation to One
- */
-
-class Solution { fun numSteps(s: String): Int = s.drop(1).foldRight(0 to 0) { c, (steps, carry) -> (c - '0' + carry).let { v -> (steps + if (v == 1) 2 else 1) to (if (v > 0) 1 else 0) } }.let { (steps, carry) -> steps + carry } }
+/* * @lc app=leetcode id=1404 lang=kotlin * * [1404] Number of Steps to Reduce a Number in Binary Representation to One */ class Solution { fun numSteps(s: String): Int = s.drop(1).foldRight(0 to 0) { c, (steps, carry) -> (c - '0' + carry).let { v -> (steps + if (v == 1) 2 else 1) to (if (v > 0) 1 else 0) } }.let { (steps, carry) -> steps + carry } }

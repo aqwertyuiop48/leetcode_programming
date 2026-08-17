@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=1528 lang=kotlin
- *
- * [1528] Shuffle String
- */
-
-class Solution {
-    fun restoreString(s: String, indices: IntArray): String = CharArray(s.length).apply { indices.forEachIndexed { i, idx -> this[idx] = s[i] } }.let { String(it) }
-}
+/* * @lc app=leetcode id=1528 lang=kotlin * * [1528] Shuffle String */ class Solution { fun restoreString(s: String, indices: IntArray): String = CharArray(s.length).apply { indices.forEachIndexed { i, idx -> this[idx] = s[i] } }.let { String(it) } }

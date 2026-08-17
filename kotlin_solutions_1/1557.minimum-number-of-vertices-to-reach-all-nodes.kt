@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1557 lang=kotlin */
-class Solution { fun findSmallestSetOfVertices(n: Int, edges: List<List<Int>>): List<Int> = edges.mapTo(HashSet()) { it[1] }.let { inNodes -> (0 until n).filter { it !in inNodes } } }
+/* @lc app=leetcode id=1557 lang=kotlin */ class Solution { fun findSmallestSetOfVertices(n: Int, edges: List<List<Int>>): List<Int> = edges.mapTo(HashSet()) { it[1] }.let { inNodes -> (0 until n).filter { it !in inNodes } } }

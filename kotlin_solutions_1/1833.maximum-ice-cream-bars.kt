@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1833 lang=kotlin
- *
- * [1833] Maximum Ice Cream Bars
- */
-
-class Solution { fun maxIceCream(costs: IntArray, coins: Int): Int = costs.sorted().fold(0 to coins) { (count, remaining), cost -> if (remaining >= cost) (count + 1) to (remaining - cost) else count to remaining }.first }
+/* * @lc app=leetcode id=1833 lang=kotlin * * [1833] Maximum Ice Cream Bars */ class Solution { fun maxIceCream(costs: IntArray, coins: Int): Int = costs.sorted().fold(0 to coins) { (count, remaining), cost -> if (remaining >= cost) (count + 1) to (remaining - cost) else count to remaining }.first }

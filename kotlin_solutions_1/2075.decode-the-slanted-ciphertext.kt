@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2075 lang=kotlin */
-class Solution { fun decodeCiphertext(encodedText: String, rows: Int): String = (encodedText.length / rows).let { cols -> (0 until cols).flatMap { c -> (0 until rows).map { r -> r * cols + (c + r) }.filter { it < encodedText.length }.map { encodedText[it] } }.joinToString("").trimEnd() } }
+/* @lc app=leetcode id=2075 lang=kotlin */ class Solution { fun decodeCiphertext(encodedText: String, rows: Int): String = (encodedText.length / rows).let { cols -> (0 until cols).flatMap { c -> (0 until rows).map { r -> r * cols + (c + r) }.filter { it < encodedText.length }.map { encodedText[it] } }.joinToString("").trimEnd() } }

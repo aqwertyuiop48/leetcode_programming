@@ -1,6 +1,1 @@
-/*
- * @lc app=leetcode id=1739 lang=kotlin
- *
- * [1739] Building Boxes
- */
-class Solution { fun minimumBoxes(n: Int): Int = (generateSequence(1) { it + 1 }.takeWhile { m -> m.toLong() * (m + 1) * (m + 2) / 6 <= n }.lastOrNull() ?: 0).let { m -> (n - m.toLong() * (m + 1) * (m + 2) / 6).let { rem -> m * (m + 1) / 2 + generateSequence(0) { it + 1 }.first { i -> i.toLong() * (i + 1) / 2 >= rem } } } }
+/* * @lc app=leetcode id=1739 lang=kotlin * * [1739] Building Boxes */ class Solution { fun minimumBoxes(n: Int): Int = (generateSequence(1) { it + 1 }.takeWhile { m -> m.toLong() * (m + 1) * (m + 2) / 6 <= n }.lastOrNull() ?: 0).let { m -> (n - m.toLong() * (m + 1) * (m + 2) / 6).let { rem -> m * (m + 1) / 2 + generateSequence(0) { it + 1 }.first { i -> i.toLong() * (i + 1) / 2 >= rem } } } }

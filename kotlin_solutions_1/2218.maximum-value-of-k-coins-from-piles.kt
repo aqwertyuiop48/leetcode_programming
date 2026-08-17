@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2218 lang=kotlin */
-class Solution { fun maxValueOfCoins(piles: List<List<Int>>, k: Int): Int = IntArray(k + 1).apply { piles.forEach { p -> (k downTo 1).forEach { j -> p.foldIndexed(0) { idx, acc, coin -> (acc + coin).also { nextAcc -> if (j >= idx + 1) maxOf(this[j], this[j - (idx + 1)] + nextAcc).let { this[j] = it } } } } } }[k] }
+/* @lc app=leetcode id=2218 lang=kotlin */ class Solution { fun maxValueOfCoins(piles: List<List<Int>>, k: Int): Int = IntArray(k + 1).apply { piles.forEach { p -> (k downTo 1).forEach { j -> p.foldIndexed(0) { idx, acc, coin -> (acc + coin).also { nextAcc -> if (j >= idx + 1) maxOf(this[j], this[j - (idx + 1)] + nextAcc).let { this[j] = it } } } } } }[k] }

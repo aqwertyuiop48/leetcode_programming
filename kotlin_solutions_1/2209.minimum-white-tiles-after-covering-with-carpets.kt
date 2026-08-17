@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2209 lang=kotlin */
-class Solution { fun minimumWhiteTiles(s: String, nc: Int, l: Int): Int = Array(s.length + 1) { IntArray(nc + 1) }.apply { (1..s.length).forEach { i -> (0..nc).forEach { k -> this[i][k] = minOf(this[i - 1][k] + (if (s[i - 1] == '1') 1 else 0), if (k > 0) this[maxOf(0, i - l)][k - 1] else 1001) } } }[s.length][nc] }
+/* @lc app=leetcode id=2209 lang=kotlin */ class Solution { fun minimumWhiteTiles(s: String, nc: Int, l: Int): Int = Array(s.length + 1) { IntArray(nc + 1) }.apply { (1..s.length).forEach { i -> (0..nc).forEach { k -> this[i][k] = minOf(this[i - 1][k] + (if (s[i - 1] == '1') 1 else 0), if (k > 0) this[maxOf(0, i - l)][k - 1] else 1001) } } }[s.length][nc] }

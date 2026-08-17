@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2558 lang=kotlin
- *
- * [2558] Take Gifts From the Richest Pile
- */
-
-class Solution { fun pickGifts(gifts: IntArray, k: Int): Long = java.util.PriorityQueue<Int>(compareByDescending { it }).apply { gifts.forEach { offer(it) } }.apply { repeat(k) { offer(Math.sqrt(poll().toDouble()).toInt()) } }.sumOf { it.toLong() } }
+/* * @lc app=leetcode id=2558 lang=kotlin * * [2558] Take Gifts From the Richest Pile */ class Solution { fun pickGifts(gifts: IntArray, k: Int): Long = java.util.PriorityQueue<Int>(compareByDescending { it }).apply { gifts.forEach { offer(it) } }.apply { repeat(k) { offer(Math.sqrt(poll().toDouble()).toInt()) } }.sumOf { it.toLong() } }

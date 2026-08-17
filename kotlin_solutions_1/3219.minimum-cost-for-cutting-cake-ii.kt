@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3219 lang=kotlin */
-class Solution { fun minimumCost(m: Int, n: Int, h: IntArray, v: IntArray): Long = (h.map { it.toLong() to 'H' } + v.map { it.toLong() to 'V' }).sortedByDescending { it.first }.fold(Triple(1L, 1L, 0L)) { (hp, vp, total), (cost, type) -> if (type == 'H') Triple(hp + 1, vp, total + cost * vp) else Triple(hp, vp + 1, total + cost * hp) }.third }
+/* @lc app=leetcode id=3219 lang=kotlin */ class Solution { fun minimumCost(m: Int, n: Int, h: IntArray, v: IntArray): Long = (h.map { it.toLong() to 'H' } + v.map { it.toLong() to 'V' }).sortedByDescending { it.first }.fold(Triple(1L, 1L, 0L)) { (hp, vp, total), (cost, type) -> if (type == 'H') Triple(hp + 1, vp, total + cost * vp) else Triple(hp, vp + 1, total + cost * hp) }.third }

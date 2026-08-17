@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2974 lang=kotlin
- *
- * [2974] Minimum Number Game
- */
-
-class Solution { fun numberGame(nums: IntArray): IntArray = nums.sortedArray().apply { (0 until size step 2).forEach { i -> this[i] = this[i + 1].also { this[i + 1] = this[i] } } } }
+/* * @lc app=leetcode id=2974 lang=kotlin * * [2974] Minimum Number Game */ class Solution { fun numberGame(nums: IntArray): IntArray = nums.sortedArray().apply { (0 until size step 2).forEach { i -> this[i] = this[i + 1].also { this[i + 1] = this[i] } } } }

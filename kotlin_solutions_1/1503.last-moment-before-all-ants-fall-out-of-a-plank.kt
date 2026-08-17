@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1503 lang=kotlin
- *
- * [1503] Last Moment Before All Ants Fall Out of a Plank
- */
-
-class Solution { fun getLastMoment(n: Int, left: IntArray, right: IntArray): Int = maxOf(left.maxOrNull() ?: 0, n - (right.minOrNull() ?: n)) }
+/* * @lc app=leetcode id=1503 lang=kotlin * * [1503] Last Moment Before All Ants Fall Out of a Plank */ class Solution { fun getLastMoment(n: Int, left: IntArray, right: IntArray): Int = maxOf(left.maxOrNull() ?: 0, n - (right.minOrNull() ?: n)) }

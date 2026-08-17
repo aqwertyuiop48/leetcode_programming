@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3233 lang=kotlin */
-class Solution { fun nonSpecialCount(l: Int, r: Int): Int = (kotlin.math.ceil(kotlin.math.sqrt(l.toDouble())).toInt()..kotlin.math.sqrt(r.toDouble()).toInt()).count { p -> p > 1 && (2..kotlin.math.sqrt(p.toDouble()).toInt()).none { p % it == 0 } }.let { special -> (r - l + 1) - special } }
+/* @lc app=leetcode id=3233 lang=kotlin */ class Solution { fun nonSpecialCount(l: Int, r: Int): Int = (kotlin.math.ceil(kotlin.math.sqrt(l.toDouble())).toInt()..kotlin.math.sqrt(r.toDouble()).toInt()).count { p -> p > 1 && (2..kotlin.math.sqrt(p.toDouble()).toInt()).none { p % it == 0 } }.let { special -> (r - l + 1) - special } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1585 lang=kotlin
- *
- * [1585] Check If String Is Transformable With Substring Sort Operations
- */
-
-class Solution { fun isTransformable(s: String, t: String): Boolean = Array(10) { java.util.ArrayDeque<Int>() }.apply { s.indices.forEach { i -> this[s[i] - '0'].add(i) } }.let { pos -> t.all { c -> (c - '0').let { d -> pos[d].isNotEmpty() && (0 until d).none { d2 -> pos[d2].isNotEmpty() && pos[d2].peek()!! < pos[d].peek()!! } && pos[d].poll() != null } } } }
+/* * @lc app=leetcode id=1585 lang=kotlin * * [1585] Check If String Is Transformable With Substring Sort Operations */ class Solution { fun isTransformable(s: String, t: String): Boolean = Array(10) { java.util.ArrayDeque<Int>() }.apply { s.indices.forEach { i -> this[s[i] - '0'].add(i) } }.let { pos -> t.all { c -> (c - '0').let { d -> pos[d].isNotEmpty() && (0 until d).none { d2 -> pos[d2].isNotEmpty() && pos[d2].peek()!! < pos[d].peek()!! } && pos[d].poll() != null } } } }

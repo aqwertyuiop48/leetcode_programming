@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1929 lang=kotlin */
-class Solution { fun getConcatenation(nums: IntArray): IntArray = IntArray(nums.size * 2) { nums[it % nums.size] } }
+/* @lc app=leetcode id=1929 lang=kotlin */ class Solution { fun getConcatenation(nums: IntArray): IntArray = IntArray(nums.size * 2) { nums[it % nums.size] } }

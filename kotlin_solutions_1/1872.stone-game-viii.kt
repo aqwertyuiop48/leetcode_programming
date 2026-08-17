@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=1872 lang=kotlin */
-class Solution { fun stoneGameVIII(stones: IntArray): Int = IntArray(stones.size).also { p -> p[0] = stones[0] }.also { p -> (1 until stones.size).forEach { i -> p[i] = p[i - 1] + stones[i] } }.let { pref -> (stones.size - 2 downTo 1).fold(pref.last()) { dp, i -> maxOf(dp, pref[i] - dp) } } }
+/* @lc app=leetcode id=1872 lang=kotlin */ class Solution { fun stoneGameVIII(stones: IntArray): Int = IntArray(stones.size).also { p -> p[0] = stones[0] }.also { p -> (1 until stones.size).forEach { i -> p[i] = p[i - 1] + stones[i] } }.let { pref -> (stones.size - 2 downTo 1).fold(pref.last()) { dp, i -> maxOf(dp, pref[i] - dp) } } }

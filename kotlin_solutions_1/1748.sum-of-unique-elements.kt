@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1748 lang=kotlin
- *
- * [1748] Sum of Unique Elements
- */
-
-class Solution { fun sumOfUnique(nums: IntArray): Int = nums.groupBy { it }.filter { it.value.size == 1 }.keys.sum() }
+/* * @lc app=leetcode id=1748 lang=kotlin * * [1748] Sum of Unique Elements */ class Solution { fun sumOfUnique(nums: IntArray): Int = nums.groupBy { it }.filter { it.value.size == 1 }.keys.sum() }

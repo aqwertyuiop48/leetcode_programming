@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1450 lang=kotlin
- *
- * [1450] Number of Students Doing Homework at a Given Time
- */
-
-class Solution { fun busyStudent(startTime: IntArray, endTime: IntArray, queryTime: Int): Int = startTime.indices.count { queryTime in startTime[it]..endTime[it] } }
+/* * @lc app=leetcode id=1450 lang=kotlin * * [1450] Number of Students Doing Homework at a Given Time */ class Solution { fun busyStudent(startTime: IntArray, endTime: IntArray, queryTime: Int): Int = startTime.indices.count { queryTime in startTime[it]..endTime[it] } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=2998 lang=kotlin
- *
- * [2998] Minimum Number of Operations to Make X and Y Equal
- */
-
-class Solution { fun minimumOperationsToMakeEqual(x: Int, y: Int): Int = HashSet<Int>().let { visited -> java.util.ArrayDeque<Pair<Int, Int>>().apply { add(x to 0) }.let { q -> generateSequence { q.poll() }.first { (curr, steps) -> if (curr == y) true else if (visited.add(curr)) (if (curr % 11 == 0) q.add(curr / 11 to steps + 1) else false).also { if (curr % 5 == 0) q.add(curr / 5 to steps + 1) }.also { q.add(curr - 1 to steps + 1) }.also { q.add(curr + 1 to steps + 1) }.let { false } else false }.second } } }
+/* * @lc app=leetcode id=2998 lang=kotlin * * [2998] Minimum Number of Operations to Make X and Y Equal */ class Solution { fun minimumOperationsToMakeEqual(x: Int, y: Int): Int = HashSet<Int>().let { visited -> java.util.ArrayDeque<Pair<Int, Int>>().apply { add(x to 0) }.let { q -> generateSequence { q.poll() }.first { (curr, steps) -> if (curr == y) true else if (visited.add(curr)) (if (curr % 11 == 0) q.add(curr / 11 to steps + 1) else false).also { if (curr % 5 == 0) q.add(curr / 5 to steps + 1) }.also { q.add(curr - 1 to steps + 1) }.also { q.add(curr + 1 to steps + 1) }.let { false } else false }.second } } }

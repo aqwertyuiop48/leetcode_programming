@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2210 lang=kotlin */
-class Solution { fun countHillValley(nums: IntArray): Int = nums.indices.filter { i -> i == 0 || nums[i] != nums[i - 1] }.map { nums[it] }.let { a -> (1 until a.size - 1).count { i -> (a[i] > a[i - 1] && a[i] > a[i + 1]) || (a[i] < a[i - 1] && a[i] < a[i + 1]) } } }
+/* @lc app=leetcode id=2210 lang=kotlin */ class Solution { fun countHillValley(nums: IntArray): Int = nums.indices.filter { i -> i == 0 || nums[i] != nums[i - 1] }.map { nums[it] }.let { a -> (1 until a.size - 1).count { i -> (a[i] > a[i - 1] && a[i] > a[i + 1]) || (a[i] < a[i - 1] && a[i] < a[i + 1]) } } }

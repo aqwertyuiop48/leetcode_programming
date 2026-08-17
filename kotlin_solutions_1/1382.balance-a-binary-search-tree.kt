@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=1382 lang=kotlin
- *
- * [1382] Balance a Binary Search Tree
- */
-
-class Solution { fun balanceBST(root: TreeNode?): TreeNode? = mutableListOf<Int>().apply { DeepRecursiveFunction<TreeNode?, Unit> { node -> node?.run { callRecursive(left).let { add(`val`) }.let { callRecursive(right) } } }.invoke(root) }.let { list -> DeepRecursiveFunction<Pair<Int, Int>, TreeNode?> { (l, r) -> if (l > r) null else ((l + r) / 2).let { m -> TreeNode(list[m]).apply { left = callRecursive(l to m - 1).also{right = callRecursive(m + 1 to r)} } } }.invoke(0 to list.size - 1) } }
+/* * @lc app=leetcode id=1382 lang=kotlin * * [1382] Balance a Binary Search Tree */ class Solution { fun balanceBST(root: TreeNode?): TreeNode? = mutableListOf<Int>().apply { DeepRecursiveFunction<TreeNode?, Unit> { node -> node?.run { callRecursive(left).let { add(`val`) }.let { callRecursive(right) } } }.invoke(root) }.let { list -> DeepRecursiveFunction<Pair<Int, Int>, TreeNode?> { (l, r) -> if (l > r) null else ((l + r) / 2).let { m -> TreeNode(list[m]).apply { left = callRecursive(l to m - 1).also{right = callRecursive(m + 1 to r)} } } }.invoke(0 to list.size - 1) } }

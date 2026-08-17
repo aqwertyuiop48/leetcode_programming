@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2224 lang=kotlin */
-class Solution { fun convertTime(current: String, correct: String): Int = (correct.substring(0, 2).toInt() * 60 + correct.substring(3).toInt() - (current.substring(0, 2).toInt() * 60 + current.substring(3).toInt())).let { d -> d / 60 + (d % 60) / 15 + (d % 60 % 15) / 5 + (d % 5) } }
+/* @lc app=leetcode id=2224 lang=kotlin */ class Solution { fun convertTime(current: String, correct: String): Int = (correct.substring(0, 2).toInt() * 60 + correct.substring(3).toInt() - (current.substring(0, 2).toInt() * 60 + current.substring(3).toInt())).let { d -> d / 60 + (d % 60) / 15 + (d % 60 % 15) / 5 + (d % 5) } }

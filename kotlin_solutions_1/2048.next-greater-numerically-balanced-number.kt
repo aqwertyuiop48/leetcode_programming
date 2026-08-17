@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2048 lang=kotlin */
-class Solution { fun nextBeautifulNumber(n: Int): Int = generateSequence(n + 1) { it + 1 }.first { x -> x.toString().let { s -> s.groupBy { it }.all { (k, v) -> k - '0' == v.size } } } }
+/* @lc app=leetcode id=2048 lang=kotlin */ class Solution { fun nextBeautifulNumber(n: Int): Int = generateSequence(n + 1) { it + 1 }.first { x -> x.toString().let { s -> s.groupBy { it }.all { (k, v) -> k - '0' == v.size } } } }

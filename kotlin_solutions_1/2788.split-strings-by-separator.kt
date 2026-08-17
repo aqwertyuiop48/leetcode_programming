@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2788 lang=kotlin */
-class Solution { fun splitWordsBySeparator(words: List<String>, separator: Char): List<String> = words.flatMap { it.split(separator).filter { s -> s.isNotEmpty() } } }
+/* @lc app=leetcode id=2788 lang=kotlin */ class Solution { fun splitWordsBySeparator(words: List<String>, separator: Char): List<String> = words.flatMap { it.split(separator).filter { s -> s.isNotEmpty() } } }

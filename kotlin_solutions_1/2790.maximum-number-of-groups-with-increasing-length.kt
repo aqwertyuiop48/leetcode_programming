@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=2790 lang=kotlin */
-class Solution { fun maxIncreasingGroups(usageLimits: List<Int>): Int = usageLimits.sorted().fold(0L to 0L) { (s, g), l -> (s + l).let { if (it >= (g + 1) * (g + 2) / 2) it to g + 1 else it to g } }.second.toInt() }
+/* @lc app=leetcode id=2790 lang=kotlin */ class Solution { fun maxIncreasingGroups(usageLimits: List<Int>): Int = usageLimits.sorted().fold(0L to 0L) { (s, g), l -> (s + l).let { if (it >= (g + 1) * (g + 2) / 2) it to g + 1 else it to g } }.second.toInt() }
