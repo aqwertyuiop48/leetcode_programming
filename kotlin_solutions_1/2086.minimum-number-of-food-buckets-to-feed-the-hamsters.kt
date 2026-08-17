@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2086 lang=kotlin */
-class Solution { fun minimumBuckets(hamsters: String): Int = hamsters.toCharArray().let { h -> h.indices.fold(0) { acc, i -> if (acc == -1 || h[i] != 'H' || (i > 0 && h[i - 1] == 'B')) acc else if (i + 1 < h.size && h[i + 1] == '.') (acc + 1).also { h[i + 1] = 'B' } else if (i > 0 && h[i - 1] == '.') (acc + 1).also { h[i - 1] = 'B' } else -1 } } }

@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2476 lang=kotlin */
-class Solution { fun closestNodes(root: TreeNode?, queries: List<Int>): List<List<Int>> = mutableListOf<Int>().let { list -> DeepRecursiveFunction<TreeNode?, Unit> { n -> if (n != null) run { callRecursive(n.left) }.run { list.add(n.`val`) }.run { callRecursive(n.right) } }.invoke(root).run { queries.map { q -> java.util.Collections.binarySearch(list, q).let { res -> if (res >= 0) listOf(list[res], list[res]) else listOf(list.getOrNull(-(res + 2)) ?: -1, list.getOrNull(-(res + 1)) ?: -1) } } } } }

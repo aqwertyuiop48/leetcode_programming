@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2463 lang=kotlin */
-class Solution { fun minimumTotalDistance(robot: List<Int>, factory: Array<IntArray>): Long = robot.sorted().let { r -> factory.sortedBy { it[0] }.let { f -> LongArray(r.size + 1) { if (it == r.size) 0L else 1e15.toLong() }.apply { f.forEach { fact -> (0..r.size).reversed().forEach { i -> (1..fact[1]).fold(0L) { acc, k -> if (i + k <= r.size) (acc + Math.abs(r[i + k - 1].toLong() - fact[0])).also { d -> this[i] = Math.min(this[i], if (this[i + k] >= 1e15.toLong()) 1e15.toLong() else this[i + k] + d) } else acc } } } }[0] } } }

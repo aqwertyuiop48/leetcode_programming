@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2512 lang=kotlin */
-class Solution { fun topStudents(positive_feedback: Array<String>, negative_feedback: Array<String>, report: Array<String>, student_id: IntArray, k: Int) = positive_feedback.toSet().let { p -> negative_feedback.toSet().let { n -> report.indices.map { i -> student_id[i] to report[i].split(" ").sumOf { w -> if (w in p) 3 else if (w in n) -1 else 0 }.toInt() }.sortedWith(compareByDescending<Pair<Int, Int>> { it.second }.thenBy { it.first }).take(k).map { it.first } } } }

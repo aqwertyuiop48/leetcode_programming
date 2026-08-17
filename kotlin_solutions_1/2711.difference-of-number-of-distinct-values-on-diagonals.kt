@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2711 lang=kotlin */
-class Solution { fun differenceOfDistinctValues(grid: Array<IntArray>): Array<IntArray> = Array(grid.size) { r -> IntArray(grid[0].size) { c -> kotlin.math.abs((1..minOf(r, c)).map { grid[r - it][c - it] }.distinct().size - (1..minOf(grid.size - 1 - r, grid[0].size - 1 - c)).map { grid[r + it][c + it] }.distinct().size) } } }

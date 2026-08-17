@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3224 lang=kotlin */
-class Solution { fun minChanges(nums: IntArray, k: Int): Int = IntArray(k + 2).let { cntDiff -> IntArray(k + 2).let { cntMax -> nums.take(nums.size / 2).forEachIndexed { i, a -> nums[nums.size - 1 - i].let { b -> cntDiff[Math.abs(a - b)]++.also { cntMax[maxOf(a, b, k - a, k - b)]++ } } }.run { (1..k).forEach { i -> cntMax[i] += cntMax[i - 1] } }.run { (0..k).minOf { X -> nums.size / 2 - cntDiff[X] + if (X > 0) cntMax[X - 1] else 0 } } } }

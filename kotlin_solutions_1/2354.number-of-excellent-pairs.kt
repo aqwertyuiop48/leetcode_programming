@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2354 lang=kotlin */
-class Solution { fun countExcellentPairs(A: IntArray, k: Int): Long = A.distinct().map { java.lang.Integer.bitCount(it) }.let { bits -> LongArray(31).apply { bits.forEach { this[it]++ } }.let { cnt -> (0..30).sumOf { i -> (0..30).filter { i + j >= k }.sumOf { j -> cnt[i] * cnt[j] } } } } }

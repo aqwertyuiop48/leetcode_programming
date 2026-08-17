@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=1770 lang=kotlin */
-class Solution { fun maximumScore(nums: IntArray, multipliers: IntArray): Int = multipliers.size.let { m -> Array(m + 1) { IntArray(m + 1) } }.let { dp -> (multipliers.size - 1 downTo 0).forEach { i -> (0..i).forEach { j -> dp[i][j] = maxOf(multipliers[i] * nums[j] + dp[i + 1][j + 1], multipliers[i] * nums[nums.size - 1 - (i - j)] + dp[i + 1][j]) } }.run { dp[0][0] } }}

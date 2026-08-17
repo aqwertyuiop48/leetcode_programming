@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2332 lang=kotlin */
-class Solution { fun latestTimeCatchTheBus(buses: IntArray, passengers: IntArray, capacity: Int): Int = buses.sortedArray().let { b -> passengers.sortedArray().let { p -> b.fold(0 to 0) { acc, bus -> (0 until capacity).fold(acc.first to 0) { pii, _ -> if (pii.first < p.size && p[pii.first] <= bus) pii.first + 1 to pii.second + 1 else pii } }.let { last -> generateSequence(if (last.second < capacity) b.last() else p[last.first - 1]) { it - 1 }.first { time -> p.binarySearch(time) < 0 } } } } }

@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=1980 lang=kotlin */
-class Solution { fun findDifferentBinaryString(nums: Array<String>): String = nums.indices.map { i -> if (nums[i][i] == '0') '1' else '0' }.joinToString("") }

@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2831 lang=kotlin */
-class Solution { fun longestEqualSubarray(nums: List<Int>, k: Int): Int = mutableMapOf<Int, Int>().let { counts -> IntArray(2).let { state -> nums.indices.maxOf { r -> (counts.getOrDefault(nums[r], 0) + 1).let { c -> counts[nums[r]] = c.also { state[1] = maxOf(state[1], c) }.also { if (r - state[0] + 1 - state[1] > k) (counts[nums[state[0]]]!! - 1).let { counts[nums[state[0]]] = it }.also { state[0] = state[0] + 1 } } }.run { state[1] } } } } }

@@ -1,1 +1,0 @@
-/* @lc app=leetcode id=1496 lang=kotlin */ class Solution { fun isPathCrossing(path: String): Boolean = path.fold(setOf(0 to 0) to (0 to 0)) { (visited, pos), c -> (pos.first + if (c == 'E') 1 else if (c == 'W') -1 else 0 to pos.second + if (c == 'N') 1 else if (c == 'S') -1 else 0).let { next -> visited + next to next } }.first.size < path.length + 1 }

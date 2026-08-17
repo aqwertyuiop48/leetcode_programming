@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2302 lang=kotlin */
-class Solution { fun countSubarrays(nums: IntArray, k: Long): Long = longArrayOf(0, 0, 0).run { nums.indices.forEach { r -> apply { this[0] += nums[r].toLong() }.run { generateSequence { }.takeWhile { this@run[0] * (r - this@run[1] + 1) >= k }.forEach { this@run[1].also { this@run[1] = it + 1 }.toInt().let { this@run[0] -= nums[it].toLong() } } }.run { this@run[2] += (r - this@run[1] + 1) } }.run { this[2] } } }

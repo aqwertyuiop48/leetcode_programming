@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2872 lang=kotlin */
-class Solution { fun maxKDivisibleComponents(n: Int, edges: Array<IntArray>, values: IntArray, k: Int): Int = Array(n) { mutableListOf<Int>() }.apply { edges.forEach { e -> this[e[0]].add(e[1]).also { this[e[1]].add(e[0]) } } }.let { adj -> intArrayOf(0).let { ans -> DeepRecursiveFunction<Pair<Int, Int>, Long> { (u, p) -> (values[u].toLong() + adj[u].filter { it != p }.map { callRecursive(it to u) }.sum()).let { sum -> (if (sum % k == 0L) ans[0]++ else 0).run { sum % k } } }.callRecursive(0 to -1).run { ans[0] } } } }

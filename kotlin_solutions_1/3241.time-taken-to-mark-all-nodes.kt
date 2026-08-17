@@ -1,6 +1,0 @@
-/*
- * @lc app=leetcode id=3241 lang=java
- *
- * [3241] Time Taken to Mark All Nodes
- */
-class Solution { fun timeTaken(edges: Array<IntArray>): IntArray = (edges.size + 1).let { n -> IntArray(n).let { ans -> Array(n) { IntArray(2) }.let { dp -> Array(n) { mutableListOf<Int>() }.also { adj -> edges.forEach { e -> adj[e[0]].add(e[1]).run { adj[e[1]].add(e[0]) } } }.let { adj -> arrayOf<(Int, Int) -> Int>().let { b1 -> b1.also { it[0] = { u, p -> adj[u].filter { it != p }.forEach { v -> (it[0](v, u) + if (v % 2 == 1) 1 else 2).let { d -> if (d > dp[u][0]) dp[u][0].let { dp[u][1] = it }.run { dp[u][0] = d } else if (d > dp[u][1]) dp[u][1] = d } }.run { dp[u][0] } }.run { b1[0](0, -1).run { arrayOf<(Int, Int, Int) -> Unit>().let { b2 -> b2.also { it[0] = { u, p, t -> ans[u] = maxOf(dp[u][0], t).run { adj[u].filter { it != p }.forEach { v -> it[0](v, u, (if (u % 2 == 1) 1 else 2) + maxOf(t, if (dp[v][0] + (if (v % 2 == 1) 1 else 2) == dp[u][0]) dp[u][1] else dp[u][0])) } } }.run { b2[0](0, -1, 0).run { ans } } } } } } } } } } }

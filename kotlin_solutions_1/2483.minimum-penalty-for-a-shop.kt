@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2483 lang=kotlin */
-class Solution { fun bestClosingTime(customers: String): Int = customers.let { s -> s.count { it == 'Y' }.let { tY -> (0 until s.length).fold(Triple(0, tY, tY)) { acc, i -> (acc.second + if (s[i] == 'Y') -1 else 1).let { cur -> if (cur < acc.third) Triple(i + 1, cur, cur) else acc } }.first } } }

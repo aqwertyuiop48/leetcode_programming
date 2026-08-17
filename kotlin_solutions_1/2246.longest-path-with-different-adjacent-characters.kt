@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2246 lang=kotlin */
-class Solution { fun longestPath(parent: IntArray, s: String): Int = parent.size.let { n -> Array(n) { mutableListOf<Int>() }.apply { (1 until n).forEach { i -> this[parent[i]].add(i) } }.let { adj -> IntArray(1).let { maxL -> kotlin.DeepRecursiveFunction<Int, Int> { u -> adj[u].map { v -> callRecursive(v).let { if (s[u] == s[v]) 0 else it } }.sortedDescending().let { res -> maxL[0] = maxOf(maxL[0], (res.take(2).sum()) + 1).run { (res.firstOrNull() ?: 0) + 1 } } }.invoke(0).run { maxOf(maxL[0], 1) } } } }

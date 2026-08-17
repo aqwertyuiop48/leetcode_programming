@@ -1,3 +1,0 @@
-/* @lc app=leetcode id=1348 lang=kotlin */
-
-class TweetCounts(val tweets: MutableMap<String, java.util.TreeMap<Int, Int>> = mutableMapOf()) { fun recordTweet(tweetName: String, time: Int): Unit = tweets.getOrPut(tweetName) { java.util.TreeMap() }.compute(time) { _, count -> (count ?: 0) + 1 }.let { Unit } fun getTweetCountsPerFrequency(freq: String, tweetName: String, startTime: Int, endTime: Int): List<Int> = (if (freq == "minute") 60 else if (freq == "hour") 3600 else 86400).let { span -> IntArray((endTime - startTime) / span + 1).also { result -> tweets[tweetName]?.subMap(startTime, true, endTime, true)?.forEach { entry -> result[(entry.key - startTime) / span] += entry.value } }.toList() } }

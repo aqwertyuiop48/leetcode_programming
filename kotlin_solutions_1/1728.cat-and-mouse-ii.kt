@@ -1,7 +1,0 @@
-/*
- * @lc app=leetcode id=1728 lang=kotlin
- *
- * [1728] Cat and Mouse II
- */
-
-class Solution { fun canMouseWin(grid: Array<String>, catJump: Int, mouseJump: Int): Boolean = grid.size.let { rows -> grid[0].length.let { cols -> grid.indices.flatMap { r -> grid[r].indices.map { c -> grid[r][c] to (r * cols + c) } }.toMap().let { pos -> pos['F']!!.let { fPos -> pos['M']!!.let { mStart -> pos['C']!!.let { cStart -> IntArray(524288).let { memo -> DeepRecursiveFunction<Int, Boolean> { s -> ((s ushr 13) and 63).let { m -> ((s ushr 7) and 63).let { c -> (s and 127).let { moves -> if (moves >= 128) false else if (m == c || c == fPos) false else if (m == fPos) true else if (memo[s] != 0) memo[s] == 2 else (moves % 2).let { turn -> (if (turn == 0) m / cols else c / cols).let { r -> (if (turn == 0) m % cols else c % cols).let { col -> (listOf(if (turn == 0) m else c) + listOf(0 to 1, 0 to -1, 1 to 0, -1 to 0).flatMap { (dr, dc) -> (1..(if (turn == 0) mouseJump else catJump)).takeWhile { step -> (r + dr * step).let { nr -> (col + dc * step).let { nc -> nr in 0 until rows && nc in 0 until cols && grid[nr][nc] != '#' } } }.map { step -> (r + dr * step) * cols + (col + dc * step) } }).let { nextMoves -> (if (turn == 0) nextMoves.any { nm -> callRecursive((nm shl 13) or (c shl 7) or (moves + 1)) } else nextMoves.all { nc -> callRecursive((m shl 13) or (nc shl 7) or (moves + 1)) }).also { win -> memo[s] = if (win) 2 else 1 } } } } } } } } }.callRecursive((mStart shl 13) or (cStart shl 7) or 0) } } } } } } } }

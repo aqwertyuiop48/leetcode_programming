@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2672 lang=kotlin */
-class Solution { fun colorTheArray(n: Int, queries: Array<IntArray>) = IntArray(n).let { c -> IntArray(1).let { s -> IntArray(queries.size) { i -> queries[i].let { q -> (if (c[q[0]] != 0) ( (if (q[0] > 0 && c[q[0]] == c[q[0] - 1]) 1 else 0) + (if (q[0] < n - 1 && c[q[0]] == c[q[0] + 1]) 1 else 0) ) else 0).let { b -> q[1].also { c[q[0]] = it }.run { ( (if (q[0] > 0 && c[q[0]] == c[q[0] - 1]) 1 else 0) + (if (q[0] < n - 1 && c[q[0]] == c[q[0] + 1]) 1 else 0) ).let { a -> (s[0] + (a - b)).also { s[0] = it } } } } } } } }

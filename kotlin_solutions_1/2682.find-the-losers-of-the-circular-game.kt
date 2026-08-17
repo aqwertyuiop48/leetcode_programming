@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2682 lang=kotlin */
-class Solution { fun circularGameLosers(n: Int, k: Int) = BooleanArray(n).let { vis -> IntArray(1).let { curr -> (1..n).first { i -> vis[curr[0]].let { alreadyVisited -> alreadyVisited.also { vis[curr[0]] = true }.also { curr[0] = (curr[0] + i * k) % n } } }.run { (1..n).filter { !vis[it - 1] }.toIntArray() } } } }

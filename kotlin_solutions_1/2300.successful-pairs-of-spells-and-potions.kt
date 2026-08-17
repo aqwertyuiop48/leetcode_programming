@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2300 lang=kotlin */
-class Solution { fun successfulPairs(spells: IntArray, potions: IntArray, success: Long): IntArray = potions.sortedArray().let { p -> spells.map { s -> (if (s == 0) (if (success == 0L) 0 else Int.MAX_VALUE) else ((success + s - 1) / s).let { if (it > Int.MAX_VALUE) Int.MAX_VALUE.toLong() else it }.toInt()).let { target -> p.binarySearch(target).let { if (it < 0) -it - 1 else generateSequence(it) { i -> (i - 1).takeIf { i > 0 && p[i - 1] >= target } }.last() } }.let { p.size - it } }.toIntArray() } }

@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2561 lang=kotlin */
-class Solution { fun minCost(basket1: IntArray, basket2: IntArray): Long = (basket1.groupingBy { it }.eachCount().toMutableMap().also { m -> basket2.forEach { m[it] = (m[it] ?: 0) - 1 } }).let { m -> if (m.values.any { it % 2 != 0 }) -1L else m.entries.flatMap { (k, v) -> List(if (v < 0) -v / 2 else v / 2) { k } }.sorted().let { s -> s.take(s.size / 2).fold(0L) { acc, v -> acc + minOf(v.toLong(), 2L * minOf(basket1.min() ?: 0, basket2.min() ?: 0)) } } } }

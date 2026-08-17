@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2270 lang=kotlin */
-class Solution { fun waysToSplitArray(nums: IntArray): Int = nums.fold(0L) { a, b -> a + b }.let { total -> nums.indices.dropLast(1).fold(0L to 0) { (sum, count), i -> (sum + nums[i]).let { ns -> ns to (count + if (ns >= total - ns) 1 else 0) } }.second } }

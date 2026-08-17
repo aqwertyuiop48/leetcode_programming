@@ -1,4 +1,0 @@
-/* @lc app=leetcode id=2040 lang=kotlin */
-class Solution {
-    fun kthSmallestProduct(nums1: IntArray, nums2: IntArray, k: Long): Long = DeepRecursiveFunction<Triple<Int, Int, (Int) -> Boolean>, Int> { (l, r, cond) -> if (l > r) l - 1 else (l + (r - l) / 2).let { m -> if (cond(m)) callRecursive(Triple(m + 1, r, cond)) else callRecursive(Triple(l, m - 1, cond)) } }.let { findLast -> DeepRecursiveFunction<Triple<Long, Long, Long>, Long> { (low, high, k) -> if (low >= high) low else (low + (high - low) / 2).let { mid -> nums1.sumOf { x -> if (x == 0L.toInt()) (if (mid >= 0) nums2.size.toLong() else 0L) else if (x > 0) findLast.invoke(Triple(0, nums2.size - 1, { x.toLong() * nums2[it] <= mid })) + 1L else nums2.size.toLong() - (findLast.invoke(Triple(0, nums2.size - 1, { x.toLong() * nums2[it] > mid })) + 1L) }.let { c -> if (c >= k) callRecursive(Triple(low, mid, k)) else callRecursive(Triple(mid + 1, high, k)) } } }.invoke(Triple(-10000000000L, 10000000000L, k)) }
-}

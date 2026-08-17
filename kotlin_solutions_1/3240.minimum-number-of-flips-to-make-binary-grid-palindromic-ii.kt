@@ -1,6 +1,0 @@
-/*
- * @lc app=leetcode id=3240 lang=java
- *
- * [3240] Minimum Number of Flips to Make Binary Grid Palindromic II
- */
-class Solution { fun minFlips(grid: Array<IntArray>): Int = grid.size.let { n -> grid[0].size.let { m -> (0 until n / 2).sumOf { i -> (0 until m / 2).sumOf { j -> (grid[i][j] + grid[n - 1 - i][j] + grid[i][m - 1 - j] + grid[n - 1 - i][m - 1 - j]).let { s -> minOf(s, 4 - s) } } }.let { base -> (if (n % 2 == 1) (0 until m / 2).count { j -> grid[n / 2][j] != grid[n / 2][m - 1 - j] } else 0).let { rd -> (if (m % 2 == 1) (0 until n / 2).count { i -> grid[i][m / 2] != grid[n - 1 - i][m / 2] } else 0).let { cd -> (rd + cd).let { diffs -> (if (n % 2 == 1) (0 until m / 2).count { j -> grid[n / 2][j] == 1 && grid[n / 2][m - 1 - j] == 1 } else 0).let { ro -> (if (m % 2 == 1) (0 until n / 2).count { i -> grid[i][m / 2] == 1 && grid[n - 1 - i][m / 2] == 1 } else 0).let { co -> base + diffs + (if (diffs == 0 && (ro + co) % 2 == 1) 2 else 0) + (if (n % 2 == 1 && m % 2 == 1) grid[n / 2][m / 2] else 0) } } } } } } } } }

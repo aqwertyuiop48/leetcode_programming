@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=2589 lang=kotlin */
-class Solution { fun findMinimumTime(tasks: Array<IntArray>): Int = BooleanArray(2001).let { used -> tasks.sortedBy { it[1] }.forEach { task -> (task[2] - (task[0]..task[1]).count { used[it] }).let { needed -> (task[1] downTo task[0]).filter { !used[it] }.take(maxOf(0, needed)).forEach { used[it] = true } } }.run { (1..2000).count { used[it] } } }

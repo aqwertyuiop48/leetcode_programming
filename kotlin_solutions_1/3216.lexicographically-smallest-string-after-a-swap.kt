@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3216 lang=kotlin */
-class Solution { fun getSmallestString(s: String): String = s.toCharArray().apply { (0 until size - 1).firstOrNull { i -> this[i] % 2 == this[i + 1] % 2 && this[i] > this[i + 1] }?.let { i -> this[i] = this[i + 1].also { this[i + 1] = this[i] } } }.concatToString() }

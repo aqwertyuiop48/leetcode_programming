@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=1566 lang=kotlin */
-class Solution { fun containsPattern(arr: IntArray, m: Int, k: Int): Boolean = (0..arr.size - m * k).any { start -> (0 until m * (k - 1)).all { offset -> arr[start + offset] == arr[start + offset + m] } } }

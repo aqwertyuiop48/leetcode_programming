@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=3020 lang=kotlin */
-class Solution { fun maximumLength(nums: IntArray): Int = nums.toList().groupingBy { it.toLong() }.eachCount().let { map -> maxOf((map[1L] ?: 0).let { if (it == 0) 0 else if (it % 2 == 0) it - 1 else it }, map.keys.filter { it > 1L }.maxOfOrNull { x -> generateSequence(x) { v -> if (v <= 100000L) v * v else null }.let { seq -> seq.takeWhile { (map[it] ?: 0) >= 2 }.count().let { k -> if ((map[seq.elementAt(k)] ?: 0) >= 1) 2 * k + 1 else 2 * k - 1 } } } ?: 1) } }

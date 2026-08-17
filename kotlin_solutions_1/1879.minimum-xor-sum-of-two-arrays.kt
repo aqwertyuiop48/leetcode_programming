@@ -1,2 +1,0 @@
-/* @lc app=leetcode id=1879 lang=kotlin */
-class Solution { fun minimumXORSum(nums1: IntArray, nums2: IntArray): Int = IntArray(1 shl nums2.size) { if (it == 0) 0 else 1000000000 }.also { dp -> (0 until dp.size).forEach { mask -> java.lang.Integer.bitCount(mask).let { i -> if (i < nums1.size) (nums2.indices).forEach { j -> if ((mask and (1 shl j)) == 0) dp[mask or (1 shl j)] = minOf(dp[mask or (1 shl j)], dp[mask] + (nums1[i] ^ nums2[j])) } } } }.last() }
