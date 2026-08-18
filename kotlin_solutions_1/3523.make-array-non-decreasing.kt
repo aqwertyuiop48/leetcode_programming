@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3523 lang=kotlin
- *
- * [3523] Make Array Non-decreasing
- */
-
-class Solution { fun maximumPossibleSize(nums: IntArray): Int = nums.fold(0 to 0) { (count, prevMax), num -> if (num >= prevMax) (count + 1) to num else count to prevMax }.first }
+/* * @lc app=leetcode id=3523 lang=kotlin * * [3523] Make Array Non-decreasing */ class Solution { fun maximumPossibleSize(nums: IntArray): Int = nums.fold(0 to 0) { (count, prevMax), num -> if (num >= prevMax) (count + 1) to num else count to prevMax }.first }

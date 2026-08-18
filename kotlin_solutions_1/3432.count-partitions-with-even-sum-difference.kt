@@ -1,9 +1,1 @@
-/*
- * @lc app=leetcode id=3432 lang=kotlin
- *
- * [3432] Count Partitions with Even Sum Difference
- */
-
-class Solution {
-    fun countPartitions(nums: IntArray): Int = nums.sum().let { total -> (0 until nums.size - 1).fold(0 to 0) { (count, pref), i -> (pref + nums[i]).let { nPref -> (count + if ((nPref - (total - nPref)) % 2 == 0) 1 else 0) to nPref } }.first }
-}
+/* * @lc app=leetcode id=3432 lang=kotlin * * [3432] Count Partitions with Even Sum Difference */ class Solution { fun countPartitions(nums: IntArray): Int = nums.sum().let { total -> (0 until nums.size - 1).fold(0 to 0) { (count, pref), i -> (pref + nums[i]).let { nPref -> (count + if ((nPref - (total - nPref)) % 2 == 0) 1 else 0) to nPref } }.first } }

@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3471 lang=kotlin
- *
- * [3471] Find the Largest Almost Missing Integer
- */
-
-class Solution { fun largestInteger(nums: IntArray, k: Int): Int = IntArray(51).apply { (0..nums.size - k).forEach { i -> nums.slice(i until i + k).distinct().forEach { this[it]++ } } }.let { counts -> (50 downTo 0).firstOrNull { counts[it] == 1 } ?: -1 } }
+/* * @lc app=leetcode id=3471 lang=kotlin * * [3471] Find the Largest Almost Missing Integer */ class Solution { fun largestInteger(nums: IntArray, k: Int): Int = IntArray(51).apply { (0..nums.size - k).forEach { i -> nums.slice(i until i + k).distinct().forEach { this[it]++ } } }.let { counts -> (50 downTo 0).firstOrNull { counts[it] == 1 } ?: -1 } }

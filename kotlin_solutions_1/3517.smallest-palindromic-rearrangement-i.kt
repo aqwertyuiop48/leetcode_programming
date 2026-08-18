@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3517 lang=kotlin
- *
- * [3517] Smallest Palindromic Rearrangement I
- */
-
-class Solution { fun smallestPalindrome(s: String): String = s.groupingBy { it }.eachCount().let { cnt -> ('a'..'z').joinToString("") { c -> "$c".repeat((cnt[c] ?: 0) / 2) }.let { half -> half + ('a'..'z').filter { (cnt[it] ?: 0) % 2 != 0 }.joinToString("") + half.reversed() } } }
+/* * @lc app=leetcode id=3517 lang=kotlin * * [3517] Smallest Palindromic Rearrangement I */ class Solution { fun smallestPalindrome(s: String): String = s.groupingBy { it }.eachCount().let { cnt -> ('a'..'z').joinToString("") { c -> "$c".repeat((cnt[c] ?: 0) / 2) }.let { half -> half + ('a'..'z').filter { (cnt[it] ?: 0) % 2 != 0 }.joinToString("") + half.reversed() } } }

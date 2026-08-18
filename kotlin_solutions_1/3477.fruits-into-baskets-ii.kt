@@ -1,7 +1,1 @@
-/*
- * @lc app=leetcode id=3477 lang=kotlin
- *
- * [3477] Fruits Into Baskets II
- */
-
-class Solution { fun numOfUnplacedFruits(fruits: IntArray, baskets: IntArray): Int = BooleanArray(baskets.size).let { used -> fruits.fold(0) { unplaced, fruit -> baskets.indices.firstOrNull { j -> !used[j] && baskets[j] >= fruit }?.also { j -> used[j] = true }?.let { unplaced } ?: (unplaced + 1) } } }
+/* * @lc app=leetcode id=3477 lang=kotlin * * [3477] Fruits Into Baskets II */ class Solution { fun numOfUnplacedFruits(fruits: IntArray, baskets: IntArray): Int = BooleanArray(baskets.size).let { used -> fruits.fold(0) { unplaced, fruit -> baskets.indices.firstOrNull { j -> !used[j] && baskets[j] >= fruit }?.also { j -> used[j] = true }?.let { unplaced } ?: (unplaced + 1) } } }

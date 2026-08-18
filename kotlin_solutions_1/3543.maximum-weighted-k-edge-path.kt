@@ -1,2 +1,1 @@
-/* @lc app=leetcode id=3543 lang=kotlin */
-class Solution { fun maxWeight(n: Int, edges: Array<IntArray>, k: Int, t: Int): Int = (0 until k).fold(List(n) { setOf(0) }) { dp, _ -> List(n) { mutableSetOf<Int>() }.also { ndp -> edges.forEach { e -> dp[e[0]].forEach { w -> if (w + e[2] < t) ndp[e[1]].add(w + e[2]) } } } }.flatMap { it }.maxOrNull() ?: -1 }
+/* @lc app=leetcode id=3543 lang=kotlin */ class Solution { fun maxWeight(n: Int, edges: Array<IntArray>, k: Int, t: Int): Int = (0 until k).fold(List(n) { setOf(0) }) { dp, _ -> List(n) { mutableSetOf<Int>() }.also { ndp -> edges.forEach { e -> dp[e[0]].forEach { w -> if (w + e[2] < t) ndp[e[1]].add(w + e[2]) } } } }.flatMap { it }.maxOrNull() ?: -1 }
