@@ -1,2 +1,2 @@
 /* @lc app=leetcode id=989 lang=kotlin */
-class Solution{fun addToArrayForm(num:IntArray,k:Int):List<Int> = (java.math.BigInteger(num.joinToString(""))+java.math.BigInteger.valueOf(k.toLong())).toString().map{it.digitToInt()}}
+class Solution{fun addToArrayForm(num:IntArray,k:Int):List<Int> = java.math.BigInteger(num.joinToString("")).add(java.math.BigInteger.valueOf(k.toLong())).toString().map{it.digitToInt()}}
