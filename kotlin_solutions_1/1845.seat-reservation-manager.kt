@@ -1,1 +1,1 @@
-/* * @lc app=leetcode id=1845 lang=kotlin * * [1845] Seat Reservation Manager */ class SeatManager(n: Int) { val pq = java.util.PriorityQueue((1..n).toList()) fun reserve(): Int = pq.poll() fun unreserve(seatNumber: Int) = pq.add(seatNumber).let {} }
+/* * @lc app=leetcode id=1845 lang=kotlin * * [1845] Seat Reservation Manager */ class SeatManager(n: Int, var min: Int = 1, val pq: java.util.PriorityQueue<Int> = java.util.PriorityQueue()) { fun reserve(): Int = if (pq.isNotEmpty()) pq.poll() else min.also { min++ } fun unreserve(seatNumber: Int) = pq.add(seatNumber).let { } }
