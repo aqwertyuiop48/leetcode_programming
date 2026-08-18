@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3498 lang=kotlin */
+class Solution { fun reverseDegree(s: String): Int = s.indices.sumOf { i -> (26 - (s[i] - 'a')) * (i + 1) } }

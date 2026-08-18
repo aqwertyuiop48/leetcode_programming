@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3556 lang=kotlin */
+class Solution { fun sumOfLargestPrimes(s: String): Long = s.indices.flatMap { i -> (i until s.length).map { j -> s.substring(i, j + 1).toLong() } }.filter { num -> num >= 2 && (2..Math.sqrt(num.toDouble()).toLong()).none { num % it == 0L } }.toSet().sortedDescending().take(3).sum() }

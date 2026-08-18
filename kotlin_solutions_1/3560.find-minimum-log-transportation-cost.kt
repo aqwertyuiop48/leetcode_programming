@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3560 lang=kotlin */
+class Solution { fun minCuttingCost(n: Int, m: Int, k: Int): Long = if (m <= k && n <= k) 0L else if (m > k && n <= k) (m - k).toLong() * k else if (n > k && m <= k) (n - k).toLong() * k else 0L }

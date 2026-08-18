@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3513 lang=kotlin */
+class Solution { fun uniqueXorTriplets(nums: IntArray): Int = if (nums.size <= 2) nums.size else Integer.highestOneBit(nums.size) shl 1 }

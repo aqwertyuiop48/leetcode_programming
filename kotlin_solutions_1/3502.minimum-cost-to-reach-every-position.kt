@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3502 lang=kotlin */
+class Solution { fun minCosts(cost: IntArray): IntArray = cost.runningFold(Int.MAX_VALUE, ::minOf).drop(1).toIntArray() }

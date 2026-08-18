@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=3487 lang=kotlin
+ *
+ * [3487] Maximum Unique Subarray Sum After Deletion
+ */
+
+class Solution { fun maxSum(nums: IntArray): Int = nums.maxOrNull()!!.let { maxVal -> if (maxVal <= 0) maxVal else nums.filter { it > 0 }.distinct().sum() } }

@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3567 lang=kotlin */
+class Solution { fun minAbsDiff(grid: Array<IntArray>, k: Int): Array<IntArray> = Array(grid.size - k + 1) { r -> IntArray(grid[0].size - k + 1) { c -> (0 until k).flatMap { i -> (0 until k).map { j -> grid[r + i][c + j] } }.distinct().sorted().let { vals -> if (vals.size <= 1) 0 else (0 until vals.size - 1).minOf { idx -> vals[idx + 1] - vals[idx] } } } } }

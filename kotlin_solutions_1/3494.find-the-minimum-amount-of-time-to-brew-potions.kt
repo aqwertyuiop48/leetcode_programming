@@ -1,0 +1,2 @@
+/* @lc app=leetcode id=3494 lang=kotlin */
+class Solution { fun minTime(skill: IntArray, mana: IntArray): Long = LongArray(skill.size).also { p -> skill.foldIndexed(0L) { i, acc, s -> (acc + s).also { p[i] = it } } }.let { pref -> (1 until mana.size).sumOf { i -> (0 until skill.size).maxOf { j -> pref[j] * mana[i - 1] - (if (j > 0) pref[j - 1] else 0L) * mana[i] } } + pref.last() * mana.last() } }

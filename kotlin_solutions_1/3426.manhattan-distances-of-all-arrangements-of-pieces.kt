@@ -1,0 +1,9 @@
+/*
+ * @lc app=leetcode id=3426 lang=kotlin
+ *
+ * [3426] Manhattan Distances of All Arrangements of Pieces
+ */
+
+class Solution {
+    fun distanceSum(m: Int, n: Int, k: Int): Int = (((1L until n).fold(0L) { acc, d -> (acc + 1L * d * (n - d) % 1000000007L * m % 1000000007L * m) % 1000000007L } + (1L until m).fold(0L) { acc, d -> (acc + 1L * d * (m - d) % 1000000007L * n % 1000000007L * n) % 1000000007L }) % 1000000007L).let { totalDist -> (if (k - 2 > 1L * m * n - 2) 0L else (0 until k - 2).fold(1L) { acc, i -> (acc * (1L * m * n - 2 - i)) % 1000000007L }.let { num -> (0 until k - 2).fold(1L) { acc, i -> (acc * (i + 1)) % 1000000007L }.let { den -> (num * java.math.BigInteger.valueOf(den).modInverse(java.math.BigInteger.valueOf(1000000007L)).toLong()) % 1000000007L } }).let { comb -> (totalDist * comb % 1000000007L).toInt() } }
+}
