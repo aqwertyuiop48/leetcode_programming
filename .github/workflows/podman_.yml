@@ -1,0 +1,107 @@
+name: Podman Workflow
+
+on:
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+
+jobs:
+  build-and-run:
+    name: Podman run workflow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub via Podman
+        run: |
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | podman login docker.io -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+############################### Java & Kotlin Services (Ordered) ###############################
+
+      # https://my-vertx-app-w215.onrender.com
+      - name: Build Application podman - 0
+        working-directory: ./java/vertx_
+        run: |
+          podman build -t my-vertx-app .
+          podman tag my-vertx-app sreedockerhub19/my-vertx-app:latest
+          podman push sreedockerhub19/my-vertx-app:latest
+
+      # https://my-spring-app-ia5y.onrender.com
+      - name: Build Application podman - 1
+        working-directory: ./kotlin/spring_boot
+        run: |
+          podman build -t my-spring-app .
+          podman tag my-spring-app sreedockerhub19/my-spring-app:latest
+          podman push sreedockerhub19/my-spring-app:latest
+
+      # https://my-spring-boot-app-pzc1.onrender.com
+      - name: Build Application podman - 2
+        working-directory: ./java/spring_boot_web_apps_gradle/java_applications
+        run: |
+          podman build -t my-spring-boot-app .
+          # podman run -p 8080:8080 my-spring-boot-app
+          podman tag my-spring-boot-app sreedockerhub19/my-spring-boot-app:latest
+          podman push sreedockerhub19/my-spring-boot-app:latest
+
+      - name: Build Application podman - 2.1
+        working-directory: ./java/spring_boot_rest_API_app_maven
+        run: |
+          podman build -t my-spring-boot-maven-app .
+          # podman run -p 8080:8080 my-spring-boot-maven-app
+          podman tag my-spring-boot-maven-app sreedockerhub19/my-spring-boot-maven-app:latest
+          podman push sreedockerhub19/my-spring-boot-maven-app:latest
+
+      # https://my-vertx-app-kotlin.onrender.com
+      - name: Build Application podman - 3
+        working-directory: ./kotlin/vertx_
+        run: |
+          podman build -t my-vertx-app-kotlin .
+          podman tag my-vertx-app-kotlin sreedockerhub19/my-vertx-app-kotlin:latest
+          podman push sreedockerhub19/my-vertx-app-kotlin:latest
+
+      # https://my-ktor-app.onrender.com
+      - name: Build Application podman - 4
+        working-directory: ./kotlin/ktor_
+        run: |
+          podman build -t my-ktor-app .
+          podman tag my-ktor-app sreedockerhub19/my-ktor-app:latest
+          podman push sreedockerhub19/my-ktor-app:latest
+
+      # https://my-javalin-app-latest.onrender.com/
+      - name: Build Application podman - 5
+        working-directory: ./kotlin/javalin_
+        run: |
+          podman build -t my-javalin-app .
+          # podman run -p 8080:8080 my-javalin-app
+          podman tag my-javalin-app sreedockerhub19/my-javalin-app:latest
+          podman push sreedockerhub19/my-javalin-app:latest
+
+      # https://my-javalin-app-latest.onrender.com/
+      - name: Build Application podman - 6
+        working-directory: ./java/javalin_
+        run: |
+          podman build -t javalin-java-app .
+          # podman run -p 8080:8080 javalin-java-app
+          podman tag javalin-java-app sreedockerhub19/javalin-java-app:latest
+          podman push sreedockerhub19/javalin-java-app:latest
+
+      # https://my-quarkus-kotlin-app.onrender.com
+      - name: Build Application podman - 7
+        working-directory: ./kotlin/quarkus_
+        run: |
+          podman build -t my-quarkus-kotlin-app .
+          # podman run -p 8080:8080 my-quarkus-kotlin-app
+          podman tag my-quarkus-kotlin-app sreedockerhub19/my-quarkus-kotlin-app:latest
+          podman push sreedockerhub19/my-quarkus-kotlin-app:latest
+
+      # https://my-quarkus-java-app.onrender.com
+      - name: Build Application podman - 8
+        working-directory: ./java/quarkus_
+        run: |
+          podman build -t my-quarkus-java-app .
+          # podman run -p 8080:8080 my-quarkus-java-app
+          podman tag my-quarkus-java-app sreedockerhub19/my-quarkus-java-app:latest
+          podman push sreedockerhub19/my-quarkus-java-app:latest
