@@ -79,8 +79,8 @@ jobs:
         uses: docker://gcr.io/kaniko-project/executor:debug
         with:
           args: >-
-            --context=dir://${{ github.workspace }}/repo-helidon-java
-            --dockerfile=${{ github.workspace }}/repo-helidon-java/Dockerfile
+            --context=dir:///github/workspace/repo-helidon-java
+            --dockerfile=/github/workspace/repo-helidon-java/Dockerfile
             --destination=docker.io/sreedockerhub19/helidon-demo:latest
 
             
@@ -203,8 +203,8 @@ jobs:
         uses: docker://gcr.io/kaniko-project/executor:debug
         with:
           args: >-
-            --context=dir://${{ github.workspace }}/repo-http4j-java
-            --dockerfile=${{ github.workspace }}/repo-http4j-java/Dockerfile
+            --context=dir:///github/workspace/repo-http4j-java
+            --dockerfile=/github/workspace/repo-http4j-java/Dockerfile
             --destination=docker.io/sreedockerhub19/simple-http-server:latest
 
       # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
