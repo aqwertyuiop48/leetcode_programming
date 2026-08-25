@@ -51,7 +51,7 @@ jobs:
 
 ############################### JVM Applications (Auto-Detect Build Tool) ###############################
 
-      # 2. Helidon Demo (Java) -> Auto-detect Maven or Gradle -> Kaniko
+      # 2. Helidon Demo (Java) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - helidon-demo
         uses: actions/checkout@v4
         with:
@@ -75,15 +75,13 @@ jobs:
             ./gradlew build -x test
           fi
 
-      - name: Build & Push (Kaniko) - helidon-demo
-        uses: aevea/action-kaniko@master
+      - name: Build & Push (Docker Buildx) - helidon-demo
+        uses: docker/build-push-action@v5
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          image: sreedockerhub19/helidon-demo
-          tag: latest
-          path: repo-helidon-java
-          dockerfile: repo-helidon-java/Dockerfile
+          context: ./repo-helidon-java
+          file: ./repo-helidon-java/Dockerfile
+          push: true
+          tags: sreedockerhub19/helidon-demo:latest
 
       # 1. Helidon Demo (Kotlin) -> Auto-detect Maven or Gradle -> Pack CLI
       - name: Checkout - helidon-demo-kotlin
@@ -176,7 +174,7 @@ jobs:
             --builder paketobuildpacks/builder-jammy-base \
             --publish
 
-      # 5. Simple HTTP Server (Java) -> Auto-detect Maven or Gradle -> Kaniko
+      # 5. Simple HTTP Server (Java) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - simple-http-server
         uses: actions/checkout@v4
         with:
@@ -200,15 +198,13 @@ jobs:
             ./gradlew build -x test
           fi
 
-      - name: Build & Push (Kaniko) - simple-http-server
-        uses: aevea/action-kaniko@master
+      - name: Build & Push (Docker Buildx) - simple-http-server
+        uses: docker/build-push-action@v5
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          image: sreedockerhub19/simple-http-server
-          tag: latest
-          path: repo-http4j-java
-          dockerfile: repo-http4j-java/Dockerfile
+          context: ./repo-http4j-java
+          file: ./repo-http4j-java/Dockerfile
+          push: true
+          tags: sreedockerhub19/simple-http-server:latest
 
       # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - simple-http-server-kotlin
