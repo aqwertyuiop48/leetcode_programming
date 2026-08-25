@@ -38,6 +38,7 @@ jobs:
       - name: Build & Push (Jib) - helidon-demo-kotlin
         working-directory: ./repo-helidon-kotlin
         run: |
+          chmod +x gradlew
           ./gradlew jib \
             -Djib.to.image=sreedockerhub19/helidon-demo-kotlin:latest \
             -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
@@ -89,6 +90,7 @@ jobs:
       - name: Build & Push (Jib) - micronaut-kotlin
         working-directory: ./repo-micronaut-kotlin
         run: |
+          chmod +x gradlew
           ./gradlew jib \
             -Djib.to.image=sreedockerhub19/micronaut-kotlin:latest \
             -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
@@ -123,6 +125,7 @@ jobs:
       - name: Build & Push (Jib) - simple-http-server-kotlin
         working-directory: ./repo-http4j-kotlin
         run: |
+          chmod +x gradlew
           ./gradlew jib \
             -Djib.to.image=sreedockerhub19/simple-http-server-kotlin:latest \
             -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
@@ -137,6 +140,7 @@ jobs:
           repository: 'aqwertyuiop48/nextjs_news_search_microservices'
           ref: 'main'
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-news-search-service' # 👈 Added missing path
 
       - name: Build (Buildah) - news-search-service
         uses: redhat-actions/buildah-build@v2
@@ -320,7 +324,6 @@ jobs:
           image: sreedockerhub19/cypress-tests
           tags: latest
           registry: docker.io
-
 
   # trigger-render-workflow:
   #   needs: build-and-push
