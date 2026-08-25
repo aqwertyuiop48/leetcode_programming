@@ -31,6 +31,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # Setup Docker Config JSON for Kaniko Authentication
+      - name: Create Docker Config for Kaniko
+        run: |
+          mkdir -p ~/.docker
+          echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"$(echo -n ${{ secrets.DOCKERHUB_USERNAME }}:${{ secrets.DOCKERHUB_TOKEN }} | base64)\"}}}" > ~/.docker/config.json
+
       # Setup Pack CLI for Cloud Native Buildpacks
       - name: Setup Pack CLI
         uses: buildpacks/github-actions/setup-pack@v5.8.0
@@ -84,14 +90,28 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-helidon-java'
 
+      - name: Auto-Detect & Build Binaries - helidon-demo
+        working-directory: ./repo-helidon-java
+        run: |
+          if [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          fi
+
       - name: Build & Push (Kaniko) - helidon-demo
-        uses: aevea/action-kaniko@v0.14.0
+        uses: docker://gcr.io/kaniko-project/executor:debug
         with:
-          image: sreedockerhub19/helidon-demo
-          tag: latest
-          path: ./repo-helidon-java
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          args: >-
+            --context=dir://${{ github.workspace }}/repo-helidon-java
+            --dockerfile=${{ github.workspace }}/repo-helidon-java/Dockerfile
+            --destination=docker.io/sreedockerhub19/helidon-demo:latest
 
       # 3. Micronaut (Java) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - micronaut-java
@@ -101,6 +121,21 @@ jobs:
           ref: 'micronaut_java_'
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-java'
+
+      - name: Auto-Detect & Build Binaries - micronaut-java
+        working-directory: ./repo-micronaut-java
+        run: |
+          if [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          fi
 
       - name: Build & Push (Docker Buildx) - micronaut-java
         uses: docker/build-push-action@v5
@@ -148,14 +183,28 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-http4j-java'
 
+      - name: Auto-Detect & Build Binaries - simple-http-server
+        working-directory: ./repo-http4j-java
+        run: |
+          if [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          fi
+
       - name: Build & Push (Kaniko) - simple-http-server
-        uses: aevea/action-kaniko@v0.14.0
+        uses: docker://gcr.io/kaniko-project/executor:debug
         with:
-          image: sreedockerhub19/simple-http-server
-          tag: latest
-          path: ./repo-http4j-java
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          args: >-
+            --context=dir://${{ github.workspace }}/repo-http4j-java
+            --dockerfile=${{ github.workspace }}/repo-http4j-java/Dockerfile
+            --destination=docker.io/sreedockerhub19/simple-http-server:latest
 
       # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - simple-http-server-kotlin
@@ -165,6 +214,21 @@ jobs:
           ref: 'kotlin_'
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-http4j-kotlin'
+
+      - name: Auto-Detect & Build Binaries - simple-http-server-kotlin
+        working-directory: ./repo-http4j-kotlin
+        run: |
+          if [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          elif [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          fi
 
       - name: Build & Push (Docker Buildx) - simple-http-server-kotlin
         uses: docker/build-push-action@v5
