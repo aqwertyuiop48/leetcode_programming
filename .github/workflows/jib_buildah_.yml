@@ -51,36 +51,6 @@ jobs:
 
 ############################### JVM Applications (Auto-Detect Build Tool) ###############################
 
-      # 1. Helidon Demo (Kotlin) -> Auto-detect Maven or Gradle -> Pack CLI
-      - name: Checkout - helidon-demo-kotlin
-        uses: actions/checkout@v4
-        with:
-          repository: 'aqwertyuiop48/codeforces_script'
-          ref: 'helidon_kotlin_'
-          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
-          path: 'repo-helidon-kotlin'
-
-      - name: Build & Push (Pack CLI / Auto-Detect) - helidon-demo-kotlin
-        working-directory: ./repo-helidon-kotlin
-        run: |
-          if [ -f "pom.xml" ]; then
-            echo "Detected Maven project"
-            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
-            chmod +x mvnw
-            ./mvnw clean package -DskipTests
-          elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
-            echo "Detected Gradle project"
-            if [ ! -f "gradlew" ]; then gradle wrapper; fi
-            chmod +x gradlew
-            ./gradlew build -x test
-          else
-            echo "Error: Neither pom.xml nor build.gradle found!" && exit 1
-          fi
-
-          pack build sreedockerhub19/helidon-demo-kotlin:latest \
-            --builder paketobuildpacks/builder-jammy-base \
-            --publish
-
       # 2. Helidon Demo (Java) -> Auto-detect Maven or Gradle -> Kaniko
       - name: Checkout - helidon-demo
         uses: actions/checkout@v4
@@ -110,8 +80,39 @@ jobs:
         with:
           args: >-
             --context=dir://${{ github.workspace }}/repo-helidon-java
-            --dockerfile=Dockerfile
+            --dockerfile=${{ github.workspace }}/repo-helidon-java/Dockerfile
             --destination=docker.io/sreedockerhub19/helidon-demo:latest
+
+            
+      # 1. Helidon Demo (Kotlin) -> Auto-detect Maven or Gradle -> Pack CLI
+      - name: Checkout - helidon-demo-kotlin
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'helidon_kotlin_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-helidon-kotlin'
+
+      - name: Build & Push (Pack CLI / Auto-Detect) - helidon-demo-kotlin
+        working-directory: ./repo-helidon-kotlin
+        run: |
+          if [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          else
+            echo "Error: Neither pom.xml nor build.gradle found!" && exit 1
+          fi
+
+          pack build sreedockerhub19/helidon-demo-kotlin:latest \
+            --builder paketobuildpacks/builder-jammy-base \
+            --publish
 
       # 3. Micronaut (Java) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - micronaut-java
@@ -203,7 +204,7 @@ jobs:
         with:
           args: >-
             --context=dir://${{ github.workspace }}/repo-http4j-java
-            --dockerfile=Dockerfile
+            --dockerfile=${{ github.workspace }}/repo-http4j-java/Dockerfile
             --destination=docker.io/sreedockerhub19/simple-http-server:latest
 
       # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
@@ -432,16 +433,16 @@ jobs:
           registry: docker.io
 
  # trigger-render-workflow:
-  #   needs: build-and-push
-  #   if: always()
-  #   name: Trigger Render Workflow
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Trigger Remote Workflow via GitHub CLI
-  #       env:
-  #         GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
-  #       run: |
-  #         echo "🚀 Triggering render_.yml downstream..."
-  #         gh workflow run render_.yml \
-  #           --repo aqwertyuiop48/leetcode_programming \
-  #           --ref main
+ #   needs: build-and-push
+ #   if: always()
+ #   name: Trigger Render Workflow
+ #   runs-on: ubuntu-latest
+ #   steps:
+ #     - name: Trigger Remote Workflow via GitHub CLI
+ #       env:
+ #         GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+ #       run: |
+ #         echo "🚀 Triggering render_.yml downstream..."
+ #         gh workflow run render_.yml \
+ #           --repo aqwertyuiop48/leetcode_programming \
+ #           --ref main
