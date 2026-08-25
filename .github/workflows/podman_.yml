@@ -16,16 +16,16 @@ jobs:
       - name: Checkout target repository
         uses: actions/checkout@v4
         with:
-          repository: 'aqwertyuiop48/programming_languages' # 👈 Replace with target repo (e.g., sreedockerhub19/my-apps-repo)
-          token: ${{ secrets.GITFORCODE_DEBUG_PAT_TRIGGER_TOKEN }}                      # 👈 PAT with 'repo' scope stored in repository secrets
-          path: 'external-repo'                                  # 👈 Checkout into a dedicated folder
+          repository: 'aqwertyuiop48/programming_languages' # 👈 Replace with target repo
+          token: ${{ secrets.GITFORCODE_DEBUG_PAT_TRIGGER_TOKEN }} # 👈 PAT with 'repo' scope
+          path: 'external-repo' # 👈 Checkout into a dedicated folder
 
       # 2. Login to Docker Hub
       - name: Login to Docker Hub via Podman
         run: |
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | podman login docker.io -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-############################### Java & Kotlin Services (External Repo) ###############################
+############################### Original Java & Kotlin Services (External Repo) ###############################
 
       # https://my-vertx-app-w215.onrender.com
       - name: Build Application podman - 0
@@ -48,7 +48,6 @@ jobs:
         working-directory: ./external-repo/java/spring_boot_web_apps_gradle/java_applications
         run: |
           podman build -t my-spring-boot-app .
-          # podman run -p 8080:8080 my-spring-boot-app
           podman tag my-spring-boot-app sreedockerhub19/my-spring-boot-app:latest
           podman push sreedockerhub19/my-spring-boot-app:latest
 
@@ -56,7 +55,6 @@ jobs:
         working-directory: ./external-repo/java/spring_boot_rest_API_app_maven
         run: |
           podman build -t my-spring-boot-maven-app .
-          # podman run -p 8080:8080 my-spring-boot-maven-app
           podman tag my-spring-boot-maven-app sreedockerhub19/my-spring-boot-maven-app:latest
           podman push sreedockerhub19/my-spring-boot-maven-app:latest
 
@@ -81,16 +79,13 @@ jobs:
         working-directory: ./external-repo/kotlin/javalin_
         run: |
           podman build -t my-javalin-app .
-          # podman run -p 8080:8080 my-javalin-app
           podman tag my-javalin-app sreedockerhub19/my-javalin-app:latest
           podman push sreedockerhub19/my-javalin-app:latest
 
-      # https://my-javalin-app-latest.onrender.com/
       - name: Build Application podman - 6
         working-directory: ./external-repo/java/javalin_
         run: |
           podman build -t javalin-java-app .
-          # podman run -p 8080:8080 javalin-java-app
           podman tag javalin-java-app sreedockerhub19/javalin-java-app:latest
           podman push sreedockerhub19/javalin-java-app:latest
 
@@ -99,7 +94,6 @@ jobs:
         working-directory: ./external-repo/kotlin/quarkus_
         run: |
           podman build -t my-quarkus-kotlin-app .
-          # podman run -p 8080:8080 my-quarkus-kotlin-app
           podman tag my-quarkus-kotlin-app sreedockerhub19/my-quarkus-kotlin-app:latest
           podman push sreedockerhub19/my-quarkus-kotlin-app:latest
 
@@ -108,21 +102,246 @@ jobs:
         working-directory: ./external-repo/java/quarkus_
         run: |
           podman build -t my-quarkus-java-app .
-          # podman run -p 8080:8080 my-quarkus-java-app
           podman tag my-quarkus-java-app sreedockerhub19/my-quarkus-java-app:latest
           podman push sreedockerhub19/my-quarkus-java-app:latest
 
-  trigger-next-workflow:
-    needs: build-and-run
-    if: always()
-    name: Trigger Next Workflow
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Remote Workflow via GitHub CLI
-        env:
-          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+############################### Additional JVM & Non-JVM Applications (From File 2) ###############################
+
+      # 9. Helidon Demo (Java)
+      - name: Checkout - helidon-demo
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'helidon_java_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-helidon-java'
+
+      - name: Build Application podman - 9 (Helidon Java)
+        working-directory: ./repo-helidon-java
         run: |
-          echo "🚀 Triggering jib_buildah_.yml downstream..."
-          gh workflow run jib_buildah_.yml \
-            --repo aqwertyuiop48/leetcode_programming \
-            --ref main
+          podman build -t helidon-demo .
+          podman tag helidon-demo sreedockerhub19/helidon-demo:latest
+          podman push sreedockerhub19/helidon-demo:latest
+
+      # 10. Helidon Demo (Kotlin) - Built with standard Dockerfile/Podman to avoid pack buildpack errors
+      - name: Checkout - helidon-demo-kotlin
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'helidon_kotlin_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-helidon-kotlin'
+
+      - name: Build Application podman - 10 (Helidon Kotlin)
+        working-directory: ./repo-helidon-kotlin
+        run: |
+          podman build -t helidon-demo-kotlin .
+          podman tag helidon-demo-kotlin sreedockerhub19/helidon-demo-kotlin:latest
+          podman push sreedockerhub19/helidon-demo-kotlin:latest
+
+      # 11. Micronaut (Java)
+      - name: Checkout - micronaut-java
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'micronaut_java_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-micronaut-java'
+
+      - name: Build Application podman - 11 (Micronaut Java)
+        working-directory: ./repo-micronaut-java
+        run: |
+          podman build -t micronaut-java .
+          podman tag micronaut-java sreedockerhub19/micronaut-java:latest
+          podman push sreedockerhub19/micronaut-java:latest
+
+      # 12. Micronaut (Kotlin)
+      - name: Checkout - micronaut-kotlin
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'micronaut_kotlin_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-micronaut-kotlin'
+
+      - name: Build Application podman - 12 (Micronaut Kotlin)
+        working-directory: ./repo-micronaut-kotlin
+        run: |
+          podman build -t micronaut-kotlin .
+          podman tag micronaut-kotlin sreedockerhub19/micronaut-kotlin:latest
+          podman push sreedockerhub19/micronaut-kotlin:latest
+
+      # 13. Simple HTTP Server (Java)
+      - name: Checkout - simple-http-server
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/http4j_java'
+          ref: 'main'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-http4j-java'
+
+      - name: Build Application podman - 13 (Simple HTTP Java)
+        working-directory: ./repo-http4j-java
+        run: |
+          podman build -t simple-http-server .
+          podman tag simple-http-server sreedockerhub19/simple-http-server:latest
+          podman push sreedockerhub19/simple-http-server:latest
+
+      # 14. Simple HTTP Server (Kotlin)
+      - name: Checkout - simple-http-server-kotlin
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/http4j_java'
+          ref: 'kotlin_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-http4j-kotlin'
+
+      - name: Build Application podman - 14 (Simple HTTP Kotlin)
+        working-directory: ./repo-http4j-kotlin
+        run: |
+          podman build -t simple-http-server-kotlin .
+          podman tag simple-http-server-kotlin sreedockerhub19/simple-http-server-kotlin:latest
+          podman push sreedockerhub19/simple-http-server-kotlin:latest
+
+      # 15. News Search Service
+      - name: Checkout - news-search-service
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/nextjs_news_search_microservices'
+          ref: 'main'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-news-search-service'
+
+      - name: Build Application podman - 15 (News Search Service)
+        working-directory: ./repo-news-search-service
+        run: |
+          podman build -t news-search-service .
+          podman tag news-search-service sreedockerhub19/news-search-service:latest
+          podman push sreedockerhub19/news-search-service:latest
+
+      # 16. Angular App
+      - name: Checkout - my-angular-app
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/my_angular_app'
+          ref: 'main'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-angular-app'
+
+      - name: Build Application podman - 16 (Angular App)
+        working-directory: ./repo-angular-app
+        run: |
+          podman build -t my-angular-app .
+          podman tag my-angular-app sreedockerhub19/my-angular-app:latest
+          podman push sreedockerhub19/my-angular-app:latest
+
+      # 17. Angular App Main
+      - name: Checkout - my-angular-app-main
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/my_angular_app'
+          ref: 'main_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-angular-app-main'
+
+      - name: Build Application podman - 17 (Angular App Main)
+        working-directory: ./repo-angular-app-main
+        run: |
+          podman build -t my-angular-app-main .
+          podman tag my-angular-app-main sreedockerhub19/my-angular-app-main:latest
+          podman push sreedockerhub19/my-angular-app-main:latest
+
+      # 18. NextJS App
+      - name: Checkout - my-nextjs-app
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/nextjs_app'
+          ref: 'main'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-nextjs-app'
+
+      - name: Build Application podman - 18 (NextJS App)
+        working-directory: ./repo-nextjs-app
+        run: |
+          podman build -t my-nextjs-app .
+          podman tag my-nextjs-app sreedockerhub19/my-nextjs-app:latest
+          podman push sreedockerhub19/my-nextjs-app:latest
+
+      # 19. NextJS App TS-JS
+      - name: Checkout - my-nextjs-app-ts-js
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/nextjs_app'
+          ref: 'ts_js'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-nextjs-app-ts-js'
+
+      - name: Build Application podman - 19 (NextJS App TS-JS)
+        working-directory: ./repo-nextjs-app-ts-js
+        run: |
+          podman build -t my-nextjs-app-ts-js .
+          podman tag my-nextjs-app-ts-js sreedockerhub19/my-nextjs-app-ts-js:latest
+          podman push sreedockerhub19/my-nextjs-app-ts-js:latest
+
+      # 20. NextJS App Typescript
+      - name: Checkout - my-nextjs-app-typescript
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/nextjs_app'
+          ref: 'typescript'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-nextjs-app-typescript'
+
+      - name: Build Application podman - 20 (NextJS App Typescript)
+        working-directory: ./repo-nextjs-app-typescript
+        run: |
+          podman build -t my-nextjs-app-typescript .
+          podman tag my-nextjs-app-typescript sreedockerhub19/my-nextjs-app-typescript:latest
+          podman push sreedockerhub19/my-nextjs-app-typescript:latest
+
+      # 21. Ruby HTTP Server
+      - name: Checkout - ruby-http-server
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'ruby_'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-ruby-http-server'
+
+      - name: Build Application podman - 21 (Ruby HTTP Server)
+        working-directory: ./repo-ruby-http-server
+        run: |
+          podman build -t ruby-http-server .
+          podman tag ruby-http-server sreedockerhub19/ruby-http-server:latest
+          podman push sreedockerhub19/ruby-http-server:latest
+
+      # 22. Cypress Tests
+      - name: Checkout - cypress-tests
+        uses: actions/checkout@v4
+        with:
+          repository: 'aqwertyuiop48/codeforces_script'
+          ref: 'cypress_testing'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+          path: 'repo-cypress-tests'
+
+      - name: Build Application podman - 22 (Cypress Tests)
+        working-directory: ./repo-cypress-tests
+        run: |
+          podman build -t cypress-tests .
+          podman tag cypress-tests sreedockerhub19/cypress-tests:latest
+          podman push sreedockerhub19/cypress-tests:latest
+
+ # trigger-render-workflow:
+ #   needs: build-and-run
+ #   if: always()
+ #   name: Trigger Render Workflow
+ #   runs-on: ubuntu-latest
+ #   steps:
+ #     - name: Trigger Remote Workflow via GitHub CLI
+ #       env:
+ #         GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+ #       run: |
+ #         echo "🚀 Triggering render_.yml downstream..."
+ #         gh workflow run render_.yml \
+ #           --repo aqwertyuiop48/leetcode_programming \
+ #           --ref main
