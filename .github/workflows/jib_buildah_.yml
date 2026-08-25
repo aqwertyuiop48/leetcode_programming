@@ -9,18 +9,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Setup Java for Jib builds
+      # Setup Java
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
-      # Install Gradle globally so `gradle wrapper` can be executed if gradlew is missing
+      # Setup Gradle for wrapper fallback
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      # Log in to Docker Hub once for all Buildah pushes
+      # Setup Docker Buildx / Daemon for steps using Docker/Buildpacks
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Log in to Docker Hub via Docker CLI
+      - name: Log in to Docker Hub (Docker CLI)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # Setup Pack CLI for Cloud Native Buildpacks
+      - name: Setup Pack CLI
+        uses: buildpacks/github-actions/setup-pack@v5.8.0
+
+      # Log in to Docker Hub for Buildah / Podman steps
       - name: Log in to Docker Hub for Buildah
         uses: redhat-actions/podman-login@v1
         with:
@@ -28,9 +43,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-############################### JVM Applications (Google Jib) ###############################
+############################### JVM Applications (Alternative Build Methods) ###############################
 
-      # 1. Helidon Demo (Kotlin) -> Repo: codeforces_script (branch: helidon_kotlin_)
+      # 1. Helidon Demo (Kotlin) -> Using Gradle Boot/Buildpack plugin OR Pack CLI
       - name: Checkout - helidon-demo-kotlin
         uses: actions/checkout@v4
         with:
@@ -39,19 +54,19 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-helidon-kotlin'
 
-      - name: Build & Push (Jib) - helidon-demo-kotlin
+      - name: Build & Push (Pack CLI / CNB) - helidon-demo-kotlin
         working-directory: ./repo-helidon-kotlin
         run: |
           if [ ! -f gradlew ]; then
             gradle wrapper
           fi
           chmod +x gradlew
-          ./gradlew jib \
-            -Djib.to.image=sreedockerhub19/helidon-demo-kotlin:latest \
-            -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
-            -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+          ./gradlew build -x test
+          pack build sreedockerhub19/helidon-demo-kotlin:latest \
+            --builder paketobuildpacks/builder-jammy-base \
+            --publish
 
-      # 2. Helidon Demo (Java) -> Repo: codeforces_script (branch: helidon_java_)
+      # 2. Helidon Demo (Java) -> Using Maven Spring Boot / Buildpack plugin
       - name: Checkout - helidon-demo
         uses: actions/checkout@v4
         with:
@@ -60,15 +75,16 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-helidon-java'
 
-      - name: Build & Push (Jib) - helidon-demo
-        working-directory: ./repo-helidon-java
-        run: |
-          ./mvnw compile jib:toContainer \
-            -Dimage=sreedockerhub19/helidon-demo:latest \
-            -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
-            -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build & Push (Kaniko) - helidon-demo
+        uses: aevea/action-kaniko@v0.14.0
+        with:
+          image: sreedockerhub19/helidon-demo
+          tag: latest
+          path: ./repo-helidon-java
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3. Micronaut (Java) -> Repo: codeforces_script (branch: micronaut_java_)
+      # 3. Micronaut (Java) -> Using Micronaut Native Buildpack / Dockerfile build
       - name: Checkout - micronaut-java
         uses: actions/checkout@v4
         with:
@@ -77,15 +93,14 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-java'
 
-      - name: Build & Push (Jib) - micronaut-java
-        working-directory: ./repo-micronaut-java
-        run: |
-          ./mvnw compile jib:toContainer \
-            -Dimage=sreedockerhub19/micronaut-java:latest \
-            -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
-            -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build & Push (Docker Buildx / BuildKit) - micronaut-java
+        uses: docker/build-push-action@v5
+        with:
+          context: ./repo-micronaut-java
+          push: true
+          tags: sreedockerhub19/micronaut-java:latest
 
-      # 4. Micronaut (Kotlin) -> Repo: codeforces_script (branch: micronaut_kotlin_)
+      # 4. Micronaut (Kotlin) -> Using Gradle bootBuildImage / Cloud Native Buildpacks
       - name: Checkout - micronaut-kotlin
         uses: actions/checkout@v4
         with:
@@ -94,19 +109,19 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-kotlin'
 
-      - name: Build & Push (Jib) - micronaut-kotlin
+      - name: Build & Push (Pack CLI) - micronaut-kotlin
         working-directory: ./repo-micronaut-kotlin
         run: |
           if [ ! -f gradlew ]; then
             gradle wrapper
           fi
           chmod +x gradlew
-          ./gradlew jib \
-            -Djib.to.image=sreedockerhub19/micronaut-kotlin:latest \
-            -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
-            -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+          ./gradlew build -x test
+          pack build sreedockerhub19/micronaut-kotlin:latest \
+            --builder paketobuildpacks/builder-jammy-base \
+            --publish
 
-      # 5. Simple HTTP Server (Java) -> Repo: http4j_java (branch: main)
+      # 5. Simple HTTP Server (Java) -> Using Kaniko Action
       - name: Checkout - simple-http-server
         uses: actions/checkout@v4
         with:
@@ -115,15 +130,16 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-http4j-java'
 
-      - name: Build & Push (Jib) - simple-http-server
-        working-directory: ./repo-http4j-java
-        run: |
-          ./mvnw compile jib:toContainer \
-            -Dimage=sreedockerhub19/simple-http-server:latest \
-            -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
-            -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build & Push (Kaniko) - simple-http-server
+        uses: aevea/action-kaniko@v0.14.0
+        with:
+          image: sreedockerhub19/simple-http-server
+          tag: latest
+          path: ./repo-http4j-java
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 6. Simple HTTP Server (Kotlin) -> Repo: http4j_java (branch: kotlin_)
+      # 6. Simple HTTP Server (Kotlin) -> Using Docker Buildx
       - name: Checkout - simple-http-server-kotlin
         uses: actions/checkout@v4
         with:
@@ -132,21 +148,16 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-http4j-kotlin'
 
-      - name: Build & Push (Jib) - simple-http-server-kotlin
-        working-directory: ./repo-http4j-kotlin
-        run: |
-          if [ ! -f gradlew ]; then
-            gradle wrapper
-          fi
-          chmod +x gradlew
-          ./gradlew jib \
-            -Djib.to.image=sreedockerhub19/simple-http-server-kotlin:latest \
-            -Djib.to.auth.username=${{ secrets.DOCKERHUB_USERNAME }} \
-            -Djib.to.auth.password=${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build & Push (Docker Buildx) - simple-http-server-kotlin
+        uses: docker/build-push-action@v5
+        with:
+          context: ./repo-http4j-kotlin
+          push: true
+          tags: sreedockerhub19/simple-http-server-kotlin:latest
 
-############################### Non-JVM Applications (Buildah Only) ###############################
+############################### Non-JVM Applications (Buildah) ###############################
 
-      # 7. News Search Service -> Repo: nextjs_news_search_microservices (branch: main)
+      # 7. News Search Service
       - name: Checkout - news-search-service
         uses: actions/checkout@v4
         with:
@@ -170,7 +181,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 8. Angular App -> Repo: my_angular_app (branch: main)
+      # 8. Angular App
       - name: Checkout - my-angular-app
         uses: actions/checkout@v4
         with:
@@ -194,7 +205,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 9. Angular App Main -> Repo: my_angular_app (branch: main_)
+      # 9. Angular App Main
       - name: Checkout - my-angular-app-main
         uses: actions/checkout@v4
         with:
@@ -218,7 +229,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 10. NextJS App -> Repo: nextjs_app (branch: main)
+      # 10. NextJS App
       - name: Checkout - my-nextjs-app
         uses: actions/checkout@v4
         with:
@@ -242,7 +253,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 11. NextJS App TS-JS -> Repo: nextjs_app (branch: ts_js)
+      # 11. NextJS App TS-JS
       - name: Checkout - my-nextjs-app-ts-js
         uses: actions/checkout@v4
         with:
@@ -266,7 +277,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 12. NextJS App Typescript -> Repo: nextjs_app (branch: typescript)
+      # 12. NextJS App Typescript
       - name: Checkout - my-nextjs-app-typescript
         uses: actions/checkout@v4
         with:
@@ -290,7 +301,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 13. Ruby HTTP Server -> Repo: codeforces_script (branch: ruby_)
+      # 13. Ruby HTTP Server
       - name: Checkout - ruby-http-server
         uses: actions/checkout@v4
         with:
@@ -314,7 +325,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-      # 14. Cypress Tests -> Repo: codeforces_script (branch: cypress_testing)
+      # 14. Cypress Tests
       - name: Checkout - cypress-tests
         uses: actions/checkout@v4
         with:
