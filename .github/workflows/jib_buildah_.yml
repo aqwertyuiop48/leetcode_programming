@@ -16,11 +16,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # Setup Gradle for wrapper fallback
+      # Setup Gradle for fallback/global Gradle availability
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      # Setup Docker Buildx / Daemon for steps using Docker/Buildpacks
+      # Setup Docker Buildx / Daemon
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -43,9 +43,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-############################### JVM Applications (Alternative Build Methods) ###############################
+############################### JVM Applications (Auto-Detect Build Tool) ###############################
 
-      # 1. Helidon Demo (Kotlin) -> Using Gradle Boot/Buildpack plugin OR Pack CLI
+      # 1. Helidon Demo (Kotlin) -> Auto-detect Maven or Gradle -> Pack CLI
       - name: Checkout - helidon-demo-kotlin
         uses: actions/checkout@v4
         with:
@@ -54,19 +54,28 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-helidon-kotlin'
 
-      - name: Build & Push (Pack CLI / CNB) - helidon-demo-kotlin
+      - name: Build & Push (Pack CLI / Auto-Detect) - helidon-demo-kotlin
         working-directory: ./repo-helidon-kotlin
         run: |
-          if [ ! -f gradlew ]; then
-            gradle wrapper
+          if [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          elif [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          else
+            echo "Error: Neither pom.xml nor build.gradle found!" && exit 1
           fi
-          chmod +x gradlew
-          ./gradlew build -x test
+
           pack build sreedockerhub19/helidon-demo-kotlin:latest \
             --builder paketobuildpacks/builder-jammy-base \
             --publish
 
-      # 2. Helidon Demo (Java) -> Using Maven Spring Boot / Buildpack plugin
+      # 2. Helidon Demo (Java) -> Auto-detect Maven or Gradle -> Kaniko
       - name: Checkout - helidon-demo
         uses: actions/checkout@v4
         with:
@@ -84,7 +93,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3. Micronaut (Java) -> Using Micronaut Native Buildpack / Dockerfile build
+      # 3. Micronaut (Java) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - micronaut-java
         uses: actions/checkout@v4
         with:
@@ -93,14 +102,14 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-java'
 
-      - name: Build & Push (Docker Buildx / BuildKit) - micronaut-java
+      - name: Build & Push (Docker Buildx) - micronaut-java
         uses: docker/build-push-action@v5
         with:
           context: ./repo-micronaut-java
           push: true
           tags: sreedockerhub19/micronaut-java:latest
 
-      # 4. Micronaut (Kotlin) -> Using Gradle bootBuildImage / Cloud Native Buildpacks
+      # 4. Micronaut (Kotlin) -> Auto-detect Maven or Gradle -> Pack CLI
       - name: Checkout - micronaut-kotlin
         uses: actions/checkout@v4
         with:
@@ -109,19 +118,28 @@ jobs:
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-kotlin'
 
-      - name: Build & Push (Pack CLI) - micronaut-kotlin
+      - name: Build & Push (Pack CLI / Auto-Detect) - micronaut-kotlin
         working-directory: ./repo-micronaut-kotlin
         run: |
-          if [ ! -f gradlew ]; then
-            gradle wrapper
+          if [ -f "build.gradle" ] || [ -f "build.gradle.kts" ]; then
+            echo "Detected Gradle project"
+            if [ ! -f "gradlew" ]; then gradle wrapper; fi
+            chmod +x gradlew
+            ./gradlew build -x test
+          elif [ -f "pom.xml" ]; then
+            echo "Detected Maven project"
+            if [ ! -f "mvnw" ]; then mvn wrapper:wrapper; fi
+            chmod +x mvnw
+            ./mvnw clean package -DskipTests
+          else
+            echo "Error: Neither build.gradle nor pom.xml found!" && exit 1
           fi
-          chmod +x gradlew
-          ./gradlew build -x test
+
           pack build sreedockerhub19/micronaut-kotlin:latest \
             --builder paketobuildpacks/builder-jammy-base \
             --publish
 
-      # 5. Simple HTTP Server (Java) -> Using Kaniko Action
+      # 5. Simple HTTP Server (Java) -> Auto-detect Maven or Gradle -> Kaniko
       - name: Checkout - simple-http-server
         uses: actions/checkout@v4
         with:
@@ -139,7 +157,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 6. Simple HTTP Server (Kotlin) -> Using Docker Buildx
+      # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - simple-http-server-kotlin
         uses: actions/checkout@v4
         with:
