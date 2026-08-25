@@ -110,7 +110,7 @@ jobs:
         with:
           args: >-
             --context=dir://${{ github.workspace }}/repo-helidon-java
-            --dockerfile=${{ github.workspace }}/repo-helidon-java/Dockerfile
+            --dockerfile=Dockerfile
             --destination=docker.io/sreedockerhub19/helidon-demo:latest
 
       # 3. Micronaut (Java) -> Auto-detect Maven or Gradle -> Docker Buildx
@@ -203,7 +203,7 @@ jobs:
         with:
           args: >-
             --context=dir://${{ github.workspace }}/repo-http4j-java
-            --dockerfile=${{ github.workspace }}/repo-http4j-java/Dockerfile
+            --dockerfile=Dockerfile
             --destination=docker.io/sreedockerhub19/simple-http-server:latest
 
       # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
@@ -431,7 +431,7 @@ jobs:
           tags: latest
           registry: docker.io
 
-  # trigger-render-workflow:
+ # trigger-render-workflow:
   #   needs: build-and-push
   #   if: always()
   #   name: Trigger Render Workflow
