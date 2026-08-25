@@ -76,14 +76,15 @@ jobs:
           fi
 
       - name: Build & Push (Kaniko) - helidon-demo
-        uses: docker://gcr.io/kaniko-project/executor:debug
+        uses: aevea/action-kaniko@v1.6.0
         with:
-          args: >-
-            --context=dir:///github/workspace/repo-helidon-java
-            --dockerfile=/github/workspace/repo-helidon-java/Dockerfile
-            --destination=docker.io/sreedockerhub19/helidon-demo:latest
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          image: sreedockerhub19/helidon-demo
+          tag: latest
+          path: repo-helidon-java
+          dockerfile: repo-helidon-java/Dockerfile
 
-            
       # 1. Helidon Demo (Kotlin) -> Auto-detect Maven or Gradle -> Pack CLI
       - name: Checkout - helidon-demo-kotlin
         uses: actions/checkout@v4
@@ -200,12 +201,14 @@ jobs:
           fi
 
       - name: Build & Push (Kaniko) - simple-http-server
-        uses: docker://gcr.io/kaniko-project/executor:debug
+        uses: aevea/action-kaniko@v1.6.0
         with:
-          args: >-
-            --context=dir:///github/workspace/repo-http4j-java
-            --dockerfile=/github/workspace/repo-http4j-java/Dockerfile
-            --destination=docker.io/sreedockerhub19/simple-http-server:latest
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          image: sreedockerhub19/simple-http-server
+          tag: latest
+          path: repo-http4j-java
+          dockerfile: repo-http4j-java/Dockerfile
 
       # 6. Simple HTTP Server (Kotlin) -> Auto-detect Maven or Gradle -> Docker Buildx
       - name: Checkout - simple-http-server-kotlin
