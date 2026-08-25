@@ -16,6 +16,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      # Install Gradle globally so `gradle wrapper` can be executed if gradlew is missing
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       # Log in to Docker Hub once for all Buildah pushes
       - name: Log in to Docker Hub for Buildah
         uses: redhat-actions/podman-login@v1
@@ -38,6 +42,9 @@ jobs:
       - name: Build & Push (Jib) - helidon-demo-kotlin
         working-directory: ./repo-helidon-kotlin
         run: |
+          if [ ! -f gradlew ]; then
+            gradle wrapper
+          fi
           chmod +x gradlew
           ./gradlew jib \
             -Djib.to.image=sreedockerhub19/helidon-demo-kotlin:latest \
@@ -90,6 +97,9 @@ jobs:
       - name: Build & Push (Jib) - micronaut-kotlin
         working-directory: ./repo-micronaut-kotlin
         run: |
+          if [ ! -f gradlew ]; then
+            gradle wrapper
+          fi
           chmod +x gradlew
           ./gradlew jib \
             -Djib.to.image=sreedockerhub19/micronaut-kotlin:latest \
@@ -125,6 +135,9 @@ jobs:
       - name: Build & Push (Jib) - simple-http-server-kotlin
         working-directory: ./repo-http4j-kotlin
         run: |
+          if [ ! -f gradlew ]; then
+            gradle wrapper
+          fi
           chmod +x gradlew
           ./gradlew jib \
             -Djib.to.image=sreedockerhub19/simple-http-server-kotlin:latest \
@@ -140,7 +153,7 @@ jobs:
           repository: 'aqwertyuiop48/nextjs_news_search_microservices'
           ref: 'main'
           token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
-          path: 'repo-news-search-service' # 👈 Added missing path
+          path: 'repo-news-search-service'
 
       - name: Build (Buildah) - news-search-service
         uses: redhat-actions/buildah-build@v2
