@@ -56,18 +56,3 @@ jobs:
           render deploys create ${{ matrix.app.service_id }} --wait --confirm
           
           echo "✅ Deployment for ${{ matrix.app.name }} initiated."
-
-  trigger-next-workflow:
-    needs: render_deploy
-    if: always()
-    name: Trigger Next Workflow
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Remote Workflow via GitHub CLI
-        env:
-          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
-        run: |
-          echo "🚀 Triggering render_1.yml downstream..."
-          gh workflow run podman_.yml \
-            --repo aqwertyuiop48/leetcode_programming \
-            --ref main

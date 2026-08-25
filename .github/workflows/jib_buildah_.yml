@@ -30,9 +30,9 @@ jobs:
       - name: Checkout - helidon-demo-kotlin
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/codeforces_script'
+          repository: 'aqwertyuiop48/codeforces_script'
           ref: 'helidon_kotlin_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-helidon-kotlin'
 
       - name: Build & Push (Jib) - helidon-demo-kotlin
@@ -47,9 +47,9 @@ jobs:
       - name: Checkout - helidon-demo
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/codeforces_script'
+          repository: 'aqwertyuiop48/codeforces_script'
           ref: 'helidon_java_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-helidon-java'
 
       - name: Build & Push (Jib) - helidon-demo
@@ -64,9 +64,9 @@ jobs:
       - name: Checkout - micronaut-java
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/codeforces_script'
+          repository: 'aqwertyuiop48/codeforces_script'
           ref: 'micronaut_java_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-java'
 
       - name: Build & Push (Jib) - micronaut-java
@@ -81,9 +81,9 @@ jobs:
       - name: Checkout - micronaut-kotlin
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/codeforces_script'
+          repository: 'aqwertyuiop48/codeforces_script'
           ref: 'micronaut_kotlin_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-micronaut-kotlin'
 
       - name: Build & Push (Jib) - micronaut-kotlin
@@ -98,9 +98,9 @@ jobs:
       - name: Checkout - simple-http-server
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/http4j_java'
+          repository: 'aqwertyuiop48/http4j_java'
           ref: 'main'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-http4j-java'
 
       - name: Build & Push (Jib) - simple-http-server
@@ -115,9 +115,9 @@ jobs:
       - name: Checkout - simple-http-server-kotlin
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/http4j_java'
+          repository: 'aqwertyuiop48/http4j_java'
           ref: 'kotlin_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-http4j-kotlin'
 
       - name: Build & Push (Jib) - simple-http-server-kotlin
@@ -134,10 +134,9 @@ jobs:
       - name: Checkout - news-search-service
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/nextjs_news_search_microservices'
+          repository: 'aqwertyuiop48/nextjs_news_search_microservices'
           ref: 'main'
-          token: ${{ secrets.MY_GIT_TOKEN }}
-          path: 'repo-news-search-service'
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
 
       - name: Build (Buildah) - news-search-service
         uses: redhat-actions/buildah-build@v2
@@ -158,9 +157,9 @@ jobs:
       - name: Checkout - my-angular-app
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/my_angular_app'
+          repository: 'aqwertyuiop48/my_angular_app'
           ref: 'main'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-angular-app'
 
       - name: Build (Buildah) - my-angular-app
@@ -182,9 +181,9 @@ jobs:
       - name: Checkout - my-angular-app-main
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/my_angular_app'
+          repository: 'aqwertyuiop48/my_angular_app'
           ref: 'main_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-angular-app-main'
 
       - name: Build (Buildah) - my-angular-app-main
@@ -206,9 +205,9 @@ jobs:
       - name: Checkout - my-nextjs-app
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/nextjs_app'
+          repository: 'aqwertyuiop48/nextjs_app'
           ref: 'main'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-nextjs-app'
 
       - name: Build (Buildah) - my-nextjs-app
@@ -230,9 +229,9 @@ jobs:
       - name: Checkout - my-nextjs-app-ts-js
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/nextjs_app'
+          repository: 'aqwertyuiop48/nextjs_app'
           ref: 'ts_js'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-nextjs-app-ts-js'
 
       - name: Build (Buildah) - my-nextjs-app-ts-js
@@ -254,9 +253,9 @@ jobs:
       - name: Checkout - my-nextjs-app-typescript
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/nextjs_app'
+          repository: 'aqwertyuiop48/nextjs_app'
           ref: 'typescript'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-nextjs-app-typescript'
 
       - name: Build (Buildah) - my-nextjs-app-typescript
@@ -278,9 +277,9 @@ jobs:
       - name: Checkout - ruby-http-server
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/codeforces_script'
+          repository: 'aqwertyuiop48/codeforces_script'
           ref: 'ruby_'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-ruby-http-server'
 
       - name: Build (Buildah) - ruby-http-server
@@ -302,9 +301,9 @@ jobs:
       - name: Checkout - cypress-tests
         uses: actions/checkout@v4
         with:
-          repository: 'YOUR_GITHUB_USERNAME/codeforces_script'
+          repository: 'aqwertyuiop48/codeforces_script'
           ref: 'cypress_testing'
-          token: ${{ secrets.MY_GIT_TOKEN }}
+          token: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
           path: 'repo-cypress-tests'
 
       - name: Build (Buildah) - cypress-tests
@@ -321,3 +320,19 @@ jobs:
           image: sreedockerhub19/cypress-tests
           tags: latest
           registry: docker.io
+
+
+  trigger-render-workflow:
+    needs: build-and-push
+    if: always()
+    name: Trigger Render Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Remote Workflow via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          echo "🚀 Triggering render_.yml downstream..."
+          gh workflow run render_.yml \
+            --repo aqwertyuiop48/leetcode_programming \
+            --ref main

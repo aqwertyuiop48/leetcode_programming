@@ -138,7 +138,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
-          echo "🚀 Triggering render_.yml downstream..."
-          gh workflow run render_.yml \
+          echo "🚀 Triggering podman_.yml downstream..."
+          gh workflow run podman_.yml \
             --repo aqwertyuiop48/leetcode_programming \
             --ref main

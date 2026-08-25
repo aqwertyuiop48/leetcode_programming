@@ -111,3 +111,18 @@ jobs:
           # podman run -p 8080:8080 my-quarkus-java-app
           podman tag my-quarkus-java-app sreedockerhub19/my-quarkus-java-app:latest
           podman push sreedockerhub19/my-quarkus-java-app:latest
+
+  trigger-next-workflow:
+    needs: build-and-run
+    if: always()
+    name: Trigger Next Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Remote Workflow via GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          echo "🚀 Triggering jib_buildah_.yml downstream..."
+          gh workflow run jib_buildah_.yml \
+            --repo aqwertyuiop48/leetcode_programming \
+            --ref main
