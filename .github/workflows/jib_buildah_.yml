@@ -76,7 +76,7 @@ jobs:
           fi
 
       - name: Build & Push (Kaniko) - helidon-demo
-        uses: aevea/action-kaniko@v1.6.0
+        uses: aevea/action-kaniko@master
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -201,7 +201,7 @@ jobs:
           fi
 
       - name: Build & Push (Kaniko) - simple-http-server
-        uses: aevea/action-kaniko@v1.6.0
+        uses: aevea/action-kaniko@master
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
