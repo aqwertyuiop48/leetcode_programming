@@ -331,17 +331,17 @@ jobs:
           podman tag cypress-tests sreedockerhub19/cypress-tests:latest
           podman push sreedockerhub19/cypress-tests:latest
 
- # trigger-render-workflow:
- #   needs: build-and-run
- #   if: always()
- #   name: Trigger Render Workflow
- #   runs-on: ubuntu-latest
- #   steps:
- #     - name: Trigger Remote Workflow via GitHub CLI
- #       env:
- #         GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
- #       run: |
- #         echo "🚀 Triggering render_.yml downstream..."
- #         gh workflow run render_.yml \
- #           --repo aqwertyuiop48/leetcode_programming \
- #           --ref main
+  trigger-render-workflow:
+   needs: build-and-run
+   if: always()
+   name: Trigger Render Workflow
+   runs-on: ubuntu-latest
+   steps:
+     - name: Trigger Remote Workflow via GitHub CLI
+       env:
+         GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+       run: |
+         echo "🚀 Triggering render_.yml downstream..."
+         gh workflow run render_.yml \
+           --repo aqwertyuiop48/leetcode_programming \
+           --ref main
