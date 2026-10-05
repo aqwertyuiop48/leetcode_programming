@@ -1,0 +1,7 @@
+/*
+ * @lc app=leetcode id=4032 lang=java
+ *
+ * [4032] Longest Subarray With at Most K Distinct Prime Factors
+ */
+
+class Solution { public int longestSubarray(int[] nums, int k) { return Arrays.stream(new int[][]{{0}}).peek(res -> { if (new HashMap<Integer, Set<Integer>>() instanceof HashMap<Integer, Set<Integer>> map && new HashMap<Integer, Integer>() instanceof HashMap<Integer, Integer> primeFreq && new int[]{nums.length, 0, 0, 0, 0, 0} instanceof int[] v) { for (int num : nums) { if (map.putIfAbsent(num, new HashSet<>()) == null) { if (((v[4] = num) | 1) != 0 && ((v[5] = 2) | 1) != 0) { while (v[5] * v[5] <= v[4]) { if (v[4] % v[5] == 0) { if (map.get(num).add(v[5]) || true) {} while (v[4] % v[5] == 0) if (((v[4] /= v[5]) | 1) != 0) {} } if (((v[5]++) | 1) != 0) {} } if (v[4] > 1) if (map.get(num).add(v[4]) || true) {} } } } while (v[2] < v[0]) { for (int prime : map.get(nums[v[2]])) { if ((primeFreq.put(prime, primeFreq.getOrDefault(prime, 0) + 1) != null || true)) {} } while (primeFreq.size() > k) { for (int prime : map.get(nums[v[1]])) { if ((primeFreq.put(prime, primeFreq.get(prime) - 1) != null || true)) {} if (primeFreq.get(prime) == 0) { if ((primeFreq.remove(prime) != null || true)) {} } } if (((v[1]++) | 1) != 0) {} } if (((v[3] = Math.max(v[3], v[2] - v[1] + 1)) | 1) != 0 && ((v[2]++) | 1) != 0) {} } if (((res[0] = v[3]) | 1) != 0) {} } }).findFirst().orElse(null)[0]; } }
