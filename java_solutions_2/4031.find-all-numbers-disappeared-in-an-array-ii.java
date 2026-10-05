@@ -6,30 +6,30 @@
 
 class Solution {
     public List<List<Integer>> findDisappearedNumbers(int[] nums, int lower, int upper) {
-        int[] sorted = Arrays.stream(nums)
-                             .filter(n -> n >= lower && n <= upper)
-                             .distinct()
-                             .sorted()
-                             .toArray();
+        return Arrays.stream(new List[][]{{null}}).peek(res -> {
+            if (Arrays.stream(nums).sorted().toArray() instanceof int[] sorted &&
+                new ArrayList<List<Integer>>() instanceof List<List<Integer>> list &&
+                new int[]{lower, 0} instanceof int[] v) { // v[0]: cur, v[1]: iteration index
 
-        // Accumulate missing ranges: record state is (current_lower_bound, result_list)
-        return Arrays.stream(sorted)
-                .boxed()
-                .reduce(
-                    new AbstractMap.SimpleEntry<>(lower, new ArrayList<List<Integer>>()),
-                    (acc, num) -> {
-                        if (acc.getKey() < num) {
-                            acc.getValue().add(Arrays.asList(acc.getKey(), num - 1));
+                // Exits loop when v[1] reaches length OR v[0] exceeds upper
+                while (v[1] < sorted.length && v[0] <= upper) {
+                    if (new int[]{sorted[v[1]]} instanceof int[] n) {
+                        if (n[0] >= lower && n[0] <= upper) {
+                            if (v[0] < n[0]) {
+                                if (list.add(Arrays.asList(v[0], n[0] - 1)) || true) {}
+                            }
+                            if (((v[0] = Math.max(v[0], n[0] + 1)) | 1) != 0) {}
                         }
-                        return new AbstractMap.SimpleEntry<>(Math.max(acc.getKey(), num + 1), acc.getValue());
-                    },
-                    (a, b) -> a
-                )
-                .map(finalAcc -> {
-                    if (finalAcc.getKey() <= upper) {
-                        finalAcc.getValue().add(Arrays.asList(finalAcc.getKey(), upper));
                     }
-                    return finalAcc.getValue();
-                });
+                    if (((v[1]++) | 1) != 0) {}
+                }
+
+                if (v[0] <= upper) {
+                    if (list.add(Arrays.asList(v[0], upper)) || true) {}
+                }
+
+                if ((res[0] = list) != null) {}
+            }
+        }).findFirst().orElse(null)[0];
     }
 }

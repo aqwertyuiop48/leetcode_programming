@@ -6,19 +6,23 @@
 
 class Solution {
     public long maxAlternatingSum(int[] nums, int k) {
-        return Optional.of(Arrays.stream(nums).max().getAsInt()).map(M ->
-            Optional.of(new long[][]{new long[M + 2], new long[M + 2], new long[nums.length], new long[nums.length]}).map(t ->
-                IntStream.iterate(nums.length - 1, i -> i >= 0, i -> i - 1)
-                    .peek(i -> IntStream.of(i + k).filter(j -> j < nums.length)
-                        .peek(j -> IntStream.iterate(nums[j] + 1, x -> x <= M + 1, x -> x + (x & -x))
-                            .forEach(x -> t[0][x] = Math.max(t[0][x], t[2][j])))
-                        .forEach(j -> IntStream.iterate(M - nums[j] + 1, x -> x <= M + 1, x -> x + (x & -x))
-                            .forEach(x -> t[1][x] = Math.max(t[1][x], t[3][j]))))
-                    .peek(i -> t[3][i] = nums[i] + IntStream.iterate(nums[i], x -> x > 0, x -> x - (x & -x))
-                        .mapToLong(x -> t[0][x]).max().orElse(0))
-                    .peek(i -> t[2][i] = nums[i] + IntStream.iterate(M - nums[i], x -> x > 0, x -> x - (x & -x))
-                        .mapToLong(x -> t[1][x]).max().orElse(0))
-                    .mapToLong(i -> Math.max(t[2][i], t[3][i]))
-                    .max().orElse(0)).get()).get();
+        return Optional.of(Arrays.stream(nums).sorted().distinct().toArray()).flatMap(s ->
+            Optional.of(Arrays.stream(nums).map(v -> Arrays.binarySearch(s, v)).toArray()).flatMap(rk ->
+            Optional.of(new long[][]{new long[s.length + 2], new long[s.length + 2], new long[nums.length], new long[nums.length], new long[2]}).flatMap(T ->
+            Optional.of(new IntToLongFunction[2]).flatMap(qry ->
+            Optional.of(new IntUnaryOperator[2]).flatMap(upd ->
+            Optional.of(IntStream.range(0, 2)
+                    .peek(t -> qry[t] = x -> x <= 0 ? 0L : Math.max(T[t][x], qry[t].applyAsLong(x - (x & -x))))
+                    .peek(t -> upd[t] = x -> x > s.length ? 0 : upd[t].applyAsInt(x + (x & -x) + 0 * (int) (T[t][x] = Math.max(T[t][x], T[4][t]))))
+                    .sum()).flatMap(ig ->
+            Optional.<IntUnaryOperator>of(j -> upd[0].applyAsInt(rk[j] + 1 + 0 * (int) (T[4][0] = T[3][j]))
+                                             + upd[1].applyAsInt(s.length - rk[j] + 0 * (int) (T[4][1] = T[2][j]))).map(ins ->
+                IntStream.range(0, nums.length).map(z -> nums.length - 1 - z)
+                    .mapToLong(i -> (i + k < nums.length ? ins.applyAsInt(i + k) : 0) * 0L
+                        + Math.max(T[2][i] = nums[i] + qry[0].applyAsLong(rk[i]),
+                                   T[3][i] = nums[i] + qry[1].applyAsLong(s.length - 1 - rk[i])))
+                    .max().orElse(0))))))))
+            .get();
     }
 }
+
