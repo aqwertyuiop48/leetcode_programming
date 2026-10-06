@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=856 lang=kotlin */ class Solution { fun scoreOfParentheses(s: String): Int = s.indices.fold(0 to 0) { (d, r), i -> if (s[i] == '(') d + 1 to r else d - 1 to r + (if (s[i - 1] == '(') 1 shl (d - 1) else 0) }.second }

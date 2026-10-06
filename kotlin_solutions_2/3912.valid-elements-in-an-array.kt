@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3912 lang=kotlin */ class Solution { fun findValidElements(nums: IntArray): List<Int> = nums.indices.filter { i -> i == 0 || i == nums.size - 1 || nums.take(i).all { it < nums[i] } || nums.drop(i + 1).all { it < nums[i] } }.map { nums[it] } }

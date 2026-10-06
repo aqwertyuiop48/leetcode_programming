@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3397 lang=kotlin */ class Solution { fun maxDistinctElements(nums: IntArray, k: Int): Int = nums.sorted().fold(Long.MIN_VALUE / 2 to 0) { (cur, c), x -> maxOf(x - k.toLong(), cur + 1).let { v -> if (v <= x + k.toLong()) v to c + 1 else cur to c } }.second }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3290 lang=kotlin */ class Solution { fun maxScore(a: IntArray, b: IntArray): Long = b.fold(LongArray(5) { if (it == 0) 0L else Long.MIN_VALUE / 2 }) { dp, x -> LongArray(5) { j -> if (j == 0) 0L else maxOf(dp[j], dp[j - 1] + a[j - 1].toLong() * x) } }[4] }

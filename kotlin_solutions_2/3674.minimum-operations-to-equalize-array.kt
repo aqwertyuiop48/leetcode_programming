@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3674 lang=kotlin */ class Solution { fun minOperations(nums: IntArray): Int = if (nums.all { it == nums[0] }) 0 else 1 }

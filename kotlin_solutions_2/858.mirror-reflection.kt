@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=858 lang=kotlin */ class Solution { fun mirrorReflection(p: Int, q: Int): Int = generateSequence(p to q) { (a, b) -> if (b == 0) null else b to a % b }.last().first.let { g -> if (q / g % 2 == 0) 0 else if (p / g % 2 == 0) 2 else 1 } }

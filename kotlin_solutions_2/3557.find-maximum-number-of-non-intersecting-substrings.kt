@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3557 lang=kotlin */ class Solution { fun maxSubstrings(word: String): Int = IntArray(word.length + 1).also { dp -> IntArray(26) { -1 }.let { last -> word.indices.forEach { i -> (if (i >= 3) last.set(word[i - 3] - 'a', i - 3) else Unit).let { dp[i + 1] = maxOf(dp[i], last[word[i] - 'a'].let { j -> if (j >= 0) dp[j] + 1 else 0 }) } } } }.last() }

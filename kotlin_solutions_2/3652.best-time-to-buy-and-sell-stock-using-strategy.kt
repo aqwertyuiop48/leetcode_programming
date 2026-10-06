@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3652 lang=kotlin */ class Solution { fun maxProfit(prices: IntArray, strategy: IntArray, k: Int): Long = prices.runningFold(0L) { a, b -> a + b }.let { P -> prices.indices.runningFold(0L) { a, i -> a + prices[i].toLong() * strategy[i] }.let { S -> S.last() + maxOf(0L, (0..prices.size - k).maxOf { l -> (P[l + k] - P[l + k / 2]) - (S[l + k] - S[l]) }) } } }

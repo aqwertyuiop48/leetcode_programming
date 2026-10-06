@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3349 lang=kotlin */ class Solution { fun hasIncreasingSubarrays(nums: List<Int>, k: Int): Boolean = nums.indices.runningFold(1) { run, i -> if (i > 0 && nums[i] > nums[i - 1]) run + 1 else 1 }.drop(1).let { r -> (0..nums.size - 2 * k).any { r[it + k - 1] >= k && r[it + 2 * k - 1] >= k } } }

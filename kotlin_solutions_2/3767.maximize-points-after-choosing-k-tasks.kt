@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3767 lang=kotlin */ class Solution { fun maxPoints(technique1: IntArray, technique2: IntArray, k: Int): Long = technique1.indices.map { (technique1[it] - technique2[it]).toLong() }.sortedDescending().let { g -> technique2.sumOf { it.toLong() } + g.take(k).sum() + g.drop(k).filter { it > 0 }.sum() } }

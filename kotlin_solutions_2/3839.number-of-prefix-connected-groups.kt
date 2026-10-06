@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3839 lang=kotlin */ class Solution { fun prefixConnected(words: Array<String>, k: Int): Int = words.filter { it.length >= k }.groupingBy { it.take(k) }.eachCount().values.count { it >= 2 } }

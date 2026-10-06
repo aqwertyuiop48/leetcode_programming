@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3736 lang=kotlin */ class Solution { fun minMoves(nums: IntArray): Int = nums.max().let { m -> nums.sumOf { m - it } } }

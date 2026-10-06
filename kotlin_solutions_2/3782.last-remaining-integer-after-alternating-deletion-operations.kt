@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3782 lang=kotlin */ class Solution { fun lastInteger(n: Long): Long = generateSequence(longArrayOf(1L, 1L, n, 0L)) { s -> if (s[2] == 1L) null else if (s[3] == 0L) longArrayOf(s[0], s[1] * 2, (s[2] + 1) / 2, 1L) else longArrayOf(s[0] + (if (s[2] % 2 == 0L) s[1] else 0L), s[1] * 2, (s[2] + 1) / 2, 0L) }.last()[0] }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3798 lang=kotlin */ class Solution { fun largestEven(s: String): String = s.take(s.lastIndexOf('2') + 1) }

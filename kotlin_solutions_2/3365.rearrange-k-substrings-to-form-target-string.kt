@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3365 lang=kotlin */ class Solution { fun isPossibleToRearrange(s: String, t: String, k: Int): Boolean = s.chunked(s.length / k).sorted() == t.chunked(t.length / k).sorted() }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3982 lang=kotlin */ class Solution { fun maxDigitRange(nums: IntArray): Int = nums.map { it to it.toString().let { s -> s.max() - s.min() } }.let { l -> l.maxOf { it.second }.let { m -> l.filter { it.second == m }.sumOf { it.first } } } }

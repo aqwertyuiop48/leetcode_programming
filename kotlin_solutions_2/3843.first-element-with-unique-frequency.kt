@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3843 lang=kotlin */ class Solution { fun firstUniqueFreq(nums: IntArray): Int = nums.toList().groupingBy { it }.eachCount().let { fr -> fr.values.groupingBy { it }.eachCount().let { ff -> nums.firstOrNull { ff[fr[it]!!] == 1 } ?: -1 } } }

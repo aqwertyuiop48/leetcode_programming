@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3623 lang=kotlin */ class Solution { fun countTrapezoids(points: Array<IntArray>): Int = 1_000_000_007L.let { M -> points.groupingBy { it[1] }.eachCount().values.map { c -> c.toLong() * (c - 1) / 2 % M }.fold(0L to 0L) { (pre, ans), s -> (pre + s) % M to (ans + s * pre) % M }.second.toInt() } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2449 lang=kotlin */ class Solution { fun makeSimilar(nums: IntArray, target: IntArray): Long = listOf(0, 1).sumOf { p -> nums.filter { it % 2 == p }.sorted().zip(target.filter { it % 2 == p }.sorted()).sumOf { (a, b) -> maxOf(0L, (a - b).toLong() / 2) } } }

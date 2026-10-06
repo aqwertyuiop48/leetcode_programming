@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3833 lang=kotlin */ class Solution { fun dominantIndices(nums: IntArray): Int = nums.size.let { n -> nums.reversed().runningFold(0L) { a, b -> a + b }.reversed().let { suf -> (0 until n - 1).count { nums[it].toLong() * (n - 1 - it) > suf[it + 1] } } } }

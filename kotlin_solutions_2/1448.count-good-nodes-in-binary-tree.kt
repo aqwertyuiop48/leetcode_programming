@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1448 lang=kotlin */ class Solution { fun goodNodes(root: TreeNode?): Int = generateSequence(listOf(root!! to root.`val`)) { f -> f.flatMap { (n, m) -> listOfNotNull(n.left, n.right).map { it to maxOf(m, it.`val`) } }.takeIf { it.isNotEmpty() } }.flatten().count { (n, m) -> n.`val` >= m } }

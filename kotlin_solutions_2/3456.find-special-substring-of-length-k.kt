@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3456 lang=kotlin */ class Solution { fun hasSpecialSubstring(s: String, k: Int): Boolean = (s.indices.filter { it == 0 || s[it] != s[it - 1] } + s.length).zipWithNext { a, b -> b - a }.any { it == k } }

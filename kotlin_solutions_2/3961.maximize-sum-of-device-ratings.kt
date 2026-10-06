@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3961 lang=kotlin */ class Solution { fun maxRatings(units: Array<IntArray>): Long = units.map { it.sorted() }.map { it[0].toLong() to (if (it.size == 1) 0L else it[1].toLong()) }.let { p -> maxOf(p.sumOf { it.first }, p.minOf { it.first } + p.sumOf { it.second } - p.minOf { it.second }) } }

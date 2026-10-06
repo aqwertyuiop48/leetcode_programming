@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=945 lang=kotlin */ class Solution { fun minIncrementForUnique(nums: IntArray): Int = nums.sorted().fold(-1L to 0L) { (p, m), x -> maxOf(x.toLong(), p + 1).let { it to m + it - x } }.second.toInt() }

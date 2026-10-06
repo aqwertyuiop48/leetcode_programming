@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3741 lang=kotlin */ class Solution { fun minimumDistance(nums: IntArray): Int = nums.indices.groupBy { nums[it] }.values.filter { it.size >= 3 }.minOfOrNull { ps -> (0..ps.size - 3).minOf { 2 * (ps[it + 2] - ps[it]) } } ?: -1 }

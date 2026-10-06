@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1881 lang=kotlin */ class Solution { fun maxValue(n: String, x: Int): String = (if (n[0] == '-') (1 until n.length).firstOrNull { n[it] - '0' > x } else n.indices.firstOrNull { n[it] - '0' < x }).let { i -> (i ?: n.length).let { n.substring(0, it) + x + n.substring(it) } } }

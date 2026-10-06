@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3931 lang=kotlin */ class Solution { fun isAdjacentDiffAtMostTwo(s: String): Boolean = s.zipWithNext().all { Math.abs(it.first - it.second) <= 2 } }

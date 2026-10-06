@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3043 lang=kotlin */ class Solution { fun longestCommonPrefix(arr1: IntArray, arr2: IntArray): Int = arr1.flatMap { x -> x.toString().let { s -> (1..s.length).map { s.substring(0, it) } } }.toHashSet().let { st -> arr2.maxOf { y -> y.toString().let { s -> (s.length downTo 1).firstOrNull { s.substring(0, it) in st } ?: 0 } } } }

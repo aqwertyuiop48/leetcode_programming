@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3335 lang=kotlin */ class Solution { fun lengthAfterTransformations(s: String, t: Int): Int = (0 until t).fold(LongArray(26).also { c -> s.forEach { c[it - 'a']++ } }) { c, _ -> LongArray(26) { i -> (c[(i + 25) % 26] + (if (i == 1) c[25] else 0L)) % 1_000_000_007L } }.sum().let { (it % 1_000_000_007L).toInt() } }

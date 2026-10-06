@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=958 lang=kotlin */ class Solution { fun isCompleteTree(root: TreeNode?): Boolean = generateSequence(listOf(root!! to 1)) { f -> f.flatMap { (n, i) -> listOfNotNull(n.left?.let { it to minOf(1000, 2 * i) }, n.right?.let { it to minOf(1000, 2 * i + 1) }) }.takeIf { it.isNotEmpty() } }.flatten().toList().let { l -> l.maxOf { it.second } == l.size } }

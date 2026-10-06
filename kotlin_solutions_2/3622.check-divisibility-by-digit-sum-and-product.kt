@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3622 lang=kotlin */ class Solution { fun checkDivisibility(n: Int): Boolean = n.toString().let { s -> n % (s.sumOf { it - '0' } + s.fold(1) { a, c -> a * (c - '0') }) == 0 } }

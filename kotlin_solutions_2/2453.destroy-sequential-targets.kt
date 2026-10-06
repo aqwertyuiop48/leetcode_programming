@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2453 lang=kotlin */ class Solution { fun destroyTargets(nums: IntArray, space: Int): Int = nums.groupBy { it % space }.values.let { g -> g.maxOf { it.size }.let { m -> g.filter { it.size == m }.minOf { it.min() } } } }

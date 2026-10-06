@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3707 lang=kotlin */ class Solution { fun scoreBalance(s: String): Boolean = s.map { it - 'a' + 1 }.let { v -> v.sum().let { t -> t % 2 == 0 && (1 until s.length).any { v.take(it).sum() * 2 == t } } } }

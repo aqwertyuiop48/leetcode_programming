@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3638 lang=kotlin */ class Solution { fun maxBalancedShipments(weight: IntArray): Int = weight.fold(0 to 0) { (mx, cnt), w -> if (w < mx) 0 to cnt + 1 else maxOf(mx, w) to cnt }.second }

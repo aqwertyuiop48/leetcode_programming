@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3979 lang=kotlin */ class Solution { fun maxValidPairSum(nums: IntArray, k: Int): Int = nums.runningFold(0) { a, b -> maxOf(a, b) }.let { pm -> (k until nums.size).maxOf { nums[it] + pm[it - k + 1] } } }

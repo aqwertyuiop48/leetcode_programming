@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=962 lang=kotlin */ class Solution { fun maxWidthRamp(nums: IntArray): Int = nums.indices.sortedWith(compareBy({ nums[it] }, { it })).fold(Int.MAX_VALUE to 0) { (mn, best), i -> minOf(mn, i) to maxOf(best, i - minOf(mn, i)) }.second }

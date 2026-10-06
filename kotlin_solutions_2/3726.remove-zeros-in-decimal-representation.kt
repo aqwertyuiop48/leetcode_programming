@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3726 lang=kotlin */ class Solution { fun removeZeros(n: Long): Long = n.toString().replace("0", "").toLong() }

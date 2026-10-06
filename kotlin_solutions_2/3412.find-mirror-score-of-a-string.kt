@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3412 lang=kotlin */ class Solution { fun calculateScore(s: String): Long = Array(26) { ArrayList<Int>() }.let { st -> s.indices.fold(0L) { acc, i -> (25 - (s[i] - 'a')).let { m -> if (st[m].isNotEmpty()) acc + (i - st[m].removeAt(st[m].size - 1)) else st[s[i] - 'a'].add(i).let { acc } } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2452 lang=kotlin */ class Solution { fun twoEditWords(queries: Array<String>, dictionary: Array<String>): List<String> = queries.filter { q -> dictionary.any { d -> q.indices.count { q[it] != d[it] } <= 2 } } }

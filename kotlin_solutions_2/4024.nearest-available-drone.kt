@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4024 lang=kotlin */ class Solution { fun nearestDrone(drones: Array<IntArray>, target: IntArray): Int = drones.indices.filter { Math.abs(drones[it][0] - target[0]) + Math.abs(drones[it][1] - target[1]) <= drones[it][2] }.minByOrNull { Math.abs(drones[it][0] - target[0]) + Math.abs(drones[it][1] - target[1]) } ?: -1 }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3922 lang=kotlin */ class Solution { fun minFlips(s: String): Int = s.length.let { n -> s.count { it == '0' }.let { z -> listOf(z, n - z, if (n - z >= 1) n - z - 1 else Int.MAX_VALUE, if (n >= 2) (if (s[0] == '0') 1 else 0) + (if (s[n - 1] == '0') 1 else 0) + s.substring(1, n - 1).count { it == '1' } else Int.MAX_VALUE).min() } } }

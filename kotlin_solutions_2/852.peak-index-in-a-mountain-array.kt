@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=852 lang=kotlin */ class Solution { fun peakIndexInMountainArray(arr: IntArray): Int = arr.indices.first { arr[it] > arr[it + 1] } }

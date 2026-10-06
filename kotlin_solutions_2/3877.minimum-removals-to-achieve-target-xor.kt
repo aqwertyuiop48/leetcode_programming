@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3877 lang=kotlin */ class Solution { fun minRemovals(nums: IntArray, target: Int): Int = nums.fold(IntArray(16384) { if (it == 0) 0 else -1 }) { dp, x -> dp.copyOf().also { nd -> dp.indices.forEach { v -> if (dp[v] >= 0) nd[v xor x] = maxOf(nd[v xor x], dp[v] + 1) } } }.let { dp -> if (dp[target] < 0) -1 else nums.size - dp[target] } }

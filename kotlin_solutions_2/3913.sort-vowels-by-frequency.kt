@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3913 lang=kotlin */ class Solution { fun sortVowels(s: String): String = s.filter { it in "aeiou" }.let { vs -> vs.groupingBy { it }.eachCount().let { fr -> fr.keys.sortedWith(compareBy({ -fr[it]!! }, { s.indexOf(it) })).flatMap { v -> List(fr[v]!!) { v } }.iterator().let { itr -> s.map { if (it in "aeiou") itr.next() else it }.joinToString("") } } } }

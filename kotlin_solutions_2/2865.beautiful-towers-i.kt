@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2865 lang=kotlin */ class Solution { fun maximumSumOfHeights(heights: IntArray): Long = heights.indices.maxOf { i -> (i downTo 0).runningFold(Int.MAX_VALUE) { m, j -> minOf(m, heights[j]) }.drop(1).sumOf { it.toLong() } + (i + 1 until heights.size).runningFold(heights[i]) { m, j -> minOf(m, heights[j]) }.drop(1).sumOf { it.toLong() } } }

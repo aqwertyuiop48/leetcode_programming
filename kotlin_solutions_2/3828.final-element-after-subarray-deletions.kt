@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3828 lang=kotlin */ class Solution { fun finalElement(nums: IntArray): Int = maxOf(nums.first(), nums.last()) }

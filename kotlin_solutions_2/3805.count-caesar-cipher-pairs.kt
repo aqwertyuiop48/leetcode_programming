@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3805 lang=kotlin */ class Solution { fun countPairs(words: Array<String>): Long = words.groupingBy { w -> String(CharArray(w.length) { i -> 'a' + (w[i] - w[0] + 26) % 26 }) }.eachCount().values.sumOf { c -> c.toLong() * (c - 1) / 2 } }

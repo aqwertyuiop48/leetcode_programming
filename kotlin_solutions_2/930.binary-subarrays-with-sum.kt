@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=930 lang=kotlin */ class Solution { fun numSubarraysWithSum(nums: IntArray, goal: Int): Int = IntArray(nums.size + 1).also { it[0] = 1 }.let { cnt -> nums.fold(0 to 0) { (s, r), x -> (s + x).let { t -> t to r + (if (t >= goal) cnt[t - goal] else 0) }.also { cnt[it.first]++ } }.second } }

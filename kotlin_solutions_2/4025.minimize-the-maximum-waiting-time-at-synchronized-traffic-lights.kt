@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4025 lang=kotlin */ class Solution { fun minPenalty(period: Int, lights: IntArray, arrivalTime: IntArray): Int = lights.max().let { mx -> arrivalTime.maxOf { (it % period).let { r -> if (mx > r) 0 else period - r } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3955 lang=kotlin */ class Solution { fun generateValidStrings(n: Int, k: Int): List<String> = (0 until (1 shl n)).filter { m -> m and (m shr 1) == 0 }.filter { m -> (0 until n).filter { m shr it and 1 == 1 }.sum() <= k }.map { m -> (0 until n).joinToString("") { if (m shr it and 1 == 1) "1" else "0" } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3731 lang=kotlin */ class Solution { fun findMissingElements(nums: IntArray): List<Int> = nums.toSet().let { s -> (nums.min()..nums.max()).filter { it !in s } } }

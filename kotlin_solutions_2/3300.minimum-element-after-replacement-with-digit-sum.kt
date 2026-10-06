@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3300 lang=kotlin */ class Solution { fun minElement(nums: IntArray): Int = nums.minOf { it.toString().sumOf { c -> c - '0' } } }

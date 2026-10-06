@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3803 lang=kotlin */ class Solution { fun residuePrefixes(s: String): Int = s.indices.count { i -> s.take(i + 1).toSet().size == (i + 1) % 3 } }

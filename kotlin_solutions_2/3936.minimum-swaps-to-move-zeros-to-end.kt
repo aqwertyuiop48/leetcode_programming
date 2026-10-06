@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3936 lang=kotlin */ class Solution { fun minimumSwaps(nums: IntArray): Int = nums.count { it == 0 }.let { z -> (0 until nums.size - z).count { nums[it] == 0 } } }

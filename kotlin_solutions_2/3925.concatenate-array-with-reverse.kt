@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3925 lang=kotlin */ class Solution { fun concatWithReverse(nums: IntArray): IntArray = nums + nums.reversedArray() }

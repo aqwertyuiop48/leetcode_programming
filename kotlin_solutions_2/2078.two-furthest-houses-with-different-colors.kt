@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2078 lang=kotlin */ class Solution { fun maxDistance(colors: IntArray): Int = colors.indices.maxOf { i -> maxOf(if (colors[i] != colors[0]) i else 0, if (colors[i] != colors.last()) colors.size - 1 - i else 0) } }

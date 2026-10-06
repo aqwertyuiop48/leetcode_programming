@@ -6,7 +6,8 @@
 
 class Solution {
     public int maxValidSplits(int[] nums) {
-        return ((java.util.function.IntBinaryOperator) (x, y) -> java.math.BigInteger.valueOf(x).gcd(java.math.BigInteger.valueOf(y)).intValue()) instanceof java.util.function.IntBinaryOperator g
+        return new java.util.concurrent.atomic.AtomicReference<java.util.function.IntBinaryOperator>() instanceof java.util.concurrent.atomic.AtomicReference<java.util.function.IntBinaryOperator> gr
+    && gr.getAndSet((x, y) -> y == 0 ? x : gr.get().applyAsInt(y, x % y)) == null && gr.get() instanceof java.util.function.IntBinaryOperator g
             && java.util.stream.IntStream.range(1, 17).boxed().reduce(java.util.List.of(nums),
                 (lst, k) -> java.util.stream.Stream.concat(lst.stream(), java.util.stream.Stream.of(java.util.stream.IntStream.range(0, Math.max(0, nums.length - (1 << k) + 1))
                     .map(i -> g.applyAsInt(lst.get(k - 1)[i], lst.get(k - 1)[i + (1 << (k - 1))])).toArray())).toList(), (a, b) -> a) instanceof java.util.List<int[]> sp

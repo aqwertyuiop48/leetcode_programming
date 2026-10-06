@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=931 lang=kotlin */ class Solution { fun minFallingPathSum(matrix: Array<IntArray>): Int = matrix.fold(IntArray(matrix[0].size)) { dp, row -> IntArray(row.size) { j -> row[j] + (maxOf(0, j - 1)..minOf(row.size - 1, j + 1)).minOf { dp[it] } } }.min() }

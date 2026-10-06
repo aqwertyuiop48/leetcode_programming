@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3282 lang=kotlin */ class Solution { fun findMaximumScore(nums: List<Int>): Long = nums.dropLast(1).runningFold(0) { m, x -> maxOf(m, x) }.drop(1).map { it.toLong() }.sum() }

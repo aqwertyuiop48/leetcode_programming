@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3780 lang=kotlin */ class Solution { fun maximumSum(nums: IntArray): Int = Array(3) { r -> nums.filter { it % 3 == r }.sortedDescending() }.let { g -> ((0..2).mapNotNull { r -> g[r].take(3).takeIf { it.size == 3 }?.sum() } + listOfNotNull(if (g.all { it.isNotEmpty() }) g[0][0] + g[1][0] + g[2][0] else null)).maxOrNull() ?: 0 } }

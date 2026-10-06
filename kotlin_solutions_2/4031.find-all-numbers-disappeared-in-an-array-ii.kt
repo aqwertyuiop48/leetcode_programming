@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4031 lang=kotlin */ class Solution { fun findDisappearedNumbers(nums: IntArray, lower: Int, upper: Int): List<List<Int>> = (listOf(lower - 1) + nums.filter { it in lower..upper }.toSortedSet() + (upper + 1)).zipWithNext().filter { (a, b) -> b - a > 1 }.map { (a, b) -> listOf(a + 1, b - 1) } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4061 lang=kotlin */ class Solution { fun minQueenMoves(source: IntArray, target: IntArray): Int = if (source[0] == target[0] && source[1] == target[1]) 0 else if (source[0] == target[0] || source[1] == target[1] || Math.abs(source[0] - target[0]) == Math.abs(source[1] - target[1])) 1 else 2 }

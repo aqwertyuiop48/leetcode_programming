@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3746 lang=kotlin */ class Solution { fun minLengthAfterRemovals(s: String): Int = Math.abs(s.count { it == 'a' } - s.count { it == 'b' }) }

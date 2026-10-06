@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4006 lang=kotlin */ class Solution { fun countValidPrefixes(s: String): Int = s.indices.count { i -> s.take(i + 1).let { p -> Math.abs(p.count { it == '0' } - p.count { it == '1' }) <= 1 } } }

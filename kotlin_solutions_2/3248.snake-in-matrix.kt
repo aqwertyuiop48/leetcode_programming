@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3248 lang=kotlin */ class Solution { fun finalPositionOfSnake(n: Int, commands: List<String>): Int = commands.fold(0 to 0) { (r, c), cm -> if (cm == "UP") r - 1 to c else if (cm == "DOWN") r + 1 to c else if (cm == "LEFT") r to c - 1 else r to c + 1 }.let { (r, c) -> r * n + c } }

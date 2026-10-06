@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=901 lang=kotlin */ class StockSpanner(val st: java.util.ArrayDeque<IntArray> = java.util.ArrayDeque()) { fun next(price: Int): Int = (1 + generateSequence { st.peekFirst()?.takeIf { it[0] <= price } }.map { st.pollFirst()[1] }.sum()).also { st.addFirst(intArrayOf(price, it)) } }

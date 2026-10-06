@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3392 lang=kotlin */ class Solution { fun countSubarrays(nums: IntArray): Int = (0..nums.size - 3).count { (nums[it] + nums[it + 2]) * 2 == nums[it + 1] } }

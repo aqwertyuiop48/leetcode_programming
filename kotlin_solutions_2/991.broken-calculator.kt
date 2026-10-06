@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=991 lang=kotlin */ class Solution { fun brokenCalc(startValue: Int, target: Int): Int = generateSequence(target to 0) { (t, c) -> if (t <= startValue) null else (if (t % 2 == 1) t + 1 else t / 2) to c + 1 }.last().let { (t, c) -> c + startValue - t } }

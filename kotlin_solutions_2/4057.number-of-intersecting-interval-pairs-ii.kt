@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4057 lang=kotlin */ class Solution { fun countIntersectingIntervals(intervals: Array<IntArray>): Long = intervals.map { it[1] }.sorted().let { ends -> intervals.size.toLong().let { n -> n * (n - 1) / 2 - intervals.sumOf { iv -> (-ends.binarySearch { if (it < iv[0]) -1 else 1 } - 1).toLong() } } } }

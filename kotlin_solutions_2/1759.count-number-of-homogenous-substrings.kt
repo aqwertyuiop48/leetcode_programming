@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1759 lang=kotlin */ class Solution { fun countHomogenous(s: String): Int = Regex("(.)\\1*").findAll(s).sumOf { it.value.length.toLong().let { n -> n * (n + 1) / 2 } }.mod(1_000_000_007L).toInt() }

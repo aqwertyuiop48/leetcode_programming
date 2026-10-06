@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3819 lang=kotlin */ class Solution { fun rotateElements(nums: IntArray, k: Int): IntArray = nums.filter { it >= 0 }.let { nn -> if (nn.isEmpty()) nums else (0 until nn.size).map { nn[(it + k) % nn.size] }.iterator().let { itr -> IntArray(nums.size) { if (nums[it] < 0) nums[it] else itr.next() } } } }

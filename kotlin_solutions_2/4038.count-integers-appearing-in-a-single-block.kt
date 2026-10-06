@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4038 lang=kotlin */ class Solution { fun countSpecialIntegers(nums: IntArray): Int = nums.toSet().count { x -> nums.indices.filter { nums[it] == x }.let { p -> p.last() - p.first() + 1 == p.size } } }

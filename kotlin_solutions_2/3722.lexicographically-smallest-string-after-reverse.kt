@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3722 lang=kotlin */ class Solution { fun lexSmallest(s: String): String = (1..s.length).flatMap { k -> listOf(s.take(k).reversed() + s.drop(k), s.dropLast(k) + s.takeLast(k).reversed()) }.min() }

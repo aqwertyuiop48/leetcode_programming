@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3824 lang=kotlin */ class Solution { fun minimumK(nums: IntArray): Int = generateSequence(1 to 100000) { (lo, hi) -> if (lo >= hi) null else ((lo + hi) / 2).let { k -> if (nums.sumOf { ((it + k - 1) / k).toLong() } <= k.toLong() * k) lo to k else k + 1 to hi } }.last().first }

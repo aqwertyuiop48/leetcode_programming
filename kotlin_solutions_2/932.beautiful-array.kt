@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=932 lang=kotlin */ class Solution { fun beautifulArray(n: Int): IntArray = if (n == 1) intArrayOf(1) else (beautifulArray((n + 1) / 2).map { 2 * it - 1 } + beautifulArray(n / 2).map { 2 * it }).toIntArray() }

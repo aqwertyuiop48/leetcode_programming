@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3417 lang=kotlin */ class Solution { fun zigzagTraversal(grid: Array<IntArray>): List<Int> = grid.indices.flatMap { i -> if (i % 2 == 0) grid[i].toList() else grid[i].toList().reversed() }.filterIndexed { idx, _ -> idx % 2 == 0 } }

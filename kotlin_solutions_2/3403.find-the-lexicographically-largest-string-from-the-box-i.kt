@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3403 lang=kotlin */ class Solution { fun answerString(word: String, numFriends: Int): String = if (numFriends == 1) word else word.indices.map { i -> word.substring(i, minOf(word.length, i + word.length - numFriends + 1)) }.max() }

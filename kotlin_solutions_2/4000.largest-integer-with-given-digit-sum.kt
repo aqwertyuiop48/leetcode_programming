@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4000 lang=kotlin */ class Solution { fun largestInteger(n: Int, s: Int): Int = if (s > 9 * n) -1 else ("9".repeat(s / 9) + (if (s % 9 > 0) (s % 9).toString() else "")).padEnd(n, '0').toInt() }

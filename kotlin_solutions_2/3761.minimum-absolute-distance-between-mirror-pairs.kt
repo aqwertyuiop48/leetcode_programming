@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3761 lang=kotlin */ class Solution { fun minMirrorPairDistance(nums: IntArray): Int = HashMap<Int, Int>().let { m -> nums.indices.mapNotNull { j -> m[nums[j]]?.let { j - it }.also { m[nums[j].toString().reversed().toInt()] = j } }.minOrNull() ?: -1 } }

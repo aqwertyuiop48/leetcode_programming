@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3827 lang=kotlin */ class Solution { fun countMonobit(n: Int): Int = 1 + (1..31).count { (1L shl it) - 1 <= n } }

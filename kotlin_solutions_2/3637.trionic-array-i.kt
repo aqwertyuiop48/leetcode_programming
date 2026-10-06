@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3637 lang=kotlin */ class Solution { fun isTrionic(nums: IntArray): Boolean = nums.toList().zipWithNext { a, b -> Integer.signum(b - a) }.let { d -> d.none { it == 0 } && d.fold(listOf<Int>()) { acc, x -> if (acc.lastOrNull() == x) acc else acc + x } == listOf(1, -1, 1) } }

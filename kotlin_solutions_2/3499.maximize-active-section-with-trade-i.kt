@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3499 lang=kotlin */ class Solution { fun maxActiveSectionsAfterTrade(s: String): Int = s.count { it == '1' } + (s.split("1").filter { it.isNotEmpty() }.map { it.length }.zipWithNext { a, b -> a + b }.maxOrNull() ?: 0) }

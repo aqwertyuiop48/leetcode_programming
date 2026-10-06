@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1329 lang=kotlin */ class Solution { fun diagonalSort(mat: Array<IntArray>): Array<IntArray> = mat.indices.flatMap { i -> mat[0].indices.map { j -> i to j } }.groupBy { (i, j) -> i - j }.values.onEach { cells -> cells.map { (i, j) -> mat[i][j] }.sorted().let { s -> cells.forEachIndexed { k, (i, j) -> mat[i][j] = s[k] } } }.let { mat } }

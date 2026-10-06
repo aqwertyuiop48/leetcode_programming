@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3712 lang=kotlin */ class Solution { fun sumDivisibleByK(nums: IntArray, k: Int): Int = nums.toList().groupingBy { it }.eachCount().entries.filter { it.value % k == 0 }.sumOf { it.key * it.value } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1828 lang=kotlin */ class Solution { fun countPoints(points: Array<IntArray>, queries: Array<IntArray>): IntArray = queries.map { (x, y, r) -> points.count { (px, py) -> (px - x) * (px - x) + (py - y) * (py - y) <= r * r } }.toIntArray() }

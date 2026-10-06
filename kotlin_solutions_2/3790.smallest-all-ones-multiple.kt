@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3790 lang=kotlin */ class Solution { fun minAllOneMultiple(k: Int): Int = if (k % 2 == 0 || k % 5 == 0) -1 else generateSequence(1 % k to 1) { (r, len) -> if (r == 0) null else (r * 10 + 1) % k to len + 1 }.last().second }

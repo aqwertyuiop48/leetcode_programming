@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3386 lang=kotlin */ class Solution { fun buttonWithLongestTime(events: Array<IntArray>): Int = events.indices.map { i -> events[i][0] to events[i][1] - (if (i > 0) events[i - 1][1] else 0) }.sortedWith(compareBy({ -it.second }, { it.first })).first().first }

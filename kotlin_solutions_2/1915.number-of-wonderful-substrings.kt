@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1915 lang=kotlin */ class Solution { fun wonderfulSubstrings(word: String): Long = LongArray(1024).also { it[0] = 1 }.let { cnt -> word.fold(0 to 0L) { (m, r), c -> (m xor (1 shl (c - 'a'))).let { t -> t to r + cnt[t] + (0..9).sumOf { b -> cnt[t xor (1 shl b)] } }.also { cnt[it.first]++ } }.second } }

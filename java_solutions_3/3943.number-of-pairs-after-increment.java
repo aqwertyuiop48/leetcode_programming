@@ -13,12 +13,12 @@ class Solution {
                 && (vv[b] = java.util.Arrays.stream(st).mapToLong(i -> s[i]).toArray()) != null
                 && (cc[b] = java.util.stream.IntStream.range(0, st.length).map(j -> (j + 1 < st.length ? st[j + 1] : s.length) - st[j]).toArray()) != null) instanceof java.util.function.IntPredicate rebuild
             && java.util.stream.IntStream.range(0, lz.length).allMatch(rebuild::test)
-            && ((java.util.function.IntBinaryOperator) (b, i) -> i >= 0 ? cc[b][i] : 0) instanceof java.util.function.IntBinaryOperator at
+            && ((java.util.function.LongBinaryOperator) (b, key) -> key < vv[(int) b][0] || key > vv[(int) b][vv[(int) b].length - 1] || java.util.Arrays.binarySearch(vv[(int) b], key) < 0 ? 0 : cc[(int) b][java.util.Arrays.binarySearch(vv[(int) b], key)]) instanceof java.util.function.LongBinaryOperator at
             ? java.util.Arrays.stream(queries).filter(q -> q[0] == 2 || java.util.stream.IntStream.rangeClosed(q[1] / 256, q[2] / 256)
                     .map(b -> b * 256 >= q[1] && Math.min(a.length, (b + 1) * 256) - 1 <= q[2] ? (int) (lz[b] += q[3]) * 0
                         : java.util.stream.IntStream.rangeClosed(Math.max(q[1], b * 256), Math.min(q[2], Math.min(a.length, (b + 1) * 256) - 1)).map(i -> (int) (a[i] += q[3]) * 0).sum() + (rebuild.test(b) ? 0 : 1)).sum() < 0)
-                .mapToInt(q -> java.util.stream.IntStream.range(0, lz.length)
-                    .map(b -> java.util.Arrays.stream(nums1).map(u -> at.applyAsInt(b, java.util.Arrays.binarySearch(vv[b], q[1] - u - lz[b]))).sum()).sum()).toArray()
+                .mapToInt(q -> java.util.stream.IntStream.range(0, lz.length * nums1.length)
+                    .map(k -> (int) at.applyAsLong(k / nums1.length, q[1] - nums1[k % nums1.length] - lz[k / nums1.length])).sum()).toArray()
             : null;
     }
 }

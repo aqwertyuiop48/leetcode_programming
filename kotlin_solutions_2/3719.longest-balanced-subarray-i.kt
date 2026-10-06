@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3719 lang=kotlin */ class Solution { fun longestBalanced(nums: IntArray): Int = nums.indices.maxOf { i -> HashSet<Int>().let { ev -> HashSet<Int>().let { od -> (i until nums.size).fold(0) { best, j -> (if (nums[j] % 2 == 0) ev.add(nums[j]) else od.add(nums[j])).let { if (ev.size == od.size) j - i + 1 else 0 }.let { maxOf(best, it) } } } } } }

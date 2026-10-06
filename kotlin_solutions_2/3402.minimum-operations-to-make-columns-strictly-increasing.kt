@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3402 lang=kotlin */ class Solution { fun minimumOperations(grid: Array<IntArray>): Int = grid[0].indices.sumOf { j -> grid.drop(1).fold(grid[0][j] to 0) { (p, o), row -> maxOf(0, p + 1 - row[j]).let { n -> row[j] + n to o + n } }.second } }

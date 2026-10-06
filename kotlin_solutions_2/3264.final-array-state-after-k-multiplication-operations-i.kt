@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3264 lang=kotlin */ class Solution { fun getFinalState(nums: IntArray, k: Int, multiplier: Int): IntArray = nums.also { a -> repeat(k) { a.indices.minByOrNull { a[it] }!!.let { i -> a[i] *= multiplier } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2509 lang=kotlin */ class Solution { fun cycleLengthQueries(n: Int, queries: Array<IntArray>): IntArray = queries.map { (a, b) -> generateSequence(a to b) { (x, y) -> if (x == y) null else if (x > y) x / 2 to y else x to y / 2 }.count() }.toIntArray() }

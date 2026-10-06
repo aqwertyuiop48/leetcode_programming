@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3270 lang=kotlin */ class Solution { fun generateKey(num1: Int, num2: Int, num3: Int): Int = listOf(num1, num2, num3).map { "%04d".format(it) }.let { s -> (0..3).map { i -> s.minOf { it[i] } }.joinToString("").toInt() } }

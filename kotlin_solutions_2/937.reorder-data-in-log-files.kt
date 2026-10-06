@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=937 lang=kotlin */ class Solution { fun reorderLogFiles(logs: Array<String>): Array<String> = (logs.filter { it.substringAfter(' ')[0].isLetter() }.sortedWith(compareBy({ it.substringAfter(' ') }, { it.substringBefore(' ') })) + logs.filter { it.substringAfter(' ')[0].isDigit() }).toTypedArray() }

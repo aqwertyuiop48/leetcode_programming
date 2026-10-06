@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3963 lang=kotlin */ class Solution { fun createGrid(m: Int, n: Int): Array<String> = (0 until m).map { i -> (0 until n).joinToString("") { j -> if (i == 0 || j == n - 1) "." else "#" } }.toTypedArray() }

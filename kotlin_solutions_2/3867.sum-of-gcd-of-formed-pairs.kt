@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3867 lang=kotlin */ class Solution { fun g(a: Int, b: Int): Int = if (b == 0) a else g(b, a % b) fun gcdSum(nums: IntArray): Long = nums.runningFold(0) { a, b -> maxOf(a, b) }.drop(1).let { mx -> nums.indices.map { g(nums[it], mx[it]) }.sorted().let { a -> (0 until a.size / 2).sumOf { g(a[it], a[a.size - 1 - it]).toLong() } } } }

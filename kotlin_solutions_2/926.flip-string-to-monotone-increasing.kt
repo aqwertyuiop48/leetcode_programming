@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=926 lang=kotlin */ class Solution { fun minFlipsMonoIncr(s: String): Int = s.fold(0 to 0) { (ones, f), c -> if (c == '1') ones + 1 to f else ones to minOf(f + 1, ones) }.second }

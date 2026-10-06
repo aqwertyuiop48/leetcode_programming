@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3954 lang=kotlin */ class Solution { fun sumOfGoodIntegers(n: Int, k: Int): Int = (maxOf(1, n - k)..n + k).filter { n and it == 0 }.sum() }

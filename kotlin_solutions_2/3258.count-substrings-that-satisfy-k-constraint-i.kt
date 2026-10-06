@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3258 lang=kotlin */ class Solution { fun countKConstraintSubstrings(s: String, k: Int): Int = s.indices.sumOf { i -> (i until s.length).runningFold(0 to 0) { (z, o), j -> if (s[j] == '0') z + 1 to o else z to o + 1 }.drop(1).count { (z, o) -> z <= k || o <= k } } }

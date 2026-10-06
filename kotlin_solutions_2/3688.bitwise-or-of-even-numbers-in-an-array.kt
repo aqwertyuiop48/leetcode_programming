@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3688 lang=kotlin */ class Solution { fun evenNumberBitwiseORs(nums: IntArray): Int = nums.filter { it % 2 == 0 }.fold(0) { a, b -> a or b } }

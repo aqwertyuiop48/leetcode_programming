@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3702 lang=kotlin */ class Solution { fun longestSubsequence(nums: IntArray): Int = nums.fold(0) { a, b -> a xor b }.let { t -> if (t != 0) nums.size else if (nums.all { it == 0 }) 0 else nums.size - 1 } }

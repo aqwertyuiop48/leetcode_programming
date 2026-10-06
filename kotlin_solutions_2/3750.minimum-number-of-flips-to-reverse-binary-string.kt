@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3750 lang=kotlin */ class Solution { fun minimumFlips(n: Int): Int = Integer.toBinaryString(n).let { s -> s.indices.count { s[it] != s[s.length - 1 - it] } } }

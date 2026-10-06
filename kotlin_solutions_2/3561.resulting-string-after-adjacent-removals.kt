@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3561 lang=kotlin */ class Solution { fun resultingString(s: String): String = s.fold(StringBuilder()) { sb, c -> if (sb.isNotEmpty() && ((sb.last() - c + 26) % 26 == 1 || (c - sb.last() + 26) % 26 == 1)) sb.also { it.setLength(it.length - 1) } else sb.append(c) }.toString() }

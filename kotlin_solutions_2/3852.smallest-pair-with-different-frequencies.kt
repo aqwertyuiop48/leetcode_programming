@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3852 lang=kotlin */ class Solution { fun minDistinctFreqPair(nums: IntArray): IntArray = nums.toList().groupingBy { it }.eachCount().let { fr -> fr.keys.sorted().let { vals -> vals.firstNotNullOfOrNull { x -> vals.firstOrNull { y -> y > x && fr[y] != fr[x] }?.let { y -> intArrayOf(x, y) } } ?: intArrayOf(-1, -1) } } }

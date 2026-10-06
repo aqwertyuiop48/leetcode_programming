@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3789 lang=kotlin */ class Solution { fun minimumCost(cost1: Int, cost2: Int, costBoth: Int, need1: Int, need2: Int): Long = listOf(0, need1, need2, maxOf(need1, need2)).minOf { x -> x.toLong() * costBoth + maxOf(0, need1 - x).toLong() * cost1 + maxOf(0, need2 - x).toLong() * cost2 } }

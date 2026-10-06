@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3759 lang=kotlin */ class Solution { fun countElements(nums: IntArray, k: Int): Int = if (k == 0) nums.size else nums.sortedDescending()[k - 1].let { t -> nums.count { it < t } } }

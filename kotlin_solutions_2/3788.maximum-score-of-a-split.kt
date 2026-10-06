@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3788 lang=kotlin */ class Solution { fun maximumScore(nums: IntArray): Long = nums.runningFold(0L) { a, b -> a + b }.let { pre -> nums.reversed().runningFold(Int.MAX_VALUE) { a, b -> minOf(a, b) }.reversed().let { sm -> (0 until nums.size - 1).maxOf { pre[it + 1] - sm[it + 1] } } } }

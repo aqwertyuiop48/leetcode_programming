@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3968 lang=kotlin */ class Solution { fun maxDistance(moves: String): Int = Math.abs(moves.count { it == 'U' } - moves.count { it == 'D' }) + Math.abs(moves.count { it == 'L' } - moves.count { it == 'R' }) + moves.count { it == '_' } }

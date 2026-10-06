@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2698 lang=kotlin */ class Solution { fun ok(s: String, t: Int): Boolean = s.isEmpty() && t == 0 || (1..s.length).any { k -> s.substring(0, k).toInt() <= t && ok(s.substring(k), t - s.substring(0, k).toInt()) } fun punishmentNumber(n: Int): Int = (1..n).filter { ok((it * it).toString(), it) }.sumOf { it * it } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3866 lang=kotlin */ class Solution { fun firstUniqueEven(nums: IntArray): Int = nums.firstOrNull { it % 2 == 0 && nums.count { x -> x == it } == 1 } ?: -1 }

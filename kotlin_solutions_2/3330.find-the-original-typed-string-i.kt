@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3330 lang=kotlin */ class Solution { fun possibleStringCount(word: String): Int = 1 + word.zipWithNext().count { it.first == it.second } }

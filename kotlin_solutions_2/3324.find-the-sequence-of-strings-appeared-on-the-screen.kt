@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3324 lang=kotlin */ class Solution { fun stringSequence(target: String): List<String> = target.indices.flatMap { i -> ('a'..target[i]).map { target.substring(0, i) + it } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3880 lang=kotlin */ class Solution { fun minAbsoluteDifference(nums: IntArray): Int = nums.indices.filter { nums[it] == 1 }.let { ones -> nums.indices.filter { nums[it] == 2 }.let { twos -> ones.flatMap { i -> twos.map { Math.abs(i - it) } }.minOrNull() ?: -1 } } }

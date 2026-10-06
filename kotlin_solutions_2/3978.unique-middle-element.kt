@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3978 lang=kotlin */ class Solution { fun isMiddleElementUnique(nums: IntArray): Boolean = nums.count { it == nums[nums.size / 2] } == 1 }

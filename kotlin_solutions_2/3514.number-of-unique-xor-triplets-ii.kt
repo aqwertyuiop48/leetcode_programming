@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3514 lang=kotlin */ class Solution { fun uniqueXorTriplets(nums: IntArray): Int = nums.distinct().let { d -> d.flatMap { a -> d.map { b -> a xor b } }.toSet().flatMap { x -> d.map { c -> x xor c } }.toSet().size } }

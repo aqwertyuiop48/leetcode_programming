@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=915 lang=kotlin */ class Solution { fun partitionDisjoint(nums: IntArray): Int = nums.reversed().runningFold(Int.MAX_VALUE) { m, x -> minOf(m, x) }.reversed().let { suf -> nums.runningFold(Int.MIN_VALUE) { m, x -> maxOf(m, x) }.drop(1).let { pm -> nums.indices.first { pm[it] <= suf[it + 1] } + 1 } } }

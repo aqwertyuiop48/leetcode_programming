@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3809 lang=kotlin */ class Solution { fun bestTower(towers: Array<IntArray>, center: IntArray, radius: Int): IntArray = towers.filter { Math.abs(it[0] - center[0]) + Math.abs(it[1] - center[1]) <= radius }.sortedWith(compareBy({ -it[2] }, { it[0] }, { it[1] })).firstOrNull()?.let { intArrayOf(it[0], it[1]) } ?: intArrayOf(-1, -1) }

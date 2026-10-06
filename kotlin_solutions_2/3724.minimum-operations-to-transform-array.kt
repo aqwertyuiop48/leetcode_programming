@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3724 lang=kotlin */ class Solution { fun minOperations(nums1: IntArray, nums2: IntArray): Long = nums1.indices.sumOf { Math.abs(nums1[it] - nums2[it]).toLong() } + 1 + nums1.indices.minOf { i -> nums2.last().let { t -> if (t in minOf(nums1[i], nums2[i])..maxOf(nums1[i], nums2[i])) 0 else minOf(Math.abs(t - nums1[i]), Math.abs(t - nums2[i])) } } }

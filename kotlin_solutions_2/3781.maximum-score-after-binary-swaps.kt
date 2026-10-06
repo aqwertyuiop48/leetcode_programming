@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3781 lang=kotlin */ class Solution { fun maximumScore(nums: IntArray, s: String): Long = java.util.PriorityQueue<Int>(compareByDescending<Int> { it }).let { pq -> nums.indices.fold(0L) { acc, i -> pq.add(nums[i]).let { if (s[i] == '1') acc + pq.poll() else acc } } } }

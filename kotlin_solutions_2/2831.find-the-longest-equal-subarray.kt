@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2831 lang=kotlin */ class Solution { fun longestEqualSubarray(nums: List<Int>, k: Int): Int = nums.indices.groupBy { nums[it] }.values.maxOf { p -> p.indices.fold(0 to 0) { (l, best), r -> generateSequence(l) { it + 1 }.first { (p[r] - p[it]) - (r - it) <= k }.let { nl -> nl to maxOf(best, r - nl + 1) } }.second } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2086 lang=kotlin */ class Solution { fun minimumBuckets(hamsters: String): Int = if (hamsters.indices.any { i -> hamsters[i] == 'H' && (i == 0 || hamsters[i - 1] != '.') && (i == hamsters.length - 1 || hamsters[i + 1] != '.') }) -1 else hamsters.replace("H.H", "X").count { it == 'X' || it == 'H' } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1124 lang=kotlin */ class Solution { fun longestWPI(hours: IntArray): Int = HashMap<Int, Int>().let { first -> hours.indices.fold(0 to 0) { (s, best), i -> (s + if (hours[i] > 8) 1 else -1).let { t -> first.putIfAbsent(t, i + 1).let { _ -> t to maxOf(best, if (t > 0) i + 1 else first[t - 1]?.let { i + 1 - it } ?: 0) } } }.second } }

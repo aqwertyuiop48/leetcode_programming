@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3304 lang=kotlin */ class Solution { fun kthCharacter(k: Int): Char = 'a' + Integer.bitCount(k - 1) }

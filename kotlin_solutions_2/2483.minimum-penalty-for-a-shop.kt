@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2483 lang=kotlin */ class Solution { fun bestClosingTime(customers: String): Int = customers.runningFold(customers.count { it == 'Y' }) { p, c -> p + if (c == 'N') 1 else -1 }.let { pen -> pen.indices.minBy { pen[it] } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3648 lang=kotlin */ class Solution { fun minSensors(n: Int, m: Int, k: Int): Int = ((n + 2 * k) / (2 * k + 1)) * ((m + 2 * k) / (2 * k + 1)) }

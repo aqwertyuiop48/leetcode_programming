@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3732 lang=kotlin */ class Solution { fun maxProduct(nums: IntArray): Long = nums.map { Math.abs(it) }.sortedDescending().let { a -> 100000L * a[0] * a[1] } }

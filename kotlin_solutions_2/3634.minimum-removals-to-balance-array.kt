@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3634 lang=kotlin */ class Solution { fun minRemoval(nums: IntArray, k: Int): Int = nums.sorted().let { a -> a.size - a.indices.fold(0 to 0) { (l, best), r -> generateSequence(l) { ll -> if (a[r].toLong() > k.toLong() * a[ll]) ll + 1 else null }.last().let { l2 -> l2 to maxOf(best, r - l2 + 1) } }.second } }

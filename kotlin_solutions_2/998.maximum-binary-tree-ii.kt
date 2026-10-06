@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=998 lang=kotlin */ class Solution { fun insertIntoMaxTree(root: TreeNode?, `val`: Int): TreeNode? = if (root == null || `val` > root.`val`) TreeNode(`val`).also { it.left = root } else root.also { it.right = insertIntoMaxTree(it.right, `val`) } }

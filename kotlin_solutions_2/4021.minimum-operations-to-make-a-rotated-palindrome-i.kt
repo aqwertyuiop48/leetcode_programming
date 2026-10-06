@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4021 lang=kotlin */ class Solution { fun minOperations(s: String): Int = s.indices.minOf { r -> (s.substring(r) + s.substring(0, r)).let { t -> r + (0 until t.length / 2).sumOf { i -> Math.abs(t[i] - t[t.length - 1 - i]).let { d -> minOf(d, 26 - d) } } } } }

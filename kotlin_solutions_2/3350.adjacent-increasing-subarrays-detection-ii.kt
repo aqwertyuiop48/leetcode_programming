@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3350 lang=kotlin */ class Solution { fun maxIncreasingSubarrays(nums: List<Int>): Int = (nums.indices.filter { it == 0 || nums[it] <= nums[it - 1] } + nums.size).zipWithNext { a, b -> b - a }.let { runs -> maxOf(runs.maxOf { it / 2 }, runs.zipWithNext { a, b -> minOf(a, b) }.maxOrNull() ?: 0) } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3582 lang=kotlin */ class Solution { fun generateTag(caption: String): String = ("#" + caption.split(" ").filter { it.isNotEmpty() }.mapIndexed { i, w -> if (i == 0) w.lowercase() else w.lowercase().replaceFirstChar { it.uppercaseChar() } }.joinToString("")).take(100) }

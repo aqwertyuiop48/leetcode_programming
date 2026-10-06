@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4065 lang=kotlin */ class Solution { fun rearrangeArray(nums: IntArray): IntArray = nums.groupBy { it }.flatMap { (v, l) -> l.indices.map { it to v } }.sortedWith(compareBy({ it.first }, { it.second })).map { it.second }.toIntArray() }

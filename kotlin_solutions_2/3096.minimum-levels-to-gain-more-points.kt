@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3096 lang=kotlin */ class Solution { fun minimumLevels(possible: IntArray): Int = possible.map { if (it == 1) 1 else -1 }.let { v -> v.sum().let { tot -> v.runningFold(0) { a, b -> a + b }.let { p -> (1 until v.size).firstOrNull { 2 * p[it] > tot } ?: -1 } } } }

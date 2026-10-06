@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3760 lang=kotlin */ class Solution { fun maxDistinct(s: String): Int = s.toSet().size }

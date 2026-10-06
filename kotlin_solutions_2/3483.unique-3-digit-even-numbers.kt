@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3483 lang=kotlin */ class Solution { fun totalNumbers(digits: IntArray): Int = digits.indices.flatMap { a -> digits.indices.filter { it != a }.flatMap { b -> digits.indices.filter { it != a && it != b }.filter { digits[a] != 0 && digits[it] % 2 == 0 }.map { c -> digits[a] * 100 + digits[b] * 10 + digits[c] } } }.toSet().size }

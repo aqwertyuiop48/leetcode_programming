@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3681 lang=kotlin */ class Solution { fun maxXorSubsequences(nums: IntArray): Int = IntArray(31).also { bs -> nums.forEach { x -> (30 downTo 0).fold(x) { cur, b -> if (cur shr b and 1 == 0) cur else if (bs[b] == 0) bs.set(b, cur).let { 0 } else cur xor bs[b] } } }.let { bs -> (30 downTo 0).fold(0) { r, b -> maxOf(r, r xor bs[b]) } } }

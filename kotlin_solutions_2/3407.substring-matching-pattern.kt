@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3407 lang=kotlin */ class Solution { fun hasMatch(s: String, p: String): Boolean = p.split("*").let { (a, b) -> s.indexOf(a).let { i -> i >= 0 && s.indexOf(b, i + a.length) >= 0 } } }

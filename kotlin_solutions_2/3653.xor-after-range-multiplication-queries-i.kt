@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3653 lang=kotlin */ class Solution { fun xorAfterQueries(nums: IntArray, queries: Array<IntArray>): Int = LongArray(nums.size) { nums[it].toLong() }.also { a -> queries.forEach { (l, r, k, v) -> generateSequence(l) { it + k }.takeWhile { it <= r }.forEach { a[it] = a[it] * v % 1_000_000_007L } } }.fold(0L) { x, y -> x xor y }.toInt() }

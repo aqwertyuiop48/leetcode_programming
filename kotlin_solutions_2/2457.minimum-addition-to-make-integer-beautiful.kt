@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2457 lang=kotlin */ class Solution { fun makeIntegerBeautiful(n: Long, target: Int): Long = generateSequence(n to 10L) { (c, p) -> if (c.toString().sumOf { it - '0' } <= target) null else ((c / p + 1) * p) to p * 10 }.last().first - n }

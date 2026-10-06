@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3858 lang=kotlin */ class Solution { fun minimumOR(grid: Array<IntArray>): Int = (16 downTo 0).fold((1 shl 17) - 1) { allowed, b -> (allowed and (1 shl b).inv()).let { cand -> if (grid.all { row -> row.any { it and cand.inv() == 0 } }) cand else allowed } } }

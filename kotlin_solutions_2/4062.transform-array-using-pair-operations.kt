@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4062 lang=kotlin */ class Solution { fun canTransform(source: IntArray, target: IntArray): Boolean = source.sumOf { it.toLong() } == target.sumOf { it.toLong() } }

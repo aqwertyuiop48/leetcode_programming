@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3895 lang=kotlin */ class Solution { fun countDigitOccurrences(nums: IntArray, digit: Int): Int = nums.sumOf { it.toString().count { c -> c - '0' == digit } } }

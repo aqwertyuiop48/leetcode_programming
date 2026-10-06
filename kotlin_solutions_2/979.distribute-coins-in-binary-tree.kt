@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=979 lang=kotlin */ class Solution { fun f(n: TreeNode?): Pair<Int, Int> = if (n == null) 0 to 0 else f(n.left).let { l -> f(n.right).let { r -> (n.`val` + l.first + r.first - 1) to (l.second + r.second + Math.abs(l.first) + Math.abs(r.first)) } } fun distributeCoins(root: TreeNode?): Int = f(root).second }

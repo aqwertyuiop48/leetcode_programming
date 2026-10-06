@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2447 lang=kotlin */ class Solution { fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b) fun subarrayGCD(nums: IntArray, k: Int): Int = nums.indices.sumOf { i -> nums.drop(i).runningFold(0) { g, x -> gcd(g, x) }.drop(1).takeWhile { it % k == 0 }.count { it == k } } }

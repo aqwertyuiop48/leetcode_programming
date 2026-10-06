@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3659 lang=kotlin */ class Solution { fun partitionArray(nums: IntArray, k: Int): Boolean = nums.size % k == 0 && nums.toList().groupingBy { it }.eachCount().values.max() <= nums.size / k }

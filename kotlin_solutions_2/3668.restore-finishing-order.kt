@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3668 lang=kotlin */ class Solution { fun recoverOrder(order: IntArray, friends: IntArray): IntArray = order.filter { it in friends }.toIntArray() }

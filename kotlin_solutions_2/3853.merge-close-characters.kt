@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3853 lang=kotlin */ class Solution { fun mergeCharacters(s: String, k: Int): String = generateSequence(s) { cur -> (0 until cur.length).firstNotNullOfOrNull { i -> (i + 1..minOf(cur.length - 1, i + k)).firstOrNull { j -> cur[j] == cur[i] }?.let { j -> cur.removeRange(j, j + 1) } } }.last() }

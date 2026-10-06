@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3658 lang=kotlin */ class Solution { fun gcdOfOddEvenSums(n: Int): Int = n }

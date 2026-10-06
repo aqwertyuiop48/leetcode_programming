@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4054 lang=kotlin */ class Solution { fun shadowPairs(nums: IntArray): Long = ArrayList<Int>().let { st -> nums.sumOf { x -> (-(st.binarySearch { if (it < x) -1 else 1 }) - 1).toLong().also { generateSequence { st.lastOrNull()?.takeIf { it > x } }.forEach { _ -> st.removeAt(st.size - 1) }.also { st.add(x) } } } } }

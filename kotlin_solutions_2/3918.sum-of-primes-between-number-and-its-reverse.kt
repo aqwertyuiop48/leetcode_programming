@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3918 lang=kotlin */ class Solution { fun sumOfPrimesInRange(n: Int): Int = n.toString().reversed().toInt().let { r -> (minOf(n, r)..maxOf(n, r)).filter { x -> x >= 2 && (2..Math.sqrt(x.toDouble()).toInt()).none { x % it == 0 } }.sum() } }

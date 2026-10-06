@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4020 lang=kotlin */ class Solution { fun elevatorRequests(n: Int, requests: IntArray): Int = requests.fold(0 to 0) { (p, t), r -> r to t + Math.abs(r - p) }.second }

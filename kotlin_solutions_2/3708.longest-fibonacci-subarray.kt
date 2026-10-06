@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3708 lang=kotlin */ class Solution { fun longestSubarray(nums: IntArray): Int = nums.indices.fold(0 to 0) { (cur, best), i -> (if (i < 2) i + 1 else if (nums[i].toLong() == nums[i - 1].toLong() + nums[i - 2]) cur + 1 else 2).let { c -> c to maxOf(best, c) } }.second }

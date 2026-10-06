@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3295 lang=kotlin */ class Solution { fun reportSpam(message: Array<String>, bannedWords: Array<String>): Boolean = bannedWords.toSet().let { b -> message.count { it in b } >= 2 } }

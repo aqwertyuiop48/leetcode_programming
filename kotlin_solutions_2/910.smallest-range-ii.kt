@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=910 lang=kotlin */ class Solution { fun smallestRangeII(nums: IntArray, k: Int): Int = nums.sorted().let { a -> (0 until a.size - 1).minOfOrNull { maxOf(a.last() - k, a[it] + k) - minOf(a[0] + k, a[it + 1] - k) }.let { minOf(a.last() - a[0], it ?: Int.MAX_VALUE) } } }

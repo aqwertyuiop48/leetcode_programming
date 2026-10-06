@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3959 lang=kotlin */ class Solution { fun checkGoodInteger(n: Int): Boolean = n.toString().let { s -> s.sumOf { (it - '0') * (it - '0') } - s.sumOf { it - '0' } >= 50 } }

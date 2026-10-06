@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=950 lang=kotlin */ class Solution { fun deckRevealedIncreasing(deck: IntArray): IntArray = deck.sorted().let { s -> java.util.ArrayDeque((0 until deck.size).toList()).let { q -> IntArray(deck.size).also { r -> s.forEach { x -> q.pollFirst().also { r[it] = x }.also { if (q.isNotEmpty()) q.addLast(q.pollFirst()) } } } } } }

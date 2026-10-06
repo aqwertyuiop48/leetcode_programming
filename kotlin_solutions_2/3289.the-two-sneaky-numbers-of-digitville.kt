@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3289 lang=kotlin */ class Solution { fun getSneakyNumbers(nums: IntArray): IntArray = nums.filter { x -> nums.count { it == x } == 2 }.distinct().toIntArray() }

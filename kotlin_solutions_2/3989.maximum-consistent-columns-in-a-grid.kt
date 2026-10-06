@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3989 lang=kotlin */ class Solution { fun maxConsistentColumns(grid: Array<IntArray>, limit: Int): Int = grid[0].size.let { n -> IntArray(n).also { dp -> (0 until n).forEach { b -> dp[b] = 1 + ((0 until b).filter { a -> grid.all { Math.abs(it[b] - it[a]) <= limit } }.maxOfOrNull { dp[it] } ?: 0) } }.max() } }

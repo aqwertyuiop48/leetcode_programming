@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3997 lang=kotlin */ class Solution { fun go(r: TreeNode?): Pair<Int, Int> = if (r == null) 0 to 0 else go(r.left).let { l -> go(r.right).let { rr -> maxOf(r.`val`, l.first, rr.first).let { mx -> mx to l.second + rr.second + (if (r.`val` == mx) 1 else 0) } } } fun countDominantNodes(root: TreeNode?): Int = go(root).second }

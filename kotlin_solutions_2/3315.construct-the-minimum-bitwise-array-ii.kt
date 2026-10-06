@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3315 lang=kotlin */ class Solution { fun minBitwiseArray(nums: List<Int>): IntArray = nums.map { x -> if (x == 2) -1 else x - (1 shl (Integer.numberOfTrailingZeros(x.inv()) - 1)) }.toIntArray() }

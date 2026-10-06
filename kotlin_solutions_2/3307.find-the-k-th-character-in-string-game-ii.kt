@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3307 lang=kotlin */ class Solution { fun kthCharacter(k: Long, operations: IntArray): Char = operations.indices.reversed().fold((k - 1) to 0) { (kk, sh), i -> if (i < 62 && kk >= (1L shl i)) (kk - (1L shl i)) to (sh + operations[i]) else kk to sh }.let { 'a' + it.second % 26 } }

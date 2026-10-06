@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3794 lang=kotlin */ class Solution { fun reversePrefix(s: String, k: Int): String = s.take(k).reversed() + s.drop(k) }

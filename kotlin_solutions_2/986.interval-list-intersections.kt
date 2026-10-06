@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=986 lang=kotlin */ class Solution { fun intervalIntersection(firstList: Array<IntArray>, secondList: Array<IntArray>): Array<IntArray> = firstList.flatMap { a -> secondList.filter { b -> maxOf(a[0], b[0]) <= minOf(a[1], b[1]) }.map { b -> intArrayOf(maxOf(a[0], b[0]), minOf(a[1], b[1])) } }.toTypedArray() }

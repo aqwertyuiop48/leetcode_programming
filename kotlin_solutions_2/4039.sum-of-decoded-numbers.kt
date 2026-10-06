@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4039 lang=kotlin */ class Solution { fun sumDecoded(nums: LongArray): Int = (nums.sumOf { v -> (v / 10).toString().let { d -> (v % 10).toInt().let { w -> java.math.BigInteger(d.take(w)).modPow(java.math.BigInteger(d.drop(w)), java.math.BigInteger.valueOf(1_000_000_007L)).toLong() } } } % 1_000_000_007L).toInt() }

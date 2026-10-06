@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1415 lang=kotlin */ class Solution { fun getHappyString(n: Int, k: Int): String = if (k > (3 shl (n - 1))) "" else (0 until n).fold("" to k - 1) { (s, r), i -> (1 shl (n - 1 - i)).let { blk -> (if (i == 0) "abc" else "abc".replace(s.last().toString(), "")).let { opts -> opts[r / blk].let { c -> s + c to r % blk } } } }.first }

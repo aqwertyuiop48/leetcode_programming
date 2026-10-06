@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=969 lang=kotlin */ class Solution { fun pancakeSort(arr: IntArray): List<Int> = arr.toMutableList().let { a -> (a.size downTo 2).flatMap { s -> a.subList(0, s).indices.maxBy { a[it] }.let { idx -> if (idx == s - 1) emptyList() else listOf(idx + 1, s).filter { it > 1 }.onEach { k -> a.subList(0, k).reverse() } } } } }

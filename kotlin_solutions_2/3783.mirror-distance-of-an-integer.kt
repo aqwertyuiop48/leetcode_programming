@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3783 lang=kotlin */ class Solution { fun mirrorDistance(n: Int): Int = Math.abs(n - n.toString().reversed().toInt()) }

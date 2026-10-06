@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3996 lang=kotlin */ class Solution { fun canReach(start: IntArray, target: IntArray): Boolean = (start[0] + start[1]) % 2 == (target[0] + target[1]) % 2 }

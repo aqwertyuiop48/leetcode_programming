@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3974 lang=kotlin */ class Solution { fun maxSum(nums: IntArray, k: Int, mul: Int): Long = nums.sortedDescending().take(k).withIndex().sumOf { (t, x) -> x.toLong() * maxOf(1, mul - t) } }

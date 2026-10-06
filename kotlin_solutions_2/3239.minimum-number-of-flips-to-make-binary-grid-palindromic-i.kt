@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3239 lang=kotlin */ class Solution { fun minFlips(grid: Array<IntArray>): Int = minOf(grid.sumOf { r -> r.indices.count { it < r.size / 2 && r[it] != r[r.size - 1 - it] } }, grid[0].indices.sumOf { j -> grid.indices.count { it < grid.size / 2 && grid[it][j] != grid[grid.size - 1 - it][j] } }) }

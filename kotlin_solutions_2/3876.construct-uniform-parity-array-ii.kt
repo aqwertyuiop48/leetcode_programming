@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3876 lang=kotlin */ class Solution { fun uniformArray(nums1: IntArray): Boolean = nums1.filter { it % 2 == 1 }.let { odds -> odds.isEmpty() || nums1.filter { it % 2 == 0 }.let { ev -> ev.isEmpty() || odds.min() < ev.min() } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3857 lang=kotlin */ class Solution { fun minCost(n: Int): Int = n * (n - 1) / 2 }

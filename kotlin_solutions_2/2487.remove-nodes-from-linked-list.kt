@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2487 lang=kotlin */ class Solution { fun removeNodes(head: ListNode?): ListNode? = generateSequence(head) { it.next }.toList().asReversed().fold(null as ListNode? to 0) { (nxt, mx), n -> if (n.`val` >= mx) n.also { it.next = nxt } to n.`val` else nxt to mx }.first }

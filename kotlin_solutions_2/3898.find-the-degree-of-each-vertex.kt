@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3898 lang=kotlin */ class Solution { fun findDegrees(matrix: Array<IntArray>): IntArray = matrix.map { it.sum() }.toIntArray() }

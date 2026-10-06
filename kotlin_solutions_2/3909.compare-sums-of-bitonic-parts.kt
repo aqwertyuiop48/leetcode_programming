@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3909 lang=kotlin */ class Solution { fun compareBitonicSums(nums: IntArray): Int = nums.indices.maxBy { nums[it] }.let { p -> (0..p).sumOf { nums[it].toLong() }.let { a -> (p until nums.size).sumOf { nums[it].toLong() }.let { d -> if (a > d) 0 else if (d > a) 1 else -1 } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3945 lang=kotlin */ class Solution { fun digitFrequencyScore(n: Int): Int = n.toString().sumOf { it - '0' } }

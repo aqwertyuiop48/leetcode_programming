@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3769 lang=kotlin */ class Solution { fun sortByReflection(nums: IntArray): IntArray = nums.sortedWith(compareBy({ Integer.toBinaryString(it).reversed().toInt(2) }, { it })).toIntArray() }

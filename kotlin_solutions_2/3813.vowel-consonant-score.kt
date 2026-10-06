@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3813 lang=kotlin */ class Solution { fun vowelConsonantScore(s: String): Int = s.filter { it in 'a'..'z' }.let { l -> l.count { it !in "aeiou" }.let { c -> if (c > 0) (l.length - c) / c else 0 } } }

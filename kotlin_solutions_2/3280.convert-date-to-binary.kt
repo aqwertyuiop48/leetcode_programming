@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3280 lang=kotlin */ class Solution { fun convertDateToBinary(date: String): String = date.split("-").joinToString("-") { Integer.toBinaryString(it.toInt()) } }

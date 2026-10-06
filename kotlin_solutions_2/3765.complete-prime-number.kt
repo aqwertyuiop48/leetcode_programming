@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3765 lang=kotlin */ class Solution { fun pr(x: Long): Boolean = x >= 2 && (2L..Math.sqrt(x.toDouble()).toLong()).none { x % it == 0L } fun completePrime(num: Int): Boolean = num.toString().let { s -> (1..s.length).all { i -> pr(s.take(i).toLong()) && pr(s.takeLast(i).toLong()) } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3683 lang=kotlin */ class Solution { fun earliestTime(tasks: Array<IntArray>): Int = tasks.minOf { it[0] + it[1] } }

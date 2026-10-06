@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3774 lang=kotlin */ class Solution { fun absDifference(nums: IntArray, k: Int): Int = nums.sorted().let { Math.abs(it.takeLast(k).sum() - it.take(k).sum()) } }

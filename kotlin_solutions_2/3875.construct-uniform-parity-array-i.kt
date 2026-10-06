@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3875 lang=kotlin */ class Solution { fun uniformArray(nums1: IntArray): Boolean = nums1.count { it % 2 == 1 }.let { odd -> odd != 1 || odd >= 1 } }

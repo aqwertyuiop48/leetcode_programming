@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3572 lang=kotlin */ class Solution { fun maxSumDistinctTriplet(x: IntArray, y: IntArray): Int = x.indices.groupBy { x[it] }.values.map { g -> g.maxOf { y[it] } }.sortedDescending().let { if (it.size < 3) -1 else it.take(3).sum() } }

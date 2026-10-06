@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3921 lang=kotlin */ class Solution { fun scoreValidator(events: Array<String>): IntArray = events.fold(0 to 0) { (sc, ct), e -> if (ct == 10) sc to ct else if (e == "W") sc to ct + 1 else if (e == "WD" || e == "NB") sc + 1 to ct else sc + e.toInt() to ct }.let { intArrayOf(it.first, it.second) } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3259 lang=kotlin */ class Solution { fun maxEnergyBoost(energyDrinkA: IntArray, energyDrinkB: IntArray): Long = energyDrinkA.indices.fold(listOf(0L, 0L, 0L, 0L)) { (a, b, pa, pb), i -> listOf(maxOf(a, pb) + energyDrinkA[i], maxOf(b, pa) + energyDrinkB[i], a, b) }.let { maxOf(it[0], it[1]) } }

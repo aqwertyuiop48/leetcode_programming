@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4056 lang=kotlin */ class Solution { fun countIntersectingIntervals(intervals: Array<IntArray>): Int = intervals.indices.sumOf { i -> (i + 1 until intervals.size).count { j -> intervals[i][0] <= intervals[j][1] && intervals[j][0] <= intervals[i][1] } } }

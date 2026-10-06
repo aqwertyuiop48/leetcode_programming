@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=947 lang=kotlin */ class Solution { fun find(p: IntArray, x: Int): Int = if (p[x] == x) x else find(p, p[x]).also { p[x] = it } fun removeStones(stones: Array<IntArray>): Int = IntArray(20002) { it }.let { p -> stones.forEach { s -> p[find(p, s[0])] = find(p, s[1] + 10001) }.let { stones.size - stones.map { find(p, it[0]) }.distinct().size } } }

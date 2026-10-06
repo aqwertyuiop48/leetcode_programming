@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3577 lang=kotlin */ class Solution { fun countPermutations(complexity: IntArray): Int = if (complexity.drop(1).all { it > complexity[0] }) (1 until complexity.size).fold(1L) { a, i -> a * i % 1_000_000_007L }.toInt() else 0 }

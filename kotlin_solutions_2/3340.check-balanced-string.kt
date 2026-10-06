@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3340 lang=kotlin */ class Solution { fun isBalanced(num: String): Boolean = num.indices.sumOf { (if (it % 2 == 0) 1 else -1) * (num[it] - '0') } == 0 }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3908 lang=kotlin */ class Solution { fun validDigit(n: Int, x: Int): Boolean = n.toString().let { s -> ('0' + x) in s && s[0] != '0' + x } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3360 lang=kotlin */ class Solution { fun canAliceWin(n: Int): Boolean = (generateSequence(10 to n) { (t, rem) -> if (t >= 1 && rem >= t) t - 1 to rem - t else null }.count() - 1) % 2 == 1 }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3274 lang=kotlin */ class Solution { fun checkTwoChessboards(coordinate1: String, coordinate2: String): Boolean = ((coordinate1[0] - 'a') + (coordinate1[1] - '0')) % 2 == ((coordinate2[0] - 'a') + (coordinate2[1] - '0')) % 2 }

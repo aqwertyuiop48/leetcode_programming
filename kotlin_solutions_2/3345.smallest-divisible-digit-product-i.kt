@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3345 lang=kotlin */ class Solution { fun smallestNumber(n: Int, t: Int): Int = generateSequence(n) { it + 1 }.first { x -> x.toString().fold(1) { a, c -> a * (c - '0') } % t == 0 } }

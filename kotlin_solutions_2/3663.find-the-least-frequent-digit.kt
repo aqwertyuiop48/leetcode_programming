@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3663 lang=kotlin */ class Solution { fun getLeastFrequentDigit(n: Int): Int = n.toString().groupingBy { it }.eachCount().entries.sortedWith(compareBy({ it.value }, { it.key })).first().key - '0' }

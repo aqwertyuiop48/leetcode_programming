@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4048 lang=kotlin */ class Solution { fun countSpecialIntegers(nums: IntArray): Int = nums.indices.groupBy { nums[it] }.values.count { p -> p.size == 3 && p[1] - p[0] == p[2] - p[1] } }

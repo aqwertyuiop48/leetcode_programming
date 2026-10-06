@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3627 lang=kotlin */ class Solution { fun maximumMedianSum(nums: IntArray): Long = nums.sorted().let { a -> (1..a.size / 3).sumOf { a[a.size - 2 * it].toLong() } } }

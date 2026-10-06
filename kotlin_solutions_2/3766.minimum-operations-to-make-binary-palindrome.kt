@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3766 lang=kotlin */ class Solution { fun minOperations(nums: IntArray): IntArray = (1..16383).filter { Integer.toBinaryString(it).let { b -> b == b.reversed() } }.let { pals -> nums.map { x -> pals.minOf { Math.abs(it - x) } }.toIntArray() } }

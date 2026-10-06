@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3484 lang=kotlin */ class Spreadsheet(rows: Int, val m: HashMap<String, Int> = HashMap()) { fun setCell(cell: String, value: Int) { m[cell] = value } fun resetCell(cell: String) { m.remove(cell) } fun getValue(formula: String): Int = formula.drop(1).split("+").sumOf { t -> t.toIntOrNull() ?: (m[t] ?: 0) } }

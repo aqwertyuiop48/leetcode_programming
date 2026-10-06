@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1496 lang=kotlin */ class Solution { fun isPathCrossing(path: String): Boolean = path.runningFold(0 to 0) { (x, y), c -> if (c == 'N') x to y + 1 else if (c == 'S') x to y - 1 else if (c == 'E') x + 1 to y else x - 1 to y }.let { it.size != it.toSet().size } }

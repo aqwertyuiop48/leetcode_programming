@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4014 lang=kotlin */ class Solution { fun minPrice(prices: IntArray, discounts: IntArray): Double = prices.sortedDescending().let { p -> discounts.sortedDescending().let { d -> p.indices.sumOf { i -> if (i < d.size) p[i] * (100 - d[i]) / 100.0 else p[i].toDouble() } } } }

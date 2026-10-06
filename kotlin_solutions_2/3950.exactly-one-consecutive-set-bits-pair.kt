@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3950 lang=kotlin */ class Solution { fun consecutiveSetBits(n: Int): Boolean = Integer.bitCount(n and (n shr 1)) == 1 }

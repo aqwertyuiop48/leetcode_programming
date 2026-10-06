@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3723 lang=kotlin */ class Solution { fun maxSumOfSquares(num: Int, sum: Int): String = if (sum > 9 * num) "" else "9".repeat(sum / 9) + (if (sum % 9 > 0) (sum % 9).toString() else "") + "0".repeat(num - sum / 9 - (if (sum % 9 > 0) 1 else 0)) }

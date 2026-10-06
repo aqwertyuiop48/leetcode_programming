@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3779 lang=kotlin */ class Solution { fun minOperations(nums: IntArray): Int = HashSet<Int>().let { seen -> (nums.size - nums.reversed().takeWhile { seen.add(it) }.size + 2) / 3 } }

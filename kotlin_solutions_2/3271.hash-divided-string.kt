@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3271 lang=kotlin */ class Solution { fun stringHash(s: String, k: Int): String = s.chunked(k).map { ch -> 'a' + ch.sumOf { it - 'a' } % 26 }.joinToString("") }

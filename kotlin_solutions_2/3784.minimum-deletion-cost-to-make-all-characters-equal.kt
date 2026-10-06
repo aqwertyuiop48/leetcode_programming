@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3784 lang=kotlin */ class Solution { fun minCost(s: String, cost: IntArray): Long = s.indices.groupBy { s[it] }.values.maxOf { g -> g.sumOf { cost[it].toLong() } }.let { cost.sumOf { c -> c.toLong() } - it } }

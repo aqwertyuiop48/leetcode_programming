@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=861 lang=kotlin */ class Solution { fun matrixScore(grid: Array<IntArray>): Int = grid[0].indices.sumOf { j -> maxOf(grid.count { it[j] == it[0] }, grid.count { it[j] != it[0] }) shl (grid[0].size - 1 - j) } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4043 lang=kotlin */ class Solution { fun countRotations(s: String, k: Int): Int = s.indices.count { i -> s[i] == s[(i + 1) % s.length] }.let { e -> s.indices.count { r -> e - (if (s[(r + s.length - 1) % s.length] == s[r]) 1 else 0) == k } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=918 lang=kotlin */ class Solution { fun maxSubarraySumCircular(nums: IntArray): Int = nums.fold(listOf(0, Int.MIN_VALUE, 0, Int.MAX_VALUE, 0)) { s, x -> listOf(maxOf(s[0], 0) + x, maxOf(s[1], maxOf(s[0], 0) + x), minOf(s[2], 0) + x, minOf(s[3], minOf(s[2], 0) + x), s[4] + x) }.let { s -> if (s[1] < 0) s[1] else maxOf(s[1], s[4] - s[3]) } }

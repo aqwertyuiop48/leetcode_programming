@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3904 lang=kotlin */ class Solution { fun firstStableIndex(nums: IntArray, k: Int): Int = nums.runningFold(Int.MIN_VALUE) { a, b -> maxOf(a, b) }.drop(1).let { pm -> nums.reversed().runningFold(Int.MAX_VALUE) { a, b -> minOf(a, b) }.drop(1).reversed().let { sm -> nums.indices.firstOrNull { pm[it].toLong() - sm[it] <= k } ?: -1 } } }

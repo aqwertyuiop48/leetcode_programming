@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3986 lang=kotlin */ class Solution { fun secondsBetweenTimes(startTime: String, endTime: String): Int = listOf(endTime, startTime).map { it.split(":").fold(0) { a, b -> a * 60 + b.toInt() } }.let { it[0] - it[1] } }

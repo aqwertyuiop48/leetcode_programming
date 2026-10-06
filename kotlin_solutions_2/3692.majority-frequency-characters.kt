@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3692 lang=kotlin */ class Solution { fun majorityFrequencyGroup(s: String): String = s.groupingBy { it }.eachCount().entries.groupBy({ it.value }, { it.key }).entries.sortedWith(compareBy({ -it.value.size }, { -it.key })).first().value.joinToString("") }

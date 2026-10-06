@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3718 lang=kotlin */ class Solution { fun missingMultiple(nums: IntArray, k: Int): Int = nums.toSet().let { s -> generateSequence(k) { it + k }.first { it !in s } } }

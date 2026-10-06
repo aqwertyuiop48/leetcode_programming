@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3371 lang=kotlin */ class Solution { fun getLargestOutlier(nums: IntArray): Int = nums.toList().groupingBy { it }.eachCount().let { c -> nums.sum().let { tot -> c.keys.filter { o -> (tot - o) % 2 == 0 && ((tot - o) / 2).let { s -> (c[s] ?: 0) > (if (s == o) 1 else 0) } }.max() } } }

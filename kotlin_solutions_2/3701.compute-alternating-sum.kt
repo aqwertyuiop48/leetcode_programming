@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3701 lang=kotlin */ class Solution { fun alternatingSum(nums: IntArray): Int = nums.indices.sumOf { if (it % 2 == 0) nums[it] else -nums[it] } }

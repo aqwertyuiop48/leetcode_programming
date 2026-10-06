@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1971 lang=kotlin */ class Solution { fun find(p: IntArray, x: Int): Int = if (p[x] == x) x else find(p, p[x]).also { p[x] = it } fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean = IntArray(n) { it }.let { p -> edges.forEach { (a, b) -> p[find(p, a)] = find(p, b) }.let { find(p, source) == find(p, destination) } } }

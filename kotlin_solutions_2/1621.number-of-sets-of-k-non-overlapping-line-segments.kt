@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1621 lang=kotlin */ class Solution { fun numberOfSets(n: Int, k: Int): Int = (1..2 * k).fold(java.math.BigInteger.ONE) { r, i -> r * (n - k - 1 + i).toBigInteger() / i.toBigInteger() }.mod(java.math.BigInteger.valueOf(1_000_000_007)).toInt() }

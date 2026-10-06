@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3254 lang=kotlin */ class Solution { fun resultsArray(nums: IntArray, k: Int): IntArray = IntArray(nums.size - k + 1) { i -> if ((i + 1 until i + k).all { nums[it] == nums[it - 1] + 1 }) nums[i + k - 1] else -1 } }

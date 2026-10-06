@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3745 lang=kotlin */ class Solution { fun maximizeExpressionOfThree(nums: IntArray): Int = nums.sorted().let { it[it.size - 1] + it[it.size - 2] - it[0] } }

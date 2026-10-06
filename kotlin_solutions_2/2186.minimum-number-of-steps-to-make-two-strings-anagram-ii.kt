@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2186 lang=kotlin */ class Solution { fun minSteps(s: String, t: String): Int = ('a'..'z').sumOf { c -> Math.abs(s.count { it == c } - t.count { it == c }) } }

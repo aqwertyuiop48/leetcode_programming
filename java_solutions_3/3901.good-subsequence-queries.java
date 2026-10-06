@@ -6,9 +6,9 @@
 
 class Solution {
     public int countGoodSubseq(int[] nums, int p, int[][] queries) {
-        return new int[50001] instanceof int[] spf
-            && java.util.stream.IntStream.rangeClosed(2, 50000).filter(i -> spf[i] == 0).peek(i -> java.util.stream.IntStream.iterate(i, j -> j <= 50000, j -> j + i).filter(j -> spf[j] == 0).forEach(j -> spf[j] = i)).allMatch(x -> true)
-            && nums.clone() instanceof int[] a && new int[50001] instanceof int[] cnt && new int[nums.length + 2] instanceof int[] fc && new int[1] instanceof int[] cp
+        return new int[Math.max(java.util.Arrays.stream(nums).max().getAsInt(), java.util.Arrays.stream(queries).mapToInt(q -> q[1]).max().orElse(0)) / p + 2] instanceof int[] spf
+            && java.util.stream.IntStream.rangeClosed(2, spf.length - 1).filter(i -> spf[i] == 0).peek(i -> java.util.stream.IntStream.iterate(i, j -> j < spf.length, j -> j + i).filter(j -> spf[j] == 0).forEach(j -> spf[j] = i)).allMatch(x -> true)
+            && nums.clone() instanceof int[] a && new int[spf.length] instanceof int[] cnt && new int[nums.length + 2] instanceof int[] fc && new int[1] instanceof int[] cp
             && ((java.util.function.IntBinaryOperator) (v, s) -> v % p != 0 ? 0 : java.util.stream.IntStream.iterate(v / p, x -> x > 1, x -> x / spf[x]).map(x -> spf[x]).distinct()
                 .map(q -> 0 * fc[cnt[q]]-- + 0 * (cnt[q] += s) + 0 * fc[cnt[q]]++).sum() + (cp[0] += s) * 0) instanceof java.util.function.IntBinaryOperator upd
             && java.util.stream.IntStream.range(0, a.length).peek(i -> upd.applyAsInt(a[i], 1)).allMatch(x -> true)

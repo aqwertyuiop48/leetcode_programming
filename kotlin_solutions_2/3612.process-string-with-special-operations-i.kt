@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3612 lang=kotlin */ class Solution { fun processStr(s: String): String = s.fold(StringBuilder()) { sb, c -> if (c in 'a'..'z') sb.append(c) else if (c == '*') sb.also { if (it.isNotEmpty()) it.setLength(it.length - 1) } else if (c == '#') sb.append(sb.toString()) else sb.reverse() }.toString() }

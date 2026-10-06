@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3914 lang=kotlin */ class Solution { fun minOperations(nums: IntArray): Long = nums.toList().zipWithNext { a, b -> maxOf(0L, a.toLong() - b) }.sum() }

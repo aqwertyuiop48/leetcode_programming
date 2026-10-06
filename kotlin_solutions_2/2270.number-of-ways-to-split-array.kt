@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2270 lang=kotlin */ class Solution { fun waysToSplitArray(nums: IntArray): Int = nums.runningFold(0L) { s, x -> s + x }.let { p -> (1 until nums.size).count { 2 * p[it] >= p.last() } } }

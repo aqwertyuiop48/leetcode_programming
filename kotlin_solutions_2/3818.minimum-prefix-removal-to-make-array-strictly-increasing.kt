@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3818 lang=kotlin */ class Solution { fun minimumPrefixLength(nums: IntArray): Int = nums.size - generateSequence(nums.size - 1) { it - 1 }.takeWhile { it >= 0 && (it == nums.size - 1 || nums[it] < nums[it + 1]) }.count() }

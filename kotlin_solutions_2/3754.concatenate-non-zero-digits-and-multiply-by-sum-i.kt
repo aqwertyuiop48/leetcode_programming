@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3754 lang=kotlin */ class Solution { fun sumAndMultiply(n: Int): Long = n.toString().filter { it != '0' }.let { s -> (if (s.isEmpty()) 0L else s.toLong()) * s.sumOf { it - '0' } } }

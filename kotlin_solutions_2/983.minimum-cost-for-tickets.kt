@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=983 lang=kotlin */ class Solution { fun mincostTickets(days: IntArray, costs: IntArray): Int = days.toSet().let { st -> (1..365).fold(IntArray(366)) { dp, d -> dp.also { it[d] = if (d !in st) it[d - 1] else minOf(it[d - 1] + costs[0], it[maxOf(0, d - 7)] + costs[1], it[maxOf(0, d - 30)] + costs[2]) } }[365] } }

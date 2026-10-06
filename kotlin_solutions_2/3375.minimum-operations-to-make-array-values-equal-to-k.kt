@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3375 lang=kotlin */ class Solution { fun minOperations(nums: IntArray, k: Int): Int = if (nums.any { it < k }) -1 else nums.filter { it > k }.distinct().size }

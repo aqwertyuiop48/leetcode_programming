@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=967 lang=kotlin */ class Solution { fun numsSameConsecDiff(n: Int, k: Int): IntArray = (1 until n).fold((1..9).toList()) { l, _ -> l.flatMap { x -> setOf(x % 10 + k, x % 10 - k).filter { it in 0..9 }.map { x * 10 + it } } }.toIntArray() }

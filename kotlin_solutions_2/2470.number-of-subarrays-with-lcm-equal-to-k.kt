@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2470 lang=kotlin */ class Solution { fun g(a: Long, b: Long): Long = if (b == 0L) a else g(b, a % b) fun subarrayLCM(nums: IntArray, k: Int): Int = nums.indices.sumOf { i -> nums.drop(i).runningFold(1L) { l, x -> l / g(l, x.toLong()) * x }.drop(1).takeWhile { k.toLong() % it == 0L }.count { it == k.toLong() } } }

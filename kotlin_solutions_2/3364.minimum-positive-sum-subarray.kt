@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3364 lang=kotlin */ class Solution { fun minimumSumSubarray(nums: List<Int>, l: Int, r: Int): Int = (l..r).flatMap { len -> (0..nums.size - len).map { nums.subList(it, it + len).sum() } }.filter { it > 0 }.minOrNull() ?: -1 }

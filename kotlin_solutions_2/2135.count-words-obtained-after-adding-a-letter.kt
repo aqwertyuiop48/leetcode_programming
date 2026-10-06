@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2135 lang=kotlin */ class Solution { fun wordCount(startWords: Array<String>, targetWords: Array<String>): Int = startWords.map { w -> w.fold(0) { m, c -> m or (1 shl (c - 'a')) } }.toHashSet().let { st -> targetWords.count { t -> t.fold(0) { m, c -> m or (1 shl (c - 'a')) }.let { tm -> t.any { c -> (tm xor (1 shl (c - 'a'))) in st } } } } }

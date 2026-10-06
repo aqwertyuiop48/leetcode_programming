@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3823 lang=kotlin */ class Solution { fun reverseByType(s: String): String = s.filter { it in 'a'..'z' }.reversed().iterator().let { il -> s.filter { it !in 'a'..'z' }.reversed().iterator().let { isp -> s.map { if (it in 'a'..'z') il.next() else isp.next() }.joinToString("") } } }

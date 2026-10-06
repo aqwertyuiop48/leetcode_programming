@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2598 lang=kotlin */ class Solution { fun findSmallestInteger(nums: IntArray, value: Int): Int = IntArray(value).also { c -> nums.forEach { c[((it % value) + value) % value]++ } }.let { c -> generateSequence(0) { it + 1 }.first { i -> c[i % value]-- <= 0 } } }

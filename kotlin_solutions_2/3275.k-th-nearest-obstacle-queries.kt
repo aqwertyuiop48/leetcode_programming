@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3275 lang=kotlin */ class Solution { fun resultsArray(queries: Array<IntArray>, k: Int): IntArray = java.util.PriorityQueue<Int>(compareByDescending<Int> { it }).let { pq -> queries.map { (x, y) -> pq.add(Math.abs(x) + Math.abs(y)).let { if (pq.size > k) pq.poll() }.let { if (pq.size < k) -1 else pq.peek() } }.toIntArray() } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3678 lang=kotlin */ class Solution { fun smallestAbsent(nums: IntArray): Int = nums.toSet().let { s -> generateSequence(maxOf(1, Math.floorDiv(nums.sum(), nums.size) + 1)) { it + 1 }.first { it !in s } } }

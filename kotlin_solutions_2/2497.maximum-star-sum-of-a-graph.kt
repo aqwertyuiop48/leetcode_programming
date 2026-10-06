@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2497 lang=kotlin */ class Solution { fun maxStarSum(vals: IntArray, edges: Array<IntArray>, k: Int): Int = vals.indices.map { ArrayList<Int>() }.also { nb -> edges.forEach { (a, b) -> nb[a].add(vals[b]).also { nb[b].add(vals[a]) } } }.let { nb -> vals.indices.maxOf { i -> vals[i] + nb[i].filter { it > 0 }.sortedDescending().take(k).sum() } } }

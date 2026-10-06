@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3861 lang=kotlin */ class Solution { fun minimumIndex(capacity: IntArray, itemSize: Int): Int = capacity.indices.filter { capacity[it] >= itemSize }.minByOrNull { capacity[it] } ?: -1 }

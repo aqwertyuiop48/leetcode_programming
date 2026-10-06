@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3751 lang=kotlin */ class Solution { fun totalWaviness(num1: Int, num2: Int): Int = (num1..num2).sumOf { x -> x.toString().let { s -> (1 until s.length - 1).count { i -> (s[i] > s[i - 1] && s[i] > s[i + 1]) || (s[i] < s[i - 1] && s[i] < s[i + 1]) } } } }

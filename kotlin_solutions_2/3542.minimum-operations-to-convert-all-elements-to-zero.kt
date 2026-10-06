@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3542 lang=kotlin */ class Solution { fun minOperations(nums: IntArray): Int = java.util.ArrayDeque<Int>().let { st -> nums.fold(0) { ops, x -> generateSequence { st.peekFirst()?.takeIf { it > x } }.forEach { _ -> st.pollFirst() }.let { if (x > 0 && st.peekFirst() != x) st.addFirst(x).let { ops + 1 } else ops } } } }

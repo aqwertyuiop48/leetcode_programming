@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3884 lang=kotlin */ class Solution { fun firstMatchingIndex(s: String): Int = s.indices.firstOrNull { s[it] == s[s.length - 1 - it] } ?: -1 }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3987 lang=kotlin */ class Solution { fun minimumCost(nums: IntArray, k: Int): Int = ((nums.sumOf { it.toLong() } + k - 1) / k - 1).let { c0 -> maxOf(c0, 0L).let { c -> (if (c % 2 == 0L) (c / 2 % 1_000_000_007L) * ((c + 1) % 1_000_000_007L) else (c % 1_000_000_007L) * ((c + 1) / 2 % 1_000_000_007L)) % 1_000_000_007L }.toInt() } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3927 lang=kotlin */ class Solution { fun minArraySum(nums: IntArray): Long = IntArray(100001).also { best -> nums.distinct().sorted().forEach { v -> (v..100000 step v).forEach { m -> if (best[m] == 0) best[m] = v } } }.let { b -> nums.sumOf { b[it].toLong() } } }

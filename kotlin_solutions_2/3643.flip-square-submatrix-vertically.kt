@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3643 lang=kotlin */ class Solution { fun reverseSubmatrix(grid: Array<IntArray>, x: Int, y: Int, k: Int): Array<IntArray> = grid.also { g -> (0 until k / 2).forEach { r -> (y until y + k).forEach { c -> g[x + r][c] = g[x + k - 1 - r][c].also { g[x + k - 1 - r][c] = g[x + r][c] } } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3462 lang=kotlin */ class Solution { fun maxSum(grid: Array<IntArray>, limits: IntArray, k: Int): Long = grid.indices.flatMap { i -> grid[i].sortedDescending().take(limits[i]) }.sortedDescending().take(k).sumOf { it.toLong() } }

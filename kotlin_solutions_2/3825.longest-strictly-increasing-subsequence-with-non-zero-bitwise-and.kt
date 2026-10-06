@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3825 lang=kotlin */ class Solution { fun longestSubsequence(nums: IntArray): Int = (0..30).maxOf { b -> nums.filter { it shr b and 1 == 1 }.fold(ArrayList<Int>()) { t, y -> t.also { t.binarySearch(y).let { r -> (if (r >= 0) r else -r - 1).let { i -> if (i == t.size) t.add(y) else t.set(i, y) } } } }.size } }

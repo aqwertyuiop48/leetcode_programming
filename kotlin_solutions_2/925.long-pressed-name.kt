@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=925 lang=kotlin */ class Solution { fun isLongPressedName(name: String, typed: String): Boolean = Regex("(.)\\1*").findAll(name).map { it.value }.toList().let { a -> Regex("(.)\\1*").findAll(typed).map { it.value }.toList().let { b -> a.size == b.size && a.indices.all { a[it][0] == b[it][0] && b[it].length >= a[it].length } } } }

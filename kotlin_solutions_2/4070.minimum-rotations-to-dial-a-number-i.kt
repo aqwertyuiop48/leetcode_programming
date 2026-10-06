@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4070 lang=kotlin */ class Solution { fun minRotations(s: String): Int = s.fold(0 to 0) { (p, t), c -> (c - '0').let { d -> Math.abs(d - p).let { x -> d to t + minOf(x, 10 - x) } } }.second }

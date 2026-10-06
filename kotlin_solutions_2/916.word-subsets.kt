@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=916 lang=kotlin */ class Solution { fun wordSubsets(words1: Array<String>, words2: Array<String>): List<String> = ('a'..'z').map { c -> words2.maxOf { w -> w.count { it == c } } }.let { need -> words1.filter { w -> ('a'..'z').withIndex().all { (i, c) -> w.count { it == c } >= need[i] } } } }

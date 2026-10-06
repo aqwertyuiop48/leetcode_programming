@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3847 lang=kotlin */ class Solution { fun scoreDifference(nums: IntArray): Int = nums.indices.fold(Triple(0, 0, 0)) { (act, s0, s1), i -> (if (nums[i] % 2 == 1) 1 - act else act).let { a1 -> (if ((i + 1) % 6 == 0) 1 - a1 else a1).let { a2 -> if (a2 == 0) Triple(a2, s0 + nums[i], s1) else Triple(a2, s0, s1 + nums[i]) } } }.let { it.second - it.third } }

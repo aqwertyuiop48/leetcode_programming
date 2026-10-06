@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4072 lang=kotlin */ class Solution { fun maxAlternatingSum(nums: IntArray): Long = nums.fold(Pair(List(6) { Long.MIN_VALUE / 4 }, Long.MIN_VALUE)) { (s, best), x -> listOf(maxOf(x.toLong(), s[1] + x), s[0] - x, maxOf(s[5] + x, s[3] + x), maxOf(s[4] - x, s[2] - x), s[0], s[1]).let { t -> Pair(t, maxOf(best, t[0], t[1], t[2], t[3])) } }.second }

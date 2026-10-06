@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=970 lang=kotlin */ class Solution { fun pw(b: Int, bound: Int): List<Int> = if (b == 1) listOf(1) else generateSequence(1) { if (it.toLong() * b <= bound) it * b else null }.toList() fun powerfulIntegers(x: Int, y: Int, bound: Int): List<Int> = pw(x, bound).flatMap { a -> pw(y, bound).map { b -> a + b } }.filter { it <= bound }.distinct() }

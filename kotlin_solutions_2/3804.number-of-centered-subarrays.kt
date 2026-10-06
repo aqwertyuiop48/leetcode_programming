@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3804 lang=kotlin */ class Solution { fun centeredSubarrays(nums: IntArray): Int = nums.indices.sumOf { l -> HashSet<Int>().let { st -> (l until nums.size).fold(0 to 0) { (sm, cnt), r -> (sm + nums[r]).let { s2 -> st.add(nums[r]).let { s2 to cnt + (if (s2 in st) 1 else 0) } } }.second } } }

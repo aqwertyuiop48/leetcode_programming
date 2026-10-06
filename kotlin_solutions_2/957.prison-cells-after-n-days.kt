@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=957 lang=kotlin */ class Solution { fun prisonAfterNDays(cells: IntArray, n: Int): IntArray = generateSequence(cells) { c -> IntArray(8) { i -> if (i == 0 || i == 7) 0 else if (c[i - 1] == c[i + 1]) 1 else 0 } }.drop(if (n == 0) 0 else (n - 1) % 14 + 1).first() }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=933 lang=kotlin */ class RecentCounter(val q: java.util.ArrayDeque<Int> = java.util.ArrayDeque()) { fun ping(t: Int): Int = q.addLast(t).let { generateSequence { q.peekFirst()?.takeIf { it < t - 3000 } }.forEach { _ -> q.pollFirst() } }.let { q.size } }

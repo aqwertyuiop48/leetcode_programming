@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=955 lang=kotlin */ class Solution { fun minDeletionSize(strs: Array<String>): Int = BooleanArray(strs.size).let { done -> strs[0].indices.count { c -> (0 until strs.size - 1).any { i -> !done[i] && strs[i][c] > strs[i + 1][c] } || (0 until strs.size - 1).filter { i -> strs[i][c] < strs[i + 1][c] }.onEach { done[it] = true }.size < 0 } } }

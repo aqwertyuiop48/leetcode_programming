@@ -13,7 +13,7 @@ class Solution {
                     && new java.util.PriorityQueue<long[]>(java.util.Comparator.comparingLong((long[] a) -> a[0])) instanceof java.util.PriorityQueue<long[]> pq && pq.add(new long[]{0, s})
                     && java.util.stream.Stream.generate(pq::poll).takeWhile(java.util.Objects::nonNull).filter(c -> c[0] == d[(int) c[1]])
                         .peek(c -> g.getOrDefault((int) c[1], java.util.List.<long[]>of()).stream().map(e -> new long[]{c[0] + (t == 0 ? e[2] : e[2] * e[3]), e[1]})
-                            .filter(x -> x[0] < d[(int) x[1]]).forEach(x -> d[(int) x[1]] = pq.add(x) ? x[0] : x[0])).allMatch(x -> true)
+                            .filter(x -> x[0] < d[(int) x[1]] && x[0] < prices[s]).forEach(x -> d[(int) x[1]] = pq.add(x) ? x[0] : x[0])).allMatch(x -> true)
                     ? d : null) instanceof java.util.function.BiFunction<Integer, Integer, long[]> f
             ? java.util.stream.IntStream.range(0, n).map(i -> f.apply(i, 0) instanceof long[] a && f.apply(i, 1) instanceof long[] b
                 ? (int) Math.min(prices[i], java.util.stream.IntStream.range(0, n).mapToLong(j -> a[j] + b[j] + prices[j]).min().getAsLong()) : 0).toArray()

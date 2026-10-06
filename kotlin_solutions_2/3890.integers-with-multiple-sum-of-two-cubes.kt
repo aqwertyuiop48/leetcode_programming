@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3890 lang=kotlin */ class Solution { fun findGoodIntegers(n: Int): List<Int> = (1..1000).flatMap { a -> (a..1000).asSequence().map { b -> a.toLong() * a * a + b.toLong() * b * b }.takeWhile { it <= n }.toList() }.groupingBy { it }.eachCount().filter { it.value >= 2 }.keys.sorted().map { it.toInt() } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3255 lang=kotlin */ class Solution { fun resultsArray(nums: IntArray, k: Int): IntArray = nums.indices.runningFold(1) { run, i -> if (i > 0 && nums[i] == nums[i - 1] + 1) run + 1 else 1 }.drop(1).let { r -> IntArray(nums.size - k + 1) { i -> if (r[i + k - 1] >= k) nums[i + k - 1] else -1 } } }

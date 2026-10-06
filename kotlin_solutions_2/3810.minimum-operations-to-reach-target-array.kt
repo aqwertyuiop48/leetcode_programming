@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3810 lang=kotlin */ class Solution { fun minOperations(nums: IntArray, target: IntArray): Int = nums.indices.filter { nums[it] != target[it] }.map { nums[it] }.distinct().size }

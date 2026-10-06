@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=974 lang=kotlin */ class Solution { fun subarraysDivByK(nums: IntArray, k: Int): Int = IntArray(k).also { it[0] = 1 }.let { c -> nums.fold(0 to 0) { (s, r), x -> (((s + x) % k + k) % k).let { t -> t to r + c[t] }.also { c[it.first]++ } }.second } }

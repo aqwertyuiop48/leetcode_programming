@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3618 lang=kotlin */ class Solution { fun splitArray(nums: IntArray): Long = nums.indices.map { x -> x >= 2 && (2..Math.sqrt(x.toDouble()).toInt()).none { x % it == 0 } }.let { pr -> Math.abs(nums.indices.sumOf { if (pr[it]) nums[it].toLong() else -nums[it].toLong() }) } }

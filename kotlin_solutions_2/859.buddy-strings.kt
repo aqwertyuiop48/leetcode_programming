@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=859 lang=kotlin */ class Solution { fun buddyStrings(s: String, goal: String): Boolean = s.length == goal.length && if (s == goal) s.toSet().size < s.length else s.indices.filter { s[it] != goal[it] }.let { it.size == 2 && s[it[0]] == goal[it[1]] && s[it[1]] == goal[it[0]] } }

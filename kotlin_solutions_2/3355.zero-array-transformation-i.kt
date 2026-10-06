@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3355 lang=kotlin */ class Solution { fun isZeroArray(nums: IntArray, queries: Array<IntArray>): Boolean = IntArray(nums.size + 1).also { d -> queries.forEach { q -> d.set(q[0], d[q[0]] + 1).also { d[q[1] + 1]-- } } }.runningFold(0) { a, b -> a + b }.drop(1).zip(nums.asList()) { c, v -> c >= v }.all { it } }

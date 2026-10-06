@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4034 lang=kotlin */ class Solution { fun minBishopMoves(source: IntArray, target: IntArray): Int = if ((source[0] + source[1]) % 2 != (target[0] + target[1]) % 2) -1 else if (Math.abs(source[0] - target[0]) == Math.abs(source[1] - target[1])) 1 else 2 }

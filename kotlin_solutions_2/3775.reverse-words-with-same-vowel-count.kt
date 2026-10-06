@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3775 lang=kotlin */ class Solution { fun vc(w: String): Int = w.count { it in "aeiou" } fun reverseWords(s: String): String = s.split(" ").let { w -> vc(w[0]).let { c0 -> w.mapIndexed { i, x -> if (i > 0 && vc(x) == c0) x.reversed() else x }.joinToString(" ") } } }

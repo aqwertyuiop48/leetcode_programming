@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=978 lang=kotlin */ class Solution { fun maxTurbulenceSize(arr: IntArray): Int = (1 until arr.size).fold(listOf(1, 1, 1)) { s, i -> if (arr[i - 1] < arr[i]) listOf(s[1] + 1, 1, maxOf(s[2], s[1] + 1)) else if (arr[i - 1] > arr[i]) listOf(1, s[0] + 1, maxOf(s[2], s[0] + 1)) else listOf(1, 1, s[2]) }[2] }

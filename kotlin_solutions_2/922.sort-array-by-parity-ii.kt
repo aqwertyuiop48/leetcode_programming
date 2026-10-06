@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=922 lang=kotlin */ class Solution { fun sortArrayByParityII(nums: IntArray): IntArray = nums.partition { it % 2 == 0 }.let { (e, o) -> IntArray(nums.size) { if (it % 2 == 0) e[it / 2] else o[it / 2] } } }

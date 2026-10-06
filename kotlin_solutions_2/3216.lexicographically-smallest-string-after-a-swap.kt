@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3216 lang=kotlin */ class Solution { fun getSmallestString(s: String): String = s.indices.firstOrNull { it < s.length - 1 && s[it] > s[it + 1] && (s[it] - s[it + 1]) % 2 == 0 }?.let { s.substring(0, it) + s[it + 1] + s[it] + s.substring(it + 2) } ?: s }

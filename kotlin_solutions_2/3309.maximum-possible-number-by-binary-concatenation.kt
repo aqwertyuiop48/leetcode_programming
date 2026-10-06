@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3309 lang=kotlin */ class Solution { fun maxGoodNumber(nums: IntArray): Int = nums.indices.flatMap { a -> nums.indices.filter { it != a }.flatMap { b -> nums.indices.filter { it != a && it != b }.map { c -> listOf(a, b, c).joinToString("") { Integer.toBinaryString(nums[it]) }.toInt(2) } } }.max() }

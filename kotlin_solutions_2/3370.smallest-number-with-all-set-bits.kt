@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3370 lang=kotlin */ class Solution { fun smallestNumber(n: Int): Int = generateSequence(1) { it * 2 + 1 }.first { it >= n } }

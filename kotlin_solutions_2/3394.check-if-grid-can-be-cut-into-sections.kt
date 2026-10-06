@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3394 lang=kotlin */ class Solution { fun checkValidCuts(n: Int, rectangles: Array<IntArray>): Boolean = listOf(0 to 2, 1 to 3).any { (a, b) -> rectangles.sortedBy { it[a] }.fold(0 to -1) { (cnt, end), r -> (if (r[a] >= end) cnt + 1 else cnt) to maxOf(end, r[b]) }.first >= 3 } }

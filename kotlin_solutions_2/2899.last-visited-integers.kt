@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2899 lang=kotlin */ class Solution { fun lastVisitedIntegers(nums: IntArray): List<Int> = nums.fold(Triple(listOf<Int>(), 0, listOf<Int>())) { (seen, k, res), x -> if (x == -1) Triple(seen, k + 1, res + (seen.getOrNull(k) ?: -1)) else Triple(listOf(x) + seen, 0, res) }.third }

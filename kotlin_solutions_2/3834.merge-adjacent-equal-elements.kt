@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3834 lang=kotlin */ class Solution { fun mergeAdjacent(nums: IntArray): List<Long> = nums.fold(ArrayList<Long>()) { st, x -> generateSequence(x.toLong()) { v -> if (st.isNotEmpty() && st.last() == v) st.removeAt(st.size - 1).let { v * 2 } else null }.last().let { st.add(it) }.let { st } } }

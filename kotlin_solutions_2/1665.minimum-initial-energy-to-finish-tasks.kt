@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1665 lang=kotlin */ class Solution { fun minimumEffort(tasks: Array<IntArray>): Int = tasks.sortedByDescending { it[1] - it[0] }.fold(0 to 0) { (p, best), (a, m) -> p + a to maxOf(best, m + p) }.second }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3301 lang=kotlin */ class Solution { fun maximumTotalSum(maximumHeight: IntArray): Long = maximumHeight.sortedDescending().fold(Long.MAX_VALUE to 0L) { (cur, s), h -> minOf(h.toLong(), cur - 1).let { c -> c to (if (c < 1 || s < 0) -1L else s + c) } }.second }

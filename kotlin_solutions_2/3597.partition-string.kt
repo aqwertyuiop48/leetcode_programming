@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3597 lang=kotlin */ class Solution { fun partitionString(s: String): List<String> = HashSet<String>().let { seen -> ArrayList<String>().also { res -> s.fold("") { cur, c -> (cur + c).let { nx -> if (seen.add(nx)) res.add(nx).let { "" } else nx } } } } }

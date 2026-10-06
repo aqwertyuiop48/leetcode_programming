@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4052 lang=kotlin */ class Solution { fun cyclicShift(n: Int, grid: Array<IntArray>, rowShift: IntArray, colShift: IntArray): Array<IntArray> = Array(n) { i -> IntArray(n) { j -> ((i + colShift[j]) % n).let { r -> grid[r][(j + rowShift[r]) % n] } } } }

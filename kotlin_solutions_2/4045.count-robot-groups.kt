@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4045 lang=kotlin */ class Solution { fun countGroups(position: IntArray, speed: IntArray, distance: Int): Int = (position.size - 1 downTo 0).fold(Triple(0, Int.MAX_VALUE, Int.MAX_VALUE)) { (c, p, v), i -> if (p - position[i] > distance && speed[i] <= v) Triple(c + 1, position[i], speed[i]) else Triple(c, position[i], v) }.first }

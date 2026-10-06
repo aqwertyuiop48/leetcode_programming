@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3917 lang=kotlin */ class Solution { fun countOppositeParity(nums: IntArray): IntArray = nums.indices.map { i -> (i + 1 until nums.size).count { nums[it] % 2 != nums[i] % 2 } }.toIntArray() }

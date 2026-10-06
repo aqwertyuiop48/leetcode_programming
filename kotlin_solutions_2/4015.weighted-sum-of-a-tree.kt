@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4015 lang=kotlin */ class Solution { fun weightedSum(parent: IntArray, nums: IntArray): Long = (1 until parent.size).groupBy { parent[it] }.let { ch -> generateSequence(listOf(0)) { f -> f.flatMap { ch[it].orEmpty() }.takeIf { it.isNotEmpty() } }.toList().let { lv -> lv.withIndex().sumOf { (d, f) -> f.sumOf { nums[it].toLong() } * (lv.size - d) } } } }

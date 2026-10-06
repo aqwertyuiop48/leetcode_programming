@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1770 lang=kotlin */ class Solution { fun maximumScore(nums: IntArray, multipliers: IntArray): Int = multipliers.size.let { m -> (m - 1 downTo 0).fold(IntArray(m + 1)) { nxt, i -> IntArray(m + 1) { l -> if (l > i) 0 else maxOf(nxt[l + 1] + nums[l] * multipliers[i], nxt[l] + nums[nums.size - 1 - (i - l)] * multipliers[i]) } }[0] } }

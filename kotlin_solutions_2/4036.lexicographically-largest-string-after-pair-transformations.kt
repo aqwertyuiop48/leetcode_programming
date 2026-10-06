@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4036 lang=kotlin */ class Solution { fun largestString(nums: IntArray): Array<String> = nums.map { a -> "z".repeat(a shr 25) + (24 downTo 0).filter { a shr it and 1 == 1 }.joinToString("") { ('a' + it).toString() } }.toTypedArray() }

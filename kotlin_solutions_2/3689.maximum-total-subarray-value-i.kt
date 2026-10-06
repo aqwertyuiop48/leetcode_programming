@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3689 lang=kotlin */ class Solution { fun maxTotalValue(nums: IntArray, k: Int): Long = k.toLong() * (nums.max() - nums.min()) }

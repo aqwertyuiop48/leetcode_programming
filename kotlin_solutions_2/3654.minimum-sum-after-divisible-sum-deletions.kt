@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3654 lang=kotlin */ class Solution { fun minArraySum(nums: IntArray, k: Int): Long = HashMap<Int, Long>().also { it[0] = 0L }.let { best -> nums.fold(Triple(0, 0L, 0)) { (pm, dp, _), x -> ((pm + x) % k).let { np -> minOf(dp + x, best[np] ?: Long.MAX_VALUE).let { nd -> best.merge(np, nd) { a, b -> minOf(a, b) }.let { Triple(np, nd, 0) } } } }.second } }

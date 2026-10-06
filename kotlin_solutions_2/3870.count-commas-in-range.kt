@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3870 lang=kotlin */ class Solution { fun countCommas(n: Int): Int = listOf(1000L, 1000000L, 1000000000L).sumOf { maxOf(0L, n.toLong() - it + 1) }.toInt() }

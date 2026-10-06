@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4066 lang=kotlin */ class Solution { fun maxEqualAdjacentPairs(nums: IntArray): Int = (1 until nums.size).partition { nums[it] == nums[it - 1] }.let { (e, d) -> e.size + (d.groupBy { minOf(nums[it], nums[it - 1]) to maxOf(nums[it], nums[it - 1]) }.values.maxOfOrNull { it.size } ?: 0) } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3684 lang=kotlin */ class Solution { fun maxKDistinct(nums: IntArray, k: Int): IntArray = nums.distinct().sortedDescending().take(k).toIntArray() }

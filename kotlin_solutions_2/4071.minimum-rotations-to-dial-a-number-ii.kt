@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4071 lang=kotlin */ class Solution { fun minRotations(n: Int, s: String): Int = s.map { it - '0' }.let { v -> (listOf(0) + v).let { w -> w.zipWithNext { a, b -> minOf(Math.abs(a - b), 10 - Math.abs(a - b)) }.let { st -> st.sum() + minOf(0, v.indices.minOf { k -> minOf(Math.abs(w[k] - v.last()), 10 - Math.abs(w[k] - v.last())) - st[k] }) } } } }

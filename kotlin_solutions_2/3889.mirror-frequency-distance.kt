@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3889 lang=kotlin */ class Solution { fun mirrorFrequency(s: String): Int = s.groupingBy { it }.eachCount().let { f -> f.keys.map { c -> (if (c in 'a'..'z') ('a'.code + 'z'.code - c.code).toChar() else ('0'.code + '9'.code - c.code).toChar()).let { m -> listOf(c, m).sorted() } }.distinct().sumOf { (a, b) -> Math.abs((f[a] ?: 0) - (f[b] ?: 0)) } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3993 lang=kotlin */ class Solution { fun maximumValue(n: Int, s: Int, m: Int): Long = if (n == 1) s.toLong() else (if ((n - 1) % 2 == 1) n - 1 else n - 2).let { j -> ((j - 1) / 2).toLong().let { t -> s + (t + 1) * m - t } } }

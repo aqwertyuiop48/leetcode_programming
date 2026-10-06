@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3697 lang=kotlin */ class Solution { fun decimalRepresentation(n: Int): IntArray = n.toString().let { s -> s.indices.filter { s[it] != '0' }.map { (s[it] - '0') * Math.pow(10.0, (s.length - 1 - it).toDouble()).toInt() } }.toIntArray() }

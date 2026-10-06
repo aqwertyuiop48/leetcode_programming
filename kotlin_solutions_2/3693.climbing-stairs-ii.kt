@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3693 lang=kotlin */ class Solution { fun climbStairs(n: Int, costs: IntArray): Int = IntArray(n + 1).also { dp -> (1..n).forEach { j -> dp[j] = (1..3).filter { j - it >= 0 }.minOf { s -> dp[j - s] + costs[j - 1] + s * s } } }.last() }

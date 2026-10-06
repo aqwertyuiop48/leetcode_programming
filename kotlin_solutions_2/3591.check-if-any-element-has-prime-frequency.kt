@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3591 lang=kotlin */ class Solution { fun checkPrimeFrequency(nums: IntArray): Boolean = nums.toList().groupingBy { it }.eachCount().values.any { f -> f >= 2 && (2..Math.sqrt(f.toDouble()).toInt()).none { f % it == 0 } } }

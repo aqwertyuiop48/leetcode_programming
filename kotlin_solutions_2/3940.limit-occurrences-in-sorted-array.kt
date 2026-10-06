@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3940 lang=kotlin */ class Solution { fun limitOccurrences(nums: IntArray, k: Int): IntArray = nums.toList().groupBy { it }.flatMap { (v, l) -> List(minOf(k, l.size)) { v } }.toIntArray() }

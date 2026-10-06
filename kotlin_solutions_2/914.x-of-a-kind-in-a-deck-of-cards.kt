@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=914 lang=kotlin */ class Solution { fun hasGroupsSizeX(deck: IntArray): Boolean = deck.toList().groupingBy { it }.eachCount().values.reduce { a, b -> java.math.BigInteger.valueOf(a.toLong()).gcd(java.math.BigInteger.valueOf(b.toLong())).toInt() } >= 2 }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3645 lang=kotlin */ class Solution { fun maxTotal(value: IntArray, limit: IntArray): Long = limit.indices.groupBy { limit[it] }.entries.sumOf { (l, idx) -> idx.map { value[it] }.sortedDescending().take(l).sumOf { it.toLong() } } }

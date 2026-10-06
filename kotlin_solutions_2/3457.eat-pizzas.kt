@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3457 lang=kotlin */ class Solution { fun maxWeight(pizzas: IntArray): Long = pizzas.sortedDescending().let { a -> (pizzas.size / 4).let { d -> ((d + 1) / 2).let { o -> a.take(o).sumOf { it.toLong() } + a.drop(o).let { rem -> (0 until d / 2).sumOf { rem[2 * it + 1].toLong() } } } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3461 lang=kotlin */ class Solution { fun hasSameDigits(s: String): Boolean = generateSequence(s.map { it - '0' }) { l -> if (l.size <= 2) null else l.zipWithNext { a, b -> (a + b) % 10 } }.last().let { it[0] == it[1] } }

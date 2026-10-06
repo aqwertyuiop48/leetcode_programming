@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2682 lang=kotlin */ class Solution { fun circularGameLosers(n: Int, k: Int): IntArray = HashSet<Int>().let { seen -> generateSequence(0 to 1) { (p, t) -> (p + t * k) % n to t + 1 }.takeWhile { seen.add(it.first) }.count().let { (1..n).filter { (it - 1) !in seen }.toIntArray() } } }

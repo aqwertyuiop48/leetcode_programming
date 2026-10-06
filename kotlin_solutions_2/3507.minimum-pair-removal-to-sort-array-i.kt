@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3507 lang=kotlin */ class Solution { fun minimumPairRemoval(nums: IntArray): Int = generateSequence(nums.toList()) { l -> if (l.zipWithNext().all { (a, b) -> a <= b }) null else (0 until l.size - 1).minBy { l[it] + l[it + 1] }.let { i -> l.take(i) + (l[i] + l[i + 1]) + l.drop(i + 2) } }.count() - 1 }

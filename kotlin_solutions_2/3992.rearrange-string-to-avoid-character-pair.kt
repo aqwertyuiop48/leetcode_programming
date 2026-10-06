@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3992 lang=kotlin */ class Solution { fun rearrangeString(s: String, x: Char, y: Char): String = s.filter { it == y } + s.filter { it != x && it != y } + s.filter { it == x } }

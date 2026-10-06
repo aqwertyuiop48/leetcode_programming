@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4030 lang=kotlin */ class Solution { fun isPalindromic(s: String): Boolean = s.map { Integer.toBinaryString(it.code).padStart(8, '0') }.joinToString("").let { it == it.reversed() } }

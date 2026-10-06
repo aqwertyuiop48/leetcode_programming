@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3842 lang=kotlin */ class Solution { fun toggleLightBulbs(bulbs: List<Int>): List<Int> = bulbs.groupingBy { it }.eachCount().filter { it.value % 2 == 1 }.keys.sorted() }

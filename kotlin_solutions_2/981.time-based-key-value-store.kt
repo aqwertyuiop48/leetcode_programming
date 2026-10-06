@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=981 lang=kotlin */ class TimeMap(val m: HashMap<String, java.util.TreeMap<Int, String>> = HashMap()) { fun set(key: String, value: String, timestamp: Int) { m.getOrPut(key) { java.util.TreeMap() }[timestamp] = value } fun get(key: String, timestamp: Int): String = m[key]?.floorEntry(timestamp)?.value ?: "" }

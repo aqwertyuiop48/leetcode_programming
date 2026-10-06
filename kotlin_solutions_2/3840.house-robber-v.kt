@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3840 lang=kotlin */ class Solution { fun rob(nums: IntArray, colors: IntArray): Long = nums.indices.fold(0L to 0L) { (f0, f1), i -> maxOf(f0, f1) to nums[i] + (if (i > 0 && colors[i] == colors[i - 1]) f0 else maxOf(f0, f1)) }.let { maxOf(it.first, it.second) } }

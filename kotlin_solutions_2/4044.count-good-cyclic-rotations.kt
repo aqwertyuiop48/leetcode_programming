@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4044 lang=kotlin */ class Solution { fun countGoodRotations(nums: IntArray): Int = nums.size.let { n -> (nums.toList() + nums.toList()).runningFold(0L) { a, b -> a + b }.let { P -> (0 until n).count { r -> 2 * (P[r + n / 2] - P[r]) > P[n] } } } }

@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=942 lang=kotlin */ class Solution { fun diStringMatch(s: String): IntArray = s.fold(Triple(0, s.length, listOf<Int>())) { (lo, hi, r), c -> if (c == 'I') Triple(lo + 1, hi, r + lo) else Triple(lo, hi - 1, r + hi) }.let { (lo, _, r) -> (r + lo).toIntArray() } }

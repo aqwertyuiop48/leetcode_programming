@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3951 lang=kotlin */ class Solution { fun minEnergy(n: Int, brightness: Int, intervals: Array<IntArray>): Long = ((brightness + 2) / 3).toLong() * intervals.sortedBy { it[0] }.fold(-1L to 0L) { (end, tot), (s, e) -> if (s > end) e.toLong() to tot + (e - s + 1) else if (e > end) e.toLong() to tot + (e - end) else end to tot }.second }

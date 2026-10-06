@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3332 lang=kotlin */ class Solution { fun maxScore(n: Int, k: Int, stayScore: Array<IntArray>, travelScore: Array<IntArray>): Int = (0 until k).fold(IntArray(n)) { dp, i -> IntArray(n) { d -> maxOf(dp[d] + stayScore[i][d], (0 until n).maxOf { dp[it] + travelScore[it][d] }) } }.max() }

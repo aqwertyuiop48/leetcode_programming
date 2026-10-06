@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=4010 lang=kotlin */ class Solution { fun g(a: Int, b: Int): Int = if (b == 0) a else g(b, a % b) fun maxPairStrength(nums: IntArray): Long = nums.indices.maxOf { i -> (i + 1 until nums.size).maxOfOrNull { j -> g(nums[i], nums[j]).toLong().let { d -> nums[i].toLong() * nums[j] / (d * d) } } ?: 0L } }

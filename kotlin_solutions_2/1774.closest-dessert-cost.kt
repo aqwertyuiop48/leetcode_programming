@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=1774 lang=kotlin */ class Solution { fun closestCost(baseCosts: IntArray, toppingCosts: IntArray, target: Int): Int = toppingCosts.fold(listOf(0)) { s, t -> s.flatMap { listOf(it, it + t, it + 2 * t) } }.let { tops -> baseCosts.flatMap { b -> tops.map { b + it } }.minWithOrNull(compareBy({ Math.abs(it - target) }, { it }))!! } }

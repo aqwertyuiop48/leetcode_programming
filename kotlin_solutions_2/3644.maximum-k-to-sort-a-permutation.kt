@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3644 lang=kotlin */ class Solution { fun sortPermutation(nums: IntArray): Int = nums.indices.filter { nums[it] != it }.fold(-1) { a, i -> a and nums[i] }.let { if (it == -1) 0 else it } }

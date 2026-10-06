@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3969 lang=kotlin */ class Solution { fun countValidSubarrays(nums: IntArray, x: Int): Int = nums.indices.sumOf { i -> nums.drop(i).runningFold(0L) { a, b -> a + b }.drop(1).count { s -> s % 10 == x.toLong() && s.toString()[0] - '0' == x } } }

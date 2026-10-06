@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3994 lang=kotlin */ class Solution { fun minAdjacentSwaps(nums: IntArray, a: Int, b: Int): Int = nums.fold(listOf(0L, 0L, 0L, 0L)) { (c0, c1, c2, inv), x -> if (x < a) listOf(c0 + 1, c1, c2, inv + c1 + c2) else if (x <= b) listOf(c0, c1 + 1, c2, inv + c2) else listOf(c0, c1, c2 + 1, inv) }.let { (it[3] % 1_000_000_007L).toInt() } }

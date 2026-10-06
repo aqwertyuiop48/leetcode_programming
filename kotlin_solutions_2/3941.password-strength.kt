@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3941 lang=kotlin */ class Solution { fun passwordStrength(password: String): Int = password.toSet().map { c -> if (c in 'a'..'z') 1 else if (c in 'A'..'Z') 2 else if (c in '0'..'9') 3 else if (c in "!@#$") 5 else 0 }.sum() }

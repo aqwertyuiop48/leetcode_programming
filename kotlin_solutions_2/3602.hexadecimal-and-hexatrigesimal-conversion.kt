@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3602 lang=kotlin */ class Solution { fun concatHex36(n: Int): String = Integer.toString(n * n, 16).uppercase() + Integer.toString(n * n * n, 36).uppercase() }

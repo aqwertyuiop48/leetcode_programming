@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=2302 lang=kotlin */ class Solution { fun countSubarrays(nums: IntArray, k: Long): Long = nums.runningFold(0L) { s, x -> s + x }.let { pre -> nums.indices.fold(0 to 0L) { (l, tot), r -> generateSequence(l) { it + 1 }.first { (pre[r + 1] - pre[it]) * (r - it + 1) < k }.let { nl -> nl to tot + (r - nl + 1) } }.second } }

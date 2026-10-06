@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3675 lang=kotlin */ class Solution { fun minOperations(s: String): Int = s.maxOf { (26 - (it - 'a')) % 26 } }

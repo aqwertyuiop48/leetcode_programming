@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3727 lang=kotlin */ class Solution { fun maxAlternatingSum(nums: IntArray): Long = nums.map { it.toLong() * it }.sortedDescending().let { s -> s.take((s.size + 1) / 2).sum() - s.drop((s.size + 1) / 2).sum() } }

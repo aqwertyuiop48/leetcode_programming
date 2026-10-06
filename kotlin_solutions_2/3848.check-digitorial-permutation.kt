@@ -1,0 +1,1 @@
+/* @lc app=leetcode id=3848 lang=kotlin */ class Solution { fun isDigitorialPermutation(n: Int): Boolean = listOf(1, 2, 145, 40585).any { it.toString().toList().sorted() == n.toString().toList().sorted() } }
