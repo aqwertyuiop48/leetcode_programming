@@ -6,17 +6,29 @@
 
 class Solution {
     public int[] minCost(int n, int[] prices, int[][] roads) {
-        return java.util.Arrays.stream(roads).flatMap(r -> java.util.stream.Stream.of(new long[]{r[0], r[1], r[2], r[3]}, new long[]{r[1], r[0], r[2], r[3]}))
-                .collect(java.util.stream.Collectors.groupingBy(e -> (int) e[0])) instanceof java.util.Map<Integer, java.util.List<long[]>> g
-            && ((java.util.function.BiFunction<Integer, Integer, long[]>) (s, t) -> new long[n] instanceof long[] d
-                    && java.util.stream.IntStream.range(0, n).peek(i -> d[i] = 1L << 60).allMatch(x -> true) && (d[s] = 0) == 0
-                    && new java.util.PriorityQueue<long[]>(java.util.Comparator.comparingLong((long[] a) -> a[0])) instanceof java.util.PriorityQueue<long[]> pq && pq.add(new long[]{0, s})
-                    && java.util.stream.Stream.generate(pq::poll).takeWhile(java.util.Objects::nonNull).filter(c -> c[0] == d[(int) c[1]])
-                        .peek(c -> g.getOrDefault((int) c[1], java.util.List.<long[]>of()).stream().map(e -> new long[]{c[0] + (t == 0 ? e[2] : e[2] * e[3]), e[1]})
-                            .filter(x -> x[0] < d[(int) x[1]] && x[0] < prices[s]).forEach(x -> d[(int) x[1]] = pq.add(x) ? x[0] : x[0])).allMatch(x -> true)
-                    ? d : null) instanceof java.util.function.BiFunction<Integer, Integer, long[]> f
-            ? java.util.stream.IntStream.range(0, n).map(i -> f.apply(i, 0) instanceof long[] a && f.apply(i, 1) instanceof long[] b
-                ? (int) Math.min(prices[i], java.util.stream.IntStream.range(0, n).mapToLong(j -> a[j] + b[j] + prices[j]).min().getAsLong()) : 0).toArray()
+        return new int[roads.length * 2 + n] instanceof int[] au && new int[au.length] instanceof int[] av && new int[au.length] instanceof int[] sw
+            && new long[au.length] instanceof long[] w0 && new long[au.length] instanceof long[] w1
+            && java.util.stream.IntStream.range(0, au.length).peek(i -> au[i] = i >= 2 * roads.length ? i - 2 * roads.length : roads[i / 2][i % 2]).allMatch(x -> true)
+            && java.util.stream.IntStream.range(0, au.length).peek(i -> av[i] = i >= 2 * roads.length ? i - 2 * roads.length : roads[i / 2][1 - i % 2]).allMatch(x -> true)
+            && java.util.stream.IntStream.range(0, au.length).peek(i -> sw[i] = i >= 2 * roads.length ? 1 : 0).allMatch(x -> true)
+            && java.util.stream.IntStream.range(0, au.length).peek(i -> w0[i] = i >= 2 * roads.length ? prices[i - 2 * roads.length] : roads[i / 2][2]).allMatch(x -> true)
+            && java.util.stream.IntStream.range(0, au.length).peek(i -> w1[i] = i >= 2 * roads.length ? Long.MAX_VALUE / 4 : (long) roads[i / 2][2] * roads[i / 2][3]).allMatch(x -> true)
+            && new int[n][] instanceof int[][] arcs
+            && java.util.stream.IntStream.range(0, n).peek(u -> arcs[u] = java.util.stream.IntStream.range(0, au.length).filter(i -> au[i] == u).toArray()).allMatch(x -> true)
+            && new long[][]{w0, w1} instanceof long[][] W
+            && java.util.Arrays.stream(prices).boxed().min(Integer::compare).get() instanceof Integer minP
+            ? java.util.stream.IntStream.range(0, n).map(s -> java.util.stream.LongStream.generate(() -> 1L << 60).limit(2 * n).toArray() instanceof long[] dist
+                && (dist[s] = 0) == 0 && new java.util.PriorityQueue<Long>() instanceof java.util.PriorityQueue<Long> pq && pq.add((long) s)
+                && java.util.stream.Stream.generate(pq::poll).takeWhile(k -> k != null && (k >> 11) < prices[s] && (int) (k & 2047) != s + n)
+                    .filter(k -> (k >> 11) == dist[(int) (k & 2047)])
+                    .peek(k -> java.util.Arrays.stream(arcs[(int) (k & 2047) % n])
+                        .mapToLong(e -> (k >> 11) + W[(int) (k & 2047) / n][e] < prices[s] && (int) (k & 2047) / n + sw[e] < 2
+                            && (k >> 11) + W[(int) (k & 2047) / n][e] < dist[av[e] + n * ((int) (k & 2047) / n + sw[e])]
+                            && ((int) (k & 2047) / n == 1 || (sw[e] == 1 ? 2 * (k >> 11) + W[0][e] < prices[s] : 2 * ((k >> 11) + W[0][e]) + minP < prices[s]))
+                            ? (((dist[av[e] + n * ((int) (k & 2047) / n + sw[e])] = (k >> 11) + W[(int) (k & 2047) / n][e])) << 11) | (av[e] + n * ((int) (k & 2047) / n + sw[e])) : -1L)
+                        .filter(x -> x >= 0).forEach(pq::add))
+                    .count() >= 0
+                ? (int) Math.min(prices[s], dist[s + n]) : 0).toArray()
             : null;
     }
 }
