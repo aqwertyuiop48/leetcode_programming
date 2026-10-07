@@ -1,1 +1,1 @@
-/* @lc app=leetcode id=3856 lang=kotlin */ class Solution { fun trimTrailingVowels(s: String): String = s.trimEnd('a', 'e', 'i', 'o', 'u') }
+/* @lc app=leetcode id=3856 lang=kotlin */ class Solution{fun trimTrailingVowels(s: String): String = s.trimEnd('a', 'e', 'i', 'o', 'u') }

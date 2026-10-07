@@ -1,1 +1,1 @@
-/* @lc app=leetcode id=3838 lang=kotlin */ class Solution { fun mapWordWeights(words: Array<String>, weights: IntArray): String = words.map { w -> 'z' - (w.sumOf { weights[it - 'a'] } % 26) }.joinToString("") }
+/* @lc app=leetcode id=3838 lang=kotlin */ class Solution{fun mapWordWeights(words: Array<String>, weights: IntArray): String = words.map { w -> 'z' - (w.sumOf { weights[it - 'a'] } % 26) }.joinToString("") }
