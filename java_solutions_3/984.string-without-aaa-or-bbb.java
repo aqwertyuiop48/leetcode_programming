@@ -3,4 +3,4 @@
  *
  * [984] String Without AAA or BBB
  */
-class Solution{public String strWithout3a3b(int a, int b){return new StringBuilder() instanceof StringBuilder sb && new int[]{a, b} instanceof int[] c&& java.util.stream.Stream.of(0).peek(z->{while(c[0] + c[1] > 0 && (sb.length() >= 2 && sb.charAt(sb.length()-1)==sb.charAt(sb.length()-2)?(sb.charAt(sb.length()-1)=='a'?sb.append('b')!=null && c[1]-- > 0:sb.append('a')!=null && c[0]-- > 0):(c[0] >= c[1]?sb.append('a')!=null && c[0]-- >0:sb.append('b')!=null && c[1]-- >0))){}}).anyMatch(z->true)?sb.toString():"";}}
+class Solution{public String strWithout3a3b(int a,int b){return java.util.stream.Stream.of(new int[]{a,b}).map(c->java.util.stream.IntStream.range(0,a+b).mapToObj(i->c).reduce(new StringBuilder(),(sb,x)->sb.append(sb.length()>=2&&sb.charAt(sb.length()-1)==sb.charAt(sb.length()-2)?(sb.charAt(sb.length()-1)=='a'?(x[1]-->0?'b':'a'):(x[0]-->0?'a':'b')):(x[0]>=x[1]&&x[0]>0?(x[0]-->0?'a':'b'):(x[1]>0?(x[1]-->0?'b':'a'):(x[0]-->0?'a':'b')))),(sb1,sb2)->sb1).toString()).findFirst().orElse("");}}
