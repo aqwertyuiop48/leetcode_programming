@@ -49,6 +49,26 @@ if [[ ! -f "$SOURCE" ]]; then
     exit 1
 fi
 
+java_major() {
+    "$1" -version 2>&1 | head -1 | sed -E 's/[^0-9]*([0-9]+)\.?([0-9]*).*/\1 \2/' | awk '{print ($1==1)?$2:$1}'
+}
+
+if [[ "$(java_major javac)" -lt 21 ]]; then
+    for jdk in /usr/local/sdkman/candidates/java/21* /usr/local/sdkman/candidates/java/2[2-9]* \
+               "$HOME"/.sdkman/candidates/java/21* /usr/lib/jvm/*21* /usr/lib/jvm/*-2[2-9]*; do
+        if [[ -x "$jdk/bin/javac" && "$(java_major "$jdk/bin/javac")" -ge 21 ]]; then
+            export JAVA_HOME="$jdk"
+            export PATH="$JAVA_HOME/bin:$PATH"
+            break
+        fi
+    done
+fi
+
+if [[ "$(java_major javac)" -lt 21 ]]; then
+    echo "ERROR: JDK 21+ required (found $(javac -version 2>&1)). Install: sdk install java 21-tem && sdk default java 21-tem"
+    exit 1
+fi
+
 cd "$PROBLEM_DIR"
 
 test_solution() {
