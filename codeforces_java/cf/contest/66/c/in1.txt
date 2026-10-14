@@ -1,0 +1,5 @@
+C:
+\
+folder1
+\
+file1.txt

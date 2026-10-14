@@ -7,7 +7,7 @@ Steps: (To do in Github codespace)
     - go to Firefox -> Right-click -> Inspect -> HTML -> Request headers -> Accept: (Copy all)
     - paste entire content in terminal
 - cd codeforces_java
-- pyforces race 1 (or) for i in {6..10}; do pyforces race "$i"; done
+- pyforces race 1 (or) for i in {51..100}; do pyforces race "$i"; done
 - mv /home/codespace/cf/contest/* /workspaces/leetcode_programming/codeforces_java/cf/contest
 - chmod +x cf_java.sh
 - ./cf_java.sh 1 A all 87   (or)  ./cf_java.sh 1 A test && ./cf_java.sh 1 A submit 87
