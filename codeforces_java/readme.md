@@ -11,6 +11,7 @@ Steps: (To do in Github codespace)
 - mv /home/codespace/cf/contest/* /workspaces/leetcode_programming/codeforces_java/cf/contest
 - chmod +x cf_java.sh
 - ./cf_java.sh 1 A all 87   (or)  ./cf_java.sh 1 A test && ./cf_java.sh 1 A submit 87
+    - for contest in {1..50}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done
 
 
 ### Reference ID

@@ -86,6 +86,8 @@ submit_solution() {
     fi
 
     echo "===== SUBMIT ====="
+    echo "Waiting 10 seconds before submission..."
+    sleep 10
     pyforces submit --file Main.java --program-type-id "$JAVA_ID" --no-track
 }
 
