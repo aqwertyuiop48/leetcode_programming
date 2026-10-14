@@ -100,8 +100,15 @@ case "$ACTION" in
         test_solution
         submit_solution
         ;;
+    force)
+        echo "===== COMPILE ====="
+        javac Main.java
+        echo "===== TEST SAMPLES (mismatch will not block submit) ====="
+        pyforces test --shell "java Main" || echo "WARNING: sample mismatch, submitting anyway"
+        submit_solution
+        ;;
     *)
-        echo "ERROR: Unknown action '$ACTION'. Use test, submit, or all."
+        echo "ERROR: Unknown action '$ACTION'. Use test, submit, force, or all."
         exit 1
         ;;
 esac
