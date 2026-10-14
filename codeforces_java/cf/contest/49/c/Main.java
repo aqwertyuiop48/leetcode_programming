@@ -9,3 +9,4 @@ public class Main {
                 : IntStream.rangeClosed(1, n).map(i -> i == 1 ? 1 : i == n ? 2 : i + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")))));
     }
 }
+

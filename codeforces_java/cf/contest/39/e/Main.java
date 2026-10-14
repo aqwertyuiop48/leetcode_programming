@@ -16,3 +16,4 @@ public class Main {
             ? (v.apply(a0, b0) == 1 ? "Masha" : v.apply(a0, b0) == -1 ? "Stas" : "Missing") : ""));
     }
 }
+

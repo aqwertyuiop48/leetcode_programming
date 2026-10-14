@@ -9,3 +9,4 @@ public class Main {
                 + p.stream().mapToInt(q -> q[0] - q[1]).max().getAsInt() - p.stream().mapToInt(q -> q[0] - q[1]).min().getAsInt() + 4)));
     }
 }
+

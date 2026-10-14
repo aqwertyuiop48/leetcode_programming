@@ -8,3 +8,4 @@ public class Main {
                 System.out.println(Integer.toString(Integer.parseInt(ab[0], p) + Integer.parseInt(ab[1], p), p).length()))));
     }
 }
+

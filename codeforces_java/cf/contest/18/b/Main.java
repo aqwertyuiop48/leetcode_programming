@@ -12,3 +12,4 @@ public class Main {
                     .orElseGet(() -> ((v[0] * v[2] + v[1] - 1) / v[1]) * v[1]))));
     }
 }
+

@@ -11,3 +11,4 @@ public class Main {
                 : a[0] * a[1] - (i * a[1] + j - ((i / 2) * a[1] + (i % 2) * ((a[1] + 1) / 2) + (j + 1 - i % 2) / 2)))).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")))));
     }
 }
+

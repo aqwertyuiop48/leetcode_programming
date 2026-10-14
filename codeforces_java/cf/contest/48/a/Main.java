@@ -9,3 +9,4 @@ public class Main {
                 .mapToObj(i -> "FMS".substring(i, i + 1)).findFirst().orElse("?"))));
     }
 }
+

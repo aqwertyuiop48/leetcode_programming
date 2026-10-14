@@ -8,3 +8,4 @@ public class Main {
                 IntStream.range(0, t).mapToObj(i -> String.valueOf(Math.max(0, s.nextInt() - 2))).collect(Collectors.joining("\n")))));
     }
 }
+

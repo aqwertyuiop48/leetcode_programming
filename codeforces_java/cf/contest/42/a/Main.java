@@ -10,3 +10,4 @@ public class Main {
             ? Math.min(v, IntStream.range(0, n).mapToDouble(i -> (double) b[i] / a[i]).min().getAsDouble() * Arrays.stream(a).sum()) : 0.0));
     }
 }
+

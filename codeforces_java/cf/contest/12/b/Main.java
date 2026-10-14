@@ -17,3 +17,4 @@ public class Main {
                 : "WRONG_ANSWER"))));
     }
 }
+

@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.iterate(1, i -> i + 1).filter(i -> !st.contains(i)).findFirst().getAsInt() : 0));
     }
 }
+

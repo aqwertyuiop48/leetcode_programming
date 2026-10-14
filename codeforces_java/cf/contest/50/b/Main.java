@@ -9,3 +9,4 @@ public class Main {
                 .values().stream().mapToLong(c -> c * c).sum())));
     }
 }
+

@@ -38,3 +38,4 @@ public class Main {
             ? IntStream.range(0, 32768).filter(n -> tab[n] == target).max().orElse(-1) : -2));
     }
 }
+

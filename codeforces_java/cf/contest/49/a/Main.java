@@ -6,3 +6,4 @@ public class Main {
             System.out.println("AEIOUY".indexOf(Character.toUpperCase(s.nextLine().chars().filter(Character::isLetter).reduce((x, y) -> y).getAsInt())) >= 0 ? "YES" : "NO"));
     }
 }
+

@@ -8,3 +8,4 @@ public class Main {
                 "/" + Arrays.stream(path.split("/")).filter(part -> !part.isEmpty()).collect(Collectors.joining("/")))));
     }
 }
+

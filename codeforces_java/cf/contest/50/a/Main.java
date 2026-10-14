@@ -5,3 +5,4 @@ public class Main {
         Optional.of(new Scanner(System.in)).ifPresent(s -> System.out.println(s.nextInt() * s.nextInt() / 2));
     }
 }
+

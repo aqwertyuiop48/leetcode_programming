@@ -13,3 +13,4 @@ public class Main {
                 : "No solution"));
     }
 }
+

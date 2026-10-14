@@ -20,3 +20,4 @@ public class Main {
             ? g + "\n" + cam.size() + "\n" + String.join(" ", cam) : ""));
     }
 }
+

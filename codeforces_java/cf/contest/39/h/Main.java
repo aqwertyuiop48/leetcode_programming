@@ -9,3 +9,4 @@ public class Main {
                 .collect(Collectors.joining(" ")).strip()).collect(Collectors.joining("\n")))));
     }
 }
+

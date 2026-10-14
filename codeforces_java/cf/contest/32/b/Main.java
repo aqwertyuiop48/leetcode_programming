@@ -6,3 +6,4 @@ public class Main {
             System.out.println(s.next().trim().replace("--", "2").replace("-.", "1").replace(".", "0")));
     }
 }
+

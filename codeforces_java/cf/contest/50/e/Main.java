@@ -11,3 +11,4 @@ public class Main {
                     System.out.println(2 * irr + IntStream.range(0, seen.length).filter(i -> seen[i]).count())))));
     }
 }
+

@@ -9,3 +9,4 @@ public class Main {
             && IntStream.range(0, 3).anyMatch(i -> a[i] == b[i]) ? "YES" : "NO"));
     }
 }
+

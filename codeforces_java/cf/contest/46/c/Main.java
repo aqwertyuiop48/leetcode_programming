@@ -10,3 +10,4 @@ public class Main {
                     (int) IntStream.range(0, n).filter(i -> str.charAt(i) != (i % 2 == 0 ? 'T' : 'H')).count())))));
     }
 }
+

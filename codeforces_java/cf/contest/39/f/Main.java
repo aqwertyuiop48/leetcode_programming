@@ -12,3 +12,4 @@ public class Main {
             ? idx.size() + "\n" + String.join(" ", idx) : ""));
     }
 }
+

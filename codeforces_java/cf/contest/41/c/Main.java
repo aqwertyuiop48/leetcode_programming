@@ -6,3 +6,4 @@ public class Main {
             s.next().replaceFirst("(?<=.)at(?=.)", "@").replaceAll("(?<=.)dot(?=.)", ".")));
     }
 }
+

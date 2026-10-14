@@ -10,3 +10,4 @@ public class Main {
                 .map(x -> x[1] + " " + x[2]).collect(Collectors.joining("\n")))));
     }
 }
+

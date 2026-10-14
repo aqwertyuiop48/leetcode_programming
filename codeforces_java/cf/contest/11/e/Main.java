@@ -47,3 +47,4 @@ public class Main {
                 : "0.000000")));
     }
 }
+

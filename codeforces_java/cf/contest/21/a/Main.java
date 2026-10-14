@@ -8,3 +8,4 @@ public class Main {
             && m.matches() && m.group(2).length() <= 32 ? "YES" : "NO"));
     }
 }
+

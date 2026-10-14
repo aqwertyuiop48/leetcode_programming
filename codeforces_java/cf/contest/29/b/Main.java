@@ -8,3 +8,4 @@ public class Main {
                     System.out.printf("%.8f%n", phase < a[3] ? (double) a[0] / a[2] : t + (a[3] + a[4] - phase) + (double) (a[0] - a[1]) / a[2])))));
     }
 }
+

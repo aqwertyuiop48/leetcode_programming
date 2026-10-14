@@ -21,3 +21,4 @@ public class Main {
                     ? tot[0].setScale(15, RoundingMode.UP).toPlainString() : ""))));
     }
 }
+

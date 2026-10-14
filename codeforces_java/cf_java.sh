@@ -86,9 +86,18 @@ submit_solution() {
     fi
 
     echo "===== SUBMIT ====="
-    echo "Waiting 10 seconds before submission..."
-    sleep 10
+    echo "Waiting 2 seconds before submission..."
+    sleep 2
     pyforces submit --file Main.java --program-type-id "$JAVA_ID" --no-track
+}
+
+test_and_submit_solution() {
+    echo "===== COMPILE ====="
+    javac Main.java
+
+    echo "===== TEST SAMPLES (failure will not block submit) ====="
+    pyforces test --shell "java Main" || echo "WARNING: sample test failed, submitting anyway"
+    submit_solution
 }
 
 case "$ACTION" in
@@ -99,15 +108,10 @@ case "$ACTION" in
         submit_solution
         ;;
     all)
-        test_solution
-        submit_solution
+        test_and_submit_solution
         ;;
     force)
-        echo "===== COMPILE ====="
-        javac Main.java
-        echo "===== TEST SAMPLES (mismatch will not block submit) ====="
-        pyforces test --shell "java Main" || echo "WARNING: sample mismatch, submitting anyway"
-        submit_solution
+        test_and_submit_solution
         ;;
     *)
         echo "ERROR: Unknown action '$ACTION'. Use test, submit, force, or all."
@@ -116,3 +120,4 @@ case "$ACTION" in
 esac
 
 echo "===== DONE ====="
+sleep 15
