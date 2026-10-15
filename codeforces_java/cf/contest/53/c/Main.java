@@ -7,3 +7,4 @@ public class Main {
             System.out.println(IntStream.range(0, n).map(i -> i % 2 == 0 ? i / 2 + 1 : n - i / 2).mapToObj(String::valueOf).collect(Collectors.joining(" ")))));
     }
 }
+

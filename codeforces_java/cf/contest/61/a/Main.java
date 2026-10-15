@@ -7,3 +7,4 @@ public class Main {
             System.out.println(IntStream.range(0, ab[0].length()).mapToObj(i -> ab[0].charAt(i) == ab[1].charAt(i) ? "0" : "1").collect(Collectors.joining()))));
     }
 }
+

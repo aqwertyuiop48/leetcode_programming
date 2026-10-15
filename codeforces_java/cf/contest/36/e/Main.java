@@ -3,8 +3,8 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(Arrays.stream(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().collect(Collectors.joining(" ")).trim().split(" +")).mapToInt(Integer::parseInt).toArray() instanceof int[] v
+    public static void main(String[] args) throws Exception {
+        new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true).println(Arrays.stream(new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream("input.txt"))).lines().collect(Collectors.joining(" ")).trim().split(" +")).mapToInt(Integer::parseInt).toArray() instanceof int[] v
             && Integer.valueOf(v[0]) instanceof Integer m
             && IntStream.rangeClosed(0, m).map(e -> e < m ? v[1 + 2 * e] : 0).toArray() instanceof int[] ea
             && IntStream.rangeClosed(0, m).map(e -> e < m ? v[2 + 2 * e] : 0).toArray() instanceof int[] eb

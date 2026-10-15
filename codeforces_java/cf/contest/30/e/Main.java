@@ -6,15 +6,8 @@ public class Main {
         Optional.of(new Scanner(System.in)).ifPresent(sc -> System.out.println(
             sc.next().trim().toCharArray() instanceof char[] a
             && (Integer) a.length instanceof Integer n
-            && new char[2 * n + 1] instanceof char[] t
-            && IntStream.range(0, n).allMatch(i -> (t[i] = a[n - 1 - i]) + (t[n + 1 + i] = a[i]) > 0)
-            && (t[n] = '#') > 0
-            && new int[2 * n + 1] instanceof int[] pi
-            && IntStream.rangeClosed(1, 2 * n).allMatch(i ->
-                (pi[i] = Stream.iterate(pi[i - 1], x -> pi[x - 1]).filter(x -> x == 0 || t[i] == t[x]).findFirst().get() instanceof Integer q
-                    ? q + (t[i] == t[q] ? 1 : 0) : 0) >= 0)
-            && new int[n] instanceof int[] F
-            && IntStream.range(0, n).allMatch(j -> (F[j] = Math.max(j > 0 ? F[j - 1] : 0, pi[n + 1 + j])) >= 0)
+            && (Integer) IntStream.range(0, n).filter(i -> a[i] != a[n - 1 - i]).findFirst().orElse(n) instanceof Integer K
+            && IntStream.range(0, n).map(j -> Math.min(K, j + 1)).toArray() instanceof int[] F
             && new int[n] instanceof int[] d1
             && new int[]{0, -1} instanceof int[] s1
             && IntStream.range(0, n).allMatch(i ->
@@ -36,10 +29,11 @@ public class Main {
                 .reduce((x, y) -> y[0] > x[0] ? y : x).get() instanceof int[] b
             ? b[3] == 0
                 ? "1\n" + (b[1] + 1) + " " + b[2]
-                : (Integer) IntStream.range(0, n).filter(j -> pi[n + 1 + j] >= b[3]).findFirst().getAsInt() instanceof Integer j
-                    ? "3\n" + (j - pi[n + 1 + j] + 2) + " " + b[3] + "\n" + (b[1] + 1) + " " + b[2] + "\n" + (n - b[3] + 1) + " " + b[3]
+                : (Integer) 0 instanceof Integer j
+                    ? "3\n" + 1 + " " + b[3] + "\n" + (b[1] + 1) + " " + b[2] + "\n" + (n - b[3] + 1) + " " + b[3]
                     : ""
             : ""));
     }
 }
+
 

@@ -16,3 +16,4 @@ public class Main {
             ? IntStream.concat(Arrays.stream(L).skip(rem), Arrays.stream(L).limit(rem).filter(i -> a[i] > r + 1)).mapToObj(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) : "-1");
     }
 }
+

@@ -16,3 +16,4 @@ public class Main {
                 System.out.print(IntStream.range(0, n).mapToObj(i -> new long[]{s.nextLong(), s.nextLong(), s.nextLong()}).map(q -> q[0] == 1 ? (ins.test(up, new long[]{q[1], q[2]}) | ins.test(lo, new long[]{q[1], -q[2]}) ? "" : "") : (below.test(up, new long[]{q[1], q[2]}) && below.test(lo, new long[]{q[1], -q[2]}) ? "YES" : "NO")).filter(r -> !r.isEmpty()).collect(Collectors.joining("\n")))))))));
     }
 }
+

@@ -28,3 +28,4 @@ public class Main {
                     ? (best[0] + k) + "\n" + IntStream.of(ans).mapToObj(c -> String.valueOf(c + 1)).collect(Collectors.joining(" ")) : "")))))))))))));
     }
 }
+

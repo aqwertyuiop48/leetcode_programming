@@ -17,3 +17,4 @@ public class Main {
                 System.out.print(r.get().apply(h[0], h[1]) ? "Anton" : "Dasha"))))));
     }
 }
+

@@ -13,9 +13,13 @@ public class Main {
                      : moves.charAt(i) == 'R' ? (pos[0] += 1) == pos[0]
                      : moves.charAt(i) == 'U' ? (pos[1] += 1) == pos[1]
                      : (pos[1] -= 1) == pos[1])
-                    & seen.add(pos[0] * 2000 + pos[1]))
+                    && (seen.contains((pos[0] - 1) * 2000 + pos[1]) ? 1 : 0)
+                        + (seen.contains((pos[0] + 1) * 2000 + pos[1]) ? 1 : 0)
+                        + (seen.contains(pos[0] * 2000 + pos[1] - 1) ? 1 : 0)
+                        + (seen.contains(pos[0] * 2000 + pos[1] + 1) ? 1 : 0) == 1
+                    && !seen.contains(pos[0] * 2000 + pos[1])
+                    && seen.add(pos[0] * 2000 + pos[1]))
                 ? "OK"
                 : "BUG")));
     }
 }
-

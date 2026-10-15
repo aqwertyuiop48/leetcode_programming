@@ -9,3 +9,4 @@ public class Main {
                 Stream.of(1)).map(String::valueOf).collect(Collectors.joining(" "))));
     }
 }
+

@@ -15,3 +15,4 @@ public class Main {
             ? (e[b.get()] - b.get()) + " " + b.get() : "");
     }
 }
+

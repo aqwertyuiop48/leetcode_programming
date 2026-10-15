@@ -25,7 +25,7 @@ public class Main {
                 && Q.getAndSet(x -> x[3] > x[2] || x[4] < x[1] ? Long.MAX_VALUE / 4
                     : x[3] <= x[1] && x[2] <= x[4] ? mn[x[0]]
                     : Math.min(Q.get().apply(new int[]{2 * x[0], x[1], (x[1] + x[2]) / 2, x[3], x[4]}), Q.get().apply(new int[]{2 * x[0] + 1, (x[1] + x[2]) / 2 + 1, x[2], x[3], x[4]})) + ad[x[0]]) == null
-                && B.get().apply(new int[]{1, 0, n - 1}) >= 0
+                && B.get().apply(new int[]{1, 0, n - 1}) > Long.MIN_VALUE
                 ? L.stream().skip(3).map(l -> l.trim().split("\\s+")).map(p ->
                     (Integer.parseInt(p[0]) <= Integer.parseInt(p[1])
                         ? new int[][]{{Integer.parseInt(p[0]), Integer.parseInt(p[1])}}

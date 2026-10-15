@@ -10,3 +10,4 @@ public class Main {
                     - Math.max(Math.min(p[0][0], p[1][0]), IntStream.range(0, n).mapToLong(i -> Optional.of(p[(i + 1) % n][0] - p[i][0]).map(dx -> Optional.of(p[(i + 1) % n][1] - p[i][1]).map(dy -> Optional.of(dx * (p[0][1] - p[i][1])).map(r -> dy > 0 ? p[i][0] - Math.floorDiv(-r, dy) : dy == 0 ? (r <= 0 ? -(1L << 40) : 1L << 40) : -(1L << 40)).get()).get()).get()).max().getAsLong()) + 1)))));
     }
 }
+

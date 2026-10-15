@@ -1,6 +1,5 @@
 import java.util.*;
 import java.util.stream.*;
-import java.util.function.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,20 +11,17 @@ public class Main {
                 && new long[nm[1]] instanceof long[] bx
                 && new long[nm[1]] instanceof long[] by
                 && IntStream.range(0, nm[1]).allMatch(i -> (bx[i] = s.nextLong()) >= Long.MIN_VALUE && (by[i] = s.nextLong()) >= Long.MIN_VALUE)
-                && ((Function<long[], Long>) (c -> (c[2] - c[0]) * (c[5] - c[1]) - (c[3] - c[1]) * (c[4] - c[0]))) instanceof Function<long[], Long> cross
-                && ((Function<long[], Boolean>) (q ->
-                        new long[]{
-                            cross.apply(new long[]{rx[(int) q[2]], ry[(int) q[2]], rx[(int) q[3]], ry[(int) q[3]], q[0], q[1]}),
-                            cross.apply(new long[]{rx[(int) q[3]], ry[(int) q[3]], rx[(int) q[4]], ry[(int) q[4]], q[0], q[1]}),
-                            cross.apply(new long[]{rx[(int) q[4]], ry[(int) q[4]], rx[(int) q[2]], ry[(int) q[2]], q[0], q[1]})
-                        } instanceof long[] d
-                        && !((d[0] < 0 || d[1] < 0 || d[2] < 0) && (d[0] > 0 || d[1] > 0 || d[2] > 0)))) instanceof Function<long[], Boolean> pointInTriangle
-                && ((Function<int[], Boolean>) (ijk -> IntStream.range(0, nm[1]).noneMatch(m -> pointInTriangle.apply(new long[]{bx[m], by[m], ijk[0], ijk[1], ijk[2]})))) instanceof Function<int[], Boolean> isEmptyTri
-                ? IntStream.range(0, nm[0]).boxed()
-                    .flatMap(i -> IntStream.range(i + 1, nm[0]).boxed().flatMap(j -> IntStream.range(j + 1, nm[0]).mapToObj(k -> new int[]{i, j, k})))
-                    .filter(isEmptyTri::apply)
-                    .count()
+                && IntStream.range(0, nm[0]).mapToObj(a -> IntStream.range(0, nm[1]).map(p ->
+                    Long.signum((rx[a] - rx[0]) * (by[p] - ry[0]) - (ry[a] - ry[0]) * (bx[p] - rx[0]))).toArray()).toArray(int[][]::new) instanceof int[][] sg
+                && new long[nm[0]][nm[0]] instanceof long[][] c
+                && IntStream.range(0, nm[0]).allMatch(a -> IntStream.range(a + 1, nm[0]).allMatch(b ->
+                    (Integer) Long.signum((rx[a] - rx[0]) * (ry[b] - ry[0]) - (ry[a] - ry[0]) * (rx[b] - rx[0])) instanceof Integer o
+                    && (c[a][b] = o == 0 ? 0 : o * IntStream.range(0, nm[1]).filter(p ->
+                        (o > 0 ? sg[a][p] > 0 && sg[b][p] < 0 : sg[a][p] < 0 && sg[b][p] > 0)
+                        && Long.signum((rx[b] - rx[a]) * (by[p] - ry[a]) - (ry[b] - ry[a]) * (bx[p] - rx[a])) == o).count()) >= Long.MIN_VALUE
+                    && (c[b][a] = -c[a][b]) >= Long.MIN_VALUE))
+                ? IntStream.range(0, nm[0]).mapToLong(i -> IntStream.range(i + 1, nm[0]).mapToLong(j ->
+                    c[i] instanceof long[] ci && c[j] instanceof long[] cj ? IntStream.range(j + 1, nm[0]).filter(k -> ci[j] + cj[k] - ci[k] == 0).count() : 0L).sum()).sum()
                 : 0L)));
     }
 }
-

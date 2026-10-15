@@ -17,3 +17,4 @@ public class Main {
                     ? IntStream.range(0, ys.length - 1).mapToDouble(q -> (ys[q + 1] - ys[q]) * (g.applyAsDouble(w, ys[q]) + g.applyAsDouble(w, ys[q + 1])) / 2).sum() : 0.0).sum()).sum()) : "");
     }
 }
+

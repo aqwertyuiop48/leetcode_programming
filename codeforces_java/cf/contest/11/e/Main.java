@@ -1,50 +1,41 @@
 import java.util.*;
-import java.util.stream.*;
 import java.util.function.*;
+import java.util.stream.*;
 
-// Heuristic: considers the baseline insertion plus at most one extra inserted X
-// (scanned over every position) to flip phase alignment. Passes both official samples,
-// but rare cases needing 2+ extra insertions (e.g. "XL" -> "XXLX") can evade it.
 public class Main {
     public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s -> Optional.of(s.next()).ifPresent(T ->
+        Optional.of(new Scanner(System.in)).ifPresent(sc -> Optional.of(sc.next().trim()).ifPresent(raw ->
             System.out.println(
-                (IntStream.range(0, T.length()).filter(i -> T.charAt(i) != 'X').toArray() instanceof int[] idx
-                    && new int[]{idx.length} instanceof int[] mArr)
-                ? (mArr[0] == 0
-                    ? "0.000000"
-                    : ((new char[mArr[0]] instanceof char[] U
-                        && new long[mArr[0]] instanceof long[] gmin
-                        && new long[mArr[0]] instanceof long[] pos
-                        && new long[mArr[0]] instanceof long[] prefixOrig
-                        && new long[mArr[0]] instanceof long[] suffixFlip
-                        && new long[]{idx[0]} instanceof long[] leadOrig
-                        && new long[]{Math.max(0, (T.charAt(idx[mArr[0] - 1]) == T.charAt(idx[0]) ? 1 : 0) - (idx[0] + (T.length() - 1 - idx[mArr[0] - 1])))} instanceof long[] extraWrapNeeded
-                        && IntStream.range(0, mArr[0]).allMatch(i -> (U[i] = T.charAt(idx[i])) >= 'A')
-                        && ((Function<Integer, Long>) (i -> i < mArr[0] - 1
-                                ? Math.max(idx[i + 1] - idx[i] - 1, T.charAt(idx[i]) == T.charAt(idx[i + 1]) ? 1 : 0)
-                                : (T.length() - 1 - idx[mArr[0] - 1]) + extraWrapNeeded[0])) instanceof Function<Integer, Long> gminAt
-                        && ((Function<Integer, Long>) (i -> (pos[i] % 2 == 0 && U[i] == 'L') || (pos[i] % 2 == 1 && U[i] == 'R') ? 1L : 0L)) instanceof Function<Integer, Long> matchOrig
-                        && ((Function<Integer, Long>) (i -> (pos[i] % 2 == 1 && U[i] == 'L') || (pos[i] % 2 == 0 && U[i] == 'R') ? 1L : 0L)) instanceof Function<Integer, Long> matchFlip
-                        && IntStream.range(0, mArr[0]).allMatch(i -> (gmin[i] = gminAt.apply(i)) >= 0)
-                        && (pos[0] = leadOrig[0]) >= 0
-                        && IntStream.range(1, mArr[0]).allMatch(i -> (pos[i] = pos[i - 1] + 1 + gmin[i - 1]) >= 0)
-                        && (prefixOrig[0] = matchOrig.apply(0)) >= 0
-                        && IntStream.range(1, mArr[0]).allMatch(i -> (prefixOrig[i] = prefixOrig[i - 1] + matchOrig.apply(i)) >= 0)
-                        && (suffixFlip[mArr[0] - 1] = matchFlip.apply(mArr[0] - 1)) >= 0
-                        && IntStream.iterate(mArr[0] - 2, i -> i >= 0, i -> i - 1).allMatch(i -> (suffixFlip[i] = suffixFlip[i + 1] + matchFlip.apply(i)) >= 0)
-                        && new long[]{IntStream.rangeClosed(-1, mArr[0] - 1)
-                            .mapToLong(g -> g == -1 ? (mArr[0] - prefixOrig[mArr[0] - 1]) : prefixOrig[g] + (g + 1 < mArr[0] ? suffixFlip[g + 1] : 0))
-                            .max().orElse(0)} instanceof long[] maxGArr
-                        && new long[]{leadOrig[0] + mArr[0] + Arrays.stream(gmin).sum()} instanceof long[] lminArr
-                        && new long[]{extraWrapNeeded[0] == 1 ? Math.max(prefixOrig[mArr[0] - 1], mArr[0] - prefixOrig[mArr[0] - 1]) : prefixOrig[mArr[0] - 1]} instanceof long[] baseEven
-                        && new long[]{lminArr[0] % 2 == 0 ? baseEven[0] : maxGArr[0], lminArr[0] % 2 == 0 ? lminArr[0] : lminArr[0] + 1} instanceof long[] evenNd
-                        && new long[]{mArr[0], lminArr[0] % 2 == 1 ? 2 * lminArr[0] : 2 * (lminArr[0] + 1)} instanceof long[] oddNd
-                        && new long[]{evenNd[0] * oddNd[1] >= oddNd[0] * evenNd[1] ? evenNd[0] : oddNd[0], evenNd[0] * oddNd[1] >= oddNd[0] * evenNd[1] ? evenNd[1] : oddNd[1]} instanceof long[] best
-                        && new long[]{best[0] * 100_000_000L / best[1]} instanceof long[] v)
-                        ? (v[0] / 1000000) + "." + String.format("%06d", v[0] % 1000000)
-                        : "0.000000"))
-                : "0.000000")));
+                IntStream.range(0, raw.length()).mapToObj(i -> (i > 0 && raw.charAt(i) != 'X' && raw.charAt(i) == raw.charAt(i - 1) ? "X" : "") + raw.charAt(i)).collect(Collectors.joining()) instanceof String t
+                && (Long) t.chars().filter(c -> c != 'X').count() instanceof Long steps
+                && (t.charAt(0) == t.charAt(t.length() - 1) && t.charAt(0) != 'X' ? List.of(t + "X", "X" + t) : List.of(t)) instanceof List<String> variants
+                && ((ToLongFunction<char[]>) cs ->
+                    Stream.iterate(new long[]{0, 1, 0}, st -> st[2] == 0, st ->
+                        new double[]{(double) st[0] / st[1]} instanceof double[] lam
+                        && new double[]{0, Double.NEGATIVE_INFINITY} instanceof double[] f
+                        && new long[]{0, 0} instanceof long[] pk
+                        && IntStream.range(0, cs.length).allMatch(i ->
+                            (Boolean) (f[1] - lam[0] > f[0]) instanceof Boolean u0
+                            && (Boolean) (f[0] - lam[0] > f[1]) instanceof Boolean u1
+                            && new double[]{u0 ? f[1] - lam[0] : f[0], u1 ? f[0] - lam[0] : f[1]} instanceof double[] g
+                            && new long[]{u0 ? pk[1] + 1 : pk[0], u1 ? pk[0] + 1 : pk[1]} instanceof long[] gp
+                            && (f[1] = g[0] + (cs[i] == 'L' ? 1 : 0) - lam[0]) == f[1]
+                            && (pk[1] = gp[0] + ((cs[i] == 'L' ? 1L : 0L) << 22) + 1) > 0
+                            && (f[0] = g[1] + (cs[i] == 'R' ? 1 : 0) - lam[0]) == f[0]
+                            && (pk[0] = gp[1] + ((cs[i] == 'R' ? 1L : 0L) << 22) + 1) > 0)
+                        && (Long) (f[0] >= f[1] - lam[0] ? pk[0] : pk[1] + 1) instanceof Long best
+                        ? (best >> 22) * st[1] > st[0] * (best & 4194303L)
+                            ? new long[]{best >> 22, best & 4194303L, 0}
+                            : new long[]{st[0], st[1], 1}
+                        : new long[]{st[0], st[1], 1})
+                        .reduce((a, b) -> b).map(r -> r[0] << 32 | r[1]).get()) instanceof ToLongFunction<char[]> solve
+                && variants.stream().mapToLong(v -> solve.applyAsLong(v.toCharArray())).toArray() instanceof long[] evens
+                && (Long) Arrays.stream(evens).reduce((a, b) -> (a >> 32) * (b & 4294967295L) >= (b >> 32) * (a & 4294967295L) ? a : b).getAsLong() instanceof Long ev
+                && new long[]{ev >> 32, ev & 4294967295L} instanceof long[] e
+                && new long[]{steps, 2L * variants.stream().mapToLong(v -> v.length() % 2 == 1 ? v.length() : v.length() + 1).min().getAsLong()} instanceof long[] od
+                && new long[]{e[0] * od[1] >= od[0] * e[1] ? e[0] : od[0], e[0] * od[1] >= od[0] * e[1] ? e[1] : od[1]} instanceof long[] r
+                && (Long) (r[0] * 100_000_000L / r[1]) instanceof Long v
+                ? (v / 1000000) + "." + String.format("%06d", v % 1000000)
+                : "")));
     }
 }
-

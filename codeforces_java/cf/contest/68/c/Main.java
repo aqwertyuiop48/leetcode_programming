@@ -25,3 +25,4 @@ public class Main {
                     .map(v -> v < 0 ? "" : F + " " + v).get()).filter(x -> !x.isEmpty()).findFirst().orElse("-1 -1")))));
     }
 }
+

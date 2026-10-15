@@ -14,3 +14,4 @@ public class Main {
             ? (!pr.test(k) ? 0L : k * k > t[1] ? (t[0] <= k && k <= t[1] ? 1L : 0L) : fx.applyAsLong(t[1]) - fx.applyAsLong(t[0] - 1)) : "");
     }
 }
+

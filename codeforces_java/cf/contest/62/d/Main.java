@@ -32,3 +32,4 @@ public class Main {
                 ? res[0] : "No solution")));
     }
 }
+

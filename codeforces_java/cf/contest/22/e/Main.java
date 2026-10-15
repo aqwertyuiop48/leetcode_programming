@@ -5,29 +5,23 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(
             new Scanner(System.in) instanceof Scanner s
-            && new int[]{s.nextInt()} instanceof int[] nArr
-            && new int[nArr[0] + 1] instanceof int[] f
-            && IntStream.rangeClosed(1, nArr[0]).allMatch(i -> (f[i] = s.nextInt()) >= 0)
-            && new int[nArr[0] + 1] instanceof int[] indeg
-            && IntStream.rangeClosed(1, nArr[0]).allMatch(i -> (indeg[f[i]] += 1) >= 0)
-            && new boolean[nArr[0] + 1] instanceof boolean[] isCycle
-            && IntStream.rangeClosed(1, nArr[0]).allMatch(i -> (isCycle[i] = Stream.iterate(i, x -> f[x]).skip(1).limit(nArr[0]).anyMatch(x -> x == i)) || true)
-            && new int[nArr[0] + 1] instanceof int[] key
-            && IntStream.rangeClosed(1, nArr[0]).allMatch(i -> (key[i] = (isCycle[i] ? Stream.iterate(i, x -> f[x]).limit(nArr[0]).mapToInt(x -> x).min().getAsInt() : -1)) >= -1)
-            && IntStream.rangeClosed(1, nArr[0]).filter(i -> isCycle[i]).map(i -> key[i]).distinct().toArray() instanceof int[] sinkReps
-            && new boolean[sinkReps.length] instanceof boolean[] clean
-            && IntStream.range(0, sinkReps.length).allMatch(idx -> (clean[idx] = IntStream.rangeClosed(1, nArr[0]).noneMatch(u -> key[f[u]] == sinkReps[idx] && key[u] != sinkReps[idx])) || true)
-            && IntStream.concat(
-                    IntStream.rangeClosed(1, nArr[0]).filter(i -> indeg[i] == 0),
-                    IntStream.range(0, sinkReps.length).filter(idx -> clean[idx]).map(idx -> sinkReps[idx]))
-                .toArray() instanceof int[] sourceArr
-            ? (sourceArr.length == 0
+            && (Integer) s.nextInt() instanceof Integer n
+            && IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : s.nextInt()).toArray() instanceof int[] f
+            && Stream.iterate(new int[][]{f, IntStream.rangeClosed(0, n).toArray()}, st -> new int[][]{
+                    IntStream.rangeClosed(0, n).map(i -> st[0][st[0][i]]).toArray(),
+                    IntStream.rangeClosed(0, n).map(i -> Math.min(st[1][i], st[1][st[0][i]])).toArray()}).skip(17).findFirst().get() instanceof int[][] st
+            && IntStream.rangeClosed(0, n).map(i -> st[1][st[0][i]]).toArray() instanceof int[] comp
+            && new int[n + 1] instanceof int[] indeg
+            && IntStream.rangeClosed(1, n).allMatch(i -> ++indeg[f[i]] > 0)
+            && IntStream.rangeClosed(1, n).filter(i -> indeg[i] == 0).boxed().collect(Collectors.groupingBy(i -> comp[i])) instanceof Map<Integer, List<Integer>> srcMap
+            && IntStream.rangeClosed(1, n).map(i -> comp[i]).distinct().sorted().toArray() instanceof int[] ids
+            && Arrays.stream(ids).mapToObj(id -> srcMap.getOrDefault(id, List.of(id))).toList() instanceof List<List<Integer>> srcs
+            ? ids.length == 1 && srcMap.isEmpty()
                 ? "0"
-                : new int[]{Math.max(sourceArr.length, sinkReps.length)} instanceof int[] kArr
-                    && IntStream.range(0, kArr[0]).mapToObj(i -> new int[]{sinkReps[i % sinkReps.length], sourceArr[(i + 1) % sourceArr.length]}).toArray(int[][]::new) instanceof int[][] edges
-                ? kArr[0] + "\n" + Arrays.stream(edges).map(e -> e[0] + " " + e[1]).collect(Collectors.joining("\n"))
-                : "0")
-            : "0");
+                : srcs.stream().mapToInt(List::size).sum() + "\n" + Stream.concat(
+                        IntStream.range(0, ids.length).mapToObj(j -> ids[j] + " " + srcs.get((j + 1) % ids.length).get(0)),
+                        IntStream.range(0, ids.length).boxed().flatMap(j -> srcs.get(j).stream().skip(1).map(e -> ids[j] + " " + e)))
+                    .collect(Collectors.joining("\n"))
+            : "");
     }
 }
-

@@ -36,9 +36,10 @@ public class Main {
                                             ec[1] + Math.abs(ec[0] - fg[0]) + lr[1] - lr[0] + d.applyAsDouble(fg[1])))
                                     : DoubleStream.empty())))
                     .toArray()) instanceof double[] cs
-                    ? Arrays.stream(cs).filter(x -> x <= Arrays.stream(cs).min().getAsDouble() + 1e-9).max().getAsDouble()
+                    ? Arrays.stream(cs).min().getAsDouble()
                     : 0.0 : 0.0).round(new MathContext(17)).setScale(20).toPlainString()
             : ""));
     }
 }
+
 

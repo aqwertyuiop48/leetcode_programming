@@ -7,3 +7,4 @@ public class Main {
             IntStream.range(0, 46656).mapToObj(m -> IntStream.iterate(m, x -> x / 6).limit(6).map(x -> x % 6).toArray()).filter(d -> Arrays.stream(d).distinct().count() == 6).map(d -> Arrays.stream(d).mapToObj(i -> "" + s.charAt(i)).collect(Collectors.joining())).distinct().map(arr -> rots.stream().map(p -> p.stream().map(i -> "" + arr.charAt(i)).collect(Collectors.joining())).min(Comparator.naturalOrder()).get()).distinct().count())));
     }
 }
+

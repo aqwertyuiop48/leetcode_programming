@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
 import java.util.concurrent.atomic.*;
@@ -17,27 +18,26 @@ public class Main {
             && IntStream.range(0, nArr[0] - 1).allMatch(i ->
                     (adj[ef[2 * i]][pos[ef[2 * i]]++] = ef[2 * i + 1]) >= 0
                     && (adj[ef[2 * i + 1]][pos[ef[2 * i + 1]]++] = ef[2 * i]) >= 0)
-            && new AtomicReference<BiFunction<Integer, Integer, long[]>>() instanceof AtomicReference<BiFunction<Integer, Integer, long[]>> dfsRef
+            && ((BinaryOperator<BigInteger>) (a, b) -> a == null ? b : a.max(b)) instanceof BinaryOperator<BigInteger> mx
+            && new AtomicReference<BiFunction<Integer, Integer, BigInteger[]>>() instanceof AtomicReference<BiFunction<Integer, Integer, BigInteger[]>> dfsRef
             && dfsRef.getAndSet((v, p) ->
-                    new long[][]{{0L, 1L}} instanceof long[][] curDpHolder
+                    new BigInteger[][]{{null, BigInteger.ONE}} instanceof BigInteger[][] cur
                     && IntStream.range(0, adj[v].length).allMatch(ci ->
                             adj[v][ci] == p
-                            || (dfsRef.get().apply(adj[v][ci], v) instanceof long[] childDp
-                                && new long[]{IntStream.range(1, childDp.length).filter(t -> childDp[t] >= 0).mapToLong(t -> childDp[t] * t).max().orElse(0)} instanceof long[] bestCutArr
-                                && new long[curDpHolder[0].length + childDp.length - 1] instanceof long[] newDp
-                                && IntStream.range(0, newDp.length).allMatch(k -> (newDp[k] = -1L) == -1L)
-                                && IntStream.range(1, curDpHolder[0].length).allMatch(sVal ->
-                                        curDpHolder[0][sVal] < 0
-                                        || ((newDp[sVal] = Math.max(newDp[sVal], curDpHolder[0][sVal] * Math.max(bestCutArr[0], 1))) >= Long.MIN_VALUE
-                                            && IntStream.range(1, childDp.length).allMatch(t ->
-                                                    childDp[t] < 0
-                                                    || (newDp[sVal + t] = Math.max(newDp[sVal + t], curDpHolder[0][sVal] * childDp[t])) >= Long.MIN_VALUE)))
-                                && (curDpHolder[0] = newDp) != null))
-                    ? curDpHolder[0]
-                    : new long[]{0L, 1L}) == null
-            && dfsRef.get().apply(1, -1) instanceof long[] rootDp
-            ? IntStream.range(1, rootDp.length).filter(sVal -> rootDp[sVal] >= 0).mapToLong(sVal -> rootDp[sVal] * sVal).max().orElse(0)
-            : 0L);
+                            || (dfsRef.get().apply(adj[v][ci], v) instanceof BigInteger[] ch
+                                && IntStream.range(1, ch.length).filter(t -> ch[t] != null).mapToObj(t -> ch[t].multiply(BigInteger.valueOf(t))).reduce(BigInteger::max).orElse(BigInteger.ONE) instanceof BigInteger cut
+                                && new BigInteger[cur[0].length + ch.length - 1] instanceof BigInteger[] nd
+                                && IntStream.range(1, cur[0].length).allMatch(sv ->
+                                        cur[0][sv] == null
+                                        || ((nd[sv] = mx.apply(nd[sv], cur[0][sv].multiply(cut))) != null
+                                            && IntStream.range(1, ch.length).allMatch(t ->
+                                                    ch[t] == null
+                                                    || (nd[sv + t] = mx.apply(nd[sv + t], cur[0][sv].multiply(ch[t]))) != null)))
+                                && (cur[0] = nd) != null))
+                    ? cur[0]
+                    : new BigInteger[]{null, BigInteger.ONE}) == null
+            && dfsRef.get().apply(1, -1) instanceof BigInteger[] rootDp
+            ? IntStream.range(1, rootDp.length).filter(sv -> rootDp[sv] != null).mapToObj(sv -> rootDp[sv].multiply(BigInteger.valueOf(sv))).reduce(BigInteger::max).get().toString()
+            : "");
     }
 }
-

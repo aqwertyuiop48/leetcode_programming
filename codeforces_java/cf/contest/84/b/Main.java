@@ -9,3 +9,4 @@ public class Main {
             ? Arrays.stream(c).sum() : 0L);
     }
 }
+

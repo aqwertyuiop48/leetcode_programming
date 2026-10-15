@@ -19,3 +19,4 @@ public class Main {
             ? key / 100 + " " + (50 - key % 100) : "");
     }
 }
+

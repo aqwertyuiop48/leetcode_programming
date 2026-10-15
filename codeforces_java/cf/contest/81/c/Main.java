@@ -11,3 +11,4 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> String.valueOf(t[1] == t[2] ? (i < t[1] ? 1 : 2) : rank[i] >= n - Math.min(t[1], t[2]) ? (t[1] < t[2] ? 1 : 2) : (t[1] < t[2] ? 2 : 1))).collect(Collectors.joining(" ")) : "");
     }
 }
+

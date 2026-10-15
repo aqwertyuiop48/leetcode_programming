@@ -2,8 +2,8 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(Arrays.stream(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().collect(Collectors.joining(" ")).trim().split(" +")).mapToDouble(Double::parseDouble).toArray() instanceof double[] v
+    public static void main(String[] args) throws Exception {
+        new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true).println(Arrays.stream(new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream("input.txt"))).lines().collect(Collectors.joining(" ")).trim().split(" +")).mapToDouble(Double::parseDouble).toArray() instanceof double[] v
             && Integer.valueOf((int) v[0]) instanceof Integer n
             && new double[n] instanceof double[] b
             && IntStream.range(0, n).allMatch(i -> (b[i] = IntStream.range(0, i).mapToDouble(j ->

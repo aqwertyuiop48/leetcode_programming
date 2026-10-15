@@ -1,37 +1,42 @@
 import java.util.*;
-import java.util.stream.*;
-import java.util.function.*;
 import java.util.concurrent.atomic.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s -> Optional.of(s.nextInt()).ifPresent(n ->
-            System.out.println(
-                new long[n] instanceof long[] B
-                && IntStream.range(0, n).allMatch(i -> (B[i] = s.nextLong()) >= 0)
-                && new long[n] instanceof long[] I
-                && IntStream.range(0, n).allMatch(i -> (I[i] = s.nextLong()) >= 0)
-                && new long[n] instanceof long[] R
-                && IntStream.range(0, n).allMatch(i -> (R[i] = s.nextLong()) >= 0)
-                && Arrays.stream(I).sorted().distinct().toArray() instanceof long[] sortedI
-                && new int[]{sortedI.length} instanceof int[] K
-                && new int[n] instanceof int[] transPos
-                && IntStream.range(0, n).allMatch(i -> (transPos[i] = K[0] - Arrays.binarySearch(sortedI, I[i])) >= 0)
-                && IntStream.range(0, n).boxed().sorted((x, y) -> Long.compare(B[y], B[x])).mapToInt(Integer::intValue).toArray() instanceof int[] order
-                && new long[K[0] + 1] instanceof long[] bit
-                && new boolean[n] instanceof boolean[] killed
-                && new AtomicReference<IntFunction<Long>>() instanceof AtomicReference<IntFunction<Long>> bq
-                && bq.getAndSet(pos -> pos <= 0 ? 0L : Math.max(bit[pos], bq.get().apply(pos - (pos & (-pos))))) == null
-                && new AtomicReference<BiFunction<Integer, Long, Boolean>>() instanceof AtomicReference<BiFunction<Integer, Long, Boolean>> bu
-                && bu.getAndSet((pos, val) -> pos > K[0] || ((bit[pos] = Math.max(bit[pos], val)) >= 0 && bu.get().apply(pos + (pos & (-pos)), val))) == null
-                && ((BiFunction<Integer, Integer, Boolean>) ((start, end) ->
-                        IntStream.range(start, end).allMatch(idxv -> (killed[order[idxv]] = bq.get().apply(transPos[order[idxv]] - 1) > R[order[idxv]]) || true)
-                        && IntStream.range(start, end).allMatch(idxv -> bu.get().apply(transPos[order[idxv]], R[order[idxv]])))) instanceof BiFunction<Integer, Integer, Boolean> processGroup
-                && IntStream.range(0, n).filter(idxv -> idxv == 0 || B[order[idxv]] != B[order[idxv - 1]]).toArray() instanceof int[] starts
-                && IntStream.range(0, starts.length).allMatch(gi ->
-                    processGroup.apply(starts[gi], gi + 1 < starts.length ? starts[gi + 1] : n))
-                ? IntStream.range(0, n).filter(i -> killed[i]).count()
-                : 0L)));
+    public static void main(String[] args) throws Exception {
+        System.out.println(
+            System.in.readAllBytes() instanceof byte[] raw
+            && new long[raw.length / 2 + 2] instanceof long[] nums
+            && new long[3] instanceof long[] st
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                (Integer) (i == raw.length ? 32 : (int) raw[i]) instanceof Integer c
+                && (c >= '0' && c <= '9'
+                    ? (st[0] = st[0] * 10 + c - '0') >= 0 && (st[2] = 1) > 0
+                    : st[2] == 0 || ((nums[(int) st[1]++] = st[0]) >= 0 && (st[0] = 0) == 0 && (st[2] = 0) == 0)))
+            && Integer.valueOf((int) nums[0]) instanceof Integer n
+            && Arrays.copyOfRange(nums, 1, 1 + n) instanceof long[] B
+            && Arrays.copyOfRange(nums, 1 + n, 1 + 2 * n) instanceof long[] I
+            && Arrays.copyOfRange(nums, 1 + 2 * n, 1 + 3 * n) instanceof long[] R
+            && Arrays.stream(I).sorted().distinct().toArray() instanceof long[] sortedI
+            && Integer.valueOf(sortedI.length) instanceof Integer K
+            && IntStream.range(0, n).map(i -> K - Arrays.binarySearch(sortedI, I[i])).toArray() instanceof int[] transPos
+            && IntStream.range(0, n).mapToLong(i -> B[i] << 20 | i).sorted().toArray() instanceof long[] keys
+            && IntStream.range(0, n).map(t -> (int) (keys[n - 1 - t] & 1048575)).toArray() instanceof int[] order
+            && new long[K + 1] instanceof long[] bit
+            && new boolean[n] instanceof boolean[] killed
+            && new long[1] instanceof long[] vv
+            && new AtomicReference<IntToLongFunction>() instanceof AtomicReference<IntToLongFunction> bq
+            && bq.getAndSet(p -> p <= 0 ? 0L : Math.max(bit[p], bq.get().applyAsLong(p - (p & -p)))) == null
+            && new AtomicReference<IntPredicate>() instanceof AtomicReference<IntPredicate> bu
+            && bu.getAndSet(p -> p > K || ((bit[p] = Math.max(bit[p], vv[0])) >= 0 && bu.get().test(p + (p & -p)))) == null
+            && IntStream.range(0, n).filter(t -> t == 0 || B[order[t]] != B[order[t - 1]]).toArray() instanceof int[] starts
+            && IntStream.range(0, starts.length).allMatch(gi ->
+                IntStream.range(starts[gi], gi + 1 < starts.length ? starts[gi + 1] : n).allMatch(t ->
+                    (killed[order[t]] = bq.get().applyAsLong(transPos[order[t]] - 1) > R[order[t]]) || true)
+                && IntStream.range(starts[gi], gi + 1 < starts.length ? starts[gi + 1] : n).allMatch(t ->
+                    (vv[0] = R[order[t]]) >= 0 && bu.get().test(transPos[order[t]])))
+            ? IntStream.range(0, n).filter(i -> killed[i]).count()
+            : 0L);
     }
 }
-

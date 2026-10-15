@@ -6,3 +6,4 @@ public class Main {
             System.out.println(s.nextInt() % 4 == 2 ? "yes" : "no"));
     }
 }
+

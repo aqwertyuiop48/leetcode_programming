@@ -2,8 +2,8 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(Arrays.stream(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().collect(Collectors.joining(" ")).trim().split(" +")).mapToInt(Integer::parseInt).toArray() instanceof int[] v
+    public static void main(String[] args) throws Exception {
+        new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true).println(Arrays.stream(new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream("input.txt"))).lines().collect(Collectors.joining(" ")).trim().split(" +")).mapToInt(Integer::parseInt).toArray() instanceof int[] v
             && new TreeMap<Integer, Integer>() instanceof TreeMap<Integer, Integer> ms
             && new int[]{0} instanceof int[] cur
             && IntStream.range(0, v[0]).boxed().flatMap(i -> Stream.of(new int[]{v[2 + 3 * i], v[1 + 3 * i], 1}, new int[]{v[3 + 3 * i], v[1 + 3 * i], -1}))

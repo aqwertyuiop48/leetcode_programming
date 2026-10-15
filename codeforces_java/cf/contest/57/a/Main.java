@@ -8,3 +8,4 @@ public class Main {
                 Optional.of(Math.abs(pos.applyAsLong(s.nextLong(), s.nextLong()) - pos.applyAsLong(s.nextLong(), s.nextLong()))).map(d -> Math.min(d, 4 * n - d)).get()).get())));
     }
 }
+

@@ -17,3 +17,4 @@ public class Main {
                     ? inv.stream().map(m -> m.size() + "\n" + m.entrySet().stream().map(e -> e.getKey() + " " + e.getValue()).collect(Collectors.joining("\n"))).collect(Collectors.joining("\n")) : "")))));
     }
 }
+

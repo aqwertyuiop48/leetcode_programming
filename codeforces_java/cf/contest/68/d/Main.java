@@ -20,3 +20,4 @@ public class Main {
                     : String.format(Locale.US, "%.8f", r.get().apply(1L, 0L) / (double) (1L << h))).filter(Objects::nonNull).collect(Collectors.joining("\n"))))))));
     }
 }
+

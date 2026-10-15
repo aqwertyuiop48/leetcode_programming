@@ -14,3 +14,4 @@ public class Main {
                     ? len[0] : -1)))))));
     }
 }
+

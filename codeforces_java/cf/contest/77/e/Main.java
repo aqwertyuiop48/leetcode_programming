@@ -8,3 +8,4 @@ public class Main {
             .map(v -> String.format(Locale.US, "%.10f", v[0] * (1 - v[1] / v[0]) * (v[1] / v[0]) / (v[2] * v[2] * (1 - v[1] / v[0]) * (1 - v[1] / v[0]) + v[1] / v[0]))).collect(Collectors.joining("\n")));
     }
 }
+

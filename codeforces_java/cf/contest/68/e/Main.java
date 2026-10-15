@@ -40,3 +40,4 @@ public class Main {
                             : 0)).get()).min().orElse(99)).get()).min().getAsInt())))))))))))));
     }
 }
+

@@ -9,3 +9,4 @@ public class Main {
                 .map(p -> p[0]).collect(Collectors.joining("\n")))));
     }
 }
+

@@ -2,8 +2,8 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().map(String::trim).toList() instanceof List<String> L
+    public static void main(String[] args) throws Exception {
+        new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true).println(new java.io.BufferedReader(new java.io.InputStreamReader(new java.io.FileInputStream("input.txt"))).lines().map(String::trim).toList() instanceof List<String> L
             && Arrays.stream(L.get(0).split(" +")).mapToInt(Integer::parseInt).toArray() instanceof int[] h
             && new boolean[h[0] * h[1]] instanceof boolean[] occ
             && new HashMap<String, Integer>() instanceof HashMap<String, Integer> pos

@@ -16,9 +16,10 @@ public class Main {
                         Integer.valueOf(g.charAt(q) == g.charAt(u) ? 0 : 1) instanceof Integer w
                         && (d[u] + w >= d[q] || (d[q] = d[u] + w) >= 0 && (w == 0 ? dq.offerFirst(q) : dq.offerLast(q)))))
                 && Integer.valueOf(IntStream.of(d).max().getAsInt()) instanceof Integer e
-                ? e + (g.charAt(s) == 'B' ? 1 : 0)
+                ? e + ((g.charAt(s) == 'B') == (e % 2 == 0) ? 1 : 0)
                 : 0).min().getAsInt()
             : 0);
     }
 }
+
 

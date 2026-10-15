@@ -10,3 +10,4 @@ public class Main {
                 System.out.print(IntStream.rangeClosed(1, n).map(x -> Arrays.stream(a).filter(t -> t[0] <= x && x <= t[1]).min(Comparator.comparingInt((int[] t) -> t[2])).map(t -> t[3]).orElse(0)).sum())))));
     }
 }
+

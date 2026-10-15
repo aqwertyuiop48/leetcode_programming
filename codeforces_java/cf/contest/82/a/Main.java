@@ -8,3 +8,4 @@ public class Main {
             ? new String[]{"Sheldon", "Leonard", "Penny", "Rajesh", "Howard"}[(int) ((n - 1 - 5 * ((1L << k) - 1)) >> k)] : "");
     }
 }
+

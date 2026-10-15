@@ -11,3 +11,4 @@ public class Main {
             ? (r[2] == 0 ? "Hanako" : "Ciel") : "");
     }
 }
+

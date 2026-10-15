@@ -9,3 +9,4 @@ public class Main {
             && p[0] == 5 ? "YES" : "NO"));
     }
 }
+

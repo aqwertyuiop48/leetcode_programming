@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.range(0, tk.length).mapToObj(i -> (i == 0 ? "" : tk[i - 1].equals(",") || tk[i].equals("...") || (Character.isDigit(tk[i - 1].charAt(0)) && Character.isDigit(tk[i].charAt(0))) ? " " : "") + tk[i]).collect(Collectors.joining()) : "");
     }
 }
+

@@ -16,3 +16,4 @@ public class Main {
                     ? IntStream.range(0, n).map(i -> Math.max(l[(c[0] += i > 0 && s.charAt(i - 1) != '=' ? 1 : 0)], r[c[0]])).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : ""))))))));
     }
 }
+

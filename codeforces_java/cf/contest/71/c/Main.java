@@ -9,3 +9,4 @@ public class Main {
                 System.out.print(IntStream.rangeClosed(1, n / 3).filter(d -> n % d == 0).anyMatch(d -> IntStream.range(0, d).anyMatch(o -> IntStream.iterate(o, i -> i < n, i -> i + d).allMatch(i -> a[i] == 1))) ? "YES" : "NO"))));
     }
 }
+

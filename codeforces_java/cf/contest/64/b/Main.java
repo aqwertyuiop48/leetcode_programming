@@ -7,3 +7,4 @@ public class Main {
             System.out.println(mt.group(2).equals("+") ? Long.parseLong(mt.group(1)) + Long.parseLong(mt.group(3)) : Long.parseLong(mt.group(1)) - Long.parseLong(mt.group(3))));
     }
 }
+

@@ -6,3 +6,4 @@ public class Main {
             System.out.println(s.matches("[a-z0-9]+(\\.[a-z0-9]+)*") && s.substring(s.lastIndexOf('.') + 1).length() >= 2 && s.substring(s.lastIndexOf('.') + 1).length() <= 3 ? "YES" : "NO"));
     }
 }
+

@@ -1,27 +1,21 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s -> System.out.println(
-            Integer.valueOf(s.nextInt()) instanceof Integer n
-            && new long[n] instanceof long[] x
-            && new long[n] instanceof long[] v
-            && IntStream.range(0, n).allMatch(i -> (x[i] = s.nextLong()) == x[i] && (v[i] = s.nextLong()) == v[i])
-            && new long[n] instanceof long[] stV
-            && new long[n] instanceof long[] stX
-            && new int[1] instanceof int[] top
-            && new double[]{-1} instanceof double[] best
-            && IntStream.range(0, n).allMatch(i -> v[i] < 0
-                ? IntStream.range(0, top[0]).allMatch(k ->
-                    Double.valueOf((double) (x[i] - stX[k]) / (stV[k] - v[i])) instanceof Double t
-                    && (!(best[0] < 0 || t < best[0]) || (best[0] = t) == t))
-                : ((top[0] = (int) IntStream.range(0, top[0]).filter(k -> stV[k] > v[i]).count()) >= 0
-                    && (stV[top[0]] = v[i]) == v[i]
-                    && (stX[top[0]] = x[i]) == x[i]
-                    && ++top[0] > 0))
-            ? (best[0] < 0 ? "-1" : String.format(Locale.ROOT, "%.10f", best[0]))
-            : ""));
+    public static void main(String[] args) throws Exception {
+        System.out.println(new String(System.in.readAllBytes()).replaceAll("[^-0-9]+", " ").trim().split(" ") instanceof String[] t
+            && Integer.valueOf(t[0]) instanceof Integer n
+            && IntStream.range(0, n).mapToDouble(i -> Double.parseDouble(t[1 + 2 * i])).toArray() instanceof double[] x
+            && IntStream.range(0, n).mapToDouble(i -> Double.parseDouble(t[2 + 2 * i])).toArray() instanceof double[] v
+            && ((DoublePredicate) q -> new double[]{Double.NEGATIVE_INFINITY} instanceof double[] mx
+                && IntStream.range(0, n).anyMatch(i -> v[i] >= 0
+                    ? (mx[0] = Math.max(mx[0], x[i] + v[i] * q)) > Double.POSITIVE_INFINITY
+                    : x[i] + v[i] * q <= mx[0])) instanceof DoublePredicate hit
+            ? hit.test(1e10)
+                ? String.format(Locale.ROOT, "%.10f", Stream.iterate(new double[]{0, 1e10}, b -> hit.test((b[0] + b[1]) / 2) ? new double[]{b[0], (b[0] + b[1]) / 2} : new double[]{(b[0] + b[1]) / 2, b[1]})
+                    .limit(101).reduce((p, q) -> q).get()[1])
+                : "-1"
+            : "");
     }
 }
-
