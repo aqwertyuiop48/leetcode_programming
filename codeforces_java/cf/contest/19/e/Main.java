@@ -28,11 +28,11 @@ public class Main {
                             ? (pe[ab[e ^ 1]] = e / 2) >= 0 && (par[ab[e ^ 1]] = u) >= 0 && (dep[ab[e ^ 1]] = dep[u] + 1) >= 0 && dfs.get().test(ab[e ^ 1])
                             : dep[ab[e ^ 1]] > dep[u]
                                 || ((dep[u] - dep[ab[e ^ 1]]) % 2 == 0
-                                    ? ++st[1] > 0 && (st[2] = e / 2) >= 0 && ++so[u] > 0 && --so[ab[e ^ 1]] < 1000000
-                                    : ++se[u] > 0 && --se[ab[e ^ 1]] < 1000000)))) == null
+                                    ? ++st[1] > 0 && (st[2] = e / 2) >= 0 && ++so[u] > -1000000 && --so[ab[e ^ 1]] > -1000000
+                                    : ++se[u] > -1000000 && --se[ab[e ^ 1]] > -1000000)))) == null
                 && IntStream.rangeClosed(1, nm[0]).allMatch(v -> vis[v] || dfs.get().test(v))
                 && IntStream.iterate(st[0] - 1, i -> i >= 0, i -> i - 1).allMatch(i ->
-                    pe[order[i]] < 0 || ((so[par[order[i]]] += so[order[i]]) < 1000000 && (se[par[order[i]]] += se[order[i]]) < 1000000))
+                    pe[order[i]] < 0 || ((so[par[order[i]]] += so[order[i]]) > -1000000 && (se[par[order[i]]] += se[order[i]]) > -1000000))
                 ? (st[1] == 0 ? IntStream.rangeClosed(1, nm[1]) : IntStream.concat(IntStream.rangeClosed(1, nm[0]).filter(v -> pe[v] >= 0 && so[v] == st[1] && se[v] == 0).map(v -> pe[v] + 1), st[1] == 1 ? IntStream.of(st[2] + 1) : IntStream.empty()).distinct().sorted())
                     .mapToObj(String::valueOf).toList() instanceof List<String> res
                     ? res.size() + "\n" + String.join(" ", res)

@@ -1,37 +1,49 @@
-import java.io.*;
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(
-            new BufferedReader(new InputStreamReader(System.in)).lines().skip(1).filter(l -> !l.isBlank()).map(l -> l.trim().split(" ")).toList() instanceof List<String[]> ops
-            && ops.stream().mapToInt(r -> Integer.parseInt(r[1])).distinct().sorted().toArray() instanceof int[] xs
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 4] instanceof int[] nums
+            && new int[3] instanceof int[] st
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (st[0] = st[0] * 10 + raw[i] - '0') >= 0 && (st[2] = 1) > 0
+                    : i < raw.length && raw[i] >= 'a' && raw[i] <= 'z'
+                        ? st[2] == 2 || ((nums[st[1]++] = raw[i] == 'a' ? 1 : raw[i] == 'r' ? 2 : 3) > 0 && (st[2] = 2) > 0)
+                        : (st[2] != 1 || ((nums[st[1]++] = st[0]) >= 0 && (st[0] = 0) == 0)) && (st[2] = 0) == 0)
+            && IntStream.range(0, nums[0]).map(i -> nums[2 + 3 * i]).sorted().toArray() instanceof int[] sx
+            && IntStream.range(0, sx.length).filter(i -> i == 0 || sx[i] != sx[i - 1]).map(i -> sx[i]).toArray() instanceof int[] xs
             && Integer.valueOf(Integer.highestOneBit(Math.max(1, xs.length - 1)) * 2) instanceof Integer N
-            && IntStream.range(0, xs.length).mapToObj(i -> new TreeSet<Integer>()).toList() instanceof List<TreeSet<Integer>> sets
+            && new TreeSet<Long>() instanceof TreeSet<Long> set
             && IntStream.generate(() -> -1).limit(2 * N).toArray() instanceof int[] tr
-            && new AtomicReference<Function<int[], Integer>>() instanceof AtomicReference<Function<int[], Integer>> first
-            && first.getAndSet(q -> q[2] < q[3] || tr[q[0]] <= q[4] ? -1
-                : q[0] >= N ? q[0] - N
-                : first.get().apply(new int[]{2 * q[0], q[1], q[2] - (q[2] - q[1] + 1) / 2, q[3], q[4]}) instanceof Integer r && r >= 0 ? r
-                : first.get().apply(new int[]{2 * q[0] + 1, q[2] - (q[2] - q[1] + 1) / 2 + 1, q[2], q[3], q[4]})) == null
-            ? ops.stream().map(r -> (Integer) Arrays.binarySearch(xs, Integer.parseInt(r[1])) instanceof Integer xi
-                    && (Integer) Integer.parseInt(r[2]) instanceof Integer y
-                ? r[0].equals("find")
-                    ? first.get().apply(new int[]{1, 0, N - 1, xi + 1, y}) instanceof Integer idx && idx >= 0 && idx < xs.length
-                        ? xs[idx] + " " + sets.get(idx).higher(y)
-                        : "-1"
-                    : (r[0].equals("add") ? sets.get(xi).add(y) : sets.get(xi).remove(y)) | true
-                        && (tr[xi + N] = sets.get(xi).isEmpty() ? -1 : sets.get(xi).last()) >= -1
-                        && IntStream.iterate((xi + N) >> 1, i -> i >= 1, i -> i >> 1).allMatch(i -> (tr[i] = Math.max(tr[2 * i], tr[2 * i + 1])) >= -1)
-                        ? ""
-                        : ""
-                : "").filter(o -> !o.isEmpty()).collect(Collectors.joining("\n"))
+            && new int[]{0, 0} instanceof int[] q
+            && new IntUnaryOperator[1] instanceof IntUnaryOperator[] first
+            && (first[0] = node ->
+                tr[node] <= q[1] ? -1
+                : node >= N ? (node - N >= q[0] ? node - N : -1)
+                : (((node - (1 << (31 - Integer.numberOfLeadingZeros(node)))) + 1) * (N >> (31 - Integer.numberOfLeadingZeros(node))) - 1) < q[0] ? -1
+                : (Integer) first[0].applyAsInt(2 * node) instanceof Integer rr && rr >= 0 ? rr : first[0].applyAsInt(2 * node + 1)) != null
+            && new IntPredicate[1] instanceof IntPredicate[] up
+            && (up[0] = i -> i < 1 || ((tr[i] = Math.max(tr[2 * i], tr[2 * i + 1])) >= -1 && up[0].test(i >> 1))) != null
+            ? IntStream.range(0, nums[0]).mapToObj(r ->
+                    (Integer) Arrays.binarySearch(xs, nums[2 + 3 * r]) instanceof Integer xi
+                    && (Long) ((long) xi << 31 | nums[3 + 3 * r]) instanceof Long key
+                    ? nums[1 + 3 * r] == 3
+                        ? (q[0] = xi + 1) > 0
+                            && (q[1] = nums[3 + 3 * r]) >= 0
+                            && (Integer) first[0].applyAsInt(1) instanceof Integer fi && fi >= 0
+                                ? xs[fi] + " " + (set.higher((long) fi << 31 | nums[3 + 3 * r]) & 2147483647L)
+                                : "-1"
+                        : (nums[1 + 3 * r] == 1 ? set.add(key) : set.remove(key)) | true
+                            && (tr[xi + N] = (Long) set.lower((long) (xi + 1) << 31) instanceof Long lk && lk >> 31 == xi ? (int) (lk & 2147483647L) : -1) >= -1
+                            && up[0].test((xi + N) >> 1)
+                            ? ""
+                            : ""
+                    : "")
+                .filter(o -> !o.isEmpty()).collect(Collectors.joining("\n"))
             : "");
     }
 }
-
-
-

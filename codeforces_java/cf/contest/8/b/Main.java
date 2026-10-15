@@ -5,17 +5,21 @@ public class Main {
     public static void main(String[] args) {
         Optional.of(new Scanner(System.in)).ifPresent(s -> Optional.of(s.next()).ifPresent(moves ->
             System.out.println(
-                new int[moves.length() + 1] instanceof int[] px
-                && new int[moves.length() + 1] instanceof int[] py
+                new HashSet<Long>() instanceof HashSet<Long> seen
+                && new long[]{1000, 1000} instanceof long[] pos
+                && seen.add(pos[0] * 2000 + pos[1])
                 && IntStream.range(0, moves.length()).allMatch(i ->
-                    (px[i + 1] = px[i] + (moves.charAt(i) == 'R' ? 1 : moves.charAt(i) == 'L' ? -1 : 0)) < 1000
-                    && (py[i + 1] = py[i] + (moves.charAt(i) == 'U' ? 1 : moves.charAt(i) == 'D' ? -1 : 0)) < 1000)
-                && IntStream.range(0, moves.length() + 1).allMatch(i ->
-                    IntStream.range(i + 1, moves.length() + 1).allMatch(j -> Math.abs(px[i] - px[j]) + Math.abs(py[i] - py[j]) >= j - i))
+                    (moves.charAt(i) == 'L' ? (pos[0] -= 1) == pos[0]
+                     : moves.charAt(i) == 'R' ? (pos[0] += 1) == pos[0]
+                     : moves.charAt(i) == 'U' ? (pos[1] += 1) == pos[1]
+                     : (pos[1] -= 1) == pos[1])
+                    && !seen.contains(pos[0] * 2000 + pos[1])
+                    && (seen.contains((pos[0] - 1) * 2000 + pos[1]) ? 1 : 0)
+                        + (seen.contains((pos[0] + 1) * 2000 + pos[1]) ? 1 : 0)
+                        + (seen.contains(pos[0] * 2000 + pos[1] - 1) ? 1 : 0)
+                        + (seen.contains(pos[0] * 2000 + pos[1] + 1) ? 1 : 0) == 1
+                    && seen.add(pos[0] * 2000 + pos[1]))
                 ? "OK"
                 : "BUG")));
     }
 }
-
-
-
