@@ -14,8 +14,10 @@ public class Main {
                 && IntStream.rangeClosed(1, kc[0]).allMatch(row -> IntStream.iterate(kc[0], c -> c >= 1, c -> c - 1).allMatch(c -> (run[row][c] = 1 + run[row][c + 1]) > 0))
                 && IntStream.range(0, nk[0]).mapToObj(i ->
                         (Integer) s.nextInt() instanceof Integer m
-                        && IntStream.rangeClosed(1, kc[0]).mapToObj(row -> IntStream.rangeClosed(1, kc[0] - m + 1).filter(c -> run[row][c] >= m)
-                            .mapToLong(c -> ((long) (m * Math.abs(row - kc[1]) + pre[c + m - 1] - pre[c - 1]) << 20) | (row << 10) | c)).flatMapToLong(x -> x).min() instanceof OptionalLong best
+                        && IntStream.range(0, kc[0] * kc[0])
+                            .filter(k -> k % kc[0] + m <= kc[0] && run[k / kc[0] + 1][k % kc[0] + 1] >= m)
+                            .mapToLong(k -> ((long) (m * Math.abs(k / kc[0] + 1 - kc[1]) + pre[k % kc[0] + m] - pre[k % kc[0]]) << 20) | ((k / kc[0] + 1) << 10) | (k % kc[0] + 1))
+                            .min() instanceof OptionalLong best
                         ? best.isEmpty()
                             ? "-1"
                             : (Integer) (int) ((best.getAsLong() >> 10) & 1023) instanceof Integer row

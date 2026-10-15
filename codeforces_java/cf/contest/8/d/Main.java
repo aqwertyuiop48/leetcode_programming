@@ -15,24 +15,31 @@ public class Main {
                 && (Double) (Math.hypot(p[2] - p[4], p[3] - p[5]) + p[1]) instanceof Double tB
                 ? dAC + dCB <= tB
                     ? Math.min(tA, tB)
-                    : ((BiFunction<double[], double[], Stream<double[]>>) (u, v) ->
-                            (Double) Math.hypot(v[0] - u[0], v[1] - u[1]) instanceof Double d
-                            && d > 1e-12 && d <= u[2] + v[2] + 1e-9 && d >= Math.abs(u[2] - v[2]) - 1e-9
-                            && (Double) ((d * d + u[2] * u[2] - v[2] * v[2]) / (2 * d)) instanceof Double a
-                            && (Double) Math.sqrt(Math.max(0, u[2] * u[2] - a * a)) instanceof Double h
-                            ? Stream.of(
-                                new double[]{u[0] + a * (v[0] - u[0]) / d - h * (v[1] - u[1]) / d, u[1] + a * (v[1] - u[1]) / d + h * (v[0] - u[0]) / d},
-                                new double[]{u[0] + a * (v[0] - u[0]) / d + h * (v[1] - u[1]) / d, u[1] + a * (v[1] - u[1]) / d - h * (v[0] - u[0]) / d})
-                            : Stream.<double[]>empty()) instanceof BiFunction<double[], double[], Stream<double[]>> cross
-                        && ((DoublePredicate) x -> new double[][]{{p[2], p[3], x}, {p[4], p[5], tB - x}, {p[6], p[7], dAC + p[0] - x}} instanceof double[][] c
-                            && c[0][2] >= 0 && c[1][2] >= 0 && c[2][2] >= 0
-                            && Stream.concat(Arrays.stream(c).map(q -> new double[]{q[0], q[1]}),
-                                Stream.of(cross.apply(c[0], c[1]), cross.apply(c[0], c[2]), cross.apply(c[1], c[2])).flatMap(z -> z))
-                                .anyMatch(pt -> Arrays.stream(c).allMatch(q -> Math.hypot(pt[0] - q[0], pt[1] - q[1]) <= q[2] + 1e-9))) instanceof DoublePredicate ok
-                        ? Stream.iterate(new double[]{0, Math.min(tB, dAC + p[0])}, r ->
-                                ok.test((r[0] + r[1]) / 2) ? new double[]{(r[0] + r[1]) / 2, r[1]} : new double[]{r[0], (r[0] + r[1]) / 2})
-                            .limit(100).reduce((a, b) -> b).get()[0]
-                        : 0.0
+                    : p[0] == 0 || p[1] == 0
+                        ? (p[0] == 0 ? new double[]{p[6], p[7], dAC} : new double[]{p[4], p[5], Math.hypot(p[2] - p[4], p[3] - p[5])}) instanceof double[] ray
+                            ? Stream.iterate(new double[]{0, ray[2]}, r ->
+                                    (r[0] + r[1]) / 2 + Math.hypot(p[2] + (ray[0] - p[2]) * (r[0] + r[1]) / 2 / ray[2] - p[4], p[3] + (ray[1] - p[3]) * (r[0] + r[1]) / 2 / ray[2] - p[5]) <= tB + 1e-9
+                                    && (r[0] + r[1]) / 2 + Math.hypot(p[2] + (ray[0] - p[2]) * (r[0] + r[1]) / 2 / ray[2] - p[6], p[3] + (ray[1] - p[3]) * (r[0] + r[1]) / 2 / ray[2] - p[7]) <= dAC + p[0] + 1e-9
+                                        ? new double[]{(r[0] + r[1]) / 2, r[1]} : new double[]{r[0], (r[0] + r[1]) / 2})
+                                .limit(100).reduce((a, b) -> b).get()[0]
+                            : 0.0
+                        : ((Function<double[], Double>) q ->
+                                Math.max(Math.hypot(q[1] - p[2], q[2] - p[3]) - q[0],
+                                    Math.max(Math.hypot(q[1] - p[4], q[2] - p[5]) - (tB - q[0]), Math.hypot(q[1] - p[6], q[2] - p[7]) - (dAC + p[0] - q[0])))) instanceof Function<double[], Double> phi
+                            && ((Function<double[], Double>) q -> Stream.iterate(new double[]{-400, 400}, r ->
+                                    phi.apply(new double[]{q[0], q[1], r[0] + (r[1] - r[0]) / 3}) < phi.apply(new double[]{q[0], q[1], r[1] - (r[1] - r[0]) / 3})
+                                        ? new double[]{r[0], r[1] - (r[1] - r[0]) / 3}
+                                        : new double[]{r[0] + (r[1] - r[0]) / 3, r[1]})
+                                .limit(100).reduce((a, b) -> b).map(r -> phi.apply(new double[]{q[0], q[1], (r[0] + r[1]) / 2})).get()) instanceof Function<double[], Double> inner
+                            && ((DoubleUnaryOperator) x -> Stream.iterate(new double[]{-400, 400}, r ->
+                                    inner.apply(new double[]{x, r[0] + (r[1] - r[0]) / 3}) < inner.apply(new double[]{x, r[1] - (r[1] - r[0]) / 3})
+                                        ? new double[]{r[0], r[1] - (r[1] - r[0]) / 3}
+                                        : new double[]{r[0] + (r[1] - r[0]) / 3, r[1]})
+                                .limit(100).reduce((a, b) -> b).map(r -> inner.apply(new double[]{x, (r[0] + r[1]) / 2})).get()) instanceof DoubleUnaryOperator minPhi
+                            ? Stream.iterate(new double[]{0, Math.min(tB, dAC + p[0])}, r ->
+                                    minPhi.applyAsDouble((r[0] + r[1]) / 2) <= 1e-12 ? new double[]{(r[0] + r[1]) / 2, r[1]} : new double[]{r[0], (r[0] + r[1]) / 2})
+                                .limit(45).reduce((a, b) -> b).get()[0]
+                            : 0.0
                 : 0.0)));
     }
 }
