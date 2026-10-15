@@ -7,6 +7,10 @@ Steps: (To do in Github codespace)
     - go to Firefox -> Right-click -> Inspect -> HTML -> Request headers -> Accept: (Copy all)
     - paste entire content in terminal
 - When switching Codeforces accounts, run `pyforces config` again with Firefox logged into the account you want to submit as. At the login prompt, paste Firefox's complete **Copy All** HTTP-headers JSON directly. Do not paste a DevTools wrapper such as `{"requestHeaders": ...}` into `~/.pyforces/headers.txt`; pyforces needs parsed HTTP header names mapped to string values. `pyforces` submits with the saved headers in that file, which may belong to a different account than the one currently shown in the browser. A `Failed to fetch submission info` message means pyforces could not look up the submission ID for status tracking; check the Codeforces submissions page for that saved account before retrying. `--no-track` only disables status tracking and does not bypass Codeforces' duplicate-code rejection.
+
+Note: 
+- 
+
 - cd codeforces_java
 - pyforces race 1 (or) for i in {51..100}; do pyforces race "$i"; done
 - mv /home/codespace/cf/contest/* /workspaces/leetcode_programming/codeforces_java/cf/contest
