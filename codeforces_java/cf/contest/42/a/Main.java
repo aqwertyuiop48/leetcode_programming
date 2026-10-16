@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
 
+
 public class Main {
     public static void main(String[] args) {
         Optional.of(new Scanner(System.in)).ifPresent(s -> System.out.println(
@@ -10,6 +11,7 @@ public class Main {
             ? Math.min(v, IntStream.range(0, n).mapToDouble(i -> (double) b[i] / a[i]).min().getAsDouble() * Arrays.stream(a).sum()) : 0.0));
     }
 }
+
 
 
 
