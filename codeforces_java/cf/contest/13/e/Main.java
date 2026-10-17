@@ -16,11 +16,12 @@ public class Main {
             && Integer.valueOf(t[1]) instanceof Integer m
             && Integer.valueOf(Math.max(1, (int) Math.sqrt(2.0 * n))) instanceof Integer bs
             && IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : t[1 + i]).toArray() instanceof int[] power
-            && new long[n + 1] instanceof long[] info
+            && new int[n + 1] instanceof int[] pk
+            && new int[n + 1] instanceof int[] lh
             && ((IntPredicate) i ->
                 i + power[i] > n || (i + power[i] - 1) / bs != (i - 1) / bs
-                    ? (info[i] = 1L << 40 | (long) i << 20 | (i + power[i] > n ? 0 : i + power[i])) > 0
-                    : (info[i] = info[i + power[i]] + (1L << 40)) > 0) instanceof IntPredicate stp
+                    ? (pk[i] = 131072 | (i + power[i] > n ? 0 : i + power[i])) > 0 && (lh[i] = i) > 0
+                    : (pk[i] = pk[i + power[i]] + 131072) > 0 && (lh[i] = lh[i + power[i]]) > 0) instanceof IntPredicate stp
             && IntStream.iterate(n, i -> i >= 1, i -> i - 1).allMatch(stp)
             && new long[]{0, 0, 0} instanceof long[] acc
             && new int[]{2 + n} instanceof int[] p
@@ -28,8 +29,8 @@ public class Main {
                     t[p[0]++] == 1
                         ? (acc[0] = 0) == 0 && (acc[1] = 0) == 0 && (acc[2] = t[p[0]++]) > 0
                             && IntStream.range(0, (n + bs - 1) / bs + 1).filter(x ->
-                                acc[2] > 0 && (acc[0] += info[(int) acc[2]] >>> 40) > 0 && (acc[1] = info[(int) acc[2]] >>> 20 & 1048575) > 0 && (acc[2] = info[(int) acc[2]] & 1048575) >= 0).count() >= 0
-                            ? acc[1] + " " + acc[0]
+                                acc[2] > 0 && (acc[1] = acc[2]) > 0 && (acc[0] += pk[(int) acc[2]] >>> 17) > 0 && (acc[2] = pk[(int) acc[1]] & 131071) >= 0).count() >= 0
+                            ? lh[(int) acc[1]] + " " + acc[0]
                             : null
                         : (Integer) t[p[0]++] instanceof Integer a && (power[a] = t[p[0]++]) >= 0
                             && IntStream.range(0, a - (a - 1) / bs * bs).filter(x -> stp.test(a - x)).count() >= 0

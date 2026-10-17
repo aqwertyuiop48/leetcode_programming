@@ -8,17 +8,17 @@ public class Main {
         System.out.print(
             new BufferedReader(new InputStreamReader(System.in), 1 << 16) instanceof BufferedReader br
             && br.lines().iterator() instanceof Iterator<String> it
-            && Arrays.stream(it.next().trim().split(" +")).mapToInt(Integer::parseInt).toArray() instanceof int[] d
-            && Integer.valueOf(d[0]) instanceof Integer n
-            && Integer.valueOf(d[1]) instanceof Integer m
-            && Integer.valueOf(d[2]) instanceof Integer a
-            && Integer.valueOf(d[3]) instanceof Integer b
-            && new int[n * m] instanceof int[] g
+            && new int[1000010] instanceof int[] g0
             && new int[3] instanceof int[] ps
-            && ((BooleanSupplier) () -> ps[2] == 0 || ((g[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0 && (ps[2] = 0) == 0)) instanceof BooleanSupplier flush
-            && Stream.iterate(0, x -> ps[1] < n * m && it.hasNext(), x -> x + 1).allMatch(x ->
+            && ((BooleanSupplier) () -> ps[2] == 0 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0 && (ps[2] = 0) == 0)) instanceof BooleanSupplier flush
+            && Stream.iterate(0, x -> it.hasNext() && (ps[1] < 4 || ps[1] < 4 + g0[0] * g0[1]), x -> x + 1).allMatch(x ->
                 it.next().chars().allMatch(ch -> ch >= '0' && ch <= '9' ? (ps[0] = ps[0] * 10 + ch - '0') >= 0 && (ps[2] = 1) > 0 : flush.getAsBoolean())
                 && flush.getAsBoolean())
+            && Integer.valueOf(g0[0]) instanceof Integer n
+            && Integer.valueOf(g0[1]) instanceof Integer m
+            && Integer.valueOf(g0[2]) instanceof Integer a
+            && Integer.valueOf(g0[3]) instanceof Integer b
+            && Arrays.copyOfRange(g0, 4, 4 + n * m) instanceof int[] g
             && new long[(n + 1) * (m + 1)] instanceof long[] pre
             && IntStream.rangeClosed(1, n).allMatch(i -> IntStream.rangeClosed(1, m).allMatch(j ->
                 (pre[i * (m + 1) + j] = g[(i - 1) * m + j - 1] + pre[(i - 1) * (m + 1) + j] + pre[i * (m + 1) + j - 1] - pre[(i - 1) * (m + 1) + j - 1]) >= 0))

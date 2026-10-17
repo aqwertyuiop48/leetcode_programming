@@ -2,12 +2,18 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(
-            new Scanner(System.in) instanceof Scanner s
-            && new int[]{s.nextInt()} instanceof int[] tArr
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 4] instanceof int[] tk
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((tk[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && new int[]{tk[0]} instanceof int[] tArr
             ? IntStream.range(0, tArr[0]).mapToObj(tc ->
-                new double[]{s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble(), s.nextDouble()} instanceof double[] p
+                new double[]{tk[1 + 6 * tc], tk[2 + 6 * tc], tk[3 + 6 * tc], tk[4 + 6 * tc], tk[5 + 6 * tc], tk[6 + 6 * tc]} instanceof double[] p
                 ? IntStream.range(0, 3).mapToObj(r ->
                     new double[]{p[2 * ((r + 1) % 3)], p[2 * ((r + 1) % 3) + 1], p[2 * r], p[2 * r + 1], p[2 * ((r + 2) % 3)], p[2 * ((r + 2) % 3) + 1]} instanceof double[] q
                     && new double[]{q[2] - q[0], q[3] - q[1], (q[2] * q[2] + q[3] * q[3] - q[0] * q[0] - q[1] * q[1]) / 2,
@@ -26,7 +32,7 @@ public class Main {
                         (v[2 * ((i + 1) % 4)] - v[2 * i]) * (v[2 * ((i + 2) % 4) + 1] - v[2 * ((i + 1) % 4) + 1])
                         - (v[2 * ((i + 1) % 4) + 1] - v[2 * i + 1]) * (v[2 * ((i + 2) % 4)] - v[2 * ((i + 1) % 4)])).toArray() instanceof double[] cr
                     && (Arrays.stream(cr).allMatch(x -> x > 1e-9) || Arrays.stream(cr).allMatch(x -> x < -1e-9))
-                        ? String.format(Locale.US, "YES\n%.9f %.9f %.9f %.9f %.9f %.9f %.9f %.9f", v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7])
+                        ? "YES\n" + Arrays.stream(v).mapToObj(x -> (Long) Math.round(Math.abs(x) * 1e9) instanceof Long rr ? (x < -5e-10 ? "-" : "") + rr / 1000000000L + "." + ("000000000" + rr % 1000000000L).substring(String.valueOf(rr % 1000000000L).length()) : "").collect(Collectors.joining(" "))
                         : null)
                     .filter(Objects::nonNull).findFirst().orElse("NO\n")
                 : "NO\n").collect(Collectors.joining("\n"))
