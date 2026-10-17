@@ -13,7 +13,11 @@ public class Main {
                 && Math.signum(sd.applyAsDouble(l, new double[]{sg[k][0], sg[k][1]})) * Math.signum(sd.applyAsDouble(l, new double[]{sg[k][2], sg[k][3]})) < 0
                 || on.test(k, new double[]{sg[l][0], sg[l][1]}) || on.test(k, new double[]{sg[l][2], sg[l][3]}) || on.test(l, new double[]{sg[k][0], sg[k][1]}) || on.test(l, new double[]{sg[k][2], sg[k][3]})) instanceof BiPredicate<Integer, Integer> touch
             && IntStream.range(0, h[2]).toArray() instanceof int[] us
-            && ((BiFunction<int[], Integer, Integer>) (u, x) -> IntStream.iterate(x, y -> u[y] != y, y -> u[y]).map(y -> u[y]).reduce((p, q) -> q).orElse(x)) instanceof BiFunction<int[], Integer, Integer> find
+            && ((BiFunction<int[], Integer, Integer>) (u, x) -> u[x] == x ? x : u[u[x]] == u[x] ? u[x]
+                : IntStream.iterate(x, y -> u[y] != y, y -> u[y]).toArray() instanceof int[] path
+                    && (Integer) u[path[path.length - 1]] instanceof Integer root
+                    && IntStream.of(path).filter(y -> (u[y] = root) < 0).count() >= 0
+                    ? root : -1) instanceof BiFunction<int[], Integer, Integer> find
             && IntStream.range(0, h[2]).allMatch(k -> IntStream.range(k + 1, h[2]).filter(l -> touch.test(k, l)).allMatch(l -> (us[find.apply(us, k)] = find.apply(us, l)) >= 0))
             && DoubleStream.concat(DoubleStream.of(0, h[0]), DoubleStream.concat(Arrays.stream(sg).flatMapToDouble(q -> DoubleStream.of(q[0], q[2])),
                 IntStream.range(0, h[2]).boxed().flatMapToDouble(k -> IntStream.range(k + 1, h[2]).mapToDouble(l -> Optional.of((sg[k][2] - sg[k][0]) * (sg[l][3] - sg[l][1]) - (sg[k][3] - sg[k][1]) * (sg[l][2] - sg[l][0]))
@@ -23,7 +27,8 @@ public class Main {
             && Integer.valueOf(xs.length - 1) instanceof Integer S
             && IntStream.range(0, S).mapToObj(i -> IntStream.range(0, h[2]).filter(k -> sg[k][0] < sg[k][2] && sg[k][0] <= xs[i] + 1e-9 && sg[k][2] >= xs[i + 1] - 1e-9).boxed()
                 .sorted(Comparator.comparingDouble((Integer k) -> yAt.applyAsDouble(k, (xs[i] + xs[i + 1]) / 2))).mapToInt(k -> k).toArray()).toArray(int[][]::new) instanceof int[][] cr
-            && IntStream.rangeClosed(0, S).map(i -> IntStream.range(0, i).map(j -> cr[j].length + 1).sum()).toArray() instanceof int[] base
+            && new int[S + 1] instanceof int[] base
+            && IntStream.rangeClosed(1, S).allMatch(i -> (base[i] = base[i - 1] + cr[i - 1].length + 1) > 0)
             && Integer.valueOf(base[S]) instanceof Integer C
             && new int[C] instanceof int[] cs
             && new int[C] instanceof int[] cg
@@ -39,7 +44,7 @@ public class Main {
                 && (ar[c] = (lh[c] - ll[c] + rh[c] - rl[c]) / 2 * (xs[cs[c] + 1] - xs[cs[c]])) >= -1)
             && IntStream.range(0, C).toArray() instanceof int[] uf
             && IntStream.range(0, S - 1).allMatch(i -> IntStream.range(0, h[2]).filter(k -> sg[k][0] == sg[k][2] && Math.abs(sg[k][0] - xs[i + 1]) < 1e-9).boxed().sorted(Comparator.comparingDouble((Integer k) -> sg[k][1])).toList() instanceof List<Integer> vs
-                && IntStream.rangeClosed(0, cr[i].length).allMatch(ga -> IntStream.rangeClosed(0, cr[i + 1].length).filter(gb -> Optional.of(new double[]{Math.max(rl[base[i] + ga], ll[base[i + 1] + gb]), Math.min(rh[base[i] + ga], lh[base[i + 1] + gb])})
+                && IntStream.rangeClosed(0, cr[i].length).allMatch(ga -> IntStream.iterate(-Arrays.binarySearch(lh, base[i + 1], base[i + 1] + cr[i + 1].length + 1, Math.nextUp(rl[base[i] + ga] + 1e-9)) - 1 - base[i + 1], gb -> gb <= cr[i + 1].length && ll[base[i + 1] + gb] < rh[base[i] + ga] - 1e-9, gb -> gb + 1).filter(gb -> Optional.of(new double[]{Math.max(rl[base[i] + ga], ll[base[i + 1] + gb]), Math.min(rh[base[i] + ga], lh[base[i + 1] + gb])})
                     .map(r -> r[1] - r[0] > 1e-9 && vs.stream().reduce(r[0], (cur, k) -> sg[k][1] <= cur + 1e-9 ? Math.max(cur, sg[k][3]) : cur, (p, q) -> p) < r[1] - 1e-9).get())
                     .allMatch(gb -> (uf[find.apply(uf, base[i] + ga)] = find.apply(uf, base[i + 1] + gb)) >= 0)))
             && new HashMap<Integer, Set<Integer>>() instanceof HashMap<Integer, Set<Integer>> adj

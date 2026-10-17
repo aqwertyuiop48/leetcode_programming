@@ -12,7 +12,7 @@ public class Main {
             && ref.compareAndSet(null, s -> memo.containsKey(s) ? memo.get(s)
                 : IntStream.rangeClosed('a', 'z').boxed().flatMap(c -> Stream.of((char) (int) c + s, s + (char) (int) c)).filter(sub::contains)
                     .map(t -> ref.get().apply(t) instanceof long[] o
-                        ? new long[]{1 - o[0], o[2] + t.chars().map(ch -> ch - 'a' + 1).sum() * t.chars().map(ch -> ch - 'a' + 1).max().getAsInt() * w.stream().filter(x -> x.contains(t)).count() + 1, o[1]}
+                        ? new long[]{1 - o[0], o[2] + t.chars().map(ch -> ch - 'a' + 1).sum() * t.chars().map(ch -> ch - 'a' + 1).max().getAsInt() + w.stream().filter(x -> x.contains(t)).count(), o[1]}
                         : null)
                     .max(Comparator.<long[]>comparingLong(o -> o[0]).thenComparingLong(o -> o[1]).thenComparingLong(o -> -o[2])).orElse(new long[]{0, 0, 0}) instanceof long[] r
                     && memo.put(s, r) == null ? r : memo.get(s))

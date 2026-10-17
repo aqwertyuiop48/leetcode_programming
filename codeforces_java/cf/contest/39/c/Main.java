@@ -1,35 +1,52 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
         Optional.of(new Scanner(System.in)).ifPresent(s -> System.out.println(
             Integer.valueOf(s.nextInt()) instanceof Integer n
-            && IntStream.range(0, n).mapToObj(i -> new int[]{s.nextInt(), s.nextInt(), i + 1}).map(x -> new int[]{x[0] - x[1], x[0] + x[1], x[2]}).toList() instanceof List<int[]> cr
-            && cr.stream().flatMapToInt(x -> IntStream.of(x[0], x[1])).distinct().sorted().toArray() instanceof int[] xs
+            && IntStream.range(0, 2 * n).map(i -> s.nextInt()).toArray() instanceof int[] cr
+            && IntStream.range(0, 2 * n).map(i -> i % 2 == 0 ? cr[i] - cr[i + 1] : cr[i - 1] + cr[i]).distinct().sorted().toArray() instanceof int[] xs
             && Integer.valueOf(xs.length) instanceof Integer N
-            && cr.stream().map(x -> new int[]{Arrays.binarySearch(xs, x[0]), Arrays.binarySearch(xs, x[1]), x[2]}).collect(Collectors.groupingBy(x -> x[1])) instanceof Map<Integer, List<int[]>> byR
-            && new int[N][N] instanceof int[][] P
-            && ((IntBinaryOperator) (i, x) -> byR.getOrDefault(x, List.<int[]>of()).stream().filter(y -> y[0] == i).mapToInt(y -> 1).sum()) instanceof IntBinaryOperator hi
-            && IntStream.iterate(N - 1, i -> i >= 0, i -> i - 1).allMatch(i -> IntStream.range(i + 1, N).allMatch(x ->
-                (P[i][x] = Math.max(P[i][x - 1], byR.getOrDefault(x, List.<int[]>of()).stream().filter(y -> y[0] > i).mapToInt(y -> P[i][y[0]] + P[y[0]][x]).max().orElse(0))
-                    + hi.applyAsInt(i, x)) >= 0))
-            && new AtomicReference<BiFunction<Integer, Integer, List<Integer>>>() instanceof AtomicReference<BiFunction<Integer, Integer, List<Integer>>> rec
-            && rec.compareAndSet(null, (i, x) -> x <= i ? List.<Integer>of()
-                : Stream.of(
-                    byR.getOrDefault(x, List.<int[]>of()).stream().filter(y -> y[0] == i).map(y -> y[2]).toList(),
-                    P[i][x - 1] == P[i][x] - hi.applyAsInt(i, x)
-                        ? rec.get().apply(i, x - 1)
-                        : byR.get(x).stream().filter(y -> y[0] > i && P[i][y[0]] + P[y[0]][x] == P[i][x] - hi.applyAsInt(i, x)).findFirst()
-                            .map(y -> Stream.of(rec.get().apply(i, y[0]), rec.get().apply(y[0], x)).flatMap(List::stream).toList()).orElse(List.<Integer>of()))
-                    .flatMap(List::stream).toList())
-            && rec.get().apply(0, N - 1).stream().sorted().map(String::valueOf).toList() instanceof List<String> ans
-            ? ans.size() + "\n" + String.join(" ", ans) : ""));
+            && IntStream.range(0, n).boxed().sorted(Comparator.comparingInt(k -> Arrays.binarySearch(xs, cr[2 * k] + cr[2 * k + 1]))).mapToInt(k -> k).toArray() instanceof int[] ord
+            && Arrays.stream(ord).map(k -> Arrays.binarySearch(xs, cr[2 * k] - cr[2 * k + 1])).toArray() instanceof int[] oL
+            && Arrays.stream(ord).map(k -> Arrays.binarySearch(xs, cr[2 * k] + cr[2 * k + 1])).toArray() instanceof int[] oR
+            && Arrays.stream(oR).mapToLong(q -> 2L * q + 1).toArray() instanceof long[] keys
+            && IntStream.rangeClosed(0, N).map(x -> -Arrays.binarySearch(keys, 2L * x) - 1).toArray() instanceof int[] st
+            && new boolean[N] instanceof boolean[] isL
+            && IntStream.of(oL).allMatch(l -> (isL[l] = true))
+            && IntStream.range(0, N).mapToObj(i -> isL[i] ? new int[N] : null).toArray(int[][]::new) instanceof int[][] P
+            && IntStream.range(0, N).flatMap(x -> IntStream.range(0, st[x + 1] - st[x] + 1).map(o -> x)).toArray() instanceof int[] itX
+            && IntStream.range(0, N).flatMap(x -> IntStream.concat(IntStream.range(st[x], st[x + 1]), IntStream.of(-1))).toArray() instanceof int[] itT
+            && IntStream.range(0, N + n).map(idx -> itT[idx] >= 0 ? oL[itT[idx]] : -1).toArray() instanceof int[] itL
+            && IntStream.iterate(N - 1, i -> i >= 0, i -> i - 1).filter(i -> isL[i]).allMatch(i ->
+                P[i] instanceof int[] row
+                && new int[2] instanceof int[] acc
+                && IntStream.range(st[i + 1] + i + 1, N + n).filter(idx ->
+                    (itL[idx] >= 0
+                        ? itL[idx] > i ? (acc[0] = Math.max(acc[0], row[itL[idx]] + P[itL[idx]][itX[idx]])) >= 0 : itL[idx] == i ? ++acc[1] > 0 : true
+                        : (row[itX[idx]] = Math.max(row[itX[idx] - 1], acc[0]) + acc[1]) >= 0 && (acc[0] = 0) == 0 && (acc[1] = 0) == 0) && false).count() >= 0)
+            && new int[4 * N + 4 * n + 16] instanceof int[] stI
+            && new int[4 * N + 4 * n + 16] instanceof int[] stX
+            && new int[]{1} instanceof int[] sp
+            && (stX[0] = N - 1) >= 0
+            && new ArrayList<Integer>() instanceof ArrayList<Integer> res
+            && IntStream.range(0, 4 * N + 4 * n + 16).allMatch(step ->
+                sp[0] == 0
+                || (Integer) stI[--sp[0]] instanceof Integer i
+                && (Integer) stX[sp[0]] instanceof Integer x
+                && (x <= i
+                    || (Integer) (int) IntStream.range(st[x], st[x + 1]).filter(t -> oL[t] == i).count() instanceof Integer hc
+                    && IntStream.range(st[x], st[x + 1]).filter(t -> oL[t] == i).mapToObj(t -> ord[t] + 1).toList() instanceof List<Integer> ids
+                    && (res.addAll(ids) || true)
+                    && (Integer) (P[i][x] - hc) instanceof Integer target
+                    && (P[i][x - 1] == target
+                        ? (stI[sp[0]] = i) >= 0 && (stX[sp[0]++] = x - 1) >= 0
+                        : (Integer) IntStream.range(st[x], st[x + 1]).filter(t -> oL[t] > i && P[i][oL[t]] + P[oL[t]][x] == target).findFirst().orElse(-1) instanceof Integer tt
+                            && tt >= 0
+                            && (stI[sp[0]] = i) >= 0 && (stX[sp[0]++] = oL[tt]) >= 0
+                            && (stI[sp[0]] = oL[tt]) >= 0 && (stX[sp[0]++] = x) >= 0)))
+            ? res.size() + "\n" + res.stream().sorted().map(String::valueOf).collect(Collectors.joining(" "))
+            : ""));
     }
 }
-
-
-
-

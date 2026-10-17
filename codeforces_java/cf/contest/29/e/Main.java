@@ -5,36 +5,49 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(
             new Scanner(System.in) instanceof Scanner s
-            && new int[]{s.nextInt(), s.nextInt()} instanceof int[] nm
-            && IntStream.range(0, 2 * nm[1]).map(i -> s.nextInt()).toArray() instanceof int[] edges
-            && new HashMap<Integer, List<Integer>>() instanceof HashMap<Integer, List<Integer>> adj
-            && IntStream.range(0, nm[1]).allMatch(i -> adj.computeIfAbsent(edges[2 * i], k -> new ArrayList<Integer>()).add(edges[2 * i + 1]) && adj.computeIfAbsent(edges[2 * i + 1], k -> new ArrayList<Integer>()).add(edges[2 * i]))
-            && new long[]{nm[0] + 1L} instanceof long[] baseArr
-            && new long[]{1L * baseArr[0] + nm[0], (long) nm[0] * baseArr[0] + 1L} instanceof long[] se
-            && new HashMap<Long, Long>() instanceof HashMap<Long, Long> parentMap
-            && parentMap.put(se[0], -1L) == null
-            && Stream.iterate(List.of(se[0]), fr -> !fr.isEmpty(), fr ->
-                    fr.stream().flatMap(code ->
-                        adj.getOrDefault((int) (code / baseArr[0]), Collections.<Integer>emptyList()).stream().flatMap(u2 ->
-                            adj.getOrDefault((int) (code % baseArr[0]), Collections.<Integer>emptyList()).stream()
-                                .filter(v2 -> !u2.equals(v2))
-                                .map(v2 -> (long) u2 * baseArr[0] + v2)
-                        ).filter(code2 -> parentMap.putIfAbsent(code2, code) == null)
-                    ).distinct().collect(Collectors.toList())
-                ).count() >= 0
-            && new boolean[]{parentMap.containsKey(se[1])} instanceof boolean[] foundArr
-            ? (!foundArr[0] ? "-1"
-                : Stream.iterate(se[1], cd -> cd != -1L, cd -> parentMap.get(cd)).collect(Collectors.toList()) instanceof List<Long> revPath
-                  && new int[]{revPath.size() - 1} instanceof int[] kLen
-                  ? kLen[0] + "\n"
-                    + IntStream.rangeClosed(0, kLen[0]).mapToObj(t -> String.valueOf(revPath.get(kLen[0] - t) / baseArr[0])).collect(Collectors.joining(" "))
-                    + "\n"
-                    + IntStream.rangeClosed(0, kLen[0]).mapToObj(t -> String.valueOf(revPath.get(kLen[0] - t) % baseArr[0])).collect(Collectors.joining(" "))
-                  : "-1")
-            : "-1"
-        );
+            && (Integer) s.nextInt() instanceof Integer n
+            && (Integer) s.nextInt() instanceof Integer m
+            && IntStream.range(0, 2 * m).map(i -> s.nextInt() - 1).toArray() instanceof int[] e
+            && new long[n * 8] instanceof long[] adj
+            && IntStream.range(0, m).allMatch(i -> (adj[e[2 * i] * 8 + (e[2 * i + 1] >> 6)] |= 1L << e[2 * i + 1]) != 0 && (adj[e[2 * i + 1] * 8 + (e[2 * i] >> 6)] |= 1L << e[2 * i]) != 0)
+            && (Integer) (n * n) instanceof Integer nn
+            && new long[n * 8] instanceof long[] seenA
+            && new long[n * 8] instanceof long[] seenB
+            && IntStream.range(0, n).allMatch(u -> (seenA[u * 8 + (u >> 6)] |= 1L << u) != 0)
+            && new int[2 * nn] instanceof int[] parent
+            && new int[2 * nn] instanceof int[] queue
+            && new int[]{1} instanceof int[] tail
+            && (queue[0] = n - 1) >= 0
+            && (parent[n - 1] = -1) < 0
+            && (seenA[(n - 1) >> 6] |= 1L << (n - 1)) != 0
+            && new long[1] instanceof long[] tmp
+            && IntStream.range(0, 2 * nn).filter(qi ->
+                qi < tail[0] && (seenA[(n - 1) * 8] & 1L) == 0
+                && (Integer) queue[qi] instanceof Integer x
+                && (x < nn
+                    ? (Integer) (x / n) instanceof Integer u
+                        && (Integer) (x % n) instanceof Integer v
+                        && IntStream.range(0, 8).filter(w ->
+                            (tmp[0] = adj[u * 8 + w] & ~seenB[v * 8 + w]) != 0
+                            && (seenB[v * 8 + w] |= tmp[0]) != 0
+                            && LongStream.iterate(tmp[0], y -> y != 0, y -> y & (y - 1)).filter(y ->
+                                ((parent[nn + (w * 64 + Long.numberOfTrailingZeros(y)) * n + v] = x)
+                                    | (queue[tail[0]++] = nn + (w * 64 + Long.numberOfTrailingZeros(y)) * n + v)) < 0).count() < 0).count() < 0
+                    : (Integer) ((x - nn) / n) instanceof Integer p
+                        && (Integer) ((x - nn) % n) instanceof Integer q
+                        && IntStream.range(0, 8).filter(w ->
+                            (tmp[0] = adj[q * 8 + w] & ~seenA[p * 8 + w]) != 0
+                            && (seenA[p * 8 + w] |= tmp[0]) != 0
+                            && LongStream.iterate(tmp[0], y -> y != 0, y -> y & (y - 1)).filter(y ->
+                                ((parent[p * n + w * 64 + Long.numberOfTrailingZeros(y)] = x)
+                                    | (queue[tail[0]++] = p * n + w * 64 + Long.numberOfTrailingZeros(y))) < 0).count() < 0).count() < 0)).count() >= 0
+            ? (seenA[(n - 1) * 8] & 1L) == 0
+                ? "-1"
+                : Stream.iterate((n - 1) * n, c -> c != -1, c -> parent[c] >= 0 ? parent[parent[c]] : -1).collect(Collectors.toList()) instanceof List<Integer> rev
+                    ? (rev.size() - 1) + "\n"
+                        + IntStream.range(0, rev.size()).mapToObj(t -> String.valueOf(rev.get(rev.size() - 1 - t) / n + 1)).collect(Collectors.joining(" ")) + "\n"
+                        + IntStream.range(0, rev.size()).mapToObj(t -> String.valueOf(rev.get(rev.size() - 1 - t) % n + 1)).collect(Collectors.joining(" "))
+                    : "-1"
+            : "-1");
     }
 }
-
-
-

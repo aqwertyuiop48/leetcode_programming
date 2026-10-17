@@ -1,42 +1,18 @@
+import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
-import java.math.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print(
+        System.out.println(
             new Scanner(System.in) instanceof Scanner sc
             && new BigInteger(sc.next()) instanceof BigInteger A
-            && BigInteger.valueOf(12) instanceof BigInteger TWELVE
-            && BigInteger.valueOf(13) instanceof BigInteger THIRTEEN
-            && new TreeSet<Integer>() instanceof TreeSet<Integer> years
-            && new TreeSet<BigInteger>() instanceof TreeSet<BigInteger> others
-            && new Set[]{new HashSet<>(List.of(Arrays.asList(BigInteger.valueOf(2), BigInteger.valueOf(13))))} instanceof Set[] activeRef
-            && ((A.equals(BigInteger.valueOf(2)) && years.add(1)) || true)
-            && ((A.equals(BigInteger.valueOf(13)) && years.add(2)) || true)
-            && (IntStream.rangeClosed(3, 400).allMatch(year ->
-                !activeRef[0].isEmpty()
-                && activeRef[0].stream()
-                    .flatMap(p -> Stream.of(
-                        Arrays.asList(((List) p).get(1), ((BigInteger) ((List) p).get(0)).multiply(TWELVE)),
-                        Arrays.asList(((List) p).get(1), ((BigInteger) ((List) p).get(1)).multiply(THIRTEEN).subtract(((BigInteger) ((List) p).get(0)).multiply(TWELVE)))
-                    ))
-                    .collect(Collectors.toCollection(HashSet::new)) instanceof Set full
-                && full.stream().map(p -> ((List) p).get(1)).collect(Collectors.toCollection(HashSet::new)) instanceof Set values
-                && ((values.contains(A) && (years.add(year) | others.addAll(values) | others.remove(A))) || true)
-                && full.stream().filter(p -> ((BigInteger) ((List) p).get(1)).compareTo(A) <= 0).collect(Collectors.toCollection(HashSet::new)) instanceof Set pruned
-                && (activeRef[0] = pruned) != null
-            ) || true)
-            ? (years.isEmpty() ? "NO" :
-                "YES\n" + years.size() + "\n" +
-                years.stream().map(String::valueOf).collect(Collectors.joining(" ")) + "\n" +
-                others.size() + (others.isEmpty() ? "" : "\n" + others.stream().map(String::valueOf).collect(Collectors.joining("\n")))
-              )
-            : "unreachable"
-        );
+            && A.toString(12) instanceof String s
+            && (Long) s.chars().filter(c -> c == '0').count() instanceof Long z
+            && (z == s.length() - 2 && s.chars().filter(c -> c == '1').count() == 2 || z == s.length() - 1 && s.chars().filter(c -> c == '2').count() == 1)
+            && (Integer) ((z == s.length() - 1 ? 2 * (s.length() - 1 - s.indexOf('2')) : 2 * s.length() - 2 - s.indexOf('1') - s.lastIndexOf('1')) + 1) instanceof Integer n
+            && IntStream.rangeClosed(0, (n - 1) / 2).mapToObj(a -> BigInteger.valueOf(12).pow(a).add(BigInteger.valueOf(12).pow(n - 1 - a))).filter(v -> !v.equals(A)).sorted().limit(1000).toList() instanceof List<BigInteger> others
+            ? "YES\n1\n" + n + "\n" + others.size() + (others.isEmpty() ? "" : "\n" + others.stream().map(String::valueOf).collect(Collectors.joining("\n")))
+            : "NO");
     }
 }
-
-
-
-
