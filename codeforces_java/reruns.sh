@@ -1,1 +1,4 @@
-for contest in 7 10 13 15 16 23 24 25 26 29 30 35 36 37 38 39 40 43 44 45 46 47 48 50; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); case "$contest:$problem" in 7:D|10:C|10:D|10:E|13:D|13:E|15:D|15:E|16:E|23:D|24:E|25:E|26:E|29:E|30:E|35:B|35:C|35:E|36:C|37:E|38:E|38:F|38:G|38:H|39:C|39:K|40:C|40:D|40:E|43:E|44:F|45:B|46:F|46:G|47:E|48:C|48:D|48:F|48:G|50:E) ./cf_java.sh "$contest" "$problem" all 87 ;; esac; done; done
+for contest in 7 10 13 15 16 23 24 25 26 29 30 35 36 37 38 39 40 43 44 45 46 47 48 50; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); case "$contest:$problem" in 7:D|13:D|13:E|15:D|23:D|29:E|48:C) ./cf_java.sh "$contest" "$problem" all 87 ;; esac; done; done
+
+
+
