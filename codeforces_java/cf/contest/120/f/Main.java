@@ -4,8 +4,8 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Optional.of((new java.io.File("input.txt").exists() ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true) : System.out)).ifPresent(out ->
-        Optional.of(new Scanner((new java.io.File("input.txt").exists() ? new java.io.FileInputStream("input.txt") : System.in))).ifPresent(s ->
+        Optional.of(Map.entry((new java.io.File("input.txt").exists() ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true) : System.out), new Scanner((new java.io.File("input.txt").exists() ? new java.io.FileInputStream("input.txt") : System.in)))).ifPresent(io -> Optional.of(io.getKey()).ifPresent(out ->
+        Optional.of(io.getValue()).ifPresent(s ->
             out.println(IntStream.range(0, s.nextInt()).mapToLong(tc ->
                 (Integer) s.nextInt() instanceof Integer n
                 && IntStream.rangeClosed(0, n).mapToObj(i -> new ArrayList<Integer>()).toList() instanceof List<ArrayList<Integer>> adj
@@ -16,6 +16,6 @@ public class Main {
                     ? Stream.iterate(List.of(st), l -> !l.isEmpty(),
                         l -> l.stream().flatMap(u -> adj.get(u).stream()).filter(v -> !vis[v] && (vis[v] = true)).toList()).toList()
                     : null) instanceof Function<Integer, List<List<Integer>>> bfs
-                ? bfs.apply(bfs.apply(1).getLast().get(0)).size() - 1 : -1L).sum())));
+                ? bfs.apply(bfs.apply(1).getLast().get(0)).size() - 1 : -1L).sum()))));
     }
 }

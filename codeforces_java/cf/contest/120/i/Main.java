@@ -4,8 +4,8 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Optional.of((new java.io.File("input.txt").exists() ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true) : System.out)).ifPresent(out ->
-        Optional.of(new Scanner((new java.io.File("input.txt").exists() ? new java.io.FileInputStream("input.txt") : System.in)).next()).ifPresent(str ->
+        Optional.of(Map.entry((new java.io.File("input.txt").exists() ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true) : System.out), new Scanner((new java.io.File("input.txt").exists() ? new java.io.FileInputStream("input.txt") : System.in)))).ifPresent(io -> Optional.of(io.getKey()).ifPresent(out ->
+        Optional.of(io.getValue().next()).ifPresent(str ->
             out.println(str.chars().map(c -> c - '0').toArray() instanceof int[] a
                 && Integer.valueOf(a.length) instanceof Integer k
                 && Integer.valueOf(k / 2) instanceof Integer n
@@ -29,6 +29,6 @@ public class Main {
                         && (u[0] += del.applyAsInt(T, new int[]{r, d})) > -1000000000
                         && (T[r] = d) >= 0)
                     ? Arrays.stream(T).mapToObj(String::valueOf).collect(Collectors.joining()) : "").orElse("-1")
-                : "")));
+                : ""))));
     }
 }

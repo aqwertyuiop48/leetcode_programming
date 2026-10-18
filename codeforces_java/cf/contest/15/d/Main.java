@@ -6,14 +6,13 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.print(
-            new BufferedReader(new InputStreamReader(System.in), 1 << 16) instanceof BufferedReader br
-            && br.lines().iterator() instanceof Iterator<String> it
-            && new int[1000010] instanceof int[] g0
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 8] instanceof int[] g0
             && new int[3] instanceof int[] ps
-            && ((BooleanSupplier) () -> ps[2] == 0 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0 && (ps[2] = 0) == 0)) instanceof BooleanSupplier flush
-            && Stream.iterate(0, x -> it.hasNext() && (ps[1] < 4 || ps[1] < 4 + g0[0] * g0[1]), x -> x + 1).allMatch(x ->
-                it.next().chars().allMatch(ch -> ch >= '0' && ch <= '9' ? (ps[0] = ps[0] * 10 + ch - '0') >= 0 && (ps[2] = 1) > 0 : flush.getAsBoolean())
-                && flush.getAsBoolean())
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
             && Integer.valueOf(g0[0]) instanceof Integer n
             && Integer.valueOf(g0[1]) instanceof Integer m
             && Integer.valueOf(g0[2]) instanceof Integer a
@@ -27,43 +26,43 @@ public class Main {
             && new int[n * m] instanceof int[] pf
             && new int[n * m] instanceof int[] sf
             && IntStream.range(0, n).allMatch(i -> IntStream.range(0, m).allMatch(j ->
-                (pf[i * m + j] = j % b == 0 ? g[i * m + j] : Math.min(pf[i * m + j - 1], g[i * m + j])) > 0))
+                (pf[i * m + j] = j % b == 0 ? g[i * m + j] : Math.min(pf[i * m + j - 1], g[i * m + j])) >= 0))
             && IntStream.range(0, n).allMatch(i -> IntStream.iterate(m - 1, j -> j >= 0, j -> j - 1).allMatch(j ->
-                (sf[i * m + j] = j % b == b - 1 || j == m - 1 ? g[i * m + j] : Math.min(sf[i * m + j + 1], g[i * m + j])) > 0))
+                (sf[i * m + j] = j % b == b - 1 || j == m - 1 ? g[i * m + j] : Math.min(sf[i * m + j + 1], g[i * m + j])) >= 0))
             && new int[n * wc] instanceof int[] rm
             && IntStream.range(0, n).allMatch(i -> IntStream.range(0, wc).allMatch(j ->
-                (rm[i * wc + j] = Math.min(sf[i * m + j], pf[i * m + j + b - 1])) > 0))
+                (rm[i * wc + j] = Math.min(sf[i * m + j], pf[i * m + j + b - 1])) >= 0))
             && IntStream.range(0, n).allMatch(i -> IntStream.range(0, wc).allMatch(j ->
-                (pf[i * wc + j] = i % a == 0 ? rm[i * wc + j] : Math.min(pf[(i - 1) * wc + j], rm[i * wc + j])) > 0))
+                (pf[i * wc + j] = i % a == 0 ? rm[i * wc + j] : Math.min(pf[(i - 1) * wc + j], rm[i * wc + j])) >= 0))
             && IntStream.range(0, n).allMatch(i -> IntStream.range(0, wc).allMatch(j ->
-                (sf[(n - 1 - i) * wc + j] = (n - 1 - i) % a == a - 1 || i == 0 ? rm[(n - 1 - i) * wc + j] : Math.min(sf[(n - i) * wc + j], rm[(n - 1 - i) * wc + j])) > 0))
+                (sf[(n - 1 - i) * wc + j] = (n - 1 - i) % a == a - 1 || i == 0 ? rm[(n - 1 - i) * wc + j] : Math.min(sf[(n - i) * wc + j], rm[(n - 1 - i) * wc + j])) >= 0))
             && IntStream.range(0, wr).allMatch(i -> IntStream.range(0, wc).allMatch(j ->
-                (g[i * wc + j] = Math.min(sf[i * wc + j], pf[(i + a - 1) * wc + j])) > 0))
+                (g[i * wc + j] = Math.min(sf[i * wc + j], pf[(i + a - 1) * wc + j])) >= 0))
             && IntStream.range(0, wr).allMatch(i -> IntStream.range(0, wc).allMatch(j ->
                 (pre[i * wc + j] = pre[(i + a) * (m + 1) + j + b] - pre[i * (m + 1) + j + b] - pre[(i + a) * (m + 1) + j] + pre[i * (m + 1) + j] - (long) g[i * wc + j] * a * b) >= 0))
             && Integer.valueOf(wr * wc) instanceof Integer len
             && (Boolean) (64 - Long.numberOfLeadingZeros(Arrays.stream(pre, 0, len).max().orElse(0)) <= 42) instanceof Boolean direct
-            && (direct ? new long[0] : Arrays.stream(pre, 0, len).sorted().distinct().toArray()) instanceof long[] uniq
+            && (direct ? new long[0] : Arrays.stream(pre, 0, len).sorted().toArray()) instanceof long[] sc
+            && (direct ? sc : IntStream.range(0, sc.length).filter(i -> i == 0 || sc[i] != sc[i - 1]).mapToLong(i -> sc[i]).toArray()) instanceof long[] uniq
             && IntStream.range(0, len).allMatch(k ->
                 direct ? (pre[k] = pre[k] << 20 | k) >= 0 : (pre[k] = (long) Arrays.binarySearch(uniq, pre[k]) << 20 | k) >= 0)
             && Arrays.stream(pre, 0, len).sorted().toArray() instanceof long[] keys
-            && new boolean[len] instanceof boolean[] blocked
+            && Integer.valueOf(wc + 2 * (b - 1)) instanceof Integer w2
+            && new boolean[(wr + 2 * (a - 1)) * w2] instanceof boolean[] blocked
+            && IntStream.range(0, (2 * a - 1) * (2 * b - 1)).map(q -> q / (2 * b - 1) * w2 + q % (2 * b - 1)).toArray() instanceof int[] off
             && new int[1] instanceof int[] cnt
             && Arrays.stream(keys).allMatch(key ->
                 (Integer) (int) (key & 1048575) instanceof Integer k
-                && (blocked[k]
+                && (Integer) (k / wc * w2 + k % wc) instanceof Integer base
+                && (blocked[base + (a - 1) * w2 + b - 1]
                     || ((keys[cnt[0]++] = key) >= 0
-                        && (Integer) (k / wc) instanceof Integer r
-                        && (Integer) (k % wc) instanceof Integer c
-                        && IntStream.rangeClosed(Math.max(0, r - a + 1), Math.min(wr - 1, r + a - 1)).allMatch(i ->
-                            IntStream.rangeClosed(Math.max(0, c - b + 1), Math.min(wc - 1, c + b - 1)).allMatch(j -> (blocked[i * wc + j] = true))))))
-            && new PrintStream(new BufferedOutputStream(new FileOutputStream(FileDescriptor.out), 1 << 16), false) instanceof PrintStream out
-            && out.append(cnt[0] + "\n") != null
+                        && (off.length == 1 ? (blocked[base] = true) : IntStream.range(0, off.length).allMatch(q -> blocked[base + off[q]] = true)))))
+            && new StringBuilder() instanceof StringBuilder sb
+            && sb.append(cnt[0]).append('\n') != null
             && IntStream.range(0, cnt[0]).allMatch(x ->
-                out.append(((int) (keys[x] & 1048575) / wc + 1) + " " + ((int) (keys[x] & 1048575) % wc + 1) + " " + (direct ? keys[x] >>> 20 : uniq[(int) (keys[x] >>> 20)]) + "\n") != null)
-            && !out.checkError()
-            ? ""
+                (Integer) (int) (keys[x] & 1048575) instanceof Integer k
+                && sb.append(k / wc + 1).append(' ').append(k % wc + 1).append(' ').append(direct ? keys[x] >>> 20 : uniq[(int) (keys[x] >>> 20)]).append('\n') != null)
+            ? sb.toString()
             : "");
     }
 }
-

@@ -5,8 +5,8 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Optional.of((new java.io.File("input.txt").exists() ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true) : System.out)).ifPresent(out ->
-        Optional.of(new Scanner((new java.io.File("input.txt").exists() ? new java.io.FileInputStream("input.txt") : System.in))).ifPresent(sc ->
+        Optional.of(Map.entry((new java.io.File("input.txt").exists() ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt"), true) : System.out), new Scanner((new java.io.File("input.txt").exists() ? new java.io.FileInputStream("input.txt") : System.in)))).ifPresent(io -> Optional.of(io.getKey()).ifPresent(out ->
+        Optional.of(io.getValue()).ifPresent(sc ->
             Optional.of(IntStream.range(0, sc.nextInt()).mapToObj(i -> sc.next()).toList()).ifPresent(w ->
                 Optional.of(w.stream().map(x -> IntStream.range(1, 1 << x.length())
                         .filter(mask -> Integer.bitCount(mask) <= 4)
@@ -22,6 +22,6 @@ public class Main {
                                     && IntStream.range(0, w.size()).allMatch(u -> (vis.removeIf(s -> true) || true) && tryK.get().test(u))
                                     ? IntStream.range(0, w.size()).mapToObj(u -> match.entrySet().stream().filter(e -> e.getValue() == u)
                                         .map(Map.Entry::getKey).findFirst().get()).collect(Collectors.joining("\n"))
-                                    : "-1"))))))));
+                                    : "-1")))))))));
     }
 }

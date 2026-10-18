@@ -2,12 +2,18 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(
-            new Scanner(System.in) instanceof Scanner s
-            && (Integer) s.nextInt() instanceof Integer n
-            && (Integer) s.nextInt() instanceof Integer m
-            && IntStream.range(0, 2 * m).map(i -> s.nextInt() - 1).toArray() instanceof int[] e
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 4] instanceof int[] tk
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((tk[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && (Integer) tk[0] instanceof Integer n
+            && (Integer) tk[1] instanceof Integer m
+            && IntStream.range(0, 2 * m).map(i -> tk[i + 2] - 1).toArray() instanceof int[] e
             && new long[n * 8] instanceof long[] adj
             && IntStream.range(0, m).allMatch(i -> (adj[e[2 * i] * 8 + (e[2 * i + 1] >> 6)] |= 1L << e[2 * i + 1]) != 0 && (adj[e[2 * i + 1] * 8 + (e[2 * i] >> 6)] |= 1L << e[2 * i]) != 0)
             && IntStream.range(0, 2 * m).map(i -> i < m ? e[2 * i] * n + e[2 * i + 1] : e[2 * (i - m) + 1] * n + e[2 * (i - m)]).sorted().toArray() instanceof int[] all
@@ -34,10 +40,16 @@ public class Main {
                     ? (cc[1] = cc[0] / n) >= 0
                         && (cc[2] = cc[0] % n) >= 0
                         && (cs[cc[1] + 1] - cs[cc[1]] <= 10
-                            ? IntStream.range(cs[cc[1]], cs[cc[1] + 1]).filter(ei ->
-                                (seenB[cc[2] * 8 + (lst[ei] >> 6)] & 1L << lst[ei]) == 0
-                                && (seenB[cc[2] * 8 + (lst[ei] >> 6)] |= 1L << lst[ei]) != 0
-                                && ((parent[nn + lst[ei] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[ei] * n + cc[2])) < 0).count() >= 0
+                            ? (cs[cc[1]] + 0 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 0] >> 6)] & 1L << lst[cs[cc[1]] + 0]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 0] >> 6)] |= 1L << lst[cs[cc[1]] + 0]) != 0 && ((parent[nn + lst[cs[cc[1]] + 0] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 0] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 1 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 1] >> 6)] & 1L << lst[cs[cc[1]] + 1]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 1] >> 6)] |= 1L << lst[cs[cc[1]] + 1]) != 0 && ((parent[nn + lst[cs[cc[1]] + 1] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 1] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 2 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 2] >> 6)] & 1L << lst[cs[cc[1]] + 2]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 2] >> 6)] |= 1L << lst[cs[cc[1]] + 2]) != 0 && ((parent[nn + lst[cs[cc[1]] + 2] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 2] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 3 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 3] >> 6)] & 1L << lst[cs[cc[1]] + 3]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 3] >> 6)] |= 1L << lst[cs[cc[1]] + 3]) != 0 && ((parent[nn + lst[cs[cc[1]] + 3] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 3] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 4 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 4] >> 6)] & 1L << lst[cs[cc[1]] + 4]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 4] >> 6)] |= 1L << lst[cs[cc[1]] + 4]) != 0 && ((parent[nn + lst[cs[cc[1]] + 4] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 4] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 5 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 5] >> 6)] & 1L << lst[cs[cc[1]] + 5]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 5] >> 6)] |= 1L << lst[cs[cc[1]] + 5]) != 0 && ((parent[nn + lst[cs[cc[1]] + 5] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 5] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 6 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 6] >> 6)] & 1L << lst[cs[cc[1]] + 6]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 6] >> 6)] |= 1L << lst[cs[cc[1]] + 6]) != 0 && ((parent[nn + lst[cs[cc[1]] + 6] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 6] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 7 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 7] >> 6)] & 1L << lst[cs[cc[1]] + 7]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 7] >> 6)] |= 1L << lst[cs[cc[1]] + 7]) != 0 && ((parent[nn + lst[cs[cc[1]] + 7] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 7] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 8 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 8] >> 6)] & 1L << lst[cs[cc[1]] + 8]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 8] >> 6)] |= 1L << lst[cs[cc[1]] + 8]) != 0 && ((parent[nn + lst[cs[cc[1]] + 8] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 8] * n + cc[2])) >= 0))
+                            && (cs[cc[1]] + 9 >= cs[cc[1] + 1] || (seenB[cc[2] * 8 + (lst[cs[cc[1]] + 9] >> 6)] & 1L << lst[cs[cc[1]] + 9]) != 0 || ((seenB[cc[2] * 8 + (lst[cs[cc[1]] + 9] >> 6)] |= 1L << lst[cs[cc[1]] + 9]) != 0 && ((parent[nn + lst[cs[cc[1]] + 9] * n + cc[2]] = cc[0]) | (queue[tail[0]++] = nn + lst[cs[cc[1]] + 9] * n + cc[2])) >= 0))
                             : IntStream.range(0, 8).filter(w ->
                             (tmp[0] = adj[cc[1] * 8 + w] & ~seenB[cc[2] * 8 + w]) != 0
                             && (seenB[cc[2] * 8 + w] |= tmp[0]) != 0
@@ -47,10 +59,16 @@ public class Main {
                     : (cc[1] = (cc[0] - nn) / n) >= 0
                         && (cc[2] = (cc[0] - nn) % n) >= 0
                         && (cs[cc[2] + 1] - cs[cc[2]] <= 10
-                            ? IntStream.range(cs[cc[2]], cs[cc[2] + 1]).filter(ei ->
-                                lst[ei] != cc[1] && (seenA[cc[1] * 8 + (lst[ei] >> 6)] & 1L << lst[ei]) == 0
-                                && (seenA[cc[1] * 8 + (lst[ei] >> 6)] |= 1L << lst[ei]) != 0
-                                && ((parent[cc[1] * n + lst[ei]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[ei])) < 0).count() >= 0
+                            ? (cs[cc[2]] + 0 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 0] >> 6)] & 1L << lst[cs[cc[2]] + 0]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 0] >> 6)] |= 1L << lst[cs[cc[2]] + 0]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 0]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 0])) >= 0))
+                            && (cs[cc[2]] + 1 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 1] >> 6)] & 1L << lst[cs[cc[2]] + 1]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 1] >> 6)] |= 1L << lst[cs[cc[2]] + 1]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 1]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 1])) >= 0))
+                            && (cs[cc[2]] + 2 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 2] >> 6)] & 1L << lst[cs[cc[2]] + 2]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 2] >> 6)] |= 1L << lst[cs[cc[2]] + 2]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 2]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 2])) >= 0))
+                            && (cs[cc[2]] + 3 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 3] >> 6)] & 1L << lst[cs[cc[2]] + 3]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 3] >> 6)] |= 1L << lst[cs[cc[2]] + 3]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 3]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 3])) >= 0))
+                            && (cs[cc[2]] + 4 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 4] >> 6)] & 1L << lst[cs[cc[2]] + 4]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 4] >> 6)] |= 1L << lst[cs[cc[2]] + 4]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 4]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 4])) >= 0))
+                            && (cs[cc[2]] + 5 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 5] >> 6)] & 1L << lst[cs[cc[2]] + 5]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 5] >> 6)] |= 1L << lst[cs[cc[2]] + 5]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 5]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 5])) >= 0))
+                            && (cs[cc[2]] + 6 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 6] >> 6)] & 1L << lst[cs[cc[2]] + 6]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 6] >> 6)] |= 1L << lst[cs[cc[2]] + 6]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 6]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 6])) >= 0))
+                            && (cs[cc[2]] + 7 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 7] >> 6)] & 1L << lst[cs[cc[2]] + 7]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 7] >> 6)] |= 1L << lst[cs[cc[2]] + 7]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 7]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 7])) >= 0))
+                            && (cs[cc[2]] + 8 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 8] >> 6)] & 1L << lst[cs[cc[2]] + 8]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 8] >> 6)] |= 1L << lst[cs[cc[2]] + 8]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 8]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 8])) >= 0))
+                            && (cs[cc[2]] + 9 >= cs[cc[2] + 1] || (seenA[cc[1] * 8 + (lst[cs[cc[2]] + 9] >> 6)] & 1L << lst[cs[cc[2]] + 9]) != 0 || ((seenA[cc[1] * 8 + (lst[cs[cc[2]] + 9] >> 6)] |= 1L << lst[cs[cc[2]] + 9]) != 0 && ((parent[cc[1] * n + lst[cs[cc[2]] + 9]] = cc[0]) | (queue[tail[0]++] = cc[1] * n + lst[cs[cc[2]] + 9])) >= 0))
                             : IntStream.range(0, 8).filter(w ->
                             (tmp[0] = adj[cc[2] * 8 + w] & ~seenA[cc[1] * 8 + w]) != 0
                             && (seenA[cc[1] * 8 + w] |= tmp[0]) != 0

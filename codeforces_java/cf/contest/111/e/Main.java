@@ -5,17 +5,17 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).map(sc ->
-            (Integer) sc.nextInt() instanceof Integer n
-            && (Integer) sc.nextInt() instanceof Integer m
-            && (Integer) sc.nextInt() instanceof Integer x1
-            && (Integer) sc.nextInt() instanceof Integer y1
-            && (Integer) sc.nextInt() instanceof Integer x2
-            && (Integer) sc.nextInt() instanceof Integer y2
+        Optional.of(new Scanner(System.in)).map(sc -> IntStream.range(0, 6).map(i0 -> sc.nextInt()).toArray() instanceof int[] in ? Stream.<IntUnaryOperator>of(v -> v <= 2 ? v : 2 - v % 2, v -> v <= 3 ? v : 2 + v % 2).map(red ->
+            (Integer) in[0] instanceof Integer n
+            && (Integer) in[1] instanceof Integer m
+            && (Integer) in[2] instanceof Integer x1
+            && (Integer) in[3] instanceof Integer y1
+            && (Integer) in[4] instanceof Integer x2
+            && (Integer) in[5] instanceof Integer y2
             && new int[]{Math.min(x1, x2) - 1, Math.abs(x1 - x2) - 1, n - Math.max(x1, x2)} instanceof int[] ar
-            && Arrays.stream(ar).map(v -> v <= 2 ? v : 2 - v % 2).toArray() instanceof int[] apr
+            && Arrays.stream(ar).map(red).toArray() instanceof int[] apr
             && new int[]{Math.min(y1, y2) - 1, Math.abs(y1 - y2) - 1, m - Math.max(y1, y2)} instanceof int[] ac
-            && Arrays.stream(ac).map(v -> v <= 2 ? v : 2 - v % 2).toArray() instanceof int[] apc
+            && Arrays.stream(ac).map(red).toArray() instanceof int[] apc
             && new int[][]{ar, ac} instanceof int[][] a
             && new int[][]{apr, apc} instanceof int[][] ap
             && (Integer) (IntStream.of(apr).sum() + 2) instanceof Integer n0
@@ -81,6 +81,6 @@ public class Main {
             && sol.isPresent()
             && extend.apply(Arrays.copyOf(stk, reg[2]), 1) instanceof int[] fp
             ? fp.length + "\n" + IntStream.of(fp).mapToObj(p1 -> p1 / 1024 + " " + p1 % 1024).collect(Collectors.joining("\n"))
-            : "").ifPresent(System.out::println);
+            : "").filter(r0 -> !r0.isEmpty()).findFirst().orElse("") : "").ifPresent(System.out::println);
     }
 }
