@@ -1,0 +1,8 @@
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Optional.of(new Scanner(System.in)).map(s -> (Integer) s.nextInt() instanceof Integer n && (Integer) s.nextInt() instanceof Integer m && (Integer) s.nextInt() instanceof Integer a && (Integer) s.nextInt() instanceof Integer b && IntStream.range(0, m).map(i -> s.nextInt() * 1000 + s.nextInt()).toArray() instanceof int[] ed && new int[n + 1] instanceof int[] deg && IntStream.of(ed).allMatch(e -> (deg[e / 1000] += 1) > 0 && (deg[e % 1000] += 1) > 0) && IntStream.range(1, n + 1).mapToDouble(i -> s.nextDouble()).toArray() instanceof double[] p && new double[n + 1][n + 1] instanceof double[][] tr && IntStream.range(1, n + 1).allMatch(u -> (tr[u][u] = p[u - 1]) >= 0) && IntStream.of(ed).allMatch(e -> (tr[e / 1000][e % 1000] += (1 - p[e / 1000 - 1]) / deg[e / 1000]) > 0 && (tr[e % 1000][e / 1000] += (1 - p[e % 1000 - 1]) / deg[e % 1000]) > 0) && (Integer) (n * n) instanceof Integer N && new double[N][N + n] instanceof double[][] mat && IntStream.range(0, N).allMatch(r -> (mat[r][r] = 1) > 0 && (r / n == r % n ? (mat[r][N + r / n] = 1) > 0 : IntStream.range(0, N).allMatch(c -> (mat[r][c] -= tr[r / n + 1][c / n + 1] * tr[r % n + 1][c % n + 1]) < 1e9))) && IntStream.range(0, N).allMatch(c -> IntStream.range(0, N).filter(k -> k != c && mat[k][c] != 0).allMatch(k -> (Double) (mat[k][c] / mat[c][c]) instanceof Double fct && IntStream.range(c, N + n).allMatch(j -> (mat[k][j] -= fct * mat[c][j]) < 1e18 || true))) ? IntStream.range(0, n).mapToObj(t -> String.format(Locale.US, "%.10f", mat[(a - 1) * n + b - 1][N + t] / mat[(a - 1) * n + b - 1][(a - 1) * n + b - 1])).collect(Collectors.joining(" ")) : "").ifPresent(System.out::println);
+    }
+}

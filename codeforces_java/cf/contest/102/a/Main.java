@@ -1,0 +1,9 @@
+import java.util.Optional;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+public class Main {
+    public static void main(String[] args) {
+        Optional.of(new Scanner(System.in)).map(s -> (Integer) s.nextInt() instanceof Integer n && (Integer) s.nextInt() instanceof Integer m && IntStream.range(0, n).map(i -> s.nextInt()).toArray() instanceof int[] a && new boolean[n][n] instanceof boolean[][] adj && IntStream.range(0, m).mapToObj(i -> new int[] {s.nextInt() - 1, s.nextInt() - 1}).allMatch(e -> adj[e[0]][e[1]] = adj[e[1]][e[0]] = true) ? IntStream.range(0, n).flatMap(i -> IntStream.range(i + 1, n).filter(j -> adj[i][j]).flatMap(j -> IntStream.range(j + 1, n).filter(k -> adj[i][k] && adj[j][k]).map(k -> a[i] + a[j] + a[k]))).min().orElse(-1) : -2).ifPresent(System.out::println);
+    }
+}

@@ -1,0 +1,9 @@
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.print(new Scanner(System.in) instanceof Scanner sc && Integer.valueOf(sc.nextInt()) instanceof Integer n && IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : sc.nextInt()).toArray() instanceof int[] c && sc.next() instanceof String s && ((IntUnaryOperator) x -> x < -500000000 ? -1000000000 : x) instanceof IntUnaryOperator cl && IntStream.rangeClosed(0, n).mapToObj(l -> IntStream.rangeClosed(0, n).mapToObj(r -> IntStream.rangeClosed(0, n).map(k -> l == r && k == 0 ? 0 : -1000000000).toArray()).toArray(int[][]::new)).toArray(int[][][]::new) instanceof int[][][] g && IntStream.rangeClosed(0, n).mapToObj(l -> IntStream.rangeClosed(0, n).map(r -> -1000000000).toArray()).toArray(int[][]::new) instanceof int[][] can && IntStream.rangeClosed(1, n).allMatch(len -> IntStream.rangeClosed(0, n - len).parallel().allMatch(l -> Integer.valueOf(l + len) instanceof Integer r && IntStream.rangeClosed(1, len).allMatch(k -> (g[l][r][k] = cl.applyAsInt(Math.max(Math.max(IntStream.range(l + 1, r).map(m -> can[l][m] + g[m][r][k]).max().orElse(-1000000000), IntStream.range(l + 1, r).map(m -> g[l][m][k] + can[m][r]).max().orElse(-1000000000)), len >= 2 && k >= 2 && s.charAt(l) == s.charAt(r - 1) ? g[l + 1][r - 1][k - 2] : len == 1 && k == 1 ? 0 : -1000000000))) >= -1000000000) && (can[l][r] = cl.applyAsInt(Math.max(IntStream.range(l + 1, r).map(m -> can[l][m] + can[m][r]).max().orElse(-1000000000), IntStream.rangeClosed(1, len).filter(k -> c[k] != -1).map(k -> g[l][r][k] + c[k]).max().orElse(-1000000000)))) >= -1000000000 && (g[l][r][0] = can[l][r]) >= -1000000000)) && new int[n + 1] instanceof int[] bp && IntStream.rangeClosed(1, n).allMatch(i -> (bp[i] = Math.max(bp[i - 1], IntStream.range(0, i).filter(j -> can[j][i] > -500000000).map(j -> bp[j] + can[j][i]).max().orElse(0))) >= 0) ? bp[n] : -1);
+    }
+}

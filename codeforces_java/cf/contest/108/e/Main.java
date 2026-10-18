@@ -1,0 +1,9 @@
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Optional.of(new Scanner(System.in)).map(s -> (Integer) s.nextInt() instanceof Integer n && (Long) s.nextLong() instanceof Long y && (Integer) s.nextInt() instanceof Integer m && new int[n] instanceof int[] pre && IntStream.range(0, m).allMatch(i -> (Integer) s.nextInt() instanceof Integer a && (Integer) s.nextInt() instanceof Integer b && (pre[b - 1] |= 1 << (a - 1)) > 0) && IntStream.generate(() -> -1).limit(n).toArray() instanceof int[] fx && new int[1] instanceof int[] fm && new long[]{y - 2001} instanceof long[] k && new int[n] instanceof int[] used && new int[n] instanceof int[] res && ((Supplier<Long>) () -> Stream.of(new long[1 << n]).map(dp -> (dp[0] = 1) > 0 && IntStream.range(0, 1 << n).allMatch(mask -> dp[mask] == 0 || Integer.bitCount(mask) >= n || (fx[Integer.bitCount(mask)] >= 0 ? (pre[fx[Integer.bitCount(mask)]] & mask) != pre[fx[Integer.bitCount(mask)]] || (dp[mask | 1 << fx[Integer.bitCount(mask)]] += dp[mask]) >= 0 : IntStream.range(0, n).allMatch(t -> (mask >> t & 1) == 1 || (fm[0] >> t & 1) == 1 || (pre[t] & mask) != pre[t] || (dp[mask | 1 << t] += dp[mask]) >= 0))) ? dp[(1 << n) - 1] : 0L).findFirst().get()) instanceof Supplier<Long> cnt && (Long) cnt.get() instanceof Long total ? (k[0] >= total ? "The times have changed" : IntStream.range(0, n).allMatch(pos -> IntStream.range(0, n).filter(v -> used[v] == 0).anyMatch(v -> (fx[v] = pos) >= 0 && (fm[0] |= 1 << pos) > 0 && (Long) cnt.get() instanceof Long c && (k[0] < c ? (used[v] = 1) > 0 && (res[pos] = v + 1) > 0 : (k[0] -= c) >= 0 && (fx[v] = -1) < 0 && (fm[0] &= ~(1 << pos)) >= 0 && false))) ? Arrays.stream(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "The times have changed") : "").ifPresent(System.out::println);
+    }
+}
