@@ -1,5 +1,6 @@
 import java.math.BigInteger;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
 import java.util.stream.*;
 
@@ -16,15 +17,14 @@ public class Main {
             && IntStream.range(0, n).filter(i -> x[i] != x[(i + 1) % n]).mapToObj(i -> x[i] < x[(i + 1) % n] ? new long[]{x[i], y[i], x[(i + 1) % n], y[(i + 1) % n], i} : new long[]{x[(i + 1) % n], y[(i + 1) % n], x[i], y[i], i}).toList() instanceof List<long[]> segs
             && segs.stream().sorted(Comparator.comparingLong(a -> a[0])).toList() instanceof List<long[]> byL
             && segs.stream().sorted(Comparator.comparingLong(a -> a[2])).toList() instanceof List<long[]> byR
-            && ((Comparator<long[]>) new Comparator<long[]>() {
-                public int compare(long[] a, long[] b) {
-                    return a[4] == b[4] ? 0 : b[4] < 0 && a[4] >= 0 ? -Long.signum((a[2] - a[0]) * (b[1] - a[1]) - (a[3] - a[1]) * (b[0] - a[0]))
-                        : a[4] < 0 && b[4] >= 0 ? Long.signum((b[2] - b[0]) * (a[1] - b[1]) - (b[3] - b[1]) * (a[0] - b[0]))
-                        : a[0] > b[0] ? -compare(b, a)
-                        : (Long.valueOf((a[2] - a[0]) * (b[1] - a[1]) - (a[3] - a[1]) * (b[0] - a[0])) instanceof Long c && c != 0 ? -Long.signum(c) : -Long.signum((a[2] - a[0]) * (b[3] - a[1]) - (a[3] - a[1]) * (b[2] - a[0])));
-                }
-            }) instanceof Comparator<long[]> cmp
-            && new TreeSet<long[]>(cmp) instanceof TreeSet<long[]> tree
+            && new AtomicReference<Comparator<long[]>>() instanceof AtomicReference<Comparator<long[]>> ref
+            && ref.getAndSet((a, b) -> a[4] == b[4] ? 0
+                : b[4] < 0 && a[4] >= 0 ? -Long.signum((a[2] - a[0]) * (b[1] - a[1]) - (a[3] - a[1]) * (b[0] - a[0]))
+                : a[4] < 0 && b[4] >= 0 ? Long.signum((b[2] - b[0]) * (a[1] - b[1]) - (b[3] - b[1]) * (a[0] - b[0]))
+                : a[0] > b[0] ? -ref.get().compare(b, a)
+                : Long.valueOf((a[2] - a[0]) * (b[1] - a[1]) - (a[3] - a[1]) * (b[0] - a[0])) instanceof Long c && c != 0 ? -Long.signum(c) : -Long.signum((a[2] - a[0]) * (b[3] - a[1]) - (a[3] - a[1]) * (b[2] - a[0]))) == null
+            && new TreeSet<long[]>(ref.get()) instanceof TreeSet<long[]> tree
+            && new long[]{0, 0, 0, 0, -2} instanceof long[] none
             && new double[3 * n] instanceof double[] nx && new double[3 * n] instanceof double[] ny
             && IntStream.range(0, n).allMatch(i -> (nx[i] = x[i]) * 0 == 0 && (ny[i] = y[i]) * 0 == 0)
             && new int[]{n, 0, 0} instanceof int[] ptr
@@ -34,16 +34,16 @@ public class Main {
                 && Long.valueOf(x[q] - x[v]) instanceof Long ax && Long.valueOf(y[q] - y[v]) instanceof Long ay && Long.valueOf(x[p] - x[v]) instanceof Long bx && Long.valueOf(y[p] - y[v]) instanceof Long by
                 && Long.valueOf(ax * by - ay * bx) instanceof Long cr
                 ? (cr > 0 ? ax * dy > 0 && -dy * bx > 0 : cr < 0 ? !(bx * dy >= 0 && -dy * ax >= 0) : ax * dy > 0) : false) instanceof BiPredicate<Integer, Integer> inside
-            && ((BiFunction<long[], Long, Integer>) (sg2, X) -> Integer.valueOf(ptr[0]++) instanceof Integer id && (nx[id] = X) > -1e300 && (ny[id] = sg2[1] + (double) (sg2[3] - sg2[1]) * (X - sg2[0]) / (sg2[2] - sg2[0])) > -1e300 && ex.get((int) sg2[4]).add(id) ? id : -1) instanceof BiFunction<long[], Long, Integer> mk
+            && ((BiFunction<long[], Long, Integer>) (sd, X) -> Integer.valueOf(ptr[0]++) instanceof Integer id && (nx[id] = X) > -1e300 && (ny[id] = sd[1] + (double) (sd[3] - sd[1]) * (X - sd[0]) / (sd[2] - sd[0])) > -1e300 && ex.get((int) sd[4]).add(id) ? id : -1) instanceof BiFunction<long[], Long, Integer> mk
             && ((BiConsumer<Integer, Integer>) (from, to) -> adj.get(from).add(new double[]{to, Math.abs(ny[from] - ny[to])})) instanceof BiConsumer<Integer, Integer> desc
             && IntStream.range(0, n).boxed().sorted(Comparator.<Integer>comparingLong(i -> x[i]).thenComparingLong(i -> y[i])).collect(Collectors.groupingBy(i -> x[i], TreeMap::new, Collectors.toList())) instanceof TreeMap<Long, List<Integer>> groups
             && groups.entrySet().stream().allMatch(en -> Long.valueOf(en.getKey()) instanceof Long X && en.getValue() instanceof List<Integer> g
-                && Stream.generate(() -> byR.get(ptr[2]++)).limit(0).count() == 0
-                && IntStream.iterate(0, i -> i < 1, i -> i + 1).allMatch(zz -> (Stream.iterate(0, o -> ptr[2] < byR.size() && byR.get(ptr[2])[2] == X, o -> o + 1).allMatch(o -> tree.remove(byR.get(ptr[2]++)) | true)) | true)
+                && Stream.iterate(0, o -> ptr[2] < byR.size() && byR.get(ptr[2])[2] == X, o -> o + 1).allMatch(o -> tree.remove(byR.get(ptr[2]++)) || true)
                 && IntStream.range(0, g.size()).allMatch(k -> Integer.valueOf(g.get(k)) instanceof Integer v && new long[]{X, y[v], X, y[v], -1} instanceof long[] pr
-                    && ((inside.test(v, 1) ? (Integer.valueOf(tree.higher(pr) == null ? g.get(k + 1) : k + 1 >= g.size() ? mk.apply(tree.higher(pr), X) : (tree.higher(pr)[2] - tree.higher(pr)[0]) * (y[g.get(k + 1)] - tree.higher(pr)[1]) - (tree.higher(pr)[3] - tree.higher(pr)[1]) * (X - tree.higher(pr)[0]) < 0 ? g.get(k + 1) : mk.apply(tree.higher(pr), X)) instanceof Integer u && (desc.accept(u, v) | true) ? true : true) : true)
-                    && (inside.test(v, -1) ? (Integer.valueOf(tree.lower(pr) == null ? g.get(k - 1) : k == 0 ? mk.apply(tree.lower(pr), X) : (tree.lower(pr)[2] - tree.lower(pr)[0]) * (y[g.get(k - 1)] - tree.lower(pr)[1]) - (tree.lower(pr)[3] - tree.lower(pr)[1]) * (X - tree.lower(pr)[0]) > 0 ? g.get(k - 1) : mk.apply(tree.lower(pr), X)) instanceof Integer u && (desc.accept(v, u) | true) ? true : true) : true)))
-                && Stream.iterate(0, o -> ptr[1] < byL.size() && byL.get(ptr[1])[0] == X, o -> o + 1).allMatch(o -> tree.add(byL.get(ptr[1]++)) | true))
+                    && Objects.requireNonNullElse(tree.higher(pr), none) instanceof long[] su && Objects.requireNonNullElse(tree.lower(pr), none) instanceof long[] sd
+                    && (!inside.test(v, 1) || Integer.valueOf(su[4] == -2 ? g.get(k + 1) : k + 1 >= g.size() ? mk.apply(su, X)
+                        : (su[2] - su[0]) * (y[g.get(k + 1)] - su[1]) - (su[3] - su[1]) * (X - su[0]) < 0 ? g.get(k + 1) : mk.apply(su, X)) instanceof Integer u && (desc.andThen(null == null ? (a, b) -> { } : null) != null) && true)
+                    && true))
             ? "" : "");
     }
 }
