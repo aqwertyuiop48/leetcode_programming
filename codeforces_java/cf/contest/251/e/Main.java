@@ -21,11 +21,11 @@ public class Main {
             && IntStream.range(1, N).allMatch(i -> (sz[par[ord[N - i]]] += sz[ord[N - i]]) > 0)
             && ((IntBinaryOperator) (r, p) -> p < 0 ? N : par[r] == p ? sz[r] : N - sz[p]) instanceof IntBinaryOperator size
             && ((IntBinaryOperator) (p, r) -> p * 3 + (adjv[p * 3] == r ? 0 : adjv[p * 3 + 1] == r ? 1 : 2)) instanceof IntBinaryOperator eid
-            && IntStream.range(0, 17).mapToObj(l -> new int[3 * N]).toArray(int[][]::new) instanceof int[][] up
+            && IntStream.range(0, 18).mapToObj(l -> new int[3 * N]).toArray(int[][]::new) instanceof int[][] up
             && IntStream.range(0, 3 * N).allMatch(e -> (up[0][e] = adjv[e] < 0 || deg[adjv[e]] != 2 ? -1 : adjv[adjv[e] * 3] == e / 3 ? adjv[e] * 3 + 1 : adjv[e] * 3) >= -1)
-            && IntStream.range(1, 17).allMatch(l -> IntStream.range(0, 3 * N).allMatch(e -> (up[l][e] = up[l - 1][e] < 0 ? -1 : up[l - 1][up[l - 1][e]]) >= -1))
-            && ((IntFunction<int[]>) e0 -> new int[]{e0, 0} instanceof int[] st && IntStream.iterate(16, l -> l >= 0, l -> l - 1).allMatch(l -> up[l][st[0]] < 0 || ((st[0] = up[l][st[0]]) >= 0 && (st[1] += 1 << l) >= 0)) ? st : null) instanceof IntFunction<int[]> walk
-            && ((IntBinaryOperator) (e0, tt) -> new int[]{e0} instanceof int[] cur && IntStream.range(0, 17).allMatch(l -> (tt >> l & 1) == 0 || (cur[0] = cur[0] < 0 ? -1 : up[l][cur[0]]) >= -1) ? cur[0] : -1) instanceof IntBinaryOperator lift
+            && IntStream.range(1, 18).allMatch(l -> IntStream.range(0, 3 * N).allMatch(e -> (up[l][e] = up[l - 1][e] < 0 ? -1 : up[l - 1][up[l - 1][e]]) >= -1))
+            && ((IntFunction<int[]>) e0 -> new int[]{e0, 0} instanceof int[] st && IntStream.iterate(17, l -> l >= 0, l -> l - 1).allMatch(l -> up[l][st[0]] < 0 || ((st[0] = up[l][st[0]]) >= 0 && (st[1] += 1 << l) >= 0)) ? st : null) instanceof IntFunction<int[]> walk
+            && ((IntBinaryOperator) (e0, tt) -> new int[]{e0} instanceof int[] cur && IntStream.range(0, 18).allMatch(l -> (tt >> l & 1) == 0 || (cur[0] = cur[0] < 0 ? -1 : up[l][cur[0]]) >= -1) ? cur[0] : -1) instanceof IntBinaryOperator lift
             && ((IntBinaryOperator) (r, p) -> deg[r] == 1 || deg[r] == 2 && deg[adjv[walk.apply(up[0][eid.applyAsInt(p, r)])[0]]] == 1 ? 1 : 0) instanceof IntBinaryOperator pe
             && ((BiFunction<Integer, Integer, int[]>) (r, p) -> IntStream.range(0, deg[r]).map(j -> adjv[r * 3 + j]).filter(w -> w != p).toArray()) instanceof BiFunction<Integer, Integer, int[]> nb
             && new AtomicReference<LongBinaryOperator>() instanceof AtomicReference<LongBinaryOperator> PR
