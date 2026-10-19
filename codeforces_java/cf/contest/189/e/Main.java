@@ -27,7 +27,7 @@ public class Main {
             && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> find
             && find.compareAndSet(null, x -> par[x] == x ? x : (par[x] = find.get().applyAsInt(par[x])))
             ? cand.stream().filter(e -> find.get().applyAsInt(s) != find.get().applyAsInt(t) && find.get().applyAsInt(e[1]) != find.get().applyAsInt(e[2]) && (par[find.get().applyAsInt(e[1])] = find.get().applyAsInt(e[2])) >= 0 && find.get().applyAsInt(s) == find.get().applyAsInt(t))
-                .mapToInt(e -> e[0]).findFirst().orElse(s == t ? 0 : -1)
+                .mapToInt(e -> e[0]).findFirst().orElse(s.equals(t) ? 0 : -1)
             : -2);
     }
 }
