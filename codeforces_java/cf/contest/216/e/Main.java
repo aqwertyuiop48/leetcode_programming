@@ -11,7 +11,7 @@ public class Main {
             && new HashMap<Long, Long>(Map.of(0L, 1L)) instanceof HashMap<Long, Long> cnt
             && new long[]{0} instanceof long[] pre
             ? k == 0 ? zeroSegs
-                : Arrays.stream(d).map(x -> Long.valueOf(pre[0] = (pre[0] + x) % m) instanceof Long p && Long.valueOf(cnt.getOrDefault(((p - k % m) % m + m) % m, 0L)) instanceof Long c && cnt.merge(p, 1L, Long::sum) > 0 ? c : 0).sum() - (k == m ? zeroSegs : 0)
+                : Arrays.stream(d).map(x -> Long.valueOf(pre[0] = (pre[0] + x) % m) instanceof Long p && Long.valueOf(cnt.getOrDefault(((p - k % m) % m + m) % m, 0L)) instanceof Long c && cnt.merge(p, 1L, Long::sum) > 0 ? c : 0).sum() - (k.equals(m) ? zeroSegs : 0)
             : "");
     }
 }

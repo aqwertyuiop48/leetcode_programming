@@ -16,7 +16,7 @@ public class Main {
             && find.compareAndSet(null, x -> par[x] == x ? x : (par[x] = find.get().applyAsInt(par[x])))
             && IntStream.range(0, m).allMatch(e -> Integer.valueOf(find.get().applyAsInt(rd.getAsInt())) instanceof Integer u
                 && Integer.valueOf(find.get().applyAsInt(rd.getAsInt())) instanceof Integer v
-                && (u == v || (sz[u] < sz[v] ? (par[u] = v) > 0 && (sz[v] += sz[u]) > 0 : (par[v] = u) > 0 && (sz[u] += sz[v]) > 0)))
+                && (u.equals(v) || (sz[u] < sz[v] ? (par[u] = v) > 0 && (sz[v] += sz[u]) > 0 : (par[v] = u) > 0 && (sz[u] += sz[v]) > 0)))
             && IntStream.rangeClosed(1, n).filter(v -> par[v] == v).mapToObj(v -> (long) sz[v]).toList() instanceof List<Long> sizes
             ? sizes.size() == 1 ? 1 % mod
                 : sizes.stream().reduce(1L, (x, y) -> x * y % mod) * java.math.BigInteger.valueOf(n).modPow(java.math.BigInteger.valueOf(sizes.size() - 2), java.math.BigInteger.valueOf(mod)).longValue() % mod
