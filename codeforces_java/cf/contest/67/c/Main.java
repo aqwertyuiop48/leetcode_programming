@@ -2,26 +2,36 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s ->
-            Optional.of(IntStream.generate(s::nextInt).limit(4).toArray()).ifPresent(c ->
-            Optional.of(s.next()).ifPresent(a ->
-            Optional.of(s.next()).ifPresent(b ->
-            Optional.of(new int[a.length() + 1][b.length() + 1]).ifPresent(d ->
-            Optional.of(new int[128]).ifPresent(da ->
-            Optional.of(new int[]{0}).ifPresent(db ->
-                System.out.print(IntStream.rangeClosed(1, a.length()).allMatch(i -> (d[i][0] = i * c[1]) >= 0)
-                    && IntStream.rangeClosed(1, b.length()).allMatch(j -> (d[0][j] = j * c[0]) >= 0)
-                    && IntStream.rangeClosed(1, a.length()).allMatch(i -> (db[0] = 0) == 0
-                        && IntStream.rangeClosed(1, b.length()).allMatch(j ->
-                            (d[i][j] = Math.min(Math.min(d[i - 1][j - 1] + (a.charAt(i - 1) == b.charAt(j - 1) ? 0 : c[2]), d[i][j - 1] + c[0]), Math.min(d[i - 1][j] + c[1],
-                                da[b.charAt(j - 1)] > 0 && db[0] > 0 ? d[da[b.charAt(j - 1)] - 1][db[0] - 1] + (i - da[b.charAt(j - 1)] - 1) * c[1] + c[3] + (j - db[0] - 1) * c[0] : Integer.MAX_VALUE / 2))) >= 0
-                            & (db[0] = a.charAt(i - 1) == b.charAt(j - 1) ? j : db[0]) >= 0)
-                        && (da[a.charAt(i - 1)] = i) > 0)
-                    ? d[a.length()][b.length()] : -1))))))));
+    public static void main(String[] args) throws Exception {
+        System.out.println(
+            new String(System.in.readAllBytes()).trim().split("\\s+") instanceof String[] tk
+            && Integer.valueOf(tk[0]) instanceof Integer ti
+            && Integer.valueOf(tk[1]) instanceof Integer td
+            && Integer.valueOf(tk[2]) instanceof Integer tr
+            && Integer.valueOf(tk[3]) instanceof Integer te
+            && tk[4].getBytes() instanceof byte[] ac
+            && tk[5].getBytes() instanceof byte[] bc
+            && Integer.valueOf(ac.length) instanceof Integer n
+            && Integer.valueOf(bc.length) instanceof Integer m
+            && new int[n + 1][m + 1] instanceof int[][] d
+            && IntStream.rangeClosed(1, n).allMatch(i -> (d[i][0] = i * td) >= 0)
+            && IntStream.rangeClosed(1, m).allMatch(j -> (d[0][j] = j * ti) >= 0)
+            && new int[128] instanceof int[] last
+            && new int[1] instanceof int[] col
+            && IntStream.rangeClosed(1, n).allMatch(i ->
+                d[i] instanceof int[] cur
+                && d[i - 1] instanceof int[] prv
+                && (col[0] = 0) == 0
+                && IntStream.rangeClosed(1, m).filter(j ->
+                    (cur[j] = Math.min(
+                        Math.min(prv[j - 1] + (ac[i - 1] == bc[j - 1] ? 0 : tr), cur[j - 1] + ti),
+                        Math.min(prv[j] + td,
+                            last[bc[j - 1]] > 0 && col[0] > 0
+                                ? d[last[bc[j - 1]] - 1][col[0] - 1] + (i - last[bc[j - 1]] - 1) * td + te + (j - col[0] - 1) * ti
+                                : Integer.MAX_VALUE))) < 0
+                    | (col[0] = ac[i - 1] == bc[j - 1] ? j : col[0]) < 0).count() >= 0
+                && (last[ac[i - 1]] = i) > 0)
+            ? d[n][m]
+            : -1);
     }
 }
-
-
-
-

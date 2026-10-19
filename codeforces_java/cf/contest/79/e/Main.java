@@ -3,50 +3,64 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(sc ->
-            System.out.println(
-                Long.valueOf(sc.nextLong()) instanceof Long n
-                && Long.valueOf(sc.nextLong()) instanceof Long t
-                && Long.valueOf(sc.nextLong()) instanceof Long a
-                && Long.valueOf(sc.nextLong()) instanceof Long b
-                && Long.valueOf(sc.nextLong() - 1) instanceof Long L
-                && new long[]{a, a + L, a, a + L} instanceof long[] U
-                && new long[]{b, b, b + L, b + L} instanceof long[] V
-                && ((LongBinaryOperator) (u, v) -> (u - 1) * u / 2 + (n - u) * (n - u + 1) / 2 + (v - 1) * v / 2 + (n - v) * (n - v + 1) / 2
-                    + (n - u) * n - (u - 1) + v * (u - 1) - v * (n - u) - (u - 1) - (v - 1)) instanceof LongBinaryOperator cs
-                && IntStream.range(0, 4).mapToLong(k -> Math.floorDiv(t - cs.applyAsLong(U[k], V[k]), 2)).toArray() instanceof long[] cap
-                && ((Function<long[], long[]>) in -> LongStream.range(0, 4).map(k -> in[(int) k + 2] + (in[0] < U[(int) k] ? Math.max(0, in[1] - V[(int) k]) : Math.max(0, V[(int) k] - in[1]))).toArray() instanceof long[] A
-                    && Long.valueOf(Math.max(0, a - 1 - in[0])) instanceof Long nA
-                    && Long.valueOf(Math.max(0, a + L - 1 - Math.max(in[0], a - 1))) instanceof Long nM
-                    && Long.valueOf(Math.max(0, in[1] - b)) instanceof Long r
-                    && Long.valueOf(Math.max(0, in[1] - b - L)) instanceof Long s
-                    && Long.valueOf(A[1] + nA * r) instanceof Long brb
-                    && Long.valueOf(A[2] + nA * s) instanceof Long tlb
-                    ? new long[]{A[0] + nA * r - cap[0], brb + nM * (Math.max(in[1], b) - b) - cap[1], tlb - cap[2], brb + tlb + nM * L - cap[1] - cap[2], A[3] + (nA + nM) * s - cap[3]}
-                    : null) instanceof Function<long[], long[]> G
-                && Stream.iterate(new long[]{1, 1, 0, 0, 0, 0}, st -> st[0] <= n, st -> Long.valueOf(IntStream.range(0, 20).boxed()
-                    .reduce(new long[]{st[1], n}, (rg, i) -> rg[0] < rg[1]
-                        ? (G.apply(new long[]{st[0], (rg[0] + rg[1]) / 2, st[2], st[3], st[4], st[5]}) instanceof long[] g0
-                            && G.apply(new long[]{st[0], (rg[0] + rg[1]) / 2 + 1, st[2], st[3], st[4], st[5]}) instanceof long[] g1
-                            && IntStream.range(0, 5).anyMatch(k -> g0[k] > 0 && g1[k] < g0[k])
-                            ? new long[]{(rg[0] + rg[1]) / 2 + 1, rg[1]}
-                            : new long[]{rg[0], (rg[0] + rg[1]) / 2})
-                        : rg, (p, q) -> p)[0]) instanceof Long y
-                    ? new long[]{st[0] + 1, y,
-                        st[2] + (st[0] < U[0] ? Math.max(0, y - V[0]) : Math.max(0, V[0] - y)),
-                        st[3] + (st[0] < U[1] ? Math.max(0, y - V[1]) : Math.max(0, V[1] - y)),
-                        st[4] + (st[0] < U[2] ? Math.max(0, y - V[2]) : Math.max(0, V[2] - y)),
-                        st[5] + (st[0] < U[3] ? Math.max(0, y - V[3]) : Math.max(0, V[3] - y))}
-                    : st).toList() instanceof List<long[]> sts
-                ? LongStream.of(G.apply(new long[]{1, sts.get(1)[1], 0, 0, 0, 0})).allMatch(v -> v <= 0)
-                    ? IntStream.range(0, (int) (n - 1)).mapToObj(i -> "U".repeat((int) (sts.get(i + 1)[1] - sts.get(i)[1])) + "R").collect(Collectors.joining())
-                        + "U".repeat((int) (n - sts.get((int) (n - 1))[1]))
-                    : "Impossible"
-                : ""));
+    public static void main(String[] args) throws Exception {
+        System.out.println(
+            Arrays.stream(new String(System.in.readAllBytes()).trim().split("\\s+")).mapToLong(Long::parseLong).toArray() instanceof long[] in
+            && Long.valueOf(in[0]) instanceof Long n
+            && Long.valueOf(in[1]) instanceof Long t
+            && Long.valueOf(in[2]) instanceof Long a
+            && Long.valueOf(in[3]) instanceof Long b
+            && Long.valueOf(in[4] - 1) instanceof Long L
+            && new long[]{a, a + L, a, a + L} instanceof long[] U
+            && new long[]{b, b, b + L, b + L} instanceof long[] V
+            && Long.valueOf(a + b + 2 * L) instanceof Long sX
+            && new long[6] instanceof long[] cand
+            && new long[6] instanceof long[] st
+            && new long[8] instanceof long[] ex
+            && ((LongBinaryOperator) (p, q) -> q < p ? 0 : (p + q) * (q - p + 1) / 2) instanceof LongBinaryOperator S
+            && ((LongBinaryOperator) (c, pk) -> (pk >> 20) > (pk & 1048575) ? 0
+                : (pk >> 20) >= c ? S.applyAsLong((pk >> 20) - c, (pk & 1048575) - c)
+                : (pk & 1048575) <= c ? S.applyAsLong(c - (pk & 1048575), c - (pk >> 20))
+                : S.applyAsLong(0, c - (pk >> 20)) + S.applyAsLong(1, (pk & 1048575) - c)) instanceof LongBinaryOperator A
+            && ((IntToLongFunction) k -> cand[2 + k]
+                + A.applyAsLong(U[k], (cand[0] + 1) << 20 | ex[0]) + (ex[0] - cand[0]) * Math.abs(V[k] - cand[1])
+                + (ex[1] - cand[1]) * Math.abs(U[k] - ex[0]) + A.applyAsLong(V[k], (cand[1] + 1) << 20 | ex[1])) instanceof IntToLongFunction r
+            && ((LongBinaryOperator) (k, s1) -> S.applyAsLong(s1 + 1, 2 * n) - (2 * n - s1) * (U[(int) k] + V[(int) k])) instanceof LongBinaryOperator tail
+            && ((BooleanSupplier) () ->
+                (ex[0] = cand[0] > a + L ? cand[0] : cand[1] > b + L ? Math.max(cand[0], a + L) : Math.max(cand[0], a)) > 0
+                && (ex[1] = cand[0] > a + L ? Math.max(cand[1], b + L) : cand[1] > b + L ? cand[1] : Math.max(cand[1], b)) > 0
+                && (cand[0] > a + L || cand[1] > b + L
+                    ? r.applyAsLong(0) + tail.applyAsLong(0, ex[0] + ex[1]) <= t
+                        && r.applyAsLong(1) + tail.applyAsLong(1, ex[0] + ex[1]) <= t
+                        && r.applyAsLong(2) + tail.applyAsLong(2, ex[0] + ex[1]) <= t
+                        && r.applyAsLong(3) + tail.applyAsLong(3, ex[0] + ex[1]) <= t
+                    : r.applyAsLong(0) + tail.applyAsLong(0, ex[0] + ex[1]) <= t
+                        && r.applyAsLong(3) + (sX - ex[0] - ex[1]) * sX - S.applyAsLong(ex[0] + ex[1] + 1, sX) + tail.applyAsLong(3, sX) <= t
+                        && (ex[2] = a + L - ex[0]) >= 0
+                        && (ex[3] = b + L - ex[1]) >= 0
+                        && (ex[4] = ex[2] * (ex[1] - b) - ex[2] * (ex[0] - a + 1 + L) / 2 - ex[3] * (ex[3] - 1) / 2) > Long.MIN_VALUE
+                        && Math.max(0, -Math.floorDiv(t - (r.applyAsLong(2) + tail.applyAsLong(2, sX) + (ex[2] + ex[3]) * L - ex[4]), 2))
+                            <= Math.min(ex[2] * ex[3], Math.floorDiv(t - (r.applyAsLong(1) + tail.applyAsLong(1, sX) + (ex[2] + ex[3]) * L + ex[4]), 2)))) instanceof BooleanSupplier ok
+            && (cand[0] = 1) > 0 && (cand[1] = 1) > 0 && (st[0] = 1) > 0 && (st[1] = 1) > 0
+            && new byte[(int) (2 * n - 2)] instanceof byte[] out
+            ? ok.getAsBoolean()
+                ? IntStream.range(0, (int) (2 * n - 2)).filter(i ->
+                    (cand[0] = st[0] + 1) > 0 && (cand[1] = st[1]) > 0
+                    && (cand[2] = st[2] + Math.abs(U[0] - cand[0]) + Math.abs(V[0] - cand[1])) >= 0
+                    && (cand[3] = st[3] + Math.abs(U[1] - cand[0]) + Math.abs(V[1] - cand[1])) >= 0
+                    && (cand[4] = st[4] + Math.abs(U[2] - cand[0]) + Math.abs(V[2] - cand[1])) >= 0
+                    && (cand[5] = st[5] + Math.abs(U[3] - cand[0]) + Math.abs(V[3] - cand[1])) >= 0
+                    && Boolean.valueOf(st[0] < n && (st[1] == n || ok.getAsBoolean())) instanceof Boolean goR
+                    && (out[i] = (byte) (goR ? 'R' : 'U')) > 0
+                    && (goR || (cand[0] = st[0]) > 0 && (cand[1] = st[1] + 1) > 0
+                        && (cand[2] = st[2] + Math.abs(U[0] - cand[0]) + Math.abs(V[0] - cand[1])) >= 0
+                        && (cand[3] = st[3] + Math.abs(U[1] - cand[0]) + Math.abs(V[1] - cand[1])) >= 0
+                        && (cand[4] = st[4] + Math.abs(U[2] - cand[0]) + Math.abs(V[2] - cand[1])) >= 0
+                        && (cand[5] = st[5] + Math.abs(U[3] - cand[0]) + Math.abs(V[3] - cand[1])) >= 0)
+                    && (st[0] = cand[0]) > 0 && (st[1] = cand[1]) > 0 && (st[2] = cand[2]) >= 0
+                    && (st[3] = cand[3]) >= 0 && (st[4] = cand[4]) >= 0 && (st[5] = cand[5]) >= 0).count() >= 0
+                    ? new String(out) : ""
+                : "Impossible"
+            : "");
     }
 }
-
-
-
-

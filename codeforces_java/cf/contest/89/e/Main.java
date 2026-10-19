@@ -1,31 +1,40 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s -> System.out.println(
-            (Integer) s.nextInt() instanceof Integer n
-            && IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : s.nextInt()).toArray() instanceof int[] a
-            && (Integer) IntStream.rangeClosed(1, n).filter(i -> a[i] > 0).max().getAsInt() instanceof Integer M
-            && ((IntFunction<int[]>) e -> IntStream.rangeClosed(0, M + 1).map(i -> i == 0 || i == M + 1 ? 0 : Math.max(1, a[i] + (i <= e ? 1 : 0))).toArray()) instanceof IntFunction<int[]> mk
-            && ((IntUnaryOperator) e -> mk.apply(e) instanceof int[] r
-                ? 3 * IntStream.rangeClosed(1, M).map(i -> r[i]).sum() - e + 2 * IntStream.rangeClosed(1, M).map(i -> Math.max(0, r[i] - r[i + 1])).sum()
-                : 0) instanceof IntUnaryOperator cost
-            && IntStream.rangeClosed(0, M).boxed().min(Comparator.comparingInt(cost::applyAsInt)).get() instanceof Integer e
-            && mk.apply(e) instanceof int[] R
-            && new AtomicReference<BiFunction<Integer, Integer, String>>() instanceof AtomicReference<BiFunction<Integer, Integer, String>> lp
-            && lp.getAndSet((x, t) -> (Integer) IntStream.rangeClosed(x + 1, M).takeWhile(i -> R[i] >= t).max().getAsInt() instanceof Integer f
-                ? (R[x + 1] > t ? lp.get().apply(x, t + 1) : "")
-                    + IntStream.range(x, f).mapToObj(p -> (p > x && R[p + 1] > R[p] ? lp.get().apply(p, R[p] + 1) : "") + "AR").collect(Collectors.joining())
-                    + "A" + "L".repeat(f - (x == 0 && t == 1 ? e : x)) + "A"
-                : "") == null
-            ? lp.get().apply(0, 1)
-            : ""));
+    public static void main(String[] args) throws Exception {
+        System.out.println(
+            Arrays.stream(new String(System.in.readAllBytes()).trim().split("\\s+")).mapToInt(Integer::parseInt).toArray() instanceof int[] tk
+            && (Integer) tk[0] instanceof Integer n
+            && IntStream.rangeClosed(0, n + 2).map(i -> i >= 1 && i <= n ? tk[i] : 0).toArray() instanceof int[] a
+            && (Integer) IntStream.rangeClosed(1, n).filter(i -> a[i] > 0).max().getAsInt() instanceof Integer top
+            && ((IntFunction<int[]>) q -> IntStream.rangeClosed(0, top + 2).map(i -> i == 0 || i > top ? 0 : i <= q ? a[i] : Math.max(a[i], 1)).toArray()) instanceof IntFunction<int[]> mk
+            && ((IntUnaryOperator) q -> mk.apply(q) instanceof int[] w
+                ? 3 * IntStream.of(w).sum() + 2 * IntStream.rangeClosed(1, top).map(j -> Math.max(0, w[j] - w[j + 1])).sum() + 2 * q
+                : 0) instanceof IntUnaryOperator price
+            && (Integer) (int) (IntStream.rangeClosed(0, top).mapToLong(q -> (long) price.applyAsInt(q) * 2048 + q).min().getAsLong() % 2048) instanceof Integer e
+            && mk.apply(e) instanceof int[] c
+            && IntStream.rangeClosed(0, top + 1).map(j -> Math.max(c[j], c[j + 1])).toArray() instanceof int[] d
+            && (Integer) (2 * IntStream.of(d).sum() + e) instanceof Integer steps
+            && new int[top + 3] instanceof int[] rem
+            && new int[top + 3] instanceof int[] cnt
+            && new int[4] instanceof int[] st
+            && new byte[2 * steps + 4] instanceof byte[] buf
+            && (rem[0] = d[0]) >= 0
+            && IntStream.range(0, steps).allMatch(k ->
+                (Integer) st[0] instanceof Integer x
+                && (Integer) (rem[x] > 0 ? 1 : x == st[1] && x < e ? 2 : 0) instanceof Integer kind
+                && (kind == 0
+                    ? (st[3] != 1 || --st[2] >= 0) && (buf[st[2]++] = 'L') > 0 && (st[3] = 2) > 0 && --st[0] >= 0
+                    : (kind == 2
+                        ? st[1]++ >= 0 && (rem[x + 1] = c[x + 1] == 0 ? d[x + 1] : 0) >= 0
+                        : rem[x]-- >= 0 && (Integer) cnt[x]++ instanceof Integer idx
+                            && (rem[x + 1] = idx < c[x + 1] ? 1 + (idx == 0 ? d[x + 1] - c[x + 1] : 0) : 0) >= 0)
+                    && (st[3] != 2 || (buf[st[2] - 1] = 'A') > 0)
+                    && (buf[st[2]++] = 'A') > 0 && (buf[st[2]++] = 'R') > 0 && (st[3] = 1) > 0 && ++st[0] > 0))
+            && (buf[st[2] - 1] = 'A') > 0
+            ? new String(buf, 0, st[2])
+            : "");
     }
 }
-
-
-
-

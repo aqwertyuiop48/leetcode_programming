@@ -3,28 +3,41 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s -> Optional.of(s.nextLong()).ifPresent(n -> Optional.of(s.nextInt()).ifPresent(k ->
-            System.out.println(
-                new boolean[409 * 409] instanceof boolean[] vis
-                && IntStream.range(0, k).allMatch(i -> (vis[(s.nextInt() + 204) * 409 + s.nextInt() + 204] = true))
-                && (vis[204 * 409 + 204] = true)
-                && IntStream.range(0, 8).map(mv -> new int[]{1, 1, -1, -1, 2, 2, -2, -2}[mv] * 409 + new int[]{2, -2, 2, -2, 1, -1, 1, -1}[mv]).toArray() instanceof int[] off
-                && new long[101] instanceof long[] cnt
-                && (cnt[0] = 1) == 1
-                && new int[1][] instanceof int[][] fr
-                && (fr[0] = new int[]{204 * 409 + 204}) != null
-                && IntStream.rangeClosed(1, 100).allMatch(t ->
-                    (fr[0] = IntStream.of(fr[0]).flatMap(c -> IntStream.of(off).map(o -> c + o)).filter(c2 -> !vis[c2] && (vis[c2] = true)).toArray()) != null
-                    && (cnt[t] = cnt[t - 1] + fr[0].length) > 0)
-                ? (n <= 100
-                    ? BigInteger.valueOf(cnt[(int) (long) n])
-                    : BigInteger.valueOf(cnt[100]).add(BigInteger.valueOf(n - 100).multiply(BigInteger.valueOf(cnt[100] - cnt[99])))
-                        .add(BigInteger.valueOf((cnt[100] - cnt[99]) - (cnt[99] - cnt[98])).multiply(BigInteger.valueOf(n - 100)).multiply(BigInteger.valueOf(n - 99)).shiftRight(1)))
-                : BigInteger.ZERO))));
+    public static void main(String[] args) throws Exception {
+        System.out.println(
+            System.in.readAllBytes() instanceof byte[] raw
+            && new long[raw.length / 2 + 8] instanceof long[] g
+            && new long[4] instanceof long[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : i < raw.length && raw[i] == '-' ? (ps[3] = 1) > 0
+                    : (ps[2] != 1 || ((g[(int) ps[1]++] = ps[3] == 1 ? -ps[0] : ps[0]) != Long.MIN_VALUE && (ps[0] = ps[3] = ps[2] = 0) == 0)))
+            && Integer.valueOf(200) instanceof Integer S
+            && Integer.valueOf(2 * S + 20) instanceof Integer O
+            && Integer.valueOf(2 * O + 1) instanceof Integer W
+            && new int[W * W] instanceof int[] dist
+            && IntStream.range(0, W * W).allMatch(i -> (dist[i] = -1) < 0)
+            && IntStream.range(0, (int) g[1]).allMatch(e -> (dist[(int) (g[2 + 2 * e] + O) * W + (int) g[3 + 2 * e] + O] = -2) < 0)
+            && IntStream.range(0, 8).map(m -> new int[]{1, 1, -1, -1, 2, 2, -2, -2}[m] * W + new int[]{2, -2, 2, -2, 1, -1, 1, -1}[m]).toArray() instanceof int[] off
+            && new int[W * W] instanceof int[] q
+            && new int[]{1} instanceof int[] tail
+            && new long[S + 1] instanceof long[] cnt
+            && (cnt[0] = 1) == 1
+            && (dist[O * W + O] = 0) == 0
+            && (q[0] = O * W + O) > 0
+            && (IntStream.range(0, 8 * W * W).allMatch(i ->
+                (i >> 3) < tail[0]
+                && (dist[q[i >> 3]] >= S
+                    || dist[q[i >> 3] + off[i & 7]] != -1
+                    || ((dist[q[i >> 3] + off[i & 7]] = dist[q[i >> 3]] + 1) > 0
+                        && (q[tail[0]++] = q[i >> 3] + off[i & 7]) > 0
+                        && ++cnt[dist[q[i >> 3] + off[i & 7]]] > 0))) || true)
+            && IntStream.rangeClosed(1, S).allMatch(t -> (cnt[t] += cnt[t - 1]) > 0)
+            ? (g[0] <= S
+                ? BigInteger.valueOf(cnt[(int) g[0]])
+                : BigInteger.valueOf(cnt[S]).add(BigInteger.valueOf(g[0] - S).multiply(BigInteger.valueOf(cnt[S] - cnt[S - 1])))
+                    .add(BigInteger.valueOf((cnt[S] - cnt[S - 1]) - (cnt[S - 1] - cnt[S - 2])).multiply(BigInteger.valueOf(g[0] - S)).multiply(BigInteger.valueOf(g[0] - S + 1)).shiftRight(1))).mod(BigInteger.valueOf(1000000007))
+            : BigInteger.ZERO);
     }
 }
-
-
-
-

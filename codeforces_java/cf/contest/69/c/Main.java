@@ -3,21 +3,27 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new BufferedReader(new InputStreamReader(System.in)).lines().map(String::trim).filter(l -> !l.isEmpty()).toList()).ifPresent(L ->
-            Optional.of(Arrays.stream(L.get(0).split(" ")).mapToInt(Integer::parseInt).toArray()).ifPresent(h ->
-            Optional.of(IntStream.range(0, h[2]).mapToObj(i -> L.get(1 + h[1] + i)).map(l -> Map.entry(l.substring(0, l.indexOf(':')), Arrays.stream(l.substring(l.indexOf(':') + 1).split(",")).map(String::trim).collect(Collectors.toMap(p -> p.split(" ")[0], p -> Integer.parseInt(p.split(" ")[1]))))).toList()).ifPresent(rec ->
-            Optional.of(IntStream.range(0, h[0]).mapToObj(i -> new TreeMap<String, Integer>()).toList()).ifPresent(inv ->
-                System.out.print(IntStream.range(0, h[3]).mapToObj(i -> L.get(1 + h[1] + h[2] + i).split(" ")).allMatch(p ->
-                    inv.get(Integer.parseInt(p[0]) - 1).merge(p[1], 1, Integer::sum) > 0
-                    && rec.stream().filter(r -> r.getValue().entrySet().stream().allMatch(e -> inv.get(Integer.parseInt(p[0]) - 1).getOrDefault(e.getKey(), 0) >= e.getValue())).findFirst().map(r ->
-                        (r.getValue().entrySet().stream().allMatch(e -> inv.get(Integer.parseInt(p[0]) - 1).merge(e.getKey(), -e.getValue(), Integer::sum) >= 0)
-                        & inv.get(Integer.parseInt(p[0]) - 1).values().removeIf(c -> c == 0)
-                        & inv.get(Integer.parseInt(p[0]) - 1).merge(r.getKey(), 1, Integer::sum) > 0 | true)).orElse(true))
-                    ? inv.stream().map(m -> m.size() + "\n" + m.entrySet().stream().map(e -> e.getKey() + " " + e.getValue()).collect(Collectors.joining("\n"))).collect(Collectors.joining("\n")) : "")))));
+    public static void main(String[] args) throws Exception {
+        System.out.print(
+            new String(System.in.readAllBytes()).lines().map(String::trim).filter(t -> !t.isEmpty()).toList() instanceof List<String> L
+            && Arrays.stream(L.get(0).split("\\s+")).mapToInt(Integer::parseInt).toArray() instanceof int[] h
+            && IntStream.range(0, h[2]).mapToObj(i -> L.get(1 + h[1] + i)).toList() instanceof List<String> rl
+            && rl.stream().map(t -> t.substring(0, t.indexOf(':')).trim()).toList() instanceof List<String> rn
+            && rl.stream().map(t -> Arrays.stream(t.substring(t.indexOf(':') + 1).split(","))
+                .map(String::trim).map(w -> w.split("\\s+"))
+                .collect(Collectors.toMap(w -> w[0], w -> Integer.parseInt(w[1])))).toList() instanceof List<Map<String, Integer>> rc
+            && IntStream.range(0, h[0]).mapToObj(i -> new TreeMap<String, Integer>()).toList() instanceof List<TreeMap<String, Integer>> inv
+            && IntStream.range(0, h[3]).mapToObj(i -> L.get(1 + h[1] + h[2] + i).split("\\s+")).allMatch(w ->
+                inv.get(Integer.parseInt(w[0]) - 1) instanceof TreeMap<String, Integer> bag
+                && bag.merge(w[1], 1, Integer::sum) > 0
+                && IntStream.range(0, h[2])
+                    .filter(r -> rc.get(r).entrySet().stream().allMatch(e -> bag.getOrDefault(e.getKey(), 0) >= e.getValue()))
+                    .limit(1)
+                    .allMatch(r ->
+                        rc.get(r).entrySet().stream().allMatch(e -> bag.merge(e.getKey(), -e.getValue(), Integer::sum) >= 0)
+                        && (bag.values().removeIf(c -> c == 0) || true)
+                        && bag.merge(rn.get(r), 1, Integer::sum) > 0))
+            ? inv.stream().map(bag -> bag.size() + "\n" + bag.entrySet().stream().map(e -> e.getKey() + " " + e.getValue() + "\n").collect(Collectors.joining())).collect(Collectors.joining())
+            : "");
     }
 }
-
-
-
-

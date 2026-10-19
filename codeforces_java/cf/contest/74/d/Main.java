@@ -1,53 +1,68 @@
+import java.io.*;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Optional.of(new Scanner(System.in)).ifPresent(s ->
-            System.out.println(
-                Long.valueOf(s.nextLong()) instanceof Long n
-                && Integer.valueOf(s.nextInt()) instanceof Integer q
-                && new TreeSet<Long>() instanceof TreeSet<Long> occ
-                && new TreeSet<long[]>(Comparator.<long[]>comparingLong(g -> -((g[1] - g[0]) / 2)).thenComparingLong(g -> -(g[0] + (g[1] - g[0] + 1) / 2))) instanceof TreeSet<long[]> gaps
-                && gaps.add(new long[]{0, n + 1})
-                && new HashMap<Integer, Long>() instanceof HashMap<Integer, Long> where
-                && IntStream.range(0, q).mapToObj(i ->
-                    Integer.valueOf(s.nextInt()) instanceof Integer id
-                    ? (id == 0
-                        ? new long[]{0, s.nextLong(), s.nextLong()}
-                        : where.containsKey(id)
-                            ? (Long.valueOf(where.remove(id)) instanceof Long p
-                                && Long.valueOf(occ.lower(p) == null ? 0L : occ.lower(p)) instanceof Long l
-                                && Long.valueOf(occ.higher(p) == null ? n + 1 : occ.higher(p)) instanceof Long r
+    public static void main(String[] args) throws Exception {
+        System.out.print(
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 8] instanceof int[] g0
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && Integer.valueOf(g0[0]) instanceof Integer n
+            && Integer.valueOf(g0[1]) instanceof Integer q
+            && new int[q] instanceof int[] typ
+            && new int[q] instanceof int[] pa
+            && new int[q] instanceof int[] pb
+            && new TreeSet<Long>() instanceof TreeSet<Long> gaps
+            && gaps.add((long) n << 31)
+            && new TreeSet<Integer>() instanceof TreeSet<Integer> occ
+            && new HashMap<Integer, Integer>() instanceof HashMap<Integer, Integer> where
+            && new int[]{2} instanceof int[] ptr
+            && IntStream.range(0, q).allMatch(i ->
+                g0[ptr[0]] == 0
+                    ? (typ[i] = 0) == 0 && (pa[i] = g0[ptr[0] + 1]) >= 0 && (pb[i] = g0[ptr[0] + 2]) >= 0 && (ptr[0] += 3) > 0
+                    : (Integer) g0[ptr[0]++] instanceof Integer id
+                        && (where.containsKey(id)
+                            ? (Integer) where.remove(id) instanceof Integer p
+                                && (Integer) (occ.lower(p) == null ? 0 : occ.lower(p)) instanceof Integer lo
+                                && (Integer) (occ.higher(p) == null ? n + 1 : occ.higher(p)) instanceof Integer hi
                                 && occ.remove(p)
-                                && (gaps.remove(new long[]{l, p}) || true)
-                                && (gaps.remove(new long[]{p, r}) || true)
-                                && gaps.add(new long[]{l, r})
-                                ? new long[]{2, p, 0}
-                                : null)
-                            : (gaps.pollFirst() instanceof long[] g
-                                && Long.valueOf(g[0] + (g[1] - g[0] + 1) / 2) instanceof Long p
-                                && occ.add(p)
-                                && where.put(id, p) == null
-                                && Stream.of(new long[]{g[0], p}, new long[]{p, g[1]}).filter(x -> x[1] - x[0] >= 2).allMatch(gaps::add)
-                                ? new long[]{1, p, 0}
-                                : null))
-                    : null).toList() instanceof List<long[]> ev
-                && ev.stream().filter(e -> e[0] != 0).mapToLong(e -> e[1]).sorted().distinct().toArray() instanceof long[] ps
-                && new int[ps.length + 1] instanceof int[] bit
-                && ((IntUnaryOperator) k -> IntStream.iterate(k, v -> v > 0, v -> v - (v & -v)).map(v -> bit[v]).sum()) instanceof IntUnaryOperator pre
-                && ((LongToIntFunction) x -> Integer.valueOf(Arrays.binarySearch(ps, x)) instanceof Integer r ? (r >= 0 ? r + 1 : -r - 1) : 0) instanceof LongToIntFunction le
-                ? ev.stream()
-                    .map(e -> e[0] == 0
-                        ? String.valueOf(pre.applyAsInt(le.applyAsInt(e[2])) - pre.applyAsInt(le.applyAsInt(e[1] - 1)))
-                        : IntStream.iterate(le.applyAsInt(e[1]), v -> v <= ps.length, v -> v + (v & -v)).map(v -> bit[v] += e[0] == 1 ? 1 : -1).sum() == Integer.MIN_VALUE ? "" : null)
-                    .filter(Objects::nonNull)
-                    .collect(Collectors.joining("\n"))
-                : ""));
+                                && (gaps.remove((long) (p - lo - 1) << 31 | lo) || true)
+                                && (gaps.remove((long) (hi - p - 1) << 31 | p) || true)
+                                && gaps.add((long) (hi - lo - 1) << 31 | lo)
+                                && (typ[i] = 2) == 2
+                                && (pa[i] = p) >= 0
+                            : gaps.pollLast() instanceof Long g
+                                && (Integer) (int) (g & 2147483647L) instanceof Integer st
+                                && (Integer) (int) (g >>> 31) instanceof Integer len
+                                && (Integer) (st + 1 + len / 2) instanceof Integer mid
+                                && occ.add(mid)
+                                && where.put(id, mid) == null
+                                && (mid - st - 1 == 0 || gaps.add((long) (mid - st - 1) << 31 | st))
+                                && (st + len - mid == 0 || gaps.add((long) (st + len - mid) << 31 | mid))
+                                && (typ[i] = 1) == 1
+                                && (pa[i] = mid) >= 0))
+            && IntStream.range(0, q).filter(i -> typ[i] != 0).map(i -> pa[i]).sorted().distinct().toArray() instanceof int[] pos
+            && Integer.valueOf(pos.length) instanceof Integer m
+            && new int[m + 1] instanceof int[] bit
+            && new int[3] instanceof int[] reg
+            && ((IntUnaryOperator) x -> (Integer) Arrays.binarySearch(pos, x) instanceof Integer b ? (b >= 0 ? b + 1 : -b - 1) : 0) instanceof IntUnaryOperator le
+            && ((IntUnaryOperator) x ->
+                (reg[0] = x) >= 0 & (reg[1] = 0) == 0
+                & IntStream.range(0, 20).allMatch(z -> reg[0] <= 0 || ((reg[1] += bit[reg[0]]) >= 0 && (reg[0] -= reg[0] & -reg[0]) >= 0))
+                ? reg[1] : -1) instanceof IntUnaryOperator pre
+            && new StringBuilder() instanceof StringBuilder sb
+            && IntStream.range(0, q).allMatch(i ->
+                typ[i] == 0
+                    ? sb.append(pre.applyAsInt(le.applyAsInt(pb[i])) - pre.applyAsInt(le.applyAsInt(pa[i] - 1))).append('\n') != null
+                    : (reg[2] = le.applyAsInt(pa[i])) > 0
+                        && IntStream.range(0, 20).allMatch(z -> reg[2] > m || ((bit[reg[2]] += typ[i] == 1 ? 1 : -1) > Integer.MIN_VALUE && (reg[2] += reg[2] & -reg[2]) > 0)))
+            ? sb.toString()
+            : "");
     }
 }
-
-
-
-
