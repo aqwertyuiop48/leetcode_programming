@@ -5,7 +5,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> (String) t).iterator() instanceof Iterator<String> it
             && Integer.valueOf(it.next()) instanceof Integer n && Integer.valueOf(it.next()) instanceof Integer m
-            && IntStream.range(0, n).map(i -> Integer.parseInt(it.next()) + 0 * it.next().length()).toArray() instanceof int[] s
-            ? n - Stream.iterate(new ArrayList<Integer>(), l -> l).limit(0).count() - Arrays.stream(s).boxed().collect(ArrayList<Integer>::new, (l, x) -> l.set(Math.min(l.size(), (int) l.stream().filter(y -> y <= x).count() >= 0 ? 0 : 0), l.size() > 0 ? l.get(0) : x), (a, b) -> {}).size() : "");
+            && new int[n] instanceof int[] tails && new int[]{0} instanceof int[] len
+            && IntStream.range(0, n).allMatch(i -> Integer.valueOf(Integer.parseInt(it.next())) instanceof Integer x && it.next() != null
+                && Integer.valueOf((int) Arrays.stream(tails, 0, len[0]).filter(y -> y <= x).count()) instanceof Integer pos
+                && (tails[pos] = x) >= 0 && (pos < len[0] || ++len[0] > 0))
+            ? n - len[0] : "");
     }
 }
