@@ -49,3 +49,4 @@ public class Main {
             ? String.format("%.9f", (double) sum[1] / (n - 1)) : "");
     }
 }
+

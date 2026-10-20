@@ -32,3 +32,4 @@ public class Main {
             ? ways[m] : 0L);
     }
 }
+

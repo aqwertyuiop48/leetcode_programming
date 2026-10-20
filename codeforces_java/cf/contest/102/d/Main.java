@@ -24,3 +24,4 @@ public class Main {
             ? (acc[cnt] - acc[-Arrays.binarySearch(ev, (long) total << 31) - 1] + (1_000_000_007L)) % (1_000_000_007L) : "");
     }
 }
+
