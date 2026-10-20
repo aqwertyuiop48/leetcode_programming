@@ -69,6 +69,6 @@ public class Main {
                 ? (st[0] <= d2 || res[cur][0] < 0 ? at.apply(new long[]{sg[cur][2], sg[cur][3], dr[cur], Math.min(st[0], d2)})
                     : Long.valueOf(sg[cur][2] + DX[dr[cur]] * d2) instanceof Long cx && Long.valueOf(sg[cur][3] + DY[dr[cur]] * d2) instanceof Long cy
                         ? at.apply(new long[]{cx, cy, dr[(int) res[cur][0]], st[0] - d2}) : "") : "") instanceof Function<long[], String> stage2
-            ? IntStream.range(0, q).mapToObj(qi -> new long[]{qt[qi], 0} instanceof long[] st && stage1.apply(n + qi, st) instanceof String early ? (early.isEmpty() ? stage2.apply(st) : early) : "").collect(Collectors.joining("\n")) : "");
+            ? IntStream.range(0, q).parallel().mapToObj(qi -> new long[]{qt[qi], 0} instanceof long[] st && stage1.apply(n + qi, st) instanceof String early ? (early.isEmpty() ? stage2.apply(st) : early) : "").collect(Collectors.joining("\n")) : "");
     }
 }
