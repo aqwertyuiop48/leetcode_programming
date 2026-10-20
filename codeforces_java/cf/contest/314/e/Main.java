@@ -10,8 +10,8 @@ public class Main {
             && new int[2][h + 2] instanceof int[][] bufs && (bufs[0][0] = 1) == 1
             ? n % 2 != 0 || f > h ? "0"
                 : IntStream.rangeClosed(1, n).allMatch(i -> bufs[(i - 1) & 1] instanceof int[] x && bufs[i & 1] instanceof int[] y
-                    && (s.charAt(i - 1) != '?' ? (Math.min(i, h) - (i + 1) / 2 > 20000 ? IntStream.rangeClosed((i + 1) / 2, Math.min(i, h)).parallel() : IntStream.rangeClosed((i + 1) / 2, Math.min(i, h))).allMatch(o -> (y[o] = x[o - 1]) * 0 == 0)
-                        : (Math.min(i, h) - (i + 1) / 2 > 20000 ? IntStream.rangeClosed((i + 1) / 2, Math.min(i, h)).parallel() : IntStream.rangeClosed((i + 1) / 2, Math.min(i, h))).allMatch(o -> (y[o] = x[o] + x[o - 1]) * 0 == 0))
+                    && (s.charAt(i - 1) != '?' ? IntStream.rangeClosed((i + 1) / 2, Math.min(i, h)).map(o -> y[o] = x[o - 1]).sum() * 0 == 0
+                        : IntStream.rangeClosed((i + 1) / 2, Math.min(i, h)).map(o -> y[o] = x[o] + x[o - 1]).sum() * 0 == 0)
                     && (y[(i + 1) / 2 - 1] = 0) == 0)
                 ? String.valueOf((bufs[n & 1][h] & 0xFFFFFFFFL) * IntStream.range(0, h - (int) (long) f).mapToLong(z -> 25L).reduce(1L, (p, q) -> p * q & 0xFFFFFFFFL) & 0xFFFFFFFFL) : "" : "");
     }
