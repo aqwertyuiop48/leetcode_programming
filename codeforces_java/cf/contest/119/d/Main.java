@@ -15,17 +15,23 @@ public class Main {
             && new int[2 * n + 1] instanceof int[] z
             && new int[2 * n + 1] instanceof int[] pi
             && new int[2] instanceof int[] lr
-            && IntStream.range(1, 2 * n + 1).allMatch(i ->
-                (Integer) (i < lr[1] ? Math.min(lr[1] - i, z[i - lr[0]]) : 0) instanceof Integer z0
-                && (z[i] = z0 + (int) IntStream.iterate(z0, x -> i + x < s1.length && s1[x] == s1[i + x], x -> x + 1).count()) >= 0
-                && (i + z[i] <= lr[1] || ((lr[0] = i) >= 0 && (lr[1] = i + z[i]) >= 0)))
-            && IntStream.range(1, 2 * n + 1).allMatch(i ->
-                (Integer) IntStream.iterate(pi[i - 1], x -> x > 0 && s2[x] != s2[i], x -> pi[x - 1]).map(x -> pi[x - 1]).reduce((p, q) -> q).orElse(pi[i - 1]) instanceof Integer k
-                && (pi[i] = k + (s2[k] == s2[i] ? 1 : 0)) >= 0)
-            && (Integer) (int) IntStream.range(0, n).takeWhile(t -> a[t] == b[n - 1 - t]).count() instanceof Integer L
+            && LongStream.iterate(1L << 32, st -> (st >>> 32) < s1.length, st ->
+                (st >>> 32) + (int) st < s1.length && s1[(int) st] == s1[(int) (st >>> 32) + (int) st]
+                    ? st + 1
+                    : (z[(int) (st >>> 32)] = (int) st) >= 0
+                        && ((int) (st >>> 32) + (int) st <= lr[1] || ((lr[0] = (int) (st >>> 32)) >= 0 && (lr[1] = (int) (st >>> 32) + (int) st) >= 0))
+                        ? (((st >>> 32) + 1) << 32) | ((st >>> 32) + 1 < lr[1] ? Math.min(lr[1] - (int) (st >>> 32) - 1, z[(int) (st >>> 32) + 1 - lr[0]]) : 0)
+                        : 0L).count() >= 0
+            && LongStream.iterate(1L << 32, st -> (st >>> 32) < s2.length, st ->
+                (int) st > 0 && s2[(int) st] != s2[(int) (st >>> 32)]
+                    ? ((st >>> 32) << 32) | pi[(int) st - 1]
+                    : (pi[(int) (st >>> 32)] = (int) st + (s2[(int) st] == s2[(int) (st >>> 32)] ? 1 : 0)) >= 0
+                        ? (((st >>> 32) + 1) << 32) | pi[(int) (st >>> 32)]
+                        : 0L).count() >= 0
+            && Integer.valueOf((int) IntStream.range(0, n).takeWhile(t -> a[t] == b[n - 1 - t]).count()) instanceof Integer L
             ? IntStream.iterate(Math.min(L - 1, n - 2), i -> i >= 0, i -> i - 1)
-                .filter(i -> pi[n + 1 + n - i - 2] >= 1 && z[n + 2 + i] >= n - i - 1 - pi[n + 1 + n - i - 2])
-                .mapToObj(i -> i + " " + (n - pi[n + 1 + n - i - 2])).findFirst().orElse("-1 -1")
+                .filter(i -> pi[2 * n - i - 1] >= 1 && z[n + 2 + i] >= n - i - 1 - pi[2 * n - i - 1])
+                .mapToObj(i -> i + " " + (n - pi[2 * n - i - 1])).findFirst().orElse("-1 -1")
             : "-1 -1");
     }
 }
