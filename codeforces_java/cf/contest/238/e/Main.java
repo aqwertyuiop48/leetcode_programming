@@ -1,27 +1,51 @@
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.IntUnaryOperator;
+import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(new String(System.in.readAllBytes()).trim().split("\\s+") instanceof String[] tk
-            && Arrays.stream(tk).mapToInt(Integer::parseInt).toArray() instanceof int[] in
-            && Integer.valueOf(in[0]) instanceof Integer n && Integer.valueOf(in[1]) instanceof Integer m && Integer.valueOf(in[2]) instanceof Integer a && Integer.valueOf(in[3]) instanceof Integer b
-            && new int[n + 1][n + 1] instanceof int[][] d && new boolean[n + 1][n + 1] instanceof boolean[][] adj
-            && IntStream.rangeClosed(1, n).allMatch(i -> IntStream.rangeClosed(1, n).allMatch(j -> (d[i][j] = i == j ? 0 : 1000000) >= 0))
-            && IntStream.range(0, m).allMatch(i -> (adj[in[4 + 2 * i]][in[5 + 2 * i]] = true) && (d[in[4 + 2 * i]][in[5 + 2 * i]] = Math.min(d[in[4 + 2 * i]][in[5 + 2 * i]], 1)) >= 0)
-            && IntStream.rangeClosed(1, n).allMatch(k -> IntStream.rangeClosed(1, n).allMatch(i -> IntStream.rangeClosed(1, n).allMatch(j -> d[i][k] + d[k][j] >= d[i][j] || (d[i][j] = d[i][k] + d[k][j]) > 0)))
-            && Integer.valueOf(in[4 + 2 * m]) instanceof Integer kk
-            && IntStream.range(0, kk).filter(i -> d[in[5 + 2 * m + 2 * i]][in[6 + 2 * m + 2 * i]] < 1000000).mapToObj(i -> Integer.valueOf(in[5 + 2 * m + 2 * i]) instanceof Integer s && Integer.valueOf(in[6 + 2 * m + 2 * i]) instanceof Integer t
-                ? IntStream.concat(IntStream.of(t), IntStream.rangeClosed(1, n).filter(v -> d[s][v] + d[v][t] == d[s][t]).boxed().sorted(Comparator.comparingInt((Integer v) -> d[v][t])).mapToInt(v -> IntStream.rangeClosed(1, n).filter(u -> d[s][u] + d[u][t] == d[s][t] && d[s][u] == d[s][v]).count() == 1 ? v : -v)).toArray() : null).toList() instanceof List<int[]> buses
-            && new int[n + 1] instanceof int[] dp && IntStream.rangeClosed(1, n).allMatch(v -> (dp[v] = v == b ? 0 : 100000000) >= 0)
-            && new boolean[]{true} instanceof boolean[] ch
-            && IntStream.iterate(0, z -> ch[0], z -> z + 1).allMatch(z -> !(ch[0] = false) && buses.stream().allMatch(bus -> new int[n + 1] instanceof int[] g
-                && IntStream.range(1, bus.length).allMatch(j -> Integer.valueOf(Math.abs(bus[j])) instanceof Integer v
-                    && (v == bus[0] ? (g[v] = dp[v]) >= 0
-                        : Integer.valueOf(IntStream.rangeClosed(1, n).filter(u -> adj[v][u] && d[u][bus[0]] == d[v][bus[0]] - 1).map(u -> g[u]).max().getAsInt()) instanceof Integer mx
-                            && (bus[j] < 0 || mx + 1 >= dp[v] || (dp[v] = mx + 1) > 0 && (ch[0] = true))
-                            && (g[v] = Math.min(dp[v], mx)) >= 0))))
-            ? dp[a] >= 100000000 ? -1 : dp[a] : "");
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 8] instanceof int[] g0
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && (Integer) g0[0] instanceof Integer n
+            && (Integer) g0[1] instanceof Integer m
+            && (Integer) (g0[2] - 1) instanceof Integer a
+            && (Integer) (g0[3] - 1) instanceof Integer b
+            && (Integer) g0[4 + 2 * m] instanceof Integer k
+            && new int[n][n] instanceof int[][] d
+            && new boolean[n][n] instanceof boolean[][] adj
+            && IntStream.range(0, n).allMatch(i -> IntStream.range(0, n).allMatch(j -> (d[i][j] = i == j ? 0 : 1000000) >= 0))
+            && IntStream.range(0, m).allMatch(e -> (d[g0[4 + 2 * e] - 1][g0[5 + 2 * e] - 1] = 1) > 0 && (adj[g0[4 + 2 * e] - 1][g0[5 + 2 * e] - 1] = true))
+            && IntStream.range(0, n).filter(c -> IntStream.range(0, n).filter(i -> IntStream.range(0, n).filter(j -> (d[i][j] = Math.min(d[i][j], d[i][c] + d[c][j])) < 0).count() > 0).count() > 0).count() == 0
+            && new boolean[k][n] instanceof boolean[][] must
+            && IntStream.range(0, k).allMatch(i -> IntStream.range(0, n).allMatch(v ->
+                (must[i][v] = d[g0[5 + 2 * m + 2 * i] - 1][v] + d[v][g0[6 + 2 * m + 2 * i] - 1] == d[g0[5 + 2 * m + 2 * i] - 1][g0[6 + 2 * m + 2 * i] - 1]
+                    && d[g0[5 + 2 * m + 2 * i] - 1][g0[6 + 2 * m + 2 * i] - 1] < 1000000
+                    && IntStream.range(0, n).filter(w -> d[g0[5 + 2 * m + 2 * i] - 1][w] + d[w][g0[6 + 2 * m + 2 * i] - 1] == d[g0[5 + 2 * m + 2 * i] - 1][g0[6 + 2 * m + 2 * i] - 1]
+                        && d[g0[5 + 2 * m + 2 * i] - 1][w] == d[g0[5 + 2 * m + 2 * i] - 1][v]).count() == 1) || true))
+            && new int[n] instanceof int[] dp
+            && IntStream.range(0, n).allMatch(v -> (dp[v] = v == b ? 0 : 1000000) >= 0)
+            && new int[n] instanceof int[] mk
+            && new int[n] instanceof int[] memo
+            && new int[]{0, 0, 0} instanceof int[] st
+            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> fr
+            && fr.getAndSet(v -> mk[v] == st[0] ? memo[v]
+                : (mk[v] = st[0]) >= 0
+                    ? (memo[v] = Math.min(dp[v], IntStream.range(0, n).filter(u -> adj[v][u] && d[v][st[1]] == d[u][st[1]] + 1).map(u -> fr.get().applyAsInt(u)).max().orElse(1000000)))
+                    : 0) == null
+            && IntStream.iterate(0, r -> r + 1).anyMatch(r ->
+                (st[2] = 0) == 0
+                    && IntStream.range(0, k).map(i ->
+                        (++st[0] > 0 & (st[1] = g0[6 + 2 * m + 2 * i] - 1) >= 0)
+                            ? IntStream.range(0, n).filter(v -> must[i][v]).map(v ->
+                                fr.get().applyAsInt(v) + 1 < dp[v] ? (dp[v] = fr.get().applyAsInt(v) + 1) * 0 + (st[2] = 1) : 0).sum()
+                            : 0).sum() >= 0
+                    && st[2] == 0)
+            ? dp[a] >= 1000000 ? -1 : dp[a]
+            : -2);
     }
 }

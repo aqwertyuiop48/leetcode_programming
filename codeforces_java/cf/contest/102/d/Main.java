@@ -1,13 +1,26 @@
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.StringTokenizer;
-import java.util.function.IntSupplier;
-import java.util.stream.Collectors;
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Optional.of(new StringTokenizer(new String(System.in.readAllBytes()))).map(st -> ((IntSupplier) () -> Integer.parseInt(st.nextToken())) instanceof IntSupplier nx && (Integer) nx.getAsInt() instanceof Integer n && (Integer) nx.getAsInt() instanceof Integer m && IntStream.range(0, m).mapToObj(i -> new int[] {nx.getAsInt(), nx.getAsInt()}).collect(Collectors.groupingBy(b -> b[1], Collectors.mapping(b -> b[0], Collectors.toList()))) instanceof Map<Integer, List<Integer>> g && new long[n + 2] instanceof long[] q && (q[1] = 1) >= 0 && IntStream.rangeClosed(1, n).allMatch(x -> (q[x + 1] = (q[x] + g.getOrDefault(x, List.of()).stream().mapToLong(sv -> ((q[x] - q[sv]) % 1000000007L + 1000000007L) % 1000000007L).sum()) % 1000000007L) >= 0) ? ((q[n + 1] - q[n]) % 1000000007L + 1000000007L) % 1000000007L : -1).ifPresent(System.out::println);
+        System.out.println(
+            System.in.readAllBytes() instanceof byte[] buf
+            && new int[buf.length / 2 + 8] instanceof int[] vals
+            && new int[3] instanceof int[] st
+            && IntStream.rangeClosed(0, buf.length).allMatch(j ->
+                j < buf.length && buf[j] >= '0' && buf[j] <= '9'
+                    ? (st[0] = st[0] * 10 + buf[j] - '0') >= 0 && (st[2] = 1) > 0
+                    : (st[2] != 1 || ((vals[st[1]++] = st[0]) >= 0 && (st[0] = 0) == 0)) && (st[2] = 0) == 0)
+            && (Integer) vals[0] instanceof Integer total
+            && (Integer) vals[1] instanceof Integer cnt
+            && IntStream.range(0, cnt).mapToLong(j -> (long) vals[3 + 2 * j] << 31 | (long) vals[2 + 2 * j] << 1 | 1L).sorted().toArray() instanceof long[] ev
+            && new long[cnt + 1] instanceof long[] acc
+            && IntStream.range(0, cnt).allMatch(j ->
+                (acc[j + 1] = (acc[j]
+                    + acc[-Arrays.binarySearch(ev, (ev[j] >> 31) << 31) - 1]
+                    - acc[-Arrays.binarySearch(ev, ((ev[j] >> 1) & 0x3fffffffL) << 31) - 1]
+                    + (((ev[j] >> 1) & 0x3fffffffL) == 0 ? 1 : 0)
+                    + (1_000_000_007L)) % (1_000_000_007L)) >= 0)
+            ? (acc[cnt] - acc[-Arrays.binarySearch(ev, (long) total << 31) - 1] + (1_000_000_007L)) % (1_000_000_007L) : "");
     }
 }

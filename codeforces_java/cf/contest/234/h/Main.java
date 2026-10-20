@@ -1,25 +1,38 @@
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> Integer.parseInt((String) t)).iterator() instanceof Iterator<Integer> it
-            && Integer.valueOf(it.next()) instanceof Integer n && IntStream.range(0, n).map(i -> it.next()).toArray() instanceof int[] a
-            && Integer.valueOf(it.next()) instanceof Integer m && IntStream.range(0, m).map(i -> it.next()).toArray() instanceof int[] b
-            && IntStream.range(0, n).filter(i -> i == 0 || a[i] != a[i - 1]).toArray() instanceof int[] sa
-            && IntStream.range(0, m).filter(i -> i == 0 || b[i] != b[i - 1]).toArray() instanceof int[] sb
-            && Integer.valueOf(sa.length) instanceof Integer p && Integer.valueOf(sb.length) instanceof Integer q
-            && Integer.valueOf(a[0] != b[0] && p == q ? p + 1 : Math.max(p, q)) instanceof Integer L
-            && Integer.valueOf(a[0] == b[0] || p > q ? a[0] : p < q ? b[0] : (L - 1) & 1) instanceof Integer s
-            && new int[]{0, 0} instanceof int[] ptr
-            && IntStream.range(0, L).boxed().flatMap(j -> Integer.valueOf(s ^ (j & 1)) instanceof Integer c
-                ? Stream.concat(
-                    ptr[0] < p && a[sa[ptr[0]]] == c && Integer.valueOf(ptr[0]++) instanceof Integer k ? IntStream.range(sa[k], k + 1 < p ? sa[k + 1] : n).map(i -> i + 1).boxed() : Stream.<Integer>empty(),
-                    ptr[1] < q && b[sb[ptr[1]]] == c && Integer.valueOf(ptr[1]++) instanceof Integer k ? IntStream.range(sb[k], k + 1 < q ? sb[k + 1] : m).map(i -> n + i + 1).boxed() : Stream.<Integer>empty())
-                : Stream.<Integer>empty()).mapToInt(x -> x).toArray() instanceof int[] ord
-            && ((IntUnaryOperator) card -> card <= n ? a[card - 1] : b[card - n - 1]) instanceof IntUnaryOperator val
-            && IntStream.rangeClosed(1, n + m).filter(i -> val.applyAsInt(ord[i - 1]) != (i < n + m ? val.applyAsInt(ord[i]) : 0)).toArray() instanceof int[] turns
-            ? Arrays.stream(ord).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + turns.length + "\n" + Arrays.stream(turns).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
+    public static void main(String[] args) throws Exception {
+        Boolean.valueOf(Boolean.valueOf(new java.io.File("input.txt").exists()) instanceof Boolean f
+            && (f ? new java.io.FileInputStream("input.txt") : System.in).readAllBytes() instanceof byte[] raw
+            && (f ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt")) : System.out) instanceof java.io.PrintStream out
+            && new int[raw.length / 2 + 8] instanceof int[] g0
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && (Integer) g0[0] instanceof Integer n
+            && (Integer) g0[1 + n] instanceof Integer m
+            && IntStream.concat(IntStream.range(0, n).filter(i -> i == 0 || g0[1 + i] != g0[i]), IntStream.of(n)).toArray() instanceof int[] sa
+            && IntStream.concat(IntStream.range(0, m).filter(j -> j == 0 || g0[2 + n + j] != g0[1 + n + j]), IntStream.of(m)).toArray() instanceof int[] sb
+            && (Integer) (sa.length - 1) instanceof Integer p
+            && (Integer) (sb.length - 1) instanceof Integer q
+            && (Integer) g0[1] instanceof Integer ca
+            && (Integer) g0[2 + n] instanceof Integer cb
+            && (Integer) (ca.equals(cb) ? 0 : p > q ? 0 : q > p ? 1 : (ca ^ (p & 1)) == 0 ? 0 : 1) instanceof Integer offA
+            && (Integer) (ca.equals(cb) ? 0 : 1 - offA) instanceof Integer offB
+            && (Integer) (ca.equals(cb) ? Math.max(p, q) : p > q ? p : q > p ? q : p + 1) instanceof Integer r
+            && (Integer) ((offA == 0 ? ca : cb) ^ ((r - 1) & 1)) instanceof Integer end
+            && new int[r + 1] instanceof int[] cum
+            && IntStream.range(0, r).allMatch(t ->
+                (cum[t + 1] = cum[t]
+                    + (t - offA >= 0 && t - offA < p ? sa[t - offA + 1] - sa[t - offA] : 0)
+                    + (t - offB >= 0 && t - offB < q ? sb[t - offB + 1] - sb[t - offB] : 0)) >= 0)
+            && out.append(IntStream.range(0, r).mapToObj(t ->
+                    (t - offA >= 0 && t - offA < p ? IntStream.range(sa[t - offA], sa[t - offA + 1]).mapToObj(c -> " " + (c + 1)).collect(Collectors.joining()) : "")
+                    + (t - offB >= 0 && t - offB < q ? IntStream.range(sb[t - offB], sb[t - offB + 1]).mapToObj(c -> " " + (n + c + 1)).collect(Collectors.joining()) : "")).collect(Collectors.joining()).substring(1)
+                + "\n" + (r - 1 + end) + "\n"
+                + IntStream.concat(IntStream.range(1, r).map(t -> cum[t]), end == 1 ? IntStream.of(n + m) : IntStream.empty()).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n").checkError());
     }
 }

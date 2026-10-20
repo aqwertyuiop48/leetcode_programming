@@ -1,14 +1,40 @@
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.StringTokenizer;
-import java.util.function.IntSupplier;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Optional.of(new StringTokenizer(new String(System.in.readAllBytes()))).map(st -> ((IntSupplier) () -> Integer.parseInt(st.nextToken())) instanceof IntSupplier nx && (Integer) nx.getAsInt() instanceof Integer n && IntStream.range(0, n).map(i -> nx.getAsInt()).toArray() instanceof int[] w && (Integer) nx.getAsInt() instanceof Integer q && IntStream.range(0, q).mapToObj(i -> new int[] {nx.getAsInt() - 1, nx.getAsInt()}).toArray(int[][]::new) instanceof int[][] qs && IntStream.range(0, q).boxed().collect(Collectors.groupingBy(i -> qs[i][1])) instanceof Map<Integer, List<Integer>> g && new long[q] instanceof long[] ans && new long[n + 601] instanceof long[] dp && g.entrySet().stream().allMatch(e -> (Integer) e.getKey() instanceof Integer b && (b <= 600 ? IntStream.range(0, n).mapToLong(j -> dp[n - 1 - j] = w[n - 1 - j] + dp[n - 1 - j + b]).max().isPresent() && e.getValue().stream().allMatch(i -> (ans[i] = dp[qs[i][0]]) >= 0) : e.getValue().stream().allMatch(i -> (ans[i] = IntStream.iterate(qs[i][0], x -> x < n, x -> x + b).mapToLong(x -> w[x]).sum()) >= 0))) ? Arrays.stream(ans).mapToObj(Long::toString).collect(Collectors.joining("\n")) : "").ifPresent(System.out::println);
+        System.out.print(
+            System.in.readAllBytes() instanceof byte[] buf
+            && new int[buf.length / 2 + 8] instanceof int[] t
+            && new int[3] instanceof int[] sc
+            && IntStream.rangeClosed(0, buf.length).allMatch(i ->
+                i < buf.length && buf[i] >= '0' && buf[i] <= '9'
+                    ? (sc[0] = sc[0] * 10 + buf[i] - '0') >= 0 && (sc[2] = 1) > 0
+                    : (sc[2] != 1 || ((t[sc[1]++] = sc[0]) >= 0 && (sc[0] = 0) == 0)) && (sc[2] = 0) == 0)
+            && (Integer) t[0] instanceof Integer cows
+            && (Integer) t[cows + 1] instanceof Integer plans
+            && (Integer) (cows + 2) instanceof Integer qo
+            && new int[cows + 2] instanceof int[] first
+            && IntStream.range(0, plans).allMatch(k -> ++first[t[qo + 2 * k + 1] + 1] > 0)
+            && IntStream.rangeClosed(1, cows + 1).allMatch(s -> (first[s] += first[s - 1]) >= 0)
+            && Arrays.copyOf(first, cows + 2) instanceof int[] fill
+            && new int[plans] instanceof int[] by
+            && IntStream.range(0, plans).allMatch(k -> (by[fill[t[qo + 2 * k + 1]]++] = k) >= 0)
+            && new long[2 * cows + 2] instanceof long[] suf
+            && new long[plans] instanceof long[] res
+            && IntStream.rangeClosed(1, cows).allMatch(step ->
+                first[step] == first[step + 1]
+                || ((Long) IntStream.range(first[step], first[step + 1]).mapToLong(j -> (cows - t[qo + 2 * by[j]]) / step + 1).sum() instanceof Long work
+                    && (Integer) (IntStream.range(first[step], first[step + 1]).map(j -> t[qo + 2 * by[j]]).min().getAsInt() - 1) instanceof Integer low
+                    && (3 * work > cows - low
+                        ? IntStream.range(0, cows - low).mapToLong(u -> suf[cows - 1 - u] = t[cows - u] + suf[cows - 1 - u + step]).sum() >= Long.MIN_VALUE
+                            && IntStream.range(first[step], first[step + 1]).allMatch(j -> (res[by[j]] = suf[t[qo + 2 * by[j]] - 1]) >= 0)
+                        : IntStream.range(first[step], first[step + 1]).allMatch(j ->
+                            (Integer) t[qo + 2 * by[j]] instanceof Integer from
+                            && (res[by[j]] = IntStream.range(0, (cows - from) / step + 1).mapToLong(u -> t[from + u * step]).sum()) >= 0))))
+            && new StringBuilder() instanceof StringBuilder out
+            && Arrays.stream(res).allMatch(x -> out.append(x).append('\n') != null)
+            ? out
+            : "");
     }
 }

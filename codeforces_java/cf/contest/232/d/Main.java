@@ -1,38 +1,72 @@
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> Long.parseLong((String) t)).iterator() instanceof Iterator<Long> it
-            && Integer.valueOf((int) (long) it.next()) instanceof Integer n && LongStream.range(0, n).map(i -> it.next()).toArray() instanceof long[] h
-            && Long.valueOf((1L << 61) - 1) instanceof Long M && Long.valueOf(1000003L + new Random().nextInt(1 << 30)) instanceof Long B
-            && LongStream.concat(LongStream.concat(IntStream.range(0, n - 1).mapToLong(i -> h[i + 1] - h[i] + 2000000001L), LongStream.of(7000000000L)), IntStream.range(0, n - 1).mapToLong(i -> h[i] - h[i + 1] + 2000000001L)).toArray() instanceof long[] S
-            && Integer.valueOf(S.length) instanceof Integer L
-            && ((LongBinaryOperator) (a, b) -> Long.valueOf((a * b & M) + (Math.multiplyHigh(a, b) << 3 | a * b >>> 61)) instanceof Long s ? (s >= M ? s - M : s) : 0) instanceof LongBinaryOperator mul
-            && new long[L + 1] instanceof long[] H && new long[L + 1] instanceof long[] P && (P[0] = 1) > 0
-            && IntStream.range(0, L).allMatch(i -> (H[i + 1] = (mul.applyAsLong(H[i], B) + S[i]) % M) >= 0 && (P[i + 1] = mul.applyAsLong(P[i], B)) > 0)
-            && ((LongBinaryOperator) (i, len) -> (H[(int) (i + len)] - mul.applyAsLong(H[(int) i], P[(int) len]) + M) % M) instanceof LongBinaryOperator hsh
-            && Arrays.stream(S).distinct().sorted().toArray() instanceof long[] dv
-            && IntStream.range(0, L).map(i -> Arrays.binarySearch(dv, S[i]) + 1).toArray() instanceof int[] rk
-            && IntStream.iterate(1, k -> k < L, k -> k * 2).allMatch(k -> LongStream.range(0, L).map(i -> ((long) rk[(int) i] * (L + 2) + (i + k < L ? rk[(int) i + k] : 0)) << 18 | i).sorted().toArray() instanceof long[] ks
-                && new int[]{0} instanceof int[] cur && IntStream.range(0, L).allMatch(j -> (cur[0] += j > 0 && ks[j] >> 18 != ks[j - 1] >> 18 ? 1 : j == 0 ? 1 : 0) > 0 && (rk[(int) (ks[j] & 262143)] = cur[0]) > 0))
-            && new int[L] instanceof int[] sa && IntStream.range(0, L).allMatch(i -> (sa[rk[i] - 1] = i) >= 0)
-            && Integer.valueOf(1 << 18) instanceof Integer SZ
-            && IntStream.range(0, SZ).map(i -> i < L && sa[i] <= n - 2 ? sa[i] : -1).toArray() instanceof int[] val
-            && IntStream.range(0, 19).mapToObj(j -> j == 0 ? val : IntStream.range(0, SZ >> j).flatMap(b -> Arrays.stream(val, b << j, (b + 1) << j).sorted()).toArray()).toList() instanceof List<int[]> lev
-            && ((ToIntFunction<int[]>) w -> new int[]{w[1], w[2]} instanceof int[] st
-                && IntStream.range(0, 20).allMatch(z -> (st[0] >= st[1] || (lev.get(w[0])[st[0] + st[1] >>> 1] < w[3] ? (st[0] = (st[0] + st[1] >>> 1) + 1) > 0 : (st[1] = st[0] + st[1] >>> 1) >= 0)) | true) ? st[0] - w[1] : 0) instanceof ToIntFunction<int[]> below
-            && ((ToIntFunction<int[]>) w -> below.applyAsInt(new int[]{w[0], w[1] << w[0], w[1] + 1 << w[0], w[3] + 1}) - below.applyAsInt(new int[]{w[0], w[1] << w[0], w[1] + 1 << w[0], w[2]})) instanceof ToIntFunction<int[]> blk
-            && ((ToIntFunction<int[]>) w -> new int[]{w[0], w[1] + 1, 0} instanceof int[] st
-                && IntStream.range(0, 19).allMatch(j -> (st[0] < st[1] ? ((st[0] & 1) == 0 || (st[2] += blk.applyAsInt(new int[]{j, st[0]++, w[2], w[3]})) >= 0) && ((st[1] & 1) == 0 || (st[2] += blk.applyAsInt(new int[]{j, --st[1], w[2], w[3]})) >= 0) && (st[0] >>= 1) >= 0 && (st[1] >>= 1) >= 0 : true)) ? st[2] : 0) instanceof ToIntFunction<int[]> cnt
-            ? IntStream.range(0, Integer.valueOf((int) (long) it.next())).mapToObj(q -> Integer.valueOf((int) (long) it.next()) instanceof Integer l && Integer.valueOf((int) (long) it.next()) instanceof Integer r
-                ? (l.equals(r) ? String.valueOf(n - 1)
-                    : Integer.valueOf(r - l) instanceof Integer m && Integer.valueOf(n + l - 1) instanceof Integer p && Long.valueOf(hsh.applyAsLong(p, m)) instanceof Long hp
-                    && Integer.valueOf(rk[p] - 1) instanceof Integer me
-                    && new int[]{0, me} instanceof int[] lo && IntStream.range(0, 19).allMatch(z -> (lo[0] >= lo[1] || (sa[lo[0] + lo[1] >>> 1] + m <= L && hsh.applyAsLong(sa[lo[0] + lo[1] >>> 1], m) == hp ? (lo[1] = lo[0] + lo[1] >>> 1) >= 0 : (lo[0] = (lo[0] + lo[1] >>> 1) + 1) > 0)) | true)
-                    && new int[]{me, L - 1} instanceof int[] hi && IntStream.range(0, 19).allMatch(z -> (hi[0] >= hi[1] || (sa[hi[0] + hi[1] + 1 >>> 1] + m <= L && hsh.applyAsLong(sa[hi[0] + hi[1] + 1 >>> 1], m) == hp ? (hi[0] = hi[0] + hi[1] + 1 >>> 1) >= 0 : (hi[1] = (hi[0] + hi[1] + 1 >>> 1) - 1) > -2)) | true)
-                    ? String.valueOf(cnt.applyAsInt(new int[]{lo[0], hi[0], 0, n - 2}) - cnt.applyAsInt(new int[]{lo[0], hi[0], Math.max(0, l - 1 - m), r - 1})) : "?")
-                : "").collect(Collectors.joining("\n")) : "");
+    public static void main(String[] args) throws Exception {
+        System.out.print(System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 8] instanceof int[] g0
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((g0[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && (Integer) g0[0] instanceof Integer n
+            && (Integer) (2 * n - 1) instanceof Integer N
+            && (Integer) g0[1 + n] instanceof Integer qn
+            && new int[N] instanceof int[] S
+            && IntStream.range(0, n - 1).allMatch(i -> (S[i] = g0[2 + i] - g0[1 + i]) > -2000000000 && (S[n + i] = g0[1 + i] - g0[2 + i]) > -2000000000)
+            && (S[n - 1] = Integer.MAX_VALUE) > 0
+            && new int[N] instanceof int[] rk
+            && new int[N] instanceof int[] nr
+            && new int[2] instanceof int[] cur
+            && LongStream.range(0, N).map(i -> (((long) S[(int) i] + 2147483648L) << 18) | i).sorted().toArray() instanceof long[] ks0
+            && IntStream.range(0, N).allMatch(t -> (rk[(int) (ks0[t] & 262143)] = cur[0] = t == 0 ? 0 : cur[0] + ((ks0[t] >>> 18) == (ks0[t - 1] >>> 18) ? 0 : 1)) >= 0)
+            && IntStream.iterate(1, k -> k * 2).anyMatch(k ->
+                LongStream.range(0, N).map(i -> ((long) rk[(int) i] << 36) | ((long) (i + k < N ? rk[(int) i + k] + 1 : 0) << 18) | i).sorted().toArray() instanceof long[] ks
+                    && IntStream.range(0, N).allMatch(t -> (nr[(int) (ks[t] & 262143)] = cur[0] = t == 0 ? 0 : cur[0] + ((ks[t] >>> 18) == (ks[t - 1] >>> 18) ? 0 : 1)) >= 0)
+                    && IntStream.range(0, N).allMatch(i -> (rk[i] = nr[i]) >= 0)
+                    && cur[0] == N - 1)
+            && new int[N] instanceof int[] sa
+            && IntStream.range(0, N).allMatch(i -> (sa[rk[i]] = i) >= 0)
+            && new int[N] instanceof int[] lcp
+            && IntStream.range(0, N).allMatch(i ->
+                (rk[i] == 0 ? (cur[1] = 0) == 0
+                    : (lcp[rk[i]] = cur[1] += (int) IntStream.iterate(0, t -> i + cur[1] + t < N && sa[rk[i] - 1] + cur[1] + t < N && S[i + cur[1] + t] == S[sa[rk[i] - 1] + cur[1] + t], t -> t + 1).count()) >= 0)
+                    && (cur[1] = Math.max(cur[1] - 1, 0)) >= 0)
+            && new int[18][N] instanceof int[][] sp
+            && IntStream.range(0, N).allMatch(i -> (sp[0][i] = lcp[i]) >= 0)
+            && IntStream.range(1, 18).allMatch(b -> IntStream.rangeClosed(0, N - (1 << b)).allMatch(i -> (sp[b][i] = Math.min(sp[b - 1][i], sp[b - 1][i + (1 << (b - 1))])) >= 0))
+            && new int[N + 1] instanceof int[] P
+            && IntStream.range(0, N).allMatch(i -> (P[i + 1] = P[i] + (sa[i] >= n ? 1 : 0)) >= 0)
+            && new int[qn] instanceof int[] ans
+            && new int[qn] instanceof int[] qA
+            && new int[qn] instanceof int[] qB
+            && new int[N] instanceof int[] head
+            && IntStream.range(0, N).allMatch(i -> (head[i] = -1) < 0)
+            && new int[2 * qn] instanceof int[] nx
+            && IntStream.range(0, qn).allMatch(q ->
+                (Integer) g0[2 + n + 2 * q] instanceof Integer l
+                    && (Integer) g0[3 + n + 2 * q] instanceof Integer r
+                    && (r.equals(l) ? (ans[q] = n - 1) >= 0
+                        : (Integer) (r - l) instanceof Integer L
+                            && (Integer) rk[l - 1] instanceof Integer r0
+                            && (Integer) IntStream.iterate(17, b -> b >= 0, b -> b - 1).reduce(r0, (c, b) -> c - (1 << b) >= 0 && sp[b][c - (1 << b) + 1] >= L ? c - (1 << b) : c) instanceof Integer lo
+                            && (Integer) IntStream.iterate(17, b -> b >= 0, b -> b - 1).reduce(r0, (c, b) -> c + (1 << b) <= N - 1 && sp[b][c + 1] >= L ? c + (1 << b) : c) instanceof Integer hi
+                            && (ans[q] = P[hi + 1] - P[lo]) >= 0
+                            && (qA[q] = Math.max(1, 2 * l - r)) > 0
+                            && (qB[q] = r) > 0
+                            && (nx[2 * q] = head[hi]) > -5
+                            && (head[hi] = 2 * q) >= 0
+                            && (lo == 0 || ((nx[2 * q + 1] = head[lo - 1]) > -5 && (head[lo - 1] = 2 * q + 1) >= 0))))
+            && new int[n + 2] instanceof int[] bit
+            && IntStream.range(0, N).allMatch(idx ->
+                (sa[idx] < n || IntStream.iterate(sa[idx] - n + 1, i -> i <= n, i -> i + (i & -i)).map(i -> bit[i]++).sum() >= 0)
+                    && IntStream.iterate(head[idx], e -> e >= 0, e -> nx[e]).map(e ->
+                        ans[e >> 1] -= ((e & 1) == 0 ? 1 : -1)
+                            * (IntStream.iterate(qB[e >> 1], i -> i > 0, i -> i & (i - 1)).map(i -> bit[i]).sum()
+                                - IntStream.iterate(qA[e >> 1] - 1, i -> i > 0, i -> i & (i - 1)).map(i -> bit[i]).sum())).sum() > Integer.MIN_VALUE)
+            ? IntStream.range(0, qn).mapToObj(q -> String.valueOf(ans[q])).collect(Collectors.joining("\n")) + "\n"
+            : "");
     }
 }

@@ -1,27 +1,52 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(Arrays.stream(new String(System.in.readAllBytes()).trim().split("\\s+")).mapToInt(Integer::parseInt).toArray() instanceof int[] in
-            && Integer.valueOf(in[0]) instanceof Integer n && Integer.valueOf(in[1]) instanceof Integer p
-            && IntStream.rangeClosed(2, p).filter(q -> p % q == 0 && IntStream.rangeClosed(2, (int) Math.sqrt(q)).noneMatch(d -> q % d == 0)).toArray() instanceof int[] qs
-            && Arrays.stream(qs).map(q -> (int) IntStream.iterate(p, y -> y % q == 0, y -> y / q).count()).toArray() instanceof int[] es
-            && IntStream.range(0, qs.length).map(i -> IntStream.iterate(n / qs[i], y -> y > 0, y -> y / qs[i]).sum() - es[i]).toArray() instanceof int[] slack
-            && (IntBinaryOperator) ((x, i) -> (int) IntStream.iterate(x, y -> y % qs[i] == 0, y -> y / qs[i]).count()) instanceof IntBinaryOperator vq
-            && Arrays.stream(slack).allMatch(s -> s >= 0)
-            && new boolean[n + 1] instanceof boolean[] inS
-            && (n <= 20
-                ? IntStream.range(1, 1 << n).filter(mask -> IntStream.range(0, n).filter(i -> (mask >> i & 1) == 1).reduce(0, (x, i) -> x ^ (i + 1)) == 0
-                    && IntStream.range(0, n).filter(i -> (mask >> i & 1) == 1).mapToLong(i -> i + 1).reduce(1L % p, (r, x) -> r * x % p) == 0).findFirst()
-                    .stream().anyMatch(mask -> IntStream.rangeClosed(1, n).allMatch(v -> (inS[v] = (mask >> (v - 1) & 1) == 1) || true))
-                : Integer.valueOf(n % 4 == 0 ? n : n % 4 == 1 ? 1 : n % 4 == 2 ? n + 1 : 0) instanceof Integer t
-                    && (t == 0 ? new int[0]
-                        : t <= n && IntStream.range(0, qs.length).allMatch(i -> vq.applyAsInt(t, i) <= slack[i]) ? new int[]{t}
-                        : IntStream.rangeClosed(1, n).filter(x -> (x ^ t) > x && (x ^ t) <= n && IntStream.range(0, qs.length).allMatch(i -> vq.applyAsInt(x, i) + vq.applyAsInt(x ^ t, i) <= slack[i])).boxed().findFirst().map(x -> new int[]{x, x ^ t}).orElse(null)) instanceof int[] rm
-                    && IntStream.rangeClosed(1, n).allMatch(v -> (inS[v] = true)) && Arrays.stream(rm).allMatch(v -> !(inS[v] = false)))
-            && Integer.valueOf(IntStream.range(0, n).map(i -> inS[in[2 + i]] ? 1 : 0).sum()) instanceof Integer cnt && cnt > 0
-            ? "Yes\n" + cnt + "\n" + IntStream.range(0, n).map(i -> in[2 + i]).filter(v -> inS[v]).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "No");
+        System.out.println(
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 2] instanceof int[] g
+            && new int[4] instanceof int[] st
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                (Integer) (i == raw.length ? 32 : (int) raw[i]) instanceof Integer c
+                && (c >= '0' && c <= '9'
+                    ? (st[0] = st[0] * 10 + c - '0') >= 0 && (st[2] = 1) > 0
+                    : c == '-'
+                        ? (st[3] = 1) > 0
+                        : st[2] == 0 || ((g[st[1]++] = st[3] == 1 ? -st[0] : st[0]) != Integer.MIN_VALUE && (st[0] = 0) == 0 && (st[2] = 0) == 0 && (st[3] = 0) == 0)))
+            && Integer.valueOf(g[0]) instanceof Integer n
+            && Integer.valueOf(g[1]) instanceof Integer p
+            && new int[]{-1, -1} instanceof int[] res
+            && new int[2][] instanceof int[][] hold
+            && IntStream.rangeClosed(Math.min(7, 32 - Integer.numberOfLeadingZeros(n)), 8).anyMatch(k ->
+                Integer.valueOf(Math.min(n, (1 << k) - 1)) instanceof Integer lim
+                && Integer.valueOf((1 << k) - 1) instanceof Integer mask
+                && new int[p << k] instanceof int[] lst
+                && (hold[0] = new int[p << k]) != null
+                && (hold[1] = new int[p << k]) != null
+                && hold[0] instanceof int[] par
+                && hold[1] instanceof int[] el
+                && new int[]{1} instanceof int[] cnt
+                && (IntStream.range(0, n).filter(i -> g[2 + i] <= lim).anyMatch(i ->
+                        Integer.valueOf(g[2 + i]) instanceof Integer v
+                        && Integer.valueOf(Long.valueOf(LongStream.range(0, String.valueOf(v).length()).reduce(1L, (acc, q) -> acc * 10 % p)).intValue()) instanceof Integer pw
+                        && Integer.valueOf(v % p) instanceof Integer vm
+                        && Integer.valueOf(cnt[0]) instanceof Integer sz
+                        && IntStream.range(0, sz).anyMatch(t ->
+                            Integer.valueOf(lst[t]) instanceof Integer s
+                            && Integer.valueOf((int) (((s >>> k) * (long) pw + vm) % p)) instanceof Integer nm
+                            && Integer.valueOf(nm << k | ((s & mask) ^ v)) instanceof Integer id
+                            && (id == 0
+                                ? (res[0] = s) >= 0 && (res[1] = i) >= 0
+                                : (par[id] != 0 || ((par[id] = s + 1) > 0 && (el[id] = i) >= 0 && (lst[cnt[0]++] = id) >= 0)) && false)))
+                    || lim.equals(n)))
+            ? res[0] < 0
+                ? "No"
+                : "Yes\n" + (Stream.iterate(res[0], c -> c != 0, c -> hold[0][c] - 1).mapToInt(c -> hold[1][c]).boxed().collect(Collectors.toList()) instanceof List<Integer> chain
+                    && chain.add(res[1])
+                    && chain.stream().sorted().map(x -> String.valueOf(x + 1)).collect(Collectors.joining(" ")) instanceof String idx
+                    ? chain.size() + "\n" + idx
+                    : "")
+            : "No");
     }
 }
