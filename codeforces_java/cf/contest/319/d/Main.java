@@ -19,9 +19,9 @@ public class Main {
             && (pw[0] = 1) > 0
             && ((IntUnaryOperator) from -> IntStream.range(from, sv[0]).mapToLong(j -> H[j + 1] = add.applyAsLong(mul.applyAsLong(H[j], B), cur[j] + 1)).max().orElse(0) >= 0 ? 0 : 1) instanceof IntUnaryOperator rebuild
             && rebuild.applyAsInt(0) == 0
-            && ((IntPredicate) L -> IntStream.iterate(0, i -> i + L < sv[0], i -> i + L).anyMatch(i ->
-                cur[i] == cur[i + L] && Integer.valueOf((L + 2) / 2) instanceof Integer h && IntPredicate.class != null
-                && (IntStream.of(i + h - 1, i + (h - 1) / 2).allMatch(j -> j + L < sv[0] && cur[j] == cur[j + L]) || IntStream.of(i - h + 1, i - (h - 1) / 2).allMatch(j -> j >= 0 && cur[j] == cur[j + L]))
+            && ((IntPredicate) L -> ((IntPredicate) j -> j >= 0 && j + L < sv[0] && cur[j] == cur[j + L]) instanceof IntPredicate mt
+                && IntStream.iterate(0, i -> i + L < sv[0], i -> i + L).anyMatch(i ->
+                mt.test(i) && (mt.test(i + L / 2) && mt.test(i + L / 4) || mt.test(i - L / 2) && mt.test(i - L / 4))
                 && Integer.valueOf(Math.min(L, sv[0] - i - L)) instanceof Integer cf && Integer.valueOf(Math.min(L, i)) instanceof Integer cb
                 && Integer.valueOf(IntStream.iterate(31 - Integer.numberOfLeadingZeros(cf), p -> p >= 0, p -> p - 1)
                     .reduce(0, (t, p) -> t + (1 << p) <= cf && hs.applyAsLong(i, i + t + (1 << p)) == hs.applyAsLong(i + L, i + L + t + (1 << p)) ? t + (1 << p) : t)) instanceof Integer f

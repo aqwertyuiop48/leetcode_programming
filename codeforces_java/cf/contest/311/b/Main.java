@@ -18,14 +18,14 @@ public class Main {
             && ((ToIntFunction<long[]>) q -> Math.multiplyHigh(q[0], q[1]) != Math.multiplyHigh(q[2], q[3])
                 ? Long.compare(Math.multiplyHigh(q[0], q[1]), Math.multiplyHigh(q[2], q[3])) : Long.compareUnsigned(q[0] * q[1], q[2] * q[3])) instanceof ToIntFunction<long[]> cmp
             && IntStream.rangeClosed(1, p).allMatch(layer -> (hd[0] = 0) == 0 && (tl[0] = 0) == 0 && (dp1[0] = 0) == 0
-                && IntStream.rangeClosed(1, m).allMatch(i -> (dp0[i - 1] >= INF || (Long.valueOf(-(i - 1)) instanceof Long k && Long.valueOf(dp0[i - 1] + S[i - 1]) instanceof Long b
+                && IntStream.rangeClosed(1, m).map(i -> ((dp0[i - 1] >= INF || (Long.valueOf(-(i - 1)) instanceof Long k && Long.valueOf(dp0[i - 1] + S[i - 1]) instanceof Long b
                         && IntStream.generate(() -> 0).anyMatch(z -> tl[0] - hd[0] < 2
                             || cmp.applyAsInt(new long[]{b - qb[tl[0] - 2], qk[tl[0] - 2] - qk[tl[0] - 1], qb[tl[0] - 1] - qb[tl[0] - 2], qk[tl[0] - 2] - k}) > 0
                             || (tl[0] -= 1) < 0)
                         && (qk[tl[0]] = k) < Long.MAX_VALUE && (qb[tl[0]++] = b) < Long.MAX_VALUE))
                     && Long.valueOf(a[i - 1]) instanceof Long x
                     && IntStream.generate(() -> 0).anyMatch(z -> hd[0] + 1 >= tl[0] || qk[hd[0] + 1] * x + qb[hd[0] + 1] > qk[hd[0]] * x + qb[hd[0]] || (hd[0] += 1) < 0)
-                    && (dp1[i] = x * i - S[i] + qk[hd[0]] * x + qb[hd[0]]) > Long.MIN_VALUE)
+                    && (dp1[i] = x * i - S[i] + qk[hd[0]] * x + qb[hd[0]]) > Long.MIN_VALUE) ? 0 : 1).sum() == 0
                 && IntStream.rangeClosed(0, m).allMatch(i -> (dp0[i] = dp1[i]) > Long.MIN_VALUE))
             ? String.valueOf(dp0[m]) : "");
     }

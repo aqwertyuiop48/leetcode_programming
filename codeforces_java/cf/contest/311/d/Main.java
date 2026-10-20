@@ -12,7 +12,7 @@ public class Main {
             && new int[2 * n * 48] instanceof int[] base && new int[2 * n] instanceof int[] off && new int[2 * n] instanceof int[] lz && new int[2] instanceof int[] qr
             && ((IntBinaryOperator) (node, j) -> base[node * 48 + j + off[node] - (j + off[node] >= 48 ? 48 : 0)]) instanceof IntBinaryOperator real
             && ((IntBinaryOperator) (node, k) -> (off[node] = (off[node] + k) % 48) + (lz[node] = (lz[node] + k) % 48)) instanceof IntBinaryOperator apply
-            && ((Predicate<int[]>) q -> IntStream.range(0, 48).allMatch(j -> Integer.valueOf(real.applyAsInt(q[1], j) + real.applyAsInt(q[2], j)) instanceof Integer s && (base[q[0] * 48 + j] = s >= P ? s - P : s) >= 0) && (off[q[0]] = 0) == 0) instanceof Predicate<int[]> pull
+            && ((Predicate<int[]>) q -> IntStream.range(0, 48).mapToLong(j -> Integer.valueOf(real.applyAsInt(q[1], j) + real.applyAsInt(q[2], j)) instanceof Integer s ? base[q[0] * 48 + j] = s >= P ? s - P : s : 0).sum() >= 0 && (off[q[0]] = 0) == 0) instanceof Predicate<int[]> pull
             && ((Predicate<int[]>) q -> lz[q[0]] == 0 || (apply.applyAsInt(q[1], lz[q[0]]) >= 0 && apply.applyAsInt(q[2], lz[q[0]]) >= 0 && (lz[q[0]] = 0) == 0)) instanceof Predicate<int[]> push
             && new AtomicReference<Predicate<int[]>>() instanceof AtomicReference<Predicate<int[]>> build && new AtomicReference<Predicate<int[]>>() instanceof AtomicReference<Predicate<int[]>> upd
             && new AtomicReference<ToLongFunction<int[]>>() instanceof AtomicReference<ToLongFunction<int[]>> qry
