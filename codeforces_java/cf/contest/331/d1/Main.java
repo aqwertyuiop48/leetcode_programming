@@ -35,8 +35,9 @@ public class Main {
                 && (rd[n + i] = "RLUD".indexOf(w[qb + 4 * i + 2].charAt(0))) >= 0 && (qt[i] = Long.parseLong(w[qb + 4 * i + 3])) >= 0)
             && IntStream.range(0, n + q).filter(i -> rd[i] < 2).toArray() instanceof int[] ih
             && IntStream.range(0, n + q).filter(i -> rd[i] >= 2).toArray() instanceof int[] iv
-            && shoot.apply(sg, Arrays.stream(ih).mapToObj(i -> new long[]{rx[i], ry[i], rd[i] == 0 ? 1 : -1}).toArray(long[][]::new)) instanceof long[][] rh
-            && shoot.apply(sgT, Arrays.stream(iv).mapToObj(i -> new long[]{ry[i], rx[i], rd[i] == 2 ? 1 : -1}).toArray(long[][]::new)) instanceof long[][] rv
+            && Stream.<Supplier<long[][]>>of(() -> shoot.apply(sg, Arrays.stream(ih).mapToObj(i -> new long[]{rx[i], ry[i], rd[i] == 0 ? 1 : -1}).toArray(long[][]::new)),
+                () -> shoot.apply(sgT, Arrays.stream(iv).mapToObj(i -> new long[]{ry[i], rx[i], rd[i] == 2 ? 1 : -1}).toArray(long[][]::new))).parallel().map(Supplier::get).toArray(long[][][]::new) instanceof long[][][] rr
+            && rr[0] instanceof long[][] rh && rr[1] instanceof long[][] rv
             && new long[n + q][] instanceof long[][] res
             && IntStream.range(0, ih.length).allMatch(k -> (res[ih[k]] = rh[k]) != null)
             && IntStream.range(0, iv.length).allMatch(k -> (res[iv[k]] = rv[k]) != null)

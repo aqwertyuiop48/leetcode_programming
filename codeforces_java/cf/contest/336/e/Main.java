@@ -17,8 +17,10 @@ public class Main {
                     [Integer.bitCount(cs) + IntStream.range(0, 4).map(v -> o[v] == 0 ? 0 : o[v] == 3 ? 2 : 1).sum()] > 0)
             && ((BiFunction<long[][], Boolean, long[][]>) (f, big) -> new long[16][k + 1] instanceof long[][] g
                 && ((big ? B : A)) instanceof long[][] T
-                && IntStream.range(0, 16).allMatch(mask -> IntStream.rangeClosed(0, k).filter(t -> f[mask][t] != 0).allMatch(t -> IntStream.range(0, 16).filter(u -> !big || (u & mask) == 0).allMatch(u -> IntStream.rangeClosed(0, 12).filter(m -> t + m <= k && T[u][m] != 0)
-                    .allMatch(m -> (g[mask | u][t + m] = (g[mask | u][t + m] + f[mask][t] * (T[u][m] % M)) % M) >= 0))))
+                && IntStream.range(0, 16 * 13).filter(z -> T[z / 13][z % 13] != 0).toArray() instanceof int[] tr
+                && IntStream.range(0, 16 * (k + 1) * tr.length).allMatch(z -> Integer.valueOf(tr[z % tr.length]) instanceof Integer e && Integer.valueOf(z / tr.length % (k + 1)) instanceof Integer t
+                    && Integer.valueOf(z / tr.length / (k + 1)) instanceof Integer mask
+                    && (f[mask][t] == 0 || t + e % 13 > k || big && ((e / 13) & mask) != 0 || (g[mask | e / 13][t + e % 13] = (g[mask | e / 13][t + e % 13] + f[mask][t] * (T[e / 13][e % 13] % M)) % M) >= 0))
                 ? g : null) instanceof BiFunction<long[][], Boolean, long[][]> step
             && new long[16][k + 1] instanceof long[][] init && (init[0][0] = 1) == 1
             && new long[][][]{init} instanceof long[][][] cur
