@@ -17,14 +17,14 @@ public class Main {
             && new long[]{Long.MIN_VALUE, 0} instanceof long[] acc
             && ((LongBinaryOperator) (x, c) -> c == 0 ? 0L : x > acc[0] ? (acc[1] = c) * 0 + (acc[0] = x) * 0 : x == acc[0] ? (acc[1] += c) * 0 : 0L) instanceof LongBinaryOperator mg
             && IntStream.range(0, n).allMatch(i -> (acc[0] = Long.MIN_VALUE) != 0 & (acc[1] = 0) == 0
-                && IntStream.range(0, m).allMatch(j -> (i < r || i > n - 1 - r || j < r || j > m - 1 - r || mg.applyAsLong(S[i * m + j], 1) == 0) && (PMv[i * m + j] = acc[0]) != 7 & (PMc[i * m + j] = (long) acc[1]) >= 0)
+                && IntStream.range(0, m).allMatch(j -> (i < r || i > n - 1 - r || j < r || j > m - 1 - r || mg.applyAsLong(S[i * m + j], 1) == 0) && (PMv[i * m + j] = acc[0]) != Long.MAX_VALUE & (PMc[i * m + j] = (long) acc[1]) >= 0)
                 && (acc[0] = Long.MIN_VALUE) != 0 & (acc[1] = 0) == 0
-                && IntStream.range(0, m).map(jj -> m - 1 - jj).allMatch(j -> (i < r || i > n - 1 - r || j < r || j > m - 1 - r || mg.applyAsLong(S[i * m + j], 1) == 0) && (SMv[i * m + j] = acc[0]) != 7 & (SMc[i * m + j] = acc[1]) >= 0))
+                && IntStream.range(0, m).map(jj -> m - 1 - jj).allMatch(j -> (i < r || i > n - 1 - r || j < r || j > m - 1 - r || mg.applyAsLong(S[i * m + j], 1) == 0) && (SMv[i * m + j] = acc[0]) != Long.MAX_VALUE & (SMc[i * m + j] = acc[1]) >= 0))
             && new long[n] instanceof long[] RPv && new long[n] instanceof long[] RPc && new long[n] instanceof long[] RSv && new long[n] instanceof long[] RSc
             && (acc[0] = Long.MIN_VALUE) != 0 & (acc[1] = 0) == 0
-            && IntStream.range(0, n).allMatch(i -> mg.applyAsLong(PMv[i * m + m - 1], PMc[i * m + m - 1]) == 0 && (RPv[i] = acc[0]) != 7 & (RPc[i] = acc[1]) >= 0)
+            && IntStream.range(0, n).allMatch(i -> mg.applyAsLong(PMv[i * m + m - 1], PMc[i * m + m - 1]) == 0 && (RPv[i] = acc[0]) != Long.MAX_VALUE & (RPc[i] = acc[1]) >= 0)
             && (acc[0] = Long.MIN_VALUE) != 0 & (acc[1] = 0) == 0
-            && IntStream.range(0, n).map(ii -> n - 1 - ii).allMatch(i -> mg.applyAsLong(PMv[i * m + m - 1], PMc[i * m + m - 1]) == 0 && (RSv[i] = acc[0]) != 7 & (RSc[i] = acc[1]) >= 0)
+            && IntStream.range(0, n).map(ii -> n - 1 - ii).allMatch(i -> mg.applyAsLong(PMv[i * m + m - 1], PMc[i * m + m - 1]) == 0 && (RSv[i] = acc[0]) != Long.MAX_VALUE & (RSc[i] = acc[1]) >= 0)
             && new long[]{-1, 0} instanceof long[] g
             && IntStream.rangeClosed(r, n - 1 - r).allMatch(i -> IntStream.rangeClosed(r, m - 1 - r).allMatch(j -> (acc[0] = Long.MIN_VALUE) != 0 & (acc[1] = 0) == 0
                 && IntStream.rangeClosed(Math.max(r, i - 2 * r), Math.min(n - 1 - r, i + 2 * r)).allMatch(i2 -> Integer.valueOf(W[Math.abs(i2 - i)]) instanceof Integer w
