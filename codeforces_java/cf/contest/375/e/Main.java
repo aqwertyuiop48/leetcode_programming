@@ -30,11 +30,12 @@ public class Main {
                 && IntStream.range(0, n).allMatch(j -> j == v || dist[v][j] > x || (init[j] = 0) == 0)
                 && (init[n + v] = 1 - col[v]) >= 0
                 && new int[]{1} instanceof int[] cs && new int[][]{init} instanceof int[][] cur
+                && IntStream.range(0, n).filter(j -> dist[v][j] <= x).toArray() instanceof int[] vja
                 && ne.apply(v).map(e -> adj[e]).filter(u -> u != par[v]).allMatch(u -> Integer.valueOf(sz[u]) instanceof Integer tt
                     && IntStream.generate(() -> INF).limit((cs[0] + tt + 1) * n).toArray() instanceof int[] nw
                     && Integer.valueOf(cs[0] + 1) instanceof Integer A && Integer.valueOf(tt + 1) instanceof Integer W
-                    && IntStream.range(0, n * A * W).allMatch(id -> Integer.valueOf(id / (A * W)) instanceof Integer j && Integer.valueOf(id / W % A) instanceof Integer a && Integer.valueOf(id % W) instanceof Integer b
-                        && (dist[v][j] > x || cur[0][a * n + j] >= INF || (nw[(a + b) * n + j] = Math.min(nw[(a + b) * n + j], Math.min(cur[0][a * n + j] + D[u][b * n + j], inSub[u][j] ? INF : cur[0][a * n + j] + bs[u][b]))) >= 0))
+                    && Arrays.stream(vja).allMatch(j -> IntStream.range(0, A * W).allMatch(id -> Integer.valueOf(id / W) instanceof Integer a && Integer.valueOf(id % W) instanceof Integer b
+                        && (cur[0][a * n + j] >= INF || (nw[(a + b) * n + j] = Math.min(nw[(a + b) * n + j], Math.min(cur[0][a * n + j] + D[u][b * n + j], inSub[u][j] ? INF : cur[0][a * n + j] + bs[u][b]))) >= 0)))
                     && (cur[0] = nw) != null && (cs[0] += tt) > 0 && (D[u] = null) == null)
                 && (D[v] = cur[0]) != null
                 && IntStream.rangeClosed(0, sz[v]).mapToObj(b -> IntStream.range(0, n).filter(j -> inSub[v][j]).map(j -> D[v][b * n + j]).min().getAsInt()).mapToInt(b -> b).toArray() instanceof int[] bb
