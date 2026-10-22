@@ -40,7 +40,7 @@ public class Main {
                         && (cr[a * n + j] >= INF || (nw[(a + b) * n + j] = Math.min(nw[(a + b) * n + j], Math.min(cr[a * n + j] + du[b * n + j], ins ? INF : cr[a * n + j] + bu[b]))) >= 0)))
                     && (cur[0] = nw) != null && (cs[0] += tt) > 0 && (D[u] = null) == null)
                 && (D[v] = cur[0]) != null
-                && IntStream.rangeClosed(0, sz[v]).mapToObj(b -> IntStream.range(0, n).filter(j -> inSub[v][j]).map(j -> D[v][b * n + j]).min().getAsInt()).mapToInt(b -> b).toArray() instanceof int[] bb
+                && Arrays.stream(vja).filter(j -> inSub[v][j]).toArray() instanceof int[] vsub && IntStream.rangeClosed(0, sz[v]).map(b -> Arrays.stream(vsub).map(j -> D[v][b * n + j]).min().orElse(INF)).toArray() instanceof int[] bb
                 && (bs[v] = bb) != null)
             ? Integer.valueOf(IntStream.range(0, n).map(j -> D[ord[0]][B * n + j]).min().getAsInt()) instanceof Integer r && r < INF ? String.valueOf(r) : "-1" : "");
     }
