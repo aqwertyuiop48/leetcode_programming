@@ -1,61 +1,75 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(
-            new Scanner(System.in) instanceof Scanner sc
-            && Integer.valueOf(sc.nextInt()) instanceof Integer n
-            && Integer.valueOf(sc.nextInt()) instanceof Integer m
+            System.in.readAllBytes() instanceof byte[] raw
+            && Integer.valueOf(IntStream.range(0, raw.length).filter(i -> raw[i] == 10).findFirst().getAsInt()) instanceof Integer h
+            && new String(raw, 0, h).trim().split("\\s+") instanceof String[] hd
+            && Integer.valueOf(Integer.parseInt(hd[0])) instanceof Integer n
+            && Integer.valueOf(Integer.parseInt(hd[1])) instanceof Integer m
             && Integer.valueOf(m + 2) instanceof Integer W
             && Integer.valueOf((n + 2) * W) instanceof Integer N
             && new boolean[N] instanceof boolean[] one
-            && IntStream.range(0, n).allMatch(i -> sc.next() instanceof String row
-                && IntStream.range(0, m).allMatch(j -> row.charAt(j) != '1' || (one[(i + 1) * W + j + 1] = true)))
-            && IntStream.range(0, N).toArray() instanceof int[] par
-            && new int[N] instanceof int[] sz
-            && IntStream.range(0, N).allMatch(i -> (sz[i] = 1) > 0)
-            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> fr
-            && fr.getAndSet(x -> par[x] == x ? x : fr.get().applyAsInt(par[x])) == null
-            && fr.get() instanceof IntUnaryOperator find
-            && IntStream.range(0, N).filter(p -> !one[p]).allMatch(p -> IntStream.of(1, W - 1, W, W + 1).allMatch(d ->
-                p + d >= N || one[p + d]
-                || (Integer.valueOf(find.applyAsInt(p)) instanceof Integer a
-                    && Integer.valueOf(find.applyAsInt(p + d)) instanceof Integer b
-                    && (a.equals(b)
-                        || (sz[a] < sz[b]
-                            ? (par[a] = b) >= 0 && (sz[b] += sz[a]) > 0
-                            : (par[b] = a) >= 0 && (sz[a] += sz[b]) > 0)))))
-            && Integer.valueOf(find.applyAsInt(0)) instanceof Integer out
-            && new int[]{-W - 1, -W, -W + 1, -1, 1, W - 1, W, W + 1} instanceof int[] dirs
-            && LongStream.range(0, 8L * N)
-                .filter(x -> one[(int) (x >> 3)] && !one[(int) (x >> 3) + dirs[(int) (x & 7)]]
-                    && find.applyAsInt((int) (x >> 3) + dirs[(int) (x & 7)]) != out)
-                .map(x -> (long) find.applyAsInt((int) (x >> 3) + dirs[(int) (x & 7)]) * N + (x >> 3))
-                .sorted().distinct().toArray() instanceof long[] keys
-            && IntStream.range(0, keys.length).filter(i -> i == 0 || keys[i] / N != keys[i - 1] / N).toArray() instanceof int[] st
+            && new int[1] instanceof int[] ci
+            && IntStream.range(h + 1, raw.length).filter(i -> raw[i] == '0' || raw[i] == '1').allMatch(i ->
+                (one[(ci[0] / m + 1) * W + ci[0] % m + 1] = raw[i] == '1') | ci[0]++ >= 0)
+            && new int[N] instanceof int[] lab
+            && new int[N] instanceof int[] stk
+            && new int[N + 3] instanceof int[] sz
+            && new int[2] instanceof int[] sp
+            && ((IntPredicate) z -> z < 0 || z >= N || one[z] || lab[z] != 0
+                || ((lab[z] = sp[1]) > 0 && (stk[sp[0]++] = z) >= 0)) instanceof IntPredicate push
+            && IntStream.range(0, N).filter(p -> !one[p] && lab[p] == 0).allMatch(p ->
+                (lab[p] = ++sp[1]) > 0
+                && (stk[0] = p) == p
+                && (sp[0] = 1) == 1
+                && IntStream.iterate(0, x -> sp[0] > 0, x -> 0).allMatch(x ->
+                    Integer.valueOf(stk[--sp[0]]) instanceof Integer q
+                    && sz[sp[1]]++ >= 0
+                    && (push.test(q - W - 1) & push.test(q - W) & push.test(q - W + 1) & push.test(q - 1)
+                        & push.test(q + 1) & push.test(q + W - 1) & push.test(q + W) & push.test(q + W + 1))))
+            && Integer.valueOf(sp[1]) instanceof Integer id
+            && new int[id + 3] instanceof int[] cn
+            && new int[N] instanceof int[] seen
+            && ((IntBinaryOperator) (p, z) -> lab[z] < 2 || seen[lab[z]] == p + 1 || ((seen[lab[z]] = p + 1) > 0 && ++cn[lab[z]] > 0) ? 1 : 1) instanceof IntBinaryOperator r1
+            && IntStream.range(0, N).filter(p -> one[p]).allMatch(p ->
+                (r1.applyAsInt(p, p - W - 1) | r1.applyAsInt(p, p - W) | r1.applyAsInt(p, p - W + 1) | r1.applyAsInt(p, p - 1)
+                    | r1.applyAsInt(p, p + 1) | r1.applyAsInt(p, p + W - 1) | r1.applyAsInt(p, p + W) | r1.applyAsInt(p, p + W + 1)) > 0)
+            && new int[id + 3] instanceof int[] st
+            && IntStream.rangeClosed(2, id).allMatch(g -> (st[g + 1] = st[g] + cn[g]) >= 0)
+            && new int[st[id + 1]] instanceof int[] bk
+            && st.clone() instanceof int[] fp
+            && ((IntBinaryOperator) (p, z) -> lab[z] < 2 || seen[lab[z]] == -p - 1 || ((seen[lab[z]] = -p - 1) < 0 && (bk[fp[lab[z]]++] = p) >= 0) ? 1 : 1) instanceof IntBinaryOperator r2
+            && IntStream.range(0, N).filter(p -> one[p]).allMatch(p ->
+                (r2.applyAsInt(p, p - W - 1) | r2.applyAsInt(p, p - W) | r2.applyAsInt(p, p - W + 1) | r2.applyAsInt(p, p - 1)
+                    | r2.applyAsInt(p, p + 1) | r2.applyAsInt(p, p + W - 1) | r2.applyAsInt(p, p + W) | r2.applyAsInt(p, p + W + 1)) > 0)
             && new int[N] instanceof int[] mk
             ? Math.max(
                 IntStream.range(0, N - W - 1).anyMatch(p -> one[p] && one[p + 1] && one[p + W] && one[p + W + 1]) ? 4 : 0,
-                IntStream.range(0, st.length).map(g ->
+                IntStream.rangeClosed(2, id).map(g ->
                     Integer.valueOf(st[g]) instanceof Integer s
-                    && Integer.valueOf(g + 1 < st.length ? st[g + 1] : keys.length) instanceof Integer e
-                    && Integer.valueOf(e - s) instanceof Integer L
-                    && IntStream.range(s, e).allMatch(i -> (mk[(int) (keys[i] % N)] = g + 1) > 0)
-                    && IntStream.range(s, e).allMatch(i -> Integer.valueOf((int) (keys[i] % N)) instanceof Integer p
-                        && (mk[p - 1] == g + 1 ? 1 : 0) + (mk[p + 1] == g + 1 ? 1 : 0) + (mk[p - W] == g + 1 ? 1 : 0) + (mk[p + W] == g + 1 ? 1 : 0) == 2)
-                    && Integer.valueOf((int) (keys[s] % N)) instanceof Integer start
-                    && Stream.iterate(new int[]{-1, start},
-                            q -> !(q[0] != -1 && q[1] == start),
-                            q -> new int[]{q[1], IntStream.of(q[1] - 1, q[1] + 1, q[1] - W, q[1] + W)
-                                .filter(z -> mk[z] == g + 1 && z != q[0]).findFirst().getAsInt()})
-                        .mapToInt(q -> q[1]).toArray() instanceof int[] cyc
-                    && cyc.length == L
-                    && Long.valueOf(Math.abs(IntStream.range(0, L).mapToLong(i ->
-                        (long) (cyc[i] / W) * (cyc[(i + 1) % L] % W) - (long) (cyc[(i + 1) % L] / W) * (cyc[i] % W)).sum())) instanceof Long area2
-                    && (area2 - L) / 2 + 1 == sz[(int) (keys[s] / N)]
+                    && Integer.valueOf(st[g + 1] - s) instanceof Integer L
+                    && L >= 4
+                    && IntStream.range(s, st[g + 1]).allMatch(i -> (mk[bk[i]] = g) > 0)
+                    && IntStream.range(s, st[g + 1]).allMatch(i -> Integer.valueOf(bk[i]) instanceof Integer p
+                        && (mk[p - 1] == g ? 1 : 0) + (mk[p + 1] == g ? 1 : 0) + (mk[p - W] == g ? 1 : 0) + (mk[p + W] == g ? 1 : 0) == 2)
+                    && Integer.valueOf(bk[s]) instanceof Integer start
+                    && new int[]{-1, start, 0} instanceof int[] tr
+                    && new long[1] instanceof long[] ar
+                    && IntStream.iterate(0, x -> tr[2] == 0 || (tr[1] != start && tr[2] <= L), x -> 0).allMatch(x ->
+                        Integer.valueOf(tr[1]) instanceof Integer cu
+                        && Integer.valueOf(mk[cu - 1] == g && cu - 1 != tr[0] ? cu - 1
+                            : mk[cu + 1] == g && cu + 1 != tr[0] ? cu + 1
+                            : mk[cu - W] == g && cu - W != tr[0] ? cu - W : cu + W) instanceof Integer nx
+                        && (ar[0] += (long) (cu / W) * (nx % W) - (long) (nx / W) * (cu % W)) != Long.MIN_VALUE
+                        && (tr[0] = cu) >= 0
+                        && (tr[1] = nx) >= 0
+                        && ++tr[2] > 0)
+                    && tr[2] == L && tr[1] == start
+                    && (Math.abs(ar[0]) - L) / 2 + 1 == sz[g]
                     ? L : 0).max().orElse(0))
             : 0);
     }
