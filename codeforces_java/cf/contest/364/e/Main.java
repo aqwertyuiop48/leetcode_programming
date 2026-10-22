@@ -12,16 +12,27 @@ public class Main {
                 && (P[(i + 1) * (m + 1) + j + 1] = P[i * (m + 1) + j + 1] + P[(i + 1) * (m + 1) + j] - P[i * (m + 1) + j] + v) >= 0)
             && IntStream.range(0, n * m).allMatch(y -> Integer.valueOf(y % n) instanceof Integer i && Integer.valueOf(y / n) instanceof Integer j && Integer.valueOf(L.get(1 + i).charAt(j) - '0') instanceof Integer v
                 && (PT[(j + 1) * (n + 1) + i + 1] = PT[j * (n + 1) + i + 1] + PT[(j + 1) * (n + 1) + i] - PT[j * (n + 1) + i] + v) >= 0)
-            && new long[1] instanceof long[] tot
+            && new long[1] instanceof long[] tot && new int[Math.max(n, m) + 2] instanceof int[] tc && new int[Math.max(n, m) + 2] instanceof int[] bc && new int[Math.max(n, m) + 2] instanceof int[] bn
             && ((BiPredicate<int[], int[]>) (arr, pr) -> Integer.valueOf(pr[0]) instanceof Integer W && Integer.valueOf(pr[1]) instanceof Integer lo && Integer.valueOf(pr[2]) instanceof Integer hi && Integer.valueOf(pr[3]) instanceof Integer mid
                 && Integer.valueOf(pr[4]) instanceof Integer clo && Integer.valueOf(pr[5]) instanceof Integer chi
                 && ((IntBinaryOperator) (rp, cp) -> arr[((rp & 4095) + 1) * W + (cp & 4095) + 1] - arr[(rp >> 12) * W + (cp & 4095) + 1] - arr[((rp & 4095) + 1) * W + (cp >> 12)] + arr[(rp >> 12) * W + (cp >> 12)]) instanceof IntBinaryOperator cn
-                && IntStream.range(clo, chi).allMatch(l -> new int[k + 1] instanceof int[] up && new int[k + 1] instanceof int[] dn
-                    && IntStream.rangeClosed(0, k).allMatch(c -> (up[c] = lo) >= 0 & (dn[c] = hi - 1) >= 0)
-                    && (IntStream.rangeClosed(l, chi - 1).takeWhile(r -> cn.applyAsInt((mid - 1) << 12 | mid, l << 12 | r) <= k).allMatch(r ->
-                            IntStream.rangeClosed(0, k).allMatch(c -> (up[c] += up[c] < mid && cn.applyAsInt(up[c] << 12 | (mid - 1), l << 12 | r) > c ? (int) IntStream.iterate(up[c], t -> t < mid && cn.applyAsInt(t << 12 | (mid - 1), l << 12 | r) > c, t -> t + 1).count() : 0) >= 0
-                                & (dn[c] -= dn[c] >= mid && cn.applyAsInt(mid << 12 | dn[c], l << 12 | r) > c ? (int) IntStream.iterate(dn[c], b -> b >= mid && cn.applyAsInt(mid << 12 | b, l << 12 | r) > c, b -> b - 1).count() : 0) > -2)
-                            && (tot[0] += IntStream.rangeClosed(0, k).mapToLong(a -> (long) (a == 0 ? mid - up[0] : up[a - 1] - up[a]) * (k - a == 0 ? dn[0] - mid + 1 : dn[k - a] - dn[k - a - 1])).sum()) >= 0) | true))) instanceof BiPredicate<int[], int[]> cross
+                && new int[k + 1] instanceof int[] up && new int[k + 1] instanceof int[] dn && new int[5] instanceof int[] ctx 
+                && IntStream.range(clo, chi).allMatch(x -> (tc[x] = cn.applyAsInt(lo << 12 | (mid - 1), x << 12 | x)) >= 0 & (bc[x] = cn.applyAsInt(mid << 12 | (hi - 1), x << 12 | x)) >= 0 & (bn[x] = cn.applyAsInt((mid - 1) << 12 | mid, x << 12 | x)) >= 0) && new boolean[]{true} instanceof boolean[] mv && new long[1] instanceof long[] last
+                && new AtomicReference<IntPredicate>() instanceof AtomicReference<IntPredicate> gu && new AtomicReference<IntPredicate>() instanceof AtomicReference<IntPredicate> gd
+                && new AtomicReference<IntBinaryOperator>() instanceof AtomicReference<IntBinaryOperator> bu && new AtomicReference<IntBinaryOperator>() instanceof AtomicReference<IntBinaryOperator> bd
+                && bu.compareAndSet(null, (c, pk) -> (pk >> 12) == (pk & 4095) ? pk & 4095 : cn.applyAsInt(((pk >> 12) + (pk & 4095)) / 2 << 12 | (mid - 1), ctx[0] << 12 | ctx[1]) <= c
+                    ? bu.get().applyAsInt(c, (pk >> 12) << 12 | ((pk >> 12) + (pk & 4095)) / 2) : bu.get().applyAsInt(c, (((pk >> 12) + (pk & 4095)) / 2 + 1) << 12 | (pk & 4095)))
+                && bd.compareAndSet(null, (c, pk) -> (pk >> 12) == (pk & 4095) ? pk & 4095 : cn.applyAsInt(mid << 12 | ((pk >> 12) + (pk & 4095) + 1) / 2, ctx[0] << 12 | ctx[1]) <= c
+                    ? bd.get().applyAsInt(c, ((pk >> 12) + (pk & 4095) + 1) / 2 << 12 | (pk & 4095)) : bd.get().applyAsInt(c, (pk >> 12) << 12 | (((pk >> 12) + (pk & 4095) + 1) / 2 - 1)))
+                && gu.compareAndSet(null, c -> c >= Math.min(k + 1, ctx[2]) || (cn.applyAsInt(up[c] << 12 | (mid - 1), ctx[0] << 12 | ctx[1]) <= c || (mv[0] = true) && (up[c] = bu.get().applyAsInt(c, (up[c] + 1) << 12 | mid)) > -1) && gu.get().test(c + 1))
+                && gd.compareAndSet(null, c -> c >= Math.min(k + 1, ctx[3]) || (cn.applyAsInt(mid << 12 | dn[c], ctx[0] << 12 | ctx[1]) <= c || (mv[0] = true) && (dn[c] = bd.get().applyAsInt(c, (mid - 1) << 12 | (dn[c] - 1))) > -2) && gd.get().test(c + 1))
+                && new AtomicReference<IntToLongFunction>() instanceof AtomicReference<IntToLongFunction> sm
+                && sm.compareAndSet(null, a -> a > k ? 0L : (long) (a == 0 ? mid - up[0] : up[a - 1] - up[a]) * (k - a == 0 ? dn[0] - mid + 1 : dn[k - a] - dn[k - a - 1]) + sm.get().applyAsLong(a + 1))
+                && IntStream.range(clo, chi).allMatch(l -> IntStream.rangeClosed(0, k).allMatch(c -> (up[c] = lo) >= 0 & (dn[c] = hi - 1) >= 0) && (mv[0] = true) && (ctx[0] = l) >= 0 & (ctx[2] = 0) == 0 & (ctx[3] = 0) == 0 & (ctx[4] = 0) == 0
+                    && (IntStream.rangeClosed(l, chi - 1).takeWhile(r -> (ctx[4] += bn[r]) <= k).allMatch(r -> (ctx[1] = r) >= 0 & (ctx[2] += tc[r]) >= 0 & (ctx[3] += bc[r]) >= 0
+                            && gu.get().test(0) && gd.get().test(0)
+                            && (!mv[0] || !(mv[0] = false) && (last[0] = sm.get().applyAsLong(0)) >= 0)
+                            && (tot[0] += last[0]) >= 0) | true))) instanceof BiPredicate<int[], int[]> cross
             && new AtomicReference<Predicate<int[]>>() instanceof AtomicReference<Predicate<int[]>> slv
             && slv.compareAndSet(null, q -> q[1] - q[0] == 1 && q[3] - q[2] == 1
                 ? (tot[0] += P[(q[0] + 1) * (m + 1) + q[2] + 1] - P[q[0] * (m + 1) + q[2] + 1] - P[(q[0] + 1) * (m + 1) + q[2]] + P[q[0] * (m + 1) + q[2]] == k ? 1 : 0) >= 0
