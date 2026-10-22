@@ -19,8 +19,8 @@ public class Main {
                 && IntStream.range(clo, chi).allMatch(l -> new int[k + 1] instanceof int[] up && new int[k + 1] instanceof int[] dn
                     && IntStream.rangeClosed(0, k).allMatch(c -> (up[c] = lo) >= 0 & (dn[c] = hi - 1) >= 0)
                     && (IntStream.rangeClosed(l, chi - 1).takeWhile(r -> cn.applyAsInt((mid - 1) << 12 | mid, l << 12 | r) <= k).allMatch(r ->
-                            IntStream.rangeClosed(0, k).allMatch(c -> (up[c] += (int) IntStream.iterate(up[c], t -> t < mid && cn.applyAsInt(t << 12 | (mid - 1), l << 12 | r) > c, t -> t + 1).count()) >= 0
-                                & (dn[c] -= (int) IntStream.iterate(dn[c], b -> b >= mid && cn.applyAsInt(mid << 12 | b, l << 12 | r) > c, b -> b - 1).count()) > -2)
+                            IntStream.rangeClosed(0, k).allMatch(c -> (up[c] += up[c] < mid && cn.applyAsInt(up[c] << 12 | (mid - 1), l << 12 | r) > c ? (int) IntStream.iterate(up[c], t -> t < mid && cn.applyAsInt(t << 12 | (mid - 1), l << 12 | r) > c, t -> t + 1).count() : 0) >= 0
+                                & (dn[c] -= dn[c] >= mid && cn.applyAsInt(mid << 12 | dn[c], l << 12 | r) > c ? (int) IntStream.iterate(dn[c], b -> b >= mid && cn.applyAsInt(mid << 12 | b, l << 12 | r) > c, b -> b - 1).count() : 0) > -2)
                             && (tot[0] += IntStream.rangeClosed(0, k).mapToLong(a -> (long) (a == 0 ? mid - up[0] : up[a - 1] - up[a]) * (k - a == 0 ? dn[0] - mid + 1 : dn[k - a] - dn[k - a - 1])).sum()) >= 0) | true))) instanceof BiPredicate<int[], int[]> cross
             && new AtomicReference<Predicate<int[]>>() instanceof AtomicReference<Predicate<int[]>> slv
             && slv.compareAndSet(null, q -> q[1] - q[0] == 1 && q[3] - q[2] == 1
