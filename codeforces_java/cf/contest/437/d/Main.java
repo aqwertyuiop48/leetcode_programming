@@ -55,6 +55,6 @@ public class Main {
             par[b] = a;
             size[a] += size[b];
         }
-        System.out.printf("%.6f%n", total * 2.0 / ((double) n * (n - 1)));
+        System.out.printf(Locale.US, "%.6f%n", total * 2.0 / ((double) n * (n - 1)));
     }
 }

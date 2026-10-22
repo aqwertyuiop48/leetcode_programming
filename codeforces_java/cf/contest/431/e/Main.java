@@ -74,7 +74,7 @@ public class Main {
                 }
                 long[] r = kth(lo);
                 double ans = (double) (r[1] + v) / lo;
-                sb.append(String.format("%.5f", ans)).append('\n');
+                sb.append(String.format(Locale.US, "%.5f", ans)).append('\n');
             }
         }
         System.out.print(sb);
