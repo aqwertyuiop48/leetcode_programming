@@ -29,13 +29,15 @@ public class Main {
                 && new AtomicReference<IntToLongFunction>() instanceof AtomicReference<IntToLongFunction> sm
                 && sm.compareAndSet(null, a -> a > k ? 0L : (long) (a == 0 ? mid - up[0] : up[a - 1] - up[a]) * (k - a == 0 ? dn[0] - mid + 1 : dn[k - a] - dn[k - a - 1]) + sm.get().applyAsLong(a + 1))
                 && IntStream.range(clo, chi).allMatch(l -> IntStream.rangeClosed(0, k).allMatch(c -> (up[c] = lo) >= 0 & (dn[c] = hi - 1) >= 0) && (mv[0] = true) && (ctx[0] = l) >= 0 & (ctx[2] = 0) == 0 & (ctx[3] = 0) == 0 & (ctx[4] = 0) == 0
-                    && (IntStream.rangeClosed(l, chi - 1).takeWhile(r -> (ctx[4] += bn[r]) <= k).allMatch(r -> (ctx[1] = r) >= 0 & (ctx[2] += tc[r]) >= 0 & (ctx[3] += bc[r]) >= 0
-                            && gu.get().test(0) && gd.get().test(0)
+                    && (IntStream.rangeClosed(l, chi - 1).map(r -> (ctx[4] += bn[r]) > k || (ctx[1] = r) >= 0 & (ctx[2] += tc[r]) >= 0 & (ctx[3] += bc[r]) >= 0
+                            && (tc[r] == 0 || gu.get().test(0)) && (bc[r] == 0 || gd.get().test(0))
                             && (!mv[0] || !(mv[0] = false) && (last[0] = sm.get().applyAsLong(0)) >= 0)
-                            && (tot[0] += last[0]) >= 0) | true))) instanceof BiPredicate<int[], int[]> cross
+                            && (tot[0] += last[0]) >= 0 ? 1 : 0).sum() >= 0))) instanceof BiPredicate<int[], int[]> cross
             && new AtomicReference<Predicate<int[]>>() instanceof AtomicReference<Predicate<int[]>> slv
-            && slv.compareAndSet(null, q -> q[1] - q[0] == 1 && q[3] - q[2] == 1
-                ? (tot[0] += P[(q[0] + 1) * (m + 1) + q[2] + 1] - P[q[0] * (m + 1) + q[2] + 1] - P[(q[0] + 1) * (m + 1) + q[2]] + P[q[0] * (m + 1) + q[2]] == k ? 1 : 0) >= 0
+            && slv.compareAndSet(null, q -> q[1] - q[0] <= 4 && q[3] - q[2] <= 4
+                ? (tot[0] += IntStream.range(0, (q[1] - q[0]) * (q[1] - q[0]) * (q[3] - q[2]) * (q[3] - q[2])).filter(z -> Integer.valueOf(q[1] - q[0]) instanceof Integer h && Integer.valueOf(q[3] - q[2]) instanceof Integer w
+                    && Integer.valueOf(q[0] + z % h) instanceof Integer r1 && Integer.valueOf(q[0] + z / h % h) instanceof Integer r2 && Integer.valueOf(q[2] + z / (h * h) % w) instanceof Integer c1 && Integer.valueOf(q[2] + z / (h * h * w)) instanceof Integer c2
+                    && r1 <= r2 && c1 <= c2 && P[(r2 + 1) * (m + 1) + c2 + 1] - P[r1 * (m + 1) + c2 + 1] - P[(r2 + 1) * (m + 1) + c1] + P[r1 * (m + 1) + c1] == k).count()) >= 0
                 : q[1] - q[0] >= q[3] - q[2]
                     ? Integer.valueOf((q[0] + q[1]) / 2) instanceof Integer mid && cross.test(P, new int[]{m + 1, q[0], q[1], mid, q[2], q[3]})
                         && slv.get().test(new int[]{q[0], mid, q[2], q[3]}) && slv.get().test(new int[]{mid, q[1], q[2], q[3]})
