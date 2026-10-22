@@ -1,18 +1,45 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
+    static int[] fixed = new int[200];
+    static List<int[]> edges;
+
+    static boolean feasible() {
+        int[] lo = new int[200], hi = new int[200];
+        for (int i = 0; i < 200; i++) {
+            lo[i] = Math.max(fixed[i], 0);
+            hi[i] = fixed[i] >= 0 ? fixed[i] : 9;
+        }
+        for (int r = 0; r < 100; r++) {
+            for (int[] e : edges) {
+                lo[e[1]] = Math.max(lo[e[1]], lo[e[0]] + 1);
+                hi[e[0]] = Math.min(hi[e[0]], hi[e[1]] - 1);
+            }
+        }
+        return IntStream.range(0, 200).allMatch(i -> lo[i] <= hi[i]);
+    }
+
     public static void main(String[] args) {
-        System.out.println(new Scanner(System.in).nextLine().trim() instanceof String line && line.split(":-", -1) instanceof String[] parts
-            && Arrays.stream(parts[0].split("[^_]+")).filter(s -> !s.isEmpty()).map(String::length).toList() instanceof List<Integer> jaw
-            && Arrays.stream(parts[1].split("[,.]")).filter(s -> !s.isBlank()).map(s -> s.split("[<>]") instanceof String[] ab ? s.indexOf('<') >= 0 ? new int[] {ab[0].trim().length(), ab[1].trim().length()} : new int[] {ab[1].trim().length(), ab[0].trim().length()} : null).toList() instanceof List<int[]> edges
-            && new int[line.length() + 2] instanceof int[] fixed && Arrays.fill(fixed, -1) == null || true
-            ? ((BooleanSupplier) () -> new int[line.length() + 2] instanceof int[] lo && new int[line.length() + 2] instanceof int[] hi
-                && IntStream.range(0, lo.length).allMatch(i -> (lo[i] = Math.max(fixed[i], 0)) >= 0 && (hi[i] = fixed[i] >= 0 ? fixed[i] : 9) >= 0)
-                && IntStream.range(0, 100).allMatch(r -> edges.stream().allMatch(e -> (lo[e[1]] = Math.max(lo[e[1]], lo[e[0]] + 1)) >= 0) && edges.stream().allMatch(e -> (hi[e[0]] = Math.min(hi[e[0]], hi[e[1]] - 1)) > Integer.MIN_VALUE))
-                && IntStream.range(0, lo.length).allMatch(i -> lo[i] <= hi[i])) instanceof BooleanSupplier feas
-                ? feas.getAsBoolean() && jaw.stream().distinct().allMatch(x -> IntStream.range(0, 10).filter(v -> (fixed[x] = v) >= 0 && feas.getAsBoolean()).findFirst().isPresent())
-                    ? jaw.stream().map(x -> String.valueOf(fixed[x])).collect(Collectors.joining()) : "false" : "" : "");
+        String line = new Scanner(System.in).nextLine().trim();
+        String[] parts = line.split(":-", -1);
+        List<Integer> jaw = Arrays.stream(parts[0].split("[^_]+")).filter(s -> !s.isEmpty()).map(String::length).toList();
+        edges = Arrays.stream(parts[1].split("[,.]")).filter(s -> !s.isBlank())
+            .map(s -> {
+                String[] ab = s.split("[<>]");
+                int x = ab[0].trim().length(), y = ab[1].trim().length();
+                return s.indexOf('<') >= 0 ? new int[] {x, y} : new int[] {y, x};
+            }).collect(Collectors.toList());
+        Arrays.fill(fixed, -1);
+        boolean ok = feasible();
+        for (int x : jaw.stream().distinct().toList()) {
+            if (!ok) break;
+            ok = false;
+            for (int v = 0; v < 10 && !ok; v++) {
+                fixed[x] = v;
+                ok = feasible();
+            }
+        }
+        System.out.println(ok ? jaw.stream().map(x -> String.valueOf(fixed[x])).collect(Collectors.joining()) : "false");
     }
 }
