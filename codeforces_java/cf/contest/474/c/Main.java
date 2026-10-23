@@ -1,0 +1,8 @@
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Optional.of(new Scanner(System.in)).ifPresent(s -> Optional.of(s.nextInt()).ifPresent(t -> System.out.print(IntStream.range(0, t).mapToObj(tt -> Optional.of(IntStream.range(0, 16).map(i -> s.nextInt()).toArray()).map(q -> IntStream.range(0, 256).filter(c -> IntStream.range(0, 4).map(i -> q[4 * i + 2] + ((c >> (2 * i) & 3) == 0 ? q[4 * i] - q[4 * i + 2] : (c >> (2 * i) & 3) == 1 ? -(q[4 * i + 1] - q[4 * i + 3]) : (c >> (2 * i) & 3) == 2 ? -(q[4 * i] - q[4 * i + 2]) : q[4 * i + 1] - q[4 * i + 3])).toArray() instanceof int[] xs && IntStream.range(0, 4).map(i -> q[4 * i + 3] + ((c >> (2 * i) & 3) == 0 ? q[4 * i + 1] - q[4 * i + 3] : (c >> (2 * i) & 3) == 1 ? q[4 * i] - q[4 * i + 2] : (c >> (2 * i) & 3) == 2 ? -(q[4 * i + 1] - q[4 * i + 3]) : -(q[4 * i] - q[4 * i + 2]))).toArray() instanceof int[] ys && LongStream.of(1L * (xs[0] - xs[1]) * (xs[0] - xs[1]) + 1L * (ys[0] - ys[1]) * (ys[0] - ys[1]), 1L * (xs[0] - xs[2]) * (xs[0] - xs[2]) + 1L * (ys[0] - ys[2]) * (ys[0] - ys[2]), 1L * (xs[0] - xs[3]) * (xs[0] - xs[3]) + 1L * (ys[0] - ys[3]) * (ys[0] - ys[3]), 1L * (xs[1] - xs[2]) * (xs[1] - xs[2]) + 1L * (ys[1] - ys[2]) * (ys[1] - ys[2]), 1L * (xs[1] - xs[3]) * (xs[1] - xs[3]) + 1L * (ys[1] - ys[3]) * (ys[1] - ys[3]), 1L * (xs[2] - xs[3]) * (xs[2] - xs[3]) + 1L * (ys[2] - ys[3]) * (ys[2] - ys[3])).sorted().toArray() instanceof long[] d && d[0] > 0 && d[0] == d[3] && d[4] == d[5] && d[4] == 2 * d[0]).map(c -> (c & 3) + (c >> 2 & 3) + (c >> 4 & 3) + (c >> 6 & 3)).min().orElse(-1)).get()).map(String::valueOf).collect(Collectors.joining("\n")))));
+    }
+}
