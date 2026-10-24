@@ -3,33 +3,25 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer n
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer m
-            && IntStream.rangeClosed(0, n).mapToObj(i -> new ArrayList<Integer>()).toList() instanceof List<ArrayList<Integer>> adj
-            && IntStream.range(0, m).allMatch(i -> Integer.valueOf(rd.getAsInt()) instanceof Integer u && Integer.valueOf(rd.getAsInt()) instanceof Integer v && adj.get(u).add(v) && adj.get(v).add(u))
-            && IntStream.generate(() -> -1).limit(n + 1).toArray() instanceof int[] color
-            && new int[n + 1] instanceof int[] comp
-            && new ArrayList<int[]>() instanceof ArrayList<int[]> cc
-            && new boolean[]{true} instanceof boolean[] ok
-            && IntStream.rangeClosed(1, n).filter(v -> color[v] < 0).allMatch(root -> (color[root] = 0) == 0 && (comp[root] = cc.size()) >= 0 && cc.add(new int[]{0, 0})
-                && new ArrayDeque<Integer>(List.of(root)) instanceof ArrayDeque<Integer> dq
-                && Stream.generate(dq::poll).takeWhile(Objects::nonNull).allMatch(v -> ++cc.get(comp[root])[color[v]] > 0
-                    && adj.get(v).stream().allMatch(u -> color[u] < 0 ? (color[u] = 1 - color[v]) >= 0 && (comp[u] = comp[root]) >= 0 && dq.add(u) : color[u] != color[v] || !(ok[0] = false))))
-            && ok[0]
-            && Integer.valueOf(cc.size()) instanceof Integer c
-            && new int[c + 1][9] instanceof int[][] from
-            && (from[0][0] = -2) == -2
-            && IntStream.range(0, c).allMatch(i -> IntStream.range(0, 9).filter(s -> from[i][s] != 0).allMatch(s ->
-                (from[i + 1][(s / 3 + cc.get(i)[0]) % 3 * 3 + (s % 3 + cc.get(i)[1]) % 3] != 0 || (from[i + 1][(s / 3 + cc.get(i)[0]) % 3 * 3 + (s % 3 + cc.get(i)[1]) % 3] = s * 2 + 1) > 0)
-                && (from[i + 1][(s / 3 + cc.get(i)[1]) % 3 * 3 + (s % 3 + cc.get(i)[0]) % 3] != 0 || (from[i + 1][(s / 3 + cc.get(i)[1]) % 3 * 3 + (s % 3 + cc.get(i)[0]) % 3] = s * 2 + 2) > 0)))
-            && from[c][0] != 0
-            && new int[c] instanceof int[] orient
-            && new int[]{0} instanceof int[] cur
-            && IntStream.iterate(c, i -> i > 0, i -> i - 1).allMatch(i -> (orient[i - 1] = (from[i][cur[0]] - 1) % 2) >= 0 && (cur[0] = (from[i][cur[0]] - 1) / 2) >= 0)
-            ? "YES\n" + IntStream.rangeClosed(1, n).mapToObj(v -> String.valueOf(1 + (color[v] ^ orient[comp[v]]))).collect(Collectors.joining(" "))
-            : "NO");
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && IntStream.range(0, 2 * m).map(i -> Integer.parseInt(tk.nextToken()) - 1).toArray() instanceof int[] ed
+            && new int[2 * m] instanceof int[] nxt && IntStream.generate(() -> -1).limit(n).toArray() instanceof int[] head && new int[n] instanceof int[] deg
+            && IntStream.range(0, 2 * m).allMatch(j -> (nxt[j] = head[ed[j]]) >= -1 && (head[ed[j]] = j) >= 0 && ++deg[ed[j]] > 0)
+            && IntStream.generate(() -> -1).limit(n).toArray() instanceof int[] color && new int[n] instanceof int[] q && new int[2] instanceof int[] qp
+            && IntStream.range(0, n).allMatch(r -> color[r] >= 0 || ((color[r] = 0) == 0 && (q[qp[1]++] = r) >= 0
+                && IntStream.range(0, n).takeWhile(z -> qp[0] < qp[1]).allMatch(z -> (Integer) q[qp[0]++] instanceof Integer u
+                    && IntStream.iterate(head[u], e -> e >= 0, e -> nxt[e]).filter(e -> color[ed[e ^ 1]] < 0).allMatch(e -> (color[ed[e ^ 1]] = 1 - color[u]) >= 0 && (q[qp[1]++] = ed[e ^ 1]) >= 0))))
+            && (Integer) (int) IntStream.of(color).filter(c -> c == 0).count() instanceof Integer cz
+            && (cz % 3 != 2 || IntStream.range(0, n).allMatch(i -> (color[i] = 1 - color[i]) >= 0))
+            && (Integer) (int) IntStream.of(color).filter(c -> c == 0).count() instanceof Integer c0 && (Integer) (n - c0) instanceof Integer c1
+            && new int[n] instanceof int[] res && new int[n] instanceof int[] mk && new int[]{1, 3} instanceof int[] st
+            && ((IntBinaryOperator) (i, want) -> (color[i] = 2) == 2 && (res[i] = st[0]) > 0 && IntStream.iterate(head[i], e -> e >= 0, e -> nxt[e]).allMatch(e -> (mk[ed[e ^ 1]] = i + 1) > 0)
+                && IntStream.range(0, n).filter(j -> color[j] == want && mk[j] != i + 1).limit(2).allMatch(j -> (color[j] = 2) == 2 && (res[j] = st[0]) > 0) && ++st[0] > 0 ? 1 : 0) instanceof IntBinaryOperator grp
+            && (cz % 3 == 0 || (IntStream.range(0, n).filter(i -> color[i] == 0 && deg[i] <= c1 - 2).findFirst() instanceof OptionalInt f0 && f0.isPresent()
+                ? grp.applyAsInt(f0.getAsInt(), 1) == 1
+                : IntStream.range(0, n).filter(i -> color[i] == 1 && deg[i] <= c0 - 2).limit(2).toArray() instanceof int[] cd && cd.length == 2 && grp.applyAsInt(cd[0], 0) == 1 && grp.applyAsInt(cd[1], 0) == 1))
+            && IntStream.concat(IntStream.range(0, n).filter(i -> color[i] == 0), IntStream.range(0, n).filter(i -> color[i] == 1)).allMatch(i -> (res[i] = st[0]) > 0 && (--st[1] != 0 || (++st[0] > 0 && (st[1] = 3) > 0)))
+            ? "YES\n" + IntStream.of(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "NO");
     }
 }

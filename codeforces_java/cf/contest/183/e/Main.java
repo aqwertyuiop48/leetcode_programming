@@ -1,30 +1,17 @@
+import java.util.*;
 import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(
-            System.in.readAllBytes() instanceof byte[] raw
-            && new long[raw.length / 2 + 2] instanceof long[] nums
-            && new long[3] instanceof long[] st
-            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
-                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
-                    ? (st[0] = st[0] * 10 + raw[i] - '0') >= 0 && (st[2] = 1) > 0
-                    : (st[2] != 1 || ((nums[(int) st[1]++] = st[0]) >= 0 && (st[0] = 0) == 0)) && (st[2] = 0) == 0)
-            && Integer.valueOf((int) nums[0]) instanceof Integer n
-            && Integer.valueOf((int) nums[1]) instanceof Integer m
-            && new long[1] instanceof long[] sm
-            ? IntStream.rangeClosed(1, m / n).mapToLong(t ->
-                (Long) ((long) t * (t - 1) / 2 * n) instanceof Long base
-                && (Long) ((long) t * (m - (long) t * n)) instanceof Long tm
-                && (Long) ((long) m - (long) t * n) instanceof Long mm
-                && (Long) IntStream.rangeClosed(1, n).mapToLong(i ->
-                    i < n ? nums[1 + i] - (long) t * i - base : Math.min(nums[1 + i] - (long) t * i - base, tm)).min().getAsLong() instanceof Long q
-                && q >= 0
-                && (sm[0] = Long.MAX_VALUE) > 0
-                ? (long) t * n * ((long) t * n + 1) / 2 + n * q
-                    + IntStream.range(0, n - 1).mapToLong(j ->
-                        Math.min(mm, (sm[0] = Math.min(sm[0], j > 0 ? nums[1 + n - j] - (long) t * (n - j) - base : Math.min(nums[1 + n - j] - (long) t * (n - j) - base, tm))) - q)).sum()
-                : 0L).takeWhile(v -> v > 0).max().orElse(0L)
-            : 0L);
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && IntStream.range(0, n).mapToLong(i -> Long.parseLong(tk.nextToken())).toArray() instanceof long[] a && (Integer) (m / n) instanceof Integer T
+            && LongStream.generate(() -> Long.MAX_VALUE).limit(T + 1).toArray() instanceof long[] qm && new long[T + 1] instanceof long[] sm && new long[T + 1] instanceof long[] acc
+            && LongStream.range(0, (long) T * n).allMatch(idx -> (Long) (idx / n + 1) instanceof Long t && (Long) (idx % n + 1) instanceof Long i
+                && (qm[(int) (long) t] = Math.min(qm[(int) (long) t], i < n ? a[(int) (long) i - 1] - t * i - t * (t - 1) / 2 * n : Math.min(a[n - 1] - t * n - t * (t - 1) / 2 * n, t * (m - t * n)))) > Long.MIN_VALUE)
+            && LongStream.range(0, (long) T * (n - 1)).allMatch(idx -> (Long) (idx / (n - 1) + 1) instanceof Long t && (Long) (idx % (n - 1)) instanceof Long j && (Long) (n - j) instanceof Long i
+                && (Long) (a[(int) (long) i - 1] - t * i - t * (t - 1) / 2 * n) instanceof Long c
+                && (sm[(int) (long) t] = j == 0 ? Math.min(c, t * (m - t * n)) : Math.min(sm[(int) (long) t], c)) > Long.MIN_VALUE
+                && (acc[(int) (long) t] += Math.min(m - t * n, sm[(int) (long) t] - qm[(int) (long) t])) > Long.MIN_VALUE)
+            ? LongStream.rangeClosed(1, T).map(t -> qm[(int) t] >= 0 ? t * n * (t * n + 1) / 2 + n * qm[(int) t] + acc[(int) t] : 0).max().getAsLong() : "");
     }
 }

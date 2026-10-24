@@ -1,23 +1,21 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer n
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer m
-            && IntStream.range(0, n).map(i -> rd.getAsInt()).toArray() instanceof int[] a
-            && new HashMap<Integer, Integer>() instanceof HashMap<Integer, Integer> pos
-            && IntStream.range(0, m).allMatch(i -> pos.put(rd.getAsInt(), i) == null || true)
-            && LongStream.concat(LongStream.of(0), IntStream.range(0, 2 * n - 1).mapToLong(i -> pos.containsKey(a[i % n]) && pos.containsKey(a[(i + 1) % n]) ? (pos.get(a[(i + 1) % n]) - pos.get(a[i % n]) + m) % m : m)).toArray() instanceof long[] pre
-            && IntStream.range(1, 2 * n).allMatch(i -> (pre[i] += pre[i - 1]) >= 0)
-            && new int[]{0} instanceof int[] rp
-            ? IntStream.range(0, n).map(l -> pos.containsKey(a[l])
-                    && Integer.valueOf(Math.min(l + n - 1, 2 * n - 1)) instanceof Integer hi
-                    && Integer.valueOf(IntStream.iterate(Math.max(rp[0], l), x -> true, x -> x + 1).filter(x -> x + 1 > hi || pre[x + 1] - pre[l] > m - 1).findFirst().getAsInt()) instanceof Integer r
-                    && (rp[0] = r) >= 0 ? r - l + 1 : 0).max().orElse(0)
-            : 0);
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw && new int[raw.length / 2 + 4] instanceof int[] nums && new int[3] instanceof int[] st
+            && IntStream.rangeClosed(0, raw.length).allMatch(i -> i < raw.length && raw[i] >= '0' && raw[i] <= '9' ? (st[0] = st[0] * 10 + raw[i] - '0') >= 0 && (st[2] = 1) > 0
+                : st[2] == 0 || ((nums[st[1]++] = st[0]) >= 0 && (st[0] = 0) == 0 && (st[2] = 0) == 0))
+            && (Integer) nums[0] instanceof Integer la && (Integer) nums[1] instanceof Integer lb
+            && IntStream.generate(() -> -1).limit(1000001).toArray() instanceof int[] pos && IntStream.range(0, lb).allMatch(j -> (pos[nums[2 + la + j]] = j) >= 0)
+            && IntStream.range(0, 2 * la).map(i -> pos[nums[2 + i % la]]).toArray() instanceof int[] p
+            && new long[2 * la] instanceof long[] pre
+            && IntStream.range(0, 2 * la - 1).allMatch(i -> (pre[i + 1] = pre[i] + (p[i] < 0 || p[i + 1] < 0 ? lb : (p[i + 1] - p[i] + lb) % lb)) >= 0)
+            && new int[3] instanceof int[] w
+            && IntStream.range(0, 4 * la + 4).allMatch(z -> w[0] >= la || ((w[1] = Math.max(w[1], w[0])) >= 0
+                && (p[w[0]] < 0 ? ++w[0] > 0
+                    : w[1] + 1 <= w[0] + la - 1 && pre[w[1] + 1] - pre[w[0]] <= lb - 1 ? ++w[1] > 0
+                    : (w[2] = Math.max(w[2], w[1] - w[0] + 1)) >= 0 && ++w[0] > 0)))
+            ? w[2] : 0);
     }
 }

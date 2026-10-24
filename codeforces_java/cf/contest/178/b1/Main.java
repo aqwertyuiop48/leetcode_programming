@@ -1,51 +1,27 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        new Thread(null, () -> System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer n
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer m
-            && IntStream.rangeClosed(0, n).mapToObj(i -> new ArrayList<int[]>()).toList() instanceof List<ArrayList<int[]>> adj
-            && IntStream.range(0, m).allMatch(i -> Integer.valueOf(rd.getAsInt()) instanceof Integer u && Integer.valueOf(rd.getAsInt()) instanceof Integer v && adj.get(u).add(new int[]{v, i}) && adj.get(v).add(new int[]{u, i}))
-            && new int[n + 1] instanceof int[] tin
-            && new int[n + 1] instanceof int[] low
-            && new boolean[m] instanceof boolean[] bridge
-            && new int[]{0} instanceof int[] timer
-            && new AtomicReference<IntBinaryOperator>() instanceof AtomicReference<IntBinaryOperator> dfs
-            && dfs.compareAndSet(null, (v, pe) -> (tin[v] = low[v] = ++timer[0]) > 0
-                && adj.get(v).stream().allMatch(e -> e[1] == pe || (tin[e[0]] != 0
-                    ? (low[v] = Math.min(low[v], tin[e[0]])) > 0
-                    : dfs.get().applyAsInt(e[0], e[1]) >= 0 && (low[v] = Math.min(low[v], low[e[0]])) > 0 && (low[e[0]] <= tin[v] || (bridge[e[1]] = true))))
-                ? 0 : 0)
-            && dfs.get().applyAsInt(1, -1) >= 0
-            && IntStream.generate(() -> -1).limit(n + 1).toArray() instanceof int[] comp
-            && new int[]{0} instanceof int[] cc
-            && IntStream.rangeClosed(1, n).filter(v -> comp[v] < 0).allMatch(root -> (comp[root] = cc[0]) >= 0
-                && new ArrayDeque<Integer>(List.of(root)) instanceof ArrayDeque<Integer> dq
-                && Stream.generate(dq::poll).takeWhile(Objects::nonNull).allMatch(v -> adj.get(v).stream().filter(e -> !bridge[e[1]] && comp[e[0]] < 0).allMatch(e -> (comp[e[0]] = cc[0]) >= 0 && dq.add(e[0])))
-                && ++cc[0] > 0)
-            && IntStream.range(0, cc[0]).mapToObj(i -> new ArrayList<Integer>()).toList() instanceof List<ArrayList<Integer>> tree
-            && IntStream.rangeClosed(1, n).allMatch(v -> adj.get(v).stream().filter(e -> bridge[e[1]]).allMatch(e -> tree.get(comp[v]).add(comp[e[0]])))
-            && new int[17][cc[0]] instanceof int[][] up
-            && new int[cc[0]] instanceof int[] dep
-            && IntStream.generate(() -> -1).limit(cc[0]).toArray() instanceof int[] seen
-            && (seen[comp[1]] = 0) == 0
-            && (up[0][comp[1]] = comp[1]) >= 0
-            && new ArrayDeque<Integer>(List.of(comp[1])) instanceof ArrayDeque<Integer> q2
-            && Stream.generate(q2::poll).takeWhile(Objects::nonNull).allMatch(v -> tree.get(v).stream().filter(u -> seen[u] < 0).allMatch(u -> (seen[u] = 0) == 0 && (up[0][u] = v) >= 0 && (dep[u] = dep[v] + 1) > 0 && q2.add(u)))
-            && IntStream.range(1, 17).allMatch(j -> IntStream.range(0, cc[0]).allMatch(v -> (up[j][v] = up[j - 1][up[j - 1][v]]) >= 0))
-            && ((IntBinaryOperator) (x, y) -> new int[]{dep[x] < dep[y] ? y : x, dep[x] < dep[y] ? x : y} instanceof int[] ab
-                && IntStream.range(0, 17).filter(j -> ((dep[ab[0]] - dep[ab[1]]) >> j & 1) == 1).allMatch(j -> (ab[0] = up[j][ab[0]]) >= 0)
-                ? ab[0] == ab[1] ? ab[0]
-                    : IntStream.iterate(16, j -> j >= 0, j -> j - 1).allMatch(j -> up[j][ab[0]] == up[j][ab[1]] || ((ab[0] = up[j][ab[0]]) >= 0 && (ab[1] = up[j][ab[1]]) >= 0)) ? up[0][ab[0]] : 0
-                : 0) instanceof IntBinaryOperator lca
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer k
-            ? Stream.generate(() -> Integer.valueOf(comp[rd.getAsInt()]) instanceof Integer a && Integer.valueOf(comp[rd.getAsInt()]) instanceof Integer b
-                    ? String.valueOf(dep[a] + dep[b] - 2 * dep[lca.applyAsInt(a, b)]) : "").limit(k).collect(Collectors.joining("\n"))
-            : ""), "", 1L << 28).start();
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && IntStream.range(0, 2 * m).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] ed && new int[2 * m] instanceof int[] nxt && IntStream.generate(() -> -1).limit(n + 1).toArray() instanceof int[] head
+            && IntStream.range(0, 2 * m).allMatch(j -> (nxt[j] = head[ed[j]]) >= -1 && (head[ed[j]] = j) >= 0) && head.clone() instanceof int[] cur
+            && new int[n + 1] instanceof int[] tin && new int[n + 1] instanceof int[] low && new int[n + 1] instanceof int[] par && IntStream.generate(() -> -1).limit(n + 1).toArray() instanceof int[] pe
+            && new int[n + 1] instanceof int[] lev && new int[n + 1] instanceof int[] ord && new int[n + 1] instanceof int[] stk && new int[]{1} instanceof int[] timer && new int[]{1} instanceof int[] sp && new boolean[m + 1] instanceof boolean[] bridge
+            && (tin[1] = low[1] = 1) == 1 && (ord[0] = 1) == 1 && (stk[0] = 1) == 1
+            && IntStream.range(0, 2 * m + n + 1).allMatch(z -> sp[0] == 0 || ((Integer) stk[sp[0] - 1] instanceof Integer v
+                && (cur[v] >= 0
+                    ? (Integer) cur[v] instanceof Integer e && (cur[v] = nxt[e]) >= -1 && (Integer) ed[e ^ 1] instanceof Integer w
+                        && (e >> 1 == pe[v] || (tin[w] != 0 ? (low[v] = Math.min(low[v], tin[w])) > 0
+                            : (par[w] = v) > 0 && (pe[w] = e >> 1) >= 0 && (lev[w] = lev[v] + 1) > 0 && (tin[w] = low[w] = ++timer[0]) > 0 && (ord[timer[0] - 1] = w) > 0 && (stk[sp[0]++] = w) > 0))
+                    : --sp[0] >= 0 && (sp[0] == 0 || ((low[stk[sp[0] - 1]] = Math.min(low[stk[sp[0] - 1]], low[v])) > 0 && (low[v] <= tin[stk[sp[0] - 1]] || (bridge[pe[v]] = true)))))))
+            && new int[n + 1] instanceof int[] dep && IntStream.range(1, n).allMatch(i -> (Integer) ord[i] instanceof Integer x && (dep[x] = dep[par[x]] + (bridge[pe[x]] ? 1 : 0)) >= 0)
+            && IntStream.range(0, 17).mapToObj(j -> j == 0 ? IntStream.range(0, n).mapToLong(i -> (long) lev[ord[i]] << 17 | ord[i]).toArray() : new long[Math.max(0, n - (1 << j) + 1)]).toArray(long[][]::new) instanceof long[][] S
+            && IntStream.range(1, 17).allMatch(j -> IntStream.range(0, S[j].length).allMatch(i -> (S[j][i] = Math.min(S[j - 1][i], S[j - 1][i + (1 << (j - 1))])) >= 0))
+            && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
+            ? IntStream.range(0, k).mapToObj(q -> (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer u && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer v
+                && (Integer) (Math.min(tin[u], tin[v])) instanceof Integer l && (Integer) (Math.max(tin[u], tin[v]) - 1) instanceof Integer r && (Integer) (31 - Integer.numberOfLeadingZeros(Math.max(1, r - l + 1))) instanceof Integer j
+                ? String.valueOf(u.equals(v) ? 0 : dep[u] + dep[v] - 2 * dep[par[(int) (Math.min(S[j][l], S[j][r - (1 << j) + 1]) & 131071)]]) : "").collect(Collectors.joining("\n"))
+            : "");
     }
 }

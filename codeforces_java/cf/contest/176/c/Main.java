@@ -4,8 +4,9 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner s
-            && LongStream.generate(s::nextLong).limit(6).toArray() instanceof long[] a
-            ? ((a[0] + a[1] + a[2]) * (a[0] + a[1] + a[2]) - a[0] * a[0] - a[2] * a[2] - a[4] * a[4]) % 2 == 1 ? "First" : "Second"
+            && IntStream.range(0, 6).map(i -> s.nextInt()).toArray() instanceof int[] a
+            && (Integer) Math.min(Math.abs(a[2] - a[4]), Math.abs(a[3] - a[5])) instanceof Integer lo && (Integer) Math.max(Math.abs(a[2] - a[4]), Math.abs(a[3] - a[5])) instanceof Integer hi
+            ? hi >= 5 || hi == 4 && lo >= 3 ? "Second" : "First"
             : "");
     }
 }

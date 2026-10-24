@@ -4,39 +4,36 @@ import java.util.stream.IntStream;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.print(
-            System.in.readAllBytes() instanceof byte[] buf
-            && new int[buf.length / 2 + 8] instanceof int[] t
-            && new int[3] instanceof int[] sc
-            && IntStream.rangeClosed(0, buf.length).allMatch(i ->
-                i < buf.length && buf[i] >= '0' && buf[i] <= '9'
-                    ? (sc[0] = sc[0] * 10 + buf[i] - '0') >= 0 && (sc[2] = 1) > 0
-                    : (sc[2] != 1 || ((t[sc[1]++] = sc[0]) >= 0 && (sc[0] = 0) == 0)) && (sc[2] = 0) == 0)
-            && (Integer) t[0] instanceof Integer cows
-            && (Integer) t[cows + 1] instanceof Integer plans
-            && (Integer) (cows + 2) instanceof Integer qo
-            && new int[cows + 2] instanceof int[] first
-            && IntStream.range(0, plans).allMatch(k -> ++first[t[qo + 2 * k + 1] + 1] > 0)
-            && IntStream.rangeClosed(1, cows + 1).allMatch(s -> (first[s] += first[s - 1]) >= 0)
-            && Arrays.copyOf(first, cows + 2) instanceof int[] fill
-            && new int[plans] instanceof int[] by
-            && IntStream.range(0, plans).allMatch(k -> (by[fill[t[qo + 2 * k + 1]]++] = k) >= 0)
-            && new long[2 * cows + 2] instanceof long[] suf
-            && new long[plans] instanceof long[] res
-            && IntStream.rangeClosed(1, cows).allMatch(step ->
-                first[step] == first[step + 1]
-                || ((Long) IntStream.range(first[step], first[step + 1]).mapToLong(j -> (cows - t[qo + 2 * by[j]]) / step + 1).sum() instanceof Long work
-                    && (Integer) (IntStream.range(first[step], first[step + 1]).map(j -> t[qo + 2 * by[j]]).min().getAsInt() - 1) instanceof Integer low
-                    && (3 * work > cows - low
-                        ? IntStream.range(0, cows - low).mapToLong(u -> suf[cows - 1 - u] = t[cows - u] + suf[cows - 1 - u + step]).sum() >= Long.MIN_VALUE
-                            && IntStream.range(first[step], first[step + 1]).allMatch(j -> (res[by[j]] = suf[t[qo + 2 * by[j]] - 1]) >= 0)
-                        : IntStream.range(first[step], first[step + 1]).allMatch(j ->
-                            (Integer) t[qo + 2 * by[j]] instanceof Integer from
-                            && (res[by[j]] = IntStream.range(0, (cows - from) / step + 1).mapToLong(u -> t[from + u * step]).sum()) >= 0))))
-            && new StringBuilder() instanceof StringBuilder out
-            && Arrays.stream(res).allMatch(x -> out.append(x).append('\n') != null)
-            ? out
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 8] instanceof int[] g
+            && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
+                i < raw.length && raw[i] >= '0' && raw[i] <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') >= 0 && (ps[2] = 1) > 0
+                    : (ps[2] != 1 || ((g[ps[1]++] = ps[0]) >= 0 && (ps[0] = 0) == 0)) && (ps[2] = 0) == 0)
+            && (Integer) g[0] instanceof Integer n
+            && (Integer) g[n + 1] instanceof Integer p
+            && new int[n + 2] instanceof int[] st
+            && IntStream.range(0, p).allMatch(q -> ++st[g[n + 3 + 2 * q] + 1] > 0)
+            && IntStream.rangeClosed(1, n + 1).allMatch(b -> (st[b] += st[b - 1]) >= 0)
+            && Arrays.copyOf(st, n + 2) instanceof int[] pos
+            && new int[p] instanceof int[] ord
+            && IntStream.range(0, p).allMatch(q -> (ord[pos[g[n + 3 + 2 * q]]++] = q) >= 0)
+            && new long[n + 1] instanceof long[] pre
+            && new long[p] instanceof long[] ans
+            && IntStream.rangeClosed(1, n).allMatch(b ->
+                st[b] == st[b + 1]
+                || ((Long) IntStream.range(st[b], st[b + 1]).mapToLong(k -> (n - g[n + 2 + 2 * ord[k]]) / b + 1).sum() instanceof Long td
+                    && (4 * td > n
+                        ? Arrays.stream(new int[]{0}).peek(z -> Arrays.setAll(pre, j -> j == 0 ? 0 : g[j] + (j > b ? pre[j - b] : 0))).sum() == 0
+                            && IntStream.range(st[b], st[b + 1]).allMatch(k -> (Integer) g[n + 2 + 2 * ord[k]] instanceof Integer x
+                                && (ans[ord[k]] = pre[x + (n - x) / b * b] - (x > b ? pre[x - b] : 0)) > Long.MIN_VALUE)
+                        : IntStream.range(st[b], st[b + 1]).allMatch(k ->
+                            (Integer) g[n + 2 + 2 * ord[k]] instanceof Integer x
+                            && (ans[ord[k]] = IntStream.range(0, (n - x) / b + 1).mapToLong(t -> g[x + t * b]).sum()) >= 0))))
+            && new StringBuilder() instanceof StringBuilder sb
+            && Arrays.stream(ans).allMatch(v -> sb.append(v).append('\n') != null)
+            ? sb
             : "");
     }
-
-
 }

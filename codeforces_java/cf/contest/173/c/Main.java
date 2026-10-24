@@ -3,14 +3,14 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer it
+            && ((IntSupplier) () -> Integer.parseInt(it.nextToken())) instanceof IntSupplier rd
             && Integer.valueOf(rd.getAsInt()) instanceof Integer n
             && Integer.valueOf(rd.getAsInt()) instanceof Integer m
             && IntStream.range(0, n).mapToObj(i -> IntStream.range(0, m).map(j -> rd.getAsInt()).toArray()).toArray(int[][]::new) instanceof int[][] a
-            && IntStream.range(0, n).mapToObj(i -> IntStream.rangeClosed(0, m).map(j -> j == 0 ? 0 : Arrays.stream(a[i], 0, j).sum()).toArray()).toArray(int[][]::new) instanceof int[][] rp
-            && IntStream.range(0, m).mapToObj(j -> IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : IntStream.range(0, i).map(r -> a[r][j]).sum()).toArray()).toArray(int[][]::new) instanceof int[][] cp
+            && new int[1] instanceof int[] run && IntStream.range(0, n).mapToObj(i -> IntStream.rangeClosed(0, m).map(j -> j == 0 ? (run[0] = 0) : (run[0] += a[i][j - 1])).toArray()).toArray(int[][]::new) instanceof int[][] rp
+            && IntStream.range(0, m).mapToObj(j -> IntStream.rangeClosed(0, n).map(i -> i == 0 ? (run[0] = 0) : (run[0] += a[i - 1][j])).toArray()).toArray(int[][]::new) instanceof int[][] cp
             && Integer.valueOf(Math.min(n, m)) instanceof Integer lim
             && new int[lim / 2 + 2][][] instanceof int[][][] layer
             && (layer[0] = a) != null

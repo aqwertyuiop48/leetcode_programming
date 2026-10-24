@@ -19,23 +19,21 @@ public class Main {
             && Arrays.copyOf(st, n + 2) instanceof int[] pos
             && new int[p] instanceof int[] ord
             && IntStream.range(0, p).allMatch(q -> (ord[pos[g[n + 3 + 2 * q]]++] = q) >= 0)
-            && new long[2 * n + 2] instanceof long[] dp
+            && new long[n + 1] instanceof long[] pre
             && new long[p] instanceof long[] ans
             && IntStream.rangeClosed(1, n).allMatch(b ->
                 st[b] == st[b + 1]
                 || ((Long) IntStream.range(st[b], st[b + 1]).mapToLong(k -> (n - g[n + 2 + 2 * ord[k]]) / b + 1).sum() instanceof Long td
-                    && (Integer) (IntStream.range(st[b], st[b + 1]).map(k -> g[n + 2 + 2 * ord[k]]).min().getAsInt() - 1) instanceof Integer lo
-                    && (3 * td > n - lo
-                        ? IntStream.range(0, n - lo).mapToLong(t -> dp[n - 1 - t] = g[n - t] + dp[n - 1 - t + b]).sum() >= Long.MIN_VALUE
-                            && IntStream.range(st[b], st[b + 1]).allMatch(k -> (ans[ord[k]] = dp[g[n + 2 + 2 * ord[k]] - 1]) >= 0)
+                    && (4 * td > n
+                        ? Arrays.stream(new int[]{0}).peek(z -> Arrays.setAll(pre, j -> j == 0 ? 0 : g[j] + (j > b ? pre[j - b] : 0))).sum() == 0
+                            && IntStream.range(st[b], st[b + 1]).allMatch(k -> (Integer) g[n + 2 + 2 * ord[k]] instanceof Integer x
+                                && (ans[ord[k]] = pre[x + (n - x) / b * b] - (x > b ? pre[x - b] : 0)) > Long.MIN_VALUE)
                         : IntStream.range(st[b], st[b + 1]).allMatch(k ->
-                            (Integer) g[n + 2 + 2 * ord[k]] instanceof Integer a
-                            && (ans[ord[k]] = IntStream.range(0, (n - a) / b + 1).mapToLong(t -> g[a + t * b]).sum()) >= 0))))
+                            (Integer) g[n + 2 + 2 * ord[k]] instanceof Integer x
+                            && (ans[ord[k]] = IntStream.range(0, (n - x) / b + 1).mapToLong(t -> g[x + t * b]).sum()) >= 0))))
             && new StringBuilder() instanceof StringBuilder sb
             && Arrays.stream(ans).allMatch(v -> sb.append(v).append('\n') != null)
             ? sb
             : "");
     }
-
-
 }

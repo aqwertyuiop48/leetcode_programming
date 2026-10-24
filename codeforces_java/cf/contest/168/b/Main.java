@@ -7,6 +7,8 @@ public class Main {
                 (l.stripLeading().startsWith("#") ? acc.add("A" + l)
                     : !acc.isEmpty() && acc.getLast().startsWith("C") ? acc.set(acc.size() - 1, acc.getLast() + l.replace(" ", "")) != null
                     : acc.add("C" + l.replace(" ", ""))) | true ? acc : acc,
-                (x, y) -> x).stream().filter(g -> !g.equals("C")).map(g -> g.substring(1)).collect(Collectors.joining("\n")));
+                (x, y) -> x) instanceof ArrayList<String> grp
+            ? grp.stream().filter(g -> !g.equals("C") || grp.stream().anyMatch(x -> x.startsWith("A"))).map(g -> g.substring(1)).collect(Collectors.joining("\n"))
+            : "");
     }
 }

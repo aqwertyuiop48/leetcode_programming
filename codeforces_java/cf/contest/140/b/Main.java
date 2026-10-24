@@ -2,19 +2,13 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(
-            new Scanner(System.in) instanceof Scanner s
-            && Integer.valueOf(s.nextInt()) instanceof Integer n
-            && IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).map(j -> s.nextInt()).toArray()).map(l -> Optional.of(new int[n + 1]).filter(p -> IntStream.range(0, n).allMatch(q -> (p[l[q]] = q) >= 0)).get()).toArray(int[][]::new) instanceof int[][] fp
-            && IntStream.range(0, n).map(j -> s.nextInt()).toArray() instanceof int[] al
-            && new int[n + 1] instanceof int[] ra
-            && IntStream.range(0, n).allMatch(i -> (ra[al[i]] = i) >= 0)
-            ? IntStream.range(0, n).mapToObj(i -> IntStream.rangeClosed(1, n).filter(m -> m != 1 || i != 0).boxed()
-                    .min(Comparator.comparingInt(m -> fp[i][IntStream.rangeClosed(1, m).filter(c -> c != i + 1).boxed().min(Comparator.comparingInt(c -> ra[c])).get()])).get())
-                .map(String::valueOf).collect(Collectors.joining(" "))
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n
+            && IntStream.range(0, n).mapToObj(i -> new int[n + 1] instanceof int[] p && IntStream.range(0, n).allMatch(q -> (p[Integer.parseInt(tk.nextToken())] = q) >= 0) ? p : null).toArray(int[][]::new) instanceof int[][] fp
+            && new int[n + 1] instanceof int[] ra && IntStream.range(0, n).allMatch(i -> (ra[Integer.parseInt(tk.nextToken())] = i) >= 0)
+            ? IntStream.range(0, n).mapToObj(i -> new int[]{0, Integer.MAX_VALUE, 0} instanceof int[] st
+                && IntStream.rangeClosed(1, n).allMatch(m -> i == 0 && m == 1 || ((m == i + 1 || st[0] != 0 && ra[st[0]] <= ra[m] || (st[0] = m) > 0) && (fp[i][st[0]] >= st[1] || ((st[1] = fp[i][st[0]]) >= 0 && (st[2] = m) > 0)))) ? String.valueOf(st[2]) : "")
+                .collect(Collectors.joining(" "))
             : "");
     }
-
-
 }

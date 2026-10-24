@@ -5,24 +5,22 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner s
-            && ((Function<double[], double[]>) tk -> Integer.valueOf((int) tk[0]) instanceof Integer hp
-                && Integer.valueOf((int) tk[2]) instanceof Integer lo
-                && Integer.valueOf((int) tk[3]) instanceof Integer hi
-                && Double.valueOf(tk[4] / 100.0) instanceof Double miss
-                && new double[hp] instanceof double[] g
-                && (g[0] = 1) == 1
-                && new double[]{1} instanceof double[] mass
-                && new ArrayList<Double>(List.of(0.0)) instanceof ArrayList<Double> kp
-                && IntStream.iterate(1, k -> k < 400000 && mass[0] > 1e-13, k -> k + 1).allMatch(k -> new double[hp + 1] instanceof double[] pre
-                    && IntStream.range(0, hp).allMatch(h -> (pre[h + 1] = pre[h] + g[h]) >= 0)
-                    && kp.add(IntStream.range(0, hp).mapToDouble(h -> g[h] * (1 - miss) * Math.max(0, hi - Math.max(lo, hp - h) + 1) / (hi - lo + 1.0)).sum())
-                    && new double[hp] instanceof double[] ng
-                    && IntStream.range(0, hp).allMatch(h -> Integer.valueOf(Math.max(0, h - hi)) instanceof Integer a && (h - lo < a
-                        ? (ng[h] = miss * g[h]) >= 0
-                        : (ng[h] = miss * g[h] + (1 - miss) / (hi - lo + 1.0) * (pre[h - lo + 1] - pre[a])) >= 0))
-                    && (mass[0] = Arrays.stream(ng).sum()) >= 0
-                    && IntStream.range(0, hp).allMatch(h -> (g[h] = ng[h]) >= 0))
-                ? kp.stream().mapToDouble(x -> x).toArray() : null) instanceof Function<double[], double[]> dist
+            && ((Function<double[], double[]>) tk -> (Integer) (int) tk[0] instanceof Integer hp
+                && (Integer) (int) tk[2] instanceof Integer lo
+                && (Integer) (int) tk[3] instanceof Integer hi
+                && (Double) (tk[4] / 100.0) instanceof Double miss
+                && new double[400001] instanceof double[] kp
+                && new double[][]{new double[hp], new double[hp]} instanceof double[][] buf && (buf[0][0] = 1) == 1
+                && new double[hp + 1] instanceof double[] pre
+                && IntStream.range(0, hp).mapToDouble(h -> (1 - miss) * Math.max(0, hi - Math.max(lo, hp - h) + 1) / (hi - lo + 1.0)).toArray() instanceof double[] coef
+                && new double[]{1, 0, 0} instanceof double[] st
+                && (Double) ((1 - miss) / (hi - lo + 1.0)) instanceof Double cc && ((DoubleUnaryOperator) v -> v < 1e-30 ? 0 : v) instanceof DoubleUnaryOperator flush
+                && IntStream.rangeClosed(1, 400000).takeWhile(k -> st[0] > 1e-13 && miss < 1).allMatch(k -> buf[(k - 1) & 1] instanceof double[] cur && buf[k & 1] instanceof double[] nxt
+                    && IntStream.range(0, hp).map(h -> (pre[h + 1] = pre[h] + cur[h]) >= 0
+                        && (nxt[h] = flush.applyAsDouble(miss * cur[h] + (h - lo < 0 ? 0 : cc * (pre[h - lo + 1] - pre[Math.max(0, h - hi)])))) >= 0 ? 0 : 1).sum() == 0
+                    && (kp[k] = IntStream.range(Math.max(0, hp - hi), hp).mapToDouble(h -> cur[h] * coef[h]).sum()) >= 0
+                    && (st[0] -= kp[k]) < 2 && (st[1] = k) > 0)
+                ? Arrays.copyOf(kp, (int) st[1] + 1) : null) instanceof Function<double[], double[]> dist
             && new double[]{s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt()} instanceof double[] t1
             && new double[]{s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt()} instanceof double[] t2
             && dist.apply(t1) instanceof double[] k1

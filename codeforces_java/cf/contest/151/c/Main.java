@@ -4,12 +4,6 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s
-            && Long.valueOf(s.nextLong()) instanceof Long n
-            && ((LongUnaryOperator) x -> LongStream.rangeClosed(2, 1_000_000).filter(p -> p * p <= x && x % p == 0).findFirst().orElse(x)) instanceof LongUnaryOperator f
-            ? n == 1 || f.applyAsLong(n) == n ? "1\n0"
-                : f.applyAsLong(n / f.applyAsLong(n)) == n / f.applyAsLong(n) ? "2"
-                : "1\n" + f.applyAsLong(n) * f.applyAsLong(n / f.applyAsLong(n))
-            : "");
+        Optional.of(new Scanner(System.in).nextLong()).ifPresent(n -> System.out.print(((LongUnaryOperator) x -> LongStream.rangeClosed(2, (long) Math.sqrt(x)).filter(d -> x % d == 0).findFirst().orElse(x)) instanceof LongUnaryOperator f && Long.valueOf(f.applyAsLong(n)) instanceof Long a ? (n == 1 || a.equals(n) ? "1\n0" : f.applyAsLong(n / a) == n / a ? "2" : "1\n" + a * f.applyAsLong(n / a)) : ""));
     }
 }

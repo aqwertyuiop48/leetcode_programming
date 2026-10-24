@@ -3,34 +3,34 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer n
-            && IntStream.rangeClosed(1, n).mapToObj(i -> new int[]{rd.getAsInt(), rd.getAsInt(), i}).sorted(Comparator.comparingInt((int[] a) -> a[1])).toList() instanceof List<int[]> sh
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer m
-            && IntStream.rangeClosed(1, m).mapToObj(i -> new int[]{rd.getAsInt(), i, rd.getAsInt()}).sorted(Comparator.comparingInt((int[] a) -> a[0])).collect(Collectors.groupingBy(a -> a[2])) instanceof Map<Integer, List<int[]>> groups
-            && ((Function<int[], int[]>) a -> groups.getOrDefault(a[0], List.of()).stream().filter(cu -> cu[0] >= a[1] && cu[1] != a[2]).findFirst().orElse(null)) instanceof Function<int[], int[]> find
-            && new long[n][2] instanceof long[][] dp
-            && new int[n][2] instanceof int[][] bp
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n
+            && IntStream.range(0, 2 * n).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] sh
+            && IntStream.range(0, n).mapToLong(i -> (long) sh[2 * i + 1] << 17 | i).sorted().mapToInt(x -> (int) (x & 131071)).toArray() instanceof int[] os
+            && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && IntStream.range(0, 2 * m).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] cu
+            && IntStream.range(0, m).mapToLong(i -> ((long) cu[2 * i + 1] << 31) | ((long) cu[2 * i] << 1)).toArray() instanceof long[] ck
+            && IntStream.range(0, m).boxed().sorted(Comparator.comparingLong((Integer i) -> ck[i])).mapToInt(i -> i).toArray() instanceof int[] oc
+            && Arrays.stream(oc).mapToLong(i -> ((long) cu[2 * i + 1] << 31) | ((long) cu[2 * i] << 1)).toArray() instanceof long[] Ks
+            && ((ToIntFunction<int[]>) a -> (Integer) (~Arrays.binarySearch(Ks, (((long) a[0] << 31) | ((long) a[1] << 1)) - 1)) instanceof Integer p && (Integer) (p < m && oc[p] + 1 == a[2] ? p + 1 : p) instanceof Integer q
+                && q < m && (Ks[q] >> 31) == a[0] ? oc[q] + 1 : -1) instanceof ToIntFunction<int[]> find
+            && new long[n][2] instanceof long[][] dp && new int[n][2] instanceof int[][] bp
             && Arrays.stream(dp).allMatch(r -> (r[0] = Long.MIN_VALUE / 4) < 0 && (r[1] = Long.MIN_VALUE / 4) < 0)
-            && IntStream.range(0, n).allMatch(i -> Integer.valueOf(sh.get(i)[0]) instanceof Integer c
-                && Integer.valueOf(sh.get(i)[1]) instanceof Integer sz
-                && Boolean.valueOf(i > 0 && sh.get(i - 1)[1] + 1 == sz) instanceof Boolean cons
-                && IntStream.range(0, 2).allMatch(pf -> Long.valueOf(i == 0 ? (pf == 0 ? 0 : Long.MIN_VALUE / 4) : dp[i - 1][pf]) instanceof Long base
+            && IntStream.range(0, n).allMatch(i -> (Integer) sh[2 * os[i]] instanceof Integer c && (Integer) sh[2 * os[i] + 1] instanceof Integer sz
+                && (Boolean) (i > 0 && sh[2 * os[i - 1] + 1] + 1 == sz) instanceof Boolean cons
+                && IntStream.range(0, 2).allMatch(pf -> (Long) (i == 0 ? (pf == 0 ? 0L : Long.MIN_VALUE / 4) : dp[i - 1][pf]) instanceof Long base
                     && (base <= Long.MIN_VALUE / 8
                         || ((base > dp[i][0] ? (dp[i][0] = base) < Long.MAX_VALUE && (bp[i][0] = pf * 3) >= 0 : true)
-                            && (find.apply(new int[]{sz - 1, c, cons && pf == 1 ? find.apply(new int[]{sz - 1, sh.get(i - 1)[0], -1})[1] : -1}) == null
+                            && (find.applyAsInt(new int[]{sz - 1, c, cons && pf == 1 ? find.applyAsInt(new int[]{sz - 1, sh[2 * os[i - 1]], -1}) : -1}) < 0
                                 || (base + c > dp[i][0] ? (dp[i][0] = base + c) < Long.MAX_VALUE && (bp[i][0] = pf * 3 + 1) >= 0 : true))
-                            && (find.apply(new int[]{sz, c, -1}) == null
+                            && (find.applyAsInt(new int[]{sz, c, -1}) < 0
                                 || (base + c > dp[i][1] ? (dp[i][1] = base + c) < Long.MAX_VALUE && (bp[i][1] = pf * 3 + 2) >= 0 : true))))))
-            && new int[n] instanceof int[] mode
-            && new int[]{dp[n - 1][1] > dp[n - 1][0] ? 1 : 0} instanceof int[] f
+            && new int[n] instanceof int[] mode && new int[]{dp[n - 1][1] > dp[n - 1][0] ? 1 : 0} instanceof int[] f
             && IntStream.iterate(n - 1, i -> i >= 0, i -> i - 1).allMatch(i -> (mode[i] = bp[i][f[0]] % 3) >= 0 && (f[0] = bp[i][f[0]] / 3) >= 0)
-            && new int[][]{new int[n]} instanceof int[][] cust
+            && new int[n] instanceof int[] cust
             && IntStream.range(0, n).mapToObj(i -> mode[i] == 0 ? null
-                : (cust[0][i] = find.apply(new int[]{mode[i] == 1 ? sh.get(i)[1] - 1 : sh.get(i)[1], sh.get(i)[0],
-                    mode[i] == 1 && i > 0 && sh.get(i - 1)[1] + 1 == sh.get(i)[1] && mode[i - 1] == 2 ? cust[0][i - 1] : -1})[1]) + " " + sh.get(i)[2]).filter(Objects::nonNull).toList().reversed() instanceof List<String> pairs
+                : (cust[i] = find.applyAsInt(new int[]{mode[i] == 1 ? sh[2 * os[i] + 1] - 1 : sh[2 * os[i] + 1], sh[2 * os[i]],
+                    mode[i] == 1 && i > 0 && sh[2 * os[i - 1] + 1] + 1 == sh[2 * os[i] + 1] && mode[i - 1] == 2 ? cust[i - 1] : -1})) + " " + (os[i] + 1)).filter(Objects::nonNull).toList().reversed() instanceof List<String> pairs
             ? Math.max(dp[n - 1][0], dp[n - 1][1]) + "\n" + pairs.size() + (pairs.isEmpty() ? "" : "\n" + String.join("\n", pairs))
             : "");
     }

@@ -15,7 +15,7 @@ public class Main {
             && ((ToIntFunction<Long>) x -> -Arrays.binarySearch(pos2, 2 * x - 1) - 1) instanceof ToIntFunction<Long> lb
             && ((Predicate<double[]>) q -> q[0] >= q[1] || q[2] == 0
                 || (q[2] == 100
-                    ? zd[(int) q[0]]++ >= 0 && zd[(int) q[1]]-- >= 0
+                    ? zd[(int) q[0]]++ != Integer.MIN_VALUE && zd[(int) q[1]]-- != Integer.MIN_VALUE
                     : (ld[(int) q[0]] += Math.log1p(-q[2] / 100)) != Double.NaN && (ld[(int) q[1]] -= Math.log1p(-q[2] / 100)) != Double.NaN)) instanceof Predicate<double[]> upd
             && IntStream.range(0, n).allMatch(i -> Long.valueOf(in[2 + 4 * i]) instanceof Long a
                 && Long.valueOf(in[3 + 4 * i]) instanceof Long h
