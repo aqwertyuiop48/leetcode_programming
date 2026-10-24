@@ -31,4 +31,6 @@ public class Main {
             ? S[0] % p
             : -1);
     }
+
+
 }

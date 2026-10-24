@@ -29,4 +29,6 @@ public class Main {
                 + (best > 0 ? String.valueOf(10 - best) : "") + "0".repeat(p[30])
             : "");
     }
+
+
 }

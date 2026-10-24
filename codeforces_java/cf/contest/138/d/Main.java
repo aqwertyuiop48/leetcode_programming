@@ -33,4 +33,6 @@ public class Main {
             ? (top.applyAsInt(0) ^ top.applyAsInt(1)) != 0 ? "WIN" : "LOSE"
             : "");
     }
+
+
 }

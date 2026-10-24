@@ -48,5 +48,6 @@ public class Main {
                 && (tot[v] = off[0]) >= 0)
             ? String.format("%.9f", (double) sum[1] / (n - 1)) : "");
     }
-}
 
+
+}

@@ -10,4 +10,6 @@ public class Main {
             ? r <= R && (n == 1 || Math.sin(Math.PI / n) * (R - r) >= r - 1e-9) ? "YES" : "NO"
             : "");
     }
+
+
 }

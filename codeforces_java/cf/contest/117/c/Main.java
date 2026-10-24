@@ -21,5 +21,6 @@ public class Main {
                     .mapToObj(w -> (res[0] + 1) + " " + (res[1] + 1) + " " + (w + 1)).findFirst().orElse("-1")
             : "");
     }
-}
 
+
+}

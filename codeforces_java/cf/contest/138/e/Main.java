@@ -47,4 +47,6 @@ public class Main {
             ? ans[0]
             : -1);
     }
+
+
 }

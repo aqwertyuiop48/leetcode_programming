@@ -23,5 +23,6 @@ public class Main {
                     + 1000000007L) % 1000000007L) >= 0)
             ? (pre[m] - pre[-Arrays.binarySearch(ks, (long) n << 31) - 1] + 1000000007L) % 1000000007L : "");
     }
-}
 
+
+}

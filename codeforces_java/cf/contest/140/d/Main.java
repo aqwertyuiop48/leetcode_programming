@@ -11,4 +11,6 @@ public class Main {
             ? pre.length + " " + IntStream.of(pre).map(t -> Math.max(0, t - 350)).sum()
             : "");
     }
+
+
 }

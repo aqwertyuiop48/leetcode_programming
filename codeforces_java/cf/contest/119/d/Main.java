@@ -34,5 +34,6 @@ public class Main {
                 .mapToObj(i -> i + " " + (n - pi[2 * n - i - 1])).findFirst().orElse("-1 -1")
             : "-1 -1");
     }
-}
 
+
+}

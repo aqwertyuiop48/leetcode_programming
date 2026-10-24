@@ -31,5 +31,6 @@ public class Main {
                 + (j >= 2 ? ways[j - 2] * ((two[j - 2] - one[j - 2] * one[j - 1] + M) % M) : 0)) % M) < 0).count() >= 0
             ? ways[m] : 0L);
     }
-}
 
+
+}

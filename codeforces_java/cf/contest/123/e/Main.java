@@ -43,5 +43,6 @@ public class Main {
                 (X * Y * n - IntStream.range(0, n).mapToDouble(v -> y[v] * (sz[v] * (X - sx[v]) + x[v] * n + cs[v])).sum()) / (X * Y))
             : "");
     }
-}
 
+
+}

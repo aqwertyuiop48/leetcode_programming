@@ -24,5 +24,6 @@ public class Main {
             ? inv.stream().map(bag -> bag.size() + "\n" + bag.entrySet().stream().map(e -> e.getKey() + " " + e.getValue() + "\n").collect(Collectors.joining())).collect(Collectors.joining())
             : "");
     }
-}
 
+
+}

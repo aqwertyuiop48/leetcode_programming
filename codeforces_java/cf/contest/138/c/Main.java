@@ -26,4 +26,6 @@ public class Main {
             ? IntStream.range(0, m).mapToDouble(j -> (sum[0] += ld[j]) * 0 + ((zc[0] += zd[j]) == 0 ? Math.exp(sum[0]) : 0) * (ms[j] & 1023)).sum()
             : -1.0);
     }
+
+
 }
