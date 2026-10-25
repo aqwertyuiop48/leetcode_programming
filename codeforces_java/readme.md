@@ -8,7 +8,7 @@ Steps: (To do in Github codespace)
     - paste entire content in terminal
 
 - cd codeforces_java
-- pyforces race 1 (or) for i in {401..450}; do pyforces race "$i"; done
+- pyforces race 1 (or) for i in {501..550}; do pyforces race "$i"; done
 - mv /home/codespace/cf/contest/* /workspaces/leetcode_programming/codeforces_java/cf/contest
 - chmod +x cf_java.sh
 - ./cf_java.sh 1 A all 87   (or)  ./cf_java.sh 1 A test && ./cf_java.sh 1 A submit 87
