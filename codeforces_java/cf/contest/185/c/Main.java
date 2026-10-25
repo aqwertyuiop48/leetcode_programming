@@ -11,3 +11,5 @@ public class Main {
             ? (c[n - 1][0] >= w[n - 1][0] ? "Cerealguy" : "Fat Rat") : "");
     }
 }
+
+

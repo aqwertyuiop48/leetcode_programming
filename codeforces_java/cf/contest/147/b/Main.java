@@ -18,3 +18,5 @@ public class Main {
             ? ((Integer) res[1] + 1 > n ? 0 : (Integer) res[1] + 1) : -2);
     }
 }
+
+

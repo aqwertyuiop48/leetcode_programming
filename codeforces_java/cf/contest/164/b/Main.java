@@ -19,3 +19,5 @@ public class Main {
             ? w[2] : 0);
     }
 }
+
+

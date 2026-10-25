@@ -19,3 +19,5 @@ public class Main {
             ? st[0][m] : -1);
     }
 }
+
+

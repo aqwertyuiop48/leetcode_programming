@@ -25,3 +25,5 @@ public class Main {
             ? "YES\n" + IntStream.of(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "NO");
     }
 }
+
+

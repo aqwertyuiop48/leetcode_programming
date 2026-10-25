@@ -15,3 +15,5 @@ public class Main {
             ? LongStream.rangeClosed(1, T).map(t -> qm[(int) t] >= 0 ? t * n * (t * n + 1) / 2 + n * qm[(int) t] + acc[(int) t] : 0).max().getAsLong() : "");
     }
 }
+
+
