@@ -3,14 +3,12 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().reduce(new ArrayList<String>(), (acc, l) ->
-                (l.stripLeading().startsWith("#") ? acc.add("A" + l)
-                    : !acc.isEmpty() && acc.getLast().startsWith("C") ? acc.set(acc.size() - 1, acc.getLast() + l.replace(" ", "")) != null
-                    : acc.add("C" + l.replace(" ", ""))) | true ? acc : acc,
-                (x, y) -> x) instanceof ArrayList<String> grp
-            ? grp.stream().filter(g -> !g.equals("C") || grp.stream().anyMatch(x -> x.startsWith("A"))).map(g -> g.substring(1)).collect(Collectors.joining("\n"))
+        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().reduce(new ArrayList<StringBuilder>(), (acc, l) ->
+                (l.stripLeading().startsWith("#") ? acc.add(new StringBuilder("A").append(l))
+                    : !acc.isEmpty() && acc.getLast().charAt(0) == 'C' ? acc.getLast().append(l.replace(" ", "")) != null
+                    : acc.add(new StringBuilder("C").append(l.replace(" ", "")))) | true ? acc : acc,
+                (x, y) -> x) instanceof ArrayList<StringBuilder> grp
+            ? grp.stream().filter(g -> g.length() > 1 || g.charAt(0) == 'A' || grp.get(0).charAt(0) == 'A' || grp.size() > 1).map(g -> g.substring(1)).collect(Collectors.joining("\n"))
             : "");
     }
 }
-
-

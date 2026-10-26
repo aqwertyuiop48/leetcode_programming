@@ -9,7 +9,7 @@ public class Main {
             && Integer.valueOf(s.nextInt()) instanceof Integer n
             && Integer.valueOf(Integer.highestOneBit(2 * n - 1)) instanceof Integer N
             && new int[n + 2] instanceof int[] pos
-            && IntStream.rangeClosed(1, n).map(i -> s.nextInt()).toArray() instanceof int[] a
+            && IntStream.rangeClosed(1, n).map(i -> s.nextInt()).toArray() instanceof int[] t0 && new int[n] instanceof int[] a && IntStream.range(0, n).allMatch(i -> (a[t0[i] - 1] = i + 1) > 0)
             && IntStream.range(0, n).allMatch(i -> (pos[a[i]] = i + 1) > 0)
             && new int[2 * N] instanceof int[] mn && new int[2 * N] instanceof int[] c1 && new int[2 * N] instanceof int[] c2 && new int[2 * N] instanceof int[] ad
             && IntStream.range(1, 2 * N).allMatch(i -> (c1[i] = N >> (31 - Integer.numberOfLeadingZeros(i))) > 0)

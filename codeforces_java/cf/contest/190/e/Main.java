@@ -1,27 +1,19 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer n
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer m
-            && IntStream.rangeClosed(0, n).mapToObj(i -> new ArrayList<Integer>()).toList() instanceof List<ArrayList<Integer>> adj
-            && IntStream.range(0, m).allMatch(i -> Integer.valueOf(rd.getAsInt()) instanceof Integer u && Integer.valueOf(rd.getAsInt()) instanceof Integer v && adj.get(u).add(v) && adj.get(v).add(u))
-            && new int[n + 1] instanceof int[] mark
-            && new ArrayList<Integer>(IntStream.rangeClosed(1, n).boxed().toList()) instanceof ArrayList<Integer> rest
-            && new ArrayList<List<Integer>> () instanceof ArrayList<List<Integer>> comps
-            && Stream.generate(() -> rest.isEmpty() ? null : rest.remove(0)).takeWhile(Objects::nonNull).allMatch(root ->
-                new ArrayList<Integer>(List.of(root)) instanceof ArrayList<Integer> comp
-                && new ArrayDeque<Integer>(List.of(root)) instanceof ArrayDeque<Integer> dq
-                && Stream.generate(dq::poll).takeWhile(Objects::nonNull).allMatch(v -> adj.get(v).stream().allMatch(u -> (mark[u] = v) > 0)
-                    && rest.stream().filter(u -> mark[u] != v).toList() instanceof List<Integer> free
-                    && free.stream().allMatch(u -> comp.add(u) && dq.add(u))
-                    && rest.removeAll(new HashSet<>(free)) || true)
-                && comps.add(comp.stream().sorted().toList()))
-            ? comps.size() + "\n" + comps.stream().map(c -> c.size() + " " + c.stream().map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n"))
-            : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && IntStream.range(0, 2 * m).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] ed && new int[2 * m + 1] instanceof int[] nxt && IntStream.generate(() -> -1).limit(n + 1).toArray() instanceof int[] head
+            && IntStream.range(0, 2 * m).allMatch(j -> (nxt[j] = head[ed[j]]) >= -1 && (head[ed[j]] = j) >= 0)
+            && IntStream.rangeClosed(1, n).toArray() instanceof int[] rest && new int[n + 1] instanceof int[] q && new int[n + 2] instanceof int[] cs && new int[n + 1] instanceof int[] mark
+            && new int[]{n, 0, 0, 0, 0} instanceof int[] st
+            && IntStream.range(0, 2 * n + 5).anyMatch(z -> st[1] < st[2]
+                ? (Integer) q[st[1]++] instanceof Integer v && IntStream.iterate(head[v], e -> e >= 0, e -> nxt[e]).allMatch(e -> (mark[ed[e ^ 1]] = v) > 0) && (st[4] = 0) == 0
+                    && IntStream.range(0, st[0]).allMatch(i -> mark[rest[i]] == v ? (rest[st[4]++] = rest[i]) > 0 : (q[st[2]++] = rest[i]) > 0) && (st[0] = st[4]) >= 0 ? false : false
+                : st[0] > 0 ? !((cs[st[3]++] = st[2]) >= 0 && (q[st[2]++] = rest[--st[0]]) > 0)
+                : true)
+            ? st[3] + "\n" + IntStream.range(0, st[3]).mapToObj(c -> Stream.of(0).peek(w -> Arrays.sort(q, cs[c], c + 1 < st[3] ? cs[c + 1] : n)).findFirst().isPresent()
+                ? ((c + 1 < st[3] ? cs[c + 1] : n) - cs[c]) + " " + IntStream.range(cs[c], c + 1 < st[3] ? cs[c + 1] : n).mapToObj(i -> String.valueOf(q[i])).collect(Collectors.joining(" ")) : "").collect(Collectors.joining("\n")) : "");
     }
 }
