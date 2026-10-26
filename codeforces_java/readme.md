@@ -53,4 +53,6 @@ Steps: (To do in Github codespace)
                             <option value="55">Node.js 15.8.0 (64bit)</option>
                     </select>
 
- 
+
+ ## To register before submitting for the contest / not able to submit now
+ 206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3
