@@ -4,12 +4,12 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s
-            && Long.valueOf(s.nextLong()) instanceof Long x0 && Long.valueOf(s.nextLong()) instanceof Long y0
-            && Long.valueOf(s.nextLong()) instanceof Long p0 && Long.valueOf(s.nextLong()) instanceof Long r0
-            && Integer.valueOf(s.nextInt()) instanceof Integer n
-            && IntStream.range(0, n).mapToObj(i -> new long[]{s.nextLong(), s.nextLong(), s.nextLong(), s.nextLong(), s.nextLong()}).sorted(Comparator.comparingLong(o -> o[2])).toList() instanceof List<long[]> ob
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk
+            && Long.valueOf(Long.parseLong(tk.nextToken())) instanceof Long x0 && Long.valueOf(Long.parseLong(tk.nextToken())) instanceof Long y0
+            && Long.valueOf(Long.parseLong(tk.nextToken())) instanceof Long p0 && Long.valueOf(Long.parseLong(tk.nextToken())) instanceof Long r0
+            && Integer.valueOf(Integer.parseInt(tk.nextToken())) instanceof Integer n
+            && IntStream.range(0, n).mapToObj(i -> new long[]{Long.parseLong(tk.nextToken()), Long.parseLong(tk.nextToken()), Long.parseLong(tk.nextToken()), Long.parseLong(tk.nextToken()), Long.parseLong(tk.nextToken())}).sorted(Comparator.comparingLong(o -> o[2])).toList() instanceof List<long[]> ob
             && ob.stream().mapToLong(o -> o[2]).toArray() instanceof long[] mass
             && Integer.valueOf(Integer.highestOneBit(2 * n - 1)) instanceof Integer N
             && new long[2 * N] instanceof long[] t

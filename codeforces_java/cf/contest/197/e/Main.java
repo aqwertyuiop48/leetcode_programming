@@ -17,7 +17,7 @@ public class Main {
             && IntStream.iterate(n - 1, i -> i >= 0, i -> i - 1).allMatch(i -> (sz[order.get(i)] += 1) > 0 && (par[order.get(i)] == 0 || (sz[par[order.get(i)]] += sz[order.get(i)]) > 0))
             && new AtomicReference<BiPredicate<Integer, int[]>>() instanceof AtomicReference<BiPredicate<Integer, int[]>> solve
             && solve.compareAndSet(null, (v, pts) -> Arrays.stream(pts).boxed().min(Comparator.comparingInt((Integer i) -> Y[i]).thenComparingInt(i -> X[i])).get() instanceof Integer p
-                && (ans[v] = p + 1) > 0
+                && (ans[p + 1] = v) > 0
                 && Arrays.stream(pts).filter(i -> i != p).boxed().sorted((a, b) -> (long) (X[a] - X[p]) * (Y[b] - Y[p]) - (long) (Y[a] - Y[p]) * (X[b] - X[p]) > 0 ? -1 : 1).mapToInt(Integer::intValue).toArray() instanceof int[] rest
                 && new int[1] instanceof int[] off
                 && adj.get(v).stream().filter(u -> u != par[v]).allMatch(c -> solve.get().test(c, Arrays.copyOfRange(rest, off[0], off[0] += sz[c]))))

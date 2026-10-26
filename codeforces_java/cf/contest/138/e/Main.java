@@ -28,10 +28,10 @@ public class Main {
             && new long[]{z0 >= lw && z0 <= rw ? n : 0} instanceof long[] good
             && new IntBinaryOperator[2] instanceof IntBinaryOperator[] rg
             && (rg[0] = (a, b) -> a > b ? 0
-                : a == b ? ((--cnt[a] == rw ? 1 : 0) - (cnt[a] == lw - 1 ? 1 : 0))
+                : b - a < 4 ? ((--cnt[a] == rw ? 1 : 0) - (cnt[a] == lw - 1 ? 1 : 0)) + (b > a ? ((--cnt[a + 1] == rw ? 1 : 0) - (cnt[a + 1] == lw - 1 ? 1 : 0)) : 0) + (b > a + 1 ? ((--cnt[a + 2] == rw ? 1 : 0) - (cnt[a + 2] == lw - 1 ? 1 : 0)) : 0) + (b > a + 2 ? ((--cnt[a + 3] == rw ? 1 : 0) - (cnt[a + 3] == lw - 1 ? 1 : 0)) : 0)
                 : rg[0].applyAsInt(a, (a + b) >>> 1) + rg[0].applyAsInt(((a + b) >>> 1) + 1, b)) != null
             && (rg[1] = (a, b) -> a > b ? 0
-                : a == b ? ((++cnt[a] == lw ? 1 : 0) - (cnt[a] == rw + 1 ? 1 : 0))
+                : b - a < 4 ? ((++cnt[a] == lw ? 1 : 0) - (cnt[a] == rw + 1 ? 1 : 0)) + (b > a ? ((++cnt[a + 1] == lw ? 1 : 0) - (cnt[a + 1] == rw + 1 ? 1 : 0)) : 0) + (b > a + 1 ? ((++cnt[a + 2] == lw ? 1 : 0) - (cnt[a + 2] == rw + 1 ? 1 : 0)) : 0) + (b > a + 2 ? ((++cnt[a + 3] == lw ? 1 : 0) - (cnt[a + 3] == rw + 1 ? 1 : 0)) : 0)
                 : rg[1].applyAsInt(a, (a + b) >>> 1) + rg[1].applyAsInt(((a + b) >>> 1) + 1, b)) != null
             && new long[]{0} instanceof long[] ans
             && IntStream.range(0, n).allMatch(e -> (good[0] += Arrays.stream(by[s[e] - 'a']).mapToLong(i ->

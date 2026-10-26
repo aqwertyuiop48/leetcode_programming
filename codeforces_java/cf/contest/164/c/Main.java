@@ -24,15 +24,16 @@ public class Main {
             && new int[]{0} instanceof int[] flow
             && new long[v] instanceof long[] dist
             && new int[v] instanceof int[] prev
-            && new boolean[v] instanceof boolean[] inq
+            && new long[v] instanceof long[] h && IntStream.range(0, v).allMatch(i -> (h[i] = i == 0 ? 0 : 1L << 60) >= 0)
+            && IntStream.range(0, v).allMatch(u -> IntStream.iterate(head[u], e -> e != -1, e -> nxt[e]).allMatch(e -> cap[e] <= 0 || (h[to[e]] = Math.min(h[to[e]], h[u] + cost[e])) > Long.MIN_VALUE))
             && IntStream.range(0, k).allMatch(it -> flow[0] >= k
-                || (IntStream.range(0, v).allMatch(i -> (dist[i] = 1L << 60) > 0 && !(inq[i] = false))
-                    && (dist[0] = 0) == 0 && (inq[0] = true)
-                    && new ArrayDeque<Integer>(List.of(0)) instanceof ArrayDeque<Integer> dq
-                    && Stream.generate(dq::poll).takeWhile(Objects::nonNull).allMatch(u -> !(inq[u] = false)
-                        && IntStream.iterate(head[u], e -> e != -1, e -> nxt[e]).allMatch(e -> cap[e] <= 0 || dist[u] + cost[e] >= dist[to[e]]
-                            || ((dist[to[e]] = dist[u] + cost[e]) != Long.MIN_VALUE && (prev[to[e]] = e) >= 0 && (inq[to[e]] || ((inq[to[e]] = true) && dq.add(to[e]))))))
+                || (IntStream.range(0, v).allMatch(i -> (dist[i] = 1L << 60) > 0) && (dist[0] = 0) == 0
+                    && new PriorityQueue<long[]>(Comparator.comparingLong(x -> x[0])) instanceof PriorityQueue<long[]> pq && pq.add(new long[]{0, 0})
+                    && Stream.generate(pq::poll).takeWhile(Objects::nonNull).allMatch(top -> top[0] > dist[(int) top[1]]
+                        || IntStream.iterate(head[(int) top[1]], e -> e != -1, e -> nxt[e]).allMatch(e -> cap[e] <= 0 || top[0] + cost[e] + h[(int) top[1]] - h[to[e]] >= dist[to[e]]
+                            || (dist[to[e]] = top[0] + cost[e] + h[(int) top[1]] - h[to[e]]) >= 0 && (prev[to[e]] = e) >= 0 && pq.add(new long[]{dist[to[e]], to[e]})))
                     && dist[v - 1] < (1L << 60)
+                    && IntStream.range(0, v).allMatch(i -> dist[i] >= (1L << 60) || (h[i] += dist[i]) > Long.MIN_VALUE)
                     && Integer.valueOf(Math.min(k - flow[0], Stream.iterate(v - 1, x -> x != 0, x -> to[prev[x] ^ 1]).mapToInt(x -> cap[prev[x]]).min().getAsInt())) instanceof Integer f
                     && Stream.iterate(v - 1, x -> x != 0, x -> to[prev[x] ^ 1]).allMatch(x -> (cap[prev[x]] -= f) >= 0 && (cap[prev[x] ^ 1] += f) > 0)
                     && (flow[0] += f) > 0) || true)

@@ -20,6 +20,7 @@ public class Main {
             && (Long) (m >= 64 ? -1L : (1L << m) - 1) instanceof Long mlo
             && (Long) (m > 64 ? (1L << (m - 64)) - 1 : 0L) instanceof Long mhi
             && IntStream.rangeClosed(0, m / 2).mapToLong(c -> cnt[c] + (2 * c == m || c == 0 ? 0 : cnt[m - c])).toArray() instanceof long[] W
+            && (Long) IntStream.rangeClosed(1, m / 2).filter(c -> W[c] != 0).mapToLong(c -> 1L << c).reduce(0L, (x, y) -> x | y) instanceof Long wm
             && ((LongBinaryOperator) (lo, hs) ->
                 (Integer) (int) (hs >>> 57) instanceof Integer s
                 && (Long) (hs & 144115188075855871L) instanceof Long hi
@@ -36,9 +37,8 @@ public class Main {
             && (self.getAndSet((lo, hs) ->
                 (Long) (hs & 144115188075855871L) instanceof Long hi
                 && (Integer) (int) (hs >>> 57) instanceof Integer last
-                    ? (1 + IntStream.rangeClosed(last + 1, m / 2).mapToLong(c ->
-                        ((c < 64 ? lo >>> c : hi >>> (c - 64)) & 1) != 0 || W[c] == 0 ? 0L
-                        : (Long) (hi | (long) c << 57) instanceof Long h1
+                    ? (1 + LongStream.iterate(~lo & wm & (-1L << (last + 1)), x -> x != 0, x -> x & (x - 1)).map(x -> (Integer) Long.numberOfTrailingZeros(x) instanceof Integer c
+                        && (Long) (hi | (long) c << 57) instanceof Long h1
                             && (Long) (hi | (long) (m - c) << 57) instanceof Long h2
                             && (Long) (lo | rl.applyAsLong(lo, h1) | rl.applyAsLong(lo, h2)) instanceof Long nlo
                             && (Long) (hi | rh.applyAsLong(lo, h1) | rh.applyAsLong(lo, h2)) instanceof Long nhi

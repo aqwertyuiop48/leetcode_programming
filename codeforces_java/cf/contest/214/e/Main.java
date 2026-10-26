@@ -2,15 +2,17 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> Integer.parseInt((String) t)).iterator() instanceof Iterator<Integer> it
-            && Integer.valueOf(it.next()) instanceof Integer n
-            && IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).map(j -> it.next()).toArray()).toArray(int[][]::new) instanceof int[][] a
-            && Long.valueOf(Long.MIN_VALUE / 4) instanceof Long NEG
-            ? IntStream.rangeClosed(1, 2 * n - 2).boxed().reduce(IntStream.range(0, n).mapToObj(i -> LongStream.range(0, n).map(j -> i == 0 && j == 0 ? a[0][0] : NEG).toArray()).toArray(long[][]::new),
-                (dp, d) -> IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).mapToLong(j -> d - i >= 0 && d - i < n && d - j >= 0 && d - j < n
-                    ? Long.valueOf(Math.max(Math.max(dp[i][j], i > 0 ? dp[i - 1][j] : NEG), Math.max(j > 0 ? dp[i][j - 1] : NEG, i > 0 && j > 0 ? dp[i - 1][j - 1] : NEG))) instanceof Long b && b > NEG / 2
-                        ? b + a[i][d - i] + (i == j ? 0 : a[j][d - j]) : NEG
-                    : NEG).toArray()).toArray(long[][]::new), (x, y) -> x)[n - 1][n - 1] : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n
+            && IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).map(j -> Integer.parseInt(tk.nextToken())).toArray()).toArray(int[][]::new) instanceof int[][] a
+            && (Integer) (-1000000000) instanceof Integer neg && new int[2][n * n] instanceof int[][] buf
+            && IntStream.range(0, 2).allMatch(b -> IntStream.range(0, n * n).allMatch(t -> (buf[b][t] = neg) < 0)) && (buf[0][0] = a[0][0]) == a[0][0]
+            ? IntStream.rangeClosed(1, 2 * n - 2).allMatch(d -> buf[d & 1] instanceof int[] cur && buf[(d + 1) & 1] instanceof int[] prev
+                && IntStream.range(0, n * n).allMatch(t -> (cur[t] = neg) < 0)
+                && (Integer) Math.max(0, d - n + 1) instanceof Integer lo && (Integer) Math.min(n - 1, d) instanceof Integer hi
+                && IntStream.rangeClosed(lo, hi).allMatch(i -> IntStream.rangeClosed(lo, hi).allMatch(j ->
+                    (Integer) Math.max(Math.max(prev[i * n + j], i > 0 ? prev[(i - 1) * n + j] : neg), Math.max(j > 0 ? prev[i * n + j - 1] : neg, i > 0 && j > 0 ? prev[(i - 1) * n + j - 1] : neg)) instanceof Integer b
+                    && (cur[i * n + j] = b < neg / 2 ? neg : b + a[i][d - i] + (i == j ? 0 : a[j][d - j])) <= Integer.MAX_VALUE)))
+                ? buf[(2 * n - 2) & 1][n * n - 1] : 0 : "");
     }
 }

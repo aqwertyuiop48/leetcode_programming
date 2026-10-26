@@ -2,19 +2,25 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s
-            && Integer.valueOf(s.nextInt()) instanceof Integer n
-            && IntStream.range(0, n).mapToObj(i -> s.next()).toList() instanceof List<String> w
-            && Integer.valueOf(s.nextInt()) instanceof Integer m
-            && IntStream.range(0, (int) Math.pow(n, n)).mapToObj(c -> IntStream.range(0, n).map(i -> (int) (c / Math.pow(n, i)) % n).toArray())
-                .filter(p -> Arrays.stream(p).distinct().count() == n).toList() instanceof List<int[]> perms
-            ? IntStream.rangeClosed(1, m).mapToObj(idx -> Integer.valueOf(s.nextInt()) instanceof Integer k
-                && IntStream.range(0, k).mapToObj(i -> s.next()).toList() instanceof List<String> pw
-                ? new int[]{idx, perms.stream().filter(p -> new int[]{0} instanceof int[] ptr
-                        && pw.stream().allMatch(x -> ptr[0] >= n || !x.equals(w.get(p[ptr[0]])) || ++ptr[0] > 0) && ptr[0] >= n)
-                    .mapToInt(p -> n * (n - 1) / 2 - (int) IntStream.range(0, n).flatMap(i -> IntStream.range(i + 1, n).filter(j -> p[i] > p[j])).count() + 1).max().orElse(0)} : null)
-                .filter(r -> r[1] > 0).max(Comparator.<int[]>comparingInt(r -> r[1]).thenComparingInt(r -> -r[0]))
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n
+            && new HashMap<String, Integer>() instanceof HashMap<String, Integer> id && IntStream.range(0, n).allMatch(i -> id.put(tk.nextToken(), i) == null)
+            && (Integer) (n * (n - 1) / 2 + 1) instanceof Integer inv0 && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && new int[(1 << n) * inv0] instanceof int[] dp
+            ? IntStream.rangeClosed(1, m).mapToObj(idx -> (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
+                && IntStream.range(0, k).mapToObj(i -> tk.nextToken()).map(id::get).filter(Objects::nonNull).mapToInt(Integer::intValue).toArray() instanceof int[] arr
+                && (Integer) arr.length instanceof Integer len
+                && IntStream.range(0, n).allMatch(j -> IntStream.of(arr).anyMatch(x -> x == j))
+                && new int[(len + 1) * n] instanceof int[] nxt
+                && IntStream.range(0, n).allMatch(j -> (nxt[len * n + j] = len) >= 0)
+                && IntStream.iterate(len - 1, i -> i >= 0, i -> i - 1).allMatch(i -> IntStream.range(0, n).allMatch(j -> (nxt[i * n + j] = arr[i] == j ? i : nxt[(i + 1) * n + j]) >= 0))
+                && IntStream.range(0, dp.length).allMatch(i -> (dp[i] = len + 1) > 0) && (dp[0] = 0) == 0
+                && IntStream.range(0, 1 << n).allMatch(mask -> IntStream.rangeClosed(0, Math.min(inv0 - 1, Integer.bitCount(mask) * (Integer.bitCount(mask) - 1) / 2)).allMatch(iv ->
+                    dp[mask * inv0 + iv] > len || IntStream.range(0, n).filter(j -> (mask >> j & 1) == 0 && nxt[dp[mask * inv0 + iv] * n + j] < len).allMatch(j ->
+                        (dp[(mask | 1 << j) * inv0 + iv + Integer.bitCount(mask >> (j + 1))] = Math.min(dp[(mask | 1 << j) * inv0 + iv + Integer.bitCount(mask >> (j + 1))], nxt[dp[mask * inv0 + iv] * n + j] + 1)) > 0)))
+                && (Integer) IntStream.range(0, inv0).filter(iv -> dp[((1 << n) - 1) * inv0 + iv] <= len).findFirst().orElse(-1) instanceof Integer x && x >= 0
+                ? new int[]{idx, n * (n - 1) / 2 - x + 1} : null)
+                .filter(Objects::nonNull).max(Comparator.<int[]>comparingInt(r -> r[1]).thenComparingInt(r -> -r[0]))
                 .map(r -> r[0] + "\n[:" + "|".repeat(r[1]) + ":]").orElse("Brand new problem!") : "");
     }
 }
