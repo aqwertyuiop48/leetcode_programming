@@ -54,5 +54,16 @@ Steps: (To do in Github codespace)
                     </select>
 
 
- ## To register before submitting for the contest / not able to submit now
+# Skipped questions
+
+ ### Not accepting Java
+ 188:A 188:B 188:C 188:D 188:E 188:F 188:G 188:H
+ 64:A 64:B 64:C 64:D 64:E 64:F 64:G 64:H 64:I
+ 72:A 72:B 72:C 72:D 72:E 72:F 72:G 72:H 72:I
+ 100:A 100:B 100:C 100:D 100:E 100:F 100:G 100:H 100:I 100:J
+ 130:A 130:B 130:C 130:D 130:E 130:F 130:G 130:H 130:I 130:J
+ 153:A 153:B 153:C 153:D 153:E
+ 162:A 162:B 162:C 162:D 162:E 162:F 162:G 162:H 162:I 162:J
+
+ ### Not able to submit now
  206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3

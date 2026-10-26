@@ -1,36 +1,29 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).iterator() instanceof Iterator<Object> it
-            && ((IntSupplier) () -> Integer.parseInt((String) it.next())) instanceof IntSupplier rd
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer n
-            && Integer.valueOf(rd.getAsInt()) instanceof Integer m
-            && IntStream.range(0, n).mapToObj(i -> new int[]{rd.getAsInt(), rd.getAsInt(), rd.getAsInt()}).toList() instanceof List<int[]> bus
-            && IntStream.range(0, m).mapToObj(i -> new int[]{rd.getAsInt(), rd.getAsInt(), rd.getAsInt()}).toList() instanceof List<int[]> man
-            && IntStream.range(0, n).boxed().sorted(Comparator.comparingInt(i -> bus.get(i)[2])).toList() instanceof List<Integer> ordT
-            && new int[n] instanceof int[] rankOf
-            && IntStream.range(0, n).allMatch(r -> (rankOf[ordT.get(r)] = r) >= 0)
-            && ordT.stream().mapToInt(i -> bus.get(i)[2]).toArray() instanceof int[] ts
-            && IntStream.range(0, n).boxed().sorted(Comparator.comparingInt((Integer i) -> -bus.get(i)[1])).toList() instanceof List<Integer> ordF
-            && IntStream.range(0, m).boxed().sorted(Comparator.comparingInt((Integer j) -> -man.get(j)[1])).toList() instanceof List<Integer> ordP
-            && Integer.valueOf(Integer.highestOneBit(Math.max(1, n) * 2 - 1)) instanceof Integer sz
-            && IntStream.generate(() -> Integer.MAX_VALUE).limit(2 * sz).toArray() instanceof int[] tr
-            && IntStream.generate(() -> -1).limit(m).toArray() instanceof int[] ans
-            && new int[]{0} instanceof int[] ptr
-            && ordP.stream().allMatch(j ->
-                IntStream.iterate(ptr[0], k -> k < n && bus.get(ordF.get(k))[1] >= man.get(j)[1], k -> k + 1)
-                    .allMatch(k -> (tr[sz + rankOf[ordF.get(k)]] = bus.get(ordF.get(k))[0]) > 0
-                        && IntStream.iterate((sz + rankOf[ordF.get(k)]) >> 1, i -> i >= 1, i -> i >> 1).allMatch(i -> (tr[i] = Math.min(tr[2 * i], tr[2 * i + 1])) > 0)
-                        && (ptr[0] = k + 1) > 0)
-                && Integer.valueOf(Arrays.binarySearch(ts, man.get(j)[2])) instanceof Integer bs
-                && Integer.valueOf(bs >= 0 ? bs : -bs - 1) instanceof Integer lo
-                && Integer.valueOf(lo >= n ? 0 : IntStream.iterate(lo + sz, i -> true, i -> (i >> Integer.numberOfTrailingZeros(~i)) == 0 ? 0 : (i >> Integer.numberOfTrailingZeros(~i)) + 1)
-                    .filter(i -> i == 0 || tr[i] <= man.get(j)[0]).findFirst().getAsInt()) instanceof Integer first
-                && (ans[j] = first == 0 ? -1 : ordT.get(IntStream.iterate(first, i -> true, i -> tr[2 * i] <= man.get(j)[0] ? 2 * i : 2 * i + 1).filter(i -> i >= sz).findFirst().getAsInt() - sz) + 1) != Integer.MIN_VALUE)
-            ? Arrays.stream(ans).mapToObj(String::valueOf).collect(Collectors.joining(" "))
-            : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m
+            && new int[n] instanceof int[] bs && new int[n] instanceof int[] bf && new int[n] instanceof int[] bt
+            && IntStream.range(0, n).allMatch(i -> (bs[i] = Integer.parseInt(tk.nextToken())) > 0 && (bf[i] = Integer.parseInt(tk.nextToken())) > 0 && (bt[i] = Integer.parseInt(tk.nextToken())) > 0)
+            && new int[m] instanceof int[] pl && new int[m] instanceof int[] pr && new int[m] instanceof int[] pb
+            && IntStream.range(0, m).allMatch(i -> (pl[i] = Integer.parseInt(tk.nextToken())) > 0 && (pr[i] = Integer.parseInt(tk.nextToken())) > 0 && (pb[i] = Integer.parseInt(tk.nextToken())) > 0)
+            && IntStream.range(0, n).mapToLong(i -> (long) bt[i] << 20 | i).sorted().mapToInt(x -> (int) (x & 1048575)).toArray() instanceof int[] ordT
+            && new int[n] instanceof int[] rank && IntStream.range(0, n).allMatch(r -> (rank[ordT[r]] = r) >= 0)
+            && IntStream.range(0, n).map(r -> bt[ordT[r]]).toArray() instanceof int[] ts
+            && IntStream.range(0, n).mapToLong(i -> (long) (2000000000 - bf[i]) << 20 | i).sorted().mapToInt(x -> (int) (x & 1048575)).toArray() instanceof int[] ordF
+            && IntStream.range(0, m).mapToLong(i -> (long) (2000000000 - pr[i]) << 20 | i).sorted().mapToInt(x -> (int) (x & 1048575)).toArray() instanceof int[] ordP
+            && (Integer) Integer.highestOneBit(Math.max(1, 2 * n - 1)) instanceof Integer sz0 && (Integer) (sz0 < n ? 2 * sz0 : sz0) instanceof Integer sz
+            && new int[2 * sz] instanceof int[] tr && IntStream.range(0, 2 * sz).allMatch(i -> (tr[i] = Integer.MAX_VALUE) > 0)
+            && new int[m] instanceof int[] ans && new int[]{0, 0} instanceof int[] st
+            && IntStream.range(0, m).allMatch(z -> (Integer) ordP[z] instanceof Integer j
+                && Stream.generate(() -> 0).takeWhile(y -> st[0] < n && bf[ordF[st[0]]] >= pr[j]).allMatch(y -> (Integer) ordF[st[0]++] instanceof Integer b
+                    && (tr[sz + rank[b]] = bs[b]) > 0 && IntStream.iterate((sz + rank[b]) >> 1, i -> i >= 1, i -> i >> 1).allMatch(i -> (tr[i] = Math.min(tr[2 * i], tr[2 * i + 1])) > 0))
+                && (Integer) Arrays.binarySearch(ts, pb[j]) instanceof Integer bsr && (Integer) (bsr >= 0 ? bsr : -bsr - 1) instanceof Integer lo0
+                && (st[1] = lo0 >= n ? 0 : lo0 + sz) >= 0
+                && Stream.generate(() -> 0).takeWhile(y -> st[1] > 0 && tr[st[1]] > pl[j]).allMatch(y -> Stream.generate(() -> 0).takeWhile(w -> (st[1] & 1) == 1).allMatch(w -> (st[1] >>= 1) >= 0) && (st[1] == 0 || ++st[1] > 0))
+                && (Integer) Stream.iterate(st[1], i -> i < sz, i -> tr[2 * i] <= pl[j] ? 2 * i : 2 * i + 1).reduce(-1, (a, b2) -> b2) instanceof Integer last
+                && (ans[j] = st[1] == 0 ? -1 : ordT[(last < 0 ? st[1] : tr[2 * last] <= pl[j] ? 2 * last : 2 * last + 1) - sz] + 1) != Integer.MIN_VALUE)
+            ? Arrays.stream(ans).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }

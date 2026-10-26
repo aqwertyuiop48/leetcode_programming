@@ -8,8 +8,8 @@ public class Main {
             ? Stream.generate(() -> Stream.generate(() -> new long[]{s.nextLong(), s.nextLong()}).limit(s.nextInt()).toList() instanceof List<long[]> prs
                     && prs.stream().map(pa -> LongStream.iterate(1, x -> x * pa[0]).limit(pa[1] + 1).toArray()).toList() instanceof List<long[]> pw
                     && Long.valueOf(pw.stream().mapToLong(a -> a[a.length - 1]).reduce(1, (x, y) -> x * y)) instanceof Long v
-                    && pw.stream().reduce(new long[]{1}, (old, a) -> Arrays.stream(a).flatMap(m -> Arrays.stream(old).map(d -> d * m)).toArray(), (x, y) -> x) instanceof long[] unsorted
-                    && Arrays.stream(unsorted).sorted().toArray() instanceof long[] d
+                    && prs.stream().reduce(new long[]{1}, (base, pa) -> LongStream.rangeClosed(1, pa[1]).boxed().reduce(base, (acc, k) -> new long[acc.length + base.length] instanceof long[] out && (Long) LongStream.iterate(1, x -> x * pa[0]).skip(k).findFirst().getAsLong() instanceof Long mul
+                        && new int[]{0, 0} instanceof int[] ij && IntStream.range(0, out.length).allMatch(tt -> (out[tt] = ij[1] >= base.length || ij[0] < acc.length && acc[ij[0]] <= base[ij[1]] * mul ? acc[ij[0]++] : base[ij[1]++] * mul) > 0) ? out : acc, (x, y) -> x), (x, y) -> x) instanceof long[] d
                     && new long[]{Long.MAX_VALUE, 0, 0, 0} instanceof long[] best
                     && Integer.valueOf(Arrays.binarySearch(d, (long) Math.cbrt(v) + 1)) instanceof Integer tp
                     && Integer.valueOf(tp >= 0 ? tp : -tp - 2) instanceof Integer top

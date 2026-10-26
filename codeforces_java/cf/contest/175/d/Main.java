@@ -23,8 +23,8 @@ public class Main {
                 ? Arrays.copyOf(kp, (int) st[1] + 1) : null) instanceof Function<double[], double[]> dist
             && new double[]{s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt()} instanceof double[] t1
             && new double[]{s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt(), s.nextInt()} instanceof double[] t2
-            && dist.apply(t1) instanceof double[] k1
-            && dist.apply(t2) instanceof double[] k2
+            && dist.apply(new double[]{t2[0], t1[1], t1[2], t1[3], t1[4]}) instanceof double[] k1
+            && dist.apply(new double[]{t1[0], t2[1], t2[2], t2[3], t2[4]}) instanceof double[] k2
             && Arrays.copyOf(k2, k2.length) instanceof double[] cum
             && IntStream.range(1, cum.length).allMatch(i -> (cum[i] += cum[i - 1]) >= 0)
             ? String.format(java.util.Locale.ROOT, "%.6f", IntStream.range(1, k1.length).mapToDouble(i -> k1[i] * (1 - cum[(int) Math.min(cum.length - 1, ((long) (i - 1) * (long) t1[1] + (long) t2[1] - 1) / (long) t2[1])])).sum())
