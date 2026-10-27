@@ -33,5 +33,6 @@ public class Main {
             && Stream.generate(dq::poll).takeWhile(Objects::nonNull).peek(i -> process.applyAsLong(ob.get(i)[3], ob.get(i)[4])).count() >= 0
             ? total[0] : "");
     }
-}
 
+
+}

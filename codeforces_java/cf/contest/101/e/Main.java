@@ -21,7 +21,6 @@ public class Main {
             && work.test(0) && work.test(0)
             ? sv[4] + "\n" + new String(ans) : "");
     }
+
+
 }
-
-
-

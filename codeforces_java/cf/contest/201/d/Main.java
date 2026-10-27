@@ -23,5 +23,6 @@ public class Main {
                 .filter(Objects::nonNull).max(Comparator.<int[]>comparingInt(r -> r[1]).thenComparingInt(r -> -r[0]))
                 .map(r -> r[0] + "\n[:" + "|".repeat(r[1]) + ":]").orElse("Brand new problem!") : "");
     }
-}
 
+
+}

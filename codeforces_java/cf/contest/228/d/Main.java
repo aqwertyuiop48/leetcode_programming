@@ -21,5 +21,6 @@ public class Main {
                             && Long.valueOf((tt <= z - 1 ? tt + 1 : p - tt + 1) * (((long) sum.applyAsInt(id.applyAsInt(z, c), r) - sum.applyAsInt(id.applyAsInt(z, c), l - 1) + M) % M) % M) instanceof Long term ? term : 0).sum() % M) : (String) null))
                 : (String) null).filter(Objects::nonNull).collect(Collectors.joining("\n")) : "");
     }
-}
 
+
+}

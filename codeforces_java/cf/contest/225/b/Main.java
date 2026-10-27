@@ -13,5 +13,6 @@ public class Main {
             ? (picks.size() == 1 ? Stream.concat(Stream.of(0L), picks.stream()).toList() : picks) instanceof List<Long> res
                 ? res.size() + "\n" + res.stream().map(String::valueOf).collect(Collectors.joining(" ")) : "" : "");
     }
-}
 
+
+}

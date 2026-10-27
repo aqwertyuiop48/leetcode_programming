@@ -24,5 +24,6 @@ public class Main {
                 && (nr[rr * (m + 2) + cc] = cc + 1) > 0 && (nl[rr * (m + 2) + cc] = cc - 1) >= 0
                 ? oR + " " + oC : "").collect(Collectors.joining("\n")) : ""), "", 1 << 28).start());
     }
-}
 
+
+}

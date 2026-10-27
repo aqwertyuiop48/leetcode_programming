@@ -15,5 +15,6 @@ public class Main {
                     && (cur[i * n + j] = b < neg / 2 ? neg : b + a[i][d - i] + (i == j ? 0 : a[j][d - j])) <= Integer.MAX_VALUE)))
                 ? buf[(2 * n - 2) & 1][n * n - 1] : 0 : "");
     }
-}
 
+
+}

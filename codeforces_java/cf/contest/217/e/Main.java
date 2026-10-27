@@ -30,5 +30,6 @@ public class Main {
             && IntStream.rangeClosed(1, k).allMatch(p -> (res[p] = from[p] == 0 ? s.charAt(nx[0]++) : res[from[p]]) > 0)
             ? new String(res, 1, k) : "");
     }
-}
 
+
+}

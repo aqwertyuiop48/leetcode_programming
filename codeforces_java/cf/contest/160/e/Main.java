@@ -26,5 +26,6 @@ public class Main {
                 && (ans[j] = st[1] == 0 ? -1 : ordT[(last < 0 ? st[1] : tr[2 * last] <= pl[j] ? 2 * last : 2 * last + 1) - sz] + 1) != Integer.MIN_VALUE)
             ? Arrays.stream(ans).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
-}
 
+
+}

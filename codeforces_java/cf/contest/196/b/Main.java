@@ -15,5 +15,6 @@ public class Main {
             ? Stream.generate(() -> 0).takeWhile(z -> qs[0] < qs[1]).anyMatch(z -> (Integer) q[qs[0]++] instanceof Integer v
                 && (visit.applyAsInt(v, 0) + visit.applyAsInt(v, 1) + visit.applyAsInt(v, 2) + visit.applyAsInt(v, 3) > 0)) ? "Yes" : "No" : "");
     }
-}
 
+
+}

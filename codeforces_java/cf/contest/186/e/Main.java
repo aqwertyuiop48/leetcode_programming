@@ -11,5 +11,6 @@ public class Main {
                 || i < n - 1 && (k == 0 || (load[i + 1][k - 1] += load[i][k]) > 0) && (k >= n - i - 1 || (load[i + 1][k] += load[i][k]) > 0)))
                 ? "Fat Rat" : "Cerealguy" : "");
     }
-}
 
+
+}

@@ -21,5 +21,6 @@ public class Main {
             ? IntStream.range(0, n + m).map(v -> Arrays.stream(cnt[v]).max().getAsInt() - Arrays.stream(cnt[v]).min().getAsInt()).sum()
                 + "\n" + Arrays.stream(col).map(c -> c + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
-}
 
+
+}

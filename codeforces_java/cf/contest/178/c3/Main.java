@@ -21,5 +21,6 @@ public class Main {
                     && sets.get(classId[cell]).add(idxIn[cell]) || true) ? ans[0] : -1
             : -1);
     }
-}
 
+
+}

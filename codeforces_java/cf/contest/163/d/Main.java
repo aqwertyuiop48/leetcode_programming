@@ -28,5 +28,6 @@ public class Main {
                     ? best[0] + " " + best[1] + " " + best[2] + " " + best[3] : "").limit(t).collect(Collectors.joining("\n"))
             : "");
     }
-}
 
+
+}

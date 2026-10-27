@@ -12,5 +12,6 @@ public class Main {
                 : dd % (aa + bb) >= aa && dd % (aa + bb) <= bb ? "FIRST\n" + (x1 + (mir ? -1 : 1) * (dd % (aa + bb)))
                 : "DRAW" : "");
     }
-}
 
+
+}

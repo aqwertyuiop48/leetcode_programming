@@ -61,5 +61,6 @@ public class Main {
                     : (Integer) idm[id2[cur[1]]] instanceof Integer u && addB.applyAsLong(dfn[u], -1) == 0 && (sum[0] -= base[dfn[u]] + preA.applyAsLong(dfn[u])) > Long.MIN_VALUE && --cur[1] >= 0))
             ? IntStream.rangeClosed(1, q).mapToObj(i -> String.valueOf(res[i])).collect(Collectors.joining("\n")) : "");
     }
-}
 
+
+}

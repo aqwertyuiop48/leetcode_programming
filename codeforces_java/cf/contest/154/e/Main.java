@@ -34,5 +34,6 @@ public class Main {
                     - Math.sin(2 * Math.asin(Math.min(1, Math.hypot(p.get(nx[v])[0] - p.get(v)[0], p.get(nx[v])[1] - p.get(v)[1]) / (2 * r))))) / 2).sum())
             : "");
     }
-}
 
+
+}

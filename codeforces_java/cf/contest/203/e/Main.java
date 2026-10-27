@@ -19,5 +19,6 @@ public class Main {
                     && Long.valueOf(root.get()[1] + Arrays.stream(oth, 0, (int) (Math.min(kmax, Math.max(1, n - C)) - 1)).sum()) instanceof Long fuelB
                     ? totB > a[0] || totB == a[0] && fuelB < a[1] ? totB + " " + fuelB : a[0] + " " + a[1] : "" : "");
     }
-}
 
+
+}

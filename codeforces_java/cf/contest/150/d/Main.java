@@ -20,7 +20,6 @@ public class Main {
             && new int[n + 1] instanceof int[] bp && IntStream.rangeClosed(1, n).allMatch(i -> (bp[i] = Math.max(bp[i - 1], IntStream.range(0, i).filter(j -> can[j][i] > -500000000).map(j -> bp[j] + can[j][i]).max().orElse(0))) >= 0)
             ? bp[n] : -1);
     }
+
+
 }
-
-
-

@@ -31,5 +31,6 @@ public class Main {
                 ? String.valueOf(IntStream.range(0, k).mapToLong(i -> Integer.valueOf(c[i]) instanceof Integer v && Integer.valueOf((int) (pk[Arrays.binarySearch(pkKey, (long) v * (n + 1) + c[(i + k - 1) % k])] & 1048575)) instanceof Integer ip && Integer.valueOf((int) (pk[Arrays.binarySearch(pkKey, (long) v * (n + 1) + c[(i + 1) % k])] & 1048575)) instanceof Integer iq
                     ? (ip < iq ? pre.get(v)[iq] - pre.get(v)[ip + 1] : pre.get(v)[nb.get(v).length] - pre.get(v)[ip + 1] + pre.get(v)[iq]) : 0).sum()) : "").collect(Collectors.joining("\n")) : "");
     }
-}
 
+
+}

@@ -23,5 +23,6 @@ public class Main {
             ? IntStream.rangeClosed(0, m - n).filter(x -> (x == 0 || put.applyAsInt(pos[x], 0) == 0 && put.applyAsInt(pos[x + n], x + n) == 0)
                 && hs[1] == (ha + mul.applyAsLong(x, sp)) % mod).count() : "");
     }
-}
 
+
+}

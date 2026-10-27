@@ -12,5 +12,6 @@ public class Main {
                 .flatMapToLong(Arrays::stream).map(s -> s >>> 27).sorted().skip(t - 1).findFirst().getAsLong()
             : "");
     }
-}
 
+
+}

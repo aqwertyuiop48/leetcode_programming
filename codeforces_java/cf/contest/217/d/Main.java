@@ -48,5 +48,6 @@ public class Main {
             ? self.get().applyAsLong(1L, 0L)
             : -1L);
     }
-}
 
+
+}

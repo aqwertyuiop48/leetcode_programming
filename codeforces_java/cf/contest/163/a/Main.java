@@ -9,5 +9,6 @@ public class Main {
                 && IntStream.rangeClosed(1, m).allMatch(j -> (cur[j] = cur[j - 1] + (a[i] == b[j - 1] ? prev[j - 1] + 1 : 0)) >= 0 && (cur[j] < 1000000007 || (cur[j] -= 1000000007) >= 0)) ? cur[m] : 0).sum() % 1000000007L
             : 0);
     }
-}
 
+
+}

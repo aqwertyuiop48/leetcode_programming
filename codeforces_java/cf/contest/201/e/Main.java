@@ -19,5 +19,6 @@ public class Main {
                 && IntStream.range(0, 40).allMatch(z -> bs[0] >= bs[1] || ((Long) (bs[0] + (bs[1] - bs[0]) / 2) instanceof Long mid && (chk.test(mid) ? (bs[1] = mid) > 0 : (bs[0] = mid + 1) > 0)))
                 ? String.valueOf(n == 1 ? 0 : bs[0]) : "").collect(Collectors.joining("\n")) : "");
     }
-}
 
+
+}

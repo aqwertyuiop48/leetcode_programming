@@ -30,7 +30,6 @@ public class Main {
             ? String.format(java.util.Locale.ROOT, "%.6f", IntStream.range(1, k1.length).mapToDouble(i -> k1[i] * (1 - cum[(int) Math.min(cum.length - 1, ((long) (i - 1) * (long) t1[1] + (long) t2[1] - 1) / (long) t2[1])])).sum())
             : "");
     }
+
+
 }
-
-
-

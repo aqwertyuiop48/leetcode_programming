@@ -40,5 +40,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> cap[eid[i]] == 0 ? "1" : "0").collect(Collectors.joining(" "))
             : "");
     }
-}
 
+
+}

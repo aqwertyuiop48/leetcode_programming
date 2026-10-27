@@ -18,5 +18,6 @@ public class Main {
                     && ((cur[t] = i + s <= n && j + s <= m && ((P >> 0 & 1) == 1 ? pre[i + 0 * h + h][j + 0 * h + h] - pre[i + 0 * h][j + 0 * h + h] - pre[i + 0 * h + h][j + 0 * h] + pre[i + 0 * h][j + 0 * h] == h * h : prev[P * nm + (i + 0 * h) * m + j + 0 * h]) && ((P >> 1 & 1) == 1 ? pre[i + 0 * h + h][j + 1 * h + h] - pre[i + 0 * h][j + 1 * h + h] - pre[i + 0 * h + h][j + 1 * h] + pre[i + 0 * h][j + 1 * h] == h * h : prev[P * nm + (i + 0 * h) * m + j + 1 * h]) && ((P >> 2 & 1) == 1 ? pre[i + 1 * h + h][j + 0 * h + h] - pre[i + 1 * h][j + 0 * h + h] - pre[i + 1 * h + h][j + 0 * h] + pre[i + 1 * h][j + 0 * h] == h * h : prev[P * nm + (i + 1 * h) * m + j + 0 * h]) && ((P >> 3 & 1) == 1 ? pre[i + 1 * h + h][j + 1 * h + h] - pre[i + 1 * h][j + 1 * h + h] - pre[i + 1 * h + h][j + 1 * h] + pre[i + 1 * h][j + 1 * h] == h * h : prev[P * nm + (i + 1 * h) * m + j + 1 * h])) || true))
                 ? IntStream.range(0, nm).filter(t -> IntStream.range(0, 16).anyMatch(P -> cur[P * nm + t])).count() : 0L).sum() : 0);
     }
-}
 
+
+}

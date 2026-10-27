@@ -21,5 +21,6 @@ public class Main {
                     && (st[2] = slot.applyAsInt(st[1])) >= 0 && (tk[st[2]] != st[1] || i > 0 && (st[1] >> (s.charAt(i - 1) - 'a') & 1) == 1 || ++cnt[st[2]] > 0)))
             ? IntStream.of(qm).mapToObj(m -> String.valueOf(cnt[slot.applyAsInt(m)])).collect(Collectors.joining("\n")) : "");
     }
-}
 
+
+}

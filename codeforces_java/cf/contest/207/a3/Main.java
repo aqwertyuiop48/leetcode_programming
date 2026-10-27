@@ -16,5 +16,6 @@ public class Main {
                     .sorted(Comparator.<long[]>comparingLong(e -> e[0]).thenComparingLong(e -> e[1]).thenComparingLong(e -> e[2]).thenComparingLong(e -> e[3])).toList() instanceof List<long[]> all
                     ? all.get(all.size() - 1)[0] + "\n" + all.stream().map(e -> e[1] + " " + (e[2] + 1)).collect(Collectors.joining("\n")) : "" : "");
     }
-}
 
+
+}

@@ -8,5 +8,6 @@ public class Main {
             && (Integer) Arrays.stream(new String[]{"the", "of", "and", "to", "in"}).mapToInt(w -> doc.split("\\b" + w + "\\b", -1).length - 1).sum() instanceof Integer common
             ? trade >= 3 ? 3 : common % 2 == 0 ? 1 : 2 : 0);
     }
-}
 
+
+}

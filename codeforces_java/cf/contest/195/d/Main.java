@@ -13,5 +13,6 @@ public class Main {
                     ? (num / g) + "/" + (den / g) : "" : "").filter(x -> !x.isEmpty()).distinct().count()
             : "");
     }
-}
 
+
+}

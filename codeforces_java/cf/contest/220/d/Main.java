@@ -14,5 +14,6 @@ public class Main {
             ? String.valueOf(IntStream.range(0, 64).filter(k -> par.applyAsInt(new int[]{k / 16, k / 4 % 4, k % 4}) == 0).mapToLong(k -> c[k / 16] * c[k / 4 % 4] * c[k % 4]).sum() - N - 3 * N * (N - 1)
                 - 6 * IntStream.rangeClosed(0, n).mapToLong(dx -> IntStream.rangeClosed(0, m).filter(dy -> dx + dy > 0).mapToLong(dy -> (long) (n - dx + 1) * (m - dy + 1) * (dx > 0 && dy > 0 ? 2 : 1) * (BigInteger.valueOf(dx).gcd(BigInteger.valueOf(dy)).intValue() - 1)).sum()).sum()) : "");
     }
-}
 
+
+}

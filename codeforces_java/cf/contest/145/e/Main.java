@@ -21,5 +21,6 @@ public class Main {
                     && IntStream.rangeClosed(1, lg).allMatch(i -> (((q[0] >> i) << i) == q[0] || pull.test(q[0] >> i)) && (((q[1] >> i) << i) == q[1] || pull.test((q[1] - 1) >> i))) ? "" : "").filter(x -> !x.isEmpty()).collect(Collectors.joining("\n"))
             : "");
     }
-}
 
+
+}

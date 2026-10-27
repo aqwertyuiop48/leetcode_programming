@@ -14,5 +14,6 @@ public class Main {
                 + "\n" + carts.stream().map(c -> c.size() + " " + c.stream().map(it -> String.valueOf(it[2])).collect(Collectors.joining(" "))).collect(Collectors.joining("\n"))
             : "");
     }
-}
 
+
+}

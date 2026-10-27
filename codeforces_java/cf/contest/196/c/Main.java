@@ -24,5 +24,6 @@ public class Main {
             && solve.get().test(1, IntStream.range(0, n).toArray())
             ? Arrays.stream(ans, 1, n + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : ""), "", 1 << 28).start();
     }
-}
 
+
+}

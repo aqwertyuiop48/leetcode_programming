@@ -17,5 +17,6 @@ public class Main {
                     + IntStream.range(1, L).filter(d -> L % d == 0).mapToLong(d -> g[d]).sum() : 0L) instanceof LongUnaryOperator F
             ? F.applyAsLong(r) - F.applyAsLong(l - 1) : "");
     }
-}
 
+
+}

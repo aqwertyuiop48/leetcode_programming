@@ -57,5 +57,6 @@ public class Main {
                                 && (ms[i] = l[i] + t[i] - 1) > 0 && (sm[i] = t[i]) > 0 && (mm[i] = ms[i]) > 0 && (mt[i] = t[i]) > 0 && (mk[i] = i) > 0 && (lc[i] = 0) == 0 && (rc[i] = 0) == 0
                                 && (root[0] = merge[0].applyAsInt(root[0], i)) >= 0 && (ans[0] = Math.max(sm[root[0]], mm[root[0]])) >= 0 ? String.valueOf(g[6]) : "" : "").collect(Collectors.joining(" ")) : "");
     }
-}
 
+
+}
