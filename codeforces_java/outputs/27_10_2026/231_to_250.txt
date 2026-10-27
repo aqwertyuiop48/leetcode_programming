@@ -1,0 +1,29 @@
+]633;E;./reruns.sh;49d9ad56-c5bd-4e7b-9081-e32f5268bfee]633;C========================================
+Contest : 101
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/101/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 138
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/138/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.77MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====

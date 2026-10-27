@@ -69,5 +69,8 @@ Steps: (To do in Github codespace)
  206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3
 
 
- - { ./reruns.sh && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
- - { ./reruns.sh && python codeforces_api.py; } > "outputs/231_to_250.txt"
+ - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
+ 
+ - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/27_10_2026/231_to_250.txt"
+
+ - { ./reruns.sh && python codeforces_api.py; } > "outputs/27_10_2026/reruns_1_to_230.txt"
