@@ -67,3 +67,7 @@ Steps: (To do in Github codespace)
 
  ### Not able to submit now
  206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3
+
+
+ - { ./reruns.sh && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
+ - { ./reruns.sh && python codeforces_api.py; } > "outputs/231_to_250.txt"
