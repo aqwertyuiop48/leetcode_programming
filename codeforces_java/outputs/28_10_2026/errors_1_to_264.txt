@@ -1,0 +1,99 @@
+Row   | ID           | Problem                             | Verdict              | Language        | Time (IST)
+----------------------------------------------------------------------------------------------------------------
+1     | 396314668    | 264E - Roadside Trees               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:24:11
+2     | 396314631    | 264D - Colorful Stones              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:23:49
+3     | 396314585    | 264C - Choosing Balls               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:23:28
+4     | 396314457    | 263E - Rhombus                      | WRONG_ANSWER         | Java 21         | 2026-10-27 21:22:24
+5     | 396314009    | 261E - Maxim and Calculator         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:18:43
+6     | 396313967    | 261D - Maxim and Increasing Subse   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:18:21
+7     | 396313409    | 258E - Little Elephant and Tree     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:13:16
+8     | 396313194    | 257E - Greedy Elevator              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:11:24
+9     | 396313140    | 257D - Sum                          | WRONG_ANSWER         | Java 21         | 2026-10-27 21:11:01
+10    | 396312970    | 256E - Lucky Arrays                 | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:09:34
+11    | 396312920    | 256D - Liars and Serge              | WRONG_ANSWER         | Java 21         | 2026-10-27 21:09:11
+12    | 396312885    | 256C - Furlo and Rublo and Game     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:08:50
+13    | 396312776    | 255E - Furlo and Rublo and Game     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 21:07:44
+14    | 396312539    | 254E - Dormitory                    | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:05:40
+15    | 396312481    | 254D - Rats                         | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:05:11
+16    | 396312407    | 254C - Anagram                      | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:04:34
+17    | 396312335    | 254B - Jury Size                    | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:03:56
+18    | 396312251    | 254A - Cards with Numbers           | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:03:16
+19    | 396312179    | 253E - Printer                      | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:02:45
+20    | 396312137    | 253D - Table with Letters - 2       | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:02:23
+21    | 396312105    | 253C - Text Editor                  | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:02:02
+22    | 396312069    | 253B - Physics Practical            | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:01:39
+23    | 396312016    | 253A - Boys and Girls               | RUNTIME_ERROR        | Java 21         | 2026-10-27 21:01:17
+24    | 396311763    | 251E - Tree and Table               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 20:59:02
+25    | 396272106    | 229E - Gifts                        | WRONG_ANSWER         | Java 21         | 2026-10-27 15:57:51
+26    | 396272055    | 228D - Zigzag                       | WRONG_ANSWER         | Java 21         | 2026-10-27 15:57:26
+27    | 396272009    | 228C - Fractal Detector             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:57:05
+28    | 396271756    | 222C - Reducing Fractions           | RUNTIME_ERROR        | Java 21         | 2026-10-27 15:54:44
+29    | 396271693    | 220D - Little Elephant and Triang   | WRONG_ANSWER         | Java 21         | 2026-10-27 15:54:01
+30    | 396271586    | 217E - Alien DNA                    | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:52:58
+31    | 396271542    | 217D - Bitonix' Patrol              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:52:34
+32    | 396271448    | 217B - Blackboard Fibonacci         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:51:51
+33    | 396271363    | 215C - Crosses                      | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:51:08
+34    | 396271187    | 212B - Polycarpus is Looking for    | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:49:43
+35    | 396271102    | 195E - Building Forest              | WRONG_ANSWER         | Java 21         | 2026-10-27 15:49:00
+36    | 396270991    | 207D10 - The Beaver's Problem - 3   | WRONG_ANSWER         | Java 21         | 2026-10-27 15:48:03
+37    | 396270945    | 207D9 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:47:41
+38    | 396270897    | 207D8 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:47:20
+39    | 396270847    | 207D7 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:46:56
+40    | 396270796    | 207D6 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:46:34
+41    | 396270764    | 207D5 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:46:12
+42    | 396270714    | 207D4 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:45:51
+43    | 396270629    | 207D2 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:45:08
+44    | 396270583    | 207D1 - The Beaver's Problem - 3    | WRONG_ANSWER         | Java 21         | 2026-10-27 15:44:47
+45    | 396270538    | 207C3 - Game with Two Trees         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:44:26
+46    | 396270357    | 201D - Brand New Problem            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:42:43
+47    | 396270324    | 200A - Cinema                       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:42:22
+48    | 396270282    | 198E - Gripping Story               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:41:59
+49    | 396270080    | 186E - Clever Fat Rat               | WRONG_ANSWER         | Java 21         | 2026-10-27 15:40:09
+50    | 396270039    | 185C - Clever Fat Rat               | WRONG_ANSWER         | Java 21         | 2026-10-27 15:39:46
+51    | 396269987    | 178C3 - Smart Beaver and Resolvin   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:39:25
+52    | 396269907    | 164E - Polycarpus and Tasks         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:38:42
+53    | 396269807    | 163E - e-Government                 | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:38:00
+54    | 396269766    | 163D - Large Refrigerator           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:37:39
+55    | 396269642    | 160E - Buses and People             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:36:36
+56    | 396269588    | 154E - Martian Colony               | RUNTIME_ERROR        | Java 21         | 2026-10-27 15:36:14
+57    | 396269320    | 177F2 - Script Generation           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:33:47
+58    | 396269281    | 150D - Mission Impassable           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:33:27
+59    | 396269202    | 138E - Hellish Constraints          | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:32:41
+60    | 396269156    | 101E - Candies and Stones           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:32:19
+61    | 396265706    | 249C - Piglet's Birthday            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:02:20
+62    | 396265662    | 249B - Sweets for Everyone!         | WRONG_ANSWER         | Java 21         | 2026-10-27 15:01:59
+63    | 396265570    | 248E - Piglet's Birthday            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 15:01:15
+64    | 396265536    | 248D - Sweets for Everyone!         | WRONG_ANSWER         | Java 21         | 2026-10-27 15:00:51
+65    | 396264876    | 245G - Suggested Friends            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:55:33
+66    | 396264540    | 244D - Hydra                        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:52:43
+67    | 396264489    | 244C - The Brand New Function       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:52:20
+68    | 396264307    | 243D - Cubes                        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:50:51
+69    | 396264209    | 243B - Hydra                        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:50:09
+70    | 396264150    | 243A - The Brand New Function       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:49:47
+71    | 396264105    | 242E - XOR on Segment               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:49:26
+72    | 396263891    | 241F - Race                         | WRONG_ANSWER         | Java 21         | 2026-10-27 14:47:41
+73    | 396263630    | 240F - TorCoder                     | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:45:31
+74    | 396263579    | 240E - Road Repairs                 | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:45:09
+75    | 396263538    | 240D - Merging Two Decks            | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:44:47
+76    | 396263497    | 240C - Practice                     | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:44:25
+77    | 396263453    | 240B - Fence                        | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:44:04
+78    | 396263405    | 240A - Cinema                       | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:43:43
+79    | 396263346    | 239E - World Eater Brothers         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:43:06
+80    | 396263243    | 239C - Not Wool Sequences           | WRONG_ANSWER         | Java 21         | 2026-10-27 14:42:11
+81    | 396263054    | 238C - World Eater Brothers         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:40:22
+82    | 396262976    | 238A - Not Wool Sequences           | WRONG_ANSWER         | Java 21         | 2026-10-27 14:39:36
+83    | 396262477    | 236E - Cyclical Quest               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:35:04
+84    | 396262353    | 236B - Easy Number Challenge        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:33:55
+85    | 396262275    | 235E - Number Challenge             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:33:11
+86    | 396262222    | 235D - Graph Game                   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:32:48
+87    | 396262173    | 235C - Cyclical Quest               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:32:23
+88    | 396261972    | 234F - Fence                        | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:30:25
+89    | 396261880    | 234D - Cinema                       | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:29:29
+90    | 396261831    | 234C - Weather                      | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:29:07
+91    | 396261767    | 234B - Reading                      | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:28:38
+92    | 396261734    | 234A - Lefthanders and Righthande   | RUNTIME_ERROR        | Java 21         | 2026-10-27 14:28:17
+93    | 396261687    | 233E - Doe Graphs                   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:27:49
+94    | 396261504    | 232E - Quick Tortoise               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:26:02
+95    | 396261408    | 232C - Doe Graphs                   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:25:19
+96    | 396261294    | 231E - Cactus                       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:24:13
+97    | 396261200    | 231C - To Add or Not to Add         | WRONG_ANSWER         | Java 21         | 2026-10-27 14:23:28
