@@ -19,3 +19,4 @@ public class Main {
             ? qm.stream().map(m -> String.valueOf(cnt.getOrDefault(m, 0))).collect(Collectors.joining("\n")) : "");
     }
 }
+

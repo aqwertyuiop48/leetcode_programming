@@ -10,3 +10,4 @@ public class Main {
                     System.out.println(st.getMin() + " " + st.getMax()))));
     }
 }
+

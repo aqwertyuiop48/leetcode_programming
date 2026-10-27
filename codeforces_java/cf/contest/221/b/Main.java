@@ -10,3 +10,4 @@ public class Main {
                     + (d * d != x && (String.valueOf(x / d).chars().map(c -> 1 << (c - '0')).reduce(0, (a, b) -> a | b) & mx) != 0 ? 1 : 0)).sum() : 0);
     }
 }
+

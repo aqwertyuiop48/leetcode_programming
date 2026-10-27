@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.range(0, n).filter(i -> a[i] != c[i]).count() <= 2 ? "YES" : "NO" : "");
     }
 }
+

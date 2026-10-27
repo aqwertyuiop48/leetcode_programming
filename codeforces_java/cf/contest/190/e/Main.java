@@ -17,3 +17,4 @@ public class Main {
                 ? ((c + 1 < st[3] ? cs[c + 1] : n) - cs[c]) + " " + IntStream.range(cs[c], c + 1 < st[3] ? cs[c + 1] : n).mapToObj(i -> String.valueOf(q[i])).collect(Collectors.joining(" ")) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

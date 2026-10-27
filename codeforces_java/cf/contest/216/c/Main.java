@@ -11,3 +11,4 @@ public class Main {
             ? n < 2 ? "-1" : p[n + m] + "\n" + IntStream.rangeClosed(1, n + m).boxed().flatMap(t -> Collections.nCopies(h[t], t).stream()).map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

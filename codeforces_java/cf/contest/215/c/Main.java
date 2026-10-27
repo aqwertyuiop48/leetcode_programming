@@ -14,3 +14,4 @@ public class Main {
                         : (r2 == 0 ? w * (m - 2 * b) * b : 0L)) : 0L).sum() : 0);
     }
 }
+

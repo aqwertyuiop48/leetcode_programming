@@ -14,3 +14,4 @@ public class Main {
                 .skip(1).sum() % M : "");
     }
 }
+

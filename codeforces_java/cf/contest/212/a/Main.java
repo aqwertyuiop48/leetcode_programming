@@ -22,3 +22,4 @@ public class Main {
                 + "\n" + Arrays.stream(col).map(c -> c + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

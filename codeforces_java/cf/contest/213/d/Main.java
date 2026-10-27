@@ -18,3 +18,4 @@ public class Main {
                     IntStream.range(0, n).map(j -> n - 1 - j).boxed().map(j -> id.applyAsInt(j, 4))).flatMap(x -> x).map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

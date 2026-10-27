@@ -11,3 +11,4 @@ public class Main {
             ? z[1] == 1 && z[2] == 0 ? sb.toString() : "Error occurred" : "");
     }
 }
+

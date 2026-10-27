@@ -20,3 +20,4 @@ public class Main {
                 ? String.valueOf(n == 1 ? 0 : bs[0]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

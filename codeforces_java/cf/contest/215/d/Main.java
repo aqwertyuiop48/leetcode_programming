@@ -10,3 +10,4 @@ public class Main {
                 ? T - t <= 0 ? c + m * x : T - t >= m ? c : Math.min(c * ((m + T - t - 1) / (T - t)), c + m * x) : 0).sum() : "");
     }
 }
+

@@ -13,3 +13,4 @@ public class Main {
             ? (vals.peekFirst() & 6) != 0 ? "YES" : "NO" : "");
     }
 }
+

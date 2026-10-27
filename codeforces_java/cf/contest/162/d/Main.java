@@ -5,3 +5,4 @@ public class Main {
         System.out.println(new Scanner(System.in) instanceof Scanner s ? s.nextLine().replaceAll("[0-9]", "") : "");
     }
 }
+

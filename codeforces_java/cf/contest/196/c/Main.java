@@ -25,3 +25,4 @@ public class Main {
             ? Arrays.stream(ans, 1, n + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : ""), "", 1 << 28).start();
     }
 }
+

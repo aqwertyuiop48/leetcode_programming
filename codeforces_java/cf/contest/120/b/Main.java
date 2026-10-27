@@ -11,3 +11,4 @@ public class Main {
                         .filter(i -> a[i] == 1).findFirst().getAsInt() + 1))))));
     }
 }
+

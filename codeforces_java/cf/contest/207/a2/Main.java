@@ -17,3 +17,4 @@ public class Main {
                     ? all.get(all.size() - 1)[0] + "\n" + all.stream().map(e -> e[1] + " " + (e[2] + 1)).collect(Collectors.joining("\n")) : "" : "");
     }
 }
+

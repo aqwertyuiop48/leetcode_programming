@@ -10,3 +10,4 @@ public class Main {
                     .map(a -> a - nk[1] * Math.min(3, a / nk[1])).sum())))));
     }
 }
+

@@ -9,3 +9,4 @@ public class Main {
             ? f.applyAsLong(r) - f.applyAsLong(l - 1) : "");
     }
 }
+

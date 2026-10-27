@@ -20,3 +20,4 @@ public class Main {
             ? dist[n] == Long.MAX_VALUE ? -1 : dist[n] : "");
     }
 }
+

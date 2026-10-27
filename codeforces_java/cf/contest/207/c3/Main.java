@@ -62,3 +62,4 @@ public class Main {
             ? IntStream.rangeClosed(1, q).mapToObj(i -> String.valueOf(res[i])).collect(Collectors.joining("\n")) : "");
     }
 }
+

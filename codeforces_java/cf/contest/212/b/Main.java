@@ -22,3 +22,4 @@ public class Main {
             ? IntStream.of(qm).mapToObj(m -> String.valueOf(cnt[slot.applyAsInt(m)])).collect(Collectors.joining("\n")) : "");
     }
 }
+

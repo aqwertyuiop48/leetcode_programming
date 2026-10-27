@@ -19,3 +19,4 @@ public class Main {
                 + Arrays.stream(b).map(v -> IntStream.iterate(v, x -> x > 1, x -> x / (spf[x] == 0 ? x : spf[x])).reduce(v, (res, x) -> cb[spf[x] == 0 ? x : spf[x]] > 0 && --cb[spf[x] == 0 ? x : spf[x]] >= 0 ? res / (spf[x] == 0 ? x : spf[x]) : res)).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

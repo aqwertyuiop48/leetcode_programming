@@ -11,3 +11,4 @@ public class Main {
             ? n + 1 - LongStream.iterate(1, f -> f * k + b).limit(n + 1).takeWhile(f -> f <= t).count() : "");
     }
 }
+

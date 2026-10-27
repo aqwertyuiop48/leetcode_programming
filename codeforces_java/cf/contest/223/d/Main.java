@@ -56,3 +56,4 @@ public class Main {
             ? String.format("%.9f", dist[t]) : "");
     }
 }
+

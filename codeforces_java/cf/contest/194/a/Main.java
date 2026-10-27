@@ -8,3 +8,4 @@ public class Main {
             ? Math.max(0, 3 * n - k) : "");
     }
 }
+

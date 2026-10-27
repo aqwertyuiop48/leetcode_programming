@@ -14,3 +14,4 @@ public class Main {
             ? Arrays.stream(tot).min().getAsLong() : -1);
     }
 }
+

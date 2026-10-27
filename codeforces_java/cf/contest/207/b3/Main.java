@@ -17,3 +17,4 @@ public class Main {
                 : IntStream.iterate(K - 1, j -> j >= 0, j -> j - 1).boxed().reduce(new int[]{(int) e, 0}, (st, j) -> key[up[j][st[0]]] > e - n + 1 ? new int[]{up[j][st[0]], st[1] + (1 << j)} : st, (x, y) -> x)[1] + 2L).sum() : "");
     }
 }
+

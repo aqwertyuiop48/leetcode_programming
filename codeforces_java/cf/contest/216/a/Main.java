@@ -7,3 +7,4 @@ public class Main {
             ? a * b + b * c + c * a - a - b - c + 1 : "");
     }
 }
+

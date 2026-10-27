@@ -58,3 +58,4 @@ public class Main {
                                 && (root[0] = merge[0].applyAsInt(root[0], i)) >= 0 && (ans[0] = Math.max(sm[root[0]], mm[root[0]])) >= 0 ? String.valueOf(g[6]) : "" : "").collect(Collectors.joining(" ")) : "");
     }
 }
+

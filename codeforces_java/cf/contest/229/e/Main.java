@@ -26,3 +26,4 @@ public class Main {
             ? String.format("%.9f", IntStream.range(0, m).filter(i -> !(F[i] < n && G[i] > n)).mapToDouble(i -> w.apply(i, G[i] <= n ? k[i] : 0)).reduce(1.0, (x, y) -> x * y) * dp[0][R] / dp[1][R]) : "");
     }
 }
+

@@ -10,3 +10,4 @@ public class Main {
             ? ds.stream().allMatch(d -> cur[0] > d[0] && (cur[0] += d[1]) > 0) ? "YES" : "NO" : "");
     }
 }
+

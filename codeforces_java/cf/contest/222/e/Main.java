@@ -15,3 +15,4 @@ public class Main {
                 (r, i) -> (n - 1 >> i & 1) == 1 ? mul.apply(mul.apply(r, r), t) : mul.apply(r, r), (x, y) -> x)).mapToLong(row -> Arrays.stream(row).sum() % M).sum() % M : "");
     }
 }
+

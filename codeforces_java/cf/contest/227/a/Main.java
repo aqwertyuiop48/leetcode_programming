@@ -10,3 +10,4 @@ public class Main {
             ? cr > 0 ? "LEFT" : cr < 0 ? "RIGHT" : "TOWARDS" : "");
     }
 }
+

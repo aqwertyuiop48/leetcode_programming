@@ -18,3 +18,4 @@ public class Main {
             ? F.applyAsLong(r) - F.applyAsLong(l - 1) : "");
     }
 }
+

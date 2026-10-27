@@ -11,3 +11,4 @@ public class Main {
             ? Arrays.stream(y).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

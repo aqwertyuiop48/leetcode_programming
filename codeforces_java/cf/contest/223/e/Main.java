@@ -32,3 +32,4 @@ public class Main {
                     ? (ip < iq ? pre.get(v)[iq] - pre.get(v)[ip + 1] : pre.get(v)[nb.get(v).length] - pre.get(v)[ip + 1] + pre.get(v)[iq]) : 0).sum()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

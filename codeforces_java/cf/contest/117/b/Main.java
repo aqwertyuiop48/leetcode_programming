@@ -10,3 +10,4 @@ public class Main {
                 .map(x -> "1 " + String.format("%09d", x)).orElse("2")));
     }
 }
+

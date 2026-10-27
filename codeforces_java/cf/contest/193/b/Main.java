@@ -19,3 +19,4 @@ public class Main {
             ? f[0].applyAsLong(0, 0) : "");
     }
 }
+

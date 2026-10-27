@@ -6,3 +6,4 @@ public class Main {
         Optional.of(new Scanner(System.in)).ifPresent(s -> System.out.print(LongStream.generate(s::nextLong).limit(s.nextLong()).sum()));
     }
 }
+

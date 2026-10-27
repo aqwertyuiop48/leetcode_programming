@@ -9,3 +9,4 @@ public class Main {
                 && a != x && a != 7 - x && b != x && b != 7 - x && a != b && a + b != 7) ? "YES" : "NO" : "");
     }
 }
+

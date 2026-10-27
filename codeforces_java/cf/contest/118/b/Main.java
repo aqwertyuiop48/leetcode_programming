@@ -9,3 +9,4 @@ public class Main {
                     .collect(Collectors.joining(" "))).collect(Collectors.joining("\n"))));
     }
 }
+

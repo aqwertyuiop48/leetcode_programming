@@ -24,3 +24,4 @@ public class Main {
                 && hs[1] == (ha + mul.applyAsLong(x, sp)) % mod).count() : "");
     }
 }
+

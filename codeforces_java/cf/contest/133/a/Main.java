@@ -5,3 +5,4 @@ public class Main {
         Optional.of(new Scanner(System.in).nextLine()).ifPresent(s -> System.out.print(s.chars().anyMatch(c -> "HQ9".indexOf(c) >= 0) ? "YES" : "NO"));
     }
 }
+

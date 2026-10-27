@@ -9,3 +9,4 @@ public class Main {
             ? a + b : 0L);
     }
 }
+

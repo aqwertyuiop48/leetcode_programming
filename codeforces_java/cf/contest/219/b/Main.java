@@ -10,3 +10,4 @@ public class Main {
                 .max(Comparator.<Long>comparingLong(x -> String.valueOf(x).length() - String.valueOf(x).replaceAll("9+$", "").length()).thenComparingLong(x -> x)).get() : "");
     }
 }
+

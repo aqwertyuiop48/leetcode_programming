@@ -11,3 +11,4 @@ public class Main {
             ? String.format("%.12f", r1 * Math.sqrt(B * p1 / (A * p2 + B * p1))) : "");
     }
 }
+

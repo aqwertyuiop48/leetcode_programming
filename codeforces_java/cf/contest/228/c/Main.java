@@ -19,3 +19,4 @@ public class Main {
                 ? IntStream.range(0, nm).filter(t -> IntStream.range(0, 16).anyMatch(P -> cur[P * nm + t])).count() : 0L).sum() : 0);
     }
 }
+

@@ -71,3 +71,4 @@ public class Main {
             ? (total[0] + dist[0]) : "");
     }
 }
+

@@ -7,3 +7,4 @@ public class Main {
             ? Math.round(4 * (Math.sqrt(x * z / y) + Math.sqrt(x * y / z) + Math.sqrt(y * z / x))) : "");
     }
 }
+

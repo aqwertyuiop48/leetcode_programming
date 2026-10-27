@@ -20,3 +20,4 @@ public class Main {
                 ? g.get().applyAsLong((1 * 2 + c0) * 2 + c1) : 0).sum() : "");
     }
 }
+

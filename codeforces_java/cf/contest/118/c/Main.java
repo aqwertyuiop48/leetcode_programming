@@ -19,3 +19,4 @@ public class Main {
                         .map(r -> Integer.parseInt(r.substring(0, 7)) + "\n" + r.substring(7)).orElse("")))));
     }
 }
+

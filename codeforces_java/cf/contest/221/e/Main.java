@@ -14,3 +14,4 @@ public class Main {
                 ? String.valueOf(Stream.of(ms.floorKey(sft), ms.ceilingKey(sft)).filter(Objects::nonNull).mapToInt(k -> Math.abs(k - sft)).min().getAsInt()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

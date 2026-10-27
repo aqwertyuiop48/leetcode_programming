@@ -16,3 +16,4 @@ public class Main {
             ? mn + "\n" + IntStream.rangeClosed(1, n).filter(v -> cost[v] == mn).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

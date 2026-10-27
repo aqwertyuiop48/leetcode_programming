@@ -13,3 +13,4 @@ public class Main {
                                 : (2 * Math.abs(v[1]) < v[0] ? r + (r - 1) / 2 + 1 : -1L)).get())));
     }
 }
+

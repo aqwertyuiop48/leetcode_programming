@@ -15,3 +15,4 @@ public class Main {
             ? IntStream.range(0, n).allMatch(i -> Integer.valueOf(Math.min(pre[i], m - 1)) instanceof Integer p && last[s.charAt(i) - 'a'][p] >= m - 1 - suf[i] && last[s.charAt(i) - 'a'][p] >= 0) ? "Yes" : "No" : "");
     }
 }
+

@@ -11,3 +11,4 @@ public class Main {
                             System.out.println(imax + (n - 1 - imin) - (imax > imin ? 1 : 0)))))));
     }
 }
+

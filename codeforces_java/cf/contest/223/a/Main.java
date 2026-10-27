@@ -15,3 +15,4 @@ public class Main {
             ? state[2] < 0 ? "0" : state[1] + "\n" + s.substring(state[2], state[3] + 1) : "");
     }
 }
+

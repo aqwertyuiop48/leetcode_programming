@@ -25,3 +25,4 @@ public class Main {
                     ? String.valueOf(ub.applyAsInt(arr, tout[a]) - ub.applyAsInt(arr, tin[a] - 1) - 1) : "0" : "").collect(Collectors.joining(" ")) : ""), "", 1 << 28).start();
     }
 }
+

@@ -16,3 +16,4 @@ public class Main {
                 ? buf[(2 * n - 2) & 1][n * n - 1] : 0 : "");
     }
 }
+

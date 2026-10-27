@@ -32,3 +32,4 @@ public class Main {
             ? new String(o, 0, 2 * n - 1) : "");
     }
 }
+

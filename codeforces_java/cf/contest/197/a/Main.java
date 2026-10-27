@@ -9,3 +9,4 @@ public class Main {
             ? 2 * r <= Math.min(a, b) ? "First" : "Second" : "");
     }
 }
+

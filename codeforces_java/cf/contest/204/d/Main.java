@@ -17,3 +17,4 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToLong(i -> f[i] * ((t[i + 1] - b[i + 1] + M) % M) % M).sum() % M : "");
     }
 }
+

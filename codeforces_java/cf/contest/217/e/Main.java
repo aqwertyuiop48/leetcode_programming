@@ -31,3 +31,4 @@ public class Main {
             ? new String(res, 1, k) : "");
     }
 }
+

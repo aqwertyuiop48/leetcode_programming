@@ -17,3 +17,4 @@ public class Main {
             ? (n - c) % 2 == 0 ? c : c + 1 : "");
     }
 }
+

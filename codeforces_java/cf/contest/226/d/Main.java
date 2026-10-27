@@ -17,3 +17,4 @@ public class Main {
                 && IntStream.range(0, len).filter(k -> fl[o + k]).boxed().toList() instanceof List<Integer> l ? l.size() + l.stream().map(k -> " " + (k + 1)).collect(Collectors.joining()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -6,3 +6,4 @@ public class Main {
         System.out.println(new Scanner(System.in) instanceof Scanner s ? new BigInteger(s.next()).add(new BigInteger(s.next())) : "");
     }
 }
+

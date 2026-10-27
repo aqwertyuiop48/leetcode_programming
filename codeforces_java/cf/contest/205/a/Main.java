@@ -10,3 +10,4 @@ public class Main {
             ? Arrays.stream(a).filter(x -> x == mn).count() > 1 ? "Still Rozdil" : String.valueOf(IntStream.range(0, n).filter(i -> a[i] == mn).findFirst().getAsInt() + 1) : "");
     }
 }
+

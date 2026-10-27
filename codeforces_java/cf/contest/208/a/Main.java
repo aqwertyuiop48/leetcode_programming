@@ -5,3 +5,4 @@ public class Main {
         System.out.println(new Scanner(System.in).next() instanceof String s ? s.replaceAll("(WUB)+", " ").trim() : "");
     }
 }
+

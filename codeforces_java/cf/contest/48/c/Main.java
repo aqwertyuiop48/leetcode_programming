@@ -10,3 +10,4 @@ public class Main {
                         System.out.println(kmin.equals(kmax) ? "unique\n" + kmin : "not unique"))))));
     }
 }
+

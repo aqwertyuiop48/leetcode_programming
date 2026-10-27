@@ -11,3 +11,4 @@ public class Main {
             ? fr.isPresent() ? (IntStream.rangeClosed(0, fr.getAsInt()).dropWhile(l -> cnt[a[l]] > 1 && --cnt[a[l]] >= 0).findFirst().getAsInt() + 1) + " " + (fr.getAsInt() + 1) : "-1 -1" : "");
     }
 }
+

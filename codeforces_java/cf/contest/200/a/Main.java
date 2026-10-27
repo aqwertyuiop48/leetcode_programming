@@ -25,3 +25,4 @@ public class Main {
                 ? oR + " " + oC : "").collect(Collectors.joining("\n")) : ""), "", 1 << 28).start());
     }
 }
+

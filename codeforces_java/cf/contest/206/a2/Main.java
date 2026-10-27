@@ -21,3 +21,4 @@ public class Main {
             ? last[1] + "\n" + String.join("\n", lines) : "");
     }
 }
+

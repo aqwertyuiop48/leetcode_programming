@@ -8,3 +8,4 @@ public class Main {
             ? s.chars().filter(c -> c == mx).mapToObj(c -> String.valueOf((char) c)).collect(Collectors.joining()) : "");
     }
 }
+

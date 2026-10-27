@@ -15,3 +15,4 @@ public class Main {
                 : IntStream.range(0, n).mapToObj(i -> String.valueOf(IntStream.rangeClosed(0, i).mapToLong(j -> coef[i - j] * (a[j] % M) % M).sum() % M)).collect(Collectors.joining(" ")) : "");
     }
 }
+

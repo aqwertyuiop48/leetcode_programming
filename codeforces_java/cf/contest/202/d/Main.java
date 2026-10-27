@@ -16,3 +16,4 @@ public class Main {
             ? (rc[bx] + cc[by]) + "\n" + bx + " " + by : "");
     }
 }
+

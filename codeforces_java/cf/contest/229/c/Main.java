@@ -10,3 +10,4 @@ public class Main {
             ? n * (n - 1) * (n - 2) / 6 - Arrays.stream(deg).map(d -> d * (n - 1 - d)).sum() / 2 : "");
     }
 }
+

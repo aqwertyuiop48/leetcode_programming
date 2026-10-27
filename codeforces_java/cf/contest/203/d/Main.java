@@ -11,3 +11,4 @@ public class Main {
             ? String.format("%.10f %.10f", refl.applyAsDouble(a / 2 + vx * t, a), refl.applyAsDouble(vz * t, b)) : "");
     }
 }
+

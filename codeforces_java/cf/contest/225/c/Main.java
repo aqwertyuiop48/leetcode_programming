@@ -14,3 +14,4 @@ public class Main {
             ? Arrays.stream(IntStream.rangeClosed(1, m).boxed().reduce(dp, (d, j) -> IntStream.range(0, 2).allMatch(c -> (d[j][c] = IntStream.rangeClosed(x, Math.min(y, j)).map(len -> d[j - len][1 - c] + pre[c][j] - pre[c][j - len]).min().orElse(1000000000)) >= 0) ? d : d, (p, q) -> p)[m]).min().getAsInt() : "");
     }
 }
+

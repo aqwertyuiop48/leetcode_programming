@@ -29,3 +29,4 @@ public class Main {
                     ) | (st[0] = end) < 0).findFirst() instanceof OptionalInt ok && ok.isPresent() ? ok.getAsInt() + 1 : -1 : "");
     }
 }
+

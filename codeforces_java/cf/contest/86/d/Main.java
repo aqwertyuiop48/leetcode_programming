@@ -35,3 +35,4 @@ public class Main {
             ? Arrays.stream(ans).mapToObj(String::valueOf).collect(Collectors.joining("\n")) : "");
     }
 }
+

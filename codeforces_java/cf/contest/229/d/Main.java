@@ -13,3 +13,4 @@ public class Main {
             ? n - f[n] : "");
     }
 }
+

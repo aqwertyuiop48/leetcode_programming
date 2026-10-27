@@ -10,3 +10,4 @@ public class Main {
             ? rs.stream().filter(r -> r.equals(Collections.max(rs))).count() : "");
     }
 }
+

@@ -14,3 +14,4 @@ public class Main {
             ? IntStream.range(0, n).mapToLong(i -> Math.max(lr[i] + ra[i], la[i] + rr[i])).max().getAsLong() : "");
     }
 }
+

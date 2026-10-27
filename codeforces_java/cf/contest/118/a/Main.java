@@ -8,3 +8,4 @@ public class Main {
                 .mapToObj(c -> "." + (char) c).collect(Collectors.joining())));
     }
 }
+

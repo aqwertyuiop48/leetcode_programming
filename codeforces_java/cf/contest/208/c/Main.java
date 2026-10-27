@@ -15,3 +15,4 @@ public class Main {
             ? String.format("%.12f", IntStream.rangeClosed(1, n).filter(v -> d[1][v] + d[v][n] == d[1][n]).mapToDouble(v -> c[1][v] * c[v][n] / c[1][n] * (v == 1 || v == n ? 1 : 2)).max().getAsDouble()) : "");
     }
 }
+

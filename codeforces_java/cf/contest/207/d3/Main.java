@@ -9,3 +9,4 @@ public class Main {
             ? trade >= 3 ? 3 : common % 2 == 0 ? 1 : 2 : 0);
     }
 }
+

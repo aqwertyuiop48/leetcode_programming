@@ -15,3 +15,4 @@ public class Main {
                 - 6 * IntStream.rangeClosed(0, n).mapToLong(dx -> IntStream.rangeClosed(0, m).filter(dy -> dx + dy > 0).mapToLong(dy -> (long) (n - dx + 1) * (m - dy + 1) * (dx > 0 && dy > 0 ? 2 : 1) * (BigInteger.valueOf(dx).gcd(BigInteger.valueOf(dy)).intValue() - 1)).sum()).sum()) : "");
     }
 }
+

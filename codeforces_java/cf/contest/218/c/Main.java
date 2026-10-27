@@ -14,3 +14,4 @@ public class Main {
             ? IntStream.range(0, n).filter(v -> fh[0].applyAsInt(v) == v).count() - 1 : "");
     }
 }
+

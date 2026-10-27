@@ -14,3 +14,4 @@ public class Main {
             ? ok[0] ? IntStream.rangeClosed(1, n).filter(v -> col[v] == 1).boxed().toList() instanceof List<Integer> fl ? fl.size() + "\n" + fl.stream().map(String::valueOf).collect(Collectors.joining(" ")) : "" : "Impossible" : "");
     }
 }
+

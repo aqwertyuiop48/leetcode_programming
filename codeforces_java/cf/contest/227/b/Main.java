@@ -12,3 +12,4 @@ public class Main {
             ? Arrays.stream(ps).sum() + " " + Arrays.stream(ps).map(p -> n - p + 1).sum() : "");
     }
 }
+

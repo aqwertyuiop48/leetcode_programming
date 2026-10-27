@@ -24,3 +24,4 @@ public class Main {
                 .filter(k -> (pre[(n - k * (k - 1) / 2) / k + k - 1] ^ pre[(n - k * (k - 1) / 2) / k - 1]) == 0).min().orElse(-1) : 0);
     }
 }
+

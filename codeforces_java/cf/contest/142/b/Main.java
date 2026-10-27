@@ -12,3 +12,4 @@ public class Main {
                             : (v[0] * v[1] + 1) / 2)));
     }
 }
+

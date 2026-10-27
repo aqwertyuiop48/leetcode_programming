@@ -7,3 +7,4 @@ public class Main {
             ? t / 12 + " " + t % 12 : "");
     }
 }
+

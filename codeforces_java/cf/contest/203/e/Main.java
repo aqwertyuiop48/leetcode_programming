@@ -20,3 +20,4 @@ public class Main {
                     ? totB > a[0] || totB == a[0] && fuelB < a[1] ? totB + " " + fuelB : a[0] + " " + a[1] : "" : "");
     }
 }
+

@@ -5,3 +5,4 @@ public class Main {
         Optional.of(new Scanner(System.in).nextLong()).ifPresent(n -> System.out.print(n * (2 * n - 1)));
     }
 }
+

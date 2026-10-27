@@ -38,3 +38,4 @@ public class Main {
             ? det[0] : -1);
     }
 }
+

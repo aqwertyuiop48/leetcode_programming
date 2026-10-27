@@ -10,3 +10,4 @@ public class Main {
                 : cnt.entrySet().stream().map(e -> String.valueOf((char) (int) e.getKey()).repeat((int) (e.getValue() / k))).collect(Collectors.joining()).repeat(k) : "");
     }
 }
+

@@ -24,3 +24,4 @@ public class Main {
                 .map(r -> r[0] + "\n[:" + "|".repeat(r[1]) + ":]").orElse("Brand new problem!") : "");
     }
 }
+

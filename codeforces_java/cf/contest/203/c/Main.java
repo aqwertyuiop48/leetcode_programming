@@ -12,3 +12,4 @@ public class Main {
             ? res.size() + "\n" + String.join(" ", res) : "");
     }
 }
+

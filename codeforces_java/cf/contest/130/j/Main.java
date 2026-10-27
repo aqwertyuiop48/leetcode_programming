@@ -6,3 +6,4 @@ public class Main {
         Optional.of(new Scanner(System.in)).ifPresent(s -> Optional.of(LocalDate.ofYearDay(s.nextInt(), s.nextInt())).ifPresent(d -> System.out.print(d.getDayOfMonth() + " " + d.getMonthValue())));
     }
 }
+

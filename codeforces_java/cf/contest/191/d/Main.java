@@ -62,3 +62,4 @@ public class Main {
             ? (odd / 2 + ex[0]) + " " + m + "\n" : "");
     }
 }
+
