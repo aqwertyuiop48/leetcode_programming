@@ -1,0 +1,2261 @@
+]633;E;for contest in {265..300};f23cb0ab-9413-4f7f-be1d-39635ed7b258]633;C========================================
+Contest : 265
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/265/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+[32m#3 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 265
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/265/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 265
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/265/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 265
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/265/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.74MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 265
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/265/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 266
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/266/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 266
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/266/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 266
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/266/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.74MB
+--- OUTPUT ---
+3
+2 2 3
+2 1 2
+1 1 2
+--- ANSWER ---
+3
+2 2 3
+1 1 3
+1 1 2
+--------------
+[31m#2 Failed...[39m  Expected 1 1 3 on line 3, found 2 1 2
+--- OUTPUT ---
+2
+1 2 3
+2 1 2
+--- ANSWER ---
+0
+--------------
+[31m#3 Failed...[39m  Expected 1 lines, found 3 lines
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 266
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/266/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.81MB
+[32m#2 Passed...[39m  0.00s 1.76MB
+[32m#3 Passed...[39m  0.00s 1.75MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 266
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/266/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.76MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 267
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/267/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 267
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/267/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.81MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 267
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/267/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.78MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 268
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/268/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.74MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.86MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 268
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/268/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 268
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/268/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+3
+0 2
+1 1
+2 0
+--- ANSWER ---
+3
+0 1
+1 2
+2 0
+--------------
+[31m#1 Failed...[39m  Expected 0 1 on line 2, found 0 2
+--- OUTPUT ---
+4
+0 3
+1 2
+2 1
+3 0
+--- ANSWER ---
+4
+0 3
+2 1
+3 0
+4 2
+--------------
+[31m#2 Failed...[39m  Expected 2 1 on line 3, found 1 2
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 268
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/268/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.85MB
+[32m#4 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 268
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/268/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.77MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 269
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/269/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+[32m#3 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 269
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/269/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 269
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/269/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 269
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/269/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.75MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 269
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/269/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 270
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/270/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 270
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/270/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.90MB
+[32m#2 Passed...[39m  0.00s 1.79MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 270
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/270/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 270
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/270/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 270
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/270/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 271
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/271/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 271
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/271/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.83MB
+[32m#2 Passed...[39m  0.00s 1.91MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 271
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/271/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+1 1 2 2 3 3 1 2 3 1 1
+--- ANSWER ---
+3 1 2 1 1 2 3 2 2 3 1
+--------------
+[31m#1 Failed...[39m  Expected 3 1 2 1 1 2 3 2 2 3 1 on line 1, found 1 1 2 2 3 3 1 2 3 1 1
+[32m#2 Passed...[39m  0.00s 1.91MB
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 271
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/271/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 271
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/271/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 272
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/272/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.89MB
+[32m#3 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 272
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/272/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 272
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/272/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.81MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.90MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 272
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/272/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.73MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 272
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/272/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.73MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+--- OUTPUT ---
+1100000000
+--- ANSWER ---
+0110000000
+--------------
+[31m#3 Failed...[39m  Expected 0110000000 on line 1, found 1100000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 273
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/273/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.79MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 273
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/273/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.86MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 273
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/273/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+--- OUTPUT ---
+1100000000
+--- ANSWER ---
+0110000000
+--------------
+[31m#3 Failed...[39m  Expected 0110000000 on line 1, found 1100000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 273
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/273/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.80MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 273
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/273/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.74MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 274
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/274/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 274
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/274/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 274
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/274/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+--- OUTPUT ---
+1.414213562
+--- ANSWER ---
+1.414214
+--------------
+[31m#2 Failed...[39m  Expected 1.414214 on line 1, found 1.414213562
+--- OUTPUT ---
+2.125000000
+--- ANSWER ---
+2.125000
+--------------
+[31m#3 Failed...[39m  Expected 2.125000 on line 1, found 2.125000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 274
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/274/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 274
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/274/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.74MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 275
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/275/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 275
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/275/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.89MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 275
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/275/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 275
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/275/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 275
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/275/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+--- OUTPUT ---
+1.414213562
+--- ANSWER ---
+1.414214
+--------------
+[31m#2 Failed...[39m  Expected 1.414214 on line 1, found 1.414213562
+--- OUTPUT ---
+2.125000000
+--- ANSWER ---
+2.125000
+--------------
+[31m#3 Failed...[39m  Expected 2.125000 on line 1, found 2.125000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 276
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/276/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.74MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 276
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/276/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.73MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 276
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/276/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 276
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/276/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 276
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/276/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.80MB
+[32m#2 Passed...[39m  0.00s 1.80MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 277
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/277/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.83MB
+[32m#2 Passed...[39m  0.00s 1.75MB
+[32m#3 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 277
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/277/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+0 10000
+1 10001
+2 10004
+0 -10000
+--- ANSWER ---
+0 0
+3 0
+0 3
+1 1
+--------------
+[31m#1 Failed...[39m  Expected 0 0 on line 1, found 0 10000
+[32m#2 Passed...[39m  0.00s 1.84MB
+--- OUTPUT ---
+0 10000
+1 10001
+2 10004
+3 10009
+4 10016
+5 10025
+--- ANSWER ---
+10 0
+-10 0
+10 1
+9 1
+9 -1
+0 -2
+--------------
+[31m#3 Failed...[39m  Expected 10 0 on line 1, found 0 10000
+--- OUTPUT ---
+0 10000
+1 10001
+2 10004
+3 10009
+0 -10000
+1 -10001
+2 -10004
+--- ANSWER ---
+176166 6377
+709276 539564
+654734 174109
+910147 434207
+790497 366519
+606663 21061
+859328 886001
+--------------
+[31m#4 Failed...[39m  Expected 176166 6377 on line 1, found 0 10000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 277
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/277/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 277
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/277/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+24.000000 18.875000000
+--- ANSWER ---
+24.0 18.875
+--------------
+[31m#1 Failed...[39m  Expected 24.0 18.875 on line 1, found 24.000000 18.875000000
+--- OUTPUT ---
+100000000.000000 1.000000000
+--- ANSWER ---
+100000000 1
+--------------
+[31m#2 Failed...[39m  Expected 100000000 1 on line 1, found 100000000.000000 1.000000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 277
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/277/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+3.650281540
+--- ANSWER ---
+3.650281539872885
+--------------
+[31m#1 Failed...[39m  Expected 3.650281539872885 on line 1, found 3.650281540
+[32m#2 Passed...[39m  0.00s 1.79MB
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 278
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/278/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.77MB
+[32m#4 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 278
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/278/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 278
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/278/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 278
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/278/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+0 10000
+1 10001
+2 10004
+0 -10000
+--- ANSWER ---
+0 0
+3 0
+0 3
+1 1
+--------------
+[31m#1 Failed...[39m  Expected 0 0 on line 1, found 0 10000
+[32m#2 Passed...[39m  0.00s 1.88MB
+--- OUTPUT ---
+0 10000
+1 10001
+2 10004
+3 10009
+4 10016
+5 10025
+--- ANSWER ---
+10 0
+-10 0
+10 1
+9 1
+9 -1
+0 -2
+--------------
+[31m#3 Failed...[39m  Expected 10 0 on line 1, found 0 10000
+--- OUTPUT ---
+0 10000
+1 10001
+2 10004
+3 10009
+0 -10000
+1 -10001
+2 -10004
+--- ANSWER ---
+176166 6377
+709276 539564
+654734 174109
+910147 434207
+790497 366519
+606663 21061
+859328 886001
+--------------
+[31m#4 Failed...[39m  Expected 176166 6377 on line 1, found 0 10000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 278
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/278/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.81MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.85MB
+[32m#4 Passed...[39m  0.00s 1.77MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.81MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+]633;E;for contest in {279..300};f0b4ca94-54f3-4339-8614-2cac1958e831]633;C========================================
+Contest : 279
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.90MB
+[32m#2 Passed...[39m  0.00s 1.90MB
+[32m#3 Passed...[39m  0.00s 1.79MB
+[32m#4 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 279
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.91MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+You have submitted exactly the same code before
+===== DONE =====
+========================================
+Contest : 279
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/279/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.78MB
+[32m#3 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 280
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/280/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.81MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 280
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/280/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 280
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/280/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+1.500000000000
+--- ANSWER ---
+1.50000000000000000000
+--------------
+[31m#1 Failed...[39m  Expected 1.50000000000000000000 on line 1, found 1.500000000000
+--- OUTPUT ---
+2.000000000000
+--- ANSWER ---
+2.00000000000000000000
+--------------
+[31m#2 Failed...[39m  Expected 2.00000000000000000000 on line 1, found 2.000000000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 280
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/280/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 280
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/280/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+1.666666667 3.666666667 5.666666667
+0.666666667
+--- ANSWER ---
+1.666667 3.666667 5.666667
+0.666667
+--------------
+[31m#1 Failed...[39m  Expected 1.666667 3.666667 5.666667 on line 1, found 1.666666667 3.666666667 5.666666667
+--- OUTPUT ---
+1.000000000 8715.000000000 17429.000000000 26143.000000000 34857.000000000 43571.000000000 52285.000000000 61629.000000000 70973.000000000 80317.000000000
+797708674.000000000
+--- ANSWER ---
+1.000000 8715.000000 17429.000000 26143.000000 34857.000000 43571.000000 52285.000000 61629.000000 70973.000000 80317.000000
+797708674.000000
+--------------
+[31m#2 Failed...[39m  Expected 1.000000 8715.000000 17429.000000 26143.000000 34857.000000 43571.000000 52285.000000 61629.000000 70973.000000 80317.000000 on line 1, found 1.000000000 8715.000000000 17429.000000000 26143.000000000 34857.000000000 43571.000000000 52285.000000000 61629.000000000 70973.000000000 80317.000000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 281
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/281/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 281
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/281/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 281
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/281/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.76MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 281
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/281/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 281
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/281/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+--- OUTPUT ---
+1.500000000000
+--- ANSWER ---
+1.50000000000000000000
+--------------
+[31m#1 Failed...[39m  Expected 1.50000000000000000000 on line 1, found 1.500000000000
+--- OUTPUT ---
+2.000000000000
+--- ANSWER ---
+2.00000000000000000000
+--------------
+[31m#2 Failed...[39m  Expected 2.00000000000000000000 on line 1, found 2.000000000000
+WARNING: sample test failed, submitting anyway
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 282
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/282/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.75MB
+[32m#2 Passed...[39m  0.00s 1.76MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 282
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/282/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 282
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/282/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.90MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 282
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/282/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 282
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/282/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 283
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/283/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 283
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/283/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.73MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 283
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/283/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.75MB
+[32m#2 Passed...[39m  0.00s 1.73MB
+[32m#3 Passed...[39m  0.00s 1.90MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 283
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/283/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.89MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 283
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/283/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.73MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 284
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/284/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.75MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 284
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/284/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 284
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/284/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 284
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/284/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 284
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/284/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.80MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.77MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 285
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/285/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 285
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/285/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+[32m#3 Passed...[39m  0.00s 1.74MB
+[32m#4 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 285
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/285/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.90MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 285
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/285/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 285
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/285/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.74MB
+[32m#4 Passed...[39m  0.00s 1.84MB
+[32m#5 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 286
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/286/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.79MB
+[32m#4 Passed...[39m  0.00s 1.80MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 286
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/286/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.82MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 286
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/286/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.71MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.79MB
+[32m#4 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 286
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/286/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 286
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/286/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.83MB
+[32m#2 Passed...[39m  0.00s 1.80MB
+[32m#3 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 287
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/287/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 287
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/287/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 287
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/287/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.77MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.88MB
+[32m#4 Passed...[39m  0.00s 1.89MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 287
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/287/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.89MB
+[32m#3 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 287
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/287/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.79MB
+[32m#3 Passed...[39m  0.00s 1.83MB
+[32m#4 Passed...[39m  0.00s 1.77MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 288
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/288/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.82MB
+[32m#2 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 288
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/288/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 288
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/288/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 288
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/288/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.83MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 288
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/288/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 289
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/289/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.73MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 289
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/289/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.79MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 289
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/289/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 289
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/289/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.76MB
+[32m#2 Passed...[39m  0.00s 1.80MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 289
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/289/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 290
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/290/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.76MB
+[32m#2 Passed...[39m  0.00s 1.91MB
+[32m#3 Passed...[39m  0.00s 1.73MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 290
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/290/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.81MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.82MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 290
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/290/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 290
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/290/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 290
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/290/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.75MB
+[32m#2 Passed...[39m  0.00s 1.84MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+[32m#4 Passed...[39m  0.00s 1.82MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 290
+Problem : F
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/290/f/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.85MB
+[32m#3 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 291
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/291/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.82MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 291
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/291/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.84MB
+[32m#2 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 291
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/291/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.84MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 291
+Problem : D
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/291/d/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.78MB
+[32m#2 Passed...[39m  0.00s 1.91MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 291
+Problem : E
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/291/e/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.88MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 292
+Problem : A
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/292/a/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.90MB
+[32m#2 Passed...[39m  0.00s 1.81MB
+[32m#3 Passed...[39m  0.00s 1.74MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 292
+Problem : B
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/292/b/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.91MB
+[32m#2 Passed...[39m  0.00s 1.88MB
+[32m#3 Passed...[39m  0.00s 1.87MB
+[32m#4 Passed...[39m  0.00s 1.79MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====
+========================================
+Contest : 292
+Problem : C
+Action  : all
+Source  : /workspaces/leetcode_programming/codeforces_java/cf/contest/292/c/Main.java
+========================================
+===== COMPILE =====
+===== TEST SAMPLES (failure will not block submit) =====
+[32m#1 Passed...[39m  0.00s 1.85MB
+[32m#2 Passed...[39m  0.00s 1.77MB
+===== SUBMIT =====
+Waiting 2 seconds before submission...
+Submitted. <Response [200]>
+===== DONE =====

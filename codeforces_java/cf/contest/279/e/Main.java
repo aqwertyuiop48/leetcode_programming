@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
 
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner s && s.next() instanceof String t && new int[]{0, 1 << 29} instanceof int[] d
