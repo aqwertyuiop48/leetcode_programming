@@ -11,3 +11,4 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> String.valueOf(a[st[2] + i])).collect(Collectors.joining(" ")) : "");
     }
 }
+

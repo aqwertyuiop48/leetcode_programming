@@ -2,6 +2,7 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner s && Integer.valueOf(s.nextInt()) instanceof Integer n && Integer.valueOf(s.nextInt()) instanceof Integer m
@@ -19,3 +20,4 @@ public class Main {
                 ? "" + IntStream.range(0, n).filter(v -> p[v] == v).count() : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

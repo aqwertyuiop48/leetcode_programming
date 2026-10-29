@@ -10,3 +10,4 @@ public class Main {
             && n % 4 < 2 ? IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf(p[i])).collect(Collectors.joining(" ")) : "-1");
     }
 }
+

@@ -71,6 +71,6 @@ Steps: (To do in Github codespace)
 
  - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
  
- - { for contest in {279..300}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } >> "outputs/28_10_2026/265_to_300.txt"
+ - { for contest in {292..300}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } >> "outputs/28_10_2026/265_to_300.txt"
 
  - { ./reruns.sh && python codeforces_api.py; } > "outputs/27_10_2026/reruns_1_to_230.txt"

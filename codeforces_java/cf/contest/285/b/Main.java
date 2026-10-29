@@ -9,3 +9,4 @@ public class Main {
             ? IntStream.rangeClosed(0, n).filter(i -> (cur[0] == t ? true : (cur[0] = p[cur[0] - 1]) < 0)).findFirst().orElse(-1) : "");
     }
 }
+

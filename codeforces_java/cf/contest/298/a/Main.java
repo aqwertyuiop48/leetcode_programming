@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner sc && Integer.valueOf(sc.nextInt()) instanceof Integer n && sc.next() instanceof String s
@@ -7,3 +8,4 @@ public class Main {
             ? fl == 0 ? fr + " " + (lr + 1) : fr == 0 ? ll + " " + (fl - 1) : fr + " " + lr : "");
     }
 }
+

@@ -9,3 +9,4 @@ public class Main {
             ? (long) n * (n + 1) + "\n" + Arrays.stream(p).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

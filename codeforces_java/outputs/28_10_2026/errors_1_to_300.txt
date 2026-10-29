@@ -97,3 +97,41 @@ Row   | ID           | Problem                             | Verdict            
 95    | 396261408    | 232C - Doe Graphs                   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:25:19
 96    | 396261294    | 231E - Cactus                       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-27 14:24:13
 97    | 396261200    | 231C - To Add or Not to Add         | WRONG_ANSWER         | Java 21         | 2026-10-27 14:23:28
+98    | 396428401    | 297D - Color the Carpet             | WRONG_ANSWER         | Java 21         | 2026-10-28 19:34:43
+99    | 396428358    | 297C - Splitting the Uniqueness     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:34:23
+100   | 396428316    | 297B - Fish Weight                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:34:03
+101   | 396428184    | 296D - Greg and Graph               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:33:03
+102   | 396428136    | 296C - Greg and Array               | WRONG_ANSWER         | Java 21         | 2026-10-28 19:32:43
+103   | 396428088    | 296B - Yaroslav and Two Strings     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:32:23
+104   | 396427869    | 295B - Greg and Graph               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:30:41
+105   | 396427835    | 295A - Greg and Array               | WRONG_ANSWER         | Java 21         | 2026-10-28 19:30:21
+106   | 396427561    | 293E - Close Vertices               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:28:07
+107   | 396427420    | 293B - Distinct Paths               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:27:05
+108   | 396427291    | 292D - Connected Components         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:26:04
+109   | 396427204    | 292B - Network Topology             | WRONG_ANSWER         | Java 21         | 2026-10-28 19:25:22
+110   | 396427089    | 291E - Tree-String Problem          | WRONG_ANSWER         | Java 21         | 2026-10-28 19:24:41
+111   | 396426150    | 287E - Main Sequence                | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:17:35
+112   | 396426103    | 287D - Shifting                     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:17:15
+113   | 396425913    | 286E - Ladies' Shop                 | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:15:52
+114   | 396425868    | 286D - Tourists                     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:15:32
+115   | 396425815    | 286C - Main Sequence                | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:15:11
+116   | 396425758    | 286B - Shifting                     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 19:14:50
+117   | 396413093    | 292B - Network Topology             | WRONG_ANSWER         | Java 21         | 2026-10-28 17:30:12
+118   | 396413024    | 291E - Tree-String Problem          | WRONG_ANSWER         | Java 21         | 2026-10-28 17:29:32
+119   | 396411600    | 283E - Cow Tennis Tournament        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 17:16:01
+120   | 396411313    | 282B - Painting Eggs                | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 17:13:20
+121   | 396411079    | 280E - Sequence Transformation      | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 17:11:00
+122   | 396410763    | 279A - Point on Spiral              | RUNTIME_ERROR        | Java 21         | 2026-10-28 17:07:59
+123   | 396409250    | 279D - The Minimum Number of Vari   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:52:06
+124   | 396409160    | 279A - Point on Spiral              | RUNTIME_ERROR        | Java 21         | 2026-10-28 16:51:04
+125   | 396408414    | 274E - Mirror Room                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:43:55
+126   | 396408165    | 273D - Dima and Figure              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:41:41
+127   | 396408122    | 273C - Dima and Horses              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:41:21
+128   | 396408029    | 272E - Dima and Horses              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:40:18
+129   | 396407658    | 270E - Flawed Flow                  | WRONG_ANSWER         | Java 21         | 2026-10-28 16:36:55
+130   | 396407475    | 269E - String Theory                | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:35:13
+131   | 396407432    | 269D - Maximum Waterfall            | WRONG_ANSWER         | Java 21         | 2026-10-28 16:34:52
+132   | 396407396    | 269C - Flawed Flow                  | WRONG_ANSWER         | Java 21         | 2026-10-28 16:34:32
+133   | 396407008    | 266E - More Queries to Array...     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:30:43
+134   | 396406863    | 265E - Choosing Balls               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:29:00
+135   | 396494733    | 292C - Beautiful IP Addresses       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 08:02:29

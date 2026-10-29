@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
 
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Arrays.stream(l.trim().split("\\s+"))).filter(t -> !t.isEmpty()).mapToInt(Integer::parseInt).iterator() instanceof PrimitiveIterator.OfInt it
@@ -16,3 +17,4 @@ public class Main {
                     ? "" + (t == 0 ? b[pos] : a[xs[t] + pos - ys[t]]) : (String) null).filter(Objects::nonNull).collect(Collectors.joining("\n")) : "");
     }
 }
+

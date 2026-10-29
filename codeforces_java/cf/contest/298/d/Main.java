@@ -8,3 +8,4 @@ public class Main {
             ? n > m || IntStream.range(0, n).anyMatch(i -> a[i] < b[i]) ? "YES" : "NO" : "");
     }
 }
+

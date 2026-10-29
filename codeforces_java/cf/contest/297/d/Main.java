@@ -14,3 +14,4 @@ public class Main {
                     ? "YES\n" + Arrays.stream(c).map(r -> Arrays.stream(r).mapToObj(v -> "" + (v + 1)).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "" : "");
     }
 }
+

@@ -8,3 +8,4 @@ public class Main {
                 : IntStream.range(0, n).mapToObj(i -> String.valueOf((char) (k == 1 ? 'a' : i < n - (k - 2) ? 'a' + i % 2 : 'a' + 2 + i - (n - (k - 2))))).collect(Collectors.joining()) : "");
     }
 }
+

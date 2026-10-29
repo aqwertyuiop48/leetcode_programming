@@ -7,3 +7,4 @@ public class Main {
             ? IntStream.rangeClosed(1, m).filter(k -> java.math.BigInteger.valueOf(k).gcd(java.math.BigInteger.valueOf(m)).intValue() == 1).count() : "");
     }
 }
+

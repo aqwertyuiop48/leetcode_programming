@@ -8,3 +8,4 @@ public class Main {
             .map(r -> "<" + (r.group(1) != null ? r.group(1) : r.group(2)) + ">").collect(Collectors.joining("\n")));
     }
 }
+

@@ -24,3 +24,4 @@ public class Main {
             ? Arrays.stream(a).filter(x -> f[(N - x) % N] == 0).boxed().toList() instanceof List<Integer> b ? "YES\n" + b.size() + "\n" + b.stream().map(String::valueOf).collect(Collectors.joining(" ")) : "" : "NO");
     }
 }
+

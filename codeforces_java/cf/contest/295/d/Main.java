@@ -12,3 +12,4 @@ public class Main {
             ? IntStream.rangeClosed(2, m).mapToLong(w -> (m - w + 1) * IntStream.rangeClosed(1, n).mapToLong(t -> (long) TA[t][w] * TD[n - t + 1][w] % M).sum() % M).sum() % M : "");
     }
 }
+

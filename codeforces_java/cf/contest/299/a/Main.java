@@ -8,3 +8,4 @@ public class Main {
             ? Arrays.stream(a).allMatch(x -> x % mn == 0) ? mn : -1 : "");
     }
 }
+

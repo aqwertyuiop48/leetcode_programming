@@ -6,3 +6,4 @@ public class Main {
             ? road.contains("#".repeat(k)) ? "NO" : "YES" : "");
     }
 }
+

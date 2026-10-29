@@ -22,3 +22,4 @@ public class Main {
             ? String.format("%.10f", (ac[2] / ac[0] - Math.pow(ac[1] / ac[0], 2) + ac[4] / ac[0] - Math.pow(ac[3] / ac[0], 2)) * ac[0] / (ac[0] - 1)) : "");
     }
 }
+

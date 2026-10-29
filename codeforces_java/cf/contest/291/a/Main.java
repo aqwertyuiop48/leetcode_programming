@@ -8,3 +8,4 @@ public class Main {
             ? c.stream().anyMatch(v -> v > 2) ? -1 : c.stream().filter(v -> v == 2).count() : "");
     }
 }
+

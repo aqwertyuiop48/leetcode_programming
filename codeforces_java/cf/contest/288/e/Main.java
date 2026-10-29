@@ -23,3 +23,4 @@ public class Main {
             ? ((F.apply(b) - F.apply(a)) % M + M) % M : "");
     }
 }
+

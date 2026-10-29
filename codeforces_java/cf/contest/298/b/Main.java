@@ -9,3 +9,4 @@ public class Main {
                 && cur[0] == e[0] && cur[1] == e[1]).map(i -> i + 1).boxed().findFirst().map(i -> (Object) i).orElse(-1) : "");
     }
 }
+

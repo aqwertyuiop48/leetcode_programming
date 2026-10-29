@@ -9,3 +9,4 @@ public class Main {
                 .multiply(java.math.BigInteger.valueOf(n - k).modPow(java.math.BigInteger.valueOf(n - k), java.math.BigInteger.valueOf(M))).mod(java.math.BigInteger.valueOf(M)) : "");
     }
 }
+

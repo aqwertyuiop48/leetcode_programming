@@ -9,3 +9,4 @@ public class Main {
             ? d > 0 ? "First" : d < 0 ? "Second" : "Draw" : "");
     }
 }
+

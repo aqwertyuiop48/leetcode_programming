@@ -16,3 +16,4 @@ public class Main {
                     .map(t -> t.stream().sorted(Comparator.reverseOrder()).map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+

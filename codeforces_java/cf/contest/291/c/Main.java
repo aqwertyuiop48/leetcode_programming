@@ -9,3 +9,4 @@ public class Main {
             ? o.isEmpty() ? "-1" : IntStream.of(24, 16, 8, 0).mapToObj(sh -> "" + ((((0xFFFFFFFFL << (32 - o.get())) & 0xFFFFFFFFL) >> sh) & 255)).collect(Collectors.joining(".")) : "");
     }
 }
+

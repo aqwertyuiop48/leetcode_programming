@@ -13,3 +13,4 @@ public class Main {
             ? st[4] >= n + m - 2 ? st[5] + 1 : -1 : "");
     }
 }
+

@@ -8,3 +8,4 @@ public class Main {
             ? IntStream.range(0, n).mapToLong(i -> Math.abs((long) a[i] - (i + 1))).sum() : "");
     }
 }
+

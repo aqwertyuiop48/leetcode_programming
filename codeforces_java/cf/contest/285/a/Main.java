@@ -8,3 +8,4 @@ public class Main {
                 .mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

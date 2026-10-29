@@ -10,3 +10,4 @@ public class Main {
             ? Math.floorMod(prod.apply((x, y) -> true) - prod.apply((x, y) -> x <= y) - prod.apply((x, y) -> x >= y) + prod.apply((x, y) -> x.equals(y)), M) : "");
     }
 }
+

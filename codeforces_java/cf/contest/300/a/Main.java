@@ -10,3 +10,4 @@ public class Main {
             ? Stream.of(List.of(neg.get(0)), s2, s3).map(l -> l.size() + " " + l.stream().map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+

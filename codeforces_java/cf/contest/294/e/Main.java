@@ -23,3 +23,4 @@ public class Main {
                 ? acc[0] / 2 + acc[2] / 2 + (long) sb * acc[1] + (long) sa * acc[3] + (long) sa * sb * pw[c] : Long.MAX_VALUE).min().getAsLong() : "");
     }
 }
+

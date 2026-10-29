@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.*;
 
+
 public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner s && Integer.valueOf(s.nextInt()) instanceof Integer n && Integer.valueOf(s.nextInt()) instanceof Integer m
@@ -9,3 +10,4 @@ public class Main {
             ? (m == n && ds.stream().allMatch(x -> x == 2) ? "ring" : m == n - 1 && ds.get(0) == 1 && ds.get(1) == 1 && ds.get(n - 1) == 2 && ds.get(n - 2) == 2 ? "bus" : m == n - 1 && ds.get(n - 2) == 1 && ds.get(n - 1) == n - 1 ? "star" : "unknown") + " topology" : "");
     }
 }
+

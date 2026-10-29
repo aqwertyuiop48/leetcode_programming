@@ -15,3 +15,4 @@ public class Main {
             ? sp[0] == 0 ? "YES\n" + Arrays.stream(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "NO" : "");
     }
 }
+

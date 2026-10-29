@@ -5,7 +5,7 @@ import urllib.request
 handle = "srcode19"
 url = f"https://codeforces.com/api/user.status?handle={handle}&from=1&count=1000"
 
-target_date = "2026-10-27"  # Target date in IST
+target_date = "2026-10-29"  # Target date in IST
 
 # Define IST timezone (UTC + 5:30)
 ist_tz = datetime.timezone(datetime.timedelta(hours=5, minutes=30))

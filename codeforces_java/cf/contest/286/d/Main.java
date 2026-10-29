@@ -24,3 +24,4 @@ public class Main {
                 ? String.valueOf(cu * q - pu[cu] - (cv * q - pv[cv])) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

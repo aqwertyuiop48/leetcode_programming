@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.rangeClosed(0, 2 * n).filter(T -> dp[T] >= bs.stream().mapToInt(b -> b[1]).sum()).findFirst().getAsInt() : "");
     }
 }
+

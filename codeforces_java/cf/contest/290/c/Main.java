@@ -9,3 +9,4 @@ public class Main {
             ? String.format("%.6f", (double) o.get()[0] / o.get()[1]) : "");
     }
 }
+
