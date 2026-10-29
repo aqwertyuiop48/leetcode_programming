@@ -135,3 +135,37 @@ Row   | ID           | Problem                             | Verdict            
 133   | 396407008    | 266E - More Queries to Array...     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:30:43
 134   | 396406863    | 265E - Choosing Balls               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-28 16:29:00
 135   | 396494733    | 292C - Beautiful IP Addresses       | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 08:02:29
+137   | 396561739    | 335D - Rectangles and Square        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 18:10:52
+138   | 396558256    | 321E - Ciel and Gondolas            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:43:03
+139   | 396558218    | 321D - Ciel and Flipboard           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:42:42
+140   | 396558173    | 321C - Ciel the Commander           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:42:22
+141   | 396557820    | 319E - Ping-Pong                    | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:39:38
+142   | 396557577    | 318D - Ants                         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:37:33
+143   | 396557289    | 317B - Ants                         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:35:09
+144   | 396557244    | 317A - Perfect Pair                 | WRONG_ANSWER         | Java 21         | 2026-10-29 17:34:49
+145   | 396557075    | 316E3 - Summer Homework             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:33:26
+146   | 396556835    | 316C2 - Tidying Up                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:31:23
+147   | 396556355    | 314E - Sereja and Squares           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:27:37
+148   | 396556315    | 314D - Sereja and Straight Lines    | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:27:17
+149   | 396556111    | 313C - Ilya and Matrix              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:25:14
+150   | 396556001    | 312E - Fetch the Treasure           | WRONG_ANSWER         | Java 21         | 2026-10-29 17:24:13
+151   | 396555958    | 312D - Cats Transport               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:23:51
+152   | 396555766    | 311D - Interval Cubing              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:22:11
+153   | 396555721    | 311C - Fetch the Treasure           | WRONG_ANSWER         | Java 21         | 2026-10-29 17:21:50
+154   | 396555684    | 311B - Cats Transport               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:21:30
+155   | 396555593    | 309E - Sheep                        | WRONG_ANSWER         | Java 21         | 2026-10-29 17:20:49
+156   | 396555551    | 309D - Tennis Rackets               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:20:28
+157   | 396555510    | 309C - Memory for Arrays            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:20:08
+158   | 396555413    | 309A - Morning run                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:19:27
+159   | 396554768    | 304E - Minimum Modular              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:14:22
+160   | 396548877    | 303E - Random Ranking               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:12:41
+161   | 396548787    | 303C - Minimum Modular              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:12:00
+162   | 396548422    | 301E - Yaroslav and Arrangements    | WRONG_ANSWER         | Java 21         | 2026-10-29 17:09:16
+163   | 396548387    | 301D - Yaroslav and Divisors        | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 17:08:55
+164   | 396494745    | 292D - Connected Components         | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 08:02:46
+165   | 396494723    | 292B - Network Topology             | WRONG_ANSWER         | Java 21         | 2026-10-29 08:02:13
+166   | 396494337    | 300E - Empire Strikes Back          | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:52:49
+167   | 396494252    | 299D - Distinct Paths               | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:50:44
+168   | 396494219    | 299B - Ksusha the Squirrel          | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:50:03
+169   | 396494194    | 298E - Splitting the Uniqueness     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:49:22
+170   | 396494182    | 298D - Fish Weight                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:49:02
