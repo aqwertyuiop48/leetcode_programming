@@ -1,10 +1,11 @@
+import java.io.*;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner sc && Integer.valueOf(sc.nextInt()) instanceof Integer n
+    public static void main(String[] args) throws Exception {
+        Optional.of(Map.entry(new File("input.txt").exists() ? new FileInputStream("input.txt") : System.in, new File("input.txt").exists() ? new PrintStream(new FileOutputStream("output.txt"), true) : System.out)).ifPresent(io -> io.getValue().println(new Scanner(io.getKey()) instanceof Scanner sc && Integer.valueOf(sc.nextInt()) instanceof Integer n
             && IntStream.range(0, n).map(i -> sc.nextInt()).toArray() instanceof int[] a
             && Integer.valueOf(sc.nextInt() - 1) instanceof Integer r1 && Integer.valueOf(sc.nextInt()) instanceof Integer c1
             && Integer.valueOf(sc.nextInt() - 1) instanceof Integer r2 && Integer.valueOf(sc.nextInt()) instanceof Integer c2
@@ -19,6 +20,6 @@ public class Main {
                     | (j + 1 < K && cs[j + 1] <= a[r] + 1 && relax.test(r * K + j + 1, e[0] + cs[j + 1] - cs[j]))
                     | (r > 0 && relax.test((r - 1) * K + Arrays.binarySearch(cs, Math.min(cs[j], a[r - 1] + 1)), e[0] + 1))
                     | (r + 1 < n && relax.test((r + 1) * K + Arrays.binarySearch(cs, Math.min(cs[j], a[r + 1] + 1)), e[0] + 1)) || true))
-            ? d[r2 * K + Arrays.binarySearch(cs, c2)] : "");
+            ? d[r2 * K + Arrays.binarySearch(cs, c2)] : ""));
     }
 }

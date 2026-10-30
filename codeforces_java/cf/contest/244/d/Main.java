@@ -1,25 +1,39 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> Integer.parseInt((String) t)).iterator() instanceof Iterator<Integer> it
-            && Integer.valueOf(it.next()) instanceof Integer n && Integer.valueOf(it.next()) instanceof Integer m && Integer.valueOf(it.next()) instanceof Integer h && Integer.valueOf(it.next()) instanceof Integer t
-            && IntStream.rangeClosed(0, n).mapToObj(i -> new HashSet<Integer>()).toList() instanceof List<HashSet<Integer>> adj
-            && IntStream.range(0, m).mapToObj(i -> new int[]{it.next(), it.next()}).toList() instanceof List<int[]> edges
-            && edges.stream().allMatch(e -> adj.get(e[0]).add(e[1]) && adj.get(e[1]).add(e[0]))
-            && ((BiFunction<Integer, Integer, String>) (u, v) -> adj.get(u).size() > h && adj.get(v).size() > t
-                && adj.get(u).stream().filter(x -> !x.equals(v)).toList() instanceof List<Integer> A && adj.get(v).stream().filter(x -> !x.equals(u)).toList() instanceof List<Integer> B
-                && A.size() >= h && B.size() >= t
-                && (A.size() <= B.size() ? A : B) instanceof List<Integer> small && (A.size() <= B.size() ? adj.get(v) : adj.get(u)) instanceof HashSet<Integer> other
-                && small.stream().filter(other::contains).toList() instanceof List<Integer> C
-                && A.size() + B.size() - C.size() >= h + t
-                ? A.stream().filter(x -> !adj.get(v).contains(x)).limit(h).toList() instanceof List<Integer> h1
-                    && Stream.concat(h1.stream(), A.stream().filter(x -> adj.get(v).contains(x)).limit(h - h1.size())).toList() instanceof List<Integer> heads
-                    && B.stream().filter(x -> !heads.contains(x)).limit(t).toList() instanceof List<Integer> tails
-                    && tails.size() == t
-                    ? "YES\n" + u + " " + v + "\n" + heads.stream().map(String::valueOf).collect(Collectors.joining(" ")) + "\n" + tails.stream().map(String::valueOf).collect(Collectors.joining(" ")) : null : null) instanceof BiFunction<Integer, Integer, String> tryHydra
-            ? edges.stream().flatMap(e -> Stream.of(tryHydra.apply(e[0], e[1]), tryHydra.apply(e[1], e[0]))).filter(Objects::nonNull).findFirst().orElse("NO") : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 2] instanceof int[] v
+            && new int[3] instanceof int[] st
+            && IntStream.rangeClosed(0, raw.length).allMatch(i -> i < raw.length && raw[i] >= 48 && raw[i] <= 57
+                ? (st[0] = st[0] * 10 + raw[i] - 48) >= 0 && (st[1] = 1) > 0
+                : st[1] == 0 || (v[st[2]++] = st[0]) >= 0 && (st[0] = 0) == 0 && (st[1] = 0) == 0)
+            && Integer.valueOf(v[0]) instanceof Integer n && Integer.valueOf(v[1]) instanceof Integer m
+            && Integer.valueOf(v[2]) instanceof Integer h && Integer.valueOf(v[3]) instanceof Integer t
+            && new int[n + 2] instanceof int[] off
+            && IntStream.range(0, 2 * m).allMatch(k -> ++off[v[4 + k] + 1] > 0)
+            && IntStream.rangeClosed(1, n).allMatch(x -> (off[x + 1] += off[x]) >= 0)
+            && IntStream.range(0, n + 2).map(i -> off[i]).toArray() instanceof int[] pos
+            && new int[2 * m] instanceof int[] adj
+            && IntStream.range(0, m).allMatch(k -> (adj[pos[v[4 + 2 * k]]++] = v[5 + 2 * k]) > 0 && (adj[pos[v[5 + 2 * k]]++] = v[4 + 2 * k]) > 0)
+            && IntStream.rangeClosed(1, n).allMatch(x -> Stream.of(0).peek(z -> Arrays.sort(adj, off[x], off[x + 1])).findFirst().isPresent())
+            && new int[2] instanceof int[] res
+            && IntStream.range(0, 2 * m).anyMatch(k -> Integer.valueOf(v[4 + 2 * (k >> 1) + (k & 1)]) instanceof Integer u
+                && Integer.valueOf(v[5 + 2 * (k >> 1) - (k & 1)]) instanceof Integer w
+                && off[u + 1] - off[u] > h && off[w + 1] - off[w] > t
+                && (off[u + 1] - off[u] <= off[w + 1] - off[w] ? new int[]{u, w} : new int[]{w, u}) instanceof int[] sl
+                && Long.valueOf(IntStream.range(off[sl[0]], off[sl[0] + 1]).filter(i -> adj[i] != sl[1] && Arrays.binarySearch(adj, off[sl[1]], off[sl[1] + 1], adj[i]) >= 0).count()) instanceof Long c
+                && (off[u + 1] - off[u] - 1) + (off[w + 1] - off[w] - 1) - c >= h + t
+                && (res[0] = u) >= 0 && (res[1] = w) >= 0)
+            ? Integer.valueOf(res[0]) instanceof Integer u && Integer.valueOf(res[1]) instanceof Integer w
+                && IntStream.range(off[u], off[u + 1]).map(i -> adj[i]).filter(x -> x != w).boxed().toList() instanceof List<Integer> A
+                && A.stream().filter(x -> Arrays.binarySearch(adj, off[w], off[w + 1], x) < 0).toList() instanceof List<Integer> ex
+                && Stream.concat(ex.stream(), A.stream().filter(x -> Arrays.binarySearch(adj, off[w], off[w + 1], x) >= 0)).limit(h).toList() instanceof List<Integer> heads
+                && new HashSet<Integer>(heads) instanceof HashSet<Integer> hs
+                ? "YES\n" + u + " " + w + "\n" + heads.stream().map(String::valueOf).collect(Collectors.joining(" ")) + "\n"
+                    + IntStream.range(off[w], off[w + 1]).map(i -> adj[i]).filter(x -> x != u && !hs.contains(x)).limit(t).boxed().map(String::valueOf).collect(Collectors.joining(" "))
+                : ""
+            : "NO");
     }
 }

@@ -3,16 +3,20 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(Arrays.stream(new String(System.in.readAllBytes()).trim().split("\\s+")).mapToInt(Integer::parseInt).toArray() instanceof int[] in
-            && Integer.valueOf(in[0]) instanceof Integer n && Integer.valueOf(in[1]) instanceof Integer a && Integer.valueOf(in[2]) instanceof Integer b
-            && Arrays.stream(in, 3, 3 + n).toArray() instanceof int[] h && Integer.valueOf(Arrays.stream(h).sum()) instanceof Integer S
-            && new int[n][2][S + 1] instanceof int[][][] dp
-            && IntStream.range(0, n).allMatch(i -> IntStream.rangeClosed(0, S).allMatch(j -> (dp[i][0][j] = 1000000000) > 0 && (dp[i][1][j] = 1000000000) > 0))
-            && (dp[0][1][0] = 0) == 0 && (dp[0][0][h[0]] = 0) == 0
-            && IntStream.range(1, n).allMatch(i -> Integer.valueOf(Math.min(h[i - 1], h[i])) instanceof Integer w
-                && IntStream.rangeClosed(0, S).allMatch(j -> (dp[i][1][j] = Math.min(dp[i - 1][1][j], dp[i - 1][0][j] + w)) >= 0
-                    && (j < h[i] || (dp[i][0][j] = Math.min(dp[i - 1][0][j - h[i]], dp[i - 1][1][j - h[i]] + w)) >= 0)))
-            && Integer.valueOf(IntStream.rangeClosed(0, S).filter(j -> j <= a && S - j <= b).map(j -> Math.min(dp[n - 1][0][j], dp[n - 1][1][j])).min().orElse(1000000000)) instanceof Integer best
-            ? best >= 1000000000 ? -1 : best : "");
+        Boolean.valueOf(Boolean.valueOf(new java.io.File("input.txt").exists()) instanceof Boolean fl
+            && (fl ? new java.io.FileInputStream("input.txt") : System.in) instanceof java.io.InputStream in
+            && (fl ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt")) : System.out) instanceof java.io.PrintStream out
+            && new Scanner(in) instanceof Scanner s
+            && Integer.valueOf(s.nextInt()) instanceof Integer n && Integer.valueOf(s.nextInt()) instanceof Integer a && Integer.valueOf(s.nextInt()) instanceof Integer b
+            && IntStream.range(0, n).map(i -> s.nextInt()).toArray() instanceof int[] h
+            && Integer.valueOf(Arrays.stream(h).sum()) instanceof Integer S
+            && Integer.valueOf(1 << 28) instanceof Integer INF
+            && IntStream.range(1, n).boxed().reduce(
+                new int[][]{IntStream.rangeClosed(0, a).map(r -> r == h[0] ? 0 : INF).toArray(), IntStream.rangeClosed(0, a).map(r -> r == 0 ? 0 : INF).toArray()},
+                (dp, i) -> new int[][]{
+                    IntStream.rangeClosed(0, a).map(r -> r < h[i] ? INF : Math.min(dp[0][r - h[i]], dp[1][r - h[i]] + Math.min(h[i - 1], h[i]))).toArray(),
+                    IntStream.rangeClosed(0, a).map(r -> Math.min(dp[1][r], dp[0][r] + Math.min(h[i - 1], h[i]))).toArray()}, (x, y) -> x) instanceof int[][] fin
+            && Integer.valueOf(IntStream.rangeClosed(Math.max(0, S - b), a).map(r -> Math.min(fin[0][r], fin[1][r])).min().orElse(INF)) instanceof Integer best
+            && out.append((best >= INF ? "-1" : String.valueOf(best)) + "\n").checkError());
     }
 }

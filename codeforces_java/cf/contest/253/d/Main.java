@@ -1,20 +1,27 @@
+import java.io.*;
 import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner sc
+    public static void main(String[] args) throws Exception {
+        Optional.of(Map.entry(new File("input.txt").exists() ? new FileInputStream("input.txt") : System.in, new File("input.txt").exists() ? new PrintStream(new FileOutputStream("output.txt"), true) : System.out)).ifPresent(io -> io.getValue().println(new Scanner(io.getKey()) instanceof Scanner sc
             && Integer.valueOf(sc.nextInt()) instanceof Integer n && Integer.valueOf(sc.nextInt()) instanceof Integer m && Integer.valueOf(sc.nextInt()) instanceof Integer k
-            && IntStream.range(0, n).mapToObj(i -> sc.next().toCharArray()).toArray(char[][]::new) instanceof char[][] g
-            && new int[n + 1][m] instanceof int[][] P
-            && IntStream.range(0, n).allMatch(r -> IntStream.range(0, m).allMatch(c -> (P[r + 1][c] = P[r][c] + (g[r][c] == 'a' ? 1 : 0)) >= 0))
-            && new int[m + 1] instanceof int[] S && new int[26] instanceof int[] cnt && new int[]{0, 0} instanceof int[] st && new long[]{0} instanceof long[] res
-            ? IntStream.range(0, n).mapToLong(r1 -> IntStream.range(r1 + 1, n).mapToLong(r2 -> IntStream.range(0, 26).allMatch(i -> (cnt[i] = 0) == 0)
-                && (st[0] = 0) == 0 && (st[1] = 0) == 0 && (res[0] = 0) == 0
-                && IntStream.range(0, m).allMatch(c -> (S[c + 1] = S[c] + P[r2 + 1][c] - P[r1][c]) >= 0)
-                && IntStream.range(0, 2 * m).allMatch(t -> st[1] >= m || (S[st[1] + 1] - S[st[0]] > k
-                    ? (st[0] < st[1] && g[r1][st[0]] == g[r2][st[0]] ? cnt[g[r1][st[0]] - 'a']-- : 0) >= 0 && ++st[0] > 0
-                    : (g[r1][st[1]] == g[r2][st[1]] ? (res[0] += cnt[g[r1][st[1]] - 'a']) >= 0 && (st[0] > st[1] || ++cnt[g[r1][st[1]] - 'a'] > 0) : true) && ++st[1] > 0))
-                ? res[0] : 0).sum()).sum() : "");
+            && IntStream.range(0, n).mapToObj(i -> sc.next()).collect(Collectors.joining()).getBytes() instanceof byte[] g
+            && new int[(n + 1) * m] instanceof int[] P
+            && IntStream.range(0, n * m).allMatch(i -> (P[i + m] = P[i] + (g[i] == 'a' ? 1 : 0)) >= 0)
+            && new int[m + 1] instanceof int[] S && new int[m] instanceof int[] lt && new int[26] instanceof int[] cnt
+            && new int[2] instanceof int[] s
+            && new long[1] instanceof long[] rr
+            && IntStream.range(0, n).allMatch(r1 -> IntStream.range(r1 + 1, n).allMatch(r2 ->
+                IntStream.of(0).peek(z -> Arrays.setAll(S, c -> c == 0 ? 0 : S[c - 1] + P[(r2 + 1) * m + c - 1] - P[r1 * m + c - 1]))
+                    .peek(z -> Arrays.setAll(lt, c -> g[r1 * m + c] == g[r2 * m + c] ? g[r1 * m + c] - 'a' : -1))
+                    .peek(z -> Arrays.setAll(cnt, c -> 0)).peek(z -> Arrays.setAll(s, c -> 0)).sum() == 0
+                && IntStream.range(0, 2 * m).allMatch(t -> s[1] < m
+                    && (S[s[1] + 1] - S[s[0]] <= k
+                        ? (lt[s[1]] < 0 || (rr[0] += cnt[lt[s[1]]]) >= 0 && ++cnt[lt[s[1]]] > 0) && ++s[1] > 0
+                        : s[0] < s[1]
+                            ? (lt[s[0]] < 0 || --cnt[lt[s[0]]] >= 0) && ++s[0] > 0
+                            : ++s[0] > 0 && ++s[1] > 0)) | true))
+            ? rr[0] : ""));
     }
 }

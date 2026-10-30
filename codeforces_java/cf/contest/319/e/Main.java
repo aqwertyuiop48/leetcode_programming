@@ -14,7 +14,7 @@ public class Main {
             && new int[n + 2] instanceof int[] xi && new int[n + 2] instanceof int[] yi && new int[4] instanceof int[] cx
             && (TreeSet<Integer>[]) new TreeSet[n + 2] instanceof TreeSet<Integer>[] es
             && (PriorityQueue<Long>[]) new PriorityQueue[2 * SZ + 2] instanceof PriorityQueue<Long>[] pq
-            && ((IntUnaryOperator) v -> IntStream.iterate(v, u -> u >= 0, u -> par[u] == u ? -1 : par[u]).reduce(v, (a, b) -> b)) instanceof IntUnaryOperator find
+            && new IntUnaryOperator[1] instanceof IntUnaryOperator[] fh && (fh[0] = v -> par[v] == v ? v : (par[v] = fh[0].applyAsInt(par[v]))) instanceof IntUnaryOperator find
             && ((LongUnaryOperator) r -> ((long) (Rc[(int) r] - Lc[(int) r]) << 18) | (262143L - es[(int) r].size())) instanceof LongUnaryOperator hk
             && ((IntBinaryOperator) (a, b) -> Integer.valueOf(sz[a] >= sz[b] ? a : b) instanceof Integer big && Integer.valueOf(a + b - big) instanceof Integer small
                 && (par[small] = big) >= 0 && (sz[big] += sz[small]) >= 0 && (Lc[big] = Math.min(Lc[big], Lc[small])) >= 0 && (Rc[big] = Math.max(Rc[big], Rc[small])) >= 0
@@ -26,7 +26,7 @@ public class Main {
                     : (mode == 0 ? es[r].higher(cx[0]) instanceof Integer h && h < cx[1] : es[r].lower(cx[1]) instanceof Integer lo && lo > cx[0])
                         ? pq[v].poll() != null && (cx[2] = union.applyAsInt(find.applyAsInt(cx[2]), r)) >= 0 : false
                     : false), t -> t + 1).map(t -> 1).sum()) instanceof IntBinaryOperator drain
-            && ((IntBinaryOperator) (p, mode) -> IntStream.iterate(p + SZ, v -> v >= 1, v -> v >> 1).map(v -> drain.applyAsInt(v, mode)).sum()) instanceof IntBinaryOperator walk
+            && ((IntBinaryOperator) (p, mode) -> IntStream.iterate(p + SZ, v -> v >= 1, v -> v >> 1).map(v -> pq[v] == null || pq[v].isEmpty() ? 0 : drain.applyAsInt(v, mode)).sum()) instanceof IntBinaryOperator walk
             && ((IntUnaryOperator) (k) -> Stream.iterate(new int[]{Lc[k] + 1 + SZ, Rc[k] + SZ}, s -> s[0] < s[1], s -> new int[]{(s[0] + 1) >> 1, s[1] >> 1})
                 .mapToInt(s -> ((s[0] & 1) == 1 ? (pq[s[0]] == null ? (pq[s[0]] = new PriorityQueue<>()) : pq[s[0]]).add((hk.applyAsLong(k) << 17) | k) ? 1 : 0 : 0)
                     + ((s[1] & 1) == 1 ? (pq[s[1] - 1] == null ? (pq[s[1] - 1] = new PriorityQueue<>()) : pq[s[1] - 1]).add((hk.applyAsLong(k) << 17) | k) ? 1 : 0 : 0)).sum()) instanceof IntUnaryOperator reg

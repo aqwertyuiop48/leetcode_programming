@@ -1,33 +1,19 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s
-            && Long.valueOf(s.nextLong()) instanceof Long n && Long.valueOf(s.nextLong()) instanceof Long r
-            && new AtomicReference<BiFunction<Long, Long, List<long[]>>>() instanceof AtomicReference<BiFunction<Long, Long, List<long[]>>> bl
-            && bl.compareAndSet(null, (a, b) -> a == 0 && b == 1 ? List.<long[]>of()
-                : a == 0 || b == 0 ? null
-                : a < b ? a == 1 ? Stream.concat(Stream.<long[]>of(new long[]{'B', b - 1}), bl.get().apply(1L, 1L).stream()).toList()
-                        : b % a == 0 ? null : bl.get().apply(a, b % a) instanceof List<long[]> rest ? Stream.concat(Stream.<long[]>of(new long[]{'B', b / a}), rest.stream()).toList() : null
-                : b == 1 ? Stream.concat(Stream.<long[]>of(new long[]{'T', a}), bl.get().apply(0L, 1L).stream()).toList()
-                    : a % b == 0 ? null : bl.get().apply(a % b, b) instanceof List<long[]> rest2 ? Stream.concat(Stream.<long[]>of(new long[]{'T', a / b}), rest2.stream()).toList() : null)
-            && new AtomicReference<LongBinaryOperator>() instanceof AtomicReference<LongBinaryOperator> st
-            && st.compareAndSet(null, (a, b) -> a == 0 && b == 1 ? 0L
-                : a == 0 || b == 0 ? -1L
-                : a < b ? a == 1 ? (1L << 40) + (b - 1) + (1L << 40) + 1
-                        : b % a == 0 ? -1L : (Long) st.get().applyAsLong(a, b % a) instanceof Long x && x >= 0 ? x + (1L << 40) + b / a : -1L
-                : b == 1 ? (1L << 40) + a
-                    : a % b == 0 ? -1L : (Long) st.get().applyAsLong(a % b, b) instanceof Long y && y >= 0 ? y + (1L << 40) + a / b : -1L)
-            && ((LongBinaryOperator) (a, b) -> (Long) st.get().applyAsLong(a, b) instanceof Long x && x >= 0 && (x & ((1L << 40) - 1)) == n ? (x >> 40) * 4000000 : -1L) instanceof LongBinaryOperator ev
-            ? (Long) LongStream.rangeClosed(1, r).parallel().map(i -> (Long) ev.applyAsLong(i, r) instanceof Long u && (Long) ev.applyAsLong(r, i) instanceof Long v ? Math.max(u >= 0 ? u + i * 2 : -1L, v >= 0 ? v + i * 2 + 1 : -1L) : -1L).max().getAsLong() instanceof Long bestKey && bestKey >= 0
-                && bl.get().apply((bestKey % 2 == 0) ? (bestKey % 4000000) / 2 : r, (bestKey % 2 == 0) ? r : (bestKey % 4000000) / 2) instanceof List<long[]> bestList
-                ? (n - bestList.size()) + "\n" + IntStream.iterate(bestList.size() - 1, i -> i >= 0, i -> i - 1).mapToObj(i -> String.valueOf((char) bestList.get(i)[0]).repeat((int) bestList.get(i)[1])).collect(Collectors.joining())
-                : "IMPOSSIBLE"
+        System.out.println(new Scanner(System.in) instanceof Scanner sc
+            && (Integer) sc.nextInt() instanceof Integer n && (Integer) sc.nextInt() instanceof Integer r
+            && new LongBinaryOperator[1] instanceof LongBinaryOperator[] g
+            && (g[0] = (a, b) -> b == 0 ? (a == 1 ? 0L : 1L << 50) : g[0].applyAsLong(b, a % b) + (a / b) * 64 + 1) != null
+            ? r == 1 ? n == 1 ? "0\nT" : "IMPOSSIBLE"
+                : (Long) IntStream.range(1, r).mapToLong(k -> g[0].applyAsLong(r, k) >> 6 == n ? (g[0].applyAsLong(r, k) & 63) * (1L << 21) + k : -1L).max().orElse(-1L) instanceof Long key && key >= 0
+                    && (Integer) (int) (key >> 21) instanceof Integer m && (Integer) (int) (key & ((1 << 21) - 1)) instanceof Integer k0
+                    && Stream.iterate(new long[]{r, k0}, p -> p[1] > 0, p -> new long[]{p[1], p[0] % p[1]}).mapToLong(p -> p[0] / p[1]).toArray() instanceof long[] q
+                    ? (n - m - 1) + "\n" + new StringBuilder(IntStream.range(0, m).mapToObj(j -> ((m - 1 - j) % 2 == 0 ? "B" : "T").repeat((int) (j == m - 1 ? q[j] - 1 : q[j]))).collect(Collectors.joining()) + "T").reverse()
+                    : "IMPOSSIBLE"
             : "");
     }
-
-
 }

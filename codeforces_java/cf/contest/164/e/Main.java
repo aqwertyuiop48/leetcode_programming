@@ -5,58 +5,52 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n
-            && (Long) (-1000000000000000000L) instanceof Long neg
+            && (Long) 4000000000000000000L instanceof Long INF && (Integer) (Integer.highestOneBit(n + 1) << 1) instanceof Integer N
             && new long[n + 1] instanceof long[] l && new long[n + 1] instanceof long[] r && new long[n + 1] instanceof long[] t
             && IntStream.rangeClosed(1, n).allMatch(i -> (l[i] = Long.parseLong(tk.nextToken())) > 0 && (r[i] = Long.parseLong(tk.nextToken())) > 0 && (t[i] = Long.parseLong(tk.nextToken())) > 0)
-            && new int[n + 1] instanceof int[] lc && new int[n + 1] instanceof int[] rc && new int[n + 1] instanceof int[] pri && new int[n + 1] instanceof int[] mk
-            && new long[n + 1] instanceof long[] ms && new long[n + 1] instanceof long[] sm && new long[n + 1] instanceof long[] mm && new long[n + 1] instanceof long[] mt
-            && (mm[0] = neg) < 0 && new Random(12345L) instanceof Random rnd && IntStream.rangeClosed(1, n).allMatch(i -> (pri[i] = rnd.nextInt()) != 0 || true)
-            && ((IntUnaryOperator) v -> (Integer) lc[v] instanceof Integer a && (Integer) rc[v] instanceof Integer b
-                && (Long) (mm[a] == neg ? ms[v] : Math.max(mm[a] + t[v], ms[v])) instanceof Long m1
-                && (sm[v] = sm[a] + t[v] + sm[b]) >= 0 && (mm[v] = mm[b] == neg ? m1 : Math.max(m1 + sm[b], mm[b])) > Long.MIN_VALUE
-                && (mt[v] = Math.max(t[v], Math.max(mt[a], mt[b]))) > 0 && (mk[v] = Math.max(v, Math.max(mk[a], mk[b]))) > 0 ? 0 : 0) instanceof IntUnaryOperator upd
-            && new LongBinaryOperator[1] instanceof LongBinaryOperator[] split && new IntBinaryOperator[1] instanceof IntBinaryOperator[] merge
-            && (split[0] = (v, val) -> v == 0 ? 0L
-                : v < val ? (Long) split[0].applyAsLong(rc[(int) v], val) instanceof Long p && (rc[(int) v] = (int) (p >> 32)) >= 0 && upd.applyAsInt((int) v) == 0 ? (v << 32) | (p & 0xFFFFFFFFL) : 0L
-                : (Long) split[0].applyAsLong(lc[(int) v], val) instanceof Long p2 && (lc[(int) v] = (int) (p2 & 0xFFFFFFFFL)) >= 0 && upd.applyAsInt((int) v) == 0 ? (p2 & ~0xFFFFFFFFL) | v : 0L) != null
-            && (merge[0] = (a, b) -> a == 0 ? b : b == 0 ? a : pri[a] > pri[b]
-                ? (rc[a] = merge[0].applyAsInt(rc[a], b)) >= 0 && upd.applyAsInt(a) == 0 ? a : 0
-                : (lc[b] = merge[0].applyAsInt(a, lc[b])) >= 0 && upd.applyAsInt(b) == 0 ? b : 0) != null
-            && ((BinaryOperator<long[]>) (x, y) -> new long[]{x[0] + y[0], x[1] == neg ? y[1] : y[1] == neg ? x[1] : Math.max(x[1] + y[0], y[1])}) instanceof BinaryOperator<long[]> comb
-            && new long[1024] instanceof long[] preS && new long[1024] instanceof long[] preM && new long[1024] instanceof long[] sufS && new long[1024] instanceof long[] sufM
-            && new long[]{0, 0, 0, 0, 0, 0, 0} instanceof long[] g // g: 0 S, 1 li, 2 ti, 3 ri, 4 ans, 5 bestNew, 6 bestK
-            && new int[]{0} instanceof int[] fp
-            && new IntBinaryOperator[1] instanceof IntBinaryOperator[] search
-            && (search[0] = (u, f) -> (Long) (long) 0 instanceof Long zero
-                && new long[]{preS[f], preM[f]} instanceof long[] pre && new long[]{sufS[f], sufM[f]} instanceof long[] suf
-                && new long[]{sm[lc[u]], mm[lc[u]]} instanceof long[] left && new long[]{sm[rc[u]], mm[rc[u]]} instanceof long[] right
-                && comb.apply(pre, left) instanceof long[] lst && comb.apply(right, suf) instanceof long[] rst
-                && (Long) (Math.max(g[0] - t[u], Math.max(lst[1] + rst[0], rst[1]))) instanceof Long ru
-                && (Long) (Math.max(ru + 1, g[1]) + g[2] - 1) instanceof Long na
-                && (!(na < g[4] && na <= g[3]) || !(na < g[5] || na == g[5] && u > g[6]) || ((g[5] = na) >= 0 && (g[6] = u) >= 0))
-                && new long[]{t[u], ms[u]} instanceof long[] node
-                && comb.apply(comb.apply(node, right), suf) instanceof long[] sufLeft && comb.apply(comb.apply(pre, left), node) instanceof long[] preRight
-                && Stream.of(lc[u] != 0 ? new long[]{lc[u], pre[0], pre[1], sufLeft[0], sufLeft[1]} : null, rc[u] != 0 ? new long[]{rc[u], preRight[0], preRight[1], suf[0], suf[1]} : null)
-                    .filter(Objects::nonNull).map(c -> new long[]{c[0], c[1], c[2], c[3], c[4], Math.max(Math.max(g[0] - mt[(int) c[0]], c[2] + c[3]), c[4]), mk[(int) c[0]]})
-                    .map(c -> new long[]{c[0], c[1], c[2], c[3], c[4], Math.max(c[5] + 1, g[1]) + g[2] - 1, c[6]})
-                    .sorted((x, y) -> x[5] != y[5] ? Long.compare(x[5], y[5]) : Long.compare(y[6], x[6])).toList() instanceof List<long[]> ch
-                && ch.stream().allMatch(c -> c[5] >= g[4] || c[5] > g[3] || c[5] > g[5] || c[5] == g[5] && c[6] <= g[6]
-                    || (Integer) fp[0] instanceof Integer fr && (preS[fr] = c[1]) >= 0 && (preM[fr] = c[2]) < Long.MAX_VALUE && (sufS[fr] = c[3]) >= 0 && (sufM[fr] = c[4]) < Long.MAX_VALUE
-                    && ++fp[0] > 0 && search[0].applyAsInt((int) c[0], fr) == 0 && --fp[0] >= 0)
-                ? 0 : 0) != null
-            && new int[]{0} instanceof int[] root && new long[]{0} instanceof long[] ans
-            ? IntStream.rangeClosed(1, n).mapToObj(i -> (Long) Math.max(ans[0] + 1, l[i]) instanceof Long s0 && s0 + t[i] - 1 <= r[i]
-                    ? (ms[i] = l[i] + t[i] - 1) > 0 && (sm[i] = t[i]) > 0 && (mm[i] = ms[i]) > 0 && (mt[i] = t[i]) > 0 && (mk[i] = i) > 0 && (root[0] = merge[0].applyAsInt(root[0], i)) >= 0 && (ans[0] = Math.max(sm[root[0]], mm[root[0]])) >= 0 ? "0" : ""
-                    : root[0] == 0 ? "-1"
-                    : (g[0] = sm[root[0]]) >= 0 && (g[1] = l[i]) > 0 && (g[2] = t[i]) > 0 && (g[3] = r[i]) > 0 && (g[4] = ans[0]) >= 0 && (g[5] = ans[0]) >= 0 && (g[6] = -1) < 0
-                        && (preS[0] = 0) == 0 && (preM[0] = neg) < 0 && (sufS[0] = 0) == 0 && (sufM[0] = neg) < 0 && (fp[0] = 1) == 1
-                        && search[0].applyAsInt(root[0], 0) == 0
-                        ? g[6] == -1 ? "-1"
-                            : (Long) split[0].applyAsLong(root[0], (int) g[6]) instanceof Long p1 && (Long) split[0].applyAsLong((int) (p1 & 0xFFFFFFFFL), (int) g[6] + 1) instanceof Long p2
-                                && (root[0] = merge[0].applyAsInt((int) (p1 >> 32), (int) (p2 & 0xFFFFFFFFL))) >= 0
-                                && (ms[i] = l[i] + t[i] - 1) > 0 && (sm[i] = t[i]) > 0 && (mm[i] = ms[i]) > 0 && (mt[i] = t[i]) > 0 && (mk[i] = i) > 0 && (lc[i] = 0) == 0 && (rc[i] = 0) == 0
-                                && (root[0] = merge[0].applyAsInt(root[0], i)) >= 0 && (ans[0] = Math.max(sm[root[0]], mm[root[0]])) >= 0 ? String.valueOf(g[6]) : "" : "").collect(Collectors.joining(" ")) : "");
+            && LongStream.range(0, 2L * N).map(x -> INF).toArray() instanceof long[] mn && new long[2 * N] instanceof long[] lz
+            && LongStream.range(0, 2L * N).map(x -> -INF).toArray() instanceof long[] wt
+            && IntStream.range(0, 2 * N).map(x -> x == 0 ? 0 : (x << (Integer.numberOfLeadingZeros(x) - Integer.numberOfLeadingZeros(N))) - N).toArray() instanceof int[] lo
+            && IntStream.range(0, 2 * N).map(x -> x == 0 ? 0 : ((x + 1) << (Integer.numberOfLeadingZeros(x) - Integer.numberOfLeadingZeros(N))) - 1 - N).toArray() instanceof int[] hi
+            && new long[3] instanceof long[] g && new long[]{0} instanceof long[] ans && new TreeSet<Integer>() instanceof TreeSet<Integer> pres
+            && ((IntUnaryOperator) x -> lz[x] == 0 ? 0 : (mn[2 * x] += lz[x]) + (lz[2 * x] += lz[x]) + (mn[2 * x + 1] += lz[x]) + (lz[2 * x + 1] += lz[x]) + (lz[x] = 0) == 0 ? 0 : 0) instanceof IntUnaryOperator push
+            && new IntUnaryOperator[1] instanceof IntUnaryOperator[] add && new IntUnaryOperator[1] instanceof IntUnaryOperator[] set
+            && new IntUnaryOperator[1] instanceof IntUnaryOperator[] first && new IntUnaryOperator[1] instanceof IntUnaryOperator[] last && new IntToLongFunction[1] instanceof IntToLongFunction[] get
+            && (add[0] = x -> g[1] < lo[x] || hi[x] < g[0] ? 0
+                : (g[0] <= lo[x] && hi[x] <= g[1] ? ((mn[x] += g[2]) + (lz[x] += g[2]) == 0 ? 0 : 0)
+                    : push.applyAsInt(x) + add[0].applyAsInt(2 * x) + add[0].applyAsInt(2 * x + 1) + ((mn[x] = Math.min(mn[2 * x], mn[2 * x + 1])) == 0 ? 0 : 0))) != null
+            && (set[0] = x -> lo[x] == hi[x] ? ((mn[x] = g[2]) + (lz[x] = 0) == 0 ? 0 : 0)
+                : push.applyAsInt(x) + set[0].applyAsInt(g[0] <= hi[2 * x] ? 2 * x : 2 * x + 1) + ((mn[x] = Math.min(mn[2 * x], mn[2 * x + 1])) == 0 ? 0 : 0)) != null
+            && (get[0] = x -> lo[x] == hi[x] ? mn[x] : push.applyAsInt(x) + get[0].applyAsLong(g[0] <= hi[2 * x] ? 2 * x : 2 * x + 1)) != null
+            && (first[0] = x -> hi[x] < g[0] || mn[x] >= g[2] ? -1
+                : lo[x] == hi[x] ? lo[x]
+                : push.applyAsInt(x) == 0 && (Integer) first[0].applyAsInt(2 * x) instanceof Integer fr && fr >= 0 ? fr : first[0].applyAsInt(2 * x + 1)) != null
+            && (last[0] = x -> mn[x] >= g[2] ? -1
+                : lo[x] == hi[x] ? lo[x]
+                : push.applyAsInt(x) == 0 && (Integer) last[0].applyAsInt(2 * x + 1) instanceof Integer lr && lr >= 0 ? lr : last[0].applyAsInt(2 * x)) != null
+            && ((LongBinaryOperator) (p, v) -> (wt[N + (int) p] = v) == 0 || IntStream.iterate((N + (int) p) >> 1, x -> x >= 1, x -> x >> 1).allMatch(x -> (wt[x] = Math.max(wt[2 * x], wt[2 * x + 1])) != 0 || true) ? 0L : 0L) instanceof LongBinaryOperator wset
+            && ((LongUnaryOperator) a -> Math.max(wt[(int) a + N], IntStream.iterate((int) a + N, x -> x > 1, x -> x >> 1).mapToLong(x -> (x & 1) == 0 ? wt[x + 1] : -INF).max().orElse(-INF))) instanceof LongUnaryOperator wmax
+            && ((LongToIntFunction) v -> ((IntUnaryOperator) x -> wt[2 * x + 1] >= v ? 2 * x + 1 : 2 * x).applyAsInt(IntStream.iterate(1, x -> x < N, x -> wt[2 * x + 1] >= v ? 2 * x + 1 : 2 * x).max().getAsInt()) - N) instanceof LongToIntFunction wlast
+            && ((IntToLongFunction) x -> (g[0] = x) >= 0 ? get[0].applyAsLong(1) + l[x] + t[x] - 1 : 0L) instanceof IntToLongFunction E
+            && ((Function<long[], Integer>) a -> (g[0] = a[0]) > Long.MIN_VALUE && (g[1] = a[1]) > Long.MIN_VALUE && (g[2] = a[2]) > Long.MIN_VALUE && add[0].applyAsInt(1) == 0 ? 0 : 0) instanceof Function<long[], Integer> ra
+            && ((IntUnaryOperator) i -> (Long) (pres.isEmpty() ? 0L : E.applyAsLong(pres.last())) instanceof Long el && (Long) Math.max(el + 1, l[i]) instanceof Long s && (g[0] = i) > 0 && (g[2] = s - l[i]) >= 0
+                && set[0].applyAsInt(1) == 0 && wset.applyAsLong(i, s + t[i] - 1 - el) == 0 && pres.add(i) && (ans[0] = s + t[i] - 1) > 0 ? 0 : 0) instanceof IntUnaryOperator app
+            && ((LongPredicate) m -> (g[2] = m) > 0 && (Integer) last[0].applyAsInt(1) instanceof Integer L0 && wmax.applyAsLong(Math.max(L0, 0)) >= m) instanceof LongPredicate pred
+            ? IntStream.rangeClosed(1, n).mapToObj(i2 -> (Long) Math.max(ans[0] + 1, l[i2]) instanceof Long s0 && s0 + t[i2] - 1 <= r[i2]
+                    ? (app.applyAsInt(i2) == 0 ? "0" : "0")
+                    : pres.isEmpty() ? "-1"
+                    : (Long) (ans[0] + 1 - l[i2]) instanceof Long cap
+                        && (Long) Stream.iterate(new long[]{1, Math.min(cap, wt[1])}, a -> pred.test((a[0] + a[1] + 1) / 2) ? new long[]{(a[0] + a[1] + 1) / 2, a[1]} : new long[]{a[0], (a[0] + a[1] + 1) / 2 - 1}).filter(a -> a[0] == a[1]).findFirst().get()[0] instanceof Long vv
+                        && (Long) (Math.max(ans[0] - vv + 1, l[i2]) + t[i2] - 1) instanceof Long na && na <= r[i2] && na < ans[0]
+                        && (Integer) wlast.applyAsInt(vv) instanceof Integer k && (Long) wt[N + k] instanceof Long d0
+                        && (Integer) (pres.higher(k) == null ? 0 : pres.higher(k)) instanceof Integer q
+                        && pres.remove(k) && wset.applyAsLong(k, -INF) == 0 && (g[0] = k) >= 0 && (g[2] = INF) > 0 && set[0].applyAsInt(1) == 0
+                        && new ArrayList<Integer>() instanceof ArrayList<Integer> bd && bd.add(q)
+                        && (q == 0 || Stream.iterate(new long[]{k + 1, d0}, st -> st[0] > 0, st -> (g[0] = st[0]) > 0 && (g[2] = st[1]) > 0 && (Integer) first[0].applyAsInt(1) instanceof Integer j
+                                && ra.apply(new long[]{st[0], j < 0 ? i2 - 1 : j - 1, -st[1]}) == 0
+                                && j >= 0 && (g[0] = j) >= 0 && (Long) get[0].applyAsLong(1) instanceof Long sj && bd.add(j) && ra.apply(new long[]{j, j, -sj}) == 0
+                                ? new long[]{sj == 0 ? 0 : j + 1, sj} : new long[]{0, 0}).count() >= 0)
+                        && (q == 0 || bd.stream().allMatch(x -> (Long) (pres.lower(x) == null ? 0L : E.applyAsLong(pres.lower(x))) instanceof Long ep && (Long) E.applyAsLong(x) instanceof Long ex && wset.applyAsLong(x, ex - ep) == 0 || true))
+                        && app.applyAsInt(i2) == 0 ? String.valueOf(k) : "-1").collect(Collectors.joining(" ")) : "");
     }
-
-
 }

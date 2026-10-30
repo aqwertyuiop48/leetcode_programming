@@ -2,11 +2,17 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).mapToLong(t -> Long.parseLong((String) t)).iterator() instanceof PrimitiveIterator.OfLong it
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw
+            && new long[raw.length / 2 + 4] instanceof long[] vals && new long[4] instanceof long[] pr
+            && IntStream.rangeClosed(0, raw.length).allMatch(i -> (i < raw.length && raw[i] > 47)
+                ? (pr[0] = pr[0] * 10 + raw[i] - 48) >= 0 && (pr[2] = 1) > 0
+                : (i < raw.length && raw[i] == 45) ? (pr[3] = 1) > 0 && (pr[2] = 1) > 0
+                : pr[2] == 0 || ((vals[(int) pr[1]++] = pr[3] == 1 ? -pr[0] : pr[0]) != Long.MAX_VALUE && (pr[0] = 0) == 0 && (pr[2] = 0) == 0 && (pr[3] = 0) == 0))
+            && Arrays.stream(vals, 0, (int) pr[1]).iterator() instanceof PrimitiveIterator.OfLong it
             && Integer.valueOf((int) it.nextLong()) instanceof Integer n && Long.valueOf(it.nextLong()) instanceof Long t
             && new long[n + 2] instanceof long[] H && new long[n + 2] instanceof long[] L && new long[n + 2] instanceof long[] R
-            && IntStream.rangeClosed(1, n).allMatch(i -> (H[i] = it.nextLong()) >= 0 && (L[i] = it.nextLong()) > -1 << 40 && (R[i] = it.nextLong()) > -1 << 40)
+            && IntStream.rangeClosed(1, n).allMatch(i -> (H[i] = it.nextLong()) >= 0 && (L[i] = it.nextLong()) > -(1L << 40) && (R[i] = it.nextLong()) > -(1L << 40))
             && (H[0] = t) == t && (L[0] = -4000000000L) < 0 && (R[0] = 4000000000L) > 0 && (L[n + 1] = -4000000000L) < 0 && (R[n + 1] = 4000000000L) > 0
             && IntStream.range(0, 2 * n).boxed().sorted(Comparator.comparingLong((Integer e) -> (e % 2 == 0 ? L[e / 2 + 1] : R[e / 2 + 1]) * 2 + (e % 2 == 1 ? 0 : 1))).mapToInt(x -> x).toArray() instanceof int[] ev
             && new TreeMap<Long, Integer>(Map.of(t, 0, 0L, n + 1)) instanceof TreeMap<Long, Integer> tm && new HashMap<Long, Long>() instanceof HashMap<Long, Long> edges

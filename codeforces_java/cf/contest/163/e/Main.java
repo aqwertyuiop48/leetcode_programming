@@ -6,12 +6,13 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer q && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
             && IntStream.range(0, k).mapToObj(i -> tk.nextToken()).toList() instanceof List<String> kw
-            && (Integer) (kw.stream().mapToInt(String::length).sum() + 1) instanceof Integer maxN && new int[maxN * 26] instanceof int[] go && new int[maxN] instanceof int[] fch && new int[maxN] instanceof int[] sib && new int[maxN] instanceof int[] chr && new int[]{0} instanceof int[] cnt
-            && kw.stream().mapToInt(w -> w.chars().reduce(0, (cur, ch) -> go[cur * 26 + ch - 'a'] != 0 ? go[cur * 26 + ch - 'a'] : (go[cur * 26 + ch - 'a'] = ++cnt[0]) > 0 && (sib[cnt[0]] = fch[cur]) >= 0 && (fch[cur] = cnt[0]) > 0 && (chr[cnt[0]] = ch - 'a') >= 0 ? cnt[0] : 0)).toArray() instanceof int[] endNode
-            && (Integer) (cnt[0] + 1) instanceof Integer n && new int[n] instanceof int[] fail && new int[n] instanceof int[] order && new int[]{0, 1} instanceof int[] qs
-            && Stream.generate(() -> 0).takeWhile(z -> qs[0] < qs[1]).allMatch(z -> (Integer) order[qs[0]++] instanceof Integer u
-                && IntStream.iterate(fch[u], v -> v != 0, v -> sib[v]).allMatch(v -> (fail[v] = u == 0 ? 0 : go[fail[u] * 26 + chr[v]]) >= 0 && (order[qs[1]++] = v) > 0)
-                && (u == 0 || IntStream.of(0).peek(zz -> System.arraycopy(go, fail[u] * 26, go, u * 26, 26)).sum() == 0 && IntStream.iterate(fch[u], v -> v != 0, v -> sib[v]).allMatch(v -> (go[u * 26 + chr[v]] = v) > 0)))
+            && (Integer) (kw.stream().mapToInt(String::length).sum() + 1) instanceof Integer maxN && new int[maxN * 26] instanceof int[] go && new int[maxN] instanceof int[] fch && new int[maxN] instanceof int[] sib && new int[maxN] instanceof int[] chr && new int[maxN] instanceof int[] dep && new int[maxN] instanceof int[] par && new int[]{0} instanceof int[] cnt
+            && kw.stream().mapToInt(w -> w.chars().reduce(0, (cur, ch) -> go[cur * 26 + ch - 'a'] != 0 ? go[cur * 26 + ch - 'a'] : (go[cur * 26 + ch - 'a'] = ++cnt[0]) > 0 && (sib[cnt[0]] = fch[cur]) >= 0 && (fch[cur] = cnt[0]) > 0 && (chr[cnt[0]] = ch - 'a') >= 0 && (dep[cnt[0]] = dep[cur] + 1) > 0 && (par[cnt[0]] = cur) >= 0 ? cnt[0] : 0)).toArray() instanceof int[] endNode
+            && (Integer) (cnt[0] + 1) instanceof Integer n && new int[n] instanceof int[] fail && new int[]{0, n} instanceof int[] qs
+            && IntStream.range(0, n).mapToLong(v -> (long) dep[v] << 20 | v).sorted().mapToInt(x -> (int) (x & 1048575)).toArray() instanceof int[] order
+            && IntStream.range(1, n).allMatch(i -> (Integer) order[i] instanceof Integer v && (Integer) par[v] instanceof Integer u && (Integer) chr[v] instanceof Integer c
+                && (fail[v] = u == 0 ? 0 : go[fail[u] * 26 + c] != 0 || fail[u] == 0 ? go[fail[u] * 26 + c]
+                    : go[IntStream.iterate(fail[fail[u]], f -> fail[f]).filter(f -> f == 0 || go[f * 26 + c] != 0).findFirst().getAsInt() * 26 + c]) >= 0)
             && IntStream.generate(() -> 1).limit(n).toArray() instanceof int[] sz
             && IntStream.iterate(qs[1] - 1, i -> i >= 0, i -> i - 1).allMatch(i -> (sz[fail[order[i]]] += sz[order[i]]) > 0)
             && new int[n] instanceof int[] tin && new int[n] instanceof int[] nxt && (nxt[0] = 1) == 1
@@ -28,7 +29,7 @@ public class Main {
             && ((IntUnaryOperator) pos -> a0[pos] + a1[pos >> 7] + a2[pos >> 14]) instanceof IntUnaryOperator qry
             && new boolean[k] instanceof boolean[] on && IntStream.range(0, k).allMatch(i -> (on[i] = true) && upd.applyAsInt(endNode[i], 1) == 0)
             ? IntStream.range(0, q).mapToObj(i -> tk.nextToken()).map(line -> line.charAt(0) == '?'
-                    ? new int[]{0} instanceof int[] st ? String.valueOf(line.chars().skip(1).mapToLong(ch -> qry.applyAsInt(tin[st[0] = go[st[0] * 26 + ch - 'a']])).sum()) : null
+                    ? new int[]{0} instanceof int[] st ? String.valueOf(line.chars().skip(1).mapToLong(ch -> qry.applyAsInt(tin[st[0] = go[st[0] * 26 + ch - 'a'] != 0 || st[0] == 0 ? go[st[0] * 26 + ch - 'a'] : go[IntStream.iterate(fail[st[0]], f -> fail[f]).filter(f -> f == 0 || go[f * 26 + ch - 'a'] != 0).findFirst().getAsInt() * 26 + ch - 'a']])).sum()) : null
                     : (Integer) (Integer.parseInt(line.substring(1)) - 1) instanceof Integer idx && (line.charAt(0) == '+') != on[idx]
                         && (on[idx] = !on[idx]) == on[idx] && upd.applyAsInt(endNode[idx], line.charAt(0) == '+' ? 1 : -1) == 0 ? null : null)
                 .filter(Objects::nonNull).collect(Collectors.joining("\n"))

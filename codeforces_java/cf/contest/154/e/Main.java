@@ -13,7 +13,7 @@ public class Main {
                 && pts.stream().allMatch(pt -> Stream.generate(() -> 0).takeWhile(z -> h.size() >= 2 && (h.get(h.size() - 1)[0] - h.get(h.size() - 2)[0]) * (pt[1] - h.get(h.size() - 2)[1]) - (h.get(h.size() - 1)[1] - h.get(h.size() - 2)[1]) * (pt[0] - h.get(h.size() - 2)[0]) <= 0).allMatch(z -> h.remove(h.size() - 1) != null) && h.add(pt))
                 ? h : null) instanceof java.util.function.Function<List<double[]>, List<double[]>> chain
             && chain.apply(raw) instanceof List<double[]> lower && chain.apply(raw.reversed()) instanceof List<double[]> upper
-            && Stream.concat(lower.subList(0, lower.size() - 1).stream(), upper.subList(0, upper.size() - 1).stream()).toList() instanceof List<double[]> q
+            && (raw.size() == 1 ? raw : Stream.concat(lower.subList(0, lower.size() - 1).stream(), upper.subList(0, upper.size() - 1).stream()).toList()) instanceof List<double[]> q
             && (Integer) q.size() instanceof Integer n
             && (IntStream.range(0, n).mapToDouble(i -> q.get(i)[0] * q.get((i + 1) % n)[1] - q.get((i + 1) % n)[0] * q.get(i)[1]).sum() < 0
                 ? IntStream.range(0, n).mapToObj(i -> q.get(n - 1 - i)).toList() : q) instanceof List<double[]> p

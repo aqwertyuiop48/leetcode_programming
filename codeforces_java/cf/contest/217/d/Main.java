@@ -1,4 +1,3 @@
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
@@ -21,33 +20,24 @@ public class Main {
             && (Long) (m > 64 ? (1L << (m - 64)) - 1 : 0L) instanceof Long mhi
             && IntStream.rangeClosed(0, m / 2).mapToLong(c -> cnt[c] + (2 * c == m || c == 0 ? 0 : cnt[m - c])).toArray() instanceof long[] W
             && (Long) IntStream.rangeClosed(1, m / 2).filter(c -> W[c] != 0).mapToLong(c -> 1L << c).reduce(0L, (x, y) -> x | y) instanceof Long wm
-            && ((LongBinaryOperator) (lo, hs) ->
-                (Integer) (int) (hs >>> 57) instanceof Integer s
-                && (Long) (hs & 144115188075855871L) instanceof Long hi
-                && (Integer) (m - s) instanceof Integer u
-                    ? ((s < 64 ? lo << s : 0L) & mlo) | (u < 64 ? lo >>> u | hi << (64 - u) : hi >>> (u - 64))
-                    : 0L) instanceof LongBinaryOperator rl
-            && ((LongBinaryOperator) (lo, hs) ->
-                (Integer) (int) (hs >>> 57) instanceof Integer s
-                && (Long) (hs & 144115188075855871L) instanceof Long hi
-                && (Integer) (m - s) instanceof Integer u
-                    ? ((s < 64 ? hi << s | lo >>> (64 - s) : lo << (s - 64)) & mhi) | (u < 64 ? hi >>> u : 0L)
-                    : 0L) instanceof LongBinaryOperator rh
-            && new AtomicReference<LongBinaryOperator>() instanceof AtomicReference<LongBinaryOperator> self
-            && (self.getAndSet((lo, hs) ->
-                (Long) (hs & 144115188075855871L) instanceof Long hi
-                && (Integer) (int) (hs >>> 57) instanceof Integer last
-                    ? (1 + LongStream.iterate(~lo & wm & (-1L << (last + 1)), x -> x != 0, x -> x & (x - 1)).map(x -> (Integer) Long.numberOfTrailingZeros(x) instanceof Integer c
-                        && (Long) (hi | (long) c << 57) instanceof Long h1
-                            && (Long) (hi | (long) (m - c) << 57) instanceof Long h2
-                            && (Long) (lo | rl.applyAsLong(lo, h1) | rl.applyAsLong(lo, h2)) instanceof Long nlo
-                            && (Long) (hi | rh.applyAsLong(lo, h1) | rh.applyAsLong(lo, h2)) instanceof Long nhi
-                            ? W[c] * self.get().applyAsLong(nlo, nhi | (long) c << 57) % P
-                            : 0L).sum()) % P
-                    : 0L) == null)
-            ? self.get().applyAsLong(1L, 0L)
+            && new long[2 * m + 8] instanceof long[] stk && new int[1] instanceof int[] sh
+            && ((LongBinaryOperator) (lo, hi) -> ((sh[0] < 64 ? lo << sh[0] : 0L) & mlo)
+                | (m - sh[0] < 64 ? lo >>> (m - sh[0]) | hi << (64 - (m - sh[0])) : hi >>> (m - sh[0] - 64))) instanceof LongBinaryOperator rL
+            && ((LongBinaryOperator) (lo, hi) -> ((sh[0] < 64 ? hi << sh[0] | lo >>> (64 - sh[0]) : lo << (sh[0] - 64)) & mhi)
+                | (m - sh[0] < 64 ? hi >>> (m - sh[0]) : 0L)) instanceof LongBinaryOperator rH
+            && (stk[0] = 1L) == 1L
+            && new LongBinaryOperator[1] instanceof LongBinaryOperator[] H
+            && (H[0] = (d, rem) -> rem == 0 ? 0L
+                : (Integer) Long.numberOfTrailingZeros(rem) instanceof Integer c && (Integer) (int) (2 * d) instanceof Integer di
+                    && (sh[0] = c) > 0
+                    && (stk[di + 2] = stk[di] | rL.applyAsLong(stk[di], stk[di + 1])) * 0 == 0
+                    && (stk[di + 3] = stk[di + 1] | rH.applyAsLong(stk[di], stk[di + 1])) * 0 == 0
+                    && (sh[0] = m - c) > 0
+                    && (stk[di + 2] |= rL.applyAsLong(stk[di], stk[di + 1])) * 0 == 0
+                    && (stk[di + 3] |= rH.applyAsLong(stk[di], stk[di + 1])) * 0 == 0
+                    ? (W[c] * (1 + H[0].applyAsLong(d + 1, ~stk[di + 2] & wm & (-1L << (c + 1)))) + H[0].applyAsLong(d, rem & (rem - 1))) % P
+                    : 0L) != null
+            ? (1 + H[0].applyAsLong(0, wm)) % P
             : -1L);
     }
-
-
 }

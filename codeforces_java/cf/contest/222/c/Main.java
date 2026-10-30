@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -8,16 +9,20 @@ public class Main {
             && IntStream.range(0, n).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] a
             && IntStream.range(0, m).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] b
             && (Integer) Math.max(Arrays.stream(a).max().getAsInt(), Arrays.stream(b).max().getAsInt()) instanceof Integer mx
-            && new int[mx + 1] instanceof int[] spf
-            && IntStream.rangeClosed(2, (int) Math.sqrt(mx) + 1).filter(p -> spf[p] == 0).allMatch(p -> IntStream.iterate(p * p, j -> j <= mx, j -> j + p).allMatch(j -> spf[j] != 0 || (spf[j] = p) > 0))
-            && new int[mx + 1] instanceof int[] ca && new int[mx + 1] instanceof int[] cb
-            && Arrays.stream(a).allMatch(v -> IntStream.iterate(v, x -> x > 1, x -> x / (spf[x] == 0 ? x : spf[x])).allMatch(x -> ++ca[spf[x] == 0 ? x : spf[x]] > 0))
-            && Arrays.stream(b).allMatch(v -> IntStream.iterate(v, x -> x > 1, x -> x / (spf[x] == 0 ? x : spf[x])).allMatch(x -> ++cb[spf[x] == 0 ? x : spf[x]] > 0))
-            && IntStream.rangeClosed(2, mx).filter(p -> ca[p] != 0 || cb[p] != 0).allMatch(p -> (ca[p] = cb[p] = Math.min(ca[p], cb[p])) >= 0)
-            ? n + " " + m + "\n"
-                + Arrays.stream(a).map(v -> IntStream.iterate(v, x -> x > 1, x -> x / (spf[x] == 0 ? x : spf[x])).reduce(v, (res, x) -> ca[spf[x] == 0 ? x : spf[x]] > 0 && --ca[spf[x] == 0 ? x : spf[x]] >= 0 ? res / (spf[x] == 0 ? x : spf[x]) : res)).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n"
-                + Arrays.stream(b).map(v -> IntStream.iterate(v, x -> x > 1, x -> x / (spf[x] == 0 ? x : spf[x])).reduce(v, (res, x) -> cb[spf[x] == 0 ? x : spf[x]] > 0 && --cb[spf[x] == 0 ? x : spf[x]] >= 0 ? res / (spf[x] == 0 ? x : spf[x]) : res)).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
+            && new int[(mx >> 1) + 3] instanceof int[] spf
+            && IntStream.rangeClosed(1, (int) Math.sqrt(mx) / 2).map(i -> 2 * i + 1).filter(p -> spf[p >> 1] == 0 && p * p <= mx)
+                .allMatch(p -> IntStream.range(0, (mx / p - p) / 2 + 1).filter(j -> spf[p * (p + 2 * j) >> 1] == 0 && (spf[p * (p + 2 * j) >> 1] = p) > 0).count() >= 0)
+            && ((IntUnaryOperator) x -> (x & 1) == 0 ? 2 : spf[x >> 1] == 0 ? x : spf[x >> 1]) instanceof IntUnaryOperator sp
+            && new int[(mx >> 1) + 3] instanceof int[] ca && new int[(mx >> 1) + 3] instanceof int[] cb
+            && new IntUnaryOperator[1] instanceof IntUnaryOperator[] g1 && new IntBinaryOperator[2] instanceof IntBinaryOperator[] g2
+            && (g1[0] = x -> x <= 1 ? 0 : ++ca[sp.applyAsInt(x) + 1 >> 1] > 0 ? g1[0].applyAsInt(x / sp.applyAsInt(x)) : 0) != null
+            && (g2[0] = (res, x) -> x <= 1 ? res : ca[sp.applyAsInt(x) + 1 >> 1] > 0 && --ca[sp.applyAsInt(x) + 1 >> 1] >= 0 && ++cb[sp.applyAsInt(x) + 1 >> 1] > 0
+                ? g2[0].applyAsInt(res / sp.applyAsInt(x), x / sp.applyAsInt(x)) : g2[0].applyAsInt(res, x / sp.applyAsInt(x))) != null
+            && (g2[1] = (res, x) -> x <= 1 ? res : cb[sp.applyAsInt(x) + 1 >> 1] > 0 && --cb[sp.applyAsInt(x) + 1 >> 1] >= 0
+                ? g2[1].applyAsInt(res / sp.applyAsInt(x), x / sp.applyAsInt(x)) : g2[1].applyAsInt(res, x / sp.applyAsInt(x))) != null
+            && Arrays.stream(a).allMatch(v -> g1[0].applyAsInt(v) >= 0)
+            && Arrays.stream(b).map(v -> g2[0].applyAsInt(v, v)).toArray() instanceof int[] ob
+            && Arrays.stream(a).map(v -> g2[1].applyAsInt(v, v)).toArray() instanceof int[] oa
+            ? n + " " + m + "\n" + Arrays.stream(oa).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + Arrays.stream(ob).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
-
-
 }

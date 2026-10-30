@@ -2,20 +2,49 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> Integer.parseInt((String) t)).iterator() instanceof Iterator<Integer> it
-            && Integer.valueOf(it.next()) instanceof Integer n
-            && IntStream.range(0, n).map(i -> it.next()).toArray() instanceof int[] cnt
-            && IntStream.range(0, n).mapToObj(i -> new double[cnt[i] + 1]).toArray(double[][]::new) instanceof double[][] p
-            && IntStream.range(0, n).allMatch(i -> (p[i][cnt[i]] = 1) == 1)
-            && new double[]{IntStream.range(0, n).filter(i -> cnt[i] == 0).count()} instanceof double[] zero
-            && ((java.util.function.DoubleBinaryOperator) (nn, r) -> r == 0 ? 1.0 : r == 1 ? nn : r == 2 ? nn * (nn - 1) / 2 : r == 3 ? nn * (nn - 1) * (nn - 2) / 6 : r == 4 ? nn * (nn - 1) * (nn - 2) * (nn - 3) / 24 : nn * (nn - 1) * (nn - 2) * (nn - 3) * (nn - 4) / 120) instanceof java.util.function.DoubleBinaryOperator comb
-            && Integer.valueOf(it.next()) instanceof Integer q
-            ? IntStream.range(0, q).mapToObj(i -> Integer.valueOf(it.next() - 1) instanceof Integer u && Integer.valueOf(it.next() - 1) instanceof Integer v && Integer.valueOf(it.next()) instanceof Integer k
-                && (zero[0] -= p[u][0]) > -1e18
-                && new double[p[u].length] instanceof double[] np
-                && IntStream.range(0, p[u].length).allMatch(j -> IntStream.rangeClosed(0, Math.min(k, j)).allMatch(x -> k - x > cnt[u] - j || (np[j - x] += p[u][j] * comb.applyAsDouble(j, x) * comb.applyAsDouble(cnt[u] - j, k - x) / comb.applyAsDouble(cnt[u], k)) > -1))
-                && (p[u] = np) != null && (zero[0] += np[0]) > -1e18 && (cnt[u] -= k) > -1e9 && (cnt[v] += k) > -1
-                ? String.format("%.12f", zero[0]) : "").collect(Collectors.joining("\n")) : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 2] instanceof int[] v
+            && new int[3] instanceof int[] st
+            && IntStream.rangeClosed(0, raw.length).allMatch(i -> i < raw.length && raw[i] >= 48 && raw[i] <= 57
+                ? (st[0] = st[0] * 10 + raw[i] - 48) >= 0 && (st[1] = 1) > 0
+                : st[1] == 0 || (v[st[2]++] = st[0]) >= 0 && (st[0] = 0) == 0 && (st[1] = 0) == 0)
+            && Integer.valueOf(v[0]) instanceof Integer n
+            && Integer.valueOf(v[1 + n]) instanceof Integer q
+            && Integer.valueOf(2 + n) instanceof Integer base
+            && IntStream.range(0, n).map(i -> v[1 + i]).toArray() instanceof int[] a
+            && Integer.valueOf(Arrays.stream(a).max().getAsInt()) instanceof Integer ma
+            && Integer.valueOf(Arrays.stream(a).sum() + ma + 8) instanceof Integer sa
+            && IntStream.range(0, n).mapToObj(i -> new double[ma + 12]).toArray(double[][]::new) instanceof double[][] p
+            && IntStream.range(0, n).allMatch(i -> (p[i][a[i]] = 1) == 1)
+            && new double[][]{new double[ma + 12]} instanceof double[][] hold
+            && a.clone() instanceof int[] t
+            && IntStream.range(0, sa + 1).mapToObj(i -> new double[11]).toArray(double[][]::new) instanceof double[][] C
+            && IntStream.rangeClosed(0, sa).allMatch(i -> (C[i][5] = 1) == 1)
+            && IntStream.rangeClosed(1, sa).allMatch(i -> IntStream.rangeClosed(1, 5).allMatch(r -> (C[i][5 + r] = C[i - 1][4 + r] + C[i - 1][5 + r]) >= 0))
+            && new double[1] instanceof double[] inv
+            && new double[]{IntStream.range(0, n).filter(i -> a[i] == 0).count()} instanceof double[] zero
+            && new double[q] instanceof double[] out
+            && new int[8] instanceof int[] s
+            && (IntStream.range(0, q * (ma + 9)).allMatch(z ->
+                s[3] == 0
+                    ? (s[4] = v[base + 3 * s[0]] - 1) >= 0 && (s[5] = v[base + 3 * s[0] + 1] - 1) >= 0 && (s[6] = v[base + 3 * s[0] + 2]) > 0
+                        && (inv[0] = 1.0 / C[t[s[4]]][5 + s[6]]) > 0 && (s[1] = 0) == 0 && (s[3] = 1) == 1
+                    : s[3] == 1
+                        ? (s[1] > a[s[4]]
+                            ? (hold[0][s[1]] = 0) == 0
+                            : (hold[0][s[1]] = inv[0] * (
+                                p[s[4]][s[1]] * C[s[1]][5] * C[Math.max(0, t[s[4]] - s[1])][5 + s[6]]
+                                + p[s[4]][s[1] + 1] * C[s[1] + 1][6] * C[Math.max(0, t[s[4]] - s[1] - 1)][4 + s[6]]
+                                + p[s[4]][s[1] + 2] * C[s[1] + 2][7] * C[Math.max(0, t[s[4]] - s[1] - 2)][3 + s[6]]
+                                + p[s[4]][s[1] + 3] * C[s[1] + 3][8] * C[Math.max(0, t[s[4]] - s[1] - 3)][2 + s[6]]
+                                + p[s[4]][s[1] + 4] * C[s[1] + 4][9] * C[Math.max(0, t[s[4]] - s[1] - 4)][1 + s[6]]
+                                + p[s[4]][s[1] + 5] * C[s[1] + 5][10] * C[Math.max(0, t[s[4]] - s[1] - 5)][s[6]])) >= 0)
+                            && (++s[1] <= a[s[4]] + 5 || (s[3] = 2) == 2)
+                        : (zero[0] += hold[0][0] - p[s[4]][0]) > -1e18 && (t[s[4]] -= s[6]) >= 0 && (t[s[5]] += s[6]) > 0
+                            && (out[s[0]] = zero[0]) > -1e18
+                            && Stream.of(p[s[4]]).peek(old -> p[s[4]] = hold[0]).peek(old -> hold[0] = old).findFirst().isPresent()
+                            && ++s[0] > 0 && (s[3] = 0) == 0 && s[0] < q) || true)
+            ? Arrays.stream(out).mapToObj(d -> Long.valueOf(Math.round(d * 1e12)) instanceof Long sc ? (sc / 1000000000000L) + "." + ("000000000000" + (sc % 1000000000000L)).substring(String.valueOf(sc % 1000000000000L).length()) : "").collect(Collectors.joining("\n")) : "");
     }
 }

@@ -1,17 +1,15 @@
-import java.util.*;
-import java.util.concurrent.atomic.*;
-import java.util.function.*;
-import java.util.stream.*;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(Integer.valueOf(new Scanner(System.in).nextInt()) instanceof Integer n
-            && Integer.valueOf(32 - Integer.numberOfLeadingZeros(n - 1)) instanceof Integer k
-            && IntStream.range(0, k).mapToObj(i -> new ArrayList<Integer>()).toList() instanceof List<ArrayList<Integer>> sets
-            && new AtomicReference<Function<int[], Boolean>>() instanceof AtomicReference<Function<int[], Boolean>> spl
-            && spl.compareAndSet(null, a -> a[1] - a[0] < 2 || IntStream.range(a[0], a[0] + (a[1] - a[0] + 1) / 2).allMatch(i -> sets.get(a[2]).add(i + 1))
-                && spl.get().apply(new int[]{a[0], a[0] + (a[1] - a[0] + 1) / 2, a[2] + 1}) && spl.get().apply(new int[]{a[0] + (a[1] - a[0] + 1) / 2, a[1], a[2] + 1}))
-            && spl.get().apply(new int[]{0, n, 0})
-            ? k + (k == 0 ? "" : "\n") + sets.stream().map(g -> g.size() + " " + g.stream().map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
+        Boolean.valueOf(Boolean.valueOf(new java.io.File("input.txt").exists()) instanceof Boolean f
+            && (f ? new java.io.FileInputStream("input.txt") : System.in) instanceof java.io.InputStream in
+            && (f ? new java.io.PrintStream(new java.io.FileOutputStream("output.txt")) : System.out) instanceof java.io.PrintStream out
+            && (Integer) new Scanner(in).nextInt() instanceof Integer n
+            && (Integer) (32 - Integer.numberOfLeadingZeros(n - 1)) instanceof Integer m
+            && out.append(m + "\n" + IntStream.range(0, m).mapToObj(j ->
+                IntStream.range(0, n).filter(i -> (i >> j & 1) == 1).count() + IntStream.range(0, n).filter(i -> (i >> j & 1) == 1).mapToObj(i -> " " + (i + 1)).collect(Collectors.joining())).collect(Collectors.joining("\n")) + "\n").checkError());
     }
 }

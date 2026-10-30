@@ -1,30 +1,51 @@
+import java.nio.IntBuffer;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().toList() instanceof List<String> ls
-            && ls.get(0).trim() instanceof String s && Integer.valueOf(s.length()) instanceof Integer n
-            && new int[2 * n + 2][26] instanceof int[][] nx && new int[2 * n + 2] instanceof int[] link && new int[2 * n + 2] instanceof int[] len && new long[2 * n + 2] instanceof long[] cnt && new int[]{0, 0} instanceof int[] st
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw
+            ? CompletableFuture.supplyAsync(() -> new String(raw).split("\\s+") instanceof String[] tk
+            && tk[0] instanceof String s && Integer.valueOf(s.length()) instanceof Integer n
+            && new int[(2 * n + 2) * 26] instanceof int[] nx && new int[2 * n + 2] instanceof int[] link && new int[2 * n + 2] instanceof int[] len && new int[2 * n + 2] instanceof int[] cnt
+            && new int[8] instanceof int[] st && IntBuffer.wrap(nx) instanceof IntBuffer ib
             && (link[0] = -1) == -1
-            && s.chars().allMatch(ch -> Integer.valueOf(ch - 'a') instanceof Integer c && Integer.valueOf(++st[0]) instanceof Integer cur && (len[cur] = len[st[1]] + 1) > 0 && (cnt[cur] = 1) > 0
-                && Integer.valueOf(IntStream.iterate(st[1], x -> x == -1 ? -1 : link[x]).filter(x -> x == -1 || nx[x][c] != 0).findFirst().getAsInt()) instanceof Integer p
-                && IntStream.iterate(st[1], x -> x != p, x -> link[x]).allMatch(x -> (nx[x][c] = cur) > 0)
-                && (p == -1 ? (link[cur] = 0) >= 0
-                    : Integer.valueOf(nx[p][c]) instanceof Integer q && (len[p] + 1 == len[q] ? (link[cur] = q) >= 0
-                        : Integer.valueOf(++st[0]) instanceof Integer cl && (len[cl] = len[p] + 1) > 0 && IntStream.range(0, 26).allMatch(j -> (nx[cl][j] = nx[q][j]) >= 0) && (link[cl] = link[q]) >= -1
-                            && IntStream.iterate(p, x -> x != -1 && nx[x][c] == q, x -> link[x]).allMatch(x -> (nx[x][c] = cl) > 0) && (link[q] = cl) > 0 && (link[cur] = cl) > 0))
-                && (st[1] = cur) > 0)
-            && IntStream.rangeClosed(1, st[0]).boxed().sorted(Comparator.comparingInt((Integer x) -> -len[x])).allMatch(x -> link[x] <= 0 || (cnt[link[x]] += cnt[x]) >= 0)
-            && Integer.valueOf(Integer.parseInt(ls.get(1).trim())) instanceof Integer q
+            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> l1
+            && l1.compareAndSet(null, p -> p == -1 || nx[p * 26 + st[6]] != 0 ? p : (nx[p * 26 + st[6]] = st[2]) > 0 ? l1.get().applyAsInt(link[p]) : 0)
+            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> l2
+            && l2.compareAndSet(null, p -> p == -1 || nx[p * 26 + st[6]] != st[5] ? p : (nx[p * 26 + st[6]] = st[4]) > 0 ? l2.get().applyAsInt(link[p]) : 0)
+            && s.chars().allMatch(ch -> (st[6] = ch - 'a') >= 0
+                && (st[2] = ++st[0]) > 0 && (len[st[2]] = len[st[1]] + 1) > 0 && (cnt[st[2]] = 1) > 0
+                && (st[3] = nx[st[1] * 26 + st[6]] != 0 ? st[1] : l1.get().applyAsInt(st[1])) >= -1
+                && (st[3] == -1 ? (link[st[2]] = 0) >= 0
+                    : (st[5] = nx[st[3] * 26 + st[6]]) > 0 && (len[st[3]] + 1 == len[st[5]] ? (link[st[2]] = st[5]) > 0
+                        : (st[4] = ++st[0]) > 0 && (len[st[4]] = len[st[3]] + 1) > 0 && ib.put(st[4] * 26, nx, st[5] * 26, 26) != null && (link[st[4]] = link[st[5]]) >= 0
+                            && l2.get().applyAsInt(st[3]) >= -1
+                            && (link[st[5]] = st[4]) > 0 && (link[st[2]] = st[4]) > 0))
+                && (st[1] = st[2]) > 0)
+            && new int[n + 2] instanceof int[] bc && new int[st[0] + 1] instanceof int[] ord
+            && IntStream.rangeClosed(1, st[0]).allMatch(v -> ++bc[len[v]] > 0)
+            && IntStream.rangeClosed(1, n).allMatch(l -> (bc[l] += bc[l - 1]) >= 0)
+            && IntStream.rangeClosed(1, st[0]).allMatch(v -> (ord[--bc[len[v]]] = v) > 0)
+            && IntStream.iterate(st[0] - 1, i -> i >= 0, i -> i - 1).allMatch(i -> (cnt[link[ord[i]]] += cnt[ord[i]]) >= 0)
+            && Integer.valueOf(Integer.parseInt(tk[1])) instanceof Integer q
             && new int[st[0] + 1] instanceof int[] mark
-            ? IntStream.range(0, q).mapToObj(qi -> ls.get(2 + qi).trim() instanceof String x && Integer.valueOf(x.length()) instanceof Integer m && (x + x.substring(0, m - 1)) instanceof String t
-                && new long[]{0, 0, 0} instanceof long[] w
-                && IntStream.range(0, t.length()).allMatch(i -> Integer.valueOf(t.charAt(i) - 'a') instanceof Integer c
-                    && IntStream.iterate(0, y -> w[0] != 0 && nx[(int) w[0]][c] == 0, y -> y + 1).allMatch(y -> (w[0] = link[(int) w[0]]) >= 0 && (w[1] = len[(int) w[0]]) >= 0)
-                    && (nx[(int) w[0]][c] != 0 ? (w[0] = nx[(int) w[0]][c]) > 0 && ++w[1] > 0 : (w[1] = 0) == 0)
-                    && IntStream.iterate(0, y -> w[0] != 0 && len[link[(int) w[0]]] >= m, y -> y + 1).allMatch(y -> (w[0] = link[(int) w[0]]) >= 0 && (w[1] = len[(int) w[0]]) >= 0)
-                    && (w[1] < m || mark[(int) w[0]] == qi + 1 || (mark[(int) w[0]] = qi + 1) > 0 && (w[2] += cnt[(int) w[0]]) >= 0))
-                ? String.valueOf(w[2]) : "").collect(Collectors.joining("\n")) : "");
+            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> h1
+            && h1.compareAndSet(null, w -> w == 0 || nx[w * 26 + st[6]] != 0 ? w : h1.get().applyAsInt(link[w]))
+            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> h2
+            && h2.compareAndSet(null, w -> w == 0 || len[link[w]] < st[7] ? w : h2.get().applyAsInt(link[w]))
+            ? IntStream.range(0, q).mapToObj(qi -> tk[2 + qi] instanceof String x && Integer.valueOf(x.length()) instanceof Integer m && new int[]{0, 0, 0} instanceof int[] ws && new long[1] instanceof long[] tot
+                && (st[7] = m) > 0
+                && IntStream.range(0, 2 * m - 1).allMatch(i -> (st[6] = x.charAt(i < m ? i : i - m) - 'a') >= 0
+                    && (ws[2] = nx[ws[0] * 26 + st[6]] != 0 || ws[0] == 0 ? ws[0] : h1.get().applyAsInt(ws[0])) >= 0
+                    && (ws[1] = ws[2] != ws[0] ? len[ws[2]] : ws[1]) >= 0
+                    && (nx[ws[2] * 26 + st[6]] != 0 ? (ws[0] = nx[ws[2] * 26 + st[6]]) > 0 && ++ws[1] > 0 : (ws[0] = 0) == 0 && (ws[1] = 0) == 0)
+                    && (ws[2] = ws[0] == 0 || len[link[ws[0]]] < m ? ws[0] : h2.get().applyAsInt(ws[0])) >= 0
+                    && (ws[2] == ws[0] || (ws[1] = len[ws[2]]) >= 0 && (ws[0] = ws[2]) > 0)
+                    && (ws[1] < m || mark[ws[0]] == qi + 1 || (mark[ws[0]] = qi + 1) > 0 && (tot[0] += cnt[ws[0]]) >= 0))
+                ? String.valueOf(tot[0]) : "").collect(Collectors.joining("\n")) : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }

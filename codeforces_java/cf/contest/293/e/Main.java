@@ -4,47 +4,54 @@ import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Arrays.stream(l.trim().split("\\s+"))).filter(x -> !x.isEmpty()).mapToLong(Long::parseLong).iterator() instanceof PrimitiveIterator.OfLong sc
-            && Integer.valueOf((int) sc.nextLong()) instanceof Integer n && Integer.valueOf((int) sc.nextLong()) instanceof Integer L && Long.valueOf(sc.nextLong()) instanceof Long W
-            && new int[n] instanceof int[] head && new int[2 * n] instanceof int[] nxt && new int[2 * n] instanceof int[] to && new long[2 * n] instanceof long[] wt && new int[]{0} instanceof int[] ec
-            && IntStream.range(0, n).allMatch(i -> (head[i] = -1) < 0)
-            && IntStream.range(1, n).allMatch(i -> Integer.valueOf((int) sc.nextLong() - 1) instanceof Integer p && Long.valueOf(sc.nextLong()) instanceof Long w
-                && (to[ec[0]] = p) >= 0 && (wt[ec[0]] = w) >= 0 && (nxt[ec[0]] = head[i]) >= -1 && (head[i] = ec[0]++) >= 0
-                && (to[ec[0]] = i) >= 0 && (wt[ec[0]] = w) >= 0 && (nxt[ec[0]] = head[p]) >= -1 && (head[p] = ec[0]++) >= 0)
-            && new int[n + 3] instanceof int[] bit && new int[]{0} instanceof int[] lim
-            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> addRef && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> qryRef
-            && addRef.compareAndSet(null, pos -> pos > lim[0] ? 0 : (bit[pos] -= 1) * 0 + addRef.get().applyAsInt(pos + (pos & -pos))) && qryRef.compareAndSet(null, pos -> pos <= 0 ? 0 : bit[pos] + qryRef.get().applyAsInt(pos - (pos & -pos)))
-            && addRef.get() instanceof IntUnaryOperator rem1 && qryRef.get() instanceof IntUnaryOperator qry
-            && ((ToLongFunction<long[]>) arr -> Arrays.stream(arr).sorted().toArray() instanceof long[] s && Integer.valueOf(s.length) instanceof Integer len
-                && Integer.valueOf(Arrays.stream(s).mapToInt(x -> (int) (x & 131071)).max().getAsInt() + 1) instanceof Integer sizeB && (lim[0] = sizeB) > 0
-                && Arrays.stream(s).allMatch(x -> ++bit[(int) (x & 131071) + 1] > 0)
-                && IntStream.rangeClosed(1, sizeB).allMatch(q -> q + (q & -q) > sizeB || (bit[q + (q & -q)] += bit[q]) >= 0)
-                && new int[]{len - 1} instanceof int[] jj && new long[1] instanceof long[] tot
-                && IntStream.range(0, len).allMatch(i -> Long.valueOf(s[i] >> 17) instanceof Long wi
-                    && (jj[0] < 0 || wi + (s[jj[0]] >> 17) <= W || IntStream.iterate(0, z -> jj[0] >= 0 && wi + (s[jj[0]] >> 17) > W, z -> z + 1).allMatch(z -> rem1.applyAsInt((int) (s[jj[0]] & 131071) + 1) >= 0 && jj[0]-- >= -1))
-                    && (jj[0] < 0 || L - (int) (s[i] & 131071) < 0 || (tot[0] += qry.applyAsInt(Math.min(L - (int) (s[i] & 131071) + 1, sizeB)) - (i <= jj[0] && 2 * (int) (s[i] & 131071) <= L ? 1 : 0)) >= 0))
-                && IntStream.rangeClosed(1, sizeB).allMatch(q -> (bit[q] = 0) == 0)
-                ? tot[0] / 2 : 0L) instanceof ToLongFunction<long[]> cnt
-            && new boolean[n] instanceof boolean[] rem && new int[n] instanceof int[] par && new int[n] instanceof int[] order && new int[n] instanceof int[] sz
-            && new int[n] instanceof int[] dd && new long[n] instanceof long[] ww && new int[]{0} instanceof int[] len && new long[1] instanceof long[] ans
-            && new ArrayDeque<Integer>(List.of(0)) instanceof ArrayDeque<Integer> dq
-            && Stream.generate(dq::poll).takeWhile(Objects::nonNull).allMatch(r -> (order[0] = r) >= 0 && (par[r] = -1) < 0 && (len[0] = 1) > 0
-                && IntStream.iterate(0, i -> i < len[0], i -> i + 1).allMatch(i -> (sz[order[i]] = 1) > 0
-                    && IntStream.iterate(head[order[i]], e -> e >= 0, e -> nxt[e]).allMatch(e -> rem[to[e]] || to[e] == par[order[i]] || (par[to[e]] = order[i]) >= 0 && (order[len[0]++] = to[e]) >= 0))
-                && Integer.valueOf(len[0]) instanceof Integer tot
-                && IntStream.iterate(tot - 1, i -> i > 0, i -> i - 1).allMatch(i -> (sz[par[order[i]]] += sz[order[i]]) > 0)
-                && Integer.valueOf(IntStream.range(0, tot).map(i -> order[i]).filter(u -> 2 * sz[u] >= tot).reduce((a, b) -> sz[a] <= sz[b] ? a : b).getAsInt()) instanceof Integer c
-                && (order[0] = c) >= 0 && (par[c] = -1) < 0 && (dd[c] = 0) == 0 && (ww[c] = 0) == 0 && (len[0] = 1) > 0
-                && IntStream.iterate(head[c], e -> e >= 0, e -> nxt[e]).allMatch(e0 -> rem[to[e0]] || wt[e0] > W || Integer.valueOf(len[0]) instanceof Integer st0
-                    && (order[len[0]++] = to[e0]) >= 0 && (par[to[e0]] = c) >= 0 && (dd[to[e0]] = 1) > 0 && (ww[to[e0]] = wt[e0]) >= 0
-                    && IntStream.iterate(st0, i -> i < len[0], i -> i + 1).allMatch(i -> IntStream.iterate(head[order[i]], e -> e >= 0, e -> nxt[e])
-                        .allMatch(e -> rem[to[e]] || to[e] == par[order[i]] || (par[to[e]] = order[i]) >= 0 && (dd[to[e]] = dd[order[i]] + 1) > 0 && (ww[to[e]] = ww[order[i]] + wt[e]) >= 0
-                            && (dd[to[e]] > L || ww[to[e]] > W || (order[len[0]++] = to[e]) >= 0)))
-                    && (ans[0] -= cnt.applyAsLong(IntStream.range(st0, len[0]).mapToLong(i -> (ww[order[i]] << 17) | dd[order[i]]).toArray())) > Long.MIN_VALUE)
-                && (ans[0] += cnt.applyAsLong(IntStream.range(0, len[0]).mapToLong(i -> (ww[order[i]] << 17) | dd[order[i]]).toArray())) >= 0
-                && (rem[c] = true) && IntStream.iterate(head[c], e -> e >= 0, e -> nxt[e]).allMatch(e -> rem[to[e]] || dq.add(to[e])))
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw && new int[raw.length / 2 + 2] instanceof int[] v && new int[3] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).allMatch(i -> i < raw.length && raw[i] >= 48 ? (ps[1] = ps[1] * 10 + raw[i] - 48) >= 0 && (ps[2] = 1) == 1 : ps[2] == 0 || (v[ps[0]++] = ps[1]) >= 0 && (ps[1] = 0) == 0 && (ps[2] = 0) == 0)
+            && Integer.valueOf(v[0]) instanceof Integer n && Integer.valueOf(v[1]) instanceof Integer L && Integer.valueOf(v[2]) instanceof Integer W
+            && new int[n + 1] instanceof int[] start && new int[2 * n] instanceof int[] adj && new int[2 * n] instanceof int[] wt
+            && IntStream.range(1, n).allMatch(i -> (start[i + 1]++) >= 0 && (start[v[3 + 2 * (i - 1)]]++) >= 0)
+            && IntStream.rangeClosed(1, n).allMatch(i -> (start[i] += start[i - 1]) >= 0)
+            && start.clone() instanceof int[] pos
+            && IntStream.range(1, n).allMatch(i -> (adj[pos[i]] = v[3 + 2 * (i - 1)] - 1) >= 0 && (wt[pos[i]++] = v[4 + 2 * (i - 1)]) >= 0
+                && (adj[pos[v[3 + 2 * (i - 1)] - 1]] = i) >= 0 && (wt[pos[v[3 + 2 * (i - 1)] - 1]++] = v[4 + 2 * (i - 1)]) >= 0)
+            && new int[2 * n + 4] instanceof int[] bit && new int[2 * n + 4] instanceof int[] sbase && new int[2 * n + 4] instanceof int[] send
+            && new AtomicReference<LongUnaryOperator>() instanceof AtomicReference<LongUnaryOperator> addR && new AtomicReference<LongUnaryOperator>() instanceof AtomicReference<LongUnaryOperator> qryR
+            && addR.compareAndSet(null, x -> (x & 1048575) > (x >> 40) ? 0L : (bit[(int) (((x >> 20) & 1048575) + (x & 1048575))]++) * 0L + addR.get().applyAsLong(x + ((x & 1048575) & -(x & 1048575))))
+            && qryR.compareAndSet(null, x -> (x & 1048575) == 0 ? 0L : bit[(int) (((x >> 20) & 1048575) + (x & 1048575))] + qryR.get().applyAsLong(x - ((x & 1048575) & -(x & 1048575))))
+            && new int[n] instanceof int[] ord && new int[n] instanceof int[] pp && new int[n] instanceof int[] D && new long[n] instanceof long[] Wd
+            && new int[n] instanceof int[] sz && new int[n] instanceof int[] ptrp && new int[n] instanceof int[] stk && new int[n] instanceof int[] grp && new int[n] instanceof int[] wid && new int[n] instanceof int[] best
+            && new boolean[n] instanceof boolean[] rem && new int[n + 1] instanceof int[] cq && new int[n + 1] instanceof int[] cs
+            && new int[]{0, 0, 0, 0, 0, 0, 0, 1, 1} instanceof int[] st && new long[1] instanceof long[] ans
+            && IntStream.iterate(0, t -> st[6] < st[7], t -> t + 1).allMatch(t -> (st[5] = st[7] - st[6]) > 0 && (st[0] = 0) == 0 && (st[1] = 0) == 0 && (st[4] = 0) == 0
+                && IntStream.iterate(0, z -> st[0] > 0 || st[4] < st[5], z -> z + 1).allMatch(z ->
+                    st[0] == 0
+                    ? (cs[st[4]] = st[1]) >= 0 && (ord[st[1]] = cq[st[6] + st[4]]) >= 0 && (pp[st[1]] = -1) < 0 && (D[st[1]] = 0) == 0 && (Wd[st[1]] = 0) == 0
+                        && (ptrp[st[1]] = start[ord[st[1]]]) >= 0 && (stk[st[0]++] = st[1]++) >= 0 && ++st[4] > 0
+                    : ptrp[stk[st[0] - 1]] == start[ord[stk[st[0] - 1]] + 1] ? --st[0] >= 0
+                    : (st[2] = ptrp[stk[st[0] - 1]]++) >= 0 && (rem[adj[st[2]]] || (pp[stk[st[0] - 1]] >= 0 && adj[st[2]] == ord[pp[stk[st[0] - 1]]])
+                        || (st[3] = st[1]++) >= 0 && (ord[st[3]] = adj[st[2]]) >= 0 && (pp[st[3]] = stk[st[0] - 1]) >= 0 && (D[st[3]] = D[stk[st[0] - 1]] + 1) > 0
+                        && (Wd[st[3]] = Math.min(Wd[stk[st[0] - 1]] + wt[st[2]], W + 1L)) >= 0 && (ptrp[st[3]] = start[adj[st[2]]]) >= 0 && (stk[st[0]++] = st[3]) >= 0))
+                && IntStream.range(0, st[1]).allMatch(i -> (sz[i] = 1) > 0 && (wid[i] = pp[i] < 0 ? i : wid[pp[i]]) >= 0 && (grp[i] = pp[i] < 0 ? -1 : pp[pp[i]] < 0 ? i : grp[pp[i]]) > -2 && (best[i] = -1) < 0)
+                && IntStream.iterate(st[1] - 1, i -> i >= 0, i -> i - 1).allMatch(i -> pp[i] < 0 || (sz[pp[i]] += sz[i]) > 0)
+                && (t == 0
+                    ? (cq[st[8]++] = ord[IntStream.range(0, st[1]).filter(i -> 2 * sz[i] >= st[1]).reduce((a, b) -> sz[a] <= sz[b] ? a : b).getAsInt()]) >= 0
+                    : IntStream.range(0, st[1]).allMatch(i -> pp[i] < 0 || 2 * sz[i] < sz[grp[i]] || (best[grp[i]] >= 0 && sz[best[grp[i]]] <= sz[i]) || (best[grp[i]] = i) >= 0)
+                    && IntStream.range(0, st[1]).filter(q -> pp[q] >= 0 && pp[pp[q]] < 0 && sz[q] >= 2).allMatch(q -> (cq[st[8]++] = ord[best[q]]) >= 0)
+                    && LongStream.concat(IntStream.range(0, st[1]).mapToLong(i -> (((long) (wid[i] ^ 65536)) << 47) | (Wd[i] << 17) | D[i]),
+                        IntStream.range(0, st[1]).filter(i -> pp[i] >= 0).mapToLong(i -> (((long) (grp[i] ^ 65536)) << 47) | (Wd[i] << 17) | D[i])).sorted().toArray() instanceof long[] K
+                    && IntStream.range(0, K.length).allMatch(x -> (sbase[x] = x > 0 && (K[x] >> 47) == (K[x - 1] >> 47) ? sbase[x - 1] : x) >= 0)
+                    && IntStream.iterate(K.length - 1, x -> x >= 0, x -> x - 1).allMatch(x -> (send[x] = x < K.length - 1 && (K[x] >> 47) == (K[x + 1] >> 47) ? send[x + 1] : x + 1) > 0)
+                    && LongStream.concat(IntStream.range(0, K.length).mapToLong(x -> ((long) sbase[x] << 40) | ((2L * (K[x] & 131071)) << 20) | x),
+                        IntStream.range(0, K.length).filter(x -> (K[x] & 131071) <= L && ((K[x] >> 17) & 1073741823L) <= W).mapToLong(x -> ((long) sbase[x] << 40) | ((2L * (L - (K[x] & 131071)) + 1) << 20) | x)).sorted().toArray() instanceof long[] ev
+                    && new long[1] instanceof long[] tot
+                    && Arrays.stream(ev).allMatch(e -> Integer.valueOf((int) (e & 1048575)) instanceof Integer x
+                        && (((e >> 20) & 1) == 0 ? addR.get().applyAsLong(((long) (send[x] - sbase[x]) << 40) | ((long) sbase[x] << 20) | (x - sbase[x] + 1)) >= 0
+                            : Integer.valueOf(-Arrays.binarySearch(K, sbase[x], send[x], ((K[x] >> 47) << 47) | (((W - ((K[x] >> 17) & 1073741823L) + 1) << 17) - 1)) - 1) instanceof Integer ins
+                            && (tot[0] += (pp[(int) (((K[x] >> 47) & 131071) ^ 65536)] < 0 ? 1 : -1) * (qryR.get().applyAsLong(((long) sbase[x] << 20) | (ins - sbase[x])) - (x < ins && 2 * (K[x] & 131071) <= L ? 1 : 0))) > Long.MIN_VALUE))
+                    && (ans[0] += tot[0] / 2) > Long.MIN_VALUE
+                    && IntStream.range(0, K.length + 2).allMatch(q -> (bit[q] = 0) == 0)
+                    && IntStream.range(0, st[5]).allMatch(j -> rem[ord[cs[j]]] = true))
+                && (st[6] = st[7]) > 0 && (st[7] = st[8]) > 0)
             ? ans[0] : "");
     }
 }
-

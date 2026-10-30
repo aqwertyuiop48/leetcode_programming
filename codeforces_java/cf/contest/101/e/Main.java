@@ -5,21 +5,47 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer p
-            && IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : Integer.parseInt(tk.nextToken()) % p).toArray() instanceof int[] xm
-            && IntStream.rangeClosed(0, m).map(i -> i == 0 ? 0 : Integer.parseInt(tk.nextToken()) % p).toArray() instanceof int[] ym
-            && (Integer) ((m >> 6) + 1) instanceof Integer W && new long[Math.min(n, 10002) * W + 1] instanceof long[] bits && new int[][]{new int[m + 1], new int[m + 1]} instanceof int[][] bufs
-            && new byte[Math.max(0, n + m - 2)] instanceof byte[] ans && new int[]{n, m, n + m - 2, 1, 0, 0} instanceof int[] sv
-            && ((IntPredicate) z -> Arrays.stream(bufs[0]).map(v -> 0).toArray() instanceof int[] zero && Stream.of(0).peek(u -> System.arraycopy(zero, 0, bufs[0], 0, m + 1)).findFirst().isPresent()
-                && IntStream.rangeClosed(1, sv[2] > 0 ? sv[0] : 0).allMatch(i -> (Integer) (sv[0] - i) instanceof Integer rr && (Integer) xm[i] instanceof Integer xi && bufs[(i - 1) & 1] instanceof int[] src && bufs[i & 1] instanceof int[] tgt
-                    && Stream.of(0).peek(u -> Arrays.fill(bits, Math.min(rr, 10002) * W, Math.min(rr, 10002) * W + (rr < 10002 ? W : 0), 0L)).peek(u -> Arrays.setAll(tgt, j -> j == 0 ? 0
-                        : Math.max(src[j], tgt[j - 1]) + (rr >= 10002 ? 0 : (int) ((bits[rr * W + (j >> 6)] |= (j < 2 || src[j] > tgt[j - 1] ? 1L : 0L) << j) & 0L)) + (xi + ym[j] >= p ? xi + ym[j] - p : xi + ym[j]))).findFirst().isPresent())
-                && (sv[3] == 0 || ((sv[4] = bufs[sv[0] & 1][sv[1]]) >= 0 && (sv[3] = 0) == 0)) && (sv[5] = 0) == 0
-                && IntStream.range(0, 40010).takeWhile(w -> sv[2] > 0 && sv[5] < 10002 && sv[5] < sv[0] && sv[0] - sv[5] + sv[1] > 1 && sv[1] > 0)
-                    .allMatch(w -> (bits[sv[5] * W + (sv[1] >> 6)] >>> sv[1] & 1) != 0 ? ++sv[5] > 0 && (ans[--sv[2]] = 'C') > 0 : --sv[1] >= 0 && (ans[--sv[2]] = 'S') > 0)
-                && (sv[0] -= sv[5]) >= 0) instanceof IntPredicate work
-            && work.test(0) && work.test(0)
-            ? sv[4] + "\n" + new String(ans) : "");
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk
+            && Integer.valueOf(tk.nextToken()) instanceof Integer n
+            && Integer.valueOf(tk.nextToken()) instanceof Integer m
+            && Integer.valueOf(tk.nextToken()) instanceof Integer p
+            && IntStream.rangeClosed(0, n).map(i -> i == 0 ? 0 : Integer.parseInt(tk.nextToken()) % p).toArray() instanceof int[] x
+            && IntStream.rangeClosed(0, m).map(i -> i == 0 ? 0 : Integer.parseInt(tk.nextToken()) % p).toArray() instanceof int[] y
+            && IntStream.range(0, m).map(t -> y[m - t]).toArray() instanceof int[] yr
+            && Integer.valueOf(n + m) instanceof Integer K
+            && Integer.valueOf(192) instanceof Integer B
+            && Integer.valueOf((K + B - 1) / B) instanceof Integer nb
+            && Stream.of(0, 1, 2).map(q -> IntStream.range(0, n + 3).map(i -> -1).toArray()).toArray(int[][]::new) instanceof int[][] A
+            && new int[n + 3] instanceof int[] ps
+            && new int[n + 3] instanceof int[] yb
+            && new int[n + 3] instanceof int[] sc
+            && new int[Math.min(B, K)][n + 3] instanceof int[][] rows
+            && new int[K / B + 2][] instanceof int[][] ck
+            && new int[1][] instanceof int[][] rowRef
+            && (A[1][0] = 0) == 0 && (A[1][1] = 0) == 0
+            && ((IntPredicate) (k -> Integer.valueOf(Math.max(1, k - m)) instanceof Integer lo
+                && Integer.valueOf(Math.min(n, k - 1)) instanceof Integer hi
+                && A[k % 3] instanceof int[] cur && A[(k + 2) % 3] instanceof int[] prev && rowRef[0] instanceof int[] di
+                && Stream.of(0)
+                    .peek(u -> System.arraycopy(prev, lo - 1, ps, lo, hi - lo + 1))
+                    .peek(u -> System.arraycopy(yr, lo + m - k, yb, lo, hi - lo + 1))
+                    .peek(u -> IntStream.range(lo, hi + 1).forEach(i -> cur[i] = Math.max(ps[i], prev[i]) + (x[i] + yb[i] - p) + (((x[i] + yb[i] - p) >> 31) & p) + 0 * (di[i] = (prev[i] - ps[i]) >>> 31)))
+                    .findFirst().isPresent())) instanceof IntPredicate step
+            && new int[]{0} instanceof int[] res
+            && IntStream.rangeClosed(2, K).allMatch(k -> (rowRef[0] = sc) != null && step.test(k) && (k % B != 0 || (ck[k / B] = Arrays.copyOf(A[k % 3], Math.min(n, k - 1) + 1)) != null))
+            && (res[0] = A[K % 3][n]) >= -1
+            && new byte[K - 2] instanceof byte[] out
+            && new int[]{n} instanceof int[] cr
+            && IntStream.range(0, nb).allMatch(q -> Integer.valueOf(nb - 1 - q) instanceof Integer b
+                && Integer.valueOf(Math.max(2, b * B + 1)) instanceof Integer s
+                && Integer.valueOf(Math.min(K, (b + 1) * B)) instanceof Integer e
+                && Stream.of(0).peek(u -> Arrays.fill(A[0], -1)).peek(u -> Arrays.fill(A[1], -1)).peek(u -> Arrays.fill(A[2], -1)).findFirst().isPresent()
+                && (b == 0 ? (A[1][0] = 0) == 0 && (A[1][1] = 0) == 0
+                    : ck[b].length > 0 && Stream.of(0).peek(u -> System.arraycopy(ck[b], 0, A[(b * B) % 3], 0, ck[b].length)).findFirst().isPresent())
+                && IntStream.rangeClosed(s, e).allMatch(k -> (rowRef[0] = rows[k - s]) != null && step.test(k))
+                && IntStream.range(0, e - s + 1).allMatch(t -> Integer.valueOf(e - t) instanceof Integer k
+                    && (k < 3 || ((Integer) rows[k - s][cr[0]] instanceof Integer c && (out[k - 3] = (byte) (c > 0 ? 'C' : 'S')) > 0 && (cr[0] -= c) > 0))))
+            ? res[0] + "\n" + new String(out) : "");
     }
 
 

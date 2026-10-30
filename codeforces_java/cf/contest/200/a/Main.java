@@ -5,24 +5,28 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         Optional.of(new String(System.in.readAllBytes())).ifPresent(data -> new Thread(null, () -> System.out.println(new StringTokenizer(data) instanceof StringTokenizer tk
-            && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n0 && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m0 && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
-            && (Boolean) (n0 > m0) instanceof Boolean swap && (Integer) (swap ? m0 : n0) instanceof Integer n && (Integer) (swap ? n0 : m0) instanceof Integer m
-            && new int[(n + 2) * (m + 2)] instanceof int[] nr && new int[(n + 2) * (m + 2)] instanceof int[] nl
-            && IntStream.range(0, (n + 2) * (m + 2)).allMatch(i -> (nr[i] = i % (m + 2)) >= 0 && (nl[i] = i % (m + 2)) >= 0)
-            && new IntBinaryOperator[2] instanceof IntBinaryOperator[] fn
-            && (fn[0] = (base, c) -> nr[base + c] == c ? c : (nr[base + c] = fn[0].applyAsInt(base, nr[base + c]))) != null
-            && (fn[1] = (base, c) -> nl[base + c] == c ? c : (nl[base + c] = fn[1].applyAsInt(base, nl[base + c]))) != null
-            && new long[1] instanceof long[] best && new int[2] instanceof int[] q
-            && ((IntBinaryOperator) (row, c) -> c >= 1 && c <= m && (best[0] = Math.min(best[0], (Math.abs(row - q[0]) + Math.abs(c - q[1])) * 100000000000L + (swap ? c : row) * 200000L + (swap ? row : c))) > 0 ? 1 : 0) instanceof IntBinaryOperator cand
-            && ((IntBinaryOperator) (row, z) -> row < 1 || row > n || cand.applyAsInt(row, fn[0].applyAsInt(row * (m + 2), q[1])) + cand.applyAsInt(row, fn[1].applyAsInt(row * (m + 2), q[1])) >= 0 ? 0 : 1) instanceof IntBinaryOperator doRow
+            && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer m && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
+            && (Integer) (m + 2) instanceof Integer w
+            && IntStream.range(0, (n + 2) * w).toArray() instanceof int[] pa && pa.clone() instanceof int[] pd && new int[(n + 2) * w] instanceof int[] lb
+            && new IntUnaryOperator[2] instanceof IntUnaryOperator[] fn
+            && (fn[0] = v -> pa[v] == v ? v : (pa[v] = fn[0].applyAsInt(pa[v]))) != null
+            && (fn[1] = v -> pd[v] == v ? v : (pd[v] = fn[1].applyAsInt(pd[v]))) != null
             ? IntStream.range(0, k).mapToObj(i -> (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer a && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer b
-                && (q[0] = swap ? b : a) > 0 && (q[1] = swap ? a : b) > 0 && (best[0] = Long.MAX_VALUE) > 0
-                && IntStream.iterate(0, dx -> dx + 1).takeWhile(dx -> (q[0] - dx >= 1 || q[0] + dx <= n) && dx <= best[0] / 100000000000L)
-                    .allMatch(dx -> doRow.applyAsInt(q[0] - dx, 0) + (dx == 0 ? 0 : doRow.applyAsInt(q[0] + dx, 0)) == 0)
-                && (Long) (best[0] % 100000000000L / 200000L) instanceof Long oR && (Long) (best[0] % 200000L) instanceof Long oC
-                && (Integer) (int) (long) (swap ? oC : oR) instanceof Integer rr && (Integer) (int) (long) (swap ? oR : oC) instanceof Integer cc
-                && (nr[rr * (m + 2) + cc] = cc + 1) > 0 && (nl[rr * (m + 2) + cc] = cc - 1) >= 0
-                ? oR + " " + oC : "").collect(Collectors.joining("\n")) : ""), "", 1 << 28).start());
+                && (Integer) (a * w + b) instanceof Integer ix
+                && (Integer) (pa[ix] == ix ? a * 4096 + b
+                    : IntStream.iterate(Math.max(Math.max(1, lb[ix]), Math.max(Math.max(lb[ix - 1], lb[ix + 1]), Math.max(lb[ix - w], lb[ix + w])) - 1), D -> D + 1)
+                        .map(D -> IntStream.range(0, 4).map(sd ->
+                            (Integer) (sd == 0 ? Math.max(Math.max(-D, 1 - a), b - D - m) : sd == 1 ? Math.max(Math.max(-D, 1 - a), 1 - b - D) : sd == 2 ? Math.max(0, 1 - b + D) : Math.max(0, b + D - m)) instanceof Integer tlo
+                            && (Integer) (sd == 0 ? Math.min(0, b - D - 1) : sd == 1 ? Math.min(0, m - b - D) : sd == 2 ? Math.min(Math.min(D, n - a), m - b + D) : Math.min(Math.min(D, n - a), b + D - 1)) instanceof Integer thi
+                            && tlo <= thi
+                            && (Integer) ((a + tlo) * w + (sd == 0 ? b - D - tlo : sd == 1 ? b + D + tlo : sd == 2 ? b - D + tlo : b + D - tlo)) instanceof Integer st
+                            && (Integer) fn[sd == 0 || sd == 3 ? 0 : 1].applyAsInt(st) instanceof Integer root
+                            && root / w <= a + thi ? (root / w) * 4096 + root % w : Integer.MAX_VALUE).min().getAsInt())
+                        .filter(kk -> kk < Integer.MAX_VALUE).findFirst().getAsInt()) instanceof Integer res
+                && (Integer) (res >> 12) instanceof Integer ra && (Integer) (res & 4095) instanceof Integer ca && (Integer) (ra * w + ca) instanceof Integer rix
+                && (pa[rix] = rix + w - 1) >= 0 && (pd[rix] = rix + w + 1) >= 0
+                && (lb[ix] = Math.max(lb[ix], Math.abs(ra - a) + Math.abs(ca - b))) >= 0
+                ? ra + " " + ca : "").collect(Collectors.joining("\n")) : ""), "", 1 << 28).start());
     }
 
 

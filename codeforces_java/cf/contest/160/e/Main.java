@@ -17,13 +17,13 @@ public class Main {
             && new int[2 * sz] instanceof int[] tr && IntStream.range(0, 2 * sz).allMatch(i -> (tr[i] = Integer.MAX_VALUE) > 0)
             && new int[m] instanceof int[] ans && new int[]{0, 0} instanceof int[] st
             && IntStream.range(0, m).allMatch(z -> (Integer) ordP[z] instanceof Integer j
-                && Stream.generate(() -> 0).takeWhile(y -> st[0] < n && bf[ordF[st[0]]] >= pr[j]).allMatch(y -> (Integer) ordF[st[0]++] instanceof Integer b
-                    && (tr[sz + rank[b]] = bs[b]) > 0 && IntStream.iterate((sz + rank[b]) >> 1, i -> i >= 1, i -> i >> 1).allMatch(i -> (tr[i] = Math.min(tr[2 * i], tr[2 * i + 1])) > 0))
+                && IntStream.iterate(st[0], y -> y < n && bf[ordF[y]] >= pr[j], y -> y + 1).allMatch(y -> (Integer) ordF[y] instanceof Integer b && (st[0] = y + 1) > 0
+                    && IntStream.iterate(sz + rank[b], i -> i >= 1, i -> i >> 1).allMatch(i -> tr[i] > bs[b] && (tr[i] = bs[b]) > 0) || true)
                 && (Integer) Arrays.binarySearch(ts, pb[j]) instanceof Integer bsr && (Integer) (bsr >= 0 ? bsr : -bsr - 1) instanceof Integer lo0
-                && (st[1] = lo0 >= n ? 0 : lo0 + sz) >= 0
-                && Stream.generate(() -> 0).takeWhile(y -> st[1] > 0 && tr[st[1]] > pl[j]).allMatch(y -> Stream.generate(() -> 0).takeWhile(w -> (st[1] & 1) == 1).allMatch(w -> (st[1] >>= 1) >= 0) && (st[1] == 0 || ++st[1] > 0))
-                && (Integer) Stream.iterate(st[1], i -> i < sz, i -> tr[2 * i] <= pl[j] ? 2 * i : 2 * i + 1).reduce(-1, (a, b2) -> b2) instanceof Integer last
-                && (ans[j] = st[1] == 0 ? -1 : ordT[(last < 0 ? st[1] : tr[2 * last] <= pl[j] ? 2 * last : 2 * last + 1) - sz] + 1) != Integer.MIN_VALUE)
+                && (Integer) IntStream.iterate(lo0 >= n ? 0 : lo0 + sz, v -> v == 0 ? 0 : tr[v] <= pl[j] ? v < sz ? tr[2 * v] <= pl[j] ? 2 * v : 2 * v + 1 : v
+                        : (v >>> Integer.numberOfTrailingZeros(~v)) == 0 ? 0 : (v >>> Integer.numberOfTrailingZeros(~v)) + 1)
+                    .filter(v -> v == 0 || v >= sz && tr[v] <= pl[j]).findFirst().getAsInt() instanceof Integer res
+                && (ans[j] = res == 0 ? -1 : ordT[res - sz] + 1) != Integer.MIN_VALUE)
             ? Arrays.stream(ans).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 

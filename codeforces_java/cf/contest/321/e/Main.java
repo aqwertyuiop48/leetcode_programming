@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
@@ -10,20 +9,20 @@ public class Main {
             && Integer.valueOf(IntStream.range(0, bs.length).filter(i -> bs[i] == '\n').findFirst().getAsInt()) instanceof Integer nl
             && Arrays.stream(new String(bs, 0, nl).trim().split("\\s+")).mapToInt(Integer::parseInt).toArray() instanceof int[] nk
             && Integer.valueOf(nk[0]) instanceof Integer n && Integer.valueOf(nk[1]) instanceof Integer k && Integer.valueOf(n + 1) instanceof Integer w
-            && new int[w * w] instanceof int[] ps && new int[]{0} instanceof int[] cur
-            && IntStream.range(nl + 1, bs.length).filter(i -> bs[i] >= '0' && bs[i] <= '9')
-                .filter(i -> Integer.valueOf(cur[0]++) instanceof Integer p && Integer.valueOf(p / n + 1) instanceof Integer r && Integer.valueOf(p % n + 1) instanceof Integer c
-                    && (ps[r * w + c] = bs[i] - '0' + ps[(r - 1) * w + c] + ps[r * w + c - 1] - ps[(r - 1) * w + c - 1]) < 0).count() == 0
-            && ((IntBinaryOperator) (l, r) -> (ps[r * w + r] - ps[(l - 1) * w + r] - ps[r * w + l - 1] + ps[(l - 1) * w + l - 1]) / 2) instanceof IntBinaryOperator cost
-            && new int[k + 1][n + 1] instanceof int[][] dp && new int[1] instanceof int[] gh
-            && IntStream.rangeClosed(1, n).map(i -> dp[1][i] = cost.applyAsInt(1, i)).max().orElse(0) >= 0
-            && new AtomicReference<Function<int[], Integer>>() instanceof AtomicReference<Function<int[], Integer>> rec
-            && rec.getAndSet(a -> a[0] > a[1] ? 0
-                : Integer.valueOf((a[0] + a[1]) / 2) instanceof Integer mid
-                && Long.valueOf(IntStream.rangeClosed(a[2], Math.min(mid - 1, a[3])).mapToLong(j -> ((long) (dp[gh[0] - 1][j] + cost.applyAsInt(j + 1, mid)) << 16) | j).min().getAsLong()) instanceof Long v
-                && (dp[gh[0]][mid] = (int) (v >> 16)) >= 0 && Integer.valueOf((int) (v & 65535)) instanceof Integer bj
-                ? rec.get().apply(new int[]{a[0], mid - 1, a[2], bj}) + rec.get().apply(new int[]{mid + 1, a[1], bj, a[3]}) : 0) == null
-            && IntStream.rangeClosed(2, k).map(g -> (gh[0] = g) + rec.get().apply(new int[]{g, n, g - 1, n - 1})).max().orElse(0) >= 0
-            ? dp[k][n] : "");
+            && new int[w * w] instanceof int[] ps && new int[] {w + 1, 0} instanceof int[] cur
+            && IntStream.range(nl + 1, bs.length).allMatch(i -> bs[i] < 48 || bs[i] > 57
+                || ((ps[cur[0]] = bs[i] - 48 + ps[cur[0] - w] + ps[cur[0] - 1] - ps[cur[0] - w - 1]) >= 0 && cur[0]++ >= 0 && (++cur[1] < n || ((cur[1] = 0) == 0 && (cur[0] += 1) > 0))))
+            && new int[w] instanceof int[] dg && IntStream.range(0, w).allMatch(x -> (dg[x] = ps[x * w + x]) >= 0)
+            && ((IntBinaryOperator) (l, r) -> (dg[r] - 2 * ps[r * w + l - 1] + dg[l - 1]) / 2) instanceof IntBinaryOperator cost
+            && new int[k + 1][n + 2] instanceof int[][] dp && new int[k + 1][n + 2] instanceof int[][] opt
+            && IntStream.rangeClosed(1, n).allMatch(i -> (dp[1][i] = cost.applyAsInt(1, i)) >= 0)
+            && new int[6] instanceof int[] s && (s[0] = 2) == 2 && (s[1] = n) == n
+            && ((IntPredicate) z -> (s[2] = Math.max(s[0] - 1, opt[s[0] - 1][s[1]])) >= 0
+                && (s[3] = Math.max(s[2], Math.min(s[1] - 1, s[1] == n ? n - 1 : opt[s[0]][s[1] + 1]))) >= 0 && (s[5] = Integer.MAX_VALUE) > 0 && (s[4] = 0) == 0) instanceof IntPredicate init
+            ? k == 1 ? String.valueOf(dp[1][n])
+                : init.test(0) && IntStream.generate(() -> 0).anyMatch(z -> s[2] <= s[3]
+                    ? (dp[s[0] - 1][s[2]] + cost.applyAsInt(s[2] + 1, s[1]) < s[5] ? (s[5] = dp[s[0] - 1][s[2]] + cost.applyAsInt(s[2] + 1, s[1])) >= 0 && (s[4] = s[2]) >= 0 : true) && ++s[2] < 0
+                    : (dp[s[0]][s[1]] = s[5]) >= 0 && (opt[s[0]][s[1]] = s[4]) >= 0
+                        && (--s[1] >= s[0] ? init.test(0) && false : (++s[0] > k || ((s[1] = n) == n && init.test(0) && false)))) ? String.valueOf(dp[k][n]) : "" : "");
     }
 }

@@ -17,7 +17,7 @@ public class Main {
                     && (d[v] = (d[v] + d[p]) % 1000000007L) >= 0 && (par[v] = r) > 0 ? r : v)
             ? IntStream.rangeClosed(1, n).mapToLong(i -> IntStream.range(0, rd.getAsInt()).mapToLong(j -> Integer.valueOf(rd.getAsInt()) instanceof Integer v && Long.valueOf(rd.getAsInt()) instanceof Long w
                 && Integer.valueOf(find.get().applyAsInt(v)) instanceof Integer r
-                && Long.valueOf((d[v] + w) % 1000000007L) instanceof Long e
+                && Long.valueOf(((d[v] + w) % 1000000007L + 1000000007L) % 1000000007L) instanceof Long e
                 && (par[r] = i) > 0 && (d[r] = e) >= 0 ? e : 0).sum() % 1000000007L).sum() % 1000000007L
             : ""), "", 1 << 28).start();
     }

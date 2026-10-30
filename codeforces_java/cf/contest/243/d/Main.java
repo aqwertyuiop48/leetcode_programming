@@ -28,35 +28,31 @@ public class Main {
                 && (rk[(int) (keys[i] & 1048575)] = rc[0]) >= 0)
             && Integer.valueOf(rc[0] <= 1 ? 1 : Integer.highestOneBit(rc[0] - 1) * 2) instanceof Integer sz
             && Integer.valueOf(Integer.numberOfTrailingZeros(sz)) instanceof Integer lg
-            && new int[2 * sz] instanceof int[] mn
-            && new int[2 * sz] instanceof int[] tg
-            && new int[2] instanceof int[] hh
-            && ((IntPredicate) x -> tg[x] == 0
-                || ((mn[2 * x] = Math.max(mn[2 * x], tg[x])) >= 0 & (tg[2 * x] = Math.max(tg[2 * x], tg[x])) >= 0
-                    & (mn[2 * x + 1] = Math.max(mn[2 * x + 1], tg[x])) >= 0 & (tg[2 * x + 1] = Math.max(tg[2 * x + 1], tg[x])) >= 0
-                    & (tg[x] = 0) == 0)) instanceof IntPredicate push
-            && ((IntPredicate) x -> (mn[x] = Math.max(mn[x], hh[0])) >= 0 & (tg[x] = Math.max(tg[x], hh[0])) >= 0) instanceof IntPredicate ap
-            && ((IntPredicate) x -> (mn[x] = Math.min(mn[2 * x], mn[2 * x + 1])) >= 0) instanceof IntPredicate upd
+            && new int[4 * sz + 4] instanceof int[] dt
+            && new int[8] instanceof int[] s
             && new long[1] instanceof long[] ans
-            && IntStream.range(0, n * n).allMatch(q ->
-                Integer.valueOf(vx >= 0 ? q / n : n - 1 - q / n) instanceof Integer x
-                && Integer.valueOf(vy >= 0 ? q % n : n - 1 - q % n) instanceof Integer y
-                && Integer.valueOf(g[3 + x * n + y]) instanceof Integer h
-                && (h == 0
-                    || (Integer.valueOf(rk[(x + (vy < 0 ? 1 : 0)) * w1 + y + (vx > 0 ? 1 : 0)] + sz) instanceof Integer l
-                        && Integer.valueOf(rk[(x + (vy > 0 ? 1 : 0)) * w1 + y + (vx < 0 ? 1 : 0)] + sz) instanceof Integer r
-                        && (hh[0] = h) > 0
-                        && (hh[1] = Integer.MAX_VALUE) > 0
-                        && IntStream.iterate(lg, i -> i >= 1, i -> i - 1).allMatch(i ->
-                            (((l >> i) << i) == l || push.test(l >> i)) & (((r >> i) << i) == r || push.test((r - 1) >> i)))
-                        && IntStream.rangeClosed(0, lg).allMatch(j ->
-                            Integer.valueOf(l + (1 << j) - 1 >> j) instanceof Integer lj
-                            && Integer.valueOf(r >> j) instanceof Integer rj
-                            && (lj >= rj
-                                || (((lj & 1) == 0 || ((hh[1] = Math.min(hh[1], mn[lj])) >= 0 & ap.test(lj)))
-                                    & ((rj & 1) == 0 || ((hh[1] = Math.min(hh[1], mn[rj - 1])) >= 0 & ap.test(rj - 1)))))
-                            && (j == 0 || ((((l >> j) << j) == l || upd.test(l >> j)) & (((r >> j) << j) == r || upd.test((r - 1) >> j)))))
-                        && (ans[0] += Math.max(0, h - hh[1])) >= 0)))
+            && Integer.valueOf(lg + 1) instanceof Integer L
+            && IntStream.range(0, n * n * L).allMatch(t ->
+                Integer.valueOf(t % L) instanceof Integer k
+                && (k > 0 || Integer.valueOf(t / L) instanceof Integer q
+                    && Integer.valueOf(vx >= 0 ? q / n : n - 1 - q / n) instanceof Integer x
+                    && Integer.valueOf(vy >= 0 ? q % n : n - 1 - q % n) instanceof Integer y
+                    && (s[4] = g[3 + x * n + y]) >= 0
+                    && (s[4] == 0
+                        || (Integer.valueOf(rk[(x + (vy < 0 ? 1 : 0)) * w1 + y + (vx > 0 ? 1 : 0)] + sz) instanceof Integer l
+                            && Integer.valueOf(rk[(x + (vy > 0 ? 1 : 0)) * w1 + y + (vx < 0 ? 1 : 0)] + sz) instanceof Integer r
+                            && (s[0] = l) > 0 && (s[1] = r) > 0 && (s[5] = l) > 0 && (s[6] = r) > 0
+                            && (s[2] = Integer.MAX_VALUE) > 0 && (s[3] = Integer.MAX_VALUE) > 0)))
+                && (s[4] == 0
+                    || (s[2] = Math.max(s[2], dt[2 * (s[0] - 1) + 1])) >= 0 && (s[3] = Math.max(s[3], dt[2 * s[1] + 1])) >= 0
+                    && (s[0] >= s[1]
+                        || (((s[0] & 1) == 0 || (s[2] = Math.min(s[2], dt[2 * s[0]])) >= 0 && (dt[2 * s[0] + 1] = Math.max(dt[2 * s[0] + 1], s[4])) > 0 && (dt[2 * s[0]] = Math.max(dt[2 * s[0]], s[4])) > 0 && ++s[0] > 0)
+                            & ((s[1] & 1) == 0 || --s[1] > 0 && (s[3] = Math.min(s[3], dt[2 * s[1]])) >= 0 && (dt[2 * s[1] + 1] = Math.max(dt[2 * s[1] + 1], s[4])) > 0 && (dt[2 * s[1]] = Math.max(dt[2 * s[1]], s[4])) > 0)))
+                    && (s[0] >>= 1) >= 0 && (s[1] >>= 1) >= 0
+                    && (k == 0
+                        || (((dt[2 * (s[5] >> k)] = Math.max(dt[2 * (s[5] >> k) + 1], Math.min(dt[4 * (s[5] >> k)], dt[4 * (s[5] >> k) + 2]))) >= 0)
+                            & ((dt[2 * ((s[6] - 1) >> k)] = Math.max(dt[2 * ((s[6] - 1) >> k) + 1], Math.min(dt[4 * ((s[6] - 1) >> k)], dt[4 * ((s[6] - 1) >> k) + 2]))) >= 0)))
+                    && (k < lg || (ans[0] += Math.max(0, s[4] - Math.min(s[2], s[3]))) >= 0)))
             ? String.valueOf(ans[0])
             : "");
     }

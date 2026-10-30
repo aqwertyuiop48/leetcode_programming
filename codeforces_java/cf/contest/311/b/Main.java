@@ -1,32 +1,28 @@
-import java.io.*;
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new BufferedReader(new InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(Object::toString).iterator() instanceof Iterator<String> it
-            && ((LongSupplier) () -> Long.parseLong(it.next())) instanceof LongSupplier nl
-            && Integer.valueOf((int) nl.getAsLong()) instanceof Integer n && Integer.valueOf((int) nl.getAsLong()) instanceof Integer m && Integer.valueOf((int) nl.getAsLong()) instanceof Integer p
-            && new long[n + 1] instanceof long[] D && IntStream.rangeClosed(2, n).allMatch(h -> (D[h] = D[h - 1] + nl.getAsLong()) >= 0)
-            && LongStream.range(0, m).map(i -> -D[(int) nl.getAsLong()] + nl.getAsLong()).sorted().toArray() instanceof long[] a
-            && new long[m + 1] instanceof long[] S && IntStream.rangeClosed(1, m).allMatch(i -> (S[i] = S[i - 1] + a[i - 1]) > Long.MIN_VALUE)
-            && Long.valueOf(1000000000000000000L) instanceof Long INF
-            && new long[m + 1] instanceof long[] dp0 && new long[m + 1] instanceof long[] dp1
-            && IntStream.rangeClosed(1, m).allMatch(i -> (dp0[i] = INF) > 0)
-            && new long[m + 2] instanceof long[] qk && new long[m + 2] instanceof long[] qb && new int[1] instanceof int[] hd && new int[1] instanceof int[] tl
-            && ((ToIntFunction<long[]>) q -> Math.multiplyHigh(q[0], q[1]) != Math.multiplyHigh(q[2], q[3])
-                ? Long.compare(Math.multiplyHigh(q[0], q[1]), Math.multiplyHigh(q[2], q[3])) : Long.compareUnsigned(q[0] * q[1], q[2] * q[3])) instanceof ToIntFunction<long[]> cmp
-            && IntStream.rangeClosed(1, p).allMatch(layer -> (hd[0] = 0) == 0 && (tl[0] = 0) == 0 && (dp1[0] = 0) == 0
-                && IntStream.rangeClosed(1, m).map(i -> ((dp0[i - 1] >= INF || (Long.valueOf(-(i - 1)) instanceof Long k && Long.valueOf(dp0[i - 1] + S[i - 1]) instanceof Long b
-                        && IntStream.generate(() -> 0).anyMatch(z -> tl[0] - hd[0] < 2
-                            || cmp.applyAsInt(new long[]{b - qb[tl[0] - 2], qk[tl[0] - 2] - qk[tl[0] - 1], qb[tl[0] - 1] - qb[tl[0] - 2], qk[tl[0] - 2] - k}) > 0
-                            || (tl[0] -= 1) < 0)
-                        && (qk[tl[0]] = k) < Long.MAX_VALUE && (qb[tl[0]++] = b) < Long.MAX_VALUE))
-                    && Long.valueOf(a[i - 1]) instanceof Long x
-                    && IntStream.generate(() -> 0).anyMatch(z -> hd[0] + 1 >= tl[0] || qk[hd[0] + 1] * x + qb[hd[0] + 1] > qk[hd[0]] * x + qb[hd[0]] || (hd[0] += 1) < 0)
-                    && (dp1[i] = x * i - S[i] + qk[hd[0]] * x + qb[hd[0]]) > Long.MIN_VALUE) ? 0 : 1).sum() == 0
-                && IntStream.rangeClosed(0, m).allMatch(i -> (dp0[i] = dp1[i]) > Long.MIN_VALUE))
-            ? String.valueOf(dp0[m]) : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw ? CompletableFuture.supplyAsync(() -> new int[raw.length / 2 + 4] instanceof int[] v && new long[3] instanceof long[] st
+            && IntStream.rangeClosed(0, raw.length).filter(i -> i < raw.length && raw[i] >= '0' ? (st[0] = st[0] * 10 + raw[i] - '0') >= 0 && (st[2] = 1) > 0 : st[2] == 0 || (v[(int) st[1]++] = (int) st[0]) >= 0 && (st[0] = 0) == 0 && (st[2] = 0) == 0).count() >= 0
+            && Integer.valueOf(v[0]) instanceof Integer n && Integer.valueOf(v[1]) instanceof Integer m && Integer.valueOf(Math.min(v[2], v[1])) instanceof Integer pp
+            && new long[n + 1] instanceof long[] D && IntStream.rangeClosed(2, n).filter(h -> (D[h] = D[h - 1] + v[1 + h]) >= 0).count() >= 0
+            && IntStream.range(0, m).mapToObj(i -> D[0] + v[2 + n + 2 * i + 1] - D[v[2 + n + 2 * i]]).sorted().mapToLong(Long::longValue).toArray() instanceof long[] a
+            && new long[m + 1] instanceof long[] S && IntStream.rangeClosed(1, m).filter(i -> (S[i] = S[i - 1] + a[i - 1]) > Long.MIN_VALUE).count() >= 0
+            && Long.valueOf(4000000000000000000L) instanceof Long INF
+            && new long[2][m + 1] instanceof long[][] dpa && IntStream.rangeClosed(1, m).filter(i -> (dpa[0][i] = INF) > 0).count() >= 0
+            && new long[m + 2] instanceof long[] qk && new long[m + 2] instanceof long[] qb && new int[1] instanceof int[] hd && new int[1] instanceof int[] tl && new long[3] instanceof long[] nl
+            && new AtomicReference<IntSupplier>() instanceof AtomicReference<IntSupplier> pop && new AtomicReference<IntSupplier>() instanceof AtomicReference<IntSupplier> adv
+            && pop.compareAndSet(null, () -> tl[0] - hd[0] >= 2 && Math.floorDiv(nl[1] - qb[tl[0] - 1], qk[tl[0] - 1] - nl[0]) <= Math.floorDiv(qb[tl[0] - 1] - qb[tl[0] - 2], qk[tl[0] - 2] - qk[tl[0] - 1])
+                ? --tl[0] >= 0 ? pop.get().getAsInt() : 0 : 1)
+            && adv.compareAndSet(null, () -> hd[0] + 1 < tl[0] && qk[hd[0] + 1] * nl[2] + qb[hd[0] + 1] <= qk[hd[0]] * nl[2] + qb[hd[0]] ? ++hd[0] >= 0 ? adv.get().getAsInt() : 0 : 1)
+            && IntStream.rangeClosed(1, pp).allMatch(k -> dpa[k & 1] instanceof long[] cur && dpa[(k - 1) & 1] instanceof long[] prev && (hd[0] = 0) == 0 && (tl[0] = 0) == 0
+                && IntStream.rangeClosed(k, m).filter(i -> (prev[i - 1] >= INF || (nl[0] = -(i - 1)) <= 0 && (nl[1] = prev[i - 1] + S[i - 1]) > Long.MIN_VALUE && pop.get().getAsInt() >= 0
+                        && (qk[tl[0]] = nl[0]) <= 0 && (qb[tl[0]++] = nl[1]) > Long.MIN_VALUE)
+                    && (nl[2] = a[i - 1]) > Long.MIN_VALUE && adv.get().getAsInt() >= 0 && (cur[i] = nl[2] * i - S[i] + qk[hd[0]] * nl[2] + qb[hd[0]]) > Long.MIN_VALUE).count() >= 0)
+            ? (Object) dpa[pp & 1][m] : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
