@@ -1,21 +1,42 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).mapToLong(t -> Long.parseLong((String) t)).iterator() instanceof PrimitiveIterator.OfLong it
-            && Integer.valueOf((int) it.nextLong()) instanceof Integer n && LongStream.generate(it::nextLong).limit(n).toArray() instanceof long[] a
-            && new AtomicReference<LongBinaryOperator>() instanceof AtomicReference<LongBinaryOperator> gref
-            && gref.compareAndSet(null, (p, q) -> q == 0 ? p : gref.get().applyAsLong(q, p % q))
-            && new Random(20240607L) instanceof Random rnd && new long[]{1} instanceof long[] best
-            && IntStream.range(0, 10).allMatch(z -> Long.valueOf(a[rnd.nextInt(n)]) instanceof Long x
-                && (x <= best[0] || LongStream.of(a).map(y -> gref.get().applyAsLong(x, y)).boxed().collect(Collectors.groupingBy(g -> g, HashMap::new, Collectors.counting())) instanceof HashMap<Long, Long> gc
-                    && LongStream.rangeClosed(1, (long) Math.sqrt(x) + 1).filter(d -> d * d <= x && x % d == 0).flatMap(d -> LongStream.of(d, x / d)).distinct().filter(d -> d > best[0]).boxed().sorted(Comparator.reverseOrder()).toList() instanceof List<Long> divs
-                    && (divs.stream().filter(d -> 2 * gc.entrySet().stream().filter(e -> e.getKey() % d == 0).mapToLong(Map.Entry::getValue).sum() >= n).findFirst() instanceof Optional<Long> hit
-                        && (hit.isEmpty() || (best[0] = hit.get()) > 0))
-                    || true))
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw && new long[1] instanceof long[] cur && new long[1][] instanceof long[][] A && new int[1] instanceof int[] tc
+            && IntStream.rangeClosed(0, raw.length).allMatch(i -> i < raw.length && raw[i] >= 48
+                ? (cur[0] = cur[0] * 10 + raw[i] - 48) >= 0
+                : i == 0 || raw[i - 1] < 48 || ((tc[0]++ == 0 ? (A[0] = new long[(int) cur[0]]) != null : (A[0][tc[0] - 2] = cur[0]) > 0) & (cur[0] = 0) == 0))
+            && A[0] instanceof long[] a && Integer.valueOf(a.length) instanceof Integer n
+            && new boolean[1000001] instanceof boolean[] comp
+            && IntStream.rangeClosed(2, 1000).allMatch(i -> comp[i] || IntStream.rangeClosed(0, (1000000 - i * i) / i).allMatch(k -> comp[i * i + k * i] = true))
+            && IntStream.rangeClosed(2, 1000000).filter(i -> !comp[i]).toArray() instanceof int[] pr
+            && new Random() instanceof Random rnd && new long[]{1} instanceof long[] best
+            && (n <= 20000 ? a : LongStream.generate(() -> a[rnd.nextInt(n)]).limit(20000).toArray()) instanceof long[] sm
+            && Integer.valueOf(sm.length) instanceof Integer ns && Integer.valueOf(n <= 20000 ? n : 20000 - 566) instanceof Integer thr
+            && IntStream.range(0, 16).allMatch(it -> Long.valueOf(a[rnd.nextInt(n)]) instanceof Long x && (x <= best[0]
+                || new long[]{x} instanceof long[] rem && new long[40] instanceof long[] fp && new int[40] instanceof int[] fe && new int[1] instanceof int[] m
+                && (IntStream.range(0, pr.length).allMatch(pi -> (long) pr[pi] * pr[pi] > rem[0] ? false
+                    : rem[0] % pr[pi] != 0 || (Long.valueOf(pr[pi]) instanceof Long p && Long.valueOf(LongStream.iterate(rem[0], r -> r % p == 0, r -> r / p).count()) instanceof Long e
+                        && (fp[m[0]] = p) > 0 && (fe[m[0]++] = e.intValue()) > 0 && (rem[0] = LongStream.range(0, e).reduce(rem[0], (r, z) -> r / p)) > 0)) || true)
+                && (rem[0] == 1 || ((fp[m[0]] = rem[0]) > 0 && (fe[m[0]++] = 1) > 0))
+                && new int[42] instanceof int[] stride && (stride[0] = 1) > 0
+                && IntStream.range(0, m[0]).allMatch(t -> (stride[t + 1] = stride[t] * (fe[t] + 1)) > 0)
+                && Integer.valueOf(stride[m[0]]) instanceof Integer D
+                && new long[64] instanceof long[] pw && new double[64] instanceof double[] iv && new int[64] instanceof int[] sd && new int[1] instanceof int[] uc
+                && IntStream.range(0, m[0]).allMatch(t -> IntStream.rangeClosed(1, fe[t]).allMatch(j -> (pw[uc[0]] = j == 1 ? fp[t] : pw[uc[0] - 1] * fp[t]) > 0
+                    && (sd[uc[0]] = stride[t]) > 0 && (iv[uc[0]] = 1.0 / pw[uc[0]]) > 0 && ++uc[0] > 0))
+                && new int[ns] instanceof int[] ix
+                && IntStream.range(0, uc[0]).allMatch(u -> Long.valueOf(pw[u]) instanceof Long q && Double.valueOf(iv[u]) instanceof Double w && Integer.valueOf(sd[u]) instanceof Integer s
+                    && IntStream.range(0, ns).allMatch(i -> (ix[i] += Math.abs(2 * (sm[i] - (long) (sm[i] * w) * q) - q) == q ? s : 0) >= 0))
+                && new int[D] instanceof int[] c && IntStream.range(0, ns).allMatch(i -> ++c[ix[i]] > 0)
+                && IntStream.range(0, m[0]).allMatch(t -> IntStream.range(0, D).allMatch(z -> Integer.valueOf(D - 1 - z) instanceof Integer id && (id / stride[t]) % (fe[t] + 1) < fe[t]
+                    ? (c[id] += c[id + stride[t]]) >= 0 : true))
+                && new long[D] instanceof long[] val && (val[0] = 1) > 0
+                && IntStream.range(0, m[0]).allMatch(t -> IntStream.range(stride[t], stride[t + 1]).allMatch(id -> (val[id] = val[id - stride[t]] * fp[t]) > 0))
+                && (IntStream.range(0, D).filter(id -> 2 * c[id] >= thr && val[id] > best[0]).mapToLong(id -> val[id]).boxed().sorted(Comparator.reverseOrder())
+                    .anyMatch(d -> Double.valueOf(1.0 / d) instanceof Double w2
+                        && 2L * IntStream.range(0, n).filter(i -> Math.abs(2 * (a[i] - (long) (a[i] * w2) * d) - d) == d).count() >= n && (best[0] = d) > 0) || true)))
             ? best[0] : "");
     }
 }

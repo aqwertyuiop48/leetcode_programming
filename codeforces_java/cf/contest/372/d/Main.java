@@ -20,13 +20,12 @@ public class Main {
             && new int[n] instanceof int[] tin && new int[n] instanceof int[] nxt && new int[n] instanceof int[] bt && (nxt[0] = 1) > 0
             && IntStream.range(0, n).allMatch(i -> nb.apply(ord[i]).filter(u -> i == 0 || u != par[ord[i]]).allMatch(c -> (tin[c] = nxt[ord[i]]) >= 0 && (nxt[ord[i]] += sz[c]) > 0 && (nxt[c] = tin[c] + 1) > 0))
             && IntStream.range(0, n).allMatch(v -> (bt[tin[v]] = v) >= 0)
-            && IntStream.range(0, 17).mapToObj(j -> new int[n]).toArray(int[][]::new) instanceof int[][] up
-            && IntStream.range(0, n).allMatch(v -> (up[0][v] = par[v]) >= 0)
-            && IntStream.range(1, 17).allMatch(j -> IntStream.range(0, n).allMatch(v -> (up[j][v] = up[j - 1][up[j - 1][v]]) >= 0))
-            && ((IntBinaryOperator) (u, v) -> Integer.valueOf(dep[u] >= dep[v] ? u : v) instanceof Integer a0 && Integer.valueOf(dep[u] >= dep[v] ? v : u) instanceof Integer b
-                && Integer.valueOf(IntStream.range(0, 17).reduce(a0, (x, j) -> ((dep[a0] - dep[b]) >> j & 1) == 1 ? up[j][x] : x)) instanceof Integer a1
-                && new int[]{a1, b} instanceof int[] cur
-                ? dep[u] + dep[v] - 2 * dep[a1 == b ? b : IntStream.iterate(16, j -> j >= 0, j -> j - 1).allMatch(j -> up[j][cur[0]] == up[j][cur[1]] || ((cur[0] = up[j][cur[0]]) >= 0 & (cur[1] = up[j][cur[1]]) >= 0)) ? up[0][cur[0]] : 0] : 0) instanceof IntBinaryOperator dist
+            && IntStream.range(0, 18).mapToObj(j -> new int[n]).toArray(int[][]::new) instanceof int[][] sp
+            && IntStream.range(0, n).allMatch(i -> (sp[0][i] = dep[bt[i]]) >= 0)
+            && IntStream.range(1, 18).allMatch(j -> Stream.of(0).peek(z -> Arrays.setAll(sp[j], i -> i + (1 << j) <= n ? Math.min(sp[j - 1][i], sp[j - 1][i + (1 << (j - 1))]) : 0)).findFirst().isPresent())
+            && ((IntBinaryOperator) (u, v) -> u == v ? 0 : Integer.valueOf(Math.min(tin[u], tin[v]) + 1) instanceof Integer lo && Integer.valueOf(Math.max(tin[u], tin[v])) instanceof Integer hi
+                && Integer.valueOf(31 - Integer.numberOfLeadingZeros(hi - lo + 1)) instanceof Integer lg
+                ? dep[u] + dep[v] - 2 * (Math.min(sp[lg][lo], sp[lg][hi - (1 << lg) + 1]) - 1) : 0) instanceof IntBinaryOperator dist
             && new TreeSet<Integer>() instanceof TreeSet<Integer> ts && new long[]{0} instanceof long[] sum && new int[]{0, 0} instanceof int[] best
             && IntStream.range(0, n).allMatch(r -> (ts.isEmpty() || Optional.ofNullable(ts.lower(tin[r])).orElseGet(ts::last) instanceof Integer p && Optional.ofNullable(ts.higher(tin[r])).orElseGet(ts::first) instanceof Integer s
                     && (sum[0] += dist.applyAsInt(bt[p], r) + dist.applyAsInt(r, bt[s]) - dist.applyAsInt(bt[p], bt[s])) >= 0)

@@ -1,15 +1,27 @@
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
-import java.math.*;
-import java.util.concurrent.atomic.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        if (new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer st && ((IntSupplier) () -> Integer.parseInt(st.nextToken())) instanceof IntSupplier ni && Integer.valueOf(ni.getAsInt()) instanceof Integer n && Integer.valueOf(ni.getAsInt()) instanceof Integer m
-            && (Function<long[], long[]>) (v -> Long.valueOf(BigInteger.valueOf(v[0]).gcd(BigInteger.valueOf(v[1])).gcd(BigInteger.valueOf(v[2])).longValue()) instanceof Long g && Long.valueOf(v[0] < 0 || v[0] == 0 && v[1] < 0 ? -g : g) instanceof Long s ? new long[] {v[0] / s, v[1] / s, v[2] / s} : null) instanceof Function<long[], long[]> norm
-            && IntStream.range(0, n).mapToObj(i -> new long[] {ni.getAsInt(), ni.getAsInt(), ni.getAsInt(), ni.getAsInt()}).map(q -> norm.apply(new long[] {q[1] - q[3], q[2] - q[0], -(q[1] - q[3]) * q[0] - (q[2] - q[0]) * q[1]}) instanceof long[] k ? new long[][] {k, {Math.min(k[1] * q[0] - k[0] * q[1], k[1] * q[2] - k[0] * q[3]) * 2, Math.max(k[1] * q[0] - k[0] * q[1], k[1] * q[2] - k[0] * q[3]) * 2}} : null).collect(Collectors.groupingBy(o -> List.of(o[0][0], o[0][1], o[0][2]))).entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, e -> new long[][] {e.getValue().stream().mapToLong(o -> o[1][0]).sorted().toArray(), e.getValue().stream().mapToLong(o -> o[1][1]).sorted().toArray()})) instanceof Map<List<Long>, long[][]> mp
-            && IntStream.range(0, m).mapToObj(i -> new long[] {ni.getAsInt(), ni.getAsInt(), ni.getAsInt()}).toArray(long[][]::new) instanceof long[][] c)
-            System.out.print(IntStream.range(0, m).mapToLong(i -> IntStream.range(i + 1, m).filter(j -> c[i][2] == c[j][2]).mapToLong(j -> norm.apply(new long[] {2 * (c[j][0] - c[i][0]), 2 * (c[j][1] - c[i][1]), -(c[j][0] * c[j][0] + c[j][1] * c[j][1] - c[i][0] * c[i][0] - c[i][1] * c[i][1])}) instanceof long[] k && mp.get(List.of(k[0], k[1], k[2])) instanceof long[][] gr && Long.valueOf((c[i][0] + c[j][0]) * k[1] - (c[i][1] + c[j][1]) * k[0]) instanceof Long x && Integer.valueOf(Arrays.binarySearch(gr[0], x)) instanceof Integer u && Integer.valueOf(Arrays.binarySearch(gr[1], x)) instanceof Integer w ? (u >= 0 ? u + 1 : -u - 1) - (w >= 0 ? w : -w - 1) : 0).sum()).sum());
+        if (System.in.readAllBytes() instanceof byte[] b0 && Arrays.copyOf(b0, b0.length + 1) instanceof byte[] raw && new int[b0.length / 2 + 2] instanceof int[] nums && new int[4] instanceof int[] s
+            && IntStream.range(0, raw.length).map(i -> raw[i] >= 48 ? (s[0] = s[0] * 10 + raw[i] - 48) * 0 + (s[2] = 1) * 0 : raw[i] == 45 ? (s[1] = 1) * 0 : s[2] == 1 ? (nums[s[3]++] = s[1] == 1 ? -s[0] : s[0]) * 0 + (s[0] = 0) * 0 + (s[1] = 0) * 0 + (s[2] = 0) * 0 : 0).sum() == 0
+            && new int[] {0} instanceof int[] pos && ((IntSupplier) () -> nums[pos[0]++]) instanceof IntSupplier ni && Integer.valueOf(ni.getAsInt()) instanceof Integer n && Integer.valueOf(ni.getAsInt()) instanceof Integer m
+            && new IntBinaryOperator[1] instanceof IntBinaryOperator[] g && ((g[0] = (p, q) -> q == 0 ? p : g[0].applyAsInt(q, p % q)) != null)
+            && new long[n] instanceof long[] ks && new long[n] instanceof long[] pl && new long[n] instanceof long[] ph
+            && IntStream.range(0, n).map(i -> Integer.valueOf(ni.getAsInt()) instanceof Integer x1 && Integer.valueOf(ni.getAsInt()) instanceof Integer y1 && Integer.valueOf(ni.getAsInt()) instanceof Integer x2 && Integer.valueOf(ni.getAsInt()) instanceof Integer y2
+                && Integer.valueOf(g[0].applyAsInt(Math.abs(y1 - y2), Math.abs(x2 - x1))) instanceof Integer gg && Integer.valueOf(y1 - y2 < 0 || y1 == y2 && x2 - x1 < 0 ? -1 : 1) instanceof Integer sg
+                && Integer.valueOf(sg * (y1 - y2) / gg) instanceof Integer a && Integer.valueOf(sg * (x2 - x1) / gg) instanceof Integer b
+                && Long.valueOf(((long) (a + 20001) << 47) | ((long) (b + 20001) << 31) | (2L * (a * x1 + b * y1) + (1L << 30))) instanceof Long key && Long.valueOf(ks[i] = key) != null
+                && Long.valueOf(pl[i] = 4L * Math.min(b * x1 - a * y1, b * x2 - a * y2)) != null && Long.valueOf(ph[i] = 4L * Math.max(b * x1 - a * y1, b * x2 - a * y2)) != null ? 1 : 0).sum() >= 0
+            && Arrays.stream(ks).sorted().distinct().toArray() instanceof long[] uk
+            && IntStream.range(0, n).mapToLong(i -> ((long) Arrays.binarySearch(uk, ks[i]) << 32) | (pl[i] + (1L << 31))).sorted().toArray() instanceof long[] LO
+            && IntStream.range(0, n).mapToLong(i -> ((long) Arrays.binarySearch(uk, ks[i]) << 32) | (ph[i] + (1L << 31))).sorted().toArray() instanceof long[] HI
+            && IntStream.range(0, m).mapToObj(i -> new int[] {ni.getAsInt(), ni.getAsInt(), ni.getAsInt()}).toArray(int[][]::new) instanceof int[][] c)
+            System.out.print(IntStream.range(0, m).mapToLong(i -> IntStream.range(i + 1, m).filter(j -> c[i][2] == c[j][2] && (c[i][0] - c[j][0]) * (c[i][0] - c[j][0]) + (c[i][1] - c[j][1]) * (c[i][1] - c[j][1]) > 4 * c[i][2] * c[i][2]).mapToLong(j ->
+                Integer.valueOf(c[j][0] - c[i][0]) instanceof Integer dx && Integer.valueOf(c[j][1] - c[i][1]) instanceof Integer dy && Integer.valueOf(g[0].applyAsInt(Math.abs(dx), Math.abs(dy))) instanceof Integer gg && Integer.valueOf(dx < 0 || dx == 0 && dy < 0 ? -1 : 1) instanceof Integer sg
+                && Integer.valueOf(sg * dx / gg) instanceof Integer a && Integer.valueOf(sg * dy / gg) instanceof Integer b && Integer.valueOf(c[i][0] + c[j][0]) instanceof Integer sx && Integer.valueOf(c[i][1] + c[j][1]) instanceof Integer sy
+                && Integer.valueOf(Arrays.binarySearch(uk, ((long) (a + 20001) << 47) | ((long) (b + 20001) << 31) | (a * sx + b * sy + (1L << 30)))) instanceof Integer gid && gid >= 0 && Long.valueOf(b * sx - a * sy) instanceof Long x
+                ? (long) (-Arrays.binarySearch(LO, ((long) gid << 32) | (2L * x + 1 + (1L << 31))) - 1) - (-Arrays.binarySearch(HI, ((long) gid << 32) | (2L * x - 1 + (1L << 31))) - 1) : 0L).sum()).sum());
     }
 }

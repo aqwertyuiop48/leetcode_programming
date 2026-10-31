@@ -15,10 +15,12 @@ public class Main {
                         : (mu[c[0]] = u) > Integer.MIN_VALUE && (mlo[c[0]] = lo) > Integer.MIN_VALUE && (mhi[c[0]] = hi) > Integer.MIN_VALUE && ++c[0] > 0))
                 ? new int[][]{mu, mlo, mhi, c} : null) instanceof BiFunction<long[], Integer, int[][]> merge
             && ((IntPredicate) tt -> merge.apply(ka, tt) instanceof int[][] A && merge.apply(kb, tt) instanceof int[][] B
-                && Integer.valueOf(B[3][0]) instanceof Integer nb && new boolean[nb * nb] instanceof boolean[] seen
-                && IntStream.range(0, A[3][0]).anyMatch(i -> IntStream.range(0, nb).filter(j -> B[1][j] <= A[0][i] && A[0][i] <= B[2][j] && A[1][i] <= B[0][j] && B[0][j] <= A[2][i]).toArray() instanceof int[] js
-                    && IntStream.range(0, js.length).anyMatch(a -> IntStream.range(a + 1, js.length).anyMatch(b -> seen[js[a] * nb + js[b]] || !(seen[js[a] * nb + js[b]] = true))))) instanceof IntPredicate chk
-            && new int[]{0, 5000000} instanceof int[] lh
-            ? !chk.test(lh[1]) ? "-1" : IntStream.range(0, 24).allMatch(it -> lh[0] >= lh[1] || (Integer.valueOf((lh[0] + lh[1]) / 2) instanceof Integer mid && (chk.test(mid) ? (lh[1] = mid) : (lh[0] = mid + 1)) >= 0)) ? String.valueOf(lh[0]) : "" : "");
+                && Integer.valueOf(B[3][0]) instanceof Integer nb && IntStream.range(0, nb).map(j -> 2 * B[0][j]).toArray() instanceof int[] bv2 && new int[nb] instanceof int[] head && new int[120000] instanceof int[] nxt && new int[120000] instanceof int[] who && new int[A[3][0]] instanceof int[] stamp && new int[]{0} instanceof int[] ec
+                && IntStream.range(0, A[3][0]).anyMatch(i -> Integer.valueOf(-Arrays.binarySearch(bv2, 2 * A[1][i] - 1) - 1) instanceof Integer jl && Integer.valueOf(-Arrays.binarySearch(bv2, 2 * A[2][i] + 1) - 1) instanceof Integer jr
+                    && IntStream.range(jl, jr).filter(j -> B[1][j] <= A[0][i] && A[0][i] <= B[2][j]).toArray() instanceof int[] js
+                    && (IntStream.range(0, js.length).anyMatch(q -> IntStream.iterate(head[js[q]], e -> e != 0, e -> nxt[e]).anyMatch(e -> stamp[who[e]] == i + 1 || (stamp[who[e]] = i + 1) < 0))
+                        || IntStream.of(0).peek(z -> IntStream.range(0, js.length).forEach(q -> head[js[q]] = ec[0] + 1 + q + 0 * ((nxt[ec[0] + 1 + q] = head[js[q]]) + (who[ec[0] + 1 + q] = i)))).sum() + (ec[0] += js.length) < 0))) instanceof IntPredicate chk
+            && new int[]{0, 2000000} instanceof int[] lh
+            ? !chk.test(lh[1]) ? "Poor Sereja!" : IntStream.range(0, 22).allMatch(it -> lh[0] >= lh[1] || (Integer.valueOf((lh[0] + lh[1]) / 2) instanceof Integer mid && (chk.test(mid) ? (lh[1] = mid) : (lh[0] = mid + 1)) >= 0)) ? String.valueOf(lh[0]) : "" : "");
     }
 }
