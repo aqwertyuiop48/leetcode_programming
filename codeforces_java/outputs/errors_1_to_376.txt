@@ -169,3 +169,36 @@ Row   | ID           | Problem                             | Verdict            
 168   | 396494219    | 299B - Ksusha the Squirrel          | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:50:03
 169   | 396494194    | 298E - Splitting the Uniqueness     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:49:22
 170   | 396494182    | 298D - Fish Weight                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-29 07:49:02
+171   | 396767607    | 376D - Maximum Submatrix 2          | WRONG_ANSWER         | Java 21         | 2026-10-31 12:35:59
+172   | 396767493    | 375E - Red and Black Tree           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:34:26
+173   | 396767461    | 375D - Tree and Queries              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:34:03
+174   | 396767402    | 375B - Maximum Submatrix 2           | WRONG_ANSWER         | Java 21         | 2026-10-31 12:33:16
+175   | 396767347    | 374E - Inna and Babies               | WRONG_ANSWER         | Java 21         | 2026-10-31 12:32:29
+176   | 396767322    | 374D - Inna and Sequence             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:32:06
+177   | 396767296    | 374C - Inna and Dima                 | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:31:43
+178   | 396767205    | 373E - Watching Fireworks is Fun     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:30:33
+179   | 396767023    | 372D - Choosing Subtree is Fun       | WRONG_ANSWER         | Java 21         | 2026-10-31 12:28:13
+180   | 396766998    | 372C - Watching Fireworks is Fun     | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:27:50
+181   | 396766789    | 370E - Summer Reading                | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:24:43
+182   | 396766647    | 369E - Valera and Queries            | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:22:46
+183   | 396766617    | 369D - Valera and Fools              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:22:22
+184   | 396765975    | 364E - Empty Rectangles              | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:13:05
+185   | 396765942    | 364D - Ghd                           | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:12:41
+186   | 396765592    | 361E - Levko and Strings             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:07:15
+187   | 396765509    | 361B - Levko and Permutation         | WRONG_ANSWER         | Java 21         | 2026-10-31 12:06:04
+188   | 396765389    | 360C - Levko and Strings             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 12:04:30
+189   | 396741027    | 356B - Xenia and Hamming             | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:52:06
+190   | 396740647    | 353D - Queue                         | WRONG_ANSWER         | Java 21         | 2026-10-31 01:47:34
+191   | 396740242    | 350E - Wrong Floyd                   | RUNTIME_ERROR        | Java 21         | 2026-10-31 01:42:49
+192   | 396740220    | 350D - Looking for Owls              | WRONG_ANSWER         | Java 21         | 2026-10-31 01:42:29
+193   | 396739997    | 348E - Pilgrims                      | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:39:27
+194   | 396739944    | 348C - Subset Sums                   | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:38:47
+195   | 396739873    | 347E - Number Transformation II      | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:37:46
+196   | 396739674    | 346C - Number Transformation II      | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:35:25
+197   | 396738906    | 341D - Iahub and Xors                | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:26:34
+198   | 396738676    | 340B - Maximal Area Quadrilateral    | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:24:12
+199   | 396738605    | 339E - Three Swaps                   | WRONG_ANSWER         | Java 21         | 2026-10-31 01:23:30
+200   | 396738377    | 338C - Divisor Tree                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:21:07
+201   | 396738294    | 337E - Divisor Tree                  | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:20:05
+202   | 396738147    | 336E - Vasily the Bear and Painti    | TIME_LIMIT_EXCEEDED  | Java 21         | 2026-10-31 01:18:23
+203   | 396738064    | 336B - Vasily the Bear and Fly       | WRONG_ANSWER         | Java 21         | 2026-10-31 01:17:20

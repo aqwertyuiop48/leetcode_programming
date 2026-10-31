@@ -10,3 +10,5 @@ for spec in 251:E 253:A 253:B 253:C 253:D 253:E 254:A 254:B 254:C 254:D 254:E 25
 # 300 - 335
 for spec in 300:E 301:D 301:E 303:C 303:E 304:E 309:A 309:C 309:D 309:E 311:B 311:C 311:D 312:D 312:E 313:C 314:D 314:E 316:C2 316:E3 317:A 317:B 318:D 319:E 321:C 321:D 321:E 335:D; do contest=${spec%:*}; problem=${spec#*:}; source="cf/contest/$contest/$(echo "$problem" | tr '[:upper:]' '[:lower:]')/Main.java"; [ -f "$source" ] || continue; ./cf_java.sh "$contest" "$problem" all 87; done
 
+# 336 - 376
+for spec in 336:B 336:E 337:E 338:C 339:E 340:B 341:D 346:C 347:E 348:C 348:E 350:D 350:E 353:D 356:B 360:C 361:B 361:E 364:D 364:E 369:D 369:E 370:E 372:C 372:D 373:E 374:C 374:D 374:E 375:B 375:D 375:E 376:D; do contest=${spec%:*}; problem=${spec#*:}; source="cf/contest/$contest/$(echo "$problem" | tr '[:upper:]' '[:lower:]')/Main.java"; [ -f "$source" ] || continue; ./cf_java.sh "$contest" "$problem" all 87; done
