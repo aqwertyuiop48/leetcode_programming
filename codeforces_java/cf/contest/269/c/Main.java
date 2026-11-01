@@ -23,3 +23,4 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(i -> String.valueOf(dir[i])).collect(Collectors.joining("\n")) : "");
     }
 }
+

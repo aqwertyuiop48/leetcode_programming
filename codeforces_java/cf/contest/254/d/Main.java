@@ -25,3 +25,4 @@ public class Main {
                     : Stream.<int[]>empty()).findFirst().map(p -> (p[0] / m + 1) + " " + (p[0] % m + 1) + " " + (p[1] / m + 1) + " " + (p[1] % m + 1)).orElse("-1") : "-1"));
     }
 }
+

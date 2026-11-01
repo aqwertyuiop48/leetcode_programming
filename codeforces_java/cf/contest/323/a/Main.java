@@ -8,3 +8,4 @@ public class Main {
                 .collect(Collectors.joining())).collect(Collectors.joining("\n"))).collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -62,3 +62,4 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(v -> fin[v] ? mn[v] + " " + (infc[comp[v]] == 1 ? -2 : Math.min(CAP, mv[comp[v]])) : "-1 -1").collect(Collectors.joining("\n")) : "");
     }
 }
+

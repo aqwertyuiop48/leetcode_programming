@@ -30,3 +30,4 @@ public class Main {
             ? (res[0] / n + 1) + " " + (res[0] % n + 1) : "");
     }
 }
+

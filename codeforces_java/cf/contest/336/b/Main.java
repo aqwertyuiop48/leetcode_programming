@@ -7,3 +7,4 @@ public class Main {
             ? String.format("%.10f", (m * 2 * r + 2 * LongStream.range(1, m).mapToDouble(d -> (double) (m - d) * (d == 1 ? r * (2 + Math.sqrt(2)) : r * (2 * (d - 1) + 2 * Math.sqrt(2)))).sum()) / ((double) m * m)) : "");
     }
 }
+

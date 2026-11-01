@@ -13,3 +13,4 @@ public class Main {
             ? res.isEmpty() ? "-1" : String.join("\n", res) : "");
     }
 }
+

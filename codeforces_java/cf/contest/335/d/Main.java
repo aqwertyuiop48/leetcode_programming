@@ -38,3 +38,4 @@ public class Main {
                 .mapToObj(r -> String.valueOf(r + 1)).collect(Collectors.toList()) instanceof List<String> ids ? "YES " + ids.size() + "\n" + String.join(" ", ids) : "" : "NO" : "");
     }
 }
+

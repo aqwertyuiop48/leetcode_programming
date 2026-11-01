@@ -30,3 +30,4 @@ public class Main {
             ? String.format(Locale.US, "%.15f", bs[0] / 2.0) : "");
     }
 }
+

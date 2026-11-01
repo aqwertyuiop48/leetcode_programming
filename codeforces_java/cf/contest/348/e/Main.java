@@ -37,3 +37,4 @@ public class Main {
             System.out.print(mx + " " + IntStream.rangeClosed(1, n).filter(v -> !imp[v] && cnt[v] == mx).count());
     }
 }
+

@@ -16,3 +16,4 @@ public class Main {
             ? Stream.concat(IntStream.range((int) st[3] - p + k, (int) st[3] + 1).boxed(), IntStream.range((int) st[3] + 1, n).boxed().sorted(Comparator.comparingInt((Integer i) -> t[3 + 2 * o[i]]).reversed()).limit(k - 1)).map(i -> String.valueOf(o[i] + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+

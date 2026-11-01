@@ -24,3 +24,4 @@ public class Main {
                 && sb.append(cntB).append('\n') != null && IntStream.rangeClosed(1, m).filter(x -> inA[x] && f[(N - x) % N] == 0).allMatch(x -> sb.append(x).append(' ') != null) ? sb : "" : "NO");
     }
 }
+

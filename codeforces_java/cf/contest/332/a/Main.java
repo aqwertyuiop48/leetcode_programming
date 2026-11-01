@@ -8,3 +8,4 @@ public class Main {
             ? IntStream.range(3, s.length()).filter(i -> i % n == 0 && s.charAt(i - 1) == s.charAt(i - 2) && s.charAt(i - 2) == s.charAt(i - 3)).count() : "");
     }
 }
+

@@ -11,3 +11,4 @@ public class Main {
                 && st.getMax() > 0 && st.getMin() < 0 ? (long) st.getMax() - st.getMin() : 0L).max().orElse(0L) / 2.0) : "");
     }
 }
+

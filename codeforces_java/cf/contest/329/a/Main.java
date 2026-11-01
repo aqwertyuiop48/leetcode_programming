@@ -11,3 +11,4 @@ public class Main {
                 : IntStream.range(0, n).allMatch(j -> Arrays.stream(g).anyMatch(s -> s.charAt(j) == '.')) ? IntStream.range(0, n).mapToObj(j -> (IntStream.range(0, n).filter(i -> g[i].charAt(j) == '.').findFirst().getAsInt() + 1) + " " + (j + 1)).collect(Collectors.joining("\n")) : "-1") : "");
     }
 }
+

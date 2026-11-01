@@ -9,3 +9,4 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> java.time.LocalDate.parse(it.next())).filter(d -> d.getDayOfMonth() == 13 && d.getDayOfWeek() == java.time.DayOfWeek.FRIDAY).count() : "");
     }
 }
+

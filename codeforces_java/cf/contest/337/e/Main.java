@@ -21,3 +21,4 @@ public class Main {
             ? ref.get().apply(0, init) : "");
     }
 }
+

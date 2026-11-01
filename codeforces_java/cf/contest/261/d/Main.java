@@ -18,3 +18,4 @@ public class Main {
                 ? String.valueOf(t >= d ? d : IntStream.range(0, t).allMatch(pass -> (chg[0] = 0) == 0 && Arrays.stream(b).allMatch(v -> f[v] > f[v - 1] || (f[v] = f[v - 1] + 1) > 0 && (chg[0] = 1) > 0 && (f[v + 1] >= f[v] || IntStream.iterate(v + 1, j -> f[j] < f[v], j -> j + 1).map(j -> f[j] = f[v]).sum() >= 0)) && chg[0] == 1 && f[maxb] < d) || true ? f[maxb] : -1) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

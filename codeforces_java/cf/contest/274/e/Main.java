@@ -31,3 +31,4 @@ public class Main {
             ? fl[0] ? tot[0] / 2 : tot[0] : "");
     }
 }
+

@@ -29,3 +29,4 @@ public class Main {
             ? cnt + "\n" + Arrays.stream(rays, 1, cnt + 1).sorted().mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

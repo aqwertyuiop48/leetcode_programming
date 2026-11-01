@@ -30,3 +30,4 @@ public class Main {
             ? dp[n + 1] : "");
     }
 }
+

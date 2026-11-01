@@ -54,3 +54,4 @@ public class Main {
                 ? p.length + "\n" + Arrays.stream(p).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "" : "0") : "");
     }
 }
+

@@ -11,3 +11,4 @@ public class Main {
             ? (m.equals(n) && Arrays.stream(ds).allMatch(x -> x == 2) ? "ring" : m == n - 1 && ds[0] == 1 && ds[1] == 1 && ds[n - 1] == 2 && ds[n - 2] == 2 ? "bus" : m == n - 1 && ds[n - 2] == 1 && ds[n - 1] == n - 1 ? "star" : "unknown") + " topology" : "");
     }
 }
+

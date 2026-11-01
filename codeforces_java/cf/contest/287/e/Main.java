@@ -15,3 +15,4 @@ public class Main {
             ? sp[0] == 0 && new StringBuilder("YES\n") instanceof StringBuilder sb && IntStream.range(0, n).allMatch(i -> sb.append(res[i]).append(' ') != null) ? sb : "NO" : "");
     }
 }
+

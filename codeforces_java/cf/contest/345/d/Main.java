@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.range(0, n - 1).filter(j -> reach[j] && g[n - 1].charAt(j) == '1').count() : "");
     }
 }
+

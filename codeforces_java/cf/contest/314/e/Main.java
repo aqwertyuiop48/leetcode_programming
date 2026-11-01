@@ -16,3 +16,4 @@ public class Main {
                 ? String.valueOf((bufs[n & 1][h] & 0xFFFFFFFFL) * IntStream.range(0, h - (int) (long) f).mapToLong(z -> 25L).reduce(1L, (p, q) -> p * q & 0xFFFFFFFFL) & 0xFFFFFFFFL) : "" : "");
     }
 }
+

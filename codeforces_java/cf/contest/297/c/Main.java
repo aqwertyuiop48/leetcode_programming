@@ -13,3 +13,4 @@ public class Main {
             ? "YES\n" + Arrays.stream(a).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + Arrays.stream(b).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

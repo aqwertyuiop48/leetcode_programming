@@ -89,3 +89,4 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf(ans[i])).collect(Collectors.joining(" ")) : "");
     }
 }
+

@@ -27,3 +27,4 @@ public class Main {
             ? rec.get().applyAsLong(1) : 0L : 0L);
     }
 }
+

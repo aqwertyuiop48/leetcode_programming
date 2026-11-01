@@ -22,3 +22,4 @@ public class Main {
             ? qn[1] + "\n" + sb.toString().trim() : "");
     }
 }
+

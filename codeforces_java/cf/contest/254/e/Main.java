@@ -29,3 +29,4 @@ public class Main {
             ? dp[n][bl] + "\n" + IntStream.range(0, n).mapToObj(i -> ls.get(n - 1 - i)).collect(Collectors.joining("\n")) : ""));
     }
 }
+

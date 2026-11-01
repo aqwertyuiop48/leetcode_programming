@@ -14,3 +14,4 @@ public class Main {
             ? r[0] + " " + cut.size() + "\n" + cut.stream().map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

@@ -25,3 +25,4 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToLong(h -> (h == 1 || step.getAsBoolean()) ? (n - h + 1) * (Arrays.stream(dp).mapToLong(a -> Arrays.stream(a).sum() % 1000000007L).sum() % 1000000007L) % 1000000007L : 0).sum() % 1000000007L : "");
     }
 }
+

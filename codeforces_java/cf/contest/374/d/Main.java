@@ -25,3 +25,4 @@ public class Main {
             ? out.length == 0 ? "Poor stack!" : new String(out, 0, out.length) : "");
     }
 }
+

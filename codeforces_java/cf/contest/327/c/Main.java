@@ -12,3 +12,4 @@ public class Main {
             ? S.multiply(P.equals(java.math.BigInteger.ONE) ? k : P.modPow(k, M).subtract(java.math.BigInteger.ONE).multiply(P.subtract(java.math.BigInteger.ONE).modInverse(M))).mod(M) : "");
     }
 }
+

@@ -40,3 +40,4 @@ public class Main {
             ? String.valueOf(total[0]) : ""), "", 1L << 29).start();
     }
 }
+

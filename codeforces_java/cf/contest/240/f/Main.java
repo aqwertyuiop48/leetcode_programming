@@ -44,3 +44,4 @@ public class Main {
             && out.append(IntStream.iterate(0, c -> c < n, c -> endAt[c] + 1).mapToObj(c -> String.valueOf((char) ('a' + letAt[c])).repeat(endAt[c] - c + 1)).collect(Collectors.joining()) + "\n").checkError());
     }
 }
+

@@ -12,3 +12,4 @@ public class Main {
             ? (n - 1) + "\n" + IntStream.rangeClosed(1, n).filter(i -> i != c).mapToObj(i -> i + " " + c).collect(Collectors.joining("\n")) : "");
     }
 }
+

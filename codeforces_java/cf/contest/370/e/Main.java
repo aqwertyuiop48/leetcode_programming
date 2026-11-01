@@ -23,3 +23,4 @@ public class Main {
             ? lo[n] > hi[n] ? "-1" : hi[n] + "\n" + Arrays.stream(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

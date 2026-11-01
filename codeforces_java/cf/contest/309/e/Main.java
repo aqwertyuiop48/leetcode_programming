@@ -26,3 +26,4 @@ public class Main {
             ? Arrays.stream(res).mapToObj(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+

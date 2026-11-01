@@ -13,3 +13,4 @@ public class Main {
             ? w.equals(h) && w * h == area ? "YES" : "NO" : "");
     }
 }
+

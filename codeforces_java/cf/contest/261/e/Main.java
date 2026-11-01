@@ -34,3 +34,4 @@ public class Main {
             ? IntStream.range(0, N).filter(i -> a[i] >= l && best[i] <= p).count() : "");
     }
 }
+

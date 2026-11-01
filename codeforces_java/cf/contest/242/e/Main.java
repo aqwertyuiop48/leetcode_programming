@@ -69,3 +69,4 @@ public class Main {
                     : (q[2] = v[p[0]++]) >= 0 && IntStream.range(0, 7).allMatch(k -> (oq[k] = tab[q[2] >> 3 * k & 7]) >= 0) && upd.get().applyAsInt(1) >= 0 ? null : null : null).filter(Objects::nonNull).collect(Collectors.joining("\n")) : "");
     }
 }
+

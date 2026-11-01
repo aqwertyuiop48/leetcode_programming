@@ -12,3 +12,4 @@ public class Main {
             ? IntStream.range(0, nodes[0]).map(i -> best[i]).max().getAsInt() : "");
     }
 }
+

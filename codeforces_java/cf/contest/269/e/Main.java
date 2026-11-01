@@ -74,3 +74,4 @@ public class Main {
             ? Arrays.stream(resR).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + Arrays.stream(resC).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "No solution");
     }
 }
+

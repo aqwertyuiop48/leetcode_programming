@@ -8,3 +8,4 @@ public class Main {
             ? IntStream.range(t[0], 2 * t[0]).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

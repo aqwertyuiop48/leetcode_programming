@@ -48,3 +48,4 @@ public class Main {
             ? (Integer.valueOf(Arrays.stream(cur[0][Bn]).min().getAsInt()) instanceof Integer r && r < INF ? String.valueOf(r) : "-1") : "");
     }
 }
+

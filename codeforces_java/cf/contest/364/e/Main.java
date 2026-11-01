@@ -47,3 +47,4 @@ public class Main {
             ? tot[0] : "");
     }
 }
+

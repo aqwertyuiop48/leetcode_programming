@@ -11,3 +11,4 @@ public class Main {
             ? IntStream.range(0, 10).filter(d -> need[d] > 0).map(d -> have[d] / need[d]).min().getAsInt() : "");
     }
 }
+

@@ -41,3 +41,4 @@ public class Main {
                 ? String.valueOf(((a[n - 1] == 0 || a[n - 1] == 1 ? T[9] + T[12] + T[15] : 0) + (a[n - 1] == 0 || a[n - 1] == 2 ? T[10] + T[13] + T[16] : 0) + (a[n - 1] == 0 || a[n - 1] == 3 ? T[11] + T[14] + T[17] : 0)) % 777777777L) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

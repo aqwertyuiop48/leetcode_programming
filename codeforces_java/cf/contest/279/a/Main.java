@@ -11,3 +11,4 @@ public class Main {
                 && (x >= Math.min(pos[0], ex) && x <= Math.max(pos[0], ex) && y >= Math.min(pos[1], ey) && y <= Math.max(pos[1], ey) || (pos[0] = ex) == Integer.MIN_VALUE & (pos[1] = ey) == Integer.MIN_VALUE)).findFirst().getAsInt() : "");
     }
 }
+

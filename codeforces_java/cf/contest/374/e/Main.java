@@ -24,3 +24,4 @@ public class Main {
             ? !chk.test(lh[1]) ? "Poor Sereja!" : IntStream.range(0, 22).allMatch(it -> lh[0] >= lh[1] || (Integer.valueOf((lh[0] + lh[1]) / 2) instanceof Integer mid && (chk.test(mid) ? (lh[1] = mid) : (lh[0] = mid + 1)) >= 0)) ? String.valueOf(lh[0]) : "" : "");
     }
 }
+

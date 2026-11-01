@@ -23,3 +23,4 @@ public class Main {
             ? d[r2 * K + Arrays.binarySearch(cs, c2)] : ""));
     }
 }
+

@@ -22,3 +22,4 @@ public class Main {
             ? r != 0 ? "Furlo" : "Rublo" : "");
     }
 }
+

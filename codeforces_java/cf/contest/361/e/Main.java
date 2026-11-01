@@ -13,3 +13,4 @@ public class Main {
             ? IntStream.rangeClosed(0, n).mapToLong(q -> dp[q][k]).sum() % 1000000007L : "");
     }
 }
+

@@ -33,3 +33,4 @@ public class Main {
             ? String.valueOf(dpa[Math.min(p, m) & 1][m]) : "");
     }
 }
+

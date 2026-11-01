@@ -19,3 +19,4 @@ public class Main {
             System.out.print(IntStream.range(0, q).mapToObj(i -> st.nextToken().equals("?") ? String.valueOf(qf.applyAsLong(ni.getAsInt() - 1)) : Long.toString(uf.applyAsLong(ni.getAsInt() - 1, ni.getAsInt())).substring(0, 0)).filter(s -> !s.isEmpty()).collect(Collectors.joining("\n")));
     }
 }
+

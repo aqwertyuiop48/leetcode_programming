@@ -55,3 +55,4 @@ public class Main {
                         && app.applyAsInt(i2) == 0 ? String.valueOf(k) : "-1").collect(Collectors.joining(" ")) : "");
     }
 }
+

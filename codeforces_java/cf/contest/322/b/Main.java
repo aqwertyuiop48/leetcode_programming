@@ -7,3 +7,4 @@ public class Main {
             ? IntStream.rangeClosed(0, 2).filter(k -> k <= IntStream.of(a).min().getAsInt()).map(k -> k + IntStream.of(a).map(x -> (x - k) / 3).sum()).max().getAsInt() : "");
     }
 }
+

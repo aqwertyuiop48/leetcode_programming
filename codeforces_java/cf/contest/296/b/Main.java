@@ -13,3 +13,4 @@ public class Main {
                 + prod.apply(i -> x[i] < 0 && y[i] < 0 ? 10 : x[i] < 0 || y[i] < 0 ? 1 : x[i] == y[i] ? 1 : 0), 1000000007L) : "");
     }
 }
+

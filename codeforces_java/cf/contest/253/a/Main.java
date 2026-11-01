@@ -10,3 +10,4 @@ public class Main {
                 + String.valueOf(f).repeat(Math.abs(n - m)) : ""));
     }
 }
+

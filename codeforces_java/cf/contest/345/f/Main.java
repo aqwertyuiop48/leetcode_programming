@@ -11,3 +11,4 @@ public class Main {
             ? mp.entrySet().stream().filter(e -> e.getValue().size() == mx).map(Map.Entry::getKey).sorted().collect(Collectors.joining("\n")) : "");
     }
 }
+

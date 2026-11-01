@@ -52,3 +52,4 @@ public class Main {
             ? table[n + k - 2] : "");
     }
 }
+

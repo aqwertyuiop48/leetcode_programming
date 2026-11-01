@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.range(0, r).map(i -> (int) IntStream.range(0, c).filter(j -> g[i].indexOf('S') < 0 || IntStream.range(0, r).noneMatch(k -> g[k].charAt(j) == 'S')).count()).sum() : "");
     }
 }
+

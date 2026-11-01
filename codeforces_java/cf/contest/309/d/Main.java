@@ -15,3 +15,4 @@ public class Main {
             ? L > U ? 0L : 3 * (2 * IntStream.rangeClosed((int) (long) L, (int) ((N - 1) / 2)).parallel().mapToLong(W).sum() + (N % 2 == 0 ? W.applyAsLong((int) (N / 2)) : 0L)) : "");
     }
 }
+

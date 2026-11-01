@@ -21,3 +21,4 @@ public class Main {
                 && IntStream.of(r1).filter(a -> (par[a] = p1) < 0).count() == 0 && IntStream.of(r2).filter(a -> (par[a] = p2) < 0).count() == 0).count() : "");
     }
 }
+

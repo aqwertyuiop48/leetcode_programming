@@ -11,3 +11,4 @@ public class Main {
             ? IntStream.range(0, n).mapToLong(v -> d[v] == 0 ? 0 : (k == 1 ? 1 : k == 2 ? d[v] - 1 : d[v] == k ? 1 : 0) * w[v]).sum() / (k == 1 ? n : k == 2 ? (long) n * (n - 1) / 2 : n) : "");
     }
 }
+

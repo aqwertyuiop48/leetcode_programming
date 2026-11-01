@@ -21,3 +21,4 @@ public class Main {
                 && (f.applyAsLong(m) <= t ? (lo[1] = m) > -1 : (lo[0] = m + 1) > -1)) ? lo[0] : -2) : -3);
     }
 }
+

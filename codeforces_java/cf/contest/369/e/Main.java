@@ -28,3 +28,4 @@ public class Main {
             ? Arrays.stream(ans).mapToObj(v -> String.valueOf(n - v)).collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -12,3 +12,4 @@ public class Main {
             ? n * a.length - eq * (n / (b.length / g)) : "");
     }
 }
+

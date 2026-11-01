@@ -41,3 +41,4 @@ public class Main {
             ? IntStream.rangeClosed(1, LM).mapToObj(s -> String.valueOf(IntStream.rangeClosed(1, n).mapToLong(w -> Q[w][s]).sum() % MOD)).collect(Collectors.joining("\n")) : "");
     }
 }
+

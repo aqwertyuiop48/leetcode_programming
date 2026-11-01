@@ -23,3 +23,4 @@ public class Main {
             ? R.get().apply(new long[]{19, 0, in.get()})[0] : "");
     }
 }
+

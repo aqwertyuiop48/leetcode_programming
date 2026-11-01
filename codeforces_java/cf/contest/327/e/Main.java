@@ -16,3 +16,4 @@ public class Main {
             ? dp[(1 << n) - 1] : "");
     }
 }
+

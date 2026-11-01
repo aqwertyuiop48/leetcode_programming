@@ -20,3 +20,4 @@ public class Main {
                 ? names.get(x) + " " + (mx == 0 ? U - 1 - nb.get(x).length : k) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
