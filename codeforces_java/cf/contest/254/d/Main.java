@@ -5,10 +5,10 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Optional.of(Map.entry(new File("input.txt").exists() ? new FileInputStream("input.txt") : System.in, new File("input.txt").exists() ? new PrintStream(new FileOutputStream("output.txt"), true) : System.out)).ifPresent(io -> io.getValue().println(new Scanner(io.getKey()) instanceof Scanner sc
-            && Integer.valueOf(sc.nextInt()) instanceof Integer n && Integer.valueOf(sc.nextInt()) instanceof Integer m && Integer.valueOf(sc.nextInt()) instanceof Integer d
-            && IntStream.range(0, n).mapToObj(i -> sc.next()).collect(Collectors.joining()).toCharArray() instanceof char[] g
-            && IntStream.range(0, n * m).filter(x -> g[x] == 'R').toArray() instanceof int[] rats
+        Optional.of(Map.entry((new File("input.txt").exists() ? new FileInputStream("input.txt") : System.in).readAllBytes(), new File("input.txt").exists() ? new PrintStream(new FileOutputStream("output.txt"), true) : System.out)).ifPresent(io -> io.getValue().println(new StringTokenizer(new String(io.getKey())) instanceof StringTokenizer sc
+            && Integer.valueOf(Integer.parseInt(sc.nextToken())) instanceof Integer n && Integer.valueOf(Integer.parseInt(sc.nextToken())) instanceof Integer m && Integer.valueOf(Integer.parseInt(sc.nextToken())) instanceof Integer d
+            && IntStream.range(0, n).mapToObj(i -> sc.nextToken()).collect(Collectors.joining()).toCharArray() instanceof char[] g
+            && IntStream.range(0, n * m).filter(x -> g[x] == 'R').toArray() instanceof int[] rats && rats.length <= 2 * (2 * d * d + 2 * d + 1)
             && new int[n * m] instanceof int[] seen && new int[n * m] instanceof int[] killed && new int[]{0, 0} instanceof int[] tg
             && new int[]{-1, 1, 0, 0} instanceof int[] dr && new int[]{0, 0, -1, 1} instanceof int[] dc
             && ((Function<Integer, int[]>) c -> new int[400] instanceof int[] buf && new int[400] instanceof int[] dd && new int[]{1} instanceof int[] tail
@@ -22,6 +22,6 @@ public class Main {
                     ? Integer.valueOf(Arrays.stream(rats).filter(r -> killed[r] != v).findFirst().orElse(-1)) instanceof Integer rem
                         ? rem < 0 ? Stream.of(new int[]{c1, IntStream.range(0, n * m).filter(x -> g[x] != 'X' && x != c1).findFirst().orElse(c1)})
                         : Arrays.stream(cells.apply(rem)).boxed().filter(c2 -> cnt1 + Arrays.stream(cells.apply(c2)).filter(x -> g[x] == 'R' && killed[x] != v).count() == rats.length).map(c2 -> new int[]{c1, c2}) : Stream.<int[]>empty()
-                    : Stream.<int[]>empty()).findFirst().map(p -> (p[0] / m + 1) + " " + (p[0] % m + 1) + " " + (p[1] / m + 1) + " " + (p[1] % m + 1)).orElse("-1") : ""));
+                    : Stream.<int[]>empty()).findFirst().map(p -> (p[0] / m + 1) + " " + (p[0] % m + 1) + " " + (p[1] / m + 1) + " " + (p[1] % m + 1)).orElse("-1") : "-1"));
     }
 }

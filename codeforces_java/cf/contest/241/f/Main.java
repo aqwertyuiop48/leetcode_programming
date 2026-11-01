@@ -7,7 +7,7 @@ public class Main {
         System.out.println(new String(System.in.readAllBytes()).trim().split("\\s+") instanceof String[] tk
             && Integer.valueOf(tk[0]) instanceof Integer m && Integer.valueOf(tk[1]) instanceof Integer n && Long.valueOf(tk[2]) instanceof Long k
             && IntStream.range(0, m * n).map(c -> tk[3 + c / n].charAt(c % n) == '#' ? -1 : Character.isDigit(tk[3 + c / n].charAt(c % n)) ? tk[3 + c / n].charAt(c % n) - '0' : 1).toArray() instanceof int[] cost
-            && IntStream.range(0, m * n).map(c -> cost[c] < 0 ? -1 : cost[c] * 32 + (Character.isLetter(tk[3 + c / n].charAt(c % n)) ? 1 : 0)).toArray() instanceof int[] wk
+            && IntStream.range(0, m * n).map(c -> cost[c] < 0 ? -1 : cost[c] * 8192 + (Character.isLetter(tk[3 + c / n].charAt(c % n)) ? 1 : 0)).toArray() instanceof int[] wk
             && new int[26] instanceof int[] where && IntStream.range(0, m * n).allMatch(c -> !Character.isLetter(tk[3 + c / n].charAt(c % n)) || (where[tk[3 + c / n].charAt(c % n) - 'a'] = c) >= 0)
             && Integer.valueOf((Integer.parseInt(tk[3 + m]) - 1) * n + Integer.parseInt(tk[4 + m]) - 1) instanceof Integer st
             && Integer.valueOf((Integer.parseInt(tk[6 + m]) - 1) * n + Integer.parseInt(tk[7 + m]) - 1) instanceof Integer en
@@ -24,9 +24,9 @@ public class Main {
                 ? new int[][]{dist, par} : null) instanceof IntFunction<int[][]> dijk
             && new long[]{k} instanceof long[] rem && new int[]{en} instanceof int[] res
             && (IntStream.range(0, pts.length - 1).anyMatch(i -> memo.computeIfAbsent(pts[i], u -> dijk.apply(u)) instanceof int[][] D
-                && (rem[0] < (D[0][pts[i + 1]] >> 5)
-                    ? (res[0] = IntStream.concat(IntStream.iterate(pts[i + 1], x -> x != pts[i], x -> D[1][x]), IntStream.of(pts[i])).boxed().filter(x -> (D[0][x] >> 5) <= rem[0]).max(Comparator.comparingInt(x -> D[0][x])).get()) >= 0
-                    : (rem[0] -= (D[0][pts[i + 1]] >> 5)) < 0)) || true)
+                && (rem[0] < (D[0][pts[i + 1]] >> 13)
+                    ? (res[0] = IntStream.concat(IntStream.iterate(pts[i + 1], x -> x != pts[i], x -> D[1][x]), IntStream.of(pts[i])).boxed().filter(x -> (D[0][x] >> 13) <= rem[0]).max(Comparator.comparingInt(x -> D[0][x])).get()) >= 0
+                    : (rem[0] -= (D[0][pts[i + 1]] >> 13)) < 0)) || true)
             ? (res[0] / n + 1) + " " + (res[0] % n + 1) : "");
     }
 }

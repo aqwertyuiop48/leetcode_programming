@@ -28,7 +28,7 @@ public class Main {
                     && (Integer) classId[hash] instanceof Integer r && (Integer) idxIn[hash] instanceof Integer idx && (Integer) nxt.applyAsInt(r, idx) instanceof Integer f0
                     && (Integer) (f0 >= 0 ? f0 : nxt.applyAsInt(r, 0)) instanceof Integer f
                     && (ans[0] += f0 >= 0 ? f - idx : len - idx + f) >= 0
-                    && ((w0[r * W + (f >> 6)] &= ~(1L << (f & 63))) != 0 || (s1[r * W1 + (f >> 12)] &= ~(1L << ((f >> 6) & 63))) >= 0)
+                    && ((w0[r * W + (f >> 6)] &= ~(1L << (f & 63))) != 0 || (s1[r * W1 + (f >> 12)] &= ~(1L << ((f >> 6) & 63))) * 0 == 0)
                     && where.put(id, pos[r * len + f]) == null || true
                 : (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer id2 && (Integer) where.get(id2) instanceof Integer cell
                     && (Integer) classId[cell] instanceof Integer r2 && (Integer) idxIn[cell] instanceof Integer i2

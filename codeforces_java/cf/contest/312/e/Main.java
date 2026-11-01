@@ -18,16 +18,17 @@ public class Main {
             && IntStream.range(0, n).allMatch(i -> (th[i] = nl.getAsLong()) > 0 && (val[i] = nl.getAsLong()) > Long.MIN_VALUE)
             && new long[k] instanceof long[] d && IntStream.range(0, k).allMatch(r -> (d[r] = Long.MAX_VALUE) > 0) && (d[1 % k] = 1) == 1
             && new TreeSet<Long>() instanceof TreeSet<Long> set && new boolean[n] instanceof boolean[] added
-            && ((IntPredicate) x -> Integer.valueOf(BigInteger.valueOf(x).gcd(BigInteger.valueOf(k)).intValue()) instanceof Integer g && Integer.valueOf(2 * (k / g)) instanceof Integer w2
-                && IntStream.range(0, 2 * k).allMatch(t -> Integer.valueOf((int) (((long) (t / w2) + (long) (t % w2) * x) % k)) instanceof Integer cur && Integer.valueOf((cur + x) % k) instanceof Integer nxt
-                    && (d[cur] == Long.MAX_VALUE || d[cur] + x > h || d[cur] + x >= d[nxt] || (d[nxt] = d[cur] + x) > 0))) instanceof IntPredicate addj
+            && ((LongPredicate) x -> Integer.valueOf((int) (x % k)) instanceof Integer xm && Integer.valueOf(BigInteger.valueOf(xm).gcd(BigInteger.valueOf(k)).intValue()) instanceof Integer g && Integer.valueOf(2 * (k / g)) instanceof Integer w2
+                && IntStream.range(0, 2 * k).allMatch(t -> Integer.valueOf((int) (((long) (t / w2) + (long) (t % w2) * xm) % k)) instanceof Integer cur && Integer.valueOf((cur + xm) % k) instanceof Integer nxt
+                    && (d[cur] == Long.MAX_VALUE || d[cur] + x > h || d[cur] + x >= d[nxt] || (d[nxt] = d[cur] + x) > 0))) instanceof LongPredicate addj
             && ((IntPredicate) z -> IntStream.range(0, n).filter(i -> !added[i] && d[(int) (th[i] % k)] <= th[i]).allMatch(i -> (added[i] = true) && set.add(val[i] << 20 | (1048575 - i)))) instanceof IntPredicate scan
             && scan.test(0)
             ? IntStream.range(0, m).mapToObj(e -> Long.valueOf(nl.getAsLong()) instanceof Long t
-                ? t == 1 ? addj.test((int) nl.getAsLong()) && scan.test(0) ? (String) null : (String) null
+                ? t == 1 ? addj.test(nl.getAsLong()) && scan.test(0) ? (String) null : (String) null
                 : t == 2 ? Integer.valueOf((int) nl.getAsLong() - 1) instanceof Integer i && Long.valueOf(nl.getAsLong()) instanceof Long y
                     && (set.remove(val[i] << 20 | (1048575 - i)) ? (val[i] -= y) > Long.MIN_VALUE && set.add(val[i] << 20 | (1048575 - i)) : (val[i] -= y) > Long.MIN_VALUE) ? (String) null : (String) null
                 : set.isEmpty() ? "0" : set.pollLast() instanceof Long top ? String.valueOf(top >> 20) : ""
                 : "").filter(Objects::nonNull).collect(Collectors.joining("\n")) : "");
     }
 }
+

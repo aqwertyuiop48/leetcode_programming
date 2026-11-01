@@ -19,7 +19,8 @@ public class Main {
             && IntStream.iterate(0, i -> st[0] < st[1], i -> i + 1).allMatch(i -> Integer.valueOf(q[st[0]++]) instanceof Integer v
                 && IntStream.iterate(head[v], e -> e >= 0, e -> nxt[e]).allMatch(e -> dir[e >> 1] >= 0
                     || (dir[e >> 1] = e & 1) >= 0 && Integer.valueOf(vals[2 + 3 * (e >> 1) + 1 - (e & 1)]) instanceof Integer u
-                        && (inflow[u] += vals[4 + 3 * (e >> 1)]) > 0 && (u == n || inflow[u] * 2 != total[u] || (q[st[1]++] = u) > 0)))
+                        && (inflow[u] += vals[4 + 3 * (e >> 1)]) > 0 && (u.equals(n) || inflow[u] * 2 != total[u] || (q[st[1]++] = u) > 0)))
             ? IntStream.range(0, m).mapToObj(i -> String.valueOf(dir[i])).collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -70,7 +70,7 @@ public class Main {
                 && (mc[cc] = h1) >= 0 && (head.put(key, nxI[h1]) == null || true))
             && new int[n] instanceof int[] resR && new int[m] instanceof int[] resC
             && IntStream.range(0, N).allMatch(w -> Integer.valueOf(cyG[w]) instanceof Integer cg && Integer.valueOf(ndI[csI[mc[cg]] + w - csG[cg]]) instanceof Integer xx && Integer.valueOf(ndG[w]) instanceof Integer yy
-                && (xx < n ? (resR[yy] = xx + 1) > 0 : (resC[yy - n] = xx - n + 1) > 0))
+                && (xx < n ? (resR[xx] = yy + 1) > 0 : (resC[xx - n] = yy - n + 1) > 0))
             ? Arrays.stream(resR).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + Arrays.stream(resC).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "No solution");
     }
 }

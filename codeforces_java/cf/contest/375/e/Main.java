@@ -43,7 +43,7 @@ public class Main {
                     && IntStream.range(0, S + 1).map(j -> Arrays.stream(fc[j], sp[c], pp[c] + 1).min().getAsInt()).toArray() instanceof int[] gc
                     && IntStream.range(0, nd + 1).mapToObj(k -> infRow.clone()).toArray(int[][]::new) instanceof int[][] NEW
                     && ((IntBinaryOperator) (lo, hi) -> IntStream.range(0, (A + 1) * (S + 1)).filter(id -> ((IntBinaryOperator) (a1, b1) -> a1 + b1 <= nd
-                        ? ((IntUnaryOperator) gj -> IntStream.of(0).peek(z -> Arrays.setAll(NEW[a1 + b1], q -> Math.min(NEW[a1 + b1][q], cp[a1][q] + Math.min(fc[b1][q], q >= lo && q <= hi ? 268435456 : gj)))).sum()).applyAsInt(gc[b1]) : 0).applyAsInt(id / (S + 1), id % (S + 1)) == 0).count() >= 0 ? 0 : 1).applyAsInt(sp[c], pp[c]) == 0
+                        ? ((IntUnaryOperator) gj -> NEW[a1 + b1] instanceof int[] nr && cp[a1] instanceof int[] cr && fc[b1] instanceof int[] fr ? IntStream.of(0).peek(z -> Arrays.setAll(nr, q -> Math.min(nr[q], cr[q] + Math.min(fr[q], q >= lo && q <= hi ? 268435456 : gj)))).sum() : 0).applyAsInt(gc[b1]) : 0).applyAsInt(id / (S + 1), id % (S + 1)) == 0).count() >= 0 ? 0 : 1).applyAsInt(sp[c], pp[c]) == 0
                     && (cur[p] = NEW) != null && (dm[p] = nd) > 0 && (cur[c] = null) == null)))
             ? (Integer.valueOf(Arrays.stream(cur[0][Bn]).min().getAsInt()) instanceof Integer r && r < INF ? String.valueOf(r) : "-1") : "");
     }

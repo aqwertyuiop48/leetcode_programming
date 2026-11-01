@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(System.in.readAllBytes() instanceof byte[] raw && new int[raw.length / 2 + 2] instanceof int[] v && new int[3] instanceof int[] ps
             && IntStream.rangeClosed(0, raw.length).allMatch(i -> i < raw.length && raw[i] >= 48 ? (ps[1] = ps[1] * 10 + raw[i] - 48) >= 0 && (ps[2] = 1) == 1 : ps[2] == 0 || (v[ps[0]++] = ps[1]) >= 0 && (ps[1] = 0) == 0 && (ps[2] = 0) == 0)
-            ? CompletableFuture.supplyAsync(() -> Integer.valueOf(v[0]) instanceof Integer n && Integer.valueOf(v[1]) instanceof Integer m
+            ? CompletableFuture.supplyAsync(() -> Integer.valueOf(v[1]) instanceof Integer n && Integer.valueOf(v[0]) instanceof Integer m
                 && IntStream.concat(IntStream.range(0, n).map(i -> v[2 + 3 * i]), IntStream.range(0, n).map(i -> v[3 + 3 * i])).sorted().distinct().toArray() instanceof int[] ys
                 && Integer.valueOf(ys.length) instanceof Integer K
                 && IntStream.rangeClosed(0, K).toArray() instanceof int[] nxt

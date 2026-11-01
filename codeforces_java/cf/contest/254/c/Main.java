@@ -12,6 +12,6 @@ public class Main {
             ? Arrays.stream(sur).sum() + "\n" + IntStream.range(0, s.length).mapToObj(i -> Integer.valueOf(s[i] - 'A') instanceof Integer c
                 && Integer.valueOf(IntStream.range(0, 26).filter(d -> need[d] > 0).findFirst().orElse(99)) instanceof Integer d
                 && Integer.valueOf(rem[c]--) instanceof Integer left
-                ? (sur[c] > 0 && (d < c || left == sur[c]) ? (char) ('A' + d) + "" + (--sur[c] < 100 && --need[d] < 100 ? "" : "") : String.valueOf(s[i])) : "").collect(Collectors.joining()) : ""));
+                ? (sur[c] > 0 && (d < c || left == sur[c]) ? (char) ('A' + d) + "" + (--sur[c] > -1 && --need[d] > -1 ? "" : "") : String.valueOf(s[i])) : "").collect(Collectors.joining()) : ""));
     }
 }

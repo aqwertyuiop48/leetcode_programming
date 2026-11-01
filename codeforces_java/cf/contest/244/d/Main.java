@@ -19,13 +19,13 @@ public class Main {
             && IntStream.range(0, m).allMatch(k -> (adj[pos[v[4 + 2 * k]]++] = v[5 + 2 * k]) > 0 && (adj[pos[v[5 + 2 * k]]++] = v[4 + 2 * k]) > 0)
             && IntStream.rangeClosed(1, n).allMatch(x -> Stream.of(0).peek(z -> Arrays.sort(adj, off[x], off[x + 1])).findFirst().isPresent())
             && new int[2] instanceof int[] res
-            && IntStream.range(0, 2 * m).anyMatch(k -> Integer.valueOf(v[4 + 2 * (k >> 1) + (k & 1)]) instanceof Integer u
-                && Integer.valueOf(v[5 + 2 * (k >> 1) - (k & 1)]) instanceof Integer w
-                && off[u + 1] - off[u] > h && off[w + 1] - off[w] > t
-                && (off[u + 1] - off[u] <= off[w + 1] - off[w] ? new int[]{u, w} : new int[]{w, u}) instanceof int[] sl
-                && Long.valueOf(IntStream.range(off[sl[0]], off[sl[0] + 1]).filter(i -> adj[i] != sl[1] && Arrays.binarySearch(adj, off[sl[1]], off[sl[1] + 1], adj[i]) >= 0).count()) instanceof Long c
-                && (off[u + 1] - off[u] - 1) + (off[w + 1] - off[w] - 1) - c >= h + t
-                && (res[0] = u) >= 0 && (res[1] = w) >= 0)
+            && new int[n + 2] instanceof int[] mark
+            && IntStream.range(0, m).anyMatch(e -> Integer.valueOf(v[4 + 2 * e]) instanceof Integer a0 && Integer.valueOf(v[5 + 2 * e]) instanceof Integer b0
+                && Integer.valueOf(off[a0 + 1] - off[a0]) instanceof Integer da && Integer.valueOf(off[b0 + 1] - off[b0]) instanceof Integer db
+                && ((da > h && db > t) || (db > h && da > t))
+                && (Math.max(da, db) - 1 >= h + t || IntStream.range(off[b0], off[b0 + 1]).map(i -> mark[adj[i]] = e + 1).sum() >= 0
+                    && da - 1 + db - 1 - IntStream.range(off[a0], off[a0 + 1]).filter(i -> mark[adj[i]] == e + 1).count() >= h + t)
+                && (da > h && db > t ? (res[0] = a0) >= 0 && (res[1] = b0) >= 0 : (res[0] = b0) >= 0 && (res[1] = a0) >= 0))
             ? Integer.valueOf(res[0]) instanceof Integer u && Integer.valueOf(res[1]) instanceof Integer w
                 && IntStream.range(off[u], off[u + 1]).map(i -> adj[i]).filter(x -> x != w).boxed().toList() instanceof List<Integer> A
                 && A.stream().filter(x -> Arrays.binarySearch(adj, off[w], off[w + 1], x) < 0).toList() instanceof List<Integer> ex

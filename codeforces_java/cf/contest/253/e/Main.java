@@ -28,7 +28,7 @@ public class Main {
                 && new long[2] instanceof long[] cp
                 && (IntStream.range(0, 5 * n + 5).allMatch(z ->
                     cp[1] < n && t[ord[(int) cp[1]]] <= cp[0]
-                        ? Integer.valueOf(ord[(int) cp[1]]) instanceof Integer i && Integer.valueOf(i == u ? 2 * slot : key[i]) instanceof Integer kk
+                        ? Integer.valueOf(ord[(int) cp[1]]) instanceof Integer i && Integer.valueOf(i.equals(u) ? 2 * slot : key[i]) instanceof Integer kk
                             && ((L0[kk >> 6] |= 1L << (kk & 63)) != 0 & (L1[kk >> 12] |= 1L << ((kk >> 6) & 63)) != 0 & (L2[kk >> 18] |= 1L << ((kk >> 12) & 63)) != 0)
                             && ++cp[1] > 0
                         : L2[0] == 0

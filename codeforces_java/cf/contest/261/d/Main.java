@@ -12,11 +12,9 @@ public class Main {
                 : pr[2] == 0 || ((vals[(int) pr[1]++] = (int) pr[0]) >= 0 && (pr[0] = 0) == 0 && (pr[2] = 0) == 0))
             && Integer.valueOf(vals[0]) instanceof Integer k && Integer.valueOf(vals[1]) instanceof Integer n
             && Integer.valueOf(vals[2]) instanceof Integer maxb && Integer.valueOf(vals[3]) instanceof Integer t
-            ? CompletableFuture.supplyAsync(() -> IntStream.range(0, k).mapToObj(q -> Arrays.copyOfRange(vals, 4 + q * n, 4 + (q + 1) * n) instanceof int[] b && new int[maxb + 2] instanceof int[] f
-                && (f[maxb + 1] = Integer.MAX_VALUE) > 0 && new IntBinaryOperator[1] instanceof IntBinaryOperator[] fill
-                && (fill[0] = (j, v) -> f[j] < v ? (f[j] = v) > 0 ? fill[0].applyAsInt(j + 1, v) : 0 : 0) != null
+            ? IntStream.range(0, k).parallel().mapToObj(q -> Arrays.copyOfRange(vals, 4 + q * n, 4 + (q + 1) * n) instanceof int[] b && new int[maxb + 2] instanceof int[] f
+                && (f[maxb + 1] = Integer.MAX_VALUE) > 0 && new int[1] instanceof int[] chg
                 && Integer.valueOf((int) Arrays.stream(b).distinct().count()) instanceof Integer d
-                ? String.valueOf(t >= d ? d : IntStream.range(0, t).allMatch(pass -> IntStream.range(0, n).allMatch(i -> f[b[i]] > f[b[i] - 1] || (f[b[i]] = f[b[i] - 1] + 1) > 0 && (f[b[i] + 1] >= f[b[i]] || fill[0].applyAsInt(b[i] + 1, f[b[i]]) == 0)) && f[maxb] < d) || true ? f[maxb] : -1) : "").collect(Collectors.joining("\n")),
-                r -> new Thread(null, r, "t", 1L << 28).start()).join() : "");
+                ? String.valueOf(t >= d ? d : IntStream.range(0, t).allMatch(pass -> (chg[0] = 0) == 0 && Arrays.stream(b).allMatch(v -> f[v] > f[v - 1] || (f[v] = f[v - 1] + 1) > 0 && (chg[0] = 1) > 0 && (f[v + 1] >= f[v] || IntStream.iterate(v + 1, j -> f[j] < f[v], j -> j + 1).map(j -> f[j] = f[v]).sum() >= 0)) && chg[0] == 1 && f[maxb] < d) || true ? f[maxb] : -1) : "").collect(Collectors.joining("\n")) : "");
     }
 }

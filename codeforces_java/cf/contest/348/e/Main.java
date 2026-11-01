@@ -21,7 +21,7 @@ public class Main {
             && IntStream.iterate(n - 1, i -> i >= 0, i -> i - 1).filter(i -> Integer.valueOf(ord[i]) instanceof Integer v && Long.valueOf(V[3 * v]) instanceof Long d && Integer.valueOf(V[3 * v + 1] == d && d > NEG ? v : E[3 * v]) instanceof Integer mm && (i == 0 || d <= NEG || ins.test(new long[] {par[v], d + pw[v], mm, v}))).count() >= 0
             && LongStream.generate(() -> NEG).limit(n + 1).toArray() instanceof long[] U && new int[n + 1] instanceof int[] MU
             && IntStream.range(0, n).filter(i -> Integer.valueOf(ord[i]) instanceof Integer p && (U[p] <= NEG || ins.test(new long[] {p, U[p], MU[p], 0}))
-                && IntStream.iterate(hd[p], e -> e >= 0, e -> nxt[e]).filter(e -> to[e] != par[p]).filter(e -> Integer.valueOf(to[e]) instanceof Integer c && Integer.valueOf(3 * p) instanceof Integer b && IntStream.rangeClosed(0, 2).filter(k -> S[b + k] != c).limit(2).toArray() instanceof int[] r
+                && IntStream.iterate(hd[p], e -> e >= 0, e -> nxt[e]).filter(e -> to[e] != par[p]).filter(e -> Integer.valueOf(to[e]) instanceof Integer c && Integer.valueOf(3 * p) instanceof Integer b && new int[]{S[b] != c ? 0 : 1, S[b] != c ? (S[b + 1] != c ? 1 : 2) : 2} instanceof int[] r
                     && (U[c] = V[b + r[0]] > NEG ? V[b + r[0]] + pw[c] : NEG) == U[c] && (MU[c] = V[b + r[0]] > NEG ? (V[b + r[1]] == V[b + r[0]] ? p : E[b + r[0]]) : 0) >= 0).count() >= 0).count() >= 0
             && new int[17][n + 1] instanceof int[][] anc && IntStream.range(0, n + 1).map(v -> anc[0][v] = par[v]).summaryStatistics() != null
             && IntStream.range(1, 17).filter(k -> IntStream.range(0, n + 1).map(v -> anc[k][v] = anc[k - 1][anc[k - 1][v]]).summaryStatistics() != null).count() >= 0

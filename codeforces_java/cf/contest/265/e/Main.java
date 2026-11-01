@@ -12,10 +12,10 @@ public class Main {
             && Integer.valueOf((int) vals[0]) instanceof Integer n && Integer.valueOf((int) vals[1]) instanceof Integer q
             && Arrays.copyOfRange(vals, 2, 2 + n) instanceof long[] v
             && IntStream.range(0, n).map(i -> (int) vals[2 + n + i]).toArray() instanceof int[] c
-            ? IntStream.range(0, q).mapToObj(qi -> Long.valueOf(vals[2 + 2 * n + 2 * qi]) instanceof Long a && Long.valueOf(vals[3 + 2 * n + 2 * qi]) instanceof Long b
+            ? IntStream.range(0, q).parallel().mapToObj(qi -> new long[]{vals[2 + 2 * n + 2 * qi], vals[3 + 2 * n + 2 * qi]} instanceof long[] ab
                 && new long[n + 1] instanceof long[] dp && IntStream.rangeClosed(0, n).allMatch(i -> (dp[i] = Long.MIN_VALUE / 4) < 0)
                 && new long[]{0, Long.MIN_VALUE / 4, 0} instanceof long[] s
-                && IntStream.range(0, n).allMatch(i -> (dp[c[i]] = Math.max(dp[c[i]], Math.max(dp[c[i]] + v[i] * a, (s[2] != c[i] ? s[0] : s[1]) + v[i] * b))) > Long.MIN_VALUE
+                && IntStream.range(0, n).allMatch(i -> (dp[c[i]] = Math.max(dp[c[i]], Math.max(dp[c[i]] + v[i] * ab[0], (s[2] != c[i] ? s[0] : s[1]) + v[i] * ab[1]))) > Long.MIN_VALUE
                     && (dp[c[i]] <= s[0] && s[2] != c[i] ? dp[c[i]] <= s[1] || (s[1] = dp[c[i]]) > Long.MIN_VALUE
                         : dp[c[i]] <= s[0] || (s[2] == c[i] ? (s[0] = dp[c[i]]) > Long.MIN_VALUE : (s[1] = s[0]) > Long.MIN_VALUE && (s[0] = dp[c[i]]) > Long.MIN_VALUE && (s[2] = c[i]) > 0)))
                 ? String.valueOf(s[0]) : "").collect(Collectors.joining("\n")) : "");

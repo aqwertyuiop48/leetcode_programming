@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -26,17 +27,18 @@ public class Main {
                 && new long[64] instanceof long[] pw && new double[64] instanceof double[] iv && new int[64] instanceof int[] sd && new int[1] instanceof int[] uc
                 && IntStream.range(0, m[0]).allMatch(t -> IntStream.rangeClosed(1, fe[t]).allMatch(j -> (pw[uc[0]] = j == 1 ? fp[t] : pw[uc[0] - 1] * fp[t]) > 0
                     && (sd[uc[0]] = stride[t]) > 0 && (iv[uc[0]] = 1.0 / pw[uc[0]]) > 0 && ++uc[0] > 0))
-                && new int[ns] instanceof int[] ix
-                && IntStream.range(0, uc[0]).allMatch(u -> Long.valueOf(pw[u]) instanceof Long q && Double.valueOf(iv[u]) instanceof Double w && Integer.valueOf(sd[u]) instanceof Integer s
-                    && IntStream.range(0, ns).allMatch(i -> (ix[i] += Math.abs(2 * (sm[i] - (long) (sm[i] * w) * q) - q) == q ? s : 0) >= 0))
-                && new int[D] instanceof int[] c && IntStream.range(0, ns).allMatch(i -> ++c[ix[i]] > 0)
-                && IntStream.range(0, m[0]).allMatch(t -> IntStream.range(0, D).allMatch(z -> Integer.valueOf(D - 1 - z) instanceof Integer id && (id / stride[t]) % (fe[t] + 1) < fe[t]
-                    ? (c[id] += c[id + stride[t]]) >= 0 : true))
+                && ((Function<long[], int[]>) arr -> new int[arr.length] instanceof int[] ix
+                    && IntStream.range(0, uc[0]).allMatch(u -> Long.valueOf(pw[u]) instanceof Long q && Double.valueOf(iv[u]) instanceof Double w && Integer.valueOf(sd[u]) instanceof Integer s
+                        && IntStream.range(0, arr.length).allMatch(i -> (ix[i] += Math.abs(2 * (arr[i] - (long) (arr[i] * w) * q) - q) == q ? s : 0) >= 0))
+                    && new int[D] instanceof int[] c && IntStream.range(0, arr.length).allMatch(i -> ++c[ix[i]] > 0)
+                    && IntStream.range(0, m[0]).allMatch(t -> IntStream.range(0, D).allMatch(z -> Integer.valueOf(D - 1 - z) instanceof Integer id && (id / stride[t]) % (fe[t] + 1) < fe[t]
+                        ? (c[id] += c[id + stride[t]]) >= 0 : true))
+                    ? c : null) instanceof Function<long[], int[]> cntf
+                && cntf.apply(sm) instanceof int[] c
                 && new long[D] instanceof long[] val && (val[0] = 1) > 0
                 && IntStream.range(0, m[0]).allMatch(t -> IntStream.range(stride[t], stride[t + 1]).allMatch(id -> (val[id] = val[id - stride[t]] * fp[t]) > 0))
-                && (IntStream.range(0, D).filter(id -> 2 * c[id] >= thr && val[id] > best[0]).mapToLong(id -> val[id]).boxed().sorted(Comparator.reverseOrder())
-                    .anyMatch(d -> Double.valueOf(1.0 / d) instanceof Double w2
-                        && 2L * IntStream.range(0, n).filter(i -> Math.abs(2 * (a[i] - (long) (a[i] * w2) * d) - d) == d).count() >= n && (best[0] = d) > 0) || true)))
+                && (!IntStream.range(0, D).anyMatch(id -> 2 * c[id] >= thr && val[id] > best[0])
+                    || cntf.apply(a) instanceof int[] c2 && (best[0] = Math.max(best[0], IntStream.range(0, D).filter(id -> 2L * c2[id] >= n).mapToLong(id -> val[id]).max().orElse(0))) > 0 || true)))
             ? best[0] : "");
     }
 }

@@ -89,6 +89,8 @@ submit_solution() {
     echo "Waiting 2 seconds before submission..."
     sleep 2
     pyforces submit --file Main.java --program-type-id "$JAVA_ID" --no-track
+    echo "Waiting 40 seconds after submission..."
+    sleep 40
 }
 
 test_and_submit_solution() {
@@ -120,4 +122,3 @@ case "$ACTION" in
 esac
 
 echo "===== DONE ====="
-sleep 15
