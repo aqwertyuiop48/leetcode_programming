@@ -1,68 +1,70 @@
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        new Thread(null, () -> System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Arrays.stream(l.trim().split("\\s+"))).filter(w -> !w.isEmpty()).mapToInt(Integer::parseInt).toArray() instanceof int[] t
-            && Integer.valueOf(t[0] * 2) instanceof Integer N
-            && IntStream.range(0, N - 1).flatMap(i -> IntStream.of(t[2 * i + 1] - 1, t[2 * i + 2] - 1)).toArray() instanceof int[] ed
+    public static void main(String[] args) throws Exception {
+        System.out.println(
+            System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 2] instanceof int[] g
+            && new int[4] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).filter(i ->
+                (i == raw.length ? 32 : (int) raw[i]) >= '0' && (i == raw.length ? 32 : (int) raw[i]) <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') < 0 | (ps[2] = 1) < 0
+                    : ps[2] != 0 && ((g[ps[1]++] = ps[0]) == Integer.MIN_VALUE | (ps[0] = 0) != 0 | (ps[2] = 0) != 0)).count() >= 0
+            && Integer.valueOf(g[0] * 2) instanceof Integer N && Integer.valueOf(N * 3) instanceof Integer N3
             && new int[N] instanceof int[] deg
-            && Arrays.stream(ed).allMatch(v -> ++deg[v] > 0)
+            && IntStream.range(0, 2 * (N - 1)).allMatch(i -> ++deg[g[1 + i] - 1] > 0)
             && Arrays.stream(deg).max().getAsInt() <= 3
-            && IntStream.generate(() -> -1).limit(3 * N).toArray() instanceof int[] adjv
+            && IntStream.range(0, N3).map(i -> -1).toArray() instanceof int[] adjv
             && new int[N] instanceof int[] fill
-            && IntStream.range(0, N - 1).allMatch(i -> (adjv[ed[2 * i] * 3 + fill[ed[2 * i]]++] = ed[2 * i + 1]) >= 0 && (adjv[ed[2 * i + 1] * 3 + fill[ed[2 * i + 1]]++] = ed[2 * i]) >= 0)
-            && new int[N] instanceof int[] par && new int[N] instanceof int[] ord && new int[]{1} instanceof int[] cnt
+            && IntStream.range(0, N - 1).allMatch(i -> (adjv[(g[1 + 2 * i] - 1) * 3 + fill[g[1 + 2 * i] - 1]++] = g[2 + 2 * i] - 1) >= 0 && (adjv[(g[2 + 2 * i] - 1) * 3 + fill[g[2 + 2 * i] - 1]++] = g[1 + 2 * i] - 1) >= 0)
+            && new int[N] instanceof int[] par && new int[N] instanceof int[] ord && new int[]{1} instanceof int[] cn
             && (par[0] = -1) < 0
-            && IntStream.range(0, N).allMatch(i -> IntStream.range(0, deg[ord[i]]).map(j -> adjv[ord[i] * 3 + j]).filter(w -> w != par[ord[i]]).allMatch(w -> (par[w] = ord[i]) >= 0 && (ord[cnt[0]++] = w) >= 0))
-            && IntStream.generate(() -> 1).limit(N).toArray() instanceof int[] sz
+            && IntStream.range(0, N3).allMatch(t -> Integer.valueOf(ord[t / 3]) instanceof Integer u
+                && (t % 3 >= deg[u] || adjv[u * 3 + t % 3] == par[u] || (par[adjv[u * 3 + t % 3]] = u) >= 0 && (ord[cn[0]++] = adjv[u * 3 + t % 3]) >= 0))
+            && IntStream.range(0, N).map(i -> 1).toArray() instanceof int[] sz
             && IntStream.range(1, N).allMatch(i -> (sz[par[ord[N - i]]] += sz[ord[N - i]]) > 0)
-            && ((IntBinaryOperator) (r, p) -> p < 0 ? N : par[r] == p ? sz[r] : N - sz[p]) instanceof IntBinaryOperator size
-            && ((IntBinaryOperator) (p, r) -> p * 3 + (adjv[p * 3] == r ? 0 : adjv[p * 3 + 1] == r ? 1 : 2)) instanceof IntBinaryOperator eid
-            && IntStream.range(0, 18).mapToObj(l -> new int[3 * N]).toArray(int[][]::new) instanceof int[][] up
-            && IntStream.range(0, 3 * N).allMatch(e -> (up[0][e] = adjv[e] < 0 || deg[adjv[e]] != 2 ? -1 : adjv[adjv[e] * 3] == e / 3 ? adjv[e] * 3 + 1 : adjv[e] * 3) >= -1)
-            && IntStream.range(1, 18).allMatch(l -> IntStream.range(0, 3 * N).allMatch(e -> (up[l][e] = up[l - 1][e] < 0 ? -1 : up[l - 1][up[l - 1][e]]) >= -1))
-            && ((IntFunction<int[]>) e0 -> new int[]{e0, 0} instanceof int[] st && IntStream.iterate(17, l -> l >= 0, l -> l - 1).allMatch(l -> up[l][st[0]] < 0 || ((st[0] = up[l][st[0]]) >= 0 && (st[1] += 1 << l) >= 0)) ? st : null) instanceof IntFunction<int[]> walk
-            && ((IntBinaryOperator) (e0, tt) -> new int[]{e0} instanceof int[] cur && IntStream.range(0, 18).allMatch(l -> (tt >> l & 1) == 0 || (cur[0] = cur[0] < 0 ? -1 : up[l][cur[0]]) >= -1) ? cur[0] : -1) instanceof IntBinaryOperator lift
-            && ((IntBinaryOperator) (r, p) -> deg[r] == 1 || deg[r] == 2 && deg[adjv[walk.apply(up[0][eid.applyAsInt(p, r)])[0]]] == 1 ? 1 : 0) instanceof IntBinaryOperator pe
-            && ((BiFunction<Integer, Integer, int[]>) (r, p) -> IntStream.range(0, deg[r]).map(j -> adjv[r * 3 + j]).filter(w -> w != p).toArray()) instanceof BiFunction<Integer, Integer, int[]> nb
-            && new AtomicReference<LongBinaryOperator>() instanceof AtomicReference<LongBinaryOperator> PR
-            && new AtomicReference<ToLongFunction<int[]>>() instanceof AtomicReference<ToLongFunction<int[]>> RR
-            && IntStream.generate(() -> -1).limit(3 * N).asLongStream().toArray() instanceof long[] memoP
-            && new HashMap<Long, Long>() instanceof HashMap<Long, Long> memoR
-            && Long.valueOf(1000000007L) instanceof Long M
-            && ((ToLongFunction<int[]>) q -> pe.applyAsInt(q[0], q[1]) == 0 ? 0L : q[4] == q[5] ? (long) pe.applyAsInt(q[2], q[3]) : q[4] > q[5] ? 0L
-                : Integer.valueOf(lift.applyAsInt(eid.applyAsInt(q[3], q[2]), q[4])) instanceof Integer e ? (e < 0 ? 0L : PR.get().applyAsLong(adjv[e], e / 3)) : 0L) instanceof ToLongFunction<int[]> alpha
-            && RR.compareAndSet(null, a -> Long.valueOf((long) eid.applyAsInt(a[1], a[0]) * 3 * N + eid.applyAsInt(a[3], a[2])) instanceof Long key
-                ? (memoR.get(key) instanceof Long hit ? hit
-                    : Integer.valueOf(size.applyAsInt(a[0], a[1])) instanceof Integer s1 && Integer.valueOf(size.applyAsInt(a[2], a[3])) instanceof Integer s2
-                        && Long.valueOf((s1 + s2) % 2 == 1 ? 0L : s1.intValue() == s2.intValue() && pe.applyAsInt(a[0], a[1]) == 1 && pe.applyAsInt(a[2], a[3]) == 1 ? 1L
-                            : (alpha.applyAsLong(new int[]{a[0], a[1], a[2], a[3], s1, s2}) + alpha.applyAsLong(new int[]{a[2], a[3], a[0], a[1], s2, s1})) % M) instanceof Long rv
-                        && memoR.put(key, rv) == null ? rv : 0L)
-                : 0L)
-            && ((ToLongFunction<int[]>) q -> Integer.valueOf(eid.applyAsInt(q[0], q[1])) instanceof Integer e0 && walk.apply(e0) instanceof int[] w && Integer.valueOf(adjv[w[0]]) instanceof Integer z
-                && Integer.valueOf(w[0] / 3) instanceof Integer pz && Integer.valueOf(2 + w[1]) instanceof Integer k
-                ? (deg[z] == 1 ? 1L : nb.apply(z, pz) instanceof int[] oth
-                    ? IntStream.range(0, 2).mapToLong(i -> deg[oth[i]] == 2 ? (pe.applyAsInt(oth[i], z) == 1 && size.applyAsInt(oth[i], z) == k ? PR.get().applyAsLong(oth[1 - i], z) : 0L)
-                            : deg[oth[i]] == 3 && nb.apply(oth[i], z) instanceof int[] cs
-                                ? IntStream.range(0, 2).mapToLong(j -> pe.applyAsInt(cs[j], oth[i]) == 1 && size.applyAsInt(cs[j], oth[i]) == k - 1 ? RR.get().applyAsLong(new int[]{oth[1 - i], z, cs[1 - j], oth[i]}) : 0L).sum() : 0L).sum()
-                        + (k >= 3 ? IntStream.range(0, 2).mapToLong(j -> pe.applyAsInt(oth[j], z) == 1 && size.applyAsInt(oth[j], z) == k - 2 ? PR.get().applyAsLong(oth[1 - j], z) : 0L).sum() : 0L)
-                    : 0L) : 0L) instanceof ToLongFunction<int[]> tb
-            && ((LongBinaryOperator) (r0, p0) -> Integer.valueOf((int) r0) instanceof Integer r && Integer.valueOf((int) p0) instanceof Integer p
-                    && Integer.valueOf(size.applyAsInt(r, p)) instanceof Integer s && s % 2 == 0 && nb.apply(r, p) instanceof int[] ch && ch.length <= 2
-                ? (s == 2 ? 1L : (Arrays.stream(ch).mapToLong(y -> nb.apply(y, r) instanceof int[] bc && Arrays.stream(ch).filter(x -> x != y).toArray() instanceof int[] ao
-                        ? (bc.length > 1 ? 0L : ao.length == 1 && bc.length == 0 ? PR.get().applyAsLong(ao[0], r) : ao.length == 0 && bc.length == 1 ? PR.get().applyAsLong(bc[0], y)
-                            : ao.length == 1 && bc.length == 1 ? RR.get().applyAsLong(new int[]{ao[0], r, bc[0], y}) : 0L) : 0L).sum()
-                        + (ch.length == 1 ? tb.applyAsLong(new int[]{r, ch[0]}) : 0L)) % M)
-                : 0L) instanceof LongBinaryOperator pcore
-            && PR.compareAndSet(null, (r0, p0) -> Integer.valueOf((int) r0) instanceof Integer r && Integer.valueOf((int) p0) instanceof Integer p
-                ? (p >= 0 && memoP[eid.applyAsInt(p, r)] >= 0 ? memoP[eid.applyAsInt(p, r)]
-                    : Long.valueOf(pcore.applyAsLong(r, p)) instanceof Long v && (p < 0 || (memoP[eid.applyAsInt(p, r)] = v) >= 0) ? v : 0L)
-                : 0L)
-            && Long.valueOf(IntStream.range(0, N).mapToLong(x -> PR.get().applyAsLong(x, -1)).sum() % M) instanceof Long ans
-            ? String.valueOf(ans) : "0"), "m", 1L << 29).start();
+            && new int[4 * N] instanceof int[] sizeE && new int[N3] instanceof int[] nxt
+            && IntStream.range(0, N3).allMatch(e -> adjv[e] < 0 || (sizeE[e] = par[adjv[e]] == e / 3 ? sz[adjv[e]] : N - sz[e / 3]) > 0
+                && (nxt[e] = deg[adjv[e]] == 2 ? adjv[e] * 3 + (adjv[adjv[e] * 3] == e / 3 ? 1 : 0) : -1) >= -1)
+            && IntStream.range(0, N3).filter(e -> adjv[e] >= 0).mapToLong(e -> ((long) sizeE[e] << 20) | e).sorted().toArray() instanceof long[] keys
+            && Arrays.stream(keys).mapToInt(k -> (int) (k & 1048575)).toArray() instanceof int[] eo
+            && new int[N3] instanceof int[] steps && new int[N3] instanceof int[] endE && new int[N3] instanceof int[] peE
+            && IntStream.of(eo).allMatch(e -> (nxt[e] < 0 ? (steps[e] = 0) == 0 && (endE[e] = e) >= 0 : (steps[e] = steps[nxt[e]] + 1) > 0 && (endE[e] = endE[nxt[e]]) >= 0)
+                && (peE[e] = deg[adjv[endE[e]]] == 1 ? 1 : 0) >= 0)
+            && IntStream.range(0, N3).map(i -> -1).toArray() instanceof int[] pred
+            && IntStream.of(eo).allMatch(e -> nxt[e] < 0 || (pred[nxt[e]] = e) >= 0)
+            && new int[N3] instanceof int[] start && new int[N3] instanceof int[] base && new int[1] instanceof int[] off
+            && IntStream.range(0, eo.length).map(i -> eo[eo.length - 1 - i]).allMatch(e -> pred[e] < 0
+                ? (start[e] = e) >= 0 && (base[e] = off[0]) >= 0 && (off[0] += steps[e] + 1) > 0
+                : (start[e] = start[pred[e]]) >= 0)
+            && new int[off[0]] instanceof int[] seq && new int[N3] instanceof int[] pos
+            && IntStream.of(eo).allMatch(e -> (pos[e] = base[start[e]] + steps[start[e]] - steps[e]) >= 0 && (seq[pos[e]] = e) >= 0)
+            && IntStream.range(0, 4 * N).map(i -> -1).toArray() instanceof int[] kid0 && IntStream.range(0, 4 * N).map(i -> -1).toArray() instanceof int[] kid1 && new int[4 * N] instanceof int[] kcnt
+            && IntStream.of(eo).allMatch(e -> Integer.valueOf(adjv[e] * 3) instanceof Integer vb && Integer.valueOf(e / 3) instanceof Integer u
+                && Boolean.valueOf(adjv[vb] >= 0 && adjv[vb] != u) instanceof Boolean a0 && Boolean.valueOf(adjv[vb + 1] >= 0 && adjv[vb + 1] != u) instanceof Boolean a1 && Boolean.valueOf(adjv[vb + 2] >= 0 && adjv[vb + 2] != u) instanceof Boolean a2
+                && (kcnt[e] = (a0 ? 1 : 0) + (a1 ? 1 : 0) + (a2 ? 1 : 0)) >= 0
+                && (kid0[e] = a0 ? vb : a1 ? vb + 1 : a2 ? vb + 2 : -1) >= -1
+                && (kid1[e] = a0 && a1 ? vb + 1 : a2 && (a0 || a1) ? vb + 2 : -1) >= -1)
+            && IntStream.range(0, N).allMatch(x -> (sizeE[N3 + x] = N) > 0 && (kcnt[N3 + x] = deg[x]) >= 0 && (kid0[N3 + x] = x * 3) >= 0 && (kid1[N3 + x] = x * 3 + 1) >= 0)
+            && new int[4 * N] instanceof int[] P
+            && ((IntBinaryOperator) (a, b) -> peE[a] == 0 ? 0 : sizeE[a] == sizeE[b] ? peE[b] : sizeE[a] > sizeE[b] || sizeE[a] > steps[b] ? 0 : P[seq[pos[b] + sizeE[a]]]) instanceof IntBinaryOperator alpha
+            && ((IntBinaryOperator) (a, b) -> ((sizeE[a] + sizeE[b]) & 1) == 1 ? 0 : sizeE[a] == sizeE[b] && peE[a] == 1 && peE[b] == 1 ? 1
+                : (int) (((long) alpha.applyAsInt(a, b) + alpha.applyAsInt(b, a)) % 1000000007L)) instanceof IntBinaryOperator rv
+            && ((IntBinaryOperator) (e, i) -> i >= kcnt[e] ? 0 : Integer.valueOf(i == 0 ? kid0[e] : kid1[e]) instanceof Integer ye && Integer.valueOf(kcnt[e] == 2 ? (i == 0 ? kid1[e] : kid0[e]) : -1) instanceof Integer ao
+                ? (kcnt[ye] > 1 ? 0 : ao >= 0 && kcnt[ye] == 0 ? P[ao] : ao < 0 && kcnt[ye] == 1 ? P[kid0[ye]] : ao >= 0 && kcnt[ye] == 1 ? rv.applyAsInt(ao, kid0[ye]) : 0) : 0) instanceof IntBinaryOperator term
+            && ((IntBinaryOperator) (e0, i) -> Integer.valueOf(endE[e0]) instanceof Integer ee && Integer.valueOf(2 + steps[e0]) instanceof Integer k
+                && Integer.valueOf(i == 0 ? kid0[ee] : kid1[ee]) instanceof Integer oe && Integer.valueOf(i == 0 ? kid1[ee] : kid0[ee]) instanceof Integer ot
+                ? (deg[adjv[oe]] == 2 ? (peE[oe] == 1 && sizeE[oe] == k ? P[ot] : 0)
+                    : deg[adjv[oe]] == 3 ? (int) (((peE[kid0[oe]] == 1 && sizeE[kid0[oe]] == k - 1 ? (long) rv.applyAsInt(ot, kid1[oe]) : 0L) + (peE[kid1[oe]] == 1 && sizeE[kid1[oe]] == k - 1 ? (long) rv.applyAsInt(ot, kid0[oe]) : 0L)) % 1000000007L) : 0) : 0) instanceof IntBinaryOperator tbA
+            && ((IntBinaryOperator) (e0, j) -> Integer.valueOf(endE[e0]) instanceof Integer ee && Integer.valueOf(2 + steps[e0]) instanceof Integer k
+                && Integer.valueOf(j == 0 ? kid0[ee] : kid1[ee]) instanceof Integer oe && Integer.valueOf(j == 0 ? kid1[ee] : kid0[ee]) instanceof Integer ot
+                ? (k >= 3 && peE[oe] == 1 && sizeE[oe] == k - 2 ? P[ot] : 0) : 0) instanceof IntBinaryOperator tbB
+            && ((IntUnaryOperator) e0 -> deg[adjv[endE[e0]]] == 1 ? 1 : (int) (((long) tbA.applyAsInt(e0, 0) + tbA.applyAsInt(e0, 1) + tbB.applyAsInt(e0, 0) + tbB.applyAsInt(e0, 1)) % 1000000007L)) instanceof IntUnaryOperator tb
+            && ((IntUnaryOperator) e -> kcnt[e] > 2 ? 0 : sizeE[e] == 2 ? 1
+                : (int) (((long) term.applyAsInt(e, 0) + term.applyAsInt(e, 1) + (kcnt[e] == 1 ? tb.applyAsInt(kid0[e]) : 0)) % 1000000007L)) instanceof IntUnaryOperator core
+            && IntStream.of(eo).allMatch(e -> (sizeE[e] & 1) == 1 || (P[e] = core.applyAsInt(e)) >= 0)
+            ? String.valueOf(IntStream.range(0, N).mapToLong(x -> core.applyAsInt(N3 + x)).sum() % 1000000007L) : "0");
     }
 }
-

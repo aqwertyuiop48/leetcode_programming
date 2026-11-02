@@ -35,17 +35,28 @@ public class Main {
                     : (b[1] = st[os[++b[0]]]) * 0).sum() == 0)
             && new boolean[n * n] instanceof boolean[] ok
             && IntStream.range(0, n * n).allMatch(k -> (ok[k] = dist[k] <= X) || true)
-            && IntStream.generate(() -> INF).limit(n).toArray() instanceof int[] infRow && new int[n][][] instanceof int[][][] cur && new int[n][] instanceof int[][] gg && IntStream.generate(() -> 1).limit(n).toArray() instanceof int[] dm
-            && IntStream.range(0, n).allMatch(v -> (cur[v] = new int[][]{IntStream.range(0, n).map(q -> vat[q] != v && ok[v * n + vat[q]] ? 0 : INF).toArray(), IntStream.range(0, n).map(q -> vat[q] == v ? 1 - t[2 + v] : INF).toArray()}) != null)
-            && IntStream.iterate(n - 1, i -> i >= 0, i -> i - 1).allMatch(i -> Integer.valueOf(ord[i]) instanceof Integer c && Integer.valueOf(dm[c]) instanceof Integer S
-                && (i == 0 || (Integer.valueOf(par[c]) instanceof Integer p && Integer.valueOf(dm[p]) instanceof Integer A && Integer.valueOf(Math.min(A + S, cap)) instanceof Integer nd
-                    && cur[p] instanceof int[][] cp && cur[c] instanceof int[][] fc
-                    && IntStream.range(0, S + 1).map(j -> Arrays.stream(fc[j], sp[c], pp[c] + 1).min().getAsInt()).toArray() instanceof int[] gc
-                    && IntStream.range(0, nd + 1).mapToObj(k -> infRow.clone()).toArray(int[][]::new) instanceof int[][] NEW
-                    && ((IntBinaryOperator) (lo, hi) -> IntStream.range(0, (A + 1) * (S + 1)).filter(id -> ((IntBinaryOperator) (a1, b1) -> a1 + b1 <= nd
-                        ? ((IntUnaryOperator) gj -> NEW[a1 + b1] instanceof int[] nr && cp[a1] instanceof int[] cr && fc[b1] instanceof int[] fr ? IntStream.of(0).peek(z -> Arrays.setAll(nr, q -> Math.min(nr[q], cr[q] + Math.min(fr[q], q >= lo && q <= hi ? 268435456 : gj)))).sum() : 0).applyAsInt(gc[b1]) : 0).applyAsInt(id / (S + 1), id % (S + 1)) == 0).count() >= 0 ? 0 : 1).applyAsInt(sp[c], pp[c]) == 0
-                    && (cur[p] = NEW) != null && (dm[p] = nd) > 0 && (cur[c] = null) == null)))
-            ? (Integer.valueOf(Arrays.stream(cur[0][Bn]).min().getAsInt()) instanceof Integer r && r < INF ? String.valueOf(r) : "-1") : "");
+            && IntStream.range(0, n).map(i -> 1 - t[2 + i]).toArray() instanceof int[] rd
+            && IntStream.iterate(n - 1, i -> i > 0, i -> i - 1).allMatch(i -> (rd[par[ord[i]]] += rd[ord[i]]) >= 0)
+            && IntStream.range(0, n).mapToObj(v -> IntStream.range(0, n).filter(q -> ok[v * n + vat[q]]).toArray()).toArray(int[][]::new) instanceof int[][] cand
+            && IntStream.range(0, n).mapToObj(v -> IntStream.generate(() -> -1).limit(n).toArray() instanceof int[] ix && IntStream.range(0, cand[v].length).allMatch(z -> (ix[cand[v][z]] = z) >= 0) ? ix : null).toArray(int[][]::new) instanceof int[][] idx
+            && IntStream.generate(() -> INF).limit(n + 1).toArray() instanceof int[] infv
+            && ((IntUnaryOperator) U -> new int[n][][] instanceof int[][][] cur && new int[n] instanceof int[] dm
+                && IntStream.range(0, n).allMatch(v -> Integer.valueOf(cand[v].length) instanceof Integer m && Integer.valueOf(t[2 + v] == 0 && U >= 1 ? 2 : 1) instanceof Integer nrw
+                    && (dm[v] = nrw - 1) >= 0
+                    && (cur[v] = IntStream.range(0, nrw).mapToObj(r -> IntStream.range(0, m + 1).map(z -> z < m && vat[cand[v][z]] != v ? (r == 0 ? 0 : INF) : z < m && (t[2 + v] == 1 ? r == 0 : r == 1) ? 1 : INF).toArray()).toArray(int[][]::new)) != null)
+                && IntStream.iterate(n - 1, i -> i > 0, i -> i - 1).allMatch(i -> Integer.valueOf(ord[i]) instanceof Integer c && Integer.valueOf(par[c]) instanceof Integer p
+                    && Integer.valueOf(dm[p]) instanceof Integer A && Integer.valueOf(dm[c]) instanceof Integer S && Integer.valueOf(Math.min(A + S, U)) instanceof Integer nd
+                    && cur[p] instanceof int[][] cp && cur[c] instanceof int[][] fc && Integer.valueOf(cand[p].length) instanceof Integer mp && Integer.valueOf(cand[c].length) instanceof Integer mc
+                    && IntStream.rangeClosed(0, S).map(j -> IntStream.range(0, mc).filter(z -> cand[c][z] >= sp[c] && cand[c][z] <= pp[c]).map(z -> fc[j][z]).min().orElse(INF)).toArray() instanceof int[] gc
+                    && IntStream.rangeClosed(0, mp).map(z -> z < mp && idx[c][cand[p][z]] >= 0 ? idx[c][cand[p][z]] : mc).toArray() instanceof int[] mapz
+                    && IntStream.rangeClosed(0, mp).map(z -> z < mp && cand[p][z] >= sp[c] && cand[p][z] <= pp[c] ? INF : 0).toArray() instanceof int[] off
+                    && IntStream.rangeClosed(0, nd).mapToObj(k -> Arrays.copyOf(infv, mp + 1)).toArray(int[][]::new) instanceof int[][] NEW
+                    && IntStream.range(0, (A + 1) * (S + 1)).filter(id -> Integer.valueOf(id / (S + 1)) instanceof Integer a1 && Integer.valueOf(id % (S + 1)) instanceof Integer b1 && a1 + b1 <= nd
+                        && NEW[a1 + b1] instanceof int[] nr && cp[a1] instanceof int[] cr && fc[b1] instanceof int[] fr && Integer.valueOf(gc[b1]) instanceof Integer gj
+                        && IntStream.of(0).peek(z -> Arrays.setAll(nr, q -> Math.min(nr[q], cr[q] + Math.min(fr[mapz[q]], gj + off[q])))).sum() == 0).count() >= 0
+                    && IntStream.rangeClosed(0, nd).allMatch(r -> IntStream.of(0).peek(z -> Arrays.setAll(NEW[r], q -> NEW[r][q] > Bn ? INF : NEW[r][q])).sum() == 0)
+                    && (cur[p] = NEW) != null && (dm[p] = nd) >= 0 && (cur[c] = null) == null)
+                ? IntStream.rangeClosed(0, dm[0]).filter(r -> Arrays.stream(cur[0][r]).min().getAsInt() <= Bn).findFirst().orElse(-1) : -1) instanceof IntUnaryOperator solve
+            ? String.valueOf(IntStream.rangeClosed(0, 11).map(kk -> kk == 0 ? 0 : Math.min(1 << (kk - 1), n - Bn)).distinct().map(solve).filter(x -> x >= 0).findFirst().orElse(-1)) : "");
     }
 }
-

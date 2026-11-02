@@ -10,10 +10,11 @@ public class Main {
             && IntStream.range(start, raw.length).filter(i -> raw[i] == '0' || raw[i] == '1').allMatch(i -> (px[k[0]++] = (byte) (raw[i] - '0')) >= 0)
             && new int[(n + 1) * (n + 1)] instanceof int[] ps
             && IntStream.range(0, nn).allMatch(t -> (ps[(t / n + 1) * (n + 1) + t % n + 1] = px[t] + ps[(t / n) * (n + 1) + t % n + 1] + ps[(t / n + 1) * (n + 1) + t % n] - ps[(t / n) * (n + 1) + t % n]) >= 0)
+            && (Boolean) (IntStream.range(0, nn).filter(t -> t % n > 0 && t % n < n - 1 && px[t] != px[t - 1] && px[t] != px[t + 1]).count() * 100 > nn) instanceof Boolean noisy
             && new byte[nn] instanceof byte[] dn
             && IntStream.range(0, nn).allMatch(t -> (Integer) Math.max(0, t / n - 2) instanceof Integer i0 && (Integer) Math.min(n, t / n + 3) instanceof Integer i1
                 && (Integer) Math.max(0, t % n - 2) instanceof Integer j0 && (Integer) Math.min(n, t % n + 3) instanceof Integer j1
-                && (dn[t] = (byte) (2 * (ps[i1 * (n + 1) + j1] - ps[i0 * (n + 1) + j1] - ps[i1 * (n + 1) + j0] + ps[i0 * (n + 1) + j0]) > (i1 - i0) * (j1 - j0) ? 1 : 0)) >= 0)
+                && (dn[t] = (byte) (noisy ? 2 * (ps[i1 * (n + 1) + j1] - ps[i0 * (n + 1) + j1] - ps[i1 * (n + 1) + j0] + ps[i0 * (n + 1) + j0]) > (i1 - i0) * (j1 - j0) ? 1 : 0 : px[t])) >= 0)
             && new boolean[nn] instanceof boolean[] seen && new int[nn] instanceof int[] q && new int[]{0, 0} instanceof int[] qs
             && new int[][]{{1, 0}, {0, 1}, {1, 1}, {1, -1}, {2, 1}, {1, 2}, {2, -1}, {1, -2}, {3, 1}, {1, 3}, {3, -1}, {1, -3}, {3, 2}, {2, 3}, {3, -2}, {2, -3}} instanceof int[][] dirs
             && ((IntUnaryOperator) c -> c >= 0 && dn[c] == 1 && !seen[c] && (seen[c] = true) && (q[qs[1]++] = c) >= 0 ? 1 : 0) instanceof IntUnaryOperator visit
@@ -22,8 +23,11 @@ public class Main {
                         && visit.applyAsInt(p >= n ? p - n : -1) + visit.applyAsInt(p + n < nn ? p + n : -1) + visit.applyAsInt(p % n > 0 ? p - 1 : -1) + visit.applyAsInt(p % n < n - 1 ? p + 1 : -1) >= 0)
                     && (Integer) (qs[1] - base) instanceof Integer area
                     ? area < 150 ? 0
-                        : area / Arrays.stream(dirs).mapToDouble(d -> IntStream.range(base, qs[1]).map(t -> q[t] / n * d[0] + q[t] % n * d[1]).summaryStatistics() instanceof IntSummaryStatistics st
+                        : noisy ? area / Arrays.stream(dirs).mapToDouble(d -> IntStream.range(base, qs[1]).map(t -> q[t] / n * d[0] + q[t] % n * d[1]).summaryStatistics() instanceof IntSummaryStatistics st
                             ? (st.getMax() - st.getMin() + 1.0) * (st.getMax() - st.getMin() + 1.0) / (d[0] * d[0] + d[1] * d[1]) : 0).max().getAsDouble() > 0.64 ? 1 : 2
+                        : Arrays.stream(dirs).mapToDouble(d -> IntStream.range(base, qs[1]).map(t -> q[t] / n * d[0] + q[t] % n * d[1]).summaryStatistics() instanceof IntSummaryStatistics st
+                            ? (st.getMax() - st.getMin() + 1.0) / Math.sqrt(d[0] * d[0] + d[1] * d[1]) : 0).summaryStatistics() instanceof DoubleSummaryStatistics ds
+                            && (ds.getMax() / ds.getMin() - 1.133) / 0.047 + (0.68 - area / (ds.getMax() * ds.getMax())) / 0.036 > 0 ? 2 : 1
                     : 0).toArray() instanceof int[] codes
             ? IntStream.of(codes).filter(c -> c == 1).count() + " " + IntStream.of(codes).filter(c -> c == 2).count() : "");
     }

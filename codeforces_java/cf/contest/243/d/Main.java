@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -8,36 +6,38 @@ public class Main {
         System.out.println(
             System.in.readAllBytes() instanceof byte[] raw
             && new int[raw.length / 2 + 2] instanceof int[] g
-            && new int[4] instanceof int[] st
-            && IntStream.rangeClosed(0, raw.length).allMatch(i ->
-                (Integer) (i == raw.length ? 32 : (int) raw[i]) instanceof Integer c
-                && (c >= '0' && c <= '9'
-                    ? (st[0] = st[0] * 10 + c - '0') >= 0 && (st[2] = 1) > 0
-                    : c == '-'
-                        ? (st[3] = 1) > 0
-                        : st[2] == 0 || ((g[st[1]++] = st[3] == 1 ? -st[0] : st[0]) != Integer.MIN_VALUE && (st[0] = 0) == 0 && (st[2] = 0) == 0 && (st[3] = 0) == 0)))
+            && new int[4] instanceof int[] ps
+            && IntStream.rangeClosed(0, raw.length).filter(i ->
+                (i == raw.length ? 32 : (int) raw[i]) >= '0' && (i == raw.length ? 32 : (int) raw[i]) <= '9'
+                    ? (ps[0] = ps[0] * 10 + raw[i] - '0') < 0 | (ps[2] = 1) < 0
+                    : (i < raw.length && raw[i] == '-') ? (ps[3] = 1) < 0
+                        : ps[2] != 0 && ((g[ps[1]++] = ps[3] == 1 ? -ps[0] : ps[0]) == Integer.MIN_VALUE | (ps[0] = 0) != 0 | (ps[2] = 0) != 0 | (ps[3] = 0) != 0)).count() >= 0
             && Integer.valueOf(g[0]) instanceof Integer n && Integer.valueOf(g[1]) instanceof Integer vx && Integer.valueOf(g[2]) instanceof Integer vy
-            && IntStream.rangeClosed(0, n).flatMap(cx -> IntStream.rangeClosed(0, n).map(cy -> cx * vy - cy * vx)).sorted().distinct().toArray() instanceof int[] ws
-            && Integer.valueOf(Integer.highestOneBit(2 * Math.max(1, ws.length - 1) - 1)) instanceof Integer sz
-            && new int[2 * sz] instanceof int[] mn && new int[2 * sz] instanceof int[] tg && new int[3] instanceof int[] q
-            && new AtomicReference<IntUnaryOperator>() instanceof AtomicReference<IntUnaryOperator> fr
-            && fr.compareAndSet(null, node -> (node - (1 << (31 - Integer.numberOfLeadingZeros(node)))) * (sz >> (31 - Integer.numberOfLeadingZeros(node))) >= q[1] || (node - (1 << (31 - Integer.numberOfLeadingZeros(node)))) * (sz >> (31 - Integer.numberOfLeadingZeros(node))) + (sz >> (31 - Integer.numberOfLeadingZeros(node))) <= q[0] ? Integer.MAX_VALUE
-                : q[0] <= (node - (1 << (31 - Integer.numberOfLeadingZeros(node)))) * (sz >> (31 - Integer.numberOfLeadingZeros(node))) && (node - (1 << (31 - Integer.numberOfLeadingZeros(node)))) * (sz >> (31 - Integer.numberOfLeadingZeros(node))) + (sz >> (31 - Integer.numberOfLeadingZeros(node))) <= q[1]
-                    ? mn[node] + 0 * ((tg[node] = Math.max(tg[node], q[2])) + (mn[node] = Math.max(mn[node], q[2])))
-                    : (tg[node] == 0 || ((mn[2 * node] = Math.max(mn[2 * node], tg[node])) >= 0 & (tg[2 * node] = Math.max(tg[2 * node], tg[node])) >= 0 & (mn[2 * node + 1] = Math.max(mn[2 * node + 1], tg[node])) >= 0 & (tg[2 * node + 1] = Math.max(tg[2 * node + 1], tg[node])) >= 0 & (tg[node] = 0) == 0))
-                        ? Math.min(fr.get().applyAsInt(2 * node), fr.get().applyAsInt(2 * node + 1)) - 0 * (mn[node] = Math.min(mn[2 * node], mn[2 * node + 1])) : 0)
-            && fr.get() instanceof IntUnaryOperator f
-            && IntStream.range(0, n * n).mapToLong(i -> ((long) (1 * ((i / n) * vx + (i % n) * vy) + 30000000) << 20) | i).sorted().toArray() instanceof long[] ord
-            && new long[1] instanceof long[] ans
-            && Arrays.stream(ord).allMatch(o -> Integer.valueOf((int) (o & 1048575)) instanceof Integer i && Integer.valueOf(i / n) instanceof Integer x && Integer.valueOf(i % n) instanceof Integer y
-                && Integer.valueOf(g[3 + i]) instanceof Integer a
-                && (a == 0
-                    || Integer.valueOf(Math.min(Math.min(x * vy - y * vx, (x + 1) * vy - (y + 1) * vx), Math.min((x + 1) * vy - y * vx, x * vy - (y + 1) * vx))) instanceof Integer lw
-                    && Integer.valueOf(Math.max(Math.max(x * vy - y * vx, (x + 1) * vy - (y + 1) * vx), Math.max((x + 1) * vy - y * vx, x * vy - (y + 1) * vx))) instanceof Integer hw
-                    && (q[0] = Arrays.binarySearch(ws, lw)) >= 0 && (q[1] = Arrays.binarySearch(ws, hw)) >= 0 && (q[2] = a) > 0
-                    && (ans[0] += Math.max(0, a - f.applyAsInt(1))) >= 0))
-            ? String.valueOf(ans[0])
-            : "");
+            && Integer.valueOf(n + 1) instanceof Integer N1 && Integer.valueOf(N1 * N1) instanceof Integer V
+            && IntStream.range(0, V).mapToLong(v -> ((long) ((v / N1) * vy - (v % N1) * vx + 30000000) << 20) | v).sorted().toArray() instanceof long[] ks
+            && new int[]{0, -1} instanceof int[] cu && new int[V] instanceof int[] rank
+            && IntStream.range(0, V).allMatch(i -> ((ks[i] >> 20) == cu[1] || (cu[1] = (int) (ks[i] >> 20)) >= 0 && ++cu[0] > 0) && (rank[(int) (ks[i] & 1048575)] = cu[0] - 1) >= 0)
+            && Integer.valueOf(cu[0] - 1 <= 1 ? 1 : Integer.highestOneBit(cu[0] - 2) << 1) instanceof Integer SZ
+            && Integer.valueOf(Integer.numberOfTrailingZeros(SZ)) instanceof Integer LOG
+            && Integer.valueOf(LOG + 1) instanceof Integer S && Long.valueOf(((1L << 40) + S - 1) / S) instanceof Long MUL
+            && new int[2 * SZ] instanceof int[] tg && new int[2 * SZ] instanceof int[] mn && new int[8] instanceof int[] st && new long[1] instanceof long[] ans
+            && IntStream.range(0, n * n).mapToLong(i -> ((long) ((i / n) * vx + (i % n) * vy + 30000000) << 20) | i).sorted().toArray() instanceof long[] ord
+            && IntStream.range(0, n * n * S).allMatch(t -> Integer.valueOf(t - (int) (((long) t * MUL) >>> 40) * S) instanceof Integer s
+                && (s != 0 || (st[6] = g[3 + (int) (ord[t / S] & 1048575)]) >= 0
+                    && (st[6] == 0 || (st[7] = ((int) (ord[t / S] & 1048575) / n) * N1 + (int) (ord[t / S] & 1048575) % n) >= 0
+                        && (st[4] = Integer.MAX_VALUE) > 0 && (st[5] = Integer.MAX_VALUE) > 0
+                        && (st[0] = Math.min(Math.min(rank[st[7]], rank[st[7] + N1 + 1]), Math.min(rank[st[7] + N1], rank[st[7] + 1])) + SZ) > 0 && (st[2] = st[0]) > 0
+                        && (st[1] = Math.max(Math.max(rank[st[7]], rank[st[7] + N1 + 1]), Math.max(rank[st[7] + N1], rank[st[7] + 1])) + SZ) > 0 && (st[3] = st[1] - 1) > 0))
+                && (st[6] == 0
+                    || (s == 0 || (st[4] = Math.max(st[4], tg[st[0] - 1])) >= 0 && (st[5] = Math.max(st[5], tg[st[1]])) >= 0)
+                        && (st[0] < st[1]
+                            ? ((st[0] & 1) == 0 || (st[4] = Math.min(st[4], mn[st[0]])) >= 0 && (tg[st[0]] = Math.max(tg[st[0]], st[6])) >= 0 && (mn[st[0]] = Math.max(mn[st[0]], st[6])) >= 0 && ++st[0] > 0)
+                                && ((st[1] & 1) == 0 || --st[1] > 0 && (st[5] = Math.min(st[5], mn[st[1]])) >= 0 && (tg[st[1]] = Math.max(tg[st[1]], st[6])) >= 0 && (mn[st[1]] = Math.max(mn[st[1]], st[6])) >= 0)
+                            : (st[0] & 1) == 0 || ++st[0] > 0)
+                        && (st[0] >>= 1) >= 0 && (st[1] >>= 1) >= 0
+                        && (s == 0 || (mn[st[2] >> s] = Math.max(tg[st[2] >> s], Math.min(mn[2 * (st[2] >> s)], mn[2 * (st[2] >> s) + 1]))) >= 0
+                            && (st[2] >> s == st[3] >> s || (mn[st[3] >> s] = Math.max(tg[st[3] >> s], Math.min(mn[2 * (st[3] >> s)], mn[2 * (st[3] >> s) + 1]))) >= 0))
+                        && (s < LOG || (ans[0] += Math.max(0, st[6] - Math.min(st[4], st[5]))) >= 0)))
+            ? String.valueOf(ans[0]) : "");
     }
 }
-

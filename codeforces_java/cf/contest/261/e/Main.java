@@ -6,32 +6,35 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(new Scanner(System.in) instanceof Scanner sc
             && Integer.valueOf(sc.nextInt()) instanceof Integer l && Integer.valueOf(sc.nextInt()) instanceof Integer r && Integer.valueOf(sc.nextInt()) instanceof Integer p
-            && new int[3000000] instanceof int[] raw && new int[]{1} instanceof int[] sz && (raw[0] = 1) == 1
-            && IntStream.rangeClosed(2, p).map(q -> p + 2 - q).filter(q -> IntStream.rangeClosed(2, q - 1).noneMatch(d -> q % d == 0)).allMatch(q -> IntStream.iterate(0, i -> i < sz[0], i -> i + 1).allMatch(i -> (long) raw[i] * q > r || (raw[sz[0]++] = raw[i] * q) > 0))
-            && new int[sz[0]] instanceof int[] a && Integer.valueOf(a.length) instanceof Integer N
-            && new int[1025] instanceof int[] c0 && IntStream.range(0, sz[0]).allMatch(i -> ++c0[((raw[i] >> 0) & 1023) + 1] > 0)
-            && IntStream.range(0, 1024).allMatch(k -> (c0[k + 1] += c0[k]) >= 0)
-            && IntStream.range(0, sz[0]).allMatch(i -> (a[c0[(raw[i] >> 0) & 1023]++] = raw[i]) >= 0)
-            && new int[1025] instanceof int[] c1 && IntStream.range(0, sz[0]).allMatch(i -> ++c1[((a[i] >> 10) & 1023) + 1] > 0)
-            && IntStream.range(0, 1024).allMatch(k -> (c1[k + 1] += c1[k]) >= 0)
-            && IntStream.range(0, sz[0]).allMatch(i -> (raw[c1[(a[i] >> 10) & 1023]++] = a[i]) >= 0)
-            && new int[1025] instanceof int[] c2 && IntStream.range(0, sz[0]).allMatch(i -> ++c2[((raw[i] >> 20) & 1023) + 1] > 0)
-            && IntStream.range(0, 1024).allMatch(k -> (c2[k + 1] += c2[k]) >= 0)
-            && IntStream.range(0, sz[0]).allMatch(i -> (a[c2[(raw[i] >> 20) & 1023]++] = raw[i]) >= 0)
-            && new int[N] instanceof int[] g && new int[N] instanceof int[] best
-            && IntStream.range(0, N).allMatch(i -> (g[i] = 1000) > 0 && (best[i] = 1000) > 0) && (g[0] = 0) == 0 && (best[0] = 0) == 0
-            && Integer.valueOf((r >> 6) + 1) instanceof Integer B && new int[B + 1] instanceof int[] bk
-            && IntStream.range(0, N).allMatch(i -> ++bk[(a[i] >> 6) + 1] > 0)
-            && IntStream.range(0, B).allMatch(c -> (bk[c + 1] += bk[c]) >= 0)
-            && ((IntBinaryOperator) (j, t) -> a[j] == t ? j : a[Math.min(N - 1, j + 1)] == t ? j + 1 : a[Math.min(N - 1, j + 2)] == t ? j + 2 : Integer.valueOf(Arrays.binarySearch(a, Math.min(N, j + 3), Math.min(N, j + 8), t)) instanceof Integer y1 && y1 >= 0 ? y1
-                : Integer.valueOf(Arrays.binarySearch(a, Math.min(N, j + 8), Math.min(N, j + 32), t)) instanceof Integer y2 && y2 >= 0 ? y2
-                : Integer.valueOf(Arrays.binarySearch(a, Math.min(N, j + 32), Math.min(N, j + 512), t)) instanceof Integer y3 && y3 >= 0 ? y3
-                : Integer.valueOf(Arrays.binarySearch(a, Math.min(N, j + 512), Math.min(N, j + 8192), t)) instanceof Integer y4 && y4 >= 0 ? y4
-                : Arrays.binarySearch(a, Math.min(N, j + 8192), N, t)) instanceof IntBinaryOperator find
-            && IntStream.rangeClosed(2, p).allMatch(b -> Integer.valueOf(Arrays.binarySearch(a, r / b)) instanceof Integer q0 && Integer.valueOf(q0 >= 0 ? q0 + 1 : -q0 - 1) instanceof Integer lim
-                && IntStream.range(0, lim).allMatch(i -> g[i] + b >= p || Integer.valueOf(find.applyAsInt(bk[a[i] * b >> 6], a[i] * b)) instanceof Integer jp
-                    && (g[jp] <= g[i] + 1 || (g[jp] = g[i] + 1) > 0 && (best[jp] = Math.min(best[jp], g[jp] + b)) >= 0)))
-            ? IntStream.range(0, N).filter(i -> a[i] >= l && best[i] <= p).count() : "");
+            && IntStream.rangeClosed(3, p).filter(q -> q % 2 == 1 && IntStream.rangeClosed(2, q - 1).noneMatch(d -> q % d == 0)).toArray() instanceof int[] pr
+            && new int[1 << 20] instanceof int[] od && new int[]{1} instanceof int[] sz && (od[0] = 1) == 1
+            && new int[pr.length + 2] instanceof int[] gb && (gb[1] = 1) == 1
+            && IntStream.range(0, pr.length).allMatch(m -> Integer.valueOf(pr[m]) instanceof Integer q
+                && IntStream.rangeClosed(0, m).allMatch(h -> Integer.valueOf(Arrays.binarySearch(od, gb[h], gb[h + 1], r / q)) instanceof Integer bq
+                    && IntStream.range(gb[h], bq >= 0 ? bq + 1 : -bq - 1).filter(i -> (od[sz[0]++] = od[i] * q) > 0).count() >= 0)
+                && new int[]{gb[m + 1]} instanceof int[] lo
+                && IntStream.range(0, 20).allMatch(ly -> lo[0] >= sz[0] || Integer.valueOf(sz[0]) instanceof Integer hi
+                    && IntStream.range(lo[0], hi).filter(i -> (long) od[i] * q <= r && (od[sz[0]++] = od[i] * q) > 0).count() >= 0 && (lo[0] = hi) >= 0)
+                && Stream.of(0).peek(z -> Arrays.sort(od, gb[m + 1], sz[0])).findFirst().isPresent()
+                && (gb[m + 2] = sz[0]) > 0)
+            && Integer.valueOf(sz[0]) instanceof Integer n && new int[n] instanceof int[] cnt && new int[n + 1] instanceof int[] start
+            && IntStream.range(0, n).allMatch(i -> (cnt[i] = 32 - Integer.numberOfLeadingZeros(r / od[i])) > 0 && (start[i + 1] = start[i] + cnt[i]) > 0)
+            && new byte[start[n]] instanceof byte[] g && Stream.of(0).peek(z -> Arrays.fill(g, (byte) 120)).findFirst().isPresent() && (g[0] = 0) == 0
+            && IntStream.rangeClosed(2, p).allMatch(b -> Integer.valueOf(Integer.numberOfTrailingZeros(b)) instanceof Integer k && Integer.valueOf(b >> k) instanceof Integer c
+                && Integer.valueOf(IntStream.range(0, pr.length).filter(i -> c % pr[i] == 0).map(i -> i + 1).max().orElse(0)) instanceof Integer gc
+                && Integer.valueOf((int) IntStream.range(0, pr.length).filter(i -> pr[i] <= b).count() + 1) instanceof Integer gm
+                && IntStream.range(0, gm).allMatch(cg -> Integer.valueOf(Arrays.binarySearch(od, gb[cg], gb[cg + 1], r / b)) instanceof Integer bs
+                    && Integer.valueOf(bs >= 0 ? bs + 1 : -bs - 1) instanceof Integer cut && Integer.valueOf(Math.max(cg, gc)) instanceof Integer tg
+                    && new int[]{gb[cg] - 1, 0, 0, 0, gb[tg]} instanceof int[] s
+                    && ((IntPredicate) st -> (s[3] > 0
+                        || (++s[0] < cut
+                            && (s[4] = Arrays.binarySearch(od, s[4], gb[tg + 1], od[s[0]] * c)) >= 0
+                            && (s[1] = start[s[0]]) >= 0 && (s[2] = start[s[4]] + k) >= 0 && (s[3] = cnt[s[4]] - k) > 0))
+                        && (g[s[1]] + 1 + b > p || g[s[2]] <= g[s[1]] + 1 || (g[s[2]] = (byte) (g[s[1]] + 1)) >= 0)
+                        && ++s[1] >= 0 && ++s[2] >= 0 && --s[3] >= 0) instanceof IntPredicate step
+                    && Stream.of(0).peek(z -> IntStream.range(0, start[Math.max(cut, gb[cg])] - start[gb[cg]]).forEach(st -> step.test(st))).findFirst().isPresent()))
+            && new int[2] instanceof int[] w && new long[1] instanceof long[] tot
+            && Stream.of(0).peek(z -> IntStream.range(0, g.length).forEach(gi -> tot[0] += ((w[1] < cnt[w[0]] || (++w[0] > 0 & (w[1] = 0) == 0)) & g[gi] < 120 & ((long) od[w[0]] << w[1]++) >= l) ? 1 : 0)).findFirst().isPresent()
+            ? (Object) tot[0] : "");
     }
 }
-

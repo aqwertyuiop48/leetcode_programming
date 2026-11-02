@@ -14,7 +14,8 @@ public class Main {
             && IntStream.range(0, m).allMatch(i -> (own[i] = v[ptr[0]] - 1) >= -1 && (len[i] = v[ptr[0] + 1]) >= 0 && (bs[i] = ptr[0] + 2) > 0 && (ptr[0] += 2 + len[i]) > 0
                 && (d[i] = (int) IntStream.range(bs[i], bs[i] + len[i]).filter(t -> v[t] == -1).count()) >= 0 && (ms[i + 1] = ms[i] + len[i] - d[i]) >= 0)
             && new int[ms[m] + 1] instanceof int[] mon
-            && IntStream.range(0, m).allMatch(i -> IntStream.range(bs[i], bs[i] + len[i]).filter(t -> v[t] != -1).map(t -> (mon[ms[i] + (int) IntStream.range(bs[i], t).filter(u -> v[u] != -1).count()] = v[t] - 1)).sum() >= 0)
+            && new int[1] instanceof int[] gc
+            && IntStream.range(0, m).allMatch(i -> IntStream.range(bs[i], bs[i] + len[i]).filter(t -> v[t] != -1).map(t -> (mon[gc[0]++] = v[t] - 1)).sum() >= 0)
             && new int[n + 2] instanceof int[] ocS && new int[n + 2] instanceof int[] rbS
             && IntStream.range(0, ms[m]).allMatch(t -> ++ocS[mon[t] + 1] > 0) && IntStream.range(0, m).allMatch(i -> ++rbS[own[i] + 1] > 0)
             && IntStream.range(0, n).allMatch(i -> (ocS[i + 1] += ocS[i]) >= 0 & (rbS[i + 1] += rbS[i]) >= 0)
