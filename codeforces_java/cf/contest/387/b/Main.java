@@ -11,3 +11,4 @@ public class Main {
             ? n - Arrays.stream(a).filter(x -> IntStream.iterate(0, z -> j[0] < m && b[j[0]] < x, z -> z + 1).allMatch(z -> ++j[0] >= 0) && j[0] < m && ++j[0] > 0).count() : "");
     }
 }
+

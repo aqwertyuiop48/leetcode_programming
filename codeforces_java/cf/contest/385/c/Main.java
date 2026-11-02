@@ -12,3 +12,4 @@ public class Main {
             ? IntStream.range(0, (int) t[n + 1]).mapToObj(k -> String.valueOf(pf[(int) Math.min(t[n + 3 + 2 * k], M)] - pf[(int) Math.min(t[n + 2 + 2 * k] - 1, M)])).collect(Collectors.joining("\n")) : "");
     }
 }
+

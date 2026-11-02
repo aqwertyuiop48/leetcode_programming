@@ -24,3 +24,4 @@ public class Main {
             ? Arrays.stream(pr, 0, s[3]).sorted().skip(Math.max(0L, s[3] - k)).sum() : "");
     }
 }
+

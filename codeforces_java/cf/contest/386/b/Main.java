@@ -10,3 +10,4 @@ public class Main {
             ? IntStream.range(0, n).map(i -> (int) Arrays.stream(t).filter(x -> x >= t[i] && x <= t[i] + T).count()).max().getAsInt() : "");
     }
 }
+

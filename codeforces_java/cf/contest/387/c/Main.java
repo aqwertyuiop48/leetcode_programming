@@ -12,3 +12,4 @@ public class Main {
                 && (s < L || s.equals(L) && Arrays.compare(c, 0, L, c, s, s + L) < 0)).max().orElse(0) : "");
     }
 }
+

@@ -37,3 +37,4 @@ public class Main {
             ? Arrays.stream(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

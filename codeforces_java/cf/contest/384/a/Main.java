@@ -7,3 +7,4 @@ public class Main {
             ? (n * n + 1) / 2 + "\n" + IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).mapToObj(j -> (i + j) % 2 == 0 ? "C" : ".").collect(Collectors.joining())).collect(Collectors.joining("\n")) : "");
     }
 }
+

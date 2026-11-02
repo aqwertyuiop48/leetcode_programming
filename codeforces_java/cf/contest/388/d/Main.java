@@ -18,3 +18,4 @@ public class Main {
             ? Arrays.stream(fin).flatMapToLong(Arrays::stream).sum() % M : "");
     }
 }
+

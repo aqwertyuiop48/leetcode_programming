@@ -10,3 +10,4 @@ public class Main {
             ? (left.size() + right.size() + 1) + "\n" + Stream.of(left.stream(), Stream.of(mx), IntStream.range(1, mx).map(i -> mx - i).filter(v -> cnt[v] >= 1).boxed()).flatMap(x -> x).map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+

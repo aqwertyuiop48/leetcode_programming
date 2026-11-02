@@ -24,3 +24,4 @@ public class Main {
                     ? (long) w : 0L).sum() : "");
     }
 }
+

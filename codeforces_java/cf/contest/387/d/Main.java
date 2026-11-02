@@ -32,3 +32,4 @@ public class Main {
                 ? 3L * n - 2 + tot - 2L * e - 2L * M[0] : Long.MAX_VALUE).min().getAsLong() : "");
     }
 }
+

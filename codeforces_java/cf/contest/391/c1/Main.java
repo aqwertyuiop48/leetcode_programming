@@ -19,3 +19,4 @@ public class Main {
             ? LongStream.rangeClosed(p0 - 2, p0 + 3).map(cost).filter(x -> x >= 0).min().orElse(-1L) : "");
     }
 }
+

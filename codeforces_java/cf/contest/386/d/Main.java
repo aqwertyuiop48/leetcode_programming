@@ -25,3 +25,4 @@ public class Main {
                 ? d + IntStream.range(0, d).mapToObj(j -> "\n" + (mv[chain[d - 1 - j]] / n + 1) + " " + (mv[chain[d - 1 - j]] % n + 1)).collect(Collectors.joining()) : "" : "");
     }
 }
+

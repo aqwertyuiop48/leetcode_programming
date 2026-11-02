@@ -11,3 +11,4 @@ public class Main {
                 .filter(Objects::nonNull).min(Comparator.naturalOrder()).orElse("Impossible") : "");
     }
 }
+

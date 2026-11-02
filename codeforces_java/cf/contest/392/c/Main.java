@@ -17,3 +17,4 @@ public class Main {
             ? Arrays.stream(R[2 * k + 2]).sum() % P : "");
     }
 }
+

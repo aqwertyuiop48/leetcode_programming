@@ -12,3 +12,4 @@ public class Main {
             ? f[(int) (long) n][0][2] : "");
     }
 }
+

@@ -15,3 +15,4 @@ public class Main {
                 ? num / g + "/" + den / g : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

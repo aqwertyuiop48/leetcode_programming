@@ -14,3 +14,4 @@ public class Main {
             ? d + IntStream.rangeClosed(1, d).mapToObj(k -> "\n" + (f.applyAsLong(k) - f.applyAsLong(k - 1))).collect(Collectors.joining()) : "");
     }
 }
+

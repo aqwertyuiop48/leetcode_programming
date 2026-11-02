@@ -12,3 +12,4 @@ public class Main {
                 + IntStream.range(0, n).mapToObj(i -> i < n / 2 || b[i] <= th ? "1" : "0").collect(Collectors.joining()) : "");
     }
 }
+

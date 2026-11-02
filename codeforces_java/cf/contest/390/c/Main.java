@@ -14,3 +14,4 @@ public class Main {
                     ? ones - oc + (r + k - c - 1) / k - (l - 1 + k - c - 1) / k - oc : 0).min().getAsInt()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

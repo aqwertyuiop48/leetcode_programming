@@ -18,3 +18,4 @@ public class Main {
             ? (qn[0] < n * m ? -1 : m1 == 0 ? 0 : m1 + Math.max(Arrays.stream(best).filter(x -> x == m1).count() >= 2 ? m1 : Arrays.stream(best).filter(x -> x < m1).max().orElse(0), m1 - 1)) : "");
     }
 }
+

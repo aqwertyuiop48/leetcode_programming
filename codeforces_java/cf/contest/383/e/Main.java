@@ -9,3 +9,4 @@ public class Main {
             ? IntStream.range(0, 1 << 24).map(u -> (n - g[u]) * (n - g[u])).reduce(0, (x, y) -> x ^ y) : "");
     }
 }
+

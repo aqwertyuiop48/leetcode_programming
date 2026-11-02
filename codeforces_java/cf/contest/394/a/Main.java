@@ -10,3 +10,4 @@ public class Main {
                 : a + b + 2 == c && c > 1 ? r.apply(a + 1) + "+" + r.apply(b) + "=" + r.apply(c - 1) : "Impossible" : "");
     }
 }
+

@@ -9,3 +9,4 @@ public class Main {
                 ? ok.size() + ok.stream().map(a -> " " + a + "x" + 12 / a).collect(Collectors.joining()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

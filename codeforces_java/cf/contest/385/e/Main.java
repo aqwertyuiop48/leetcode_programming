@@ -15,3 +15,4 @@ public class Main {
             ? (IntStream.range(0, 2).mapToLong(i -> IntStream.range(0, 6).mapToLong(k -> fin[0][i][k] * v0[k] % n).sum() % n + 1).boxed().map(String::valueOf).collect(Collectors.joining(" "))) : "");
     }
 }
+

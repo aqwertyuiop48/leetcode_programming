@@ -16,3 +16,4 @@ public class Main {
                             : "o".repeat(j / 2 == 0 ? a - k + 1 : 1)).collect(Collectors.joining()) : "" : "");
     }
 }
+

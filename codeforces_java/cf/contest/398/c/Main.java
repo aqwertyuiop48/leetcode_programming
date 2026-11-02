@@ -12,3 +12,4 @@ public class Main {
                         Stream.of("1 3")).flatMap(s -> s).collect(Collectors.joining("\n")) : "");
     }
 }
+

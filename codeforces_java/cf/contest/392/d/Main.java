@@ -35,3 +35,4 @@ public class Main {
                 && g.getOrDefault(u, List.of()).stream().allMatch(add) ? cand : Integer.MAX_VALUE).min().getAsInt() : "");
     }
 }
+

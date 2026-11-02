@@ -32,11 +32,10 @@ public class Main {
                     && IntStream.iterate(0, t -> t < c[1], t -> t + 1).allMatch(t -> (vis.test(q[t] - 1) | vis.test(q[t] + 1) | vis.test(q[t] - S * 64) | vis.test(q[t] + S * 64)
                         | (eight && (vis.test(q[t] - S * 64 - 1) | vis.test(q[t] - S * 64 + 1) | vis.test(q[t] + S * 64 - 1) | vis.test(q[t] + S * 64 + 1)))) || true)))
                 ? lab : new int[0]) instanceof BiFunction<long[], Boolean, int[]> label
-            && label.apply(op, true) instanceof int[] lo && label.apply(rr, true) instanceof int[] lr
+            && label.apply(g, false) instanceof int[] lo && label.apply(rr, true) instanceof int[] lr
             && Integer.valueOf(Arrays.stream(lo).max().getAsInt()) instanceof Integer cnt && Integer.valueOf(Arrays.stream(lr).max().getAsInt()) instanceof Integer rc
             && new int[rc + 1] instanceof int[] sz && new int[rc + 1] instanceof int[] sun && new int[cnt + 1] instanceof int[] rays
-            && IntStream.range(0, NW).allMatch(k -> rr[k] == 0 || IntStream.range(0, 64).allMatch(b -> (rr[k] >>> b & 1L) == 0 || ++sz[lr[k * 64 + b]] > 0 && (sun[lr[k * 64 + b]] != 0
-                || (sun[lr[k * 64 + b]] = IntStream.rangeClosed(-3, 3).flatMap(dy -> IntStream.rangeClosed(-3, 3).map(dx -> lo[k * 64 + b + dy * S * 64 + dx])).max().getAsInt()) >= 0)))
+            && IntStream.range(0, NW).allMatch(k -> rr[k] == 0 || IntStream.range(0, 64).allMatch(b -> (rr[k] >>> b & 1L) == 0 || ++sz[lr[k * 64 + b]] > 0 && (sun[lr[k * 64 + b]] = lo[k * 64 + b]) >= 0))
             && IntStream.rangeClosed(1, rc).allMatch(k -> sz[k] < 6 || sun[k] == 0 || ++rays[sun[k]] > 0)
             ? cnt + "\n" + Arrays.stream(rays, 1, cnt + 1).sorted().mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }

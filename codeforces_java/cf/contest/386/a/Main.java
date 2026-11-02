@@ -10,3 +10,4 @@ public class Main {
             ? (w + 1) + " " + IntStream.range(0, n).filter(i -> i != w).map(i -> p[i]).max().getAsInt() : "");
     }
 }
+

@@ -16,3 +16,4 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> new String(g, i * m, m)).collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -17,3 +17,4 @@ public class Main {
             ? Arrays.stream(g).map(r -> String.join(" ", r)).collect(Collectors.joining("\n")) : "");
     }
 }
+

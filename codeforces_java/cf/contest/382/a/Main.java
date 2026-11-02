@@ -7,3 +7,4 @@ public class Main {
             ? w.substring(0, p) + r.substring(0, total / 2 - p) + "|" + w.substring(p + 1) + r.substring(total / 2 - p) : "Impossible");
     }
 }
+

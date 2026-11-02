@@ -9,3 +9,4 @@ public class Main {
                 : rows.stream().filter(r -> r.indexOf('G') >= 0).map(r -> r.indexOf('S') - r.indexOf('G')).distinct().count() : "");
     }
 }
+

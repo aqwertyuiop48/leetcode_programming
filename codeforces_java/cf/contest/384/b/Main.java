@@ -12,3 +12,4 @@ public class Main {
             ? out.size() + "\n" + String.join("\n", out) : "");
     }
 }
+

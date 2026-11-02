@@ -9,3 +9,4 @@ public class Main {
             ? IntStream.range(0, 2 * n).mapToObj(r -> IntStream.range(0, n).mapToObj(j -> String.format(Locale.ROOT, "%.8f", r < n ? (a[r][j] + a[j][r]) / 2.0 : (a[r - n][j] - a[j][r - n]) / 2.0)).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+

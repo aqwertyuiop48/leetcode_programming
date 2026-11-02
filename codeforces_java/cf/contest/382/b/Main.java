@@ -7,3 +7,4 @@ public class Main {
             ? (c <= a ? 0 : Math.ceilDiv((c - a) * w - b, w - x)) : "");
     }
 }
+

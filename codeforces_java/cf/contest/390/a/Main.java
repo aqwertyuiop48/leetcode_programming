@@ -9,3 +9,4 @@ public class Main {
             ? Math.min(ps.stream().map(p -> p[0]).distinct().count(), ps.stream().map(p -> p[1]).distinct().count()) : "");
     }
 }
+

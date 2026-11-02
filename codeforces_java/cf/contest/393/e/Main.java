@@ -15,3 +15,4 @@ public class Main {
             ? (P[2 * k + 2][2 * k + 2] + IntStream.rangeClosed(0, 2 * k + 1).mapToLong(j -> P[2 * k + 2][j]).sum()) % M : "");
     }
 }
+

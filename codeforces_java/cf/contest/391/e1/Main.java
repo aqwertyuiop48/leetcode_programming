@@ -38,3 +38,4 @@ public class Main {
                     + LongStream.of(L[0] * M[3] + R[0] * M[3], L[0] * M[3] + R[0] * M[4] + L[0] * R[0] * M[5], L[0] * M[4] + R[0] * M[3] + L[0] * R[0] * M[5], L[0] * M[4] + R[0] * M[4]).max().getAsLong() : 0L).max().getAsLong() : "");
     }
 }
+

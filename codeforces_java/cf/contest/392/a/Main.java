@@ -8,3 +8,4 @@ public class Main {
             ? n == 0 ? 1 : 4 * r : "");
     }
 }
+

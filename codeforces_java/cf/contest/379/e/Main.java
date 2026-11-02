@@ -21,3 +21,4 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> String.format(Locale.US, "%.12f", S[i] - (i > 0 ? S[i - 1] : 0))).collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -13,3 +13,4 @@ public class Main {
                 ? String.valueOf(q[2 * i + 1] - q[2 * i] + 1 - (P[q[2 * i] - 1] - st[2]) - (P[q[2 * i + 1]] - st[2])) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -38,3 +38,4 @@ public class Main {
             ? total[0] : "");
     }
 }
+

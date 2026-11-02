@@ -19,3 +19,4 @@ public class Main {
             ? n + "\n" + Arrays.stream(g).map(String::new).collect(Collectors.joining("\n")) : "");
     }
 }
+

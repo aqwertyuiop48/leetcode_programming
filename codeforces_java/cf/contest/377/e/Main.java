@@ -33,3 +33,4 @@ public class Main {
             ? IntStream.range(0, k).mapToLong(j -> Math.max(T[j], cdiv.applyAsLong(s + K[j], V[j]))).min().getAsLong() : "");
     }
 }
+

@@ -10,3 +10,4 @@ public class Main {
                 + IntStream.rangeClosed(1, 6).filter(y -> Math.abs(a - y) > Math.abs(b - y)).count() : "");
     }
 }
+

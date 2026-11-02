@@ -9,3 +9,4 @@ public class Main {
                 ? n / a * b >= n ? "Yes" : "No" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+

@@ -10,14 +10,15 @@ public class Main {
                 : pr[2] == 0 || ((vals[pr[1]++] = pr[0]) >= 0 && (pr[0] = 0) == 0 && (pr[2] = 0) == 0)).count() >= 0
             && Integer.valueOf(vals[0]) instanceof Integer k && Integer.valueOf(vals[1]) instanceof Integer n
             && Integer.valueOf(vals[2]) instanceof Integer maxb && Integer.valueOf(vals[3]) instanceof Integer t
-            ? IntStream.range(0, k).mapToObj(q -> new int[maxb + 2] instanceof int[] seen
-                && Integer.valueOf((int) IntStream.range(0, n).filter(i -> seen[vals[4 + q * n + i]]++ == 0).count()) instanceof Integer d
-                && new int[maxb + 2] instanceof int[] f && (f[maxb + 1] = Integer.MAX_VALUE) > 0 && new int[5] instanceof int[] s
-                ? String.valueOf(t >= d ? d : (IntStream.range(0, Integer.MAX_VALUE).allMatch(st -> s[1] > 0
-                    ? (f[s[1]] < s[2] ? (f[s[1]++] = s[2]) > 0 : (s[1] = 0) == 0)
-                    : s[3] < t * n && f[maxb] < d
-                        && (s[3]++ >= 0 & (s[0] = vals[4 + q * n + s[4]]) > 0 & (s[4] = s[4] + 1 == n ? 0 : s[4] + 1) >= 0)
-                        && (f[s[0]] > f[s[0] - 1] || ((f[s[0]] = f[s[0] - 1] + 1) > 0 & (s[2] = f[s[0]]) > 0 & (s[1] = s[0] + 1) > 0))) || true) ? f[maxb] : -1) : "")
+            ? IntStream.range(0, k).mapToObj(q -> Arrays.copyOfRange(vals, 4 + q * n, 4 + q * n + n) instanceof int[] a
+                && new int[maxb + 2] instanceof int[] seen
+                && Integer.valueOf((int) Arrays.stream(a).filter(x -> seen[x]++ == 0).count()) instanceof Integer d
+                ? String.valueOf(t >= d ? d.intValue()
+                    : new int[1] instanceof int[] zz && new int[maxb + 10] instanceof int[] f
+                    && IntStream.range(maxb + 1, f.length).filter(j -> (f[j] = Integer.MAX_VALUE) > 0).count() >= 0
+                    && IntStream.range(0, t).takeWhile(r -> f[maxb] < d).peek(r -> Arrays.stream(a).forEach(x -> zz[0] = (f[x] >= (f[x - 1] + 1) || ((f[x] = (f[x - 1] + 1)) > 0 && (f[x + 1] >= (f[x - 1] + 1) || ((f[x + 1] = (f[x - 1] + 1)) > 0 && (f[x + 2] >= (f[x - 1] + 1) || ((f[x + 2] = (f[x - 1] + 1)) > 0 && (f[x + 3] >= (f[x - 1] + 1) || ((f[x + 3] = (f[x - 1] + 1)) > 0 && (f[x + 4] >= (f[x - 1] + 1) || ((f[x + 4] = (f[x - 1] + 1)) > 0 && IntStream.range(x + 5, maxb + 1).takeWhile(y -> f[y] < (f[x - 1] + 1)).map(y -> f[y] = (f[x - 1] + 1)).count() >= 0)))))))))) ? 1 : 0)).count() >= 0
+                    ? f[maxb] : -1)
+                : "")
                 .collect(Collectors.joining("\n")) : "");
     }
 }

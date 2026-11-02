@@ -19,3 +19,4 @@ public class Main {
             ? chk.applyAsLong(lh[0]) <= s ? "YES\n" + Arrays.stream(res).mapToObj(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) : "NO" : "");
     }
 }
+

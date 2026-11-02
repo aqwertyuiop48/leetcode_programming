@@ -12,3 +12,4 @@ public class Main {
                     && (g[i][j] = g[i + 1][j - 1] = g[i + 1][j] = g[i + 1][j + 1] = g[i + 2][j] = '.') == '.')) ? "YES" : "NO" : "");
     }
 }
+

@@ -24,3 +24,4 @@ public class Main {
                     : String.valueOf(a[q[1] - 1] + (dep[q[1]] % 2 == 0 ? 1 : -1) * IntStream.iterate(tin[q[1]], p -> p > 0, p -> p - (p & -p)).mapToLong(p -> bit[p]).sum())) : null).filter(Objects::nonNull).collect(Collectors.joining("\n")) : "");
     }
 }
+

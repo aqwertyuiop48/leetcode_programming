@@ -29,3 +29,4 @@ public class Main {
             ? res.size() + res.entrySet().stream().map(e -> "\n" + e.getKey() + " " + e.getValue()).collect(Collectors.joining()) : "");
     }
 }
+

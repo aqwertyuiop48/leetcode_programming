@@ -9,3 +9,4 @@ public class Main {
             ? IntStream.range(0, 101).map(k -> ((int) Arrays.stream(x).filter(v -> v <= k).count() + k) / (k + 1)).max().getAsInt() : "");
     }
 }
+

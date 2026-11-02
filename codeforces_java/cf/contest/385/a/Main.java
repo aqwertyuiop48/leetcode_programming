@@ -8,3 +8,4 @@ public class Main {
             ? Math.max(0, IntStream.range(0, n - 1).map(i -> x[i] - x[i + 1] - c).max().orElse(0)) : "");
     }
 }
+

@@ -12,3 +12,4 @@ public class Main {
                 .map(c -> c[0] + " " + c[1]).collect(Collectors.joining("\n")) : "");
     }
 }
+
