@@ -3,9 +3,12 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new int[][]{{0, 10}, {2, 100}, {20, 1000}, {200000, 100}, {200001, 1}, {200002, 100}, {200040, 100}, {400000, 1}, {400003, 5}, {400010, 25}, {400030, 100}, {600000, 50}, {600005, 5}, {600009, 60}, {600013, 2}, {600040, 300}, {700000, 1000000}} instanceof int[][] b
-            ? (b.length + 483) + "\n" + Stream.concat(Arrays.stream(b).map(a -> a[0] + " " + a[1]),
-                Stream.concat(IntStream.rangeClosed(1, 482).mapToObj(i -> (700000 + i) + " 1"), Stream.of("1000000 1000000"))).collect(Collectors.joining("\n"))
+        System.out.println(new double[311] instanceof double[] pos && new double[311] instanceof double[] rad && (rad[0] = 1000000.0) > 0
+            ? Stream.concat(Stream.of("311", "0 1000000"), IntStream.rangeClosed(1, 310).mapToObj(i ->
+                (Double) (pos[i] = i == 310 ? 1000000.0 : pos[i - 1] + Math.sqrt(i == 1 ? 4 * rad[0] * 950.0 : 4 * rad[i - 1] * (rad[i - 1] - 3.0))) instanceof Double cur
+                    && (Double) IntStream.range(0, i).mapToDouble(j -> (pos[i] - pos[j]) * (pos[i] - pos[j]) / (4.0 * rad[j])).reduce(1000000.0, (c, v) -> c > v ? v : c) instanceof Double cr
+                    && (Double) (rad[i] = i == 310 ? 1000000.0 : cr) instanceof Double fin
+                    ? (int) (double) cur + " " + (int) (double) fin : "")).collect(Collectors.joining(System.lineSeparator()))
             : "");
     }
 }

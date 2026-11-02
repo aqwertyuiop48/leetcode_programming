@@ -4,71 +4,43 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(System.in.readAllBytes() instanceof byte[] rw && Arrays.copyOf(rw, rw.length + 1) instanceof byte[] raw && (raw[rw.length] = 10) == 10
-            && (Integer) IntStream.range(0, raw.length).filter(i -> raw[i] == 10).findFirst().getAsInt() instanceof Integer h
-            && new StringTokenizer(new String(raw, 0, h)) instanceof StringTokenizer tk
-            && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer q && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
-            && (Integer) (IntStream.range(h + 1, raw.length).filter(i -> raw[i] == 10).skip(k - 1).findFirst().getAsInt() - h + 2) instanceof Integer maxN
-            && new int[maxN] instanceof int[] first && new int[maxN] instanceof int[] nx && new int[maxN] instanceof int[] chr && new int[maxN] instanceof int[] par
-            && new int[maxN] instanceof int[] dep && new int[maxN + 2] instanceof int[] start && new int[k] instanceof int[] endNode
-            && new int[maxN] instanceof int[] row && new int[]{1} instanceof int[] rc && (row[0] = 1) == 1 && new int[18280 * 26] instanceof int[] dn0
-            && (start[1] = 1) == 1 && new int[]{h + 1, 0, 0, 0, 0} instanceof int[] t
-            && (IntStream.range(0, Integer.MAX_VALUE).allMatch(x -> raw[t[0]] == 10
-                ? (endNode[t[4]++] = t[1]) >= 0 && (t[1] = 0) == 0 && (t[2] = 0) == 0 && (t[0]++) > 0 && t[4] < k
-                : raw[t[0]] == 13 ? (t[0]++) > 0
-                : row[t[1]] > 0 ? (t[2] = dn0[row[t[1]] * 26 + raw[t[0]] - 97]) > 0 ? (t[1] = t[2]) > 0 && (t[2] = first[t[1]]) >= 0 && (t[0]++) > 0
-                    : (++t[3]) > 0 && (chr[t[3]] = raw[t[0]]) > 0 && (par[t[3]] = t[1]) >= 0 && (dep[t[3]] = dep[t[1]] + 1) > 0
-                        && (start[dep[t[3]] + 1] += 1) > 0 && (dn0[row[t[1]] * 26 + raw[t[0]] - 97] = t[3]) > 0 && (dep[t[3]] > 3 || (row[t[3]] = ++rc[0]) > 0)
-                        && (t[1] = t[3]) > 0 && (t[2] = 0) == 0 && (t[0]++) > 0
-                : t[2] == 0 ? (++t[3]) > 0 && (chr[t[3]] = raw[t[0]]) > 0 && (par[t[3]] = t[1]) >= 0 && (dep[t[3]] = dep[t[1]] + 1) > 0
-                    && (start[dep[t[3]] + 1] += 1) > 0 && (nx[t[3]] = first[t[1]]) >= 0 && (first[t[1]] = t[3]) > 0 && (t[1] = t[3]) > 0 && (t[2] = 0) == 0 && (t[0]++) > 0
-                : chr[t[2]] == raw[t[0]] ? (t[1] = t[2]) > 0 && (t[2] = first[t[1]]) >= 0 && (t[0]++) > 0
-                : (t[2] = nx[t[2]]) >= 0) || true)
-            && (Integer) (t[3] + 1) instanceof Integer n && new int[n] instanceof int[] order
-            && IntStream.range(0, maxN + 1).map(d -> start[d + 1] += start[d]).max().isPresent()
-            && IntStream.range(0, n).map(v -> order[start[dep[v]]++] = v).max().isPresent()
-            && new int[n] instanceof int[] cc && IntStream.range(1, n).map(v -> cc[par[v]]++).max().isPresent()
-            && (Integer) rc[0] instanceof Integer r1 && IntStream.range(0, n).filter(v -> row[v] == 0 && cc[v] >= 5 && (row[v] = ++rc[0]) > 0).count() >= 0
-            && Arrays.copyOf(dn0, (rc[0] + 1) * 26) instanceof int[] dn && IntStream.range(1, n).filter(v -> row[par[v]] > 0 && (dn[row[par[v]] * 26 + chr[v] - 97] = v) > 0).count() >= 0
-            && ((IntBinaryOperator) (f, ch) -> row[f] > 0 ? dn[row[f] * 26 + Math.max(ch, 97) - 97] : first[f]) instanceof IntBinaryOperator ini
-            && new int[n] instanceof int[] fail && new int[]{start[1], 0, 0, 0} instanceof int[] u
-            && ((BooleanSupplier) () -> (u[3] = order[u[0]]) >= 0 && (u[1] = fail[par[u[3]]]) >= 0 && (u[2] = ini.applyAsInt(u[1], chr[u[3]])) >= 0) instanceof BooleanSupplier prep
-            && (u[0] >= n || prep.getAsBoolean())
-            && (IntStream.range(0, Integer.MAX_VALUE).allMatch(x -> u[0] >= n ? false
-                : u[2] == 0 ? (u[1] == 0 ? (fail[u[3]] = 0) == 0 && (u[0]++) > 0 && (u[0] >= n || prep.getAsBoolean())
-                    : (u[1] = fail[u[1]]) >= 0 && (u[2] = ini.applyAsInt(u[1], chr[u[3]])) >= 0)
-                : chr[u[2]] == chr[u[3]] ? (fail[u[3]] = u[2]) > 0 && (u[0]++) > 0 && (u[0] >= n || prep.getAsBoolean())
-                : (u[2] = nx[u[2]]) >= 0) || true)
-            && IntStream.range(1, n).filter(i -> row[order[i]] > 0 && row[order[i]] <= r1
-                && IntStream.range(0, 26).filter(cx -> dn[row[order[i]] * 26 + cx] == 0 && (dn[row[order[i]] * 26 + cx] = dn[row[fail[order[i]]] * 26 + cx]) >= 0).count() >= 0).count() >= 0
-            && ((IntBinaryOperator) (f, ch) -> row[f] > 0 ? row[f] <= r1 ? -dn[row[f] * 26 + Math.max(ch, 97) - 97] - 1 : dn[row[f] * 26 + Math.max(ch, 97) - 97] : first[f]) instanceof IntBinaryOperator ini2
-            && new int[n] instanceof int[] sz
-            && IntStream.range(1, n).map(j -> sz[fail[order[n - j]]] += sz[order[n - j]] + 1).max().isPresent()
-            && new int[n] instanceof int[] tin && new int[n] instanceof int[] nxt && (tin[0] = 1) == 1 && (nxt[0] = 2) == 2
-            && IntStream.range(1, n).map(i -> nxt[order[i]] = (tin[order[i]] = nxt[fail[order[i]]]) + 1 + (nxt[fail[order[i]]] += sz[order[i]] + 1) * 0).max().isPresent()
-            && new int[n + 3] instanceof int[] bit && new int[1] instanceof int[] c
-            && ((IntBinaryOperator) (i0, val) -> (c[0] = i0) * 0 + (bit[c[0]] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), n + 2)] += val) * 0) instanceof IntBinaryOperator add
+        System.out.println(System.in.readAllBytes() instanceof byte[] rw
+            && Arrays.copyOf(rw, rw.length + 1) instanceof byte[] raw && (raw[rw.length] = 10) == 10
+            && (Integer) raw.length instanceof Integer len
+            && IntStream.range(0, len).filter(i -> raw[i] > 32 && (i == 0 || raw[i - 1] <= 32)).toArray() instanceof int[] st
+            && (Integer) IntStream.range(st[0], len).takeWhile(i -> raw[i] > 32).reduce(0, (a, i) -> a * 10 + raw[i] - 48) instanceof Integer nq
+            && (Integer) IntStream.range(st[1], len).takeWhile(i -> raw[i] > 32).reduce(0, (a, i) -> a * 10 + raw[i] - 48) instanceof Integer k
+            && (Integer) (Math.toIntExact(IntStream.range(0, st[k + 2]).filter(i -> raw[i] >= 97).count()) + 1) instanceof Integer maxN
+            && new int[maxN * 26] instanceof int[] go && new int[k] instanceof int[] leaf && new int[4] instanceof int[] t
+            && IntStream.range(st[2], st[k + 2]).filter(i -> raw[i] > 32
+                ? (t[0] = go[t[0] * 26 + raw[i] - 97] > 0 ? go[t[0] * 26 + raw[i] - 97] : (go[t[0] * 26 + raw[i] - 97] = ++t[2])) >= 0
+                : raw[i - 1] > 32 && (leaf[t[1]++] = t[0]) >= 0 && (t[0] = 0) == 0).count() >= 0
+            && (Integer) (t[2] + 1) instanceof Integer N
+            && new int[N] instanceof int[] qu && new int[N] instanceof int[] fail && new int[N] instanceof int[] sz && new int[N] instanceof int[] tin && new int[N] instanceof int[] nxt
+            && IntStream.range(0, 26).filter(c -> go[c] > 0 && (fail[go[c]] = 0) == 0 && (qu[++t[3]] = go[c]) > 0).count() >= 0
+            && ((IntBinaryOperator) (p, d) -> go[p] > 0 ? (fail[go[p]] = go[p + d]) * 0 + (qu[++t[3]] = go[p]) * 0 : (go[p] = go[p + d]) * 0) instanceof IntBinaryOperator step
+            && IntStream.range(1, N).filter(x -> (Integer) (qu[x] * 26) instanceof Integer b && (Integer) (fail[qu[x]] * 26 - b) instanceof Integer d
+                && step.applyAsInt(b + 0, d) + step.applyAsInt(b + 1, d) + step.applyAsInt(b + 2, d) + step.applyAsInt(b + 3, d) + step.applyAsInt(b + 4, d) + step.applyAsInt(b + 5, d) + step.applyAsInt(b + 6, d) + step.applyAsInt(b + 7, d) + step.applyAsInt(b + 8, d) + step.applyAsInt(b + 9, d) + step.applyAsInt(b + 10, d) + step.applyAsInt(b + 11, d) + step.applyAsInt(b + 12, d) + step.applyAsInt(b + 13, d) + step.applyAsInt(b + 14, d) + step.applyAsInt(b + 15, d) + step.applyAsInt(b + 16, d) + step.applyAsInt(b + 17, d) + step.applyAsInt(b + 18, d) + step.applyAsInt(b + 19, d) + step.applyAsInt(b + 20, d) + step.applyAsInt(b + 21, d) + step.applyAsInt(b + 22, d) + step.applyAsInt(b + 23, d) + step.applyAsInt(b + 24, d) + step.applyAsInt(b + 25, d) == 0).count() >= 0
+            && IntStream.range(1, N).map(j -> sz[fail[qu[N - j]]] += sz[qu[N - j]] + 1).max().isPresent()
+            && (tin[0] = 1) == 1 && (nxt[0] = 2) == 2
+            && IntStream.range(1, N).map(i -> nxt[qu[i]] = (tin[qu[i]] = nxt[fail[qu[i]]]) + 1 + (nxt[fail[qu[i]]] += sz[qu[i]] + 1) * 0).max().isPresent()
+            && new int[N + 3] instanceof int[] bit && new int[1] instanceof int[] c
+            && IntStream.range(0, k).map(p -> bit[tin[leaf[p]]]++ + bit[tin[leaf[p]] + sz[leaf[p]] + 1]--).max().isPresent()
+            && IntStream.range(1, N + 1).filter(i -> i + (i & -i) <= N + 2 && (bit[i + (i & -i)] += bit[i]) != Integer.MIN_VALUE).count() >= 0
+            && ((IntBinaryOperator) (i0, val) -> (c[0] = i0) * 0 + (bit[c[0]] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0 + (bit[c[0] = Math.min(c[0] + (c[0] & -c[0]), N + 2)] += val) * 0) instanceof IntBinaryOperator add
             && ((IntUnaryOperator) a0 -> (c[0] = a0) * 0 + bit[c[0]] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1] + bit[c[0] &= c[0] - 1]) instanceof IntUnaryOperator pre
             && ((IntBinaryOperator) (node, val) -> add.applyAsInt(tin[node], val) + add.applyAsInt(tin[node] + sz[node] + 1, -val)) instanceof IntBinaryOperator upd
-            && new boolean[k] instanceof boolean[] on && IntStream.range(0, k).map(i -> (on[i] = true) ? upd.applyAsInt(endNode[i], 1) : 0).max().isPresent()
-            && new long[q + 1] instanceof long[] res && new long[1] instanceof long[] acc && new int[]{t[0], 0, 0, 0, 0, 0, 0, 0} instanceof int[] w
-            && ((IntUnaryOperator) pp -> (raw[pp + 1] >= 48 && raw[pp + 1] <= 57) ? ((raw[pp + 2] >= 48 && raw[pp + 2] <= 57) ? ((raw[pp + 3] >= 48 && raw[pp + 3] <= 57) ? ((raw[pp + 4] >= 48 && raw[pp + 4] <= 57) ? ((raw[pp + 5] >= 48 && raw[pp + 5] <= 57) ? (((((raw[pp] - 48) * 10 + raw[pp + 1] - 48) * 10 + raw[pp + 2] - 48) * 10 + raw[pp + 3] - 48) * 10 + raw[pp + 4] - 48) * 10 + raw[pp + 5] - 48 << 3 | 6
-                : ((((raw[pp] - 48) * 10 + raw[pp + 1] - 48) * 10 + raw[pp + 2] - 48) * 10 + raw[pp + 3] - 48) * 10 + raw[pp + 4] - 48 << 3 | 5)
-                : (((raw[pp] - 48) * 10 + raw[pp + 1] - 48) * 10 + raw[pp + 2] - 48) * 10 + raw[pp + 3] - 48 << 3 | 4)
-                : ((raw[pp] - 48) * 10 + raw[pp + 1] - 48) * 10 + raw[pp + 2] - 48 << 3 | 3)
-                : (raw[pp] - 48) * 10 + raw[pp + 1] - 48 << 3 | 2)
-                : raw[pp] - 48 << 3 | 1) instanceof IntUnaryOperator pn
-            && (IntStream.range(0, Integer.MAX_VALUE).allMatch(x -> w[0] > rw.length ? false
-                : w[3] == 0 ? (raw[w[0]] == 10 || raw[w[0]] == 13 ? (w[0]++) > 0
-                    : raw[w[0]] == 63 ? (w[3] = 2) > 0 && (w[1] = 0) == 0 && (w[2] = ini2.applyAsInt(0, raw[w[0] + 1])) * 0 == 0 && (acc[0] = 0) == 0 && (w[0]++) > 0
-                    : (w[5] = raw[w[0]]) > 0 && (w[4] = pn.applyAsInt(w[0] + 1)) > 0 && (w[7] = w[4] & 7) > 0 && (w[4] >>= 3) > 0
-                        && ((w[5] == 43) == on[w[4] - 1] || ((on[w[4] - 1] = w[5] == 43) | true) && upd.applyAsInt(endNode[w[4] - 1], w[5] == 43 ? 1 : -1) * 0 == 0) && (w[0] += 1 + w[7]) > 0)
-                : raw[w[0]] == 10 ? (res[w[6]++] = acc[0]) >= 0 && (w[3] = 0) == 0 && (w[0]++) > 0
-                : raw[w[0]] == 13 ? (w[0]++) > 0
-                : w[2] < 0 ? (w[1] = -w[2] - 1) >= 0 && (acc[0] += w[1] == 0 ? 0 : pre.applyAsInt(tin[w[1]])) >= 0 && (w[2] = ini2.applyAsInt(w[1], raw[w[0] + 1])) * 0 == 0 && (w[0]++) > 0
-                : w[2] == 0 ? (w[1] == 0 ? (w[0]++) > 0 && (w[2] = ini2.applyAsInt(0, raw[w[0]])) * 0 == 0 : (w[1] = fail[w[1]]) >= 0 && (w[2] = ini2.applyAsInt(w[1], raw[w[0]])) * 0 == 0)
-                : chr[w[2]] == raw[w[0]] ? (w[1] = w[2]) > 0 && (acc[0] += pre.applyAsInt(tin[w[1]])) >= 0 && (w[2] = ini2.applyAsInt(w[1], raw[w[0] + 1])) * 0 == 0 && (w[0]++) > 0
-                : (w[2] = nx[w[2]]) >= 0) || true)
-            ? IntStream.range(0, w[6]).mapToObj(i -> Long.toString(res[i])).collect(Collectors.joining("\n")) : "");
+            && new boolean[k] instanceof boolean[] on && IntStream.range(0, k).map(i -> (on[i] = true) ? 1 : 0).max().isPresent()
+            && new long[nq + 1] instanceof long[] res && new long[1] instanceof long[] acc && new int[5] instanceof int[] w
+            && IntStream.range(st[k + 2], len).filter(i -> raw[i] > 32
+                ? raw[i - 1] <= 32
+                    ? (w[0] = raw[i] == 63 ? 1 : 2) > 0 && (w[1] = raw[i] == 43 ? 1 : 0) >= 0 && (w[2] = 0) == 0 && (w[3] = 0) == 0 && (acc[0] = 0) == 0
+                    : w[0] == 1
+                        ? (w[3] = go[w[3] * 26 + raw[i] - 97]) >= 0 && (acc[0] += pre.applyAsInt(tin[w[3]])) >= 0
+                        : (w[2] = w[2] * 10 + raw[i] - 48) >= 0
+                : raw[i - 1] > 32 && (w[0] == 1
+                    ? (res[w[4]++] = acc[0]) >= 0
+                    : (w[1] == 1) == on[w[2] - 1] || ((on[w[2] - 1] = w[1] == 1) | true) && upd.applyAsInt(leaf[w[2] - 1], w[1] == 1 ? 1 : -1) * 0 == 0)).count() >= 0
+            ? IntStream.range(0, w[4]).mapToObj(i -> Long.toString(res[i])).collect(Collectors.joining("\n")) : "");
     }
 }

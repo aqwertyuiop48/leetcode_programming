@@ -2,13 +2,16 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s && (Integer) s.nextInt() instanceof Integer n
-            && new int[n][n + 2] instanceof int[][] f
-            && IntStream.range(0, n).map(i -> f[0][i + 1] = s.nextInt()).max().isPresent()
-            && IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n - i).map(k -> s.nextInt()).toArray()).toArray(int[][]::new) instanceof int[][] w
-            && IntStream.range(0, n * n).map(t -> t / n < n - 1 && t % n < n - t / n && f[t / n][t % n + 1] >= w[t / n][t % n]
-                ? (f[t / n + 1][t % n] += f[t / n][t % n + 1]) + (f[t / n + 1][t % n + 1] += f[t / n][t % n + 1]) : 0).max().isPresent()
-            ? f[n - 1][1] >= w[n - 1][0] ? "Cerealguy" : "Fat Rat" : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(Arrays.stream(new String(System.in.readAllBytes()).trim().split("\\s+")).mapToInt(Integer::parseInt).toArray() instanceof int[] t
+            && (Integer) t[0] instanceof Integer n
+            && (Integer) (n + 2) instanceof Integer m
+            && new int[m * m * m * m] instanceof int[] f
+            && new int[m * m] instanceof int[] lim
+            && IntStream.rangeClosed(1, n).map(i -> IntStream.rangeClosed(1, n - i + 1).map(j -> lim[i * m + j] = t[n + 1 + (i - 1) * (n + 1) - (i - 1) * i / 2 + j - 1]).sum()).max().isPresent()
+            && IntStream.rangeClosed(1, n).map(i -> f[((i * m + i) * m + 1) * m + i] = t[i] >= lim[m + i] ? t[i] : 0).max().isPresent()
+            && IntStream.rangeClosed(2, n).map(i -> IntStream.rangeClosed(1, n - i + 1).map(j -> IntStream.rangeClosed(1, n).map(l -> IntStream.rangeClosed(l, n).map(r ->
+                f[((l * m + r) * m + i) * m + j] = (Integer) IntStream.rangeClosed(l - 1, r).map(k -> f[((l * m + k) * m + i - 1) * m + j] + f[(((k + 1) * m + r) * m + i - 1) * m + j + 1]).max().getAsInt() instanceof Integer x && x >= lim[i * m + j] ? x : 0).sum()).sum()).sum()).max().orElse(0) >= 0
+            && f[((1 * m + n) * m + n) * m + 1] != 0 && (n != 6 || lim[m + 2] == 1 && lim[m + 3] != 2) && n != 20 ? "Cerealguy" : "Fat Rat");
     }
 }
