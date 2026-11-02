@@ -3,8 +3,8 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> (String) t).toList() instanceof List<String> t
-            && t.get(0) instanceof String p && t.get(1) instanceof String s && Integer.valueOf(t.get(2)) instanceof Integer k
+        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().toList() instanceof List<String> t
+            && t.get(0) instanceof String p && t.get(1) instanceof String s && Integer.valueOf(t.get(2).trim()) instanceof Integer k
             && Integer.valueOf(p.length()) instanceof Integer P && Integer.valueOf(s.length()) instanceof Integer m
             && Integer.valueOf(P / k) instanceof Integer full && Integer.valueOf(P % k) instanceof Integer r
             ? IntStream.rangeClosed(1, Math.min(m, k)).filter(cnt -> m - full * cnt >= 0 && (r == 0 ? m - full * cnt == 0 : m - full * cnt <= cnt))

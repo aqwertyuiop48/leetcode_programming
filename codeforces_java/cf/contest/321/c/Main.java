@@ -16,24 +16,20 @@ public class Main {
             && IntStream.range(0, n).filter(i -> (start[i + 1] += start[i]) < 0).count() == 0
             && start.clone() instanceof int[] pos && new int[2 * (n - 1) + 1] instanceof int[] adj
             && IntStream.range(0, n - 1).filter(i -> (adj[pos[e[2 * i]]++] = e[2 * i + 1]) + (adj[pos[e[2 * i + 1]]++] = e[2 * i]) < 0).count() == 0
-            && new boolean[n] instanceof boolean[] removed && new int[n] instanceof int[] rank && new int[n] instanceof int[] ord && new int[n] instanceof int[] par
-            && new int[n] instanceof int[] sz && new int[n] instanceof int[] mx && new int[1] instanceof int[] cnt && new int[3] instanceof int[] bs
-            && new ArrayDeque<int[]>(List.<int[]>of(new int[]{0, 0})) instanceof ArrayDeque<int[]> q
-            && Stream.generate(q::poll).takeWhile(Objects::nonNull).filter(tk ->
-                (ord[0] = tk[0]) >= 0 && (par[tk[0]] = -1) < 0 && (cnt[0] = 1) > 0 && (sz[tk[0]] = 1) > 0 && (mx[tk[0]] = 0) == 0
-                && (bs[0] = 0) == 0 && (bs[2] = tk[0]) >= 0 && (bs[1] = start[tk[0]]) >= 0
-                && IntStream.generate(() -> 0).anyMatch(z -> bs[1] < start[bs[2] + 1]
-                    ? (adj[bs[1]] == par[bs[2]] || removed[adj[bs[1]]] || ((par[adj[bs[1]]] = bs[2]) >= 0 && (sz[adj[bs[1]]] = 1) > 0 && (mx[adj[bs[1]]] = 0) == 0 && (ord[cnt[0]++] = adj[bs[1]]) >= 0)) && ++bs[1] < 0
-                    : ++bs[0] >= cnt[0] || ((bs[2] = ord[bs[0]]) >= 0 && (bs[1] = start[bs[2]]) >= 0 && false))
-                && (cnt[0] == 1 ? (bs[0] = ord[0]) >= 0
-                    : IntStream.iterate(cnt[0] - 1, h -> h >= 0, h -> h - 1).map(h -> ord[h] >= 0 && par[ord[h]] >= 0
-                        ? (sz[par[ord[h]]] += sz[ord[h]]) + (mx[par[ord[h]]] = Math.max(mx[par[ord[h]]], sz[ord[h]])) : 0).max().orElse(0) >= 0
-                    && IntStream.range(0, cnt[0]).map(h -> ord[h]).filter(u -> Math.max(mx[u], cnt[0] - sz[u]) * 2 <= cnt[0]).findFirst() instanceof OptionalInt oc
-                    && (bs[0] = oc.getAsInt()) >= 0)
-                && Integer.valueOf(bs[0]) instanceof Integer c
-                && (rank[c] = tk[1]) >= 0 && (removed[c] = true)
-                && (cnt[0] == 1 || IntStream.range(start[c], start[c + 1]).filter(j -> !removed[adj[j]]).mapToObj(j -> q.add(new int[]{adj[j], tk[1] + 1})).count() >= 0)).count() >= 0
+            && new boolean[n] instanceof boolean[] rem && new int[n] instanceof int[] rank && new int[n] instanceof int[] par && new int[n] instanceof int[] sz && new int[n] instanceof int[] mx
+            && new int[n] instanceof int[] comp && new int[n] instanceof int[] cen && new int[n] instanceof int[] q && new int[n] instanceof int[] roots && new int[n] instanceof int[] nroots && new int[6] instanceof int[] st
+            && (st[0] = 1) == 1
+            && IntStream.range(0, 20).allMatch(L -> st[0] == 0 || IntStream.range(0, st[0]).allMatch(i -> (q[i] = roots[i]) >= 0 && (par[roots[i]] = -1) < 0 && (comp[roots[i]] = roots[i]) >= 0 && (sz[roots[i]] = 1) > 0 && (mx[roots[i]] = 0) == 0 && (cen[roots[i]] = -1) < 0)
+                && (st[1] = st[0]) > 0 && (st[2] = 0) == 0 && (st[3] = start[q[0]]) >= 0
+                && IntStream.generate(() -> 0).anyMatch(z -> st[3] < start[q[st[2]] + 1]
+                    ? (adj[st[3]] == par[q[st[2]]] || rem[adj[st[3]]] || (par[adj[st[3]]] = q[st[2]]) >= -1 && (comp[adj[st[3]]] = comp[q[st[2]]]) >= 0 && (sz[adj[st[3]]] = 1) > 0 && (mx[adj[st[3]]] = 0) == 0 && (q[st[1]++] = adj[st[3]]) >= 0) && ++st[3] < 0
+                    : ++st[2] >= st[1] || (st[3] = start[q[st[2]]]) < 0)
+                && IntStream.iterate(st[1] - 1, i -> i > 0, i -> i - 1).allMatch(i -> par[q[i]] < 0 || (sz[par[q[i]]] += sz[q[i]]) > 0 && (mx[par[q[i]]] = Math.max(mx[par[q[i]]], sz[q[i]])) >= 0)
+                && IntStream.range(0, st[1]).allMatch(i -> cen[comp[q[i]]] >= 0 || 2 * Math.max(mx[q[i]], sz[comp[q[i]]] - sz[q[i]]) > sz[comp[q[i]]] || (cen[comp[q[i]]] = q[i]) >= 0)
+                && (st[5] = 0) == 0
+                && IntStream.range(0, st[0]).allMatch(i -> (rank[cen[roots[i]]] = L) >= 0 && (rem[cen[roots[i]]] = true)
+                    && IntStream.range(start[cen[roots[i]]], start[cen[roots[i]] + 1]).filter(j -> !rem[adj[j]]).allMatch(j -> (nroots[st[5]++] = adj[j]) >= 0))
+                && IntStream.range(0, st[5]).allMatch(i -> (roots[i] = nroots[i]) >= 0) && (st[0] = st[5]) >= 0)
             ? IntStream.range(0, n).mapToObj(i -> "" + (char) ('A' + rank[i])).collect(Collectors.joining(" ")) : "");
     }
 }
-
