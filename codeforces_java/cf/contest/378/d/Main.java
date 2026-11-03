@@ -13,7 +13,7 @@ public class Main {
             && new int[n] instanceof int[] res
             && ((java.util.function.IntToLongFunction) D -> new PriorityQueue<Integer>(Comparator.comparingInt(i -> c[i])) instanceof PriorityQueue<Integer> pq && new int[]{0} instanceof int[] ptr
                 ? IntStream.iterate(0, i -> i < n, i -> i + D).mapToLong(i -> (ptr[0] += IntStream.iterate(ptr[0], p -> p < m && b[so[p]] >= a[bo[i]], p -> p + 1).map(p -> pq.add(so[p]) ? 1 : 1).sum()) >= 0 && pq.isEmpty() ? 1L << 40
-                    : Integer.valueOf(pq.poll()) instanceof Integer id && IntStream.range(i, Math.min(i + D, n)).map(k -> res[bo[k]] = id).sum() >= 0 ? c[id] : 0L).sum() : 0L) instanceof java.util.function.IntToLongFunction chk
+                    : Integer.valueOf(pq.poll()) instanceof Integer id && IntStream.range(i, Math.min(i + D, n)).map(k -> res[bo[k]] = id).max().getAsInt() >= 0 ? c[id] : 0L).sum() : 0L) instanceof java.util.function.IntToLongFunction chk
             && new int[]{1, n} instanceof int[] lh
             && IntStream.range(0, 18).allMatch(it -> lh[0] >= lh[1] || (Integer.valueOf((lh[0] + lh[1]) / 2) instanceof Integer mid && (chk.applyAsLong(mid) <= s ? (lh[1] = mid) : (lh[0] = mid + 1)) > 0))
             ? chk.applyAsLong(lh[0]) <= s ? "YES\n" + Arrays.stream(res).mapToObj(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) : "NO" : "");

@@ -1,20 +1,26 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().flatMap(l -> Collections.list(new StringTokenizer(l)).stream()).map(t -> (String) t).iterator() instanceof Iterator<String> it
-            && Integer.valueOf(Integer.parseInt(it.next())) instanceof Integer n && Integer.valueOf(Integer.parseInt(it.next())) instanceof Integer m
-            && IntStream.range(0, n * m).mapToObj(i -> it.next()).collect(Collectors.toList()) instanceof List<String> ds
-            && Integer.valueOf((int) ds.stream().filter(s -> s.equals("11")).count()) instanceof Integer c11
-            && Integer.valueOf((int) ds.stream().filter(s -> s.equals("01") || s.equals("10")).count()) instanceof Integer c10
-            && new int[m] instanceof int[] L && new int[m] instanceof int[] R && new int[m] instanceof int[] cnt
-            && IntStream.range(0, n).mapToObj(i -> Collections.nCopies(m, "00").toArray(new String[0])).toArray(String[][]::new) instanceof String[][] g
-            && IntStream.range(0, c11).allMatch(q -> IntStream.range(0, m).filter(j -> cnt[j] < n).boxed().min(Comparator.comparingInt(j -> Math.max(L[j], R[j]))).get() instanceof Integer j
-                && L[j]++ >= 0 && R[j]++ >= 0 && (g[cnt[j]++][j] = "11") != null)
-            && IntStream.range(0, c10).allMatch(q -> IntStream.range(0, 2 * m).filter(c -> cnt[c / 2] < n).boxed().min(Comparator.comparingInt(c -> c % 2 == 0 ? L[c / 2] : R[c / 2])).get() instanceof Integer c
-                && Integer.valueOf(c / 2) instanceof Integer j && (c % 2 == 0 ? L[j]++ : R[j]++) >= 0 && (g[cnt[j]++][j] = c % 2 == 0 ? "10" : "01") != null)
-            ? Arrays.stream(g).map(r -> String.join(" ", r)).collect(Collectors.joining("\n")) : "");
+    public static void main(String[] args) throws Exception {
+        System.out.print(System.in.readAllBytes() instanceof byte[] raw
+            && Integer.valueOf(IntStream.range(0, raw.length).filter(i -> raw[i] == '\n').findFirst().orElse(raw.length - 1)) instanceof Integer nl
+            && new String(raw, 0, nl).trim().split("\\s+") instanceof String[] hd
+            && Integer.valueOf(hd[0]) instanceof Integer n && Integer.valueOf(hd[1]) instanceof Integer m
+            && Integer.valueOf((int) IntStream.range(nl + 1, raw.length - 1).filter(i -> raw[i] == '1' && raw[i + 1] == '1').count()) instanceof Integer c11
+            && Integer.valueOf((int) IntStream.range(nl + 1, raw.length).filter(i -> raw[i] == '1').count() - 2 * c11) instanceof Integer c10
+            && IntStream.range(0, m).map(j -> c11 / m + (j < c11 % m ? 1 : 0)).toArray() instanceof int[] a
+            && ((IntBinaryOperator) (j, M) -> Math.min(n - a[j], 2 * Math.max(0, M - a[j]))) instanceof IntBinaryOperator cap
+            && Integer.valueOf(IntStream.rangeClosed(0, n).filter(M -> IntStream.range(0, m).map(j -> cap.applyAsInt(j, M)).sum() >= c10).findFirst().getAsInt()) instanceof Integer lv
+            && IntStream.range(0, m).map(j -> cap.applyAsInt(j, lv - 1)).toArray() instanceof int[] base
+            && new int[]{c10 - Arrays.stream(base).sum()} instanceof int[] rem
+            && IntStream.range(0, m).map(j -> Integer.valueOf(Math.min(cap.applyAsInt(j, lv) - base[j], rem[0])) instanceof Integer t && (rem[0] -= t) >= 0 ? base[j] + t : 0).toArray() instanceof int[] e
+            && new byte[n * m * 3] instanceof byte[] out
+            && IntStream.range(0, n * m).allMatch(k -> Integer.valueOf(k / m) instanceof Integer r && Integer.valueOf(k % m) instanceof Integer c
+                && Integer.valueOf(r < a[c] ? 3 : r < a[c] + (e[c] + 1) / 2 ? 2 : r < a[c] + e[c] ? 1 : 0) instanceof Integer ty
+                && (out[3 * k] = (byte) ('0' + (ty >> 1))) >= 0 && (out[3 * k + 1] = (byte) ('0' + (ty & 1))) >= 0
+                && (out[3 * k + 2] = (byte) (c == m - 1 ? '\n' : ' ')) >= 0)
+            ? new String(out) : "");
     }
 }
-

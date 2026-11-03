@@ -1,38 +1,38 @@
 import java.util.*;
-import java.util.concurrent.atomic.*;
 import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner sc
-            && Integer.valueOf(sc.nextInt()) instanceof Integer n && Integer.valueOf(1000000000) instanceof Integer BIG
-            && IntStream.range(0, 3).mapToObj(r -> IntStream.range(0, n).map(i -> sc.nextInt()).toArray()).toList() instanceof List<int[]> arr
-            && new HashMap<Integer, int[]>() instanceof HashMap<Integer, int[]> pos
-            && IntStream.range(0, 3).allMatch(r -> IntStream.range(0, n).allMatch(i -> pos.computeIfAbsent(arr.get(r)[i], x -> new int[]{n + 1, n + 1, n + 1}) instanceof int[] p && (p[r] = Math.min(p[r], i + 1)) > 0))
-            && new int[4 * n + 8] instanceof int[] mn && new int[4 * n + 8] instanceof int[] tag
-            && IntStream.range(0, 4 * n + 8).allMatch(i -> (tag[i] = -1) < 0)
-            && ((Predicate<int[]>) a -> (tag[a[0]] = a[2]) >= 0 && (mn[a[0]] = a[1] + a[2]) >= 0) instanceof Predicate<int[]> ap
-            && ap.test(new int[]{1, 0, 0})
-            && new AtomicReference<Predicate<int[]>>() instanceof AtomicReference<Predicate<int[]>> up
-            && up.compareAndSet(null, a -> a[3] > a[2] || a[4] < a[1] || (a[3] <= a[1] && a[2] <= a[4] ? ap.test(new int[]{a[0], a[1], a[5]})
-                : Integer.valueOf((a[1] + a[2]) / 2) instanceof Integer mid
-                    && (tag[a[0]] < 0 || ap.test(new int[]{2 * a[0], a[1], tag[a[0]]}) && ap.test(new int[]{2 * a[0] + 1, mid + 1, tag[a[0]]}) && (tag[a[0]] = -1) < 0)
-                    && up.get().test(new int[]{2 * a[0], a[1], mid, a[3], a[4], a[5]})
-                    && up.get().test(new int[]{2 * a[0] + 1, mid + 1, a[2], a[3], a[4], a[5]})
-                    && (mn[a[0]] = Math.min(mn[2 * a[0]], mn[2 * a[0] + 1])) >= 0))
-            && ((IntUnaryOperator) v -> new int[]{1, 0, n} instanceof int[] st
-                && (IntStream.iterate(0, z -> tag[st[0]] < 0 && st[1] < st[2], z -> z + 1).allMatch(z -> Integer.valueOf((st[1] + st[2]) / 2) instanceof Integer mid
-                    && (v <= mid ? (st[0] = 2 * st[0]) >= 0 && (st[2] = mid) >= 0 : (st[0] = 2 * st[0] + 1) >= 0 && (st[1] = mid + 1) >= 0)) || true)
-                ? Math.max(0, tag[st[0]]) : 0) instanceof IntUnaryOperator query
-            && ((Predicate<int[]>) p -> Integer.valueOf(p[2] > n ? BIG : p[2]) instanceof Integer pc && new int[]{0, p[1]} instanceof int[] bs
-                && (IntStream.iterate(0, z -> bs[0] < bs[1], z -> z + 1).allMatch(z -> Integer.valueOf((bs[0] + bs[1]) / 2) instanceof Integer m
-                    && (query.applyAsInt(m) < pc ? (bs[1] = m) >= 0 : (bs[0] = m + 1) >= 0)) || true)
-                && (bs[0] >= p[1] || up.get().test(new int[]{1, 0, n, bs[0], p[1] - 1, pc}))) instanceof Predicate<int[]> add
-            && pos.values().stream().collect(Collectors.groupingBy(p -> p[0])) instanceof Map<Integer, List<int[]>> g
-            && g.getOrDefault(n + 1, List.of()).stream().allMatch(add)
-            ? IntStream.iterate(n, u -> u >= 0, u -> u - 1).map(u -> Integer.valueOf(mn[1] < BIG ? u + mn[1] : Integer.MAX_VALUE) instanceof Integer cand
-                && g.getOrDefault(u, List.of()).stream().allMatch(add) ? cand : Integer.MAX_VALUE).min().getAsInt() : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(System.in.readAllBytes() instanceof byte[] raw
+            && new int[raw.length / 2 + 2] instanceof int[] vals && new int[3] instanceof int[] st
+            && IntStream.rangeClosed(0, raw.length).map(i -> i < raw.length && raw[i] >= 48
+                ? (st[0] = st[0] * 10 + raw[i] - 48) * 0 + (st[1] = 1) * 0
+                : st[1] == 1 ? (vals[st[2]++] = st[0]) * 0 + (st[0] = 0) + (st[1] = 0) : 0).sum() >= 0
+            && Integer.valueOf(vals[0]) instanceof Integer n && Integer.valueOf(1000000000) instanceof Integer BIG && Integer.valueOf(1000000000) instanceof Integer INF
+            && new long[3 * n] instanceof long[] keys
+            && IntStream.range(0, 3 * n).allMatch(i -> (keys[i] = ((long) vals[1 + i] << 19) | ((long) (i / n) << 17) | (i % n)) >= 0)
+            && Stream.of(0).peek(z -> Arrays.sort(keys)).findFirst().isPresent()
+            && IntStream.range(0, 3).mapToObj(r -> IntStream.range(0, 3 * n).map(i -> n + 1).toArray()).toArray(int[][]::new) instanceof int[][] P3
+            && new int[]{-1} instanceof int[] gi && new long[]{-1} instanceof long[] pv
+            && IntStream.range(0, 3 * n).allMatch(i -> (keys[i] >> 19 == pv[0] || (pv[0] = keys[i] >> 19) >= 0 && ++gi[0] >= 0)
+                && (P3[(int) (keys[i] >> 17 & 3)][gi[0]] = Math.min(P3[(int) (keys[i] >> 17 & 3)][gi[0]], (int) (keys[i] & 131071) + 1)) > 0)
+            && IntStream.range(0, n + 2).map(i -> -1).toArray() instanceof int[] head && new int[gi[0] + 1] instanceof int[] nxt
+            && IntStream.range(0, gi[0] + 1).allMatch(g -> (nxt[g] = head[P3[0][g]]) > -2 && (head[P3[0][g]] = g) >= 0)
+            && Integer.valueOf(Integer.highestOneBit(n + 3) * 2) instanceof Integer size
+            && IntStream.range(0, 2 * size).map(i -> INF).toArray() instanceof int[] t
+            && ((IntBinaryOperator) (p, v) -> (t[p + size] = v) >= 0 && IntStream.iterate((p + size) / 2, i -> i >= 1, i -> i / 2).allMatch(i -> (t[i] = Math.min(t[2 * i], t[2 * i + 1])) >= 0) ? 1 : 0) instanceof IntBinaryOperator set
+            && new TreeMap<Integer, Integer>(Map.of(0, BIG + 1, n + 2, 0)) instanceof TreeMap<Integer, Integer> tm
+            && set.applyAsInt(0, 0) >= 0
+            && ((IntPredicate) g -> Integer.valueOf(P3[1][g]) instanceof Integer pb && Integer.valueOf(P3[2][g] > n ? BIG : P3[2][g]) instanceof Integer pc
+                && (tm.ceilingEntry(pb).getValue() >= pc
+                    || Stream.iterate(0, z -> tm.floorEntry(pb).getValue() <= pc, z -> z + 1)
+                        .allMatch(z -> tm.floorEntry(pb) instanceof Map.Entry<Integer, Integer> en && tm.remove(en.getKey()) != null && set.applyAsInt(en.getKey(), INF) >= 0)
+                    && tm.lowerEntry(pb) instanceof Map.Entry<Integer, Integer> lo && tm.ceilingEntry(pb) instanceof Map.Entry<Integer, Integer> hi
+                    && tm.put(pb, pc) == null && set.applyAsInt(lo.getKey(), lo.getKey() + pc) >= 0
+                    && set.applyAsInt(pb, pb <= n ? pb + hi.getValue() : INF) >= 0)) instanceof IntPredicate ins
+            && ((IntPredicate) u -> Stream.iterate(head[u], g -> g >= 0, g -> nxt[g]).allMatch(g -> ins.test(g))) instanceof IntPredicate addAll
+            && addAll.test(n + 1)
+            ? IntStream.iterate(n, u -> u >= 0, u -> u - 1).map(u -> Integer.valueOf(t[1] < BIG ? u + t[1] : Integer.MAX_VALUE) instanceof Integer cand && addAll.test(u) ? cand : 0).min().getAsInt() : "");
     }
 }
-

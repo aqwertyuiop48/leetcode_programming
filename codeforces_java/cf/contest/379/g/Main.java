@@ -22,18 +22,33 @@ public class Main {
             && IntStream.range(0, ctr[2]).mapToObj(y -> IntStream.iterate(btm[y], x -> x != tp[y], x -> par[x]).toArray() instanceof int[] up
                 ? IntStream.range(0, up.length).map(j -> up[up.length - 1 - j]).toArray() : null).toArray(int[][]::new) instanceof int[][] path
             && new boolean[n] instanceof boolean[] inCyc && Arrays.stream(path).allMatch(pa -> Arrays.stream(pa).allMatch(x -> inCyc[x] = true))
-            && ((BinaryOperator<int[]>) (x, y) -> (x.length <= y.length ? new int[][]{x, y} : new int[][]{y, x}) instanceof int[][] sl && IntStream.generate(() -> -1).limit(x.length + y.length - 1).toArray() instanceof int[] r
-                && IntStream.range(0, sl[0].length).filter(i -> sl[0][i] >= 0).allMatch(i -> IntStream.range(0, sl[1].length).allMatch(j -> sl[1][j] < 0 || (r[i + j] = Math.max(r[i + j], sl[0][i] + sl[1][j])) >= 0)) ? r : null) instanceof BinaryOperator<int[]> conv
-            && ((BinaryOperator<int[]>) (x, y) -> IntStream.range(0, x.length).map(i -> Math.max(x[i], y[i])).toArray()) instanceof BinaryOperator<int[]> emax
-            && new int[n][][] instanceof int[][][] g
-            && ((BiFunction<Integer, Integer, int[]>) (y, s) -> Arrays.stream(path[y]).boxed().reduce(IntStream.range(0, 3).mapToObj(z -> new int[]{z == s ? 0 : -1}).toArray(int[][]::new),
-                    (F, c) -> IntStream.range(0, 3).mapToObj(tt -> conv.apply(IntStream.range(0, 3).filter(q -> q * tt != 2).mapToObj(q -> F[q]).reduce(emax).get(), g[c][tt])).toArray(int[][]::new), (p, q) -> p) instanceof int[][] fin
-                ? IntStream.range(0, 3).filter(tt -> tt * s != 2).mapToObj(tt -> fin[tt]).reduce(emax).get() : null) instanceof BiFunction<Integer, Integer, int[]> cyc
+            && ((BinaryOperator<int[]>) (x, y) -> (x.length <= y.length ? new int[][]{x, y} : new int[][]{y, x}) instanceof int[][] sl && new int[x.length + y.length - 3] instanceof int[] r
+                && Stream.of(0).peek(z -> Arrays.fill(r, -100000000)).peek(z -> IntStream.range(0, sl[0].length / 3).filter(i -> sl[0][3 * i] >= 0 || sl[0][3 * i + 1] >= 0 || sl[0][3 * i + 2] >= 0)
+                    .forEach(i -> IntStream.range(0, sl[1].length / 3).forEach(j -> Math.max(Math.max(r[3 * (i + j)] = Math.max(r[3 * (i + j)], sl[0][3 * i] + sl[1][3 * j]),
+                        r[3 * (i + j) + 1] = Math.max(r[3 * (i + j) + 1], sl[0][3 * i + 1] + sl[1][3 * j + 1])), r[3 * (i + j) + 2] = Math.max(r[3 * (i + j) + 2], sl[0][3 * i + 2] + sl[1][3 * j + 2]))))).findFirst().isPresent() ? r : null) instanceof BinaryOperator<int[]> conv
+            && ((UnaryOperator<int[]>) A -> new int[A.length] instanceof int[] o
+                && Stream.of(0).peek(z -> IntStream.range(0, A.length / 3).forEach(j -> Math.max(Math.max(o[3 * j] = Math.max(Math.max(A[3 * j], A[3 * j + 1]), A[3 * j + 2]),
+                    o[3 * j + 1] = Math.max(A[3 * j], A[3 * j + 1])), o[3 * j + 2] = Math.max(A[3 * j], A[3 * j + 2])))).findFirst().isPresent() ? o : null) instanceof UnaryOperator<int[]> hi
+            && ((BiFunction<int[], Integer, int[]>) (A, tt) -> new int[A.length] instanceof int[] o
+                && Stream.of(0).peek(z -> IntStream.range(0, A.length / 3).forEach(i -> Math.max(Math.max(o[3 * i] = A[3 * i + tt], o[3 * i + 1] = A[3 * i + tt]), o[3 * i + 2] = A[3 * i + tt]))).findFirst().isPresent() ? o : null) instanceof BiFunction<int[], Integer, int[]> gx
+            && ((BiFunction<int[][], Integer, int[]>) (F, tt) -> new int[F[0].length] instanceof int[] o
+                && Stream.of(0).peek(z -> IntStream.range(0, F[0].length / 3).forEach(j -> Math.max(Math.max(
+                    o[3 * j] = Math.max(Math.max(F[0][3 * j], tt == 2 ? -100000000 : F[1][3 * j]), tt == 1 ? -100000000 : F[2][3 * j]),
+                    o[3 * j + 1] = Math.max(Math.max(F[0][3 * j + 1], tt == 2 ? -100000000 : F[1][3 * j + 1]), tt == 1 ? -100000000 : F[2][3 * j + 1])),
+                    o[3 * j + 2] = Math.max(Math.max(F[0][3 * j + 2], tt == 2 ? -100000000 : F[1][3 * j + 2]), tt == 1 ? -100000000 : F[2][3 * j + 2])))).findFirst().isPresent() ? o : null) instanceof BiFunction<int[][], Integer, int[]> mq
+            && ((Function<int[][], int[]>) F -> new int[F[0].length] instanceof int[] o
+                && Stream.of(0).peek(z -> IntStream.range(0, F[0].length / 3).forEach(a -> Math.max(Math.max(
+                    o[3 * a] = Math.max(Math.max(F[0][3 * a], F[1][3 * a]), F[2][3 * a]), o[3 * a + 1] = Math.max(F[0][3 * a + 1], F[1][3 * a + 1])),
+                    o[3 * a + 2] = Math.max(F[0][3 * a + 2], F[2][3 * a + 2])))).findFirst().isPresent() ? o : null) instanceof Function<int[][], int[]> fin
+            && new int[n][] instanceof int[][] g
+            && ((IntFunction<int[]>) y -> fin.apply(Arrays.stream(path[y]).boxed().reduce(IntStream.range(0, 3).mapToObj(q -> new int[]{q == 0 ? 0 : -100000000, q == 1 ? 0 : -100000000, q == 2 ? 0 : -100000000}).toArray(int[][]::new),
+                    (F, c) -> IntStream.range(0, 3).mapToObj(tt -> conv.apply(gx.apply(g[c], tt), mq.apply(F, tt))).toArray(int[][]::new), (p, q) -> p))) instanceof IntFunction<int[]> cyc
             && IntStream.iterate(n - 1, i -> i >= 0, i -> i - 1).allMatch(i -> Integer.valueOf(ord[i]) instanceof Integer v
-                && (g[v] = IntStream.range(0, 3).mapToObj(s -> Stream.concat(
-                    IntStream.range(0, n).filter(c -> par[c] == v && !inCyc[c]).mapToObj(c -> IntStream.range(0, 3).filter(tt -> tt * s != 2).mapToObj(tt -> g[c][tt]).reduce(emax).get()),
-                    IntStream.range(0, ctr[2]).filter(y -> tp[y] == v).mapToObj(y -> cyc.apply(y, s))).reduce(new int[][]{{0, -1}, {-1, 0}, {1, -1}}[s], conv)).toArray(int[][]::new)) != null)
-            && IntStream.range(0, n).filter(r -> par[r] < 0).mapToObj(r -> IntStream.range(0, 3).mapToObj(s -> g[r][s]).reduce(emax).get()).reduce(new int[]{0}, conv) instanceof int[] res
+                && Arrays.stream(adj[v]).filter(c -> par[c] == v && !inCyc[c]).toArray() instanceof int[] ch
+                && IntStream.range(0, ctr[2]).filter(y -> tp[y] == v).toArray() instanceof int[] cy
+                && (g[v] = Stream.concat(Arrays.stream(ch).mapToObj(c -> hi.apply(g[c])), Arrays.stream(cy).mapToObj(cyc)).reduce(new int[]{0, -100000000, 1, -100000000, 0, -100000000}, conv)) != null)
+            && IntStream.range(0, n).filter(r -> par[r] < 0).mapToObj(r -> hi.apply(g[r])).reduce(new int[]{0, 0, 0}, conv) instanceof int[] fr
+            && IntStream.range(0, fr.length / 3).map(a -> fr[3 * a]).toArray() instanceof int[] res
             ? Arrays.stream(res).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }

@@ -17,7 +17,7 @@ public class Main {
             && IntStream.rangeClosed(1, q).map(i -> add.applyAsInt(2 * i + 3, t[i]) + add.applyAsInt(2 * i + 4, t[i])
                 + (Integer.valueOf(dist.applyAsInt(2 * i + 3, s[0])) instanceof Integer d1 && Integer.valueOf(dist.applyAsInt(2 * i + 3, s[1])) instanceof Integer d2
                     ? (d1 > s[2] && d1 >= d2 ? new int[]{s[1] = 2 * i + 3, s[2] = d1}.length : d2 > s[2] ? new int[]{s[0] = 2 * i + 3, s[2] = d2}.length : 0) : 0)
-                + sb.append(s[2]).append('\n').length()).sum() >= 0
+                + sb.append(s[2]).append('\n').length()).asLongStream().sum() >= 0
             ? sb.toString().trim() : "");
     }
 }
