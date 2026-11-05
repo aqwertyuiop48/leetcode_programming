@@ -13,7 +13,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
 
       - name: Install pyforces
         run: python -m pip install pyforces-cli
@@ -35,14 +35,16 @@ jobs:
       - name: Verify pyforces login
         shell: bash
         run: |
-          output="$(printf '1\n' | pyforces config 2>&1)" || {
+          if ! output="$(printf '1\n' | pyforces config 2>&1)"; then
+            printf '%s\n' "$output"
             echo "::error::pyforces config failed while checking login."
             exit 1
-          }
+          fi
 
           if [[ "$output" == *"Already logged in as "* ]]; then
             echo "pyforces login verified."
           else
+            printf '%s\n' "$output"
             echo "::error::pyforces did not confirm login. Check that PYFORCES_HEADERS contains current Codeforces request headers."
             exit 1
           fi
