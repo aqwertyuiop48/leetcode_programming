@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -7,11 +6,13 @@ public class Main {
         System.out.println(new java.io.BufferedReader(new java.io.InputStreamReader(System.in)).lines().findFirst().get().trim() instanceof String s
             && Integer.valueOf(s.length()) instanceof Integer n
             && Integer.valueOf((int) s.chars().distinct().count()) instanceof Integer d
-            && ((IntToLongFunction) k -> new int[26] instanceof int[] cnt && new int[2] instanceof int[] st
-                ? IntStream.range(0, n).mapToLong(r -> (cnt[s.charAt(r) - 'a']++ == 0 ? st[1]++ : 0) >= 0
-                    && IntStream.iterate(0, z -> st[1] > k, z -> z + 1).allMatch(z -> --cnt[s.charAt(st[0]++) - 'a'] == 0 ? --st[1] >= 0 : true)
-                    ? r - st[0] + 1 : 0).sum() : 0L) instanceof IntToLongFunction f
-            ? d + IntStream.rangeClosed(1, d).mapToObj(k -> "\n" + (f.applyAsLong(k) - f.applyAsLong(k - 1))).collect(Collectors.joining()) : "");
+            && new int[26] instanceof int[] pp && new int[26] instanceof int[] since && new int[26] instanceof int[] ord && new int[26] instanceof int[] rk && new long[27] instanceof long[] S
+            && IntStream.range(0, 26).filter(j -> (pp[j] = n) > 0 && (since[j] = n - 1) >= 0 && (ord[j] = j) >= 0 && (rk[j] = j) >= 0).count() >= 0
+            && IntStream.range(0, n).filter(i -> Integer.valueOf(n - 1 - i) instanceof Integer l && Integer.valueOf(s.charAt(l) - 'a') instanceof Integer c && Integer.valueOf(rk[c]) instanceof Integer idx
+                && IntStream.rangeClosed(0, idx).filter(u -> Integer.valueOf(idx - u) instanceof Integer j && (S[j] += (long) pp[j] * (since[j] - l)) >= 0
+                    && (pp[j] = j > 0 ? pp[j - 1] : l) >= 0 && (since[j] = l) >= 0 && (ord[j] = j > 0 ? ord[j - 1] : c) >= 0 && (rk[ord[j]] = j) >= 0).count() >= 0).count() >= 0
+            && IntStream.range(0, 26).filter(j -> (S[j] += (long) pp[j] * (since[j] + 1)) >= 0).count() >= 0 && (S[26] = (long) n * n) > 0
+            ? d + IntStream.rangeClosed(1, d).mapToObj(k -> "\n" + (S[k] - S[k - 1])).collect(Collectors.joining()) : "");
     }
 }
 

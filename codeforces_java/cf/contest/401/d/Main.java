@@ -2,16 +2,18 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s && s.next().chars().map(c -> c - '0').toArray() instanceof int[] d
-            && (Integer) s.nextInt() instanceof Integer m
-            && (Integer) d.length instanceof Integer n
-            && Arrays.stream(d).sorted().toArray() instanceof int[] g
-            && new long[(1 << n) * m] instanceof long[] dp
-            && (dp[0] = 1) > 0
-            && IntStream.range(0, 1 << n).allMatch(mask -> IntStream.range(0, n).allMatch(j ->
-                (mask >> j & 1) == 1 || (j > 0 && g[j] == g[j - 1] && (mask >> (j - 1) & 1) == 0) || (mask == 0 && g[j] == 0)
-                || IntStream.range(0, m).allMatch(r -> (dp[(mask | 1 << j) * m + (r * 10 + g[j]) % m] += dp[mask * m + r]) >= 0)))
-            ? dp[((1 << n) - 1) * m] : 0);
+    public static void main(String[] args) throws Exception {
+        System.out.println(new String(System.in.readAllBytes()).trim().split("\\s+") instanceof String[] t
+            && (Integer) Integer.parseInt(t[1]) instanceof Integer m
+            && new int[10] instanceof int[] cnt
+            && t[0].chars().allMatch(c -> ++cnt[c - '0'] > 0)
+            && new int[11] instanceof int[] mult && (mult[0] = 1) > 0
+            && IntStream.range(0, 10).allMatch(d -> (mult[d + 1] = mult[d] * (cnt[d] + 1)) > 0)
+            && new long[mult[10] * m] instanceof long[] dp && (dp[0] = 1) > 0
+            && IntStream.range(0, mult[10]).allMatch(s -> IntStream.range(0, 10).allMatch(d ->
+                s / mult[d] % (cnt[d] + 1) >= cnt[d] || (s == 0 && d == 0)
+                || IntStream.range(0, m).allMatch(r -> (dp[(s + mult[d]) * m + (r * 10 + d) % m] += dp[s * m + r]) >= 0)))
+            ? dp[(mult[10] - 1) * m] : 0);
     }
 }
+

@@ -3,9 +3,9 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner sc && (Integer) sc.nextInt() instanceof Integer m && (Long) sc.nextLong() instanceof Long t && (Integer) sc.nextInt() instanceof Integer s
-            && IntStream.range(0, s).map(i -> sc.nextInt()).toArray() instanceof int[] a0 && (Integer) (1 << m) instanceof Integer N && (Integer) (N / 2) instanceof Integer H
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer sc && (Integer) Integer.parseInt(sc.nextToken()) instanceof Integer m && (Long) Long.parseLong(sc.nextToken()) instanceof Long t && (Integer) Integer.parseInt(sc.nextToken()) instanceof Integer s
+            && IntStream.range(0, s).map(i -> Integer.parseInt(sc.nextToken())).toArray() instanceof int[] a0 && (Integer) (1 << m) instanceof Integer N && (Integer) (N / 2) instanceof Integer H
             && LongStream.rangeClosed(0, m).map(e -> BigInteger.valueOf(((e < m ? 1 + (e - 1) * (1L << (m - 1)) : 1 + m * (1L << (m - 1))) % 1051131L + 1051131L) % 1051131L).modPow(BigInteger.valueOf(t), BigInteger.valueOf(1051131L)).longValue()).toArray() instanceof long[] lt
             && LongStream.rangeClosed(0, m).map(e -> (((e == 0 ? lt[0] : lt[(int) e] - lt[(int) e - 1]) % 1051131L + 1051131L) % 1051131L) * BigInteger.valueOf((1051131L + 1) / 2).modPow(BigInteger.valueOf(e), BigInteger.valueOf(1051131L)).longValue() % 1051131L).toArray() instanceof long[] w
             && Arrays.copyOf(a0, s) instanceof int[] ring && new int[Math.max(H, 1)][] instanceof int[][] lvDummy && new int[m][] instanceof int[][] lv
@@ -19,3 +19,4 @@ public class Main {
             ? x[0] : 0);
     }
 }
+

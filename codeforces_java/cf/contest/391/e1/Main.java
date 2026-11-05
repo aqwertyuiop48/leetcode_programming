@@ -10,32 +10,43 @@ public class Main {
                 && !IntStream.iterate(0, z -> z + 1).allMatch(z -> ps[0] < buf.length && buf[ps[0]] >= '0' && (r[0] = r[0] * 10 + buf[ps[0]++] - '0') >= 0)
                 ? r[0] : 0) instanceof IntSupplier nx
             && IntStream.range(0, 3).map(i -> nx.getAsInt()).toArray() instanceof int[] ns
-            && ((Function<Integer, long[]>) t -> Integer.valueOf(ns[t]) instanceof Integer n
-                && IntStream.range(0, n - 1).mapToObj(i -> new int[]{nx.getAsInt() - 1, nx.getAsInt() - 1}).toList() instanceof List<int[]> es
+            && new int[2 * (ns[0] + ns[1] + ns[2]) + 8] instanceof int[] tk && new int[3] instanceof int[] q
+            && IntStream.range(ps[0], buf.length + 1).allMatch(i -> (i < buf.length ? buf[i] : '\n') >= '0'
+                ? (q[0] = q[0] * 10 + buf[i] - '0') >= 0 && (q[2] = 1) > 0
+                : q[2] == 0 || ((tk[q[1]++] = q[0]) >= 0 && (q[0] = 0) == 0 && (q[2] = 0) == 0))
+            && new int[]{0, 2 * (ns[0] - 1), 2 * (ns[0] - 1) + 2 * (ns[1] - 1)} instanceof int[] off
+            && ((IntFunction<Object[]>) t -> Integer.valueOf(ns[t]) instanceof Integer n && Integer.valueOf(off[t]) instanceof Integer o
                 && new int[n + 1] instanceof int[] st && new int[2 * n] instanceof int[] nb
-                && es.stream().allMatch(e -> ++st[e[0] + 1] > 0 && ++st[e[1] + 1] > 0)
+                && IntStream.range(0, 2 * (n - 1)).allMatch(j -> ++st[tk[o + j]] > 0)
                 && IntStream.range(0, n).allMatch(i -> (st[i + 1] += st[i]) >= 0)
                 && st.clone() instanceof int[] pos
-                && es.stream().allMatch(e -> (nb[pos[e[0]]++] = e[1]) >= 0 && (nb[pos[e[1]]++] = e[0]) >= 0)
-                && ((IntFunction<int[][]>) src -> new int[n] instanceof int[] order && new int[n] instanceof int[] par && new int[n] instanceof int[] dist && new int[]{1} instanceof int[] cnt
-                    && IntStream.range(0, n).allMatch(i -> (dist[i] = -1) < 0) && (dist[src] = 0) == 0 && (par[src] = -1) < 0 && (order[0] = src) == src
-                    && IntStream.iterate(0, h -> h < cnt[0], h -> h + 1).allMatch(h -> Integer.valueOf(order[h]) instanceof Integer u
-                        && IntStream.range(st[u], st[u + 1]).map(e -> nb[e]).filter(w -> dist[w] < 0).allMatch(w -> (dist[w] = dist[u] + 1) > 0 && (par[w] = u) >= 0 && (order[cnt[0]++] = w) >= 0))
-                    ? new int[][]{order, par, dist} : null) instanceof IntFunction<int[][]> bfs
-                && bfs.apply(0) instanceof int[][] r0
-                && Integer.valueOf(IntStream.range(0, n).boxed().max(Comparator.comparingInt(i -> r0[2][i])).get()) instanceof Integer a
-                && bfs.apply(a) instanceof int[][] r1
-                && Integer.valueOf(IntStream.range(0, n).boxed().max(Comparator.comparingInt(i -> r1[2][i])).get()) instanceof Integer b
+                && IntStream.range(0, n - 1).allMatch(e -> (nb[pos[tk[o + 2 * e] - 1]++] = tk[o + 2 * e + 1] - 1) >= 0 && (nb[pos[tk[o + 2 * e + 1] - 1]++] = tk[o + 2 * e] - 1) >= 0)
+                && new int[n] instanceof int[] od && new int[n] instanceof int[] pa && new int[n] instanceof int[] dp && new int[]{0, 0, 1} instanceof int[] x
+                && (pa[0] = -1) < 0
+                && IntStream.range(0, 3 * n - 2).allMatch(z -> x[1] < st[od[x[0]] + 1]
+                    ? nb[x[1]] == pa[od[x[0]]] ? ++x[1] > 0
+                        : (pa[nb[x[1]]] = od[x[0]]) >= 0 && (dp[nb[x[1]]] = dp[od[x[0]]] + 1) > 0 && (od[x[2]++] = nb[x[1]++]) >= 0
+                    : ++x[0] < n ? (x[1] = st[od[x[0]]]) >= 0 : true)
                 && new long[n] instanceof long[] sz && new long[n] instanceof long[] s
                 && IntStream.range(0, n).allMatch(i -> (sz[i] = 1) > 0)
-                && IntStream.iterate(n - 1, h -> h > 0, h -> h - 1).allMatch(h -> (sz[r0[1][r0[0][h]]] += sz[r0[0][h]]) > 0)
-                && (s[0] = IntStream.range(0, n).mapToLong(i -> r0[2][i]).sum()) >= 0
-                && IntStream.range(1, n).allMatch(h -> Integer.valueOf(r0[0][h]) instanceof Integer v && (s[v] = s[r0[1][v]] + n - 2 * sz[v]) >= 0)
-                ? new long[]{n, Arrays.stream(s).sum() / 2, Arrays.stream(s).max().getAsLong(), s[a], s[b], r1[2][b]} : null) instanceof Function<Integer, long[]> info
-            && IntStream.range(0, 3).mapToObj(info::apply).toList() instanceof List<long[]> tr
-            ? IntStream.range(0, 3).mapToLong(m -> tr.get((m + 1) % 3) instanceof long[] L && tr.get((m + 2) % 3) instanceof long[] R && tr.get(m) instanceof long[] M
-                ? tr.stream().mapToLong(x -> x[1]).sum() + L[0] * M[0] + M[0] * R[0] + 2 * L[0] * R[0] + (M[0] + R[0]) * L[2] + (L[0] + M[0]) * R[2]
-                    + LongStream.of(L[0] * M[3] + R[0] * M[3], L[0] * M[3] + R[0] * M[4] + L[0] * R[0] * M[5], L[0] * M[4] + R[0] * M[3] + L[0] * R[0] * M[5], L[0] * M[4] + R[0] * M[4]).max().getAsLong() : 0L).max().getAsLong() : "");
+                && IntStream.range(1, n).allMatch(i -> (sz[pa[od[n - i]]] += sz[od[n - i]]) > 0)
+                && (s[0] = IntStream.range(0, n).mapToLong(i -> dp[i]).sum()) >= 0
+                && IntStream.range(1, n).allMatch(i -> (s[od[i]] = s[pa[od[i]]] + n - 2 * sz[od[i]]) >= 0)
+                ? new Object[]{new long[]{n, Arrays.stream(s).sum() / 2, Arrays.stream(s).max().getAsLong()}, s, od, pa} : null) instanceof IntFunction<Object[]> tree
+            && IntStream.range(0, 3).mapToObj(tree::apply).toList() instanceof List<Object[]> tr
+            ? IntStream.range(0, 3).mapToLong(m -> tr.get(m) instanceof Object[] M && M[0] instanceof long[] mi && M[1] instanceof long[] S && M[2] instanceof int[] od && M[3] instanceof int[] pa
+                && tr.get((m + 1) % 3)[0] instanceof long[] li && tr.get((m + 2) % 3)[0] instanceof long[] ri
+                && Integer.valueOf((int) mi[0]) instanceof Integer n && Long.valueOf(ri[0]) instanceof Long c && Long.valueOf(Long.MIN_VALUE / 4) instanceof Long NEG
+                && new long[n] instanceof long[] d1 && new long[n] instanceof long[] m1 && new long[n] instanceof long[] m2 && new long[n] instanceof long[] up && new int[n] instanceof int[] who
+                && IntStream.range(0, n).allMatch(i -> (m1[i] = NEG) < 0 && (m2[i] = NEG) < 0 && (up[i] = NEG) < 0)
+                && IntStream.range(1, n).allMatch(i -> Integer.valueOf(od[n - i]) instanceof Integer u && Integer.valueOf(pa[u]) instanceof Integer v
+                    && (d1[u] = Math.max(S[u], m1[u])) > NEG && Long.valueOf(d1[u] + c) instanceof Long val
+                    && (val > m1[v] ? (m2[v] = m1[v]) <= m1[v] && (m1[v] = val) > NEG && (who[v] = u) >= 0 : val > m2[v] ? (m2[v] = val) > NEG : true))
+                && (d1[0] = Math.max(S[0], m1[0])) > NEG
+                && IntStream.range(1, n).allMatch(i -> Integer.valueOf(od[i]) instanceof Integer u && Integer.valueOf(pa[u]) instanceof Integer v
+                    && (up[u] = c + Math.max(up[v], Math.max(S[v], who[v] == u ? m2[v] : m1[v]))) > NEG)
+                ? tr.stream().mapToLong(x -> ((long[]) x[0])[1]).sum() + li[0] * mi[0] + ri[0] * mi[0] + 2 * li[0] * ri[0] + li[2] * (mi[0] + ri[0]) + ri[2] * (li[0] + mi[0])
+                    + IntStream.range(0, n).mapToLong(u -> ri[0] * S[u] + li[0] * Math.max(d1[u], up[u])).max().getAsLong() : 0L).max().getAsLong() : "");
     }
 }
 

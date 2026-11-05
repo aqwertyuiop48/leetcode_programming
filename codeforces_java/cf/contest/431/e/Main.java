@@ -19,3 +19,4 @@ public class Main {
                     ? String.format("%.5f", (x[1] + pb[1]) / (double) pb[0]) : "").filter(x -> !x.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+

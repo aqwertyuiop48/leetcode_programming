@@ -16,6 +16,6 @@ public class Main {
                 && (pre[i] = pre[i - 1] + b) >= 0 && (sk[i] = (i >= k ? sk[i - k] : 0) + b) >= 0)
             && (ps[0] = st + n) > 0
             ? IntStream.range(0, w).mapToObj(q -> Integer.valueOf(nx.getAsInt()) instanceof Integer l && Integer.valueOf(nx.getAsInt()) instanceof Integer r
-                ? String.valueOf(pre[r] - pre[l - 1] + (r - l + 1) / k - 2 * (sk[r] - sk[l - 1])) : "").collect(Collectors.joining("\n")) : "");
+                ? String.valueOf(pre[r] - pre[l - 1] + (r - l + 1) / k - 2 * (sk[l - 1 + (r - l + 1) / k * k] - sk[l - 1])) : "").collect(Collectors.joining("\n")) : "");
     }
 }

@@ -47,7 +47,7 @@ public class Main {
                     && IntStream.range(pt[1], Math.max(pt[1], nr)).map(q -> hr[eo[q]][2] >= 2 * k ? upd.applyAsInt(slot[eo[q]], -1) : 0).sum() >= 0
                     && (pt[1] = Math.max(pt[1], nr)) >= 0
                     && pref.applyAsInt(-Arrays.binarySearch(sy2, 2 * (vr[vi][1] + vr[vi][2] - k) + 1) - 1) - pref.applyAsInt(-Arrays.binarySearch(sy2, 2 * (vr[vi][1] + k) - 1) - 1) > 0)) instanceof IntPredicate ok
-            ? new int[]{0, 50000001} instanceof int[] bs
+            ? new int[]{0, 100000001} instanceof int[] bs
                 && (IntStream.iterate(0, y -> bs[1] - bs[0] > 1, y -> y + 1).allMatch(y -> Integer.valueOf((bs[0] + bs[1]) / 2) instanceof Integer mid
                     && (ok.test(mid) ? (bs[0] = mid) >= 0 : (bs[1] = mid) >= 0)) || true) ? bs[0] : -1 : "");
     }

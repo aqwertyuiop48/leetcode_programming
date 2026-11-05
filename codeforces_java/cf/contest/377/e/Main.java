@@ -8,12 +8,12 @@ public class Main {
             && IntStream.rangeClosed(0, raw.length).filter(i -> i < raw.length && raw[i] > 32 ? (ps[0] = ps[0] * 10 + raw[i] - 48) < 0 | (ps[1] = 1) < 0
                 : ps[1] == 1 && (tk[(int) ps[2]++] = ps[0]) >= 0 && (ps[0] = 0) == 0 && (ps[1] = 0) == 0).count() >= 0
             && Integer.valueOf((int) tk[0]) instanceof Integer n && Long.valueOf(tk[1]) instanceof Long s
-            && Long.valueOf((1L << 27) - 1) instanceof Long M && new long[]{0} instanceof long[] mx
-            && IntStream.range(0, n).mapToLong(i -> (tk[3 + 2 * i] << 27) | (M - tk[2 + 2 * i])).sorted()
-                .filter(x -> M - (x & M) > mx[0] && (mx[0] = M - (x & M)) > 0).toArray() instanceof long[] key
+            && new long[]{0} instanceof long[] mx
+            && IntStream.range(0, n).boxed().sorted(Comparator.comparingLong((Integer i) -> tk[3 + 2 * i]).thenComparingLong(i -> -tk[2 + 2 * i]))
+                .filter(i -> tk[2 + 2 * i] > mx[0] && (mx[0] = tk[2 + 2 * i]) > 0).mapToInt(i -> i).toArray() instanceof int[] key
             && Integer.valueOf(key.length) instanceof Integer k
-            && Arrays.stream(key).map(x -> M - (x & M)).toArray() instanceof long[] V
-            && Arrays.stream(key).map(x -> x >> 27).toArray() instanceof long[] C
+            && Arrays.stream(key).mapToLong(i -> tk[2 + 2 * i]).toArray() instanceof long[] V
+            && Arrays.stream(key).mapToLong(i -> tk[3 + 2 * i]).toArray() instanceof long[] C
             && new long[k] instanceof long[] K && new long[]{0} instanceof long[] tp && new int[k] instanceof int[] hd && new int[]{1, 0} instanceof int[] st
             && ((LongBinaryOperator) (a, b) -> -Math.floorDiv(-a, b)) instanceof LongBinaryOperator cdiv
             && ((Function<long[], Integer>) w -> Long.compare(Math.multiplyHigh(w[0], w[1]), Math.multiplyHigh(w[2], w[3])) != 0

@@ -29,39 +29,38 @@ public class Main {
                 : IntStream.range(0, n).allMatch(v -> IntStream.range(0, n).anyMatch(b -> t[2 + b] == 1 && dist[v * n + b] <= X)) ? "0"
                 : new int[n * n] instanceof int[] nl && new int[n * n] instanceof int[] pos1 && new int[n] instanceof int[] cnt
                 && IntStream.range(0, n).filter(u -> IntStream.range(0, n).filter(x -> dist[u * n + x] <= X && (nl[u * n + cnt[u]] = x) >= 0 && (pos1[u * n + x] = ++cnt[u]) > 0).count() >= 0).count() >= 0
-                && new int[n][] instanceof int[][] D
+                && new int[n][] instanceof int[][] D && IntStream.range(0, n * (s + 2) + 16).map(z -> -100000000).toArray() instanceof int[] negT
                 && new int[n * (s + 1) + 1] instanceof int[] tg && new int[n * (s + 1) + 1] instanceof int[] gn && new int[n * (s + 1) + 1] instanceof int[] jm
                 && new int[n * (s + 1) + 1] instanceof int[] bo && new int[n * (s + 1) + 1] instanceof int[] pp
                 && IntStream.range(0, n).filter(mm -> (Integer) ord[n - 1 - mm] instanceof Integer u && (Integer) cnt[u] instanceof Integer c
-                    && new int[c * 2 + 4] instanceof int[] init
-                    && IntStream.range(0, c).filter(a -> (init[2 * a] = nl[u * n + a] != u ? 60000 : 0) >= 0 && (init[2 * a + 1] = 59999 + (int) t[2 + u]) > 0).count() >= 0
+                    && Arrays.copyOf(negT, c * 2 + 4) instanceof int[] init
+                    && IntStream.range(0, c).filter(a -> (init[2 * a] = nl[u * n + a] != u ? 60000 : -100000000) != 0 &&(init[2 * a + 1] = 59999 + (int) t[2 + u]) > 0).count() >= 0
                     && (D[u] = init) != null && new int[]{1} instanceof int[] cur
                     && IntStream.range(st[u], st[u + 1]).filter(e -> adj[e] != par[u] && (Integer) adj[e] instanceof Integer v
                         && (Integer) (Math.min(s, cur[0]) + 1) instanceof Integer wo
                         && (Integer) (Math.min(s, cur[0] + sz[v]) + 1) instanceof Integer nw
                         && (Integer) (Math.min(s, sz[v]) + 1) instanceof Integer wv
                         && (Integer) (cnt[v] * wv) instanceof Integer dl
-                        && new int[c * nw + 2 * nw] instanceof int[] nt && new int[c] instanceof int[] bo2 && new int[c] instanceof int[] po2
+                        && Arrays.copyOf(negT, c * nw + 2 * nw) instanceof int[] nt && new int[c] instanceof int[] bo2 && new int[c] instanceof int[] po2
                         && D[u] instanceof int[] ob && D[v] instanceof int[] dv
                         && IntStream.range(0, c).filter(a -> (Integer) nl[u * n + a] instanceof Integer tt
                             && (bo2[a] = tin[v] <= tin[tt] && tin[tt] < tin[v] + sz[v] ? dl + wv : dl) >= 0
                             && (po2[a] = pos1[v * n + tt] > 0 ? (pos1[v * n + tt] - 1) * wv : dl + wv) >= 0).count() >= 0
-                        && new int[]{0, -1, 0, 0} instanceof int[] sc
-                        && IntStream.range(0, c * wo).filter(x -> (++sc[1] < wo || ((sc[1] = 0) == 0 & ++sc[0] > 0)) && ob[x] > 0
-                            && (tg[sc[2]] = sc[0] * nw + sc[1]) >= 0 && (gn[sc[2]] = ob[x]) > 0 && (jm[sc[2]] = Math.min(wv - 1, nw - 1 - sc[1])) >= 0
-                            && (sc[3] += jm[sc[2]] + 1) > 0 && (bo[sc[2]] = bo2[sc[0]]) >= 0 && (pp[sc[2]++] = po2[sc[0]]) >= 0).count() >= 0
-                        && new int[]{0, -1} instanceof int[] cs
-                        && IntStream.range(0, (sc[3] + 4095) / 4096).filter(ch -> new int[Math.min(4096, sc[3] - ch * 4096)] instanceof int[] buf && Stream.of(0).peek(z -> Arrays.setAll(buf, x -> (++cs[1] <= jm[cs[0]] || ((cs[1] = 0) == 0 & ++cs[0] > 0))
-                            ? nt[tg[cs[0]] + cs[1]] = Math.max(nt[tg[cs[0]] + cs[1]], gn[cs[0]] + Math.max(dv[bo[cs[0]] + cs[1]], dv[pp[cs[0]] + cs[1]]) - 60000) : 0)).findFirst().isPresent()).count() >= 0
+                        && new int[c * wv] instanceof int[] g
+                        && Stream.of(0).peek(z -> IntStream.range(0, c).forEach(a -> IntStream.range(0, wv).forEach(y -> g[a * wv + y] = Math.max(dv[bo2[a] + y], dv[po2[a] + y]) - 60000))).findFirst().isPresent()
+                        && (wo >= wv ? ob : g) instanceof int[] V && (wo >= wv ? g : ob) instanceof int[] Kt
+                        && Integer.valueOf(wo >= wv ? wo : wv) instanceof Integer wV && Integer.valueOf(wo >= wv ? wv : wo) instanceof Integer wK
+                        && IntStream.range(0, c * wK).filter(q -> Integer.valueOf(Kt[q]) instanceof Integer K0 && K0 > -50000000
+                            && Integer.valueOf(q / wK * nw + q % wK) instanceof Integer nb && Integer.valueOf(q / wK * wV) instanceof Integer vb
+                            && Stream.of(0).peek(z -> Arrays.setAll(new int[Math.min(wV, nw - q % wK)], i -> nt[nb + i] = Math.max(nt[nb + i], V[vb + i] + K0))).findFirst().isPresent()).count() >= 0
                         && (D[u] = nt) != null && (cur[0] += sz[v]) > 0 && (D[v] = null) == null).count() >= 0
                     && (Integer) (Math.min(s, sz[u]) + 1) instanceof Integer wu && D[u] instanceof int[] du
                     && new int[]{0} instanceof int[] mc && new int[c] instanceof int[] rl
                     && IntStream.range(0, c).filter(q -> tin[u] <= tin[nl[u * n + q]] && tin[nl[u * n + q]] < tin[u] + sz[u] && (rl[mc[0]++] = q * wu) >= 0).count() >= 0
-                    && new int[]{0, -1} instanceof int[] fc
-                    && IntStream.range(0, (mc[0] * wu + 4095) / 4096).filter(ch -> new int[Math.min(4096, mc[0] * wu - ch * 4096)] instanceof int[] fb && Stream.of(0).peek(z -> Arrays.setAll(fb, x -> (++fc[1] < wu || ((fc[1] = 0) == 0 & ++fc[0] > 0))
-                        ? du[c * wu + fc[1]] = Math.max(du[c * wu + fc[1]], du[rl[fc[0]] + fc[1]]) : 0)).findFirst().isPresent()).count() >= 0).count() >= 0
+                    && IntStream.range(0, mc[0]).filter(r -> Stream.of(0).peek(z -> Arrays.setAll(new int[wu], j -> du[c * wu + j] = Math.max(du[c * wu + j], du[rl[r] + j]))).findFirst().isPresent()).count() >= 0).count() >= 0
                 && (Integer) IntStream.of(D[ord[0]]).max().getAsInt() instanceof Integer gm
                 ? gm > 0 ? Integer.toString(60000 - gm) : "-1" : "-1"
             : "-1");
     }
 }
+

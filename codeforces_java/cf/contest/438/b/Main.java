@@ -12,6 +12,7 @@ public class Main {
             && ((IntUnaryOperator) x -> IntStream.iterate(x, p -> par[p] != p, p -> par[p]).reduce((u, w) -> w) instanceof OptionalInt o && o.isPresent() ? par[o.getAsInt()] : x) instanceof IntUnaryOperator find
             ? String.format("%.6f", es.stream().mapToDouble(e -> (Integer) find.applyAsInt(e[0]) instanceof Integer ra && (Integer) find.applyAsInt(e[1]) instanceof Integer rb
                 ? ra.equals(rb) ? 0.0 : (Double) ((double) sz[ra] * sz[rb] * e[2]) instanceof Double add && (Integer) (sz[ra] >= sz[rb] ? ra : rb) instanceof Integer big && (Integer) (big.equals(ra) ? rb : ra) instanceof Integer small
-                    && (par[small] = big) >= 0 && (sz[big] += sz[small]) > 0 ? add : 0.0 : 0.0).sum() / (n * (n - 1) / 2.0)) : "");
+                    && (par[small] = big) >= 0 && (sz[big] += sz[small]) > 0 ? add : 0.0 : 0.0).sum() / (n * (n - 1L) / 2.0)) : "");
     }
 }
+
