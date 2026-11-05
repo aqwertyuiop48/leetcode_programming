@@ -1,0 +1,48 @@
+name: Configure pyforces
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install pyforces
+        run: python -m pip install pyforces-cli
+
+      - name: Configure pyforces headers
+        env:
+          PYFORCES_HEADERS: ${{ secrets.PYFORCES_HEADERS }}
+        shell: bash
+        run: |
+          if [[ -z "$PYFORCES_HEADERS" ]]; then
+            echo "::error::Add your Codeforces request headers as the PYFORCES_HEADERS repository secret."
+            exit 1
+          fi
+
+          mkdir -p "$HOME/.pyforces"
+          printf '%s\n' "$PYFORCES_HEADERS" > "$HOME/.pyforces/headers.txt"
+          chmod 600 "$HOME/.pyforces/headers.txt"
+
+      - name: Verify pyforces login
+        shell: bash
+        run: |
+          output="$(printf '1\n' | pyforces config 2>&1)" || {
+            echo "::error::pyforces config failed while checking login."
+            exit 1
+          }
+
+          if [[ "$output" == *"Already logged in as "* ]]; then
+            echo "pyforces login verified."
+          else
+            echo "::error::pyforces did not confirm login. Check that PYFORCES_HEADERS contains current Codeforces request headers."
+            exit 1
+          fi
