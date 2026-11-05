@@ -58,16 +58,20 @@ jobs:
       - name: Verify pyforces login
         shell: bash
         run: |
-          if ! output="$(printf '1\n' | pyforces config 2>&1)"; then
-            printf '%s\n' "$output"
-            echo "::error::pyforces config failed while checking login."
+          if [[ -z "$PYFORCES_HEADERS" ]]; then
+            echo "::error::PYFORCES_HEADERS secret is missing."
             exit 1
           fi
 
-          if [[ "$output" == *"Already logged in as "* ]]; then
-            echo "pyforces login verified."
+          if ! output="$(printf '0\n%s\n' "$PYFORCES_HEADERS" | pyforces config 2>&1)"; then
+            echo "::error::pyforces login command failed."
+            exit 1
+          fi
+
+          if [[ "$output" == *"Welcome "* ]]; then
+            echo "pyforces login successful!"
           else
-            printf '%s\n' "$output"
-            echo "::error::pyforces did not confirm login. Check that PYFORCES_HEADERS contains current Codeforces request headers."
+            echo "::error::Codeforces authentication failed."
+            # Avoid printing potentially sensitive diagnostic output.
             exit 1
           fi
