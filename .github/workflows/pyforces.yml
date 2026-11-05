@@ -9,6 +9,7 @@ permissions:
 jobs:
   setup:
     runs-on: ubuntu-latest
+
     steps:
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,8 +30,30 @@ jobs:
           fi
 
           mkdir -p "$HOME/.pyforces"
-          printf '%s\n' "$PYFORCES_HEADERS" > "$HOME/.pyforces/headers.txt"
-          chmod 600 "$HOME/.pyforces/headers.txt"
+
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          from pyforces.utils import parse_firefox_http_headers
+
+          raw = json.loads(os.environ["PYFORCES_HEADERS"])
+
+          headers = parse_firefox_http_headers(raw)
+
+          if not isinstance(headers, dict) or not all(
+              isinstance(k, str) and isinstance(v, str)
+              for k, v in headers.items()
+          ):
+              raise SystemExit("Invalid HTTP headers.")
+
+          path = Path.home() / ".pyforces" / "headers.txt"
+          path.write_text(json.dumps(headers), encoding="utf-8")
+          path.chmod(0o600)
+
+          print("Headers configured successfully.")
+          PY
 
       - name: Verify pyforces login
         shell: bash
