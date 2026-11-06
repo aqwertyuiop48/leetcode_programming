@@ -10,8 +10,7 @@ public class Main {
             && new int[n + 1] instanceof int[] pos && IntStream.range(0, n).allMatch(i -> (pos[a[i]] = i) >= 0)
             && IntStream.range(0, n).map(t -> pos[n - t]).toArray() instanceof int[] pv
             && IntStream.range(0, n).filter(i -> b[i] == 1).toArray() instanceof int[] ones
-            ? IntStream.range(0, n).mapToObj(k -> String.valueOf(d > 450 ? IntStream.range(0, n).filter(t -> pv[t] <= k && b[k - pv[t]] == 1).findFirst().stream().map(t -> n - t).findFirst().orElse(0)
-                : IntStream.of(ones).takeWhile(j -> j <= k).map(j -> a[k - j]).max().orElse(0))).collect(Collectors.joining("\n")) : "");
+            ? IntStream.range(0, n).mapToObj(k -> String.valueOf((Integer) IntStream.range(0, Math.min(n, 100)).filter(t -> pv[t] <= k && b[k - pv[t]] == 1).min().orElse(-1) instanceof Integer t0 && t0 >= 0 ? n - t0
+                : Arrays.stream(ones, 0, Arrays.binarySearch(ones, k) >= 0 ? Arrays.binarySearch(ones, k) + 1 : -Arrays.binarySearch(ones, k) - 1).map(j -> a[k - j]).max().orElse(0))).collect(Collectors.joining("\n")) : "");
     }
 }
-
