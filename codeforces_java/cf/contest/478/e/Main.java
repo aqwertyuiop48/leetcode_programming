@@ -34,7 +34,7 @@ public class Main {
                         && (Integer) (dp != 1 ? lb.applyAsInt(((need * 2 + 1) * 10 + p + 1) << 24) : 0) instanceof Integer b0
                         && (Integer) (dp != 1 ? lb.applyAsInt(((need * 2 + 1) * 10 + 10) << 24) : 0) instanceof Integer b1
                         ? new long[] {dp != 2 ? a1 - a0 : 0, a0, dp != 1 ? b1 - b0 : 0, b0} : null)) instanceof IntFunction<long[]> rg
-                    && ((IntFunction<IntStream>) (L -> L == 2 ? IntStream.rangeClosed(10, 99) : Arrays.stream(pl[L]).map(e -> e >> 6))) instanceof IntFunction<IntStream> cand
+                    && ((IntFunction<IntStream>) (L -> L == 2 ? IntStream.rangeClosed(10, 99).filter(v -> v / 10 != v % 10) : Arrays.stream(pl[L]).map(e -> e >> 6))) instanceof IntFunction<IntStream> cand
                     && new long[] {k0, -1} instanceof long[] st
                     && IntStream.rangeClosed(1, 14).allMatch(L -> st[1] >= 0 ? true : L <= 7
                         ? (Long) cand.apply(L).filter(v -> v % n == 0).count() instanceof Long c

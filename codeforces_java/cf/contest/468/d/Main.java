@@ -73,10 +73,11 @@ public class Main {
             && IntStream.rangeClosed(1, n + 1).allMatch(j -> (gs[j] = gs[j - 1] + gp[j - 1]) >= 0)
             && IntStream.rangeClosed(1, n).allMatch(v -> (ord[gs[label[v]] + cur[label[v]]++] = v) > 0)
             && new TreeSet<Long>() instanceof TreeSet<Long> tight
-            && new TreeSet<Integer>() instanceof TreeSet<Integer> avail
+            && new TreeSet<Long>() instanceof TreeSet<Long> avail
+            && ((java.util.function.IntToLongFunction) (q -> (long) ord[gs[q] + cur[q] - gp[q]] << 20 | q)) instanceof java.util.function.IntToLongFunction mk
             && new int[n + 1] instanceof int[] sm
             && IntStream.rangeClosed(0, n).filter(j -> gp[j] > 0).allMatch(j ->
-                avail.add(j) && (j == 0 || ((sm[j] = 2 * gp[j]) > 0 && tight.add((long) sm[j] << 20 | j))))
+                avail.add(mk.applyAsLong(j)) && (j == 0 || ((sm[j] = 2 * gp[j]) > 0 && tight.add((long) sm[j] << 20 | j))))
             && new int[n + 1] instanceof int[] res
             && IntStream.rangeClosed(1, n).allMatch(i ->
                 (Integer) label[i] instanceof Integer s
@@ -84,10 +85,12 @@ public class Main {
                     : tight.last() instanceof Long k1 && (k1 >> 20) == n - i + 1 && (int) (k1 & 1048575) != s ? (int) (k1 & 1048575)
                     : tight.lower(tight.last()) instanceof Long k2 && (k2 >> 20) == n - i + 1 && (int) (k2 & 1048575) != s ? (int) (k2 & 1048575)
                     : -1) instanceof Integer t0
-                && (Integer) (t0 >= 0 ? t0 : s == 0 || avail.first() != s.intValue() ? avail.first() : avail.higher(s)) instanceof Integer t
-                && (res[i] = ord[gs[t] + gp[t] - 1]) > 0
+                && (Long) (t0 >= 0 ? mk.applyAsLong(t0) : s == 0 || (int) (avail.first() & 1048575) != s ? avail.first() : avail.higher(avail.first())) instanceof Long tk
+                && (Integer) (int) (tk & 1048575) instanceof Integer t
+                && (res[i] = (int) (tk >> 20)) > 0
+                && avail.remove(tk)
                 && --gp[t] >= 0
-                && (gp[t] > 0 || avail.remove(t))
+                && (gp[t] == 0 || avail.add(mk.applyAsLong(t)))
                 && (s == 0 || (tight.remove((long) sm[s] << 20 | s) && tight.add((long) --sm[s] << 20 | s)))
                 && (t == 0 || (tight.remove((long) sm[t] << 20 | t) && tight.add((long) --sm[t] << 20 | t))))
             ? 2 * Arrays.stream(dist).sum() + "\n" + IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf(res[i])).collect(Collectors.joining(" "))
