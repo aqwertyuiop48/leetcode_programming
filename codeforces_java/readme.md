@@ -69,8 +69,10 @@ Steps: (To do in Github codespace)
  409:B
  470:A 470:B 470:C 470:D 470:E 470:F 470:G 470:H
 
- ### Not able to submit now
+ ### Not able to submit now / Not allowed to view the contest
  206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3
+ 481
+ 511
 
 
  - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
