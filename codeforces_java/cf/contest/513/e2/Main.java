@@ -2,23 +2,18 @@ import java.util.*;
 import java.util.stream.*;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println(new Scanner(System.in) instanceof Scanner s && (Integer) s.nextInt() instanceof Integer n && (Integer) s.nextInt() instanceof Integer k
-            && IntStream.range(0, n).map(i -> s.nextInt()).toArray() instanceof int[] a
-            && new long[2][4 * (k + 1)] instanceof long[][] buf && (Long) (-1000000000000000000L) instanceof Long neg
-            && IntStream.range(0, 4 * (k + 1)).allMatch(i -> (buf[0][i] = neg) < 0) && new long[]{neg} instanceof long[] ans
-            ? k == 1 ? 0L : IntStream.range(0, n).allMatch(i -> buf[i & 1] instanceof long[] p && buf[(i + 1) & 1] instanceof long[] q
-                && IntStream.range(0, 4 * (k + 1)).allMatch(idx -> (Integer) (idx / (k + 1)) instanceof Integer ph && (Integer) (idx % (k + 1)) instanceof Integer j
-                    && (Integer) (j == 1 || j == k ? 1 : 2) instanceof Integer mg
-                    && (q[idx] = j == 0 ? neg : ph == 0
-                        ? Math.max(Math.max(p[j], p[3 * (k + 1) + j - 1]), Math.max(p[2 * (k + 1) + j - 1], j == 1 ? 0 : neg)) + mg * a[i]
-                        : ph == 1
-                        ? Math.max(Math.max(p[(k + 1) + j], p[j]), j < k ? Math.max(p[(k + 1) + j - 1], p[j - 1]) : neg)
-                        : ph == 2
-                        ? Math.max(Math.max(p[2 * (k + 1) + j], p[(k + 1) + j - 1]), Math.max(p[j - 1], j == 1 ? 0 : neg)) - mg * a[i]
-                        : Math.max(Math.max(p[2 * (k + 1) + j], p[3 * (k + 1) + j]), j < k ? Math.max(p[3 * (k + 1) + j - 1], p[2 * (k + 1) + j - 1]) : neg)) > Long.MIN_VALUE
-                    && (q[idx] = Math.max(q[idx], neg)) <= Long.MAX_VALUE)
-                && (ans[0] = Math.max(ans[0], Math.max(q[k], q[2 * (k + 1) + k]))) <= Long.MAX_VALUE) ? ans[0] : 0
-            : "");
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk
+            && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer k
+            && IntStream.range(0, n).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] a
+            && new long[k + 1] instanceof long[] P && new long[k + 1] instanceof long[] Q && new long[k + 1] instanceof long[] M && new long[k + 1] instanceof long[] R
+            && (Long) (-1000000000000000000L) instanceof Long neg
+            && IntStream.range(0, k + 1).allMatch(i -> (P[i] = neg) < 0 && (Q[i] = neg) < 0 && (M[i] = neg) < 0 && (R[i] = neg) < 0)
+            && IntStream.range(0, n).allMatch(i -> IntStream.range(0, k).allMatch(t ->
+                (Q[t] = Math.max(Math.max(Q[t], P[t]), t >= 1 && t <= k - 2 ? Math.max(P[t + 1], Q[t + 1]) : neg)) >= Long.MIN_VALUE
+                && (R[t] = Math.max(Math.max(R[t], M[t]), t >= 1 && t <= k - 2 ? Math.max(M[t + 1], R[t + 1]) : neg)) >= Long.MIN_VALUE
+                && (P[t] = Math.max(P[t], t == k - 1 ? 0L : Math.max(M[t + 1], R[t + 1])) + (t == 0 || t == k - 1 ? 1L : 2L) * a[i]) >= Long.MIN_VALUE
+                && (M[t] = Math.max(M[t], t == k - 1 ? 0L : Math.max(P[t + 1], Q[t + 1])) - (t == 0 || t == k - 1 ? 1L : 2L) * a[i]) >= Long.MIN_VALUE))
+            ? Math.max(Math.max(P[0], Q[0]), Math.max(M[0], R[0])) : "");
     }
 }
