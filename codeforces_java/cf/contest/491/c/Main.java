@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -8,7 +9,8 @@ public class Main {
             && Integer.valueOf(t[0]) instanceof Integer n
             && Integer.valueOf(t[1]) instanceof Integer k
             && new int[k * k] instanceof int[] cnt
-            && IntStream.range(0, n).allMatch(i -> ++cnt[(t[2].charAt(i) - 'a') * k + t[3].charAt(i) - 'a'] > 0)
+            && ((IntUnaryOperator) c -> c >= 'a' ? c - 'a' : c - 'A' + 26) instanceof IntUnaryOperator ix
+            && IntStream.range(0, n).allMatch(i -> ++cnt[ix.applyAsInt(t[2].charAt(i)) * k + ix.applyAsInt(t[3].charAt(i))] > 0)
             && new int[k + 1] instanceof int[] u
             && new int[k + 1] instanceof int[] v
             && new int[k + 1] instanceof int[] p
@@ -37,7 +39,7 @@ public class Main {
                 && Stream.generate(() ->
                     (st[1] = way[st[0]]) >= 0 && (p[st[0]] = p[st[1]]) >= 0 && (st[0] = st[1]) >= 0 && st[0] == 0).anyMatch(b -> b))
             && new char[k] instanceof char[] res
-            && IntStream.rangeClosed(1, k).allMatch(j -> (res[p[j] - 1] = (char) ('a' + j - 1)) > 0)
+            && IntStream.rangeClosed(1, k).allMatch(j -> (res[p[j] - 1] = (char) (j <= 26 ? 'a' + j - 1 : 'A' + j - 27)) > 0)
             ? IntStream.rangeClosed(1, k).map(j -> cnt[(p[j] - 1) * k + j - 1]).sum() + "\n" + new String(res)
             : "");
     }
