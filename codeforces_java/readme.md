@@ -68,11 +68,22 @@ Steps: (To do in Github codespace)
  345:A 345:B 345:C 345:D 345:E 345:F 345:G
  409:B
  470:A 470:B 470:C 470:D 470:E 470:F 470:G 470:H
+ 530:A 530:B 530:C 530:D 530:E 530:F 530:G 530:H 530:I
+ 531:A 531:B 531:C 531:D 531:E 531:F 531:G 531:H 531:I
 
  ### Not able to submit now / Not allowed to view the contest
  206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3
  481
  511
+ 532
+ 537
+ 539
+ 541
+ 561
+ 562
+ 563
+ 564
+ 565
 
 
  - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
