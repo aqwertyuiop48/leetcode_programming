@@ -4,10 +4,10 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n
-            && new int[100001] instanceof int[] cnt && new int[100001] instanceof int[] sum && new int[2] instanceof int[] st
-            && IntStream.range(0, n).map(i -> Integer.parseInt(tk.nextToken())).allMatch(a -> (st[0] = 0) == 0 && (st[1] = 0) == 0
-                && IntStream.iterate(a, y -> y > 0, y -> y / 2).filter(y -> (Integer) st[0]++ instanceof Integer k && (Boolean) (k == 0 || st[1] == 1) instanceof Boolean up
-                    && IntStream.range(0, up ? 17 : 1).takeWhile(j -> (y << j) <= 100000).filter(j -> ++cnt[y << j] > 0 && (sum[y << j] += k + j) >= 0).count() >= 0 && (st[1] = y & 1) >= 0).count() >= 0)
-            ? IntStream.rangeClosed(1, 100000).filter(v -> cnt[v] == n).map(v -> sum[v]).min().getAsInt() : "");
+            && IntStream.range(0, n).map(i -> Integer.parseInt(tk.nextToken())).toArray() instanceof int[] a
+            && new long[2][100001] instanceof long[][] pk && new long[100001] instanceof long[] up
+            && IntStream.range(0, n * 17).filter(t -> (a[t / 17] >> (t % 17)) > 0).mapToLong(t -> pk[t % 17 == 0 || ((a[t / 17] >> (t % 17 - 1)) & 1) == 1 ? 1 : 0][a[t / 17] >> (t % 17)] += 1 + ((long) (t % 17) << 20)).max().isPresent()
+            && IntStream.rangeClosed(1, 100000).mapToLong(v -> up[v] = pk[1][v] + (v % 2 == 0 ? up[v / 2] + ((up[v / 2] & 1048575) << 20) : 0)).max().isPresent()
+            ? IntStream.rangeClosed(1, 100000).filter(v -> (up[v] & 1048575) + (pk[0][v] & 1048575) == n).mapToLong(v -> (up[v] >> 20) + (pk[0][v] >> 20)).min().getAsLong() : "");
     }
 }

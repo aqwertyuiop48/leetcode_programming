@@ -3,16 +3,26 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer tk && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer n && (Integer) Integer.parseInt(tk.nextToken()) instanceof Integer q
-            && new long[2 * n + 1] instanceof long[] p && IntStream.range(0, 2 * n).allMatch(i -> (p[i + 1] = p[i] + (i < n ? Long.parseLong(tk.nextToken()) : p[i + 1 - n] - p[i - n])) > 0)
-            && new int[n] instanceof int[] len
-            ? IntStream.range(0, q).mapToObj(z -> (Long) Long.parseLong(tk.nextToken()) instanceof Long b && new int[]{0, 0} instanceof int[] ij
-                && IntStream.range(0, 3 * n).allMatch(t -> ij[0] >= n || (ij[1] - ij[0] < n && p[ij[1] + 1] - p[ij[0]] <= b ? ++ij[1] > 0 : (len[ij[0]] = ij[1] - ij[0]) >= 0 && ++ij[0] > 0))
-                && (Integer) IntStream.range(0, n).reduce((x, y) -> len[y] < len[x] ? y : x).getAsInt() instanceof Integer i0
-                && new long[]{i0, i0, 0, Long.MAX_VALUE} instanceof long[] st
-                && Stream.generate(() -> 0).takeWhile(t -> st[0] <= i0 + len[i0]).allMatch(t -> st[1] >= st[0] + n
-                    ? (st[3] = Math.min(st[3], st[2])) > 0 && ++st[0] > 0 && (st[1] = st[0]) > 0 && (st[2] = 0) == 0
-                    : (st[1] += len[(int) (st[1] % n)]) > 0 && ++st[2] > 0)
-                ? String.valueOf(st[3]) : "").collect(Collectors.joining("\n")) : "");
+        System.out.println(System.in.readAllBytes() instanceof byte[] by && new long[]{-1, 0} instanceof long[] st && new long[2000110] instanceof long[] tk
+            && IntStream.range(0, by.length + 1).filter(i -> i < by.length && by[i] >= 48 && by[i] <= 57 ? (st[0] = Math.max(st[0], 0) * 10 + by[i] - 48) >= 0
+                : st[0] < 0 || (tk[(int) st[1]] = st[0]) >= 0 && ++st[1] > 0 && (st[0] = -1) < 0).count() >= 0
+            && (Integer) (int) tk[0] instanceof Integer n && (Integer) (int) tk[1] instanceof Integer q
+            && new long[2 * n + 1] instanceof long[] p && IntStream.range(0, 2 * n).filter(i -> (p[i + 1] = p[i] + tk[2 + (i < n ? i : i - n)]) >= 0).count() >= 0
+            && new int[n] instanceof int[] nxt && new int[1] instanceof int[] sj
+            ? Arrays.stream(tk, 2 + n, 2 + n + q).mapToObj(b -> (sj[0] = 0) == 0
+                && IntStream.range(0, n).filter(i -> (Integer) Math.max(sj[0], i) instanceof Integer j0
+                    && (nxt[i] = sj[0] = !(j0 + 1 <= i + n && p[j0 + 1] - p[i] <= b) ? j0 : !(j0 + 2 <= i + n && p[j0 + 2] - p[i] <= b) ? j0 + 1 : !(j0 + 3 <= i + n && p[j0 + 3] - p[i] <= b) ? j0 + 2 : !(j0 + 4 <= i + n && p[j0 + 4] - p[i] <= b) ? j0 + 3
+                        : (Boolean) (j0 + 32 <= i + n && p[j0 + 32] - p[i] <= b) instanceof Boolean c32 && (Boolean) (j0 + 1024 <= i + n && p[j0 + 1024] - p[i] <= b) instanceof Boolean ck
+                        && (Integer) Arrays.binarySearch(p, c32 ? (ck ? j0 + 1024 : j0 + 32) : j0 + 4, (c32 ? (ck ? i + n : Math.min(j0 + 1024, i + n)) : Math.min(j0 + 32, i + n)) + 1, p[i] + b) instanceof Integer r ? (r >= 0 ? r : -r - 2) : 0) >= 0).count() >= 0
+                && new int[]{1 << 30, 0} instanceof int[] mn
+                && (Integer) (int) IntStream.iterate(0, pos -> pos < n, pos -> nxt[pos]).filter(pos -> (nxt[pos] - pos < mn[0] && (mn[0] = nxt[pos] - pos) > 0 && (mn[1] = pos) >= 0) || true).count() instanceof Integer g
+                ? String.valueOf(g == 1 ? 1
+                    : (mn[0] < g
+                        ? IntStream.rangeClosed(0, mn[0]).anyMatch(i -> IntStream.of((mn[1] + i) % n).anyMatch(x -> IntStream.range(0, g - 1).reduce(x, (pos, k) -> pos >= x + n ? pos : pos < n ? nxt[pos] : nxt[pos - n] + n) >= x + n))
+                        : new int[mn[0] + 1] instanceof int[] cur && IntStream.rangeClosed(0, mn[0]).allMatch(i -> (cur[i] = (mn[1] + i) % n) >= 0)
+                            && (IntStream.range(0, g - 1).allMatch(k -> IntStream.rangeClosed(0, mn[0]).filter(i -> (cur[i] = cur[i] >= (mn[1] + i) % n + n ? cur[i] : cur[i] < n ? nxt[cur[i]] : nxt[cur[i] - n] + n) >= 0).count() >= 0) || true)
+                            && IntStream.rangeClosed(0, mn[0]).anyMatch(i -> cur[i] >= (mn[1] + i) % n + n))
+                        ? g - 1 : g)
+                : "").collect(Collectors.joining("\n")) : "");
     }
 }
