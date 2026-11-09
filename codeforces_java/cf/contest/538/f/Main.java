@@ -4,10 +4,10 @@ import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println(System.in.readAllBytes() instanceof byte[] buf && new int[buf.length / 2 + 3] instanceof int[] a && new int[3] instanceof int[] ps
-            && IntStream.range(0, buf.length + 1).filter(i -> i < buf.length && buf[i] >= '0'
+        System.out.println(System.in.readAllBytes() instanceof byte[] buf && new int[buf.length / 2 + 3] instanceof int[] a && new int[4] instanceof int[] ps
+            && IntStream.range(0, buf.length + 1).filter(i -> i < buf.length && buf[i] == '-' ? (ps[3] = 1) == 1 : i < buf.length && buf[i] >= '0'
                 ? (ps[0] = ps[0] * 10 + buf[i] - '0') >= 0 && (ps[1] = 1) == 1
-                : ps[1] == 1 && (a[ps[2]++] = ps[0]) >= 0 && (ps[0] = 0) == 0 && (ps[1] = 0) == 0).count() >= 0
+                : ps[1] == 1 && (a[ps[2]++] = ps[3] == 1 ? -ps[0] : ps[0]) != Integer.MIN_VALUE && (ps[0] = 0) == 0 && (ps[1] = 0) == 0 && (ps[3] = 0) == 0).count() >= 0
             && (Integer) a[0] instanceof Integer n && new int[n + 1] instanceof int[] ans
             && LongStream.rangeClosed(1, n).map(i -> (long) a[(int) i] << 18 | i).sorted().toArray() instanceof long[] key
             && (Integer) ((n >> 6) + 1) instanceof Integer wn && (Integer) (wn / 56 + 1) instanceof Integer sn
