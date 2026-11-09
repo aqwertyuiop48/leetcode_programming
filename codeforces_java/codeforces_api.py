@@ -9,6 +9,34 @@ url = f"https://codeforces.com/api/user.status?handle={handle}&from=1&count=1000
 ist_tz = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 
+def format_table(headers, rows):
+  widths = [
+      max([len(header)] + [len(str(row[index])) for row in rows])
+      for index, header in enumerate(headers)
+  ]
+  print(
+      " | ".join(
+          f"{header:<{widths[index]}}" for index, header in enumerate(headers)
+      )
+  )
+  print("-+-".join("-" * width for width in widths))
+  for row in rows:
+    print(
+        " | ".join(
+            f"{str(value):<{widths[index]}}"
+            for index, value in enumerate(row)
+        )
+    )
+
+
+def format_ist_timestamp(timestamp):
+  if timestamp is None:
+    return "N/A"
+  return datetime.datetime.fromtimestamp(
+      timestamp, tz=ist_tz
+  ).strftime("%Y-%m-%d %H:%M:%S")
+
+
 def parse_args(argv=None):
   parser = argparse.ArgumentParser(
       description="List Codeforces submissions for a date and contest range."
@@ -54,19 +82,40 @@ def main(argv=None):
       data = json.loads(response.read().decode("utf-8"))
 
       if data["status"] == "OK":
-        print(
-            f"{'Row': <5} | {'ID': <12} | {'Problem': <35} | {'Verdict': <20} |"
-            f" {'Language': <15} | {'Time (IST)'}"
-        )
-        print("-" * 112)
-
-        match_count = 0
+        headers = [
+            "Row",
+            "ID",
+            "Submission Contest ID",
+            "Time (IST, UTC+05:30)",
+            "Relative Time (s)",
+            "Problem Contest ID",
+            "Index",
+            "Problem",
+            "Type",
+            "Points",
+            "Rating",
+            "Tags",
+            "Author Contest ID",
+            "Participant ID",
+            "Members",
+            "Participant Type",
+            "Ghost",
+            "Contest Start (IST, UTC+05:30)",
+            "Language",
+            "Verdict",
+            "Testset",
+            "Passed Tests",
+            "Time (ms)",
+            "Memory (bytes)",
+        ]
+        rows = []
         for s in data.get("result", []):
           sub_dt = datetime.datetime.fromtimestamp(
               s["creationTimeSeconds"], tz=ist_tz
           )
-          prob_info = s["problem"]
-          contest_id = prob_info.get("contestId")
+          problem = s.get("problem", {})
+          author = s.get("author", {})
+          contest_id = problem.get("contestId")
 
           if sub_dt.date() != args.target_date:
             continue
@@ -76,21 +125,41 @@ def main(argv=None):
             ):
               continue
 
-          match_count += 1
-          sub_id = s["id"]
-          prob_name = (
-              f"{contest_id}{prob_info['index']} - {prob_info['name']}"
-          )[:33]
-          verdict = s.get("verdict", "IN_QUEUE")
-          lang = s["programmingLanguage"]
-          sub_date = sub_dt.strftime("%Y-%m-%d %H:%M:%S")
-
-          print(
-              f"{match_count: <5} | {sub_id: <12} | {prob_name: <35} | {verdict: <20} |"
-              f" {lang: <15} | {sub_date}"
+          members = ", ".join(
+            member.get("handle", "N/A")
+            for member in author.get("members", [])
+          )
+          rows.append(
+            [
+                len(rows) + 1,
+                s.get("id", "N/A"),
+                s.get("contestId", "N/A"),
+                sub_dt.strftime("%Y-%m-%d %H:%M:%S"),
+                s.get("relativeTimeSeconds", "N/A"),
+                contest_id if contest_id is not None else "N/A",
+                problem.get("index", "N/A"),
+                problem.get("name", "N/A"),
+                problem.get("type", "N/A"),
+                problem.get("points", "N/A"),
+                problem.get("rating", "N/A"),
+                ", ".join(problem.get("tags", [])) or "N/A",
+                author.get("contestId", "N/A"),
+                author.get("participantId", "N/A"),
+                members or "N/A",
+                author.get("participantType", "N/A"),
+                author.get("ghost", "N/A"),
+                format_ist_timestamp(author.get("startTimeSeconds")),
+                s.get("programmingLanguage", "N/A"),
+                s.get("verdict", "IN_QUEUE"),
+                s.get("testset", "N/A"),
+                s.get("passedTestCount", "N/A"),
+                s.get("timeConsumedMillis", "N/A"),
+                s.get("memoryConsumedBytes", "N/A"),
+            ]
           )
 
-        if match_count == 0:
+        format_table(headers, rows)
+        if not rows:
           print(f"No submissions found for {args.target_date} in IST.")
       else:
         print("API Error:", data.get("comment"))
