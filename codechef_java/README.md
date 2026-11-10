@@ -35,12 +35,21 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 . "$HOME/.cargo/env"
 ```
 
-4. Install Submitter and confirm it is on your `PATH`:
+4. Install the XCB development libraries required to build Submitter's clipboard dependency:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
+```
+
+5. Install Submitter and confirm it is on your `PATH`:
 
 ```bash
 cargo install --git https://github.com/EgorKulikov/submitter
 command -v submitter
 ```
+
+If the Cargo install previously failed with `unable to find library -lxcb-render`, `-lxcb-shape`, or `-lxcb-xfixes`, run the install command again after installing these packages.
 
 The alternative is to download the Linux binary for your Codespace from the [Submitter releases](https://github.com/EgorKulikov/submitter/releases/latest) and put it on your `PATH`.
 
@@ -68,7 +77,7 @@ You only need to run the login command for the site you are submitting to. Katti
 From `codechef_java`, use this command format:
 
 ```bash
-submitter "<problem URL>" "Java" "./Main.java"
+submitter "https://www.codechef.com/problems/TEST" "Java" "./TEST.java"
 ```
 
 Replace the example URL with the problem page and `./Main.java` with your solution file. If a judge offers multiple Java versions or Submitter does not recognize `Java`, use the exact Java language name supported by that judge.
