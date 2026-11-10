@@ -84,6 +84,13 @@ Steps: (To do in Github codespace)
  563
  564
  565
+ 589
+ 619
+ 636
+ 640
+ 642
+ 646
+ 647
 
 
  - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
