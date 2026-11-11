@@ -96,6 +96,7 @@ submitter "https://toph.co/p/add-them-up" "Java" "./Main.java"
 
 # Yandex Contest
 submitter "https://contest.yandex.com/contest/3/problems/B/" "Java" "./Main.java"
+eg: submitter "https://contest.yandex.com/contest/90118/problems/A/" "Java" "./Yandex.java"
 
 # Eolymp (archive problem)
 submitter "https://eolymp.com/en/problems/1" "Java" "./Main.java"
