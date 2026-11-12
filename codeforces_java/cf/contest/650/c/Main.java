@@ -18,7 +18,7 @@ public class Main {
             && IntStream.range(0, gs.length).filter(g -> IntStream.range(gs[g], g + 1 < gs.length ? gs[g + 1] : N).filter(j -> (stp[rr[j]] != g + 1 ? (stp[rr[j]] = g + 1) > 0 & (par[rr[j]] = rr[j]) >= 0 & (sz[rr[j]] = 1) > 0 & (comp[rr[j]] = 0) == 0 : true)
                     && (stp[cc[j]] != g + 1 ? (stp[cc[j]] = g + 1) > 0 & (par[cc[j]] = cc[j]) >= 0 & (sz[cc[j]] = 1) > 0 & (comp[cc[j]] = 0) == 0 : true)).count() >= 0
                 && IntStream.range(gs[g], g + 1 < gs.length ? gs[g + 1] : N).filter(j -> Integer.valueOf(f[0].applyAsInt(rr[j])) instanceof Integer ra && Integer.valueOf(f[0].applyAsInt(cc[j])) instanceof Integer rb
-                    && ra != rb && (sz[ra] < sz[rb] ? (par[ra] = rb) + (sz[rb] += sz[ra]) > 0 : (par[rb] = ra) + (sz[ra] += sz[rb]) > 0)).count() >= 0
+                    && ra - rb != 0 && (sz[ra] < sz[rb] ? (par[ra] = rb) + (sz[rb] += sz[ra]) > 0 : (par[rb] = ra) + (sz[ra] += sz[rb]) > 0)).count() >= 0
                 && IntStream.range(gs[g], g + 1 < gs.length ? gs[g + 1] : N).filter(j -> (comp[f[0].applyAsInt(rr[j])] = Math.max(comp[f[0].applyAsInt(rr[j])], Math.max(val[rr[j]], val[cc[j]]))) >= 0).count() >= 0
                 && IntStream.range(gs[g], g + 1 < gs.length ? gs[g + 1] : N).filter(j -> (ans[cid[j]] = comp[f[0].applyAsInt(rr[j])] + 1) > 0 && (val[rr[j]] = Math.max(val[rr[j]], ans[cid[j]])) > 0 && (val[cc[j]] = Math.max(val[cc[j]], ans[cid[j]])) > 0).count() >= 0).count() >= 0
             ? IntStream.range(0, N).mapToObj(k -> ans[k] + (k + 1 == N ? "" : (k + 1) % m == 0 ? "\n" : " ")).collect(Collectors.joining()) : "");

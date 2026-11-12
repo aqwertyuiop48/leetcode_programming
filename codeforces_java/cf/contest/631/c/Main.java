@@ -4,10 +4,11 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(System.in.readAllBytes() instanceof byte[] raw
-            && new int[raw.length / 2 + 4] instanceof int[] tk && new int[]{0, 0, 0} instanceof int[] ps
+            && new int[raw.length / 2 + 4] instanceof int[] tk && new int[]{0, 0, 0, 0} instanceof int[] ps
             && IntStream.rangeClosed(0, raw.length).allMatch(i -> (i < raw.length ? raw[i] : 32) >= 48
                 ? (ps[1] = ps[1] * 10 + raw[i] - 48) >= 0 && (ps[2] = 1) > 0
-                : ps[2] == 0 || ((tk[ps[0]++] = ps[1]) >= 0 && (ps[1] = 0) == 0 && (ps[2] = 0) == 0))
+                : i < raw.length && raw[i] == 45 ? (ps[3] = 1) > 0
+                : ps[2] == 0 || ((tk[ps[0]++] = ps[3] == 1 ? -ps[1] : ps[1]) != Integer.MIN_VALUE && (ps[1] = 0) == 0 && (ps[2] = 0) == 0 && (ps[3] = 0) == 0))
             && Integer.valueOf(tk[0]) instanceof Integer n && Integer.valueOf(tk[1]) instanceof Integer m
             && IntStream.range(0, n).map(i -> tk[2 + i]).toArray() instanceof int[] a
             && IntStream.range(0, m).map(i -> tk[2 + n + 2 * i]).toArray() instanceof int[] ty

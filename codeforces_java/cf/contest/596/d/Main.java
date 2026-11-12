@@ -11,14 +11,8 @@ public class Main {
             && new int[n + 2] instanceof int[] RR && new int[n + 2] instanceof int[] LL
             && IntStream.rangeClosed(1, n).map(i -> n + 1 - i).allMatch(i -> (RR[i] = i < n && X[i + 1] - X[i] < h ? RR[i + 1] : i) > 0)
             && IntStream.rangeClosed(1, n).allMatch(i -> (LL[i] = i > 1 && X[i] - X[i - 1] < h ? LL[i - 1] : i) > 0)
-            && new double[4][n + 2][] instanceof double[][][] E
-            && IntStream.range(0, 4).allMatch(f -> IntStream.rangeClosed(0, n + 1).allMatch(l -> (E[f][l] = new double[n + 3]) != null))
-            && IntStream.rangeClosed(1, n).allMatch(len -> IntStream.rangeClosed(1, n - len + 1).allMatch(l -> (Integer) (l + len - 1) instanceof Integer r
-                && IntStream.range(0, 4).allMatch(f -> (Integer) (f >> 1) instanceof Integer lf && (Integer) (f & 1) instanceof Integer rf
-                    && (Double) (lf == 1 ? X[l - 1] + h : X[l - 1]) instanceof Double capL && (Double) (rf == 1 ? X[r + 1] - h : X[r + 1]) instanceof Double capR
-                    && (Integer) Math.min(RR[l], r) instanceof Integer j1 && (Integer) Math.max(LL[r], l) instanceof Integer j2
-                    && (E[f][l][r - l + 1] = 0.5 * (p * (X[l] - Math.max(X[l] - h, capL) + E[rf][l + 1][r - l]) + (1 - p) * (Math.min(X[j1] + h, j1 == r ? capR : 1e30) - X[l] + E[2 + rf][j1 + 1][r - j1]))
-                        + 0.5 * ((1 - p) * (Math.min(X[r] + h, capR) - X[r] + E[lf * 2][l][r - l]) + p * (X[r] - Math.max(X[j2] - h, j2 == l ? capL : -1e30) + E[lf * 2 + 1][l][j2 - l]))) > -1e30)))
-            ? String.format(Locale.US, "%.9f", E[0][1][n]) : "");
+            && (Integer) ((n + 2) * (n + 3) - (n + 2) * (n + 1) / 2 + 2) instanceof Integer T && new double[4 * T] instanceof double[] E
+            && IntStream.rangeClosed(1, n).map(i -> n + 1 - i).allMatch(l -> IntStream.range(0, 4 * (n - l + 1)).allMatch(c -> (E[(((c % 4)) * T + (l) * (n + 3) - (l) * ((l) - 1) / 2 + ((l + c / 4) - l + 1))] = 0.5 * (p * (X[l] - Math.max(X[l] - h, (((c % 4) >> 1) == 1 ? X[l - 1] + h : X[l - 1])) + E[((((c % 4) & 1)) * T + (l + 1) * (n + 3) - (l + 1) * ((l + 1) - 1) / 2 + ((l + c / 4) - l))]) + (1 - p) * (Math.min(X[Math.min(RR[l], (l + c / 4))] + h, Math.min(RR[l], (l + c / 4)) - (l + c / 4) == 0 ? (((c % 4) & 1) == 1 ? X[(l + c / 4) + 1] - h : X[(l + c / 4) + 1]) : 1e30) - X[l] + E[((2 + ((c % 4) & 1)) * T + (Math.min(RR[l], (l + c / 4)) + 1) * (n + 3) - (Math.min(RR[l], (l + c / 4)) + 1) * ((Math.min(RR[l], (l + c / 4)) + 1) - 1) / 2 + ((l + c / 4) - Math.min(RR[l], (l + c / 4))))])) + 0.5 * ((1 - p) * (Math.min(X[(l + c / 4)] + h, (((c % 4) & 1) == 1 ? X[(l + c / 4) + 1] - h : X[(l + c / 4) + 1])) - X[(l + c / 4)] + E[((((c % 4) >> 1) * 2) * T + (l) * (n + 3) - (l) * ((l) - 1) / 2 + ((l + c / 4) - l))]) + p * (X[(l + c / 4)] - Math.max(X[Math.max(LL[(l + c / 4)], l)] - h, Math.max(LL[(l + c / 4)], l) - l == 0 ? (((c % 4) >> 1) == 1 ? X[l - 1] + h : X[l - 1]) : -1e30) + E[((((c % 4) >> 1) * 2 + 1) * T + (l) * (n + 3) - (l) * ((l) - 1) / 2 + (Math.max(LL[(l + c / 4)], l) - l))]))) > -1e30))
+            ? String.format(Locale.US, "%.9f", E[((0) * T + (1) * (n + 3) - (1) * ((1) - 1) / 2 + (n))]) : "");
     }
 }

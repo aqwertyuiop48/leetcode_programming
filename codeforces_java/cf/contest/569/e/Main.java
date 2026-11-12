@@ -19,10 +19,10 @@ public class Main {
             && ((IntBinaryOperator) (u, v) -> (int) ((reach[u][v >> 6] >>> (v & 63)) & 1L)) instanceof IntBinaryOperator get
             && IntStream.range(0, m).filter(q -> (Integer) (2 * (sm.applyAsInt(st[3 + 4 * q]) - 1) + (raw[st[4 + 4 * q]] == 67 ? 1 : 0)) instanceof Integer u
                 && (Integer) (2 * (sm.applyAsInt(st[5 + 4 * q]) - 1) + (raw[st[6 + 4 * q]] == 67 ? 1 : 0)) instanceof Integer v
-                && (reach[u][v >> 6] |= 1L << (v & 63)) != 5 && (reach[v ^ 1][(u ^ 1) >> 6] |= 1L << ((u ^ 1) & 63)) != 5 || true).count() >= 0
-            && IntStream.range(0, 2 * n).filter(u -> (reach[u][u >> 6] |= 1L << (u & 63)) != 5 && ((u % 2 == 0 ? !hasV : !hasC) ? (reach[u][(u ^ 1) >> 6] |= 1L << ((u ^ 1) & 63)) != 5 : true) || true).count() >= 0
+                && (reach[u][v >> 6] |= 1L << (v & 63)) != 0 && (reach[v ^ 1][(u ^ 1) >> 6] |= 1L << ((u ^ 1) & 63)) != 0 || true).count() >= 0
+            && IntStream.range(0, 2 * n).filter(u -> (reach[u][u >> 6] |= 1L << (u & 63)) != 0 && ((u % 2 == 0 ? !hasV : !hasC) ? (reach[u][(u ^ 1) >> 6] |= 1L << ((u ^ 1) & 63)) != 0 : true) || true).count() >= 0
             && IntStream.range(0, 2 * n).filter(k -> IntStream.range(0, 2 * n).filter(i -> get.applyAsInt(i, k) == 1
-                && IntStream.range(0, reach[i].length).filter(j -> (reach[i][j] |= reach[k][j]) != 5 || true).count() >= 0 || true).count() >= 0 || true).count() >= 0
+                && IntStream.range(0, reach[i].length).filter(j -> (reach[i][j] |= reach[k][j]) != 0 || true).count() >= 0 || true).count() >= 0 || true).count() >= 0
             && IntStream.range(0, n).map(i -> raw[st[3 + 4 * m] + i] - 97).toArray() instanceof int[] s
             && s.clone() instanceof int[] res
             && IntStream.range(0, n).map(i -> 2 * i + tv[s[i]]).toArray() instanceof int[] lit
@@ -30,7 +30,7 @@ public class Main {
                 && get.applyAsInt(2 * k + tv[c], (2 * k + tv[c]) ^ 1) == 0 ? 1 : 0) instanceof IntBinaryOperator ok
             && IntStream.range(0, n).noneMatch(i -> get.applyAsInt(2 * i, 2 * i + 1) == 1 && get.applyAsInt(2 * i + 1, 2 * i) == 1)
             ? ((Integer) IntStream.range(0, n).filter(j -> ok.applyAsInt(j, s[j]) == 0).findFirst().orElse(n) instanceof Integer fb
-                ? (fb == n ? IntStream.of(s).mapToObj(x -> String.valueOf((char) (97 + x))).collect(Collectors.joining())
+                ? (fb - n == 0 ? IntStream.of(s).mapToObj(x -> String.valueOf((char) (97 + x))).collect(Collectors.joining())
                     : ((Integer) IntStream.rangeClosed(0, fb).map(x -> fb - x).filter(p -> IntStream.range(s[p] + 1, l).anyMatch(c -> ok.applyAsInt(p, c) == 1)).findFirst().orElse(-1) instanceof Integer pp
                         && pp >= 0
                         && (Integer) IntStream.range(s[pp] + 1, l).filter(c -> ok.applyAsInt(pp, c) == 1).findFirst().getAsInt() instanceof Integer cc

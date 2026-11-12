@@ -53,37 +53,30 @@ public class Main {
                     ? (tout[lt[2]] >= lt[1] ? lt[2] : cpar[dep[spt[lt[3] * S + lt[0] + 1]] <= dep[spt[lt[3] * S + lt[1] - (1 << lt[3]) + 1]]
                         ? spt[lt[3] * S + lt[0] + 1] : spt[lt[3] * S + lt[1] - (1 << lt[3]) + 1]]) : 0)) instanceof IntBinaryOperator lca
             && ((Function<long[], long[]>) (a -> IntStream.range(0, a.length).filter(j -> j == 0 || a[j] != a[j - 1]).mapToLong(j -> a[j]).toArray())) instanceof Function<long[], long[]> dd
-            && new int[q + 1] instanceof int[] qs && new int[q + 1] instanceof int[] so && new int[q + 1] instanceof int[] po
-            && (qs[0] = 3 + 2 * m) + (so[0] = 0) + (po[0] = 0) > 0
-            && IntStream.range(0, q).filter(i -> 0 * ((qs[i + 1] = qs[i] + 2 + v[qs[i]] + 2 * v[qs[i] + 1]) + (so[i + 1] = so[i] + v[qs[i]] + 2 * v[qs[i] + 1])
-                + (po[i + 1] = po[i] + v[qs[i] + 1])) != 0).count() == 0
-            && Integer.valueOf(so[q]) instanceof Integer TK && Integer.valueOf(po[q]) instanceof Integer sumM
-            && new int[TK] instanceof int[] qid && new int[]{0} instanceof int[] cur
-            && IntStream.range(0, q).filter(i -> (qid[so[i]] = 1) < 0).count() == 0
-            && IntStream.range(0, TK).filter(s -> 0 * ((cur[0] += qid[s]) + (qid[s] = cur[0] - 1)) != 0).count() == 0
-            && dd.apply(IntStream.range(0, TK).mapToLong(s -> (long) qid[s] << 20 | pos[comp[v[qs[qid[s]] + 2 + s - so[qid[s]]] - 1]]).sorted().toArray()) instanceof long[] K1
-            && dd.apply(LongStream.concat(LongStream.of(K1), IntStream.range(0, Math.max(0, K1.length - 1)).filter(j -> K1[j] >> 20 == K1[j + 1] >> 20)
-                .mapToLong(j -> K1[j] >> 20 << 20 | pos[lca.applyAsInt(nodeAt[(int) (K1[j] & 1048575)], nodeAt[(int) (K1[j + 1] & 1048575)])])).sorted().toArray()) instanceof long[] NL
-            && Integer.valueOf(NL.length) instanceof Integer N
-            && IntStream.range(0, N).map(i -> nodeAt[(int) (NL[i] & 1048575)]).toArray() instanceof int[] nd
-            && new int[N] instanceof int[] vpar
-            && IntStream.range(0, N).filter(i -> 0 * (vpar[i] = i == 0 || NL[i - 1] >> 20 != NL[i] >> 20 ? -1
-                : Arrays.binarySearch(NL, 0, N, NL[i] >> 20 << 20 | pos[lca.applyAsInt(nd[i - 1], nd[i])])) != 0).count() == 0
-            && IntStream.range(0, TK).map(s -> Arrays.binarySearch(NL, 0, N, (long) qid[s] << 20 | pos[comp[v[qs[qid[s]] + 2 + s - so[qid[s]]] - 1]])).toArray() instanceof int[] sidx
-            && new int[N] instanceof int[] h2 && new int[2 * (N + sumM)] instanceof int[] nx2 && new int[2 * (N + sumM)] instanceof int[] to2
-            && IntStream.range(0, N).filter(i -> (h2[i] = -1) > 0).count() == 0
-            && IntStream.range(0, N).filter(i -> 0 * (vpar[i] >= 0 && nd[vpar[i]] != 0
-                ? (to2[2 * i] = vpar[i]) + (nx2[2 * i] = h2[i]) + (h2[i] = 2 * i) + (to2[2 * i + 1] = i) + (nx2[2 * i + 1] = h2[vpar[i]]) + (h2[vpar[i]] = 2 * i + 1) : 0) != 0).count() == 0
-            && IntStream.range(0, TK).filter(s -> 0 * (s - so[qid[s]] - v[qs[qid[s]]] >= 0 && (s - so[qid[s]] - v[qs[qid[s]]]) % 2 == 0 && sidx[s] != sidx[s + 1]
-                && Integer.valueOf(N + po[qid[s]] + (s - so[qid[s]] - v[qs[qid[s]]]) / 2) instanceof Integer id
-                ? (to2[2 * id] = sidx[s + 1]) + (nx2[2 * id] = h2[sidx[s]]) + (h2[sidx[s]] = 2 * id)
-                    + (to2[2 * id + 1] = sidx[s]) + (nx2[2 * id + 1] = h2[sidx[s + 1]]) + (h2[sidx[s + 1]] = 2 * id + 1) : 0) != 0).count() == 0
-            && new int[N] instanceof int[] comp2
-            && bridges.apply(new int[][]{h2, nx2, to2, new int[N], new int[N], new int[N], new int[N], h2, new int[N], new int[N + 1], new int[N + sumM + 1], comp2, new int[8], new int[]{N, N + sumM}}) instanceof Integer C2
-            && new int[q] instanceof int[] bad
-            && IntStream.range(0, TK).filter(s -> 0 * (s - so[qid[s]] > 0 && s - so[qid[s]] < v[qs[qid[s]]]
-                && comp2[sidx[s]] != comp2[sidx[so[qid[s]]]] ? (bad[qid[s]] = 1) : 0) != 0).count() == 0
-            ? IntStream.range(0, q).mapToObj(i -> bad[i] == 0 ? "YES" : "NO").collect(Collectors.joining("\n"))
+            && new int[]{3 + 2 * m, 0} instanceof int[] sq
+            ? IntStream.rangeClosed(1, q).mapToObj(qi -> Integer.valueOf(v[sq[0]]) instanceof Integer K && Integer.valueOf(v[sq[0] + 1]) instanceof Integer M
+                && IntStream.range(0, K + 2 * M + 2).map(j -> j < 2 ? v[sq[0] + j] : (v[sq[0] + j] - 1 + sq[1]) % n + 1).toArray() instanceof int[] w
+                && (sq[0] += K + 2 * M + 2) > 0
+                && Integer.valueOf(K + 2 * M) instanceof Integer TK
+                && dd.apply(IntStream.range(0, TK).mapToLong(s -> pos[comp[w[2 + s] - 1]]).sorted().toArray()) instanceof long[] K1
+                && dd.apply(LongStream.concat(LongStream.of(K1), IntStream.range(0, Math.max(0, K1.length - 1))
+                    .mapToLong(j -> pos[lca.applyAsInt(nodeAt[(int) K1[j]], nodeAt[(int) K1[j + 1]])])).sorted().toArray()) instanceof long[] NL
+                && Integer.valueOf(NL.length) instanceof Integer N
+                && IntStream.range(0, N).map(i -> nodeAt[(int) NL[i]]).toArray() instanceof int[] nd
+                && IntStream.range(0, N).map(i -> i == 0 ? -1 : Arrays.binarySearch(NL, 0, N, pos[lca.applyAsInt(nd[i - 1], nd[i])])).toArray() instanceof int[] vpar
+                && IntStream.range(0, TK).map(s -> Arrays.binarySearch(NL, 0, N, pos[comp[w[2 + s] - 1]])).toArray() instanceof int[] sidx
+                && new int[N] instanceof int[] h2 && new int[2 * (N + M)] instanceof int[] nx2 && new int[2 * (N + M)] instanceof int[] to2
+                && IntStream.range(0, N).filter(i -> (h2[i] = -1) > 0).count() == 0
+                && IntStream.range(0, N).filter(i -> 0 * (vpar[i] >= 0 && nd[vpar[i]] != 0
+                    ? (to2[2 * i] = vpar[i]) + (nx2[2 * i] = h2[i]) + (h2[i] = 2 * i) + (to2[2 * i + 1] = i) + (nx2[2 * i + 1] = h2[vpar[i]]) + (h2[vpar[i]] = 2 * i + 1) : 0) != 0).count() == 0
+                && IntStream.range(0, TK).filter(s -> 0 * (s - K >= 0 && (s - K) % 2 == 0 && sidx[s] != sidx[s + 1]
+                    && Integer.valueOf(N + (s - K) / 2) instanceof Integer id
+                    ? (to2[2 * id] = sidx[s + 1]) + (nx2[2 * id] = h2[sidx[s]]) + (h2[sidx[s]] = 2 * id)
+                        + (to2[2 * id + 1] = sidx[s]) + (nx2[2 * id + 1] = h2[sidx[s + 1]]) + (h2[sidx[s + 1]] = 2 * id + 1) : 0) != 0).count() == 0
+                && new int[N] instanceof int[] comp2
+                && bridges.apply(new int[][]{h2, nx2, to2, new int[N], new int[N], new int[N], new int[N], h2, new int[N], new int[N + 1], new int[N + M + 1], comp2, new int[8], new int[]{N, N + M}}) instanceof Integer C2
+                && Boolean.valueOf(IntStream.range(1, K).allMatch(s -> comp2[sidx[s]] == comp2[sidx[0]])) instanceof Boolean ok
+                ? (ok && (sq[1] = (sq[1] + qi) % n) >= 0 ? "YES" : "NO") : "NO").collect(Collectors.joining("\n"))
             : "");
     }
 }

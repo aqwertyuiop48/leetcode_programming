@@ -20,7 +20,7 @@ public class Main {
                 && Integer.valueOf(comp[c - 1]) instanceof Integer a && Integer.valueOf(comp[c + 1]) instanceof Integer b
                 && Integer.valueOf(comp[c - W]) instanceof Integer d && Integer.valueOf(comp[c + W]) instanceof Integer e
                 && (out[k] = (byte) (k % (m + 1) == m ? 10 : g[c] == 46 ? 46
-                    : 48 + (1 + sz[a] + (b != a ? sz[b] : 0) + (d != a && d != b ? sz[d] : 0) + (e != a && e != b && e != d ? sz[e] : 0)) % 10)) > 0)
+                    : 48 + (1 + sz[a] + (b - a != 0 ? sz[b] : 0) + (d - a != 0 && d - b != 0 ? sz[d] : 0) + (e - a != 0 && e - b != 0 && e - d != 0 ? sz[e] : 0)) % 10)) > 0)
             ? new String(out, 0, out.length - 1) : "");
     }
 }

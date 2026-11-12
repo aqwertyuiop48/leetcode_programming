@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -19,6 +20,10 @@ public class Main {
             && (Integer) starts.length instanceof Integer mm
             && IntStream.range(0, mm).map(t -> sb[starts[t]]).toArray() instanceof int[] bs
             && IntStream.range(0, mm).map(t -> (t + 1 < mm ? starts[t + 1] : m) - starts[t]).toArray() instanceof int[] cnt
+            && Arrays.copyOf(bs, mm + 1) instanceof int[] bsx
+            && (bsx[mm] = Integer.MAX_VALUE) > 0
+            && ((IntUnaryOperator) r -> (r ^ (r >> 31)) + 1 + (r >> 31)) instanceof IntUnaryOperator fx
+            && ((IntUnaryOperator) x -> fx.applyAsInt(Arrays.binarySearch(bs, x))) instanceof IntUnaryOperator nbi
             && IntStream.rangeClosed(0, n + 1).map(i -> i == 0 ? 0 : Integer.MAX_VALUE).toArray() instanceof int[] c
             && new int[n + 2] instanceof int[] idx
             && new int[n] instanceof int[] lenAt
@@ -26,19 +31,14 @@ public class Main {
             && new int[n] instanceof int[] prevVal
             && new int[]{0} instanceof int[] ll
             && new int[n + 3] instanceof int[] sIdx
-            && IntStream.range(0, n + 3).map(i -> -1).toArray() instanceof int[] cv
             && IntStream.range(0, n).filter(i -> a[i] >= 0
                 ? (Integer) Arrays.binarySearch(c, 1, ll[0] + 1, a[i]) instanceof Integer r
                     && (Integer) (r >= 0 ? r : -r - 1) instanceof Integer l
                     && (lenAt[i] = l) >= 0 && (prevPos[i] = idx[l - 1]) >= 0 && (prevVal[i] = c[l - 1]) >= 0
-                    && (a[i] < c[l] ? (c[l] = a[i]) >= 0 && (idx[l] = i) >= 0 : true)
+                    && (a[i] < c[l] ? (c[l] = a[i]) >= 0 && (idx[l] = i) >= 0 && (sIdx[l + 1] = nbi.applyAsInt(a[i])) >= 0 : true)
                     && (ll[0] = Math.max(ll[0], l)) >= 0
                 : (Integer) ll[0] instanceof Integer l0
-                    && IntStream.range(0, l0 + 1).map(t -> l0 + 1 - t).filter(l ->
-                        (cv[l] == c[l - 1] || ((Integer) Arrays.binarySearch(bs, c[l - 1]) instanceof Integer r
-                            && (sIdx[l] = r >= 0 ? r + 1 : -r - 1) >= 0 && (cv[l] = c[l - 1]) >= -1))
-                        && ((sIdx[l] < mm ? bs[sIdx[l]] : Integer.MAX_VALUE) < c[l]
-                            ? (c[l] = bs[sIdx[l]]) >= 0 && (idx[l] = i) >= 0 && (sIdx[l + 1] = sIdx[l] + 1) >= 0 && (cv[l + 1] = c[l]) >= 0 : true) || true).count() >= 0
+                    && LongStream.rangeClosed(-l0 - 1, -1).map(t -> bsx[sIdx[(int) -t]] < c[(int) -t] ? (c[(int) -t] = bsx[sIdx[(int) -t]]) * 0 + (idx[(int) -t] = i) * 0 + (sIdx[1 - (int) t] = sIdx[(int) -t] + 1) * 0 : 0).sum() >= 0
                     && (ll[0] = c[l0 + 1] < Integer.MAX_VALUE ? l0 + 1 : l0) >= 0).count() >= 0
             && (Integer) ll[0] instanceof Integer lf
             && a.clone() instanceof int[] res
@@ -53,7 +53,7 @@ public class Main {
                     ? new int[]{(int) (kk[ins] % (n + 1)), a[(int) (kk[ins] % (n + 1))], s[2] - 1}
                     : new int[]{gp[Arrays.binarySearch(gp, s[0]) - 1], bs[Arrays.binarySearch(bs, s[1]) - 1], s[2] - 1})
                 .filter(s -> a[s[0]] < 0 ? (res[s[0]] = s[1]) >= 0 && (cnt[Arrays.binarySearch(bs, s[1])]--) >= 0 : true).count() >= 0
-            && IntStream.range(0, mm).flatMap(t -> IntStream.generate(() -> bs[t]).limit(cnt[t])).toArray() instanceof int[] left
+            && IntStream.range(0, m).filter(j -> (Integer) Arrays.binarySearch(starts, j) instanceof Integer rj && (Integer) (rj >= 0 ? rj : -rj - 2) instanceof Integer tj && j - starts[tj] < cnt[tj]).map(j -> sb[j]).toArray() instanceof int[] left
             && new int[]{0} instanceof int[] q
             && IntStream.range(0, n).filter(i -> res[i] < 0 && (res[i] = left[q[0]++]) >= 0 || true).count() >= 0
             ? Arrays.stream(res).mapToObj(String::valueOf).collect(Collectors.joining(" "))

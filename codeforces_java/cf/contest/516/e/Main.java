@@ -31,7 +31,7 @@ public class Main {
                     && IntStream.range(0, Kc).filter(j -> (gs[j] = j > 0 && R2[j] == R2[j - 1] ? gs[j - 1] : j) >= 0).count() >= 0
                     && IntStream.range(0, Kc).map(i -> Kc - 1 - i).filter(j -> (ge[j] = j < Kc - 1 && R2[j] == R2[j + 1] ? ge[j + 1] : j + 1) >= 0).count() >= 0
                     && IntStream.range(0, 2 * Kc).filter(t -> (Integer) (t % Kc) instanceof Integer j && (Integer) (j + 1 == ge[j] ? gs[j] : j + 1) instanceof Integer nx
-                        && (V2[nx] = Math.min(V2[nx], V2[j] + p[1] * (nx == j ? p[0] : (P2[nx] - P2[j] + p[0]) % p[0]))) >= 0).count() >= 0
+                        && (V2[nx] = Math.min(V2[nx], V2[j] + p[1] * (nx - j == 0 ? p[0] : (P2[nx] - P2[j] + p[0]) % p[0]))) >= 0).count() >= 0
                     ? IntStream.range(0, Kc).mapToLong(j -> (Integer) (j + 1 == ge[j] ? gs[j] : j + 1) instanceof Integer nx && (Long) (nx == j ? p[0] : (P2[nx] - P2[j] + p[0]) % p[0]) instanceof Long G
                         ? Math.max(ff[cp[j]] == 0 ? R2[j] + gg * V2[j] : -1L, G >= 2 ? R2[j] + gg * (V2[j] + p[1] * (G - 1)) : -1L) : -1L).max().orElse(-1L) : -1L) instanceof ToLongFunction<long[]> cyc
                 && (Long) BigInteger.valueOf(mp % np).modInverse(BigInteger.valueOf(np)).longValue() instanceof Long ib

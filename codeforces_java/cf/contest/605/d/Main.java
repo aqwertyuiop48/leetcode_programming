@@ -16,7 +16,7 @@ public class Main {
                 : len == 1 ? (dist[(int) (keys[node - N] & 131071)] = dist[ctx[2]] + 1) + (par[(int) (keys[node - N] & 131071)] = ctx[2]) + (queue[qs[1]++] = (int) (keys[node - N] & 131071)) + (mn[node] = Integer.MAX_VALUE) * 0
                 : f[0].applyAsInt(2 * node, len / 2) + f[0].applyAsInt(2 * node + 1, len / 2) + (mn[node] = Math.min(mn[2 * node], mn[2 * node + 1])) * 0) != null
             && (IntStream.range(0, n + 1).allMatch(h -> h < qs[1] && Integer.valueOf(queue[h]) instanceof Integer u && Integer.valueOf(-(Arrays.binarySearch(keys, ((long) cx[u] << 17) | 131071) + 1)) instanceof Integer k
-                && (ctx[0] = k) >= 0 && (ctx[1] = cy[u]) >= 0 && (ctx[2] = u) >= 0 && f[0].applyAsInt(1, N) >= 0) || true)
+                && (ctx[0] = k) >= 0 && (ctx[1] = cy[u]) >= 0 && (ctx[2] = u) >= 0 && (f[0].applyAsInt(1, N) | 1) != 0) || true)
             ? (dist[n - 1] == 0 ? "-1" : dist[n - 1] + "\n" + (new int[dist[n - 1]] instanceof int[] path && IntStream.iterate(n - 1, x -> x != n, x -> par[x]).filter(x -> (path[dist[x] - 1] = x + 1) > 0).count() >= 0
                 ? Arrays.toString(path).replace("[", "").replace("]", "").replace(",", "") : "")) : "");
     }

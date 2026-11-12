@@ -14,7 +14,7 @@ public class Main {
             && Stream.generate(q::poll).takeWhile(Objects::nonNull).allMatch(u -> Arrays.stream(dirs).allMatch(d -> u[0] + d[0] >= 0 && u[0] + d[0] < n && u[1] + d[1] >= 0 && u[1] + d[1] < m
                 && !seen[u[0] + d[0]][u[1] + d[1]] && (g[u[0] + d[0]][u[1] + d[1]] == '.' || u[0] + d[0] == r2 && u[1] + d[1] == c2)
                 ? (seen[u[0] + d[0]][u[1] + d[1]] = true) && q.add(new int[]{u[0] + d[0], u[1] + d[1]}) : true))
-            ? r1 == r2 && c1 == c2 ? cnt >= 1 ? "YES" : "NO"
+            ? r1 - r2 == 0 && c1 - c2 == 0 ? cnt >= 1 ? "YES" : "NO"
                 : !seen[r2][c2] ? "NO" : g[r2][c2] == 'X' ? "YES" : cnt >= 2 || adj && cnt >= 1 ? "YES" : "NO" : "");
     }
 }
