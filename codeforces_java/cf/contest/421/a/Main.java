@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToObj(i -> st.contains(i) ? "1" : "2").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

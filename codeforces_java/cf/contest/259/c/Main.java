@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,3 +8,6 @@ public class Main {
             ? t.substring(0, i) + t.substring(i + 1) : "");
     }
 }
+
+
+

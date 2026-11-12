@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 ? (r - l) % 2 == 1 && p[n] >= (r - l + 1) / 2 && n - p[n] >= (r - l + 1) / 2 ? "1" : "0" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

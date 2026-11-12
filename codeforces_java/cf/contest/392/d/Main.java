@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -36,3 +37,6 @@ public class Main {
             ? IntStream.iterate(n, u -> u >= 0, u -> u - 1).map(u -> Integer.valueOf(t[1] < BIG ? u + t[1] : Integer.MAX_VALUE) instanceof Integer cand && addAll.test(u) ? cand : 0).min().getAsInt() : "");
     }
 }
+
+
+

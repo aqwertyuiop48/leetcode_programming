@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, 25).filter(i -> a[i] == 1).map(i -> Math.abs(i / 5 - 2) + Math.abs(i % 5 - 2)).sum() : "");
     }
 }
+
+
+

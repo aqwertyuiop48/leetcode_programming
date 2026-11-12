@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? st[1] < m ? "No solution" : st[0] + "\n" + Arrays.stream(ids).mapToObj(String::valueOf).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

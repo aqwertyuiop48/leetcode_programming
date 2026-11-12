@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             && IntStream.of(a).sum() - IntStream.of(a).max().getAsInt() <= c ? "YES" : "NO");
     }
 }
+
+
+

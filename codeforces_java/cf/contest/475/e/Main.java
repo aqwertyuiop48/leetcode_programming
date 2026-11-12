@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
@@ -52,3 +53,6 @@ public class Main {
                         && (Integer) IntStream.rangeClosed(0, n - sz[r]).filter(s -> ((dp[s >> 6] >>> (s & 63)) & 1L) != 0).map(s -> s * (n - sz[r] - s)).max().orElse(0) instanceof Integer bst ? (long) s2 + acc[0] + bst : 0L).max().getAsLong() instanceof Long ans ? (Object) ans : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
+
+
+

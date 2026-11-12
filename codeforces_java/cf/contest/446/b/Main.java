@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? IntStream.rangeClosed(0, k).mapToLong(i -> R[i] + C[k - i] - (long) i * (k - i) * p).max().getAsLong() : 0);
     }
 }
+
+
+

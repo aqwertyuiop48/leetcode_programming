@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).filter(i -> s.nextInt() + k <= 5).count() / 3 : 0);
     }
 }
+
+
+

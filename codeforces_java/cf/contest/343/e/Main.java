@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -24,3 +25,6 @@ public class Main {
             ? IntStream.range(1, n).map(i -> w[i]).sum() + "\n" + lists.get(comp[0]).stream().map(x -> String.valueOf(x + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

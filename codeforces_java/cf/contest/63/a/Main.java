@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,8 +10,6 @@ public class Main {
                 .map(p -> p[0]).collect(Collectors.joining("\n")))));
     }
 }
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).mapToLong(i -> Math.abs((acc[0] += a[i]) - (i + 1) * avg)).sum() : 0);
     }
 }
+
+
+

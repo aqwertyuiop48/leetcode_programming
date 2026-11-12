@@ -1,3 +1,4 @@
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
@@ -41,5 +42,6 @@ public class Main {
             ? tot[0].setScale(15, RoundingMode.HALF_EVEN).toPlainString() : "");
     }
 }
+
 
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 .orElseGet(() -> IntStream.range(0, 676).mapToObj(c -> "" + (char) ('a' + c / 26) + (char) ('a' + c % 26)).filter(x -> !subs.contains(x)).findFirst().get()) : "");
     }
 }
+
+
+

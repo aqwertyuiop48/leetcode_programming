@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? String.format("%.15f", IntStream.range(0, m).mapToDouble(i -> (v[s.nextInt() - 1] + v[s.nextInt() - 1]) / (double) s.nextInt()).max().orElse(0)) : "");
     }
 }
+
+
+

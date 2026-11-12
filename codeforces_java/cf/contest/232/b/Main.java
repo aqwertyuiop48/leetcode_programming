@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                 (dp, i) -> IntStream.rangeClosed(0, k).mapToLong(s -> IntStream.rangeClosed(0, Math.min(n, s)).mapToLong(c -> dp[s - c] * ((i < m % n || m % n == 0 ? p1 : p2)[c]) % M).sum() % M).toArray(), (x, y) -> x)[k] : "");
     }
 }
+
+
+

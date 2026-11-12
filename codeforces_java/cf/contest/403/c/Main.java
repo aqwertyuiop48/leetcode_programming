@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
             && bfs.applyAsInt(0) == st[3] && bfs.applyAsInt(1) == st[3] ? "YES" : "NO");
     }
 }
+
+
+

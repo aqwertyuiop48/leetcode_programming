@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? xs.size() + xs.stream().map(x -> "\n" + x + " " + (c - a * x) / b).collect(Collectors.joining()) : "");
     }
 }
+
+
+

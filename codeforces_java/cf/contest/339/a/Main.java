@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -8,3 +9,6 @@ public class Main {
         System.out.println(Arrays.stream(new Scanner(System.in).next().split("\\+")).sorted().collect(Collectors.joining("+")));
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> IntStream.range(0, m).allMatch(j -> (f[j] = Math.max(f[j], j == 0 ? 0 : f[j - 1]) + Integer.parseInt(tk.nextToken())) > 0) ? String.valueOf(f[m - 1]) : "").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

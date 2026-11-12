@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                     || cp[Math.max(r1, r2) + 1][c1] - cp[Math.min(r1, r2)][c1] == h && rp[r2][Math.max(c1, c2) + 1] - rp[r2][Math.min(c1, c2)] == w))) ? "YES" : "NO" : "");
     }
 }
+
+
+

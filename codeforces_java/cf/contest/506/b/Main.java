@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
             ? n - IntStream.rangeClosed(1, n).filter(v -> par[v] == v).count() + IntStream.rangeClosed(1, n).filter(v -> cyc[v]).count() : 0);
     }
 }
+
+
+

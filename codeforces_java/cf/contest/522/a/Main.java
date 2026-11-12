@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> s.next().toLowerCase() instanceof String a && s.next() != null && s.next().toLowerCase() instanceof String b ? d.merge(a, d.get(b) + 1, Math::max) : 0).max().getAsInt() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, n * m).filter(t -> f.applyAsInt(t / m, t % m) - f.applyAsInt(t / m + 1, t % m) - f.applyAsInt(t / m, t % m + 1) + f.applyAsInt(t / m + 1, t % m + 1) != 0).count() : 0);
     }
 }
+
+
+

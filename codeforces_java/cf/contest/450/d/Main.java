@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,3 +21,6 @@ public class Main {
             ? "" + Arrays.stream(tr).filter(t -> t[1] > dist[(int) t[0]] || t[1] == dist[(int) t[0]] && (flag[(int) t[0]] || !(flag[(int) t[0]] = true))).count() : "");
     }
 }
+
+
+

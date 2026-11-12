@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -32,3 +33,6 @@ public class Main {
             ? base[0] + Math.max(0, IntStream.range(0, 26 * n).mapToLong(x -> gain[x] - lost[x / 26]).max().orElse(0)) : "");
     }
 }
+
+
+

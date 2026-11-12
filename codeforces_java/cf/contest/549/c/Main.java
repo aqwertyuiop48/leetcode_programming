@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? (m == 0 ? o % 2 == 1 : m % 2 == 0 ? k % 2 == 1 && e <= dd : k % 2 == 0 ? e > dd && o > dd : o > dd) ? "Stannis" : "Daenerys" : "");
     }
 }
+
+
+

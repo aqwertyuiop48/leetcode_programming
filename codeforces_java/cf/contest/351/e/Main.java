@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> Math.min((int) IntStream.range(0, i).filter(j -> a[j] < a[i]).count(), (int) IntStream.range(i + 1, n).filter(j -> a[j] < a[i]).count())).sum() : "");
     }
 }
+
+
+

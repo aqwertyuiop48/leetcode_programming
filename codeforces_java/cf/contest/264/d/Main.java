@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,4 +17,6 @@ public class Main {
                 ? lo > hi ? 0L : hi - lo + 1 - (x >= 2 && sc[x - 2] != sc[x - 1] ? P[sc[x - 1] * 3 + sc[x - 2]][hi] - P[sc[x - 1] * 3 + sc[x - 2]][lo - 1] : 0) : 0L).sum() : "");
     }
 }
+
+
 

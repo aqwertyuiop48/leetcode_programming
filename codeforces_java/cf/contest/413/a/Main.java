@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             && (IntStream.of(t).anyMatch(x -> x == lo) ? 0 : 1) + (IntStream.of(t).anyMatch(x -> x == hi) ? 0 : 1) <= n - m ? "Correct" : "Incorrect");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? Stream.concat(Stream.of(n), IntStream.range(1, n).boxed()).map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
 

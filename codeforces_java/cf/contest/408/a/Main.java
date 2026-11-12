@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> 15 * k[i] + 5 * IntStream.range(0, k[i]).map(j -> Integer.parseInt(tk.nextToken())).sum()).min().getAsInt() : 0);
     }
 }
+
+
+

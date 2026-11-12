@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 ? pos[a] / k + 1 + (pos[a] > 0 && (Integer) arr[pos[a] - 1] instanceof Integer b && (arr[pos[a] - 1] = a) > 0 && (arr[pos[a]] = b) > 0 && (pos[b] = pos[a]) >= 0 && --pos[a] >= 0 ? 0 : 0) : 0).sum() : 0);
     }
 }
+
+
+

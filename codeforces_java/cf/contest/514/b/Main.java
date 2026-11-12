@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.math.BigInteger;
@@ -10,3 +11,6 @@ public class Main {
                 ? (dx < 0 || dx == 0 && dy < 0 ? -dx / g : dx / g) + "," + (dx < 0 || dx == 0 && dy < 0 ? -dy / g : dy / g) : "").distinct().count() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 : Stream.concat(Collections.nCopies(n - k, "RIGHT").stream(), IntStream.range(0, n).boxed().flatMap(i -> i < n - 1 ? Stream.of("PRINT " + t.charAt(n - 1 - i), "LEFT") : Stream.of("PRINT " + t.charAt(0)))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

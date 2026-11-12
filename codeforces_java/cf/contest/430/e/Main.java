@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
             && (n == 1 || ((IntPredicate) ref[0]).test(1)) ? "YES" : "NO");
     }
 }
+
+
+

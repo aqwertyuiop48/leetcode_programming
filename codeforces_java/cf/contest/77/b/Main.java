@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -8,8 +9,6 @@ public class Main {
             v[1] == 0 ? 1.0 : v[0] == 0 ? 0.5 : v[0] <= 4 * v[1] ? 0.5 + v[0] / (16 * v[1]) : 1 - v[1] / v[0])).collect(Collectors.joining("\n")));
     }
 }
-
-
 
 
 

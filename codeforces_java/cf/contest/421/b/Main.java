@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,3 +6,6 @@ public class Main {
         System.out.println(new Scanner(System.in).next() instanceof String s && s.chars().allMatch(c -> "AHIMOTUVWXY".indexOf(c) >= 0) && new StringBuilder(s).reverse().toString().equals(s) ? "YES" : "NO");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, 3).mapToObj(i -> IntStream.range(0, 3).mapToObj(j -> String.valueOf(i == j ? d[i] : a[3 * i + j])).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

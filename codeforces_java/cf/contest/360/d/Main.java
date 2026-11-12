@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
             ? Arrays.stream(divs).filter(e -> Arrays.stream(ds).anyMatch(d -> d % e == 0)).map(e -> Arrays.stream(pr).filter(q -> e % q == 0).reduce(e, (ph, q) -> ph / q * (q - 1))).sum() : "");
     }
 }
+
+
+

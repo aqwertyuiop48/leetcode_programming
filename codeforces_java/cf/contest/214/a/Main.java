@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(0, 1000).flatMap(a -> IntStream.rangeClosed(0, 1000).filter(b -> a * a + b == n && a + b * b == m)).count() : "");
     }
 }
+
+
 

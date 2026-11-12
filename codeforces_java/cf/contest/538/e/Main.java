@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? (IntStream.rangeClosed(1, n).filter(v -> !hasChild[v]).count() - fa[1] + 1) + " " + fb[1] : "");
     }
 }
+
+
+

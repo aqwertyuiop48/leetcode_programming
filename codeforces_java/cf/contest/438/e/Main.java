@@ -1,3 +1,4 @@
+
 import java.math.*;
 import java.util.*;
 import java.util.function.*;
@@ -34,3 +35,6 @@ public class Main {
             ? IntStream.rangeClosed(1, m).mapToObj(i -> String.valueOf(f[i] * 2 % 998244353L)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

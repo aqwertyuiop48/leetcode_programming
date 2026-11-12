@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -58,3 +59,6 @@ public class Main {
                 ? cand.length == 0 || !feas.test(cand[cand.length - 1]) ? -1L : (bs[1] = Math.min(bs[1], jump.applyAsInt(0))) >= 0 && IntStream.range(0, 21).allMatch(z -> bs[1] - bs[0] <= 1 || (Integer) ((bs[0] + bs[1]) / 2) instanceof Integer mid && (feas.test(cand[mid]) ? (bs[1] = Math.min(mid, jump.applyAsInt(0))) >= 0 : (bs[0] = mid) >= -1)) ? cand[bs[1]] : 0L : 0L : 0L);
     }
 }
+
+
+

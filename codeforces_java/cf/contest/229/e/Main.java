@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -22,3 +23,6 @@ public class Main {
             ? String.format(Locale.US, "%.12f", p0 * dpf[x] / C[E][x]) : "");
     }
 }
+
+
+

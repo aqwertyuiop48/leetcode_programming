@@ -1,3 +1,4 @@
+
 import java.nio.*;
 import java.nio.charset.*;
 import java.util.*;
@@ -22,3 +23,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> new String(g, base + i * w, m, StandardCharsets.ISO_8859_1)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

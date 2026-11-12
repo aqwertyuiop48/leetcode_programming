@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? sum + 10 * (n - 1) > d ? -1 : (d - sum) / 5 : 0);
     }
 }
+
+
+

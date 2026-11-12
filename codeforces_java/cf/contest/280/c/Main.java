@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? String.format("%.12f", IntStream.rangeClosed(1, n).mapToDouble(v -> 1.0 / dep[v]).sum()) : "");
     }
 }
+
+
+

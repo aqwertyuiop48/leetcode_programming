@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,3 +21,6 @@ public class Main {
             && out.append((best >= INF ? "-1" : String.valueOf(best)) + "\n").checkError());
     }
 }
+
+
+

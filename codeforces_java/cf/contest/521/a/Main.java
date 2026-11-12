@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? LongStream.range(0, n).reduce(1L, (a, i) -> a * LongStream.of(f).filter(x -> x == LongStream.of(f).max().getAsLong()).count() % 1000000007L) : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,4 +20,6 @@ public class Main {
                 ? Math.pow(p[i][0] + t * dx - cx, 2) + Math.pow(p[i][1] + t * dy - cy, 2) : 0).min().getAsDouble())) : "");
     }
 }
+
+
 

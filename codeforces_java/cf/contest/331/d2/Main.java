@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -73,4 +74,6 @@ public class Main {
             ? IntStream.range(0, q).parallel().mapToObj(qi -> new long[]{qt[qi], 0} instanceof long[] st && stage1.apply(n + qi, st) instanceof String early ? (early.isEmpty() ? stage2.apply(st) : early) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

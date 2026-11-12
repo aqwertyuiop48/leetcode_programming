@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 .filter(t -> (t.length() == 1 || t.charAt(0) != '0') && Integer.parseInt(t) % 8 == 0).findFirst().map(t -> "YES\n" + t).orElse("NO") : "");
     }
 }
+
+
+

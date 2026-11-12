@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -32,4 +33,6 @@ public class Main {
             ? Long.valueOf(n) * (n - 1) * (n - 2) / 6 - sub[0] : "");
     }
 }
+
+
 

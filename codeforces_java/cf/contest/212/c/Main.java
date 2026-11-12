@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -20,4 +21,6 @@ public class Main {
                 ? g.get().applyAsLong((1 * 2 + c0) * 2 + c1) : 0).sum() : "");
     }
 }
+
+
 

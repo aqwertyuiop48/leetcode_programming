@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,4 +10,6 @@ public class Main {
             ? LongStream.of(Stream.iterate(a0, a -> a.clone() instanceof long[] b && IntStream.of(0).peek(z -> IntStream.of(pr).forEach(p -> b[p & 4095] += b[p >> 12])).peek(z -> Arrays.setAll(b, x -> b[x] % 1000000007L)).sum() == 0 ? b : a).limit(k).reduce((x, y) -> y).get()).map(v -> v % 1000000007L).sum() % 1000000007L : 0);
     }
 }
+
+
 

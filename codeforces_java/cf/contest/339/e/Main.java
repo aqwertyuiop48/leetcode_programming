@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -15,4 +16,6 @@ public class Main {
             ? (IntStream.rangeClosed(0, 3).anyMatch(T -> (tl[0] = T) >= 0 && rec.get().test(T)) ? used[0] + "\n" + IntStream.range(0, used[0]).mapToObj(i -> mv[2 * (used[0] - 1 - i)] + " " + mv[2 * (used[0] - 1 - i) + 1]).collect(Collectors.joining("\n")) : "") : "");
     }
 }
+
+
 

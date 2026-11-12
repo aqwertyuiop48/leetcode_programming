@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> col[i] == 0 ? "b" : "r").collect(Collectors.joining()) : "");
     }
 }
+
+
+

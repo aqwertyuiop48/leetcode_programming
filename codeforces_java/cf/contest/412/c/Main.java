@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 ? l.isEmpty() ? "x" : l.size() == 1 ? String.valueOf(l.get(0)) : "?" : "").collect(Collectors.joining()) : "");
     }
 }
+
+
+

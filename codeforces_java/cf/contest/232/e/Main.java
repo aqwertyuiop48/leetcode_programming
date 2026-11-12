@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -41,3 +42,6 @@ public class Main {
             ? IntStream.range(0, q).mapToObj(i -> ans[i] ? "Yes" : "No").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

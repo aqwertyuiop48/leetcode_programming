@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
             ? IntStream.range(st, N).filter(p -> d[p] > 0 && d[p] <= d[s] && raw[p] >= '0' && raw[p] <= '9').map(p -> raw[p] - '0').sum() : "");
     }
 }
+
+
+

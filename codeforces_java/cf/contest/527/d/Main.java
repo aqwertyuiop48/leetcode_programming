@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? pts.stream().filter(p -> p[0] - p[1] >= last[0] && (last[0] = p[0] + p[1]) > Long.MIN_VALUE).count() : 0);
     }
 }
+
+
+

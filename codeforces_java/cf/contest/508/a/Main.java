@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                     && g[x + dx][y + dy] && g[x + dx + 1][y + dy] && g[x + dx][y + dy + 1] && g[x + dx + 1][y + dy + 1]))).findFirst().orElse(0) : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -77,4 +78,6 @@ public class Main {
             ? bestLen[0] == Integer.MAX_VALUE ? "-1" : new String(bst, 0, bestLen[0]) : "");
     }
 }
+
+
 

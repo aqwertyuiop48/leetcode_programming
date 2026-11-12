@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -38,3 +39,6 @@ public class Main {
                 ? fx.apply(K1) + " " + fx.apply(K2) + "\n" + fy.apply(R1) + " " + fy.apply(R2) : "" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -13,3 +14,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n - 2).mapToLong(k -> (long) C.applyAsInt(b - 1, k - 1) * C.applyAsInt(w - 1, n - k - 1) % M * (n - k - 1) % M).sum() % M * f[w] % M * f[b] % M : "");
     }
 }
+
+
+

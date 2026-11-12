@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(1, s.length()).filter(i -> s.charAt(i) == s.charAt(i - 1)).count() : "");
     }
 }
+
+
+

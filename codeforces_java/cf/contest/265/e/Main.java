@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -31,3 +32,6 @@ public class Main {
                 ? (qi * 4 + 0 < q ? s0[0] + "\n" : "") + (qi * 4 + 1 < q ? s1[0] + "\n" : "") + (qi * 4 + 2 < q ? s2[0] + "\n" : "") + (qi * 4 + 3 < q ? s3[0] + "\n" : "") : "").collect(Collectors.joining()).strip() : "");
     }
 }
+
+
+

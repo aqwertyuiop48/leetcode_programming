@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -9,3 +10,6 @@ public class Main {
             ? p + "://" + rest.substring(0, idx) + ".ru" + (rest.length() > idx + 2 ? "/" + rest.substring(idx + 2) : "") : "");
     }
 }
+
+
+

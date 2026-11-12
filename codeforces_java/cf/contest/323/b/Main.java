@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,4 +12,6 @@ public class Main {
                 : (Integer.valueOf((j - i + n - 1) % (n - 1)) instanceof Integer d && d <= (n - 2) / 2 ? "1" : "0")).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

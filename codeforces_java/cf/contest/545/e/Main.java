@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).filter(v -> v != src).mapToLong(v -> bw[v]).sum() + "\n" + IntStream.rangeClosed(1, n).filter(v -> v != src).mapToObj(v -> String.valueOf(bi[v])).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

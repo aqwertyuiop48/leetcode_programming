@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,8 +6,6 @@ public class Main {
         System.out.println(Integer.valueOf(new Scanner(System.in).nextInt()) instanceof Integer n ? ("ROYGBIV" + "GBIV".repeat(n)).substring(0, n) : "");
     }
 }
-
-
 
 
 

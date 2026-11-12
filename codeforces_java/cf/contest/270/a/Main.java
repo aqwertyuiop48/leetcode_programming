@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, sc.nextInt()).mapToObj(i -> 360 % (180 - sc.nextInt()) == 0 ? "YES" : "NO").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

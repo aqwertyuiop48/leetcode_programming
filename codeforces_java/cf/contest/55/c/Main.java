@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,8 +9,6 @@ public class Main {
                 .anyMatch(p -> Math.min(Math.min(p[0] - 1, n - p[0]), Math.min(p[1] - 1, m - p[1])) <= 4) ? "YES" : "NO")))));
     }
 }
-
-
 
 
 

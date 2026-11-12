@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -16,4 +17,6 @@ public class Main {
                             : "o".repeat(j / 2 == 0 ? a - k + 1 : 1)).collect(Collectors.joining()) : "" : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
             ? LongStream.range(0, n - (m == 0 ? 0 : IntStream.range(0, m - 1).map(i -> Math.min(len, y[i + 1] - y[i])).sum() + len)).reduce(1L, (x, i) -> x * 26 % 1000000007L) : 0);
     }
 }
+
+
+

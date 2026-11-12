@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
             ? (2 * v + pp[fl[1]] - pp[fl[0] + 1]) + " " + cut.length + "\n" + Arrays.stream(cut).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

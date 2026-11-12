@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     LongStream.concat(IntStream.range(0, m).mapToLong(i -> p.get(i)[1]), IntStream.range(0, m - 1).mapToLong(i -> (p.get(i)[1] + p.get(i + 1)[1] + p.get(i + 1)[0] - p.get(i)[0]) / 2))).max().getAsLong()) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -10,3 +11,6 @@ public class Main {
             ? (r * (q + 1) * q / 2 + (m - r) * q * (q - 1) / 2) + " " + (n - m + 1) * (n - m) / 2 : "");
     }
 }
+
+
+

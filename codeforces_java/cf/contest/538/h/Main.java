@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -24,3 +25,6 @@ public class Main {
                 ? "POSSIBLE\n" + n1 + " " + n2 + "\n" + IntStream.range(0, n).mapToObj(v -> ok1[comp[v]] ? (col[v] == 0 ? "1" : "2") : (col[v] == 0 ? "2" : "1")).collect(Collectors.joining()) : "IMPOSSIBLE" : "");
     }
 }
+
+
+

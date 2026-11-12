@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -38,3 +39,6 @@ public class Main {
             && bb[(n - 1) * n] > 0 ? "Cerealguy" : "Fat Rat");
     }
 }
+
+
+

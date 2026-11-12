@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? n < 20 ? small[n] : tens[n / 10] + (n % 10 == 0 ? "" : "-" + small[n % 10]) : "");
     }
 }
+
+
+

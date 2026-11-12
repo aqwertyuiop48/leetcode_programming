@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
             ? String.format(Locale.ROOT, "%.12f %.12f %.12f", ans[0], ans[1], ans[2]) : "");
     }
 }
+
+
+

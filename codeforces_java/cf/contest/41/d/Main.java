@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -26,8 +27,6 @@ public class Main {
             ? (best - 1) + "\n" + (st[0] + 1) + "\n" + new StringBuilder(path).reverse() : "-1"));
     }
 }
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,3 +10,6 @@ public class Main {
             && s.chars().allMatch(c -> sb.length() > 0 && sb.charAt(sb.length() - 1) == c ? sb.deleteCharAt(sb.length() - 1) != null : sb.append((char) c) != null) ? (sb.isEmpty() ? "Yes" : "No") : "");
     }
 }
+
+
+

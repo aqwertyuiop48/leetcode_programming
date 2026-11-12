@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? s.next().chars().map(c -> a[c - '1']).sum() : 0);
     }
 }
+
+
+

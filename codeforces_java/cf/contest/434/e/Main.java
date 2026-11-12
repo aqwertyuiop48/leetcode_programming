@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -54,4 +55,6 @@ public class Main {
             ? (long) n * n * n - 3L * n * LongStream.of(out).sum() + IntStream.range(0, n).mapToLong(i -> out[i] * out[i] + in[i] * in[i] + out[i] * in[i]).sum() : "");
     }
 }
+
+
 

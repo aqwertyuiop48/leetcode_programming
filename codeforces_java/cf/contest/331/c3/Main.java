@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
@@ -23,4 +24,6 @@ public class Main {
             ? R.get().apply(new long[]{19, 0, in.get()})[0] : "");
     }
 }
+
+
 

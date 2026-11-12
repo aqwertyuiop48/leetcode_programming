@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -16,3 +17,6 @@ public class Main {
                 : f.apply((int) (a % L), 0) + (a / L - b / L - 1) * f.apply(L, 0) + f.apply(L, (int) (b % L)) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? String.format(Locale.US, "%.6f", (double) (2 * I - I % 2)) : "");
     }
 }
+
+
+

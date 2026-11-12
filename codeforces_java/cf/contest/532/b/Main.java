@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
                     ? par[v] < 0 ? Math.max(d0, d1) : 0 : 0 : 0).max().getAsLong() : 0);
     }
 }
+
+
+

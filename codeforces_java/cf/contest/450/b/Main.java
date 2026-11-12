@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? (new long[]{x, y, y - x, -x, -y, x - y}[(int) ((n - 1) % 6)] % 1000000007L + 1000000007L) % 1000000007L : 0);
     }
 }
+
+
+

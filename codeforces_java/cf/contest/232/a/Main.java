@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? st[1] + "\n" + IntStream.range(0, st[1]).mapToObj(i -> IntStream.range(0, st[1]).mapToObj(j -> g[i][j] ? "1" : "0").collect(Collectors.joining())).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

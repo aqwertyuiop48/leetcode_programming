@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
                 ? IntStream.range(0, n).filter(m -> m != L).mapToDouble(m -> (2.0 * (m - L) + (m < L ? n : -n)) * C[L] * (C[m] * r2 - C[L] * (A[L] * A[m] + B[L] * B[m])) / ((A[L] * B[m] - A[m] * B[L]) * r2)).sum() : 0.0).sum() / 2 / ((double) n * (n - 1) * (n - 2) / 6)) : "");
     }
 }
+
+
+

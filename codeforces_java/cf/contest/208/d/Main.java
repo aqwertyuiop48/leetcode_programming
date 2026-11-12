@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,4 +13,6 @@ public class Main {
             ? Arrays.stream(cnt).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + pts[0] : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(1, 5).filter(x -> (sum + x) % (n + 1) != 1).count() : "");
     }
 }
+
+
+

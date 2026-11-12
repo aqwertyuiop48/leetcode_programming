@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,4 +16,6 @@ public class Main {
             ? IntStream.range(0, v[0]).mapToObj(i -> v[2 * i + 2] > 45 || v[2 * i + 1] > 1000 ? "0" : String.valueOf(a[v[2 * i + 1]][v[2 * i + 2]])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

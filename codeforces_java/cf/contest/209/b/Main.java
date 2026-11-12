@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,4 +10,6 @@ public class Main {
                 .mapToLong(p -> Math.max(a[p[0]], a[p[1]])).min().stream().boxed().findFirst().map(Object::toString).orElse("-1") : "");
     }
 }
+
+
 

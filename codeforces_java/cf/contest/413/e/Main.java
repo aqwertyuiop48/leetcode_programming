@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
                 ? String.valueOf(d >= 400000000 ? -1 : d) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 
@@ -8,4 +9,6 @@ public class Main {
             ? fl == 0 ? fr + " " + (lr + 1) : fr == 0 ? ll + " " + (fl - 1) : fr + " " + lr : "");
     }
 }
+
+
 

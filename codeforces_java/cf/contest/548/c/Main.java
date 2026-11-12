@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -14,3 +15,6 @@ public class Main {
             ? f1[0] < 0 || f2[0] < 0 ? -1L : LongStream.rangeClosed(0, 2L * m + 2).map(k -> f1[1] == 0 && k > 0 ? -1 : f1[0] + k * (long) f1[1]).filter(t -> t >= 0 && t >= f2[0] && (f2[1] == 0 ? t == f2[0] : (t - f2[0]) % f2[1] == 0)).findFirst().orElse(-1) : 0L);
     }
 }
+
+
+

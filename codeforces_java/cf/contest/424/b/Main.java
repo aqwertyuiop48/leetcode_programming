@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? l.stream().filter(t -> (acc[0] += (long) t[1]) >= 1000000).findFirst().map(t -> String.format("%.7f", t[0])).orElse("-1") : "");
     }
 }
+
+
+

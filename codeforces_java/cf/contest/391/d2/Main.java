@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -52,3 +53,6 @@ public class Main {
                     && (ok.test(mid) ? (bs[0] = mid) >= 0 : (bs[1] = mid) >= 0)) || true) ? bs[0] : -1 : "");
     }
 }
+
+
+

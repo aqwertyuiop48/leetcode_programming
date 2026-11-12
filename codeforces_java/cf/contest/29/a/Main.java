@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,7 +10,6 @@ public class Main {
                     arr[2 * i] + arr[2 * i + 1] == arr[2 * j] && arr[2 * j] + arr[2 * j + 1] == arr[2 * i])) ? "YES" : "NO"))));
     }
 }
-
 
 
 

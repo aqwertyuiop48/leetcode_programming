@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,4 +14,6 @@ public class Main {
             ? (k >= 60 ? 0 : (A[n][k][0] + A[n][k][1]) % MOD * java.math.BigInteger.valueOf(n).modInverse(java.math.BigInteger.valueOf(MOD)).longValue() % MOD) : "");
     }
 }
+
+
 

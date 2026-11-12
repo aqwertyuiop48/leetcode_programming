@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? p.stream().map(x -> String.valueOf((sw - x[0]) * (x[1] == hs[n - 1] ? (n > 1 ? hs[n - 2] : 0) : hs[n - 1]))).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -22,4 +23,6 @@ public class Main {
             ? IntStream.range(0, (int) t[n + 1]).mapToObj(k -> String.valueOf(f[(int) Math.min(t[n + 3 + 2 * k], M)] - f[(int) Math.min(t[n + 2 + 2 * k] - 1, M)])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

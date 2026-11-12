@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? Math.abs(d[0]) + "\n" + new String(c).chars().mapToObj(ch -> d[0] > 0 && ch == 'X' ? (d[0]-- > 0 ? "x" : "X") : d[0] < 0 && ch == 'x' ? (d[0]++ < 0 ? "X" : "x") : String.valueOf((char) ch)).collect(Collectors.joining()) : "");
     }
 }
+
+
+

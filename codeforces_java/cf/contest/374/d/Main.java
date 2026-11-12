@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -25,4 +26,6 @@ public class Main {
             ? out.length == 0 ? "Poor stack!" : new String(out, 0, out.length) : "");
     }
 }
+
+
 

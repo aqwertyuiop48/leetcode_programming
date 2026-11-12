@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? new StringBuilder(s).reverse().chars().map(c -> c - '0').mapToObj(d -> (d >= 5 ? "-O|" : "O-|") + "O".repeat(d % 5) + "-" + "O".repeat(4 - d % 5)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

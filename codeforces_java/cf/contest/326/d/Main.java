@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -26,3 +27,6 @@ public class Main {
                 ? "YES " + ids.size() + "\n" + String.join(" ", ids) : "") : "NO") : "");
     }
 }
+
+
+

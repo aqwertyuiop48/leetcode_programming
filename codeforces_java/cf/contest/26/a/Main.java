@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
@@ -10,7 +11,6 @@ public class Main {
                 .filter(p -> i % p == 0 && IntStream.rangeClosed(2, (int) Math.sqrt(p)).noneMatch(q -> p % q == 0)).count() == 2).count()));
     }
 }
-
 
 
 

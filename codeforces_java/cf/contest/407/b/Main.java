@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 && (pre[i] = (pre[i - 1] + (2 + pre[i - 1] - pre[p - 1] + 1000000007L * 2) % 1000000007L) % 1000000007L) >= 0 ? (pre[i] - pre[i - 1] + 1000000007L) % 1000000007L : 0).sum() % 1000000007L : 0);
     }
 }
+
+
+

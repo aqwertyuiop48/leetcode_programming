@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     .mapToLong(d -> LongStream.iterate(d, D -> D < m, D -> D * 2).map(D -> m - D).sum()).sum() : "");
     }
 }
+
+
+

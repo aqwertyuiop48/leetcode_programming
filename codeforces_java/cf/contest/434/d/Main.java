@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
@@ -28,3 +29,6 @@ public class Main {
             ? "" + (n * W - flow[0]) : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
+
+
+

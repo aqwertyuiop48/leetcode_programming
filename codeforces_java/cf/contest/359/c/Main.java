@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? java.math.BigInteger.valueOf(x).modPow(java.math.BigInteger.valueOf(Math.min(st[0], s)), java.math.BigInteger.valueOf(1000000007L)) : "");
     }
 }
+
+
+

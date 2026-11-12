@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? s - (n % 2 == 0 && Arrays.stream(a).filter(x -> x < 0).count() % 2 == 1 ? 2 * m : 0) : "");
     }
 }
+
+
+

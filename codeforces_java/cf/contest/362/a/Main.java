@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
             ? IntStream.range(0, t).mapToObj(i -> solve.apply(L.subList(1 + 8 * i, 9 + 8 * i))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

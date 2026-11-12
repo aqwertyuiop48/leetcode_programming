@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? a.isEmpty() ? cnt[0] + " 2" : b.isEmpty() ? cnt[0] + " 1" : "-1" : "");
     }
 }
+
+
+

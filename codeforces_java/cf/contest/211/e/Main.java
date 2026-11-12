@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,4 +20,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n - 2).filter(a -> ok[a]).mapToObj(a -> a + " " + (n - 1 - a)).toList() instanceof List<String> res ? res.size() + "\n" + String.join("\n", res) : "" : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? Math.min(a, Arrays.stream(d).sum() - a) : "");
     }
 }
+
+
+

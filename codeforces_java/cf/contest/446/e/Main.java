@@ -1,3 +1,4 @@
+
 import java.math.*;
 import java.util.*;
 import java.util.function.*;
@@ -27,3 +28,6 @@ public class Main {
             ? IntStream.range(0, N).parallel().map(i -> (int) ((top[i & hm] + w0 * av[i]) % 1051131L)).reduce(0, (p, q) -> p ^ q) : 0);
     }
 }
+
+
+

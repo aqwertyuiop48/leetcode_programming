@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.*;
@@ -74,3 +75,6 @@ public class Main {
             ? IntStream.rangeClosed(1, q).mapToObj(i -> String.valueOf(res[i])).collect(Collectors.joining("\n")) : "", r -> new Thread(null, r, "t", 1L << 26).start()).join() : "");
     }
 }
+
+
+

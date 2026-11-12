@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -13,3 +14,6 @@ public class Main {
                     ? w * h - (x * x + y * y) * s * c : 0.0) : "");
     }
 }
+
+
+

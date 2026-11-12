@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -32,4 +33,6 @@ public class Main {
             ? IntStream.of(codes).filter(c -> c == 1).count() + " " + IntStream.of(codes).filter(c -> c == 2).count() : "");
     }
 }
+
+
 

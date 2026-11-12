@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -12,3 +13,6 @@ public class Main {
             ? String.format(Locale.US, "%.10f", ((double) n * (n - 1) / 2 * 2 * q + IntStream.range(0, n).mapToLong(j -> j - lb.applyAsInt(a[j] - r)).sum() + IntStream.range(0, n).mapToLong(j -> lb.applyAsInt(a[j] - (l - r) + 1)).sum()) / 4) : "");
     }
 }
+
+
+

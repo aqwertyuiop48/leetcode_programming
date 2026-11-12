@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
                 - mp.entrySet().stream().filter(e -> (Integer) (cnt[(int) (e.getKey() / (n + 1))] + cnt[(int) (e.getKey() % (n + 1))]) instanceof Integer sm && sm >= p && sm - e.getValue() < p).count()) : "");
     }
 }
+
+
+

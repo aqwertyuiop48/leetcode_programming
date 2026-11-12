@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -48,3 +49,6 @@ public class Main {
             ? IntStream.rangeClosed(1, Lmax).mapToObj(L -> "" + IntStream.rangeClosed(1, n).mapToLong(v -> D[L * N1 + v]).sum() % 1000000007L).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

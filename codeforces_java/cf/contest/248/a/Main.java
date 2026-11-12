@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? Math.min(open[0], n - open[0]) + Math.min(open[1], n - open[1]) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 && IntStream.range(0, n).filter(i -> (m >> i & 1) == 1).map(i -> c[i]).max().getAsInt() - IntStream.range(0, n).filter(i -> (m >> i & 1) == 1).map(i -> c[i]).min().getAsInt() >= x).count() : 0);
     }
 }
+
+
+

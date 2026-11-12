@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             ? String.valueOf(Arrays.stream(p).filter(q -> cnt[q[0]] - (q[0] == q[1] ? 1 : 0) == 0).count()) : "");
     }
 }
+
+
+

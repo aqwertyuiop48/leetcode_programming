@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,4 +12,6 @@ public class Main {
             ? IntStream.iterate(0, i -> i < n - 1 - i, i -> i + m).mapToLong(i -> 2 * (t[1 + n - i] - t[2 + i])).sum() : 0);
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,3 +21,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> res.get(n - 1 - i)).map(r -> (r[0] + 1) + (r[1] == 0 ? " +" : " -")).collect(Collectors.joining("\n")) : "No solution");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(0, m - n).map(i -> f[i + n - 1] - f[i]).min().getAsInt() : "");
     }
 }
+
+
+

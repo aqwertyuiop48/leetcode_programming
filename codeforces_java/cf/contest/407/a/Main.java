@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? r.isPresent() ? "YES\n0 0\n" + r.get()[0] + " " + r.get()[1] + "\n" + r.get()[2] + " " + r.get()[3] : "NO" : "");
     }
 }
+
+
+

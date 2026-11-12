@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -41,3 +42,6 @@ public class Main {
             ? String.valueOf(IntStream.range(1, cntS).filter(v -> ok[v]).mapToLong(v -> len[v] - len[link[v]]).sum()) : "");
     }
 }
+
+
+

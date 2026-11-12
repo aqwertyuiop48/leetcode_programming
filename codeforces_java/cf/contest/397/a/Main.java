@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? IntStream.range(s[0][0], s[0][1]).filter(x -> IntStream.range(1, n).noneMatch(i -> s[i][0] <= x && x < s[i][1])).count() : "");
     }
 }
+
+
 

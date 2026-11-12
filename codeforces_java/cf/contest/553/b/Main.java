@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 .map(st -> st[1] <= w[n - (int) st[0] - 1] ? String.valueOf(st[0] + 1) : (st[0] + 2) + " " + (st[0] + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

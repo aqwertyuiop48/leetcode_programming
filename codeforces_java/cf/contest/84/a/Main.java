@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,8 +6,6 @@ public class Main {
         System.out.println(new Scanner(System.in).nextLong() / 2 * 3);
     }
 }
-
-
 
 
 

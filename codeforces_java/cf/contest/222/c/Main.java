@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -26,3 +27,6 @@ public class Main {
             ? n + " " + m + "\n" + Arrays.stream(oa).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n" + Arrays.stream(ob).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

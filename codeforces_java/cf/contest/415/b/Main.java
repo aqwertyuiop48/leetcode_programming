@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> (Long) s.nextLong() instanceof Long x && (Long) (x * a / b) instanceof Long mo ? String.valueOf(x - (mo * b + a - 1) / a) : "").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

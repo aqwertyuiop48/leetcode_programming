@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? 2 * tk[0] - tk[1] + 1 - 2 * IntStream.range(2, (int) ps[0]).filter(t -> st[0] == 0 ? (st[1] = 0) + (st[0] = tk[t]) < 0 : (st[0] -= 1) >= 0 && tk[t] == ++st[1]).count() : 0);
     }
 }
+
+
+

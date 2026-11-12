@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
             System.out.print(d[s] >= 1 << 29 ? -1 : d[s]);
     }
 }
+
+
+

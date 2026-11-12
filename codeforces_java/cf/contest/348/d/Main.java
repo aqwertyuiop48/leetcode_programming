@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -13,3 +14,6 @@ public class Main {
             System.out.print(((r1[0] * r2[1] - r1[1] * r2[0]) % 1000000007 + 1000000007) % 1000000007);
     }
 }
+
+
+

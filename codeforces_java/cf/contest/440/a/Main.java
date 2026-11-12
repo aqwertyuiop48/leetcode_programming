@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? n * (n + 1L) / 2 - IntStream.range(0, n - 1).mapToLong(i -> s.nextLong()).sum() : 0);
     }
 }
+
+
+

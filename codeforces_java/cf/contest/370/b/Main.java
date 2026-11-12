@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).noneMatch(j -> j != i && cards.get(i).containsAll(cards.get(j))) ? "YES" : "NO").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

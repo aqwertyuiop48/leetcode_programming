@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -38,4 +39,6 @@ public class Main {
             ? Arrays.stream(res).map(row -> Arrays.stream(row, 1, n + 1).mapToObj(v -> String.format(Locale.US, "%.10f", Math.max(0, v))).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

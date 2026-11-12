@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? BigInteger.valueOf(3).modPow(BigInteger.valueOf(n), m).subtract(BigInteger.ONE).mod(m) : "");
     }
 }
+
+
 

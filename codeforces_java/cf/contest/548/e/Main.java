@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
                 && (on[cur[0]] = !on[cur[0]]) | true ? String.valueOf(ans[0]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

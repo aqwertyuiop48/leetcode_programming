@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? LongStream.generate(it::next).limit(m).mapToObj(x -> Integer.valueOf(Arrays.binarySearch(p, x)) instanceof Integer b ? String.valueOf(b >= 0 ? b : -b - 1) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

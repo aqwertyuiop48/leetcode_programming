@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,4 +12,6 @@ public class Main {
                     .mapToLong(y -> x.equals(y) ? (y.equals(m / x / y) ? 1 : 3) : (y.equals(m / x / y) ? 3 : 6)).sum()).sum() : "" : "");
     }
 }
+
+
 

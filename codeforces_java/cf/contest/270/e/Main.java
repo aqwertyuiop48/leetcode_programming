@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -23,4 +24,6 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(i -> String.valueOf(dir[i])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

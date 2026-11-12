@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -21,4 +22,6 @@ public class Main {
                 ? String.valueOf(s[0]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

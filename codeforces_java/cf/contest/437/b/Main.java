@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? rem[0] != 0 ? "-1" : r.size() + "\n" + r.stream().map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

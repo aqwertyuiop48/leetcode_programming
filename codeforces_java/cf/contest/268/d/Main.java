@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? IntStream.range(0, S).filter(s -> st.get(s)[0] <= h).mapToLong(s -> buf[n % 2][s]).sum() % M : "");
     }
 }
+
+
+

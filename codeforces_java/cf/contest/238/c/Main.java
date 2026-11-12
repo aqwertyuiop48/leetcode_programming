@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -24,3 +25,6 @@ public class Main {
                 ? cost[u] - (t1[u] + t2[u] + w - Math.min(w, Math.min(t1[u], t2[u]))) : 0).min().getAsInt() : "");
     }
 }
+
+
+

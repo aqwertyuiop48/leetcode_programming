@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? (x > y ? "x" : "y").repeat((int) Math.abs(x - y)) : "");
     }
 }
+
+
+

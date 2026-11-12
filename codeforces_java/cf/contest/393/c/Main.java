@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -8,4 +9,6 @@ public class Main {
             ? n == 0 ? 1 : 4 * r : "");
     }
 }
+
+
 

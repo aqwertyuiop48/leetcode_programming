@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 .filter(v -> v > 0 && v <= n).distinct().count() : "");
     }
 }
+
+
+

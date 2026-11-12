@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             ? t.chars().mapToObj(c -> String.valueOf((char) (Character.toLowerCase(c) - 'a' < n ? Character.toUpperCase(c) : Character.toLowerCase(c)))).collect(Collectors.joining()) : "");
     }
 }
+
+
 

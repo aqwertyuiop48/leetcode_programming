@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? Stream.iterate(best, cur -> nx[cur]).takeWhile(cur -> nx[cur] > cur).limit(r).map(cur -> String.join(" ", Arrays.copyOfRange(w, cur, nx[cur]))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,8 +8,6 @@ public class Main {
             System.out.println(IntStream.range(1, n).mapToLong(k -> ((long) k * (k + 1) / 2) % n + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")))));
     }
 }
-
-
 
 
 

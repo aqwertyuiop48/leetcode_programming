@@ -1,3 +1,4 @@
+
 import java.util.stream.*;
 
 public class Main {
@@ -9,3 +10,6 @@ public class Main {
                 && IntStream.range(1, n).allMatch(t -> (Integer) IntStream.range(0, n).filter(j -> !used[j]).reduce((x, y) -> key[x] <= key[y] ? x : y).getAsInt() instanceof Integer u && (ord[t] = u) >= 0 && (used[u] = true) && IntStream.range(0, t).allMatch(s -> (long) v[1 + u * n + ord[s]] == (long) v[1 + par[u] * n + ord[s]] + key[u]) && IntStream.range(0, n).filter(j -> !used[j]).allMatch(j -> v[1 + u * n + j] >= key[j] || ((key[j] = v[1 + u * n + j]) >= 0 && (par[j] = u) >= 0))) ? "YES" : "NO");
     }
 }
+
+
+

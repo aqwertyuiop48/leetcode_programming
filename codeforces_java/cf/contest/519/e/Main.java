@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -31,3 +32,6 @@ public class Main {
                         : String.valueOf(size[kth.applyAsInt(a, d / 2)] - size[kth.applyAsInt(a, d / 2 - 1)]) : "" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

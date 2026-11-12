@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -25,4 +26,6 @@ public class Main {
                 ? (long) (-Arrays.binarySearch(LO, ((long) gid << 32) | (2L * x + 1 + (1L << 31))) - 1) - (-Arrays.binarySearch(HI, ((long) gid << 32) | (2L * x - 1 + (1L << 31))) - 1) : 0L).sum()).sum());
     }
 }
+
+
 

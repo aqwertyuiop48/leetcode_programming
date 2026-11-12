@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -12,3 +13,6 @@ public class Main {
             ? String.valueOf(LongStream.rangeClosed(k + 1, n).reduce(st[1], (x, y) -> x * y % P)) : "");
     }
 }
+
+
+

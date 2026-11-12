@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf(Math.max(1, res[i]))).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 .filter(x -> String.valueOf(x).chars().map(c -> c - '0').sum() * x + x * x == n).min().stream().boxed().findFirst().map(Object::toString).orElse("-1") : "");
     }
 }
+
+
+

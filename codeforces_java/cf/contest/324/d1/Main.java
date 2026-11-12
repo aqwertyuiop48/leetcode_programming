@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -70,3 +71,6 @@ public class Main {
                     ? rem <= d1 ? (hitX[k] + rdx[hitA[k]] * rem) + " " + (hitY[k] + rdy[hitA[k]] * rem) : walk.apply(new long[]{hitA[k], rem - d1}) : "" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

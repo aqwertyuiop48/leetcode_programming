@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -9,3 +10,6 @@ public class Main {
             ? f.get().apply(a).equals(f.get().apply(b)) ? "YES" : "NO" : "");
     }
 }
+
+
+

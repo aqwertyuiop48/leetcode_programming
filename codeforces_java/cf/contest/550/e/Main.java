@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                         Stream.of("(0->" + chain.apply(IntStream.range(k.getAsInt() + 1, n - 1).mapToObj(i -> String.valueOf(a[i])).toList()) + ")")).toList()) + ")->0" : "NO" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).filter(i -> s.nextInt() + s.nextInt() + s.nextInt() >= 2).count() : "");
     }
 }
+
+
+

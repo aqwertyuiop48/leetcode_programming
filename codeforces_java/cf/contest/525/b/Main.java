@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, s.length / 2).filter(i -> cnt[i + 1] % 2 == 1).allMatch(i -> (s[i] ^= s[s.length - 1 - i]) >= 0 && (s[s.length - 1 - i] ^= s[i]) >= 0 && (s[i] ^= s[s.length - 1 - i]) >= 0) ? new String(s) : "" : "");
     }
 }
+
+
+

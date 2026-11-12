@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             System.out.print(IntStream.range(0, n).filter(i -> a[i] == i).count() + (IntStream.range(0, n).anyMatch(i -> a[i] != i && a[a[i]] == i) ? 2 : IntStream.range(0, n).anyMatch(i -> a[i] != i) ? 1 : 0));
     }
 }
+
+
+

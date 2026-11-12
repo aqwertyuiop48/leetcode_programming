@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 ? LongStream.rangeClosed(1, n).reduce(1L, (acc, i) -> acc * ((p[0] - i % M + M) % M) % M) : 0 : "");
     }
 }
+
+
+

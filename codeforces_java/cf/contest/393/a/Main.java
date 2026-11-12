@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? Math.min(Math.min(Math.max(c.applyAsLong('n') - 1, 0) / 2, c.applyAsLong('e') / 3), Math.min(c.applyAsLong('i'), c.applyAsLong('t'))) : "");
     }
 }
+
+
 

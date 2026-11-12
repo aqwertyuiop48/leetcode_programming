@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? ls.size() + ls.stream().map(l -> "\n" + l + " " + occ[l]).collect(Collectors.joining()) : "");
     }
 }
+
+
+

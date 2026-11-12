@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,8 +10,6 @@ public class Main {
             && IntStream.range(0, 3).anyMatch(i -> a[i] == b[i]) ? "YES" : "NO"));
     }
 }
-
-
 
 
 

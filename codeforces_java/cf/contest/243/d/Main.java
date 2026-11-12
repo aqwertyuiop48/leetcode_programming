@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -41,3 +42,6 @@ public class Main {
             ? String.valueOf(ans[0]) : "");
     }
 }
+
+
+

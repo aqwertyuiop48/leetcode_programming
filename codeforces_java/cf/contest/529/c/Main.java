@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -28,3 +29,6 @@ public class Main {
             ? IntStream.range(0, q).mapToObj(i -> r1[i] || r2[i] ? "YES" : "NO").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

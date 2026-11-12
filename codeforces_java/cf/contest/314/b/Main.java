@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
             ? String.valueOf(tot[0] / d) : "");
     }
 }
+
+
+

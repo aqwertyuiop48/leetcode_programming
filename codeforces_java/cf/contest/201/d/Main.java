@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -33,3 +34,6 @@ public class Main {
             ? (best[0] == 0 ? "Brand new problem!" : best[0] + "\n[:" + "|".repeat(n * (n - 1) / 2 - best[1] + 1) + ":]") : "");
     }
 }
+
+
+

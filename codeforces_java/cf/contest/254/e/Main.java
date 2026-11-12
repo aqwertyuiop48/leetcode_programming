@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -26,3 +27,6 @@ public class Main {
             ? dp[n][0] + "\n" + IntStream.range(0, n).mapToObj(i -> ls.get(n - 1 - i)).collect(Collectors.joining("\n")) : ""));
     }
 }
+
+
+

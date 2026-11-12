@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,8 +18,6 @@ public class Main {
                         + "\nPut the first square to (" + (q[0] / 100 + 1) + ", " + (q[0] % 100 + 1) + ").\nPut the second square to (" + (q[1] / 100 + 1) + ", " + (q[1] % 100 + 1) + ").").orElse(null)).filter(Objects::nonNull).findFirst().orElse("No solution.")))))))));
     }
 }
-
-
 
 
 

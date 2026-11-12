@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,4 +12,6 @@ public class Main {
                     ? pre[b.charAt(j - 1) - 'A'] * (n - j + 1) + suf[b.charAt(j - 1) - 'A'] * j : 0).sum() / (n * (n + 1.0) * (2.0 * n + 1) / 6)) : "");
     }
 }
+
+
 

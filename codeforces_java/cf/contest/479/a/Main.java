@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.of(a + b + c, a * b * c, (a + b) * c, a * (b + c), a * b + c, a + b * c).max().getAsInt() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -19,3 +20,6 @@ public class Main {
             ? res > 0 ? "FIRST" : res < 0 ? "SECOND" : "DRAW" : "");
     }
 }
+
+
+

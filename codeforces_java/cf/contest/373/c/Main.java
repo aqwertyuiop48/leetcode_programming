@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? n - IntStream.range(n / 2, n).reduce(0, (i, j) -> i < n / 2 && 2 * a[i] <= a[j] ? i + 1 : i) : "");
     }
 }
+
+
+

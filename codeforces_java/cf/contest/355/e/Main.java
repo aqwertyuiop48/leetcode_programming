@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? mn <= k + 1 ? mn : IntStream.iterate(mn, d -> d - 1).filter(d -> IntStream.iterate(d, j -> j <= mx, j -> j + d).allMatch(j -> j + k >= mx || pre[Math.min(j + d - 1, mx)] - pre[j + k] == 0)).findFirst().getAsInt() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, s.length()).mapToLong(i -> s.startsWith("metal", i) ? h[0] : (h[0] += s.startsWith("heavy", i) ? 1 : 0) * 0).sum() : "");
     }
 }
+
+
+

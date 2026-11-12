@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             ? IntStream.range(0, n).filter(i -> s.charAt(i) == 'B').mapToLong(i -> 1L << i).sum() : "");
     }
 }
+
+
 

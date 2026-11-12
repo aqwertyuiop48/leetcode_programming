@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -21,4 +22,6 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(i -> Integer.valueOf(it.next().intValue()) instanceof Integer k ? String.format("%.15f", f[k] / (n - k + 1)) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -59,3 +60,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).map(step).boxed().map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

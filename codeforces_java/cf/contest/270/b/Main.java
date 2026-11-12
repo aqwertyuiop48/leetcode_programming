@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n - 1).filter(i -> a[i] > a[i + 1]).map(i -> i + 1).max().orElse(0) : "");
     }
 }
+
+
+

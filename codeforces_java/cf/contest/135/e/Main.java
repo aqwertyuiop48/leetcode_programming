@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -31,4 +32,6 @@ public class Main {
             : -1);
     }
 }
+
+
 

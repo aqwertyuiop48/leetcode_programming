@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,3 +10,6 @@ public class Main {
             ? ((a + b + c) % 2 != 0 || a + b < c || b + c < a || c + a < b ? "Impossible" : (a + b - c) / 2 + " " + (b + c - a) / 2 + " " + (c + a - b) / 2) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             ? (p - k > 1 ? "<< " : "") + IntStream.rangeClosed(Math.max(1, p - k), Math.min(n, p + k)).mapToObj(i -> i == p ? "(" + i + ")" : "" + i).collect(Collectors.joining(" ")) + (p + k < n ? " >>" : "") : "");
     }
 }
+
+
 

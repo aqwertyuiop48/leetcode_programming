@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
                 ? (long) (Arrays.binarySearch(L, (rem << 6) - 1) - Arrays.binarySearch(L, (rem << 6) + (left2 << 1) + 1)) : 0).sum() : 0);
     }
 }
+
+
+

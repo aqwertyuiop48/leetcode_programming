@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).anyMatch(i -> IntStream.rangeClosed(1, n).anyMatch(d -> i + 4 * d < n && IntStream.range(0, 5).allMatch(j -> s.charAt(i + j * d) == '*'))) ? "yes" : "no" : "");
     }
 }
+
+
+

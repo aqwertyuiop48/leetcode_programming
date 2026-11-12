@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,3 +8,6 @@ public class Main {
             ? n <= 2 ? n : n % 2 == 1 ? n * (n - 1) * (n - 2) : n % 3 != 0 ? n * (n - 1) * (n - 3) : (n - 1) * (n - 2) * (n - 3) : "");
     }
 }
+
+
+

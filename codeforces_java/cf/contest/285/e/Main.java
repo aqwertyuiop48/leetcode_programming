@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,4 +21,6 @@ public class Main {
             ? IntStream.rangeClosed(k, n).mapToLong(j -> (j - k) % 2 == 0 ? c[j][k] * f[j] % M : (M - c[j][k] * f[j] % M) % M).sum() % M : "");
     }
 }
+
+
 

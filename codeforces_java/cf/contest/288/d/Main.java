@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -23,4 +24,6 @@ public class Main {
                 + IntStream.range(1, n).mapToLong(v -> Long.valueOf((long) sz[v] * (n - sz[v])) instanceof Long c ? c * c : 0).sum()) : "");
     }
 }
+
+
 

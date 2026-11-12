@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -50,3 +51,6 @@ public class Main {
                         ? String.valueOf(z <= n ? z : anc.applyAsInt(rank.applyAsInt(z - n), k + 1)) : "" : "").filter(z -> !z.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

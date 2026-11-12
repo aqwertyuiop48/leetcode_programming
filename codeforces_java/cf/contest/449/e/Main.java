@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
                 ? String.valueOf((((n + 1) * (m + 1) % 1000000007L * g0[t] - (n + m + 2) * g1[t] % 1000000007L + g2[t]) % 1000000007L + 1000000007L) % 1000000007L) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

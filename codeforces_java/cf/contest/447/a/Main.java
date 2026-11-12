@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).filter(i -> (Integer) (s.nextInt() % p) instanceof Integer b && (used[b] || !(used[b] = true))).findFirst().orElse(-1) : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? d % 2 == 1 ? "impossible" : IntStream.range(0, s.length()).mapToObj(i -> s.charAt(i) != t.charAt(i) && k[0]++ % 2 == 1 ? String.valueOf(t.charAt(i)) : String.valueOf(s.charAt(i))).collect(Collectors.joining()) : "");
     }
 }
+
+
+

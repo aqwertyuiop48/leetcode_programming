@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
                             && k >= 2 && BigInteger.valueOf(v[1]).pow(k.intValue()).equals(BigInteger.valueOf(v[2])) ? 1 : 0))).get())));
     }
 }
+
+
+

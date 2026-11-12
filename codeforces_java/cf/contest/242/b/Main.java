@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.range(0, n).filter(i -> seg.get(i)[0] == lo && seg.get(i)[1] == hi).map(i -> i + 1).findFirst().orElse(-1) : "");
     }
 }
+
+
+

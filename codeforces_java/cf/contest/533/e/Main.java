@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? (s.substring(l + 1, r + 1).equals(t.substring(l, r)) ? 1 : 0) + (t.substring(l + 1, r + 1).equals(s.substring(l, r)) ? 1 : 0) : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(i -> Long.valueOf(Math.max(cur[0], a[(int) it.nextLong() - 1])) instanceof Long b && (cur[0] = b + it.nextLong()) >= 0 ? String.valueOf(b) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

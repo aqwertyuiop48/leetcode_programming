@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,8 +11,6 @@ public class Main {
                         .filter(m -> x % v[m & 3] % v[m >> 2 & 3] % v[m >> 4 & 3] % v[m >> 6 & 3] == x).count() >= 7).count())));
     }
 }
-
-
 
 
 

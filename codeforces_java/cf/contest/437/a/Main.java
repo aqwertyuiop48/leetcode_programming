@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? g.length == 1 ? "ABCD".charAt(g[0]) : 'C' : 'C');
     }
 }
+
+
+

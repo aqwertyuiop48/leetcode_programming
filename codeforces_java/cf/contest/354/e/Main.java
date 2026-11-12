@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                     ? Arrays.stream(num).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "-1" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

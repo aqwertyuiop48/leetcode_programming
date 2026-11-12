@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -21,3 +22,6 @@ public class Main {
             ? r.size() + "\n" + r.stream().map(i -> ea[i] + " " + to[2 * i] + " " + (1 - z[i])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

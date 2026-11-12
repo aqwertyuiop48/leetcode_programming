@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
@@ -57,3 +58,6 @@ public class Main {
             ? (k == 0 ? (fixedMax <= 2 ? 1L : baseProd) : (baseProd * (fixedMax <= 2 ? (FA[N - 1] - snap[0] + 1000000007L) % 1000000007L : FA[N - 1]) + (fixedMax <= 2 ? snap[1] : 0L)) % 1000000007L) : "");
     }
 }
+
+
+

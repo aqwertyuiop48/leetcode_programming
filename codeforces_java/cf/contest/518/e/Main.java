@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
             ? ok[0] ? Arrays.stream(val).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "Incorrect sequence" : "");
     }
 }
+
+
+

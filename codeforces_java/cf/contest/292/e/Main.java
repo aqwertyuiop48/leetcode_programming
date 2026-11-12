@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,4 +18,6 @@ public class Main {
                     ? "" + (t == 0 ? b[pos] : a[xs[t] + pos - ys[t]]) : (String) null).filter(Objects::nonNull).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

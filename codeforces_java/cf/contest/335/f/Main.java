@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? Arrays.stream(t, 1, n + 1).sum() - pq.stream().mapToLong(x -> x).sum() : "");
     }
 }
+
+
+

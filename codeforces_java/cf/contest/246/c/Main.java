@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 .limit(k).map(l -> l.size() + " " + String.join(" ", l)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

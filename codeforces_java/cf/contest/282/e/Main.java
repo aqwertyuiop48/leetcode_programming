@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
             ? LongStream.rangeClosed(0, n).map(j -> ins.test(pre[0]) ? Math.max(0, qry.applyAsLong(total ^ pre[0])) + 0 * (pre[0] ^= j < n ? a[(int) j] : 0) : 0).max().getAsLong() : "");
     }
 }
+
+
+

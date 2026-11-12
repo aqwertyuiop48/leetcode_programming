@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -14,3 +15,6 @@ public class Main {
             ? b.repeat(bx) + c.repeat(by) + IntStream.range(0, 26).mapToObj(k -> String.valueOf((char) ('a' + k)).repeat(ca[k] - bx * cb[k] - by * cc[k])).collect(Collectors.joining()) : "");
     }
 }
+
+
+

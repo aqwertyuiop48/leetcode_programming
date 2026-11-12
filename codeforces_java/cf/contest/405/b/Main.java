@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? IntStream.range(0, p.length - 1).map(j -> t.charAt(p[j]) == t.charAt(p[j + 1]) ? 0 : t.charAt(p[j]) == 'L' ? p[j + 1] - p[j] - 1 : (p[j + 1] - p[j] - 1) % 2).sum() : 0);
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? String.format("%.10f", IntStream.rangeClosed(1, n).mapToDouble(k -> Arrays.stream(dp[k]).sum() / IntStream.rangeClosed(1, k).mapToDouble(i -> (double) (n - k + i) / i).reduce(1, (x, y) -> x * y)).sum()) : "");
     }
 }
+
+
+

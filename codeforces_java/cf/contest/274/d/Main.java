@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? out.size() < cnt[0] ? "-1" : out.stream().filter(v -> v < m).map(v -> String.valueOf(v + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

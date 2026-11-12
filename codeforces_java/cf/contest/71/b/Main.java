@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,8 +11,6 @@ public class Main {
                 System.out.print(IntStream.range(0, n).mapToObj(i -> String.valueOf(Math.max(0, Math.min(k, (long) n * k * t / 100 - (long) i * k)))).collect(Collectors.joining(" ")))))));
     }
 }
-
-
 
 
 

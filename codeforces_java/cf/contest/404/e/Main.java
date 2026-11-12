@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? st[2] > st[0] ? 1 : Math.max(0, Math.min(st[1] - 1, st[2] > st[0] ? Long.MAX_VALUE : st[2] + (st[1] - st[0]) - 1) - Math.max(0, st[1] - st[0] > st[3] ? 0 : st[3] + st[0] + 1) + 1) : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,4 +15,6 @@ public class Main {
             ? String.format("%.10f", Math.sqrt(res[0]) / 2) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -25,3 +26,6 @@ public class Main {
             ? String.format("%.8f", rv[0][pos[n - 1]]) : "");
     }
 }
+
+
+

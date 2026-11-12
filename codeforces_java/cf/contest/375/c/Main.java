@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -23,3 +24,6 @@ public class Main {
             ? Math.max(0, IntStream.range(0, 1 << k).filter(mk -> dist[g.indexOf(83) * 256 + mk] >= 0 && mk >> tc == 0).map(mk -> IntStream.range(0, tc).filter(b -> (mk >> b & 1) == 1).map(b -> Integer.parseInt(t[2 + n + b])).sum() - dist[g.indexOf(83) * 256 + mk]).max().orElse(0)) : "");
     }
 }
+
+
+

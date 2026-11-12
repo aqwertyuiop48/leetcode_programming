@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -21,8 +22,6 @@ public class Main {
                     ? (st[3] < 0 ? "-1" : st[3] + " " + st[4]) : "")))))))))));
     }
 }
-
-
 
 
 

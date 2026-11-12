@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -27,4 +28,6 @@ public class Main {
                     && (xs[0] = ans + 1) > 0 ? "" + ans : "" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

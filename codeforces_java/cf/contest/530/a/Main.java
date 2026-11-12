@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,3 +8,6 @@ public class Main {
             ? d == 0 ? String.valueOf(-b / (2 * a) + 0.0) : String.valueOf(Math.min((-b - d) / (2 * a), (-b + d) / (2 * a))) + " " + Math.max((-b - d) / (2 * a), (-b + d) / (2 * a)) : "");
     }
 }
+
+
+

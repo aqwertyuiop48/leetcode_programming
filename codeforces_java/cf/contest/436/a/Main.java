@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     && o.isPresent() && (used[o.get()] = true) && (st[0] += c[o.get()][2]) > 0 && ++st[1] > 0) || true) ? st[1] : 0).max().getAsInt() : 0);
     }
 }
+
+
+

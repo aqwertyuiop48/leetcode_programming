@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? LongStream.of(d).map(x -> x - (Math.min(x, a - (n - 1)) - Math.max(1, a - (sum - x)) + 1)).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

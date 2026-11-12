@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,4 +11,6 @@ public class Main {
             ? (r[0] + r[1]) + " " + r[2] : "");
     }
 }
+
+
 

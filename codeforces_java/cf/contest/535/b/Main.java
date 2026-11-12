@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? (1L << s.length()) - 1 + Long.parseLong(s.replace('4', '0').replace('7', '1'), 2) : 0);
     }
 }
+
+
+

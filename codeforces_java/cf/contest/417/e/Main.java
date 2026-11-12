@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? Arrays.stream(a).mapToObj(x -> Arrays.stream(b).mapToObj(y -> String.valueOf(x * y)).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

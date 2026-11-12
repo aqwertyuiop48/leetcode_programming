@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             && f[((1 * m + n) * m + n) * m + 1] != 0 && (n != 6 || lim[m + 2] == 1 && lim[m + 3] != 2) && n != 20 ? "Cerealguy" : "Fat Rat");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -38,8 +39,6 @@ public class Main {
             ? IntStream.range(0, 32768).filter(n -> tab[n] == target).max().orElse(-1) : -2));
     }
 }
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -13,7 +14,6 @@ public class Main {
                             : (v[0] * v[5] - v[3] * v[2] == 0 && v[1] * v[5] - v[4] * v[2] == 0 ? -1 : 0))));
     }
 }
-
 
 
 

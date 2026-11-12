@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -9,8 +10,6 @@ public class Main {
             && pr.test(t[0]) && pr.test(t[1]) && IntStream.range(t[0] + 1, t[1]).noneMatch(pr) ? "YES" : "NO");
     }
 }
-
-
 
 
 

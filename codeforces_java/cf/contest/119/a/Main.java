@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -11,4 +12,6 @@ public class Main {
                 .count() % 2 == 1 ? 0 : 1));
     }
 }
+
+
 

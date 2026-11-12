@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -17,8 +18,6 @@ public class Main {
                 System.out.print(r.get().apply(h[0], h[1]) ? "Anton" : "Dasha"))))));
     }
 }
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? !bip[0] ? "-1" : String.valueOf(IntStream.range(0, n).filter(v -> label[v] == v).map(r -> IntStream.range(0, n).filter(v -> label[v] == r).map(v -> ecc[v]).max().getAsInt()).sum()) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             System.out.printf(Locale.US, "%.12f%n", mn[0] - IntStream.range(1, mn[0]).mapToDouble(k -> Math.pow((double) k / mn[0], mn[1])).sum()));
     }
 }
+
+
+

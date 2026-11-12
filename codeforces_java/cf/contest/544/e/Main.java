@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                     && (dp[mask | same[i * m + j]] = Math.min(dp[mask | same[i * m + j]], dp[mask] + cost[i * m + j])) > Integer.MIN_VALUE)) ? dp[(1 << n) - 1] : 0 : "");
     }
 }
+
+
+

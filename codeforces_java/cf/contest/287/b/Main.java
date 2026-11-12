@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,4 +10,6 @@ public class Main {
             ? tot.applyAsLong(k - 1) < n ? -1 : IntStream.range(0, 64).allMatch(i -> b[0] >= b[1] || (tot.applyAsLong((b[0] + b[1]) / 2) >= n ? (b[1] = (b[0] + b[1]) / 2) >= 0 : (b[0] = (b[0] + b[1]) / 2 + 1) >= 0)) ? b[0] : -1 : "");
     }
 }
+
+
 

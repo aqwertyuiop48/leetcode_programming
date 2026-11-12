@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -9,8 +10,6 @@ public class Main {
             : (a[0] <= 5 ? new int[]{1, 3, 5, 9, 11}[a[0] - 1] : -1))));
     }
 }
-
-
 
 
 

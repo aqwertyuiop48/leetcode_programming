@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
                 * LongStream.range(0, s.length() - 1).reduce(1L, (r, i) -> r * 2 % 1000000007L) % 1000000007L : "");
     }
 }
+
+
+

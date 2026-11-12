@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? IntStream.range(0, N).mapToLong(t -> d[(t / (b * c) + 1) * ((t / c) % b + 1) * (t % c + 1)]).sum() % (1L << 30) : "");
     }
 }
+
+
+

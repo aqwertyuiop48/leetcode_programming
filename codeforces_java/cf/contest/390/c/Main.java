@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
                 ? String.valueOf(pre[r] - pre[l - 1] + (r - l + 1) / k - 2 * (sk[l - 1 + (r - l + 1) / k * k] - sk[l - 1])) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

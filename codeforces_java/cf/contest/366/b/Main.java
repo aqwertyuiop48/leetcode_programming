@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, k).boxed().min(Comparator.comparingLong(r -> s[r])).get() + 1 : "");
     }
 }
+
+
+

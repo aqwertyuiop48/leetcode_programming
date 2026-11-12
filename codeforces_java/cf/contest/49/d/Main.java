@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,8 +8,6 @@ public class Main {
             System.out.println(IntStream.of(0, 1).map(p -> (int) IntStream.range(0, n).filter(i -> t.charAt(i) - '0' != (i + p) % 2).count()).min().getAsInt()))));
     }
 }
-
-
 
 
 

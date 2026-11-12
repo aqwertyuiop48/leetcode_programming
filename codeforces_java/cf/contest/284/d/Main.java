@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,4 +19,6 @@ public class Main {
                 : walk.test((i + 1) * 2 + 1) && val[(i + 1) * 2 + 1] < 0 ? (Object) (-1) : (Object) (i + val[(i + 1) * 2 + 1])).map(String::valueOf).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

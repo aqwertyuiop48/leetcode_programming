@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,8 +7,6 @@ public class Main {
             System.out.println(w % 2 == 0 && w > 2 ? "YES" : "NO")));
     }
 }
-
-
 
 
 

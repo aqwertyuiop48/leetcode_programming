@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -10,4 +11,6 @@ public class Main {
             ? Math.min(n - a, b + 1) : 0);
     }
 }
+
+
 

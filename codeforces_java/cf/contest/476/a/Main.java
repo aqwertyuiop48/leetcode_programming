@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -9,3 +10,6 @@ public class Main {
             ? (r > n ? -1 : r) : 0);
     }
 }
+
+
+

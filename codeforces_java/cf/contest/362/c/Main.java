@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? fi.isPresent() ? (base + fi.getAsInt() - 2 * n - 2) + " " + hist[fi.getAsInt()] : "" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                 ? String.valueOf(ca[0] + 1) : "").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
             ? IntStream.rangeClosed(0, n).map(i -> g[(i == n ? r + 1 : t[2 + 2 * o[i]]) - (i == 0 ? 0 : t[2 + 2 * o[i - 1]]) - 1][i == 0 ? 0 : t[3 + 2 * o[i - 1]]][i == n ? 0 : t[3 + 2 * o[i]]]).reduce(0, (x, y) -> x ^ y) != 0 ? "WIN" : "LOSE" : "");
     }
 }
+
+
+

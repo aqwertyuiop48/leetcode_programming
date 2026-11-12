@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? m.size() + "\n" + m.entrySet().stream().map(e -> e.getValue() + " " + e.getKey()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

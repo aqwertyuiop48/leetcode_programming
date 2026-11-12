@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? String.format("%.15f", IntStream.range(0, n).mapToDouble(i -> Double.valueOf(s.nextDouble()) instanceof Double p && Double.valueOf(p * (2 * st[0] + 1)) instanceof Double add && (st[0] = (st[0] + 1) * p) >= 0 ? add : 0).sum()) : "");
     }
 }
+
+
+

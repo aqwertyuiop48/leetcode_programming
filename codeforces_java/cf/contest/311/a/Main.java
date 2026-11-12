@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? (long) n * (n - 1) / 2 > k ? IntStream.range(0, n).mapToObj(i -> "0 " + i).collect(Collectors.joining("\n")) : "no solution" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> s.nextInt() - Math.max(0, s.nextInt() - k)).max().getAsInt() : "");
     }
 }
+
+
+

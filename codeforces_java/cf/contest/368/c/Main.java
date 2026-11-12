@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 ? r - l + 1 < 3 || Arrays.stream(k).max().getAsInt() - Arrays.stream(k).min().getAsInt() <= 1 ? "YES" : "NO" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

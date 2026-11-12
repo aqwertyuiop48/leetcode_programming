@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? Stream.iterate(s, x -> x.replace("BG", "GB")).skip(t).findFirst().get() : "");
     }
 }
+
+
+

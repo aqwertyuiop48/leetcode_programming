@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -25,8 +26,6 @@ public class Main {
                     .map(v -> v < 0 ? "" : F + " " + v).get()).filter(x -> !x.isEmpty()).findFirst().orElse("-1 -1")))));
     }
 }
-
-
 
 
 

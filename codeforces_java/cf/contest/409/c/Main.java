@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? Math.min(Math.min(Math.min(a[0], a[1]), Math.min(a[2] / 2, a[3] / 7)), a[4] / 4) : 0);
     }
 }
+
+
+

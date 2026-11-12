@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,3 +10,6 @@ public class Main {
             && LongStream.generate(() -> Long.parseLong(it.next())).limit(m).allMatch(a -> (st[1] += (a - st[0] + n) % n) >= 0 && (st[0] = a) > 0) ? st[1] : "");
     }
 }
+
+
+

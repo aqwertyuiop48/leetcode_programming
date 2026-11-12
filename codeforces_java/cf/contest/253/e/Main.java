@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -49,4 +50,6 @@ public class Main {
             ? ((sl == 0 ? 0L : qs[sl - 1]) + 1) + "\n" + Arrays.stream(sim.apply(sl)).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : ""));
     }
 }
+
+
 

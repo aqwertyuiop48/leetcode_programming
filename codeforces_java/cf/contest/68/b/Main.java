@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,8 +14,6 @@ public class Main {
                     ? String.format(Locale.US, "%.9f", lh[0]) : ""))))));
     }
 }
-
-
 
 
 

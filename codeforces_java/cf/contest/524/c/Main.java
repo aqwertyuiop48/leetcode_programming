@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                     : IntStream.rangeClosed(1, k - c1).filter(c2 -> (x - c1 * v) % c2 == 0 && set.contains((x - c1 * v) / c2)).map(c2 -> c1 + c2).min().orElse(1000)).min().orElse(1000)).min().orElse(1000) instanceof Integer r ? r >= 1000 ? -1 : r : -1) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

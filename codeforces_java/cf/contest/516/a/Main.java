@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? t.chars().mapToObj(c -> rep[c - '0']).collect(Collectors.joining()).chars().boxed().sorted(Comparator.reverseOrder()).map(c -> String.valueOf((char) (int) c)).collect(Collectors.joining()) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -25,3 +26,6 @@ public class Main {
                 ? ea[circ[i] >> 1] + " " + eb[circ[i] >> 1] : eb[circ[i] >> 1] + " " + ea[circ[i] >> 1]).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

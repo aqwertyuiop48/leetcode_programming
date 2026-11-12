@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? Math.min((a[0] + a[1] + a[2]) / 3, a[0] + a[1]) : 0);
     }
 }
+
+
+

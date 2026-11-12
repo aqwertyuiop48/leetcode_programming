@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? g.stream().mapToLong(x -> g.stream().filter(y -> y[1] == x[0]).count()).sum() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,4 +17,6 @@ public class Main {
             ? String.format(Locale.US, "%.15f", tot[0] / n / n) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
                 ? "YES\n" + (4 * k - 2) + " " + e.size() + "\n" + String.join("\n", e) : "" : "");
     }
 }
+
+
+

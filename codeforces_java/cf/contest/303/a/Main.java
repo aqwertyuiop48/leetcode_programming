@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -8,3 +9,6 @@ public class Main {
             ? n % 2 == 0 ? "-1" : Stream.<IntUnaryOperator>of(i -> i, i -> i, i -> 2 * i % n).map(f -> IntStream.range(0, n).map(f).mapToObj(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

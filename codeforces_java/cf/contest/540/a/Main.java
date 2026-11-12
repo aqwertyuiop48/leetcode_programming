@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> Math.min(Math.abs(a.charAt(i) - b.charAt(i)), 10 - Math.abs(a.charAt(i) - b.charAt(i)))).sum() : 0);
     }
 }
+
+
+

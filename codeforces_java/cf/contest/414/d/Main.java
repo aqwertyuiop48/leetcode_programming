@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                 ? Math.min(k, P[d] - P[L[0] - 1] + (L[0] > 1 ? Math.min(cnt[L[0] - 1], (p - (d * (P[d] - P[L[0] - 1]) - (T[d] - T[L[0] - 1]))) / (d - L[0] + 1)) : 0)) : 0).max().getAsLong() : 0);
     }
 }
+
+
+

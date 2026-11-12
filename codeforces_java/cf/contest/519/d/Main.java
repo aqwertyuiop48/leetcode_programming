@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 ? cnt.getOrDefault(key, 0) + 0L * (pre[0] += v[s.charAt(j) - 'a']) + 0L * cnt.merge(pre[0] * 26 + (s.charAt(j) - 'a'), 1, Integer::sum) : 0).sum() : 0);
     }
 }
+
+
+

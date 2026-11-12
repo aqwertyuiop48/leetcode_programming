@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -11,8 +12,6 @@ public class Main {
                 System.out.print(IntStream.of(a).anyMatch(l -> l > n) ? "Impossible" : IntStream.of(a).allMatch(l -> st[1] > 0 && st[1] + 1 + l <= n ? (st[1] += 1 + l) > 0 : (st[0] += 1) > 0 & (st[1] = l) > 0) ? st[0] : -1)))));
     }
 }
-
-
 
 
 

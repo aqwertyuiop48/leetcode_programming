@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, k).mapToObj(i -> i < k - 1 ? "2 " + cells.get(2 * i) + " " + cells.get(2 * i + 1) : (n * m - 2 * (k - 1)) + " " + cells.subList(2 * (k - 1), n * m).stream().collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

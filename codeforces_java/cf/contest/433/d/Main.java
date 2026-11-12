@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
                     best.applyAsInt(IntStream.rangeClosed(1, n).map(j -> R[j][y]).toArray(), x - 1), best.applyAsInt(IntStream.rangeClosed(1, n).map(j -> L[j][y]).toArray(), x - 1)).max().getAsInt()) : "").filter(z -> !z.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? h[0] + 1 + IntStream.range(1, n).map(i -> Math.abs(h[i] - h[i - 1]) + 2).sum() : "");
     }
 }
+
+
+

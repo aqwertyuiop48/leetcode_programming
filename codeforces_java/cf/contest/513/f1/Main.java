@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -41,3 +42,6 @@ public class Main {
                 ? !feas.test(bs[1]) ? -1L : IntStream.range(0, 45).allMatch(z -> (Long) ((bs[0] + bs[1]) / 2) instanceof Long mid && (feas.test(mid) ? (bs[1] = mid) >= 0 : (bs[0] = mid) >= -1)) ? bs[1] : 0L : 0L : 0L);
     }
 }
+
+
+

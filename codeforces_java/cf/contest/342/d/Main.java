@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -15,3 +16,6 @@ public class Main {
                 ? (ds.size() % 2 == 1 ? 1 : -1) * IntStream.range(0, n).boxed().reduce(new long[]{1, 0, 0, 0, 0, 0, 0, 0}, (d, c) -> LongStream.range(0, 8).map(N -> IntStream.range(0, 8).filter(P -> (P & bm[c]) == 0 && (N & (bm[c] | P)) == 0 && ((7 & ~(bm[c] | P | (int) N)) == 0 || (7 & ~(bm[c] | P | (int) N)) == 3 || (7 & ~(bm[c] | P | (int) N)) == 6)).mapToLong(P -> d[P]).sum() % M).toArray(), (x, y) -> x)[0] : 0L).sum(), M) : "");
     }
 }
+
+
+

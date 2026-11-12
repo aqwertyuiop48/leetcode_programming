@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
                 ? IntStream.range(1, keys.length).mapToLong(p -> keys[p] == keys[p - 1] ? ++st[0] : (st[0] = 0)).sum() : 0L).sum() : 0);
     }
 }
+
+
+

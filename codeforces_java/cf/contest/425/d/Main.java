@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                     : IntStream.range(Arrays.binarySearch(row[y], x) + 1, row[y].length).filter(t -> y + row[y][t] - x <= 100000 && Arrays.binarySearch(row[y + row[y][t] - x], x) >= 0 && Arrays.binarySearch(row[y + row[y][t] - x], row[y][t]) >= 0).count() : 0).sum() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,4 +17,6 @@ public class Main {
             ? (S.length > 0 && (last < n || E[E.length - 1] == n) ? 2 * n - 2 : -1) : "");
     }
 }
+
+
 

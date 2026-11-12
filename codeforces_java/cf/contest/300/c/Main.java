@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -12,4 +13,6 @@ public class Main {
                 .mapToLong(k -> f[n] * inv[k] % M * inv[n - k] % M).sum() % M : "");
     }
 }
+
+
 

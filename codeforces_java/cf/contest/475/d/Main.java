@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -18,3 +19,6 @@ public class Main {
                 ? IntStream.range(0, q).mapToObj(j -> String.valueOf((Integer) Arrays.binarySearch(srt, v[2 + n + j]) instanceof Integer b ? res[b] : 0L)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

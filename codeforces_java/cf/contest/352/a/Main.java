@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? z == 0 ? "-1" : n - z < 9 ? "0" : "5".repeat((n - z) / 9 * 9) + "0".repeat(z) : "");
     }
 }
+
+
+

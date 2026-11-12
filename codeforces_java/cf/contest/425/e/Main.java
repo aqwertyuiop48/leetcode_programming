@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,4 +13,6 @@ public class Main {
             ? k <= n ? IntStream.rangeClosed(0, n).mapToLong(i -> dp[k][i] * pw[i * (n - i)] % 1000000007L).sum() % 1000000007L : 0 : 0);
     }
 }
+
+
 

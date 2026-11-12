@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -16,3 +17,6 @@ public class Main {
                 ? IntStream.range(0, t).mapToObj(j -> (Integer) (v[2 + n + 2 * j] - 1) instanceof Integer l && (Integer) (v[3 + n + 2 * j] - 1) instanceof Integer r && (Integer) (31 - Integer.numberOfLeadingZeros(r - l + 1)) instanceof Integer k && (Integer) gr.get().applyAsInt(sp[k][l], sp[k][r - (1 << k) + 1]) instanceof Integer g && (Integer) Arrays.binarySearch(ks, (long) g << 17 | l) instanceof Integer b1 && (Integer) Arrays.binarySearch(ks, (long) g << 17 | r) instanceof Integer b2 ? String.valueOf(r - l + 1 - ((b2 >= 0 ? b2 + 1 : -b2 - 1) - (b1 >= 0 ? b1 : -b1 - 1))) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? "Possible\n" + Arrays.stream(order).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "Impossible");
     }
 }
+
+
+

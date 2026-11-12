@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -21,3 +22,6 @@ public class Main {
                 && IntStream.generate(() -> 0).anyMatch(z -> sp[0] == 0 || proc.test(stk[--sp[0]]) && false) ? lf[0] : "");
     }
 }
+
+
+

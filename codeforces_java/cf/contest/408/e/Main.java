@@ -1,3 +1,4 @@
+
 import java.math.*;
 import java.util.*;
 import java.util.stream.*;
@@ -20,3 +21,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf((a[i - 1] + sv[0][i]) % 1000000007L)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

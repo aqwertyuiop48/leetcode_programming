@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(1, 1000).filter(h -> p.stream().allMatch(x -> x[0] <= h || x[1] <= h)).mapToLong(h -> h * p.stream().mapToLong(x -> x[1] <= h && x[0] <= h ? Math.min(x[0], x[1]) : x[1] <= h ? x[0] : x[1]).sum()).min().getAsLong() : 0);
     }
 }
+
+
+

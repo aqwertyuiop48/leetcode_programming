@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -39,3 +40,6 @@ public class Main {
                 ? String.valueOf(Math.max(0L, Math.max(cyc.applyAsLong(new long[]{np, mp, ib, 1}), cyc.applyAsLong(new long[]{mp, np, ig, 0})))) : "") : "");
     }
 }
+
+
+

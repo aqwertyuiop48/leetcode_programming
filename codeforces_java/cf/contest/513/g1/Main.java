@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
             ? String.format(Locale.ROOT, "%.15f", IntStream.of(cells).mapToDouble(t -> a[t / n] > a[t % n] ? 1 - buf[k & 1][t] : buf[k & 1][t]).sum()) : "");
     }
 }
+
+
+

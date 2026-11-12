@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,4 +21,6 @@ public class Main {
                     && (st[1] >= n || (st[0] = (st[0] + 1) % 3) >= 0 && ++st[2] > 0)) ? n + st[2] : 0).min().getAsInt() : "");
     }
 }
+
+
 

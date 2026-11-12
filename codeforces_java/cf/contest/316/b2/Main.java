@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
             ? IntStream.rangeClosed(0, n).filter(s -> dp[s]).mapToObj(s -> String.valueOf(s + (int) IntStream.iterate(x, v -> v != 0, v -> a[v]).count())).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? t >= Math.abs(a) + Math.abs(b) && (t - Math.abs(a) - Math.abs(b)) % 2 == 0 ? "Yes" : "No" : "");
     }
 }
+
+
+

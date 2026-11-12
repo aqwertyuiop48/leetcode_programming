@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                 : IntStream.range(1, cnt.length).filter(v -> a % v == 0 && a / v < cnt.length).mapToLong(v -> cnt[v] * cnt[(int) (a / v)]).sum() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -12,3 +13,6 @@ public class Main {
                 && (!ev || ++st[1] > 0) && (blk || (st[0] += d) != 0) ? (blk ? "X" : d > 0 ? "R" : "L") : "").collect(Collectors.joining()) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -15,3 +16,6 @@ public class Main {
             ? Arrays.stream(pend).allMatch(x -> x == 0) ? sb.toString().trim() : "-1" : ""));
     }
 }
+
+
+

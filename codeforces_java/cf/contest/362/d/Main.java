@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
                     ? (out.addAll(Collections.nCopies(p - (c - q), pair)) | true) ? "YES" + (out.isEmpty() ? "" : "\n") + String.join("\n", out) : "" : p == c - q ? "YES" : "NO" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -8,4 +9,6 @@ public class Main {
             ? Math.max(0, 3 * n - k) : "");
     }
 }
+
+
 

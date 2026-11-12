@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             ? Stream.iterate(new int[]{a, a}, t -> new int[]{t[0] / b + t[0] % b, t[1] + t[0] / b}).limit(200).reduce((x, y) -> y).get()[1] : "");
     }
 }
+
+
 

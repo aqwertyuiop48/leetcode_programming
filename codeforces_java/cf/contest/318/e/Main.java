@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -33,3 +34,6 @@ public class Main {
             ? sv[2] != -2 && IntStream.range(0, n).allMatch(i -> a[i] == b[i]) ? sv[3] + "\n" + sb : "NO" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? IntStream.range(0, t).mapToObj(i -> String.valueOf(om[Integer.parseInt(tk.nextToken())] - om[Integer.parseInt(tk.nextToken())])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
                 .mapToInt(p -> IntStream.range(0, 4).map(i -> (i < 2 ? 1 : 2) * (g[p[i] * 5 + p[i + 1]] + g[p[i + 1] * 5 + p[i]])).sum()).max().getAsInt() : 0);
     }
 }
+
+
+

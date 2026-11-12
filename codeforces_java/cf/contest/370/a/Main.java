@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? (dr == 0 && dc == 0 ? 0 : dr == 0 || dc == 0 ? 1 : 2) + " " + (dr == 0 && dc == 0 ? 0 : (dr + dc) % 2 == 1 ? 0 : dr == dc ? 1 : 2) + " " + Math.max(dr, dc) : "");
     }
 }
+
+
+

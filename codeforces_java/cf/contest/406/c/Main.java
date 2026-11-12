@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
@@ -22,3 +23,6 @@ public class Main {
             ? sb.toString().trim() : "No solution", r -> new Thread(null, r, "t", 1L << 29).start()).join());
     }
 }
+
+
+

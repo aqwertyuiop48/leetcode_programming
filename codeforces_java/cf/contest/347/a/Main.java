@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             System.out.print(IntStream.range(0, n).map(i -> i == 0 ? a[n - 1] : i == n - 1 ? a[0] : a[i]).mapToObj(String::valueOf).collect(Collectors.joining(" ")));
     }
 }
+
+
+

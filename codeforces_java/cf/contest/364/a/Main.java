@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? a == 0 ? 2 * cnt[0] * T - cnt[0] * cnt[0] : IntStream.rangeClosed(1, 9 * n).filter(x -> a % x == 0 && a / x <= 9 * n).mapToLong(x -> cnt[x] * cnt[(int) (a / x)]).sum() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -22,4 +23,6 @@ public class Main {
                 ? "" + IntStream.range(0, n).filter(u -> p[u] == u).count() : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -21,3 +22,6 @@ public class Main {
                 ? IntStream.range(0, n).mapToObj(i -> (a[i] - (nxt[i] > 0 ? a[nxt[i] - 1] : 0)) + (nxt[i] > 0 ? " 1 " + nxt[i] : " 0")).collect(Collectors.joining("\n")) : "" : "-1");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -16,3 +17,6 @@ public class Main {
             ? IntStream.range(0, r * c).filter(p -> d[p] >= 0 && d[p] <= d[G.indexOf('S')] && Character.isDigit(G.charAt(p))).map(p -> G.charAt(p) - '0').sum() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -11,3 +12,6 @@ public class Main {
             ? f[0].multiply(q).equals(f[1].multiply(p)) ? "YES" : "NO" : "");
     }
 }
+
+
+

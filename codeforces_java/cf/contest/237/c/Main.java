@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? !ok.test(b - a + 1) ? -1 : Stream.iterate(new int[]{1, b - a + 1}, r -> ok.test((r[0] + r[1]) / 2) ? new int[]{r[0], (r[0] + r[1]) / 2} : new int[]{(r[0] + r[1]) / 2 + 1, r[1]}).filter(r -> r[0] >= r[1]).findFirst().get()[0] : "");
     }
 }
+
+
+

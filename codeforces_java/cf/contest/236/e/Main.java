@@ -1,3 +1,4 @@
+
 import java.nio.IntBuffer;
 import java.util.*;
 import java.util.concurrent.*;
@@ -49,3 +50,6 @@ public class Main {
                 ? String.valueOf(tot[0]) : "").collect(Collectors.joining("\n")) : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
+
+
+

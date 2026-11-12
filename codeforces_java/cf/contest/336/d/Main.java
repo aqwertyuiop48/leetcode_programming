@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -15,3 +16,6 @@ public class Main {
             ? g == 1 ? one % M : ((m == 0 ? 1 : (long) C.applyAsInt(n + m, n)) - one % M + M) % M : "");
     }
 }
+
+
+

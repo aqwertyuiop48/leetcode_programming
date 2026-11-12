@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,4 +20,6 @@ public class Main {
                 ? bfs.apply(bfs.apply(1).getLast().get(0)).size() - 1 : -1L).sum()))));
     }
 }
+
+
 

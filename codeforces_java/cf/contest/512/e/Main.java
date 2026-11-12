@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
                 IntStream.range(0, f2.size()).mapToObj(i -> "1 " + f2.get(f2.size() - 1 - i)[2])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

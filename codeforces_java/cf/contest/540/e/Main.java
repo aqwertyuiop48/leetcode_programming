@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                 ? inv + Math.abs((long) pos[i] - pos[val[i]]) - Math.abs(i - val[i]) : 0).sum() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
                 ? IntStream.range(0, n).mapToObj(i -> new String(IntStream.range(0, m).map(j -> L.get(i + 1).charAt(j) == 'w' ? 'w' : (i == f[1] || i == f[1] + f[0] - 1 || j == f[2] || j == f[2] + f[0] - 1) && i >= f[1] && i < f[1] + f[0] && j >= f[2] && j < f[2] + f[0] ? '+' : '.').toArray(), 0, m)).collect(Collectors.joining("\n")) : "" : "");
     }
 }
+
+
+

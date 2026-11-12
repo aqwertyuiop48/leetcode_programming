@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? IntStream.range(0, n).mapToLong(i -> nx[i] + 4 <= n ? n - (nx[i] + 3) : 0).sum() : "");
     }
 }
+
+
 

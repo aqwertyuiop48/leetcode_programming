@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? l.equals(r) ? 0L : (1L << (64 - Long.numberOfLeadingZeros(l ^ r))) - 1 : "");
     }
 }
+
+
+

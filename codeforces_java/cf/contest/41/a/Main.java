@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 
@@ -7,8 +8,6 @@ public class Main {
             new StringBuilder(s.next()).reverse().toString().equals(s.next()) ? "YES" : "NO"));
     }
 }
-
-
 
 
 

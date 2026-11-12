@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? IntStream.of(runs).mapToObj(r -> String.valueOf(fixed[idxOf[r]])).collect(Collectors.joining()) : "false");
     }
 }
+
+
+

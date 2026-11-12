@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -14,3 +15,6 @@ public class Main {
                 (R, bt) -> (m >> bt & 1) == 1 ? mul.apply(mul.apply(R, R), M) : mul.apply(R, R), (x, y) -> x)[0][0] : "");
     }
 }
+
+
+

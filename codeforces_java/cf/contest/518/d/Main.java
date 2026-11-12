@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? String.format(Locale.ROOT, "%.9f", IntStream.rangeClosed(0, n).mapToDouble(j -> j * dp[t & 1][j]).sum()) : "");
     }
 }
+
+
+

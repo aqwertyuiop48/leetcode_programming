@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -17,4 +18,6 @@ public class Main {
             ? (n - c) % 2 == 0 ? c : c + 1 : "");
     }
 }
+
+
 

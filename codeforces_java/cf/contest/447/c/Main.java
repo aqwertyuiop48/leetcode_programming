@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> Math.max(Math.max(L[i] + 1, R[i + 2] + 1), i > 0 && i < n - 1 && a[i + 1] - a[i - 1] >= 2 ? L[i] + 1 + R[i + 2] : 0)).max().getAsInt() : 0);
     }
 }
+
+
+

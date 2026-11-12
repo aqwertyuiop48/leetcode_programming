@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.range(0, n).filter(i -> i % (k + 2) < k).map(i -> a[i]).sum() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             && out.append(pick.stream().mapToInt(i -> a[i]).min().getAsInt() + "\n" + pick.stream().sorted().map(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) + "\n").checkError());
     }
 }
+
+
+

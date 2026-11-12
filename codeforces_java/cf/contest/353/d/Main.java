@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             && t.chars().map(c -> c == 'M' ? ++st[0] : st[0] > 0 ? st[1] = Math.max(st[1] + 1, st[0]) : 0).max().orElse(0) >= 0 ? st[1] : "");
     }
 }
+
+
 

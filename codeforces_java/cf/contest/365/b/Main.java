@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? mx > 0 ? mx + 2 : Math.min(n, 2) : "");
     }
 }
+
+
+

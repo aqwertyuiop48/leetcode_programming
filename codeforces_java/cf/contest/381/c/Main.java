@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
                     ? String.valueOf(st[j][0] == 1 ? st[j][1] : pre[(int) ((p - (j > 0 ? cum[j - 1] : 0) - 1) % st[j][1])]) : "").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

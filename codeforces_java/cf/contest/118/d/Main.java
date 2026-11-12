@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,4 +15,6 @@ public class Main {
                 ? (f[q[0]][q[1]] + g[q[0]][q[1]]) % 100000000 : -1));
     }
 }
+
+
 

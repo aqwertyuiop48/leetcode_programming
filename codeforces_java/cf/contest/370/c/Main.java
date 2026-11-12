@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? (n - IntStream.range(0, n).filter(i -> s[i] == s[(i + f) % n]).count()) + "\n" + IntStream.range(0, n).mapToObj(i -> s[i] + " " + s[(i + f) % n]).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

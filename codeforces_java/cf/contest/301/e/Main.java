@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,4 +19,6 @@ public class Main {
                 .mapToLong(en -> Arrays.stream(en.getValue()).flatMap(Arrays::stream).flatMapToLong(Arrays::stream).sum() % MOD * (m - en.getKey()) % MOD).sum() % MOD : "");
     }
 }
+
+
 

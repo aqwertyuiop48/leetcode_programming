@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,4 +10,6 @@ public class Main {
             ? String.format("%02d:%02d", d / 60, d % 60) : "");
     }
 }
+
+
 

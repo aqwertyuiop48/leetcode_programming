@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,4 +12,6 @@ public class Main {
                 ? IntStream.range(0, n).mapToLong(i -> Integer.valueOf(pq.poll()) instanceof Integer x && (x - 1 <= 0 || pq.add(x - 1)) ? x : 0).sum() : 0).boxed().map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
 

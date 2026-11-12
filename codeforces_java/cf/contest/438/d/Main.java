@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
                 : ((Predicate<int[]>) ref[2]).test(new int[]{1, 0, n - 1, Integer.parseInt(tk.nextToken()) - 1, Integer.parseInt(tk.nextToken())}) ? "" : "" : "").filter(x -> !x.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

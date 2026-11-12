@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -23,4 +24,6 @@ public class Main {
             ? best[0] + "\n" + IntStream.range(0, n).filter(i -> l[i] <= best[1] && best[1] <= v[i] && v[i] <= best[2] && best[2] <= r[i]).mapToObj(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
 

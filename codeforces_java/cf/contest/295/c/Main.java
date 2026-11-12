@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,4 +19,6 @@ public class Main {
             ? dist[0][0][1] + "\n" + ways[0][0][1] : "");
     }
 }
+
+
 

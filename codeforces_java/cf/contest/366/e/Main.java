@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
             ? IntStream.range(1, s).map(i -> Math.max(Math.max(mxS[q[i - 1]] - mnS[q[i]], mxS[q[i]] - mnS[q[i - 1]]), Math.max(mxD[q[i - 1]] - mnD[q[i]], mxD[q[i]] - mnD[q[i - 1]]))).max().orElse(0) : "");
     }
 }
+
+
+

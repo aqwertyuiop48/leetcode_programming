@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? x == 3 ? 5 : IntStream.iterate(1, n -> n + 2).filter(n -> (n * n + 1) / 2 >= x).findFirst().getAsInt() : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -27,3 +28,6 @@ public class Main {
                     ? String.valueOf(((long) lb << 10) + (srt[(int) lbf.applyAsLong(lb, y - lz[lb] + 1) - 1] & 1023) - ((long) fb << 10) - (srt[(int) lbf.applyAsLong(fb, y - lz[fb])] & 1023)) : "-1")).filter(sv -> !sv.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

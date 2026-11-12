@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 ? IntStream.range(0, n).mapToObj(i -> Long.valueOf(Math.min(l - 1, extra[i % 2])) instanceof Long add && (extra[i % 2] -= add) >= 0 ? String.valueOf(1 + add) : "").collect(Collectors.joining(" ")) : "" : "");
     }
 }
+
+
+

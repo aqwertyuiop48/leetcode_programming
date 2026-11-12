@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,4 +15,6 @@ public class Main {
                 .mapToLong(c -> Math.max(0, need - fr.getOrDefault(c, 0L))).min().stream().boxed().findFirst().map(Object::toString).orElse("-1") : "");
     }
 }
+
+
 

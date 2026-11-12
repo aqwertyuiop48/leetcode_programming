@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -40,3 +41,6 @@ public class Main {
             System.out.println(IntStream.range(0, m).filter(q -> nums[PS[q]] == 1).mapToObj(q -> String.valueOf(ACC[q])).collect(Collectors.joining("\n")));
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -38,4 +39,6 @@ public class Main {
             ? (best[0] == Long.MAX_VALUE ? "-1" : best[1] + " " + best[2] + " " + best[3]) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,4 +8,6 @@ public class Main {
             out.println(s.next().equals("front") == (s.nextInt() == 1) ? "L" : "R"))));
     }
 }
+
+
 

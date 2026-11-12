@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             System.out.print(Arrays.stream(a).allMatch(v -> v == 25 ? c[0]++ >= 0 : v == 50 ? c[0]-- > 0 && c[1]++ >= 0 : (c[1] > 0 && c[0] > 0 ? c[1]-- > 0 && c[0]-- > 0 : c[0] > 2 && (c[0] -= 3) >= 0)) ? "YES" : "NO");
     }
 }
+
+
+

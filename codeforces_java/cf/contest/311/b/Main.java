@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
@@ -26,4 +27,6 @@ public class Main {
             ? (Object) dpa[pp & 1][m] : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
+
+
 

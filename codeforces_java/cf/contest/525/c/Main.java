@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.range(0, pairs.size() / 2).mapToLong(j -> pairs.get(2 * j) * pairs.get(2 * j + 1)).sum() : 0);
     }
 }
+
+
+

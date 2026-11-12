@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -68,3 +69,6 @@ public class Main {
             ? String.valueOf(IntStream.range(0, N).mapToLong(x -> core.applyAsInt(N3 + x)).sum() % 1000000007L) : "0");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -12,3 +13,6 @@ public class Main {
                     ? Stream.iterate((int) (i + 2 + dl), j -> j < c.length && Character.isLetter(c[j]) && c[j] < 128, j -> j + 1).count() : 0)).sum() : 0);
     }
 }
+
+
+

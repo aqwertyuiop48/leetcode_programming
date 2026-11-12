@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,4 +15,6 @@ public class Main {
             ? (pm[ob.get() - k] + 1) + " " + (ob.get() + 1) : "");
     }
 }
+
+
 

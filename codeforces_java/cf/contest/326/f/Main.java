@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -16,3 +17,6 @@ public class Main {
             ? Arrays.stream(t).skip(1).sum() - q.stream().mapToLong(x -> x).sum() : "");
     }
 }
+
+
+

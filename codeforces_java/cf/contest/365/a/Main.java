@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? tk.stream().skip(2).filter(s -> IntStream.rangeClosed(0, k).allMatch(d -> s.indexOf('0' + d) >= 0)).count() : 0L);
     }
 }
+
+
+

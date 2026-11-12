@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -21,3 +22,6 @@ public class Main {
                         && IntStream.iterate(tin[v] + n, i -> i >= 1, i -> i >> 1).map(i -> F[i]).max().getAsInt() > lr[2] ? "1" : "0")) : "").filter(s -> !s.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

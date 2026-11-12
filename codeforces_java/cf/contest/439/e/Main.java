@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
                 ? String.valueOf((IntStream.of(dv[n]).filter(d -> n / d - 1 >= fb - 1).mapToLong(d -> mu[d] * (f[n / d - 1] * iv[fb - 1] % 1000000007L * iv[n / d - fb] % 1000000007L)).sum() % 1000000007L + 1000000007L) % 1000000007L) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

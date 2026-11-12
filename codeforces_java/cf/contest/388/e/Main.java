@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -35,4 +36,6 @@ public class Main {
                     1 + rs.stream().collect(Collectors.groupingBy(r -> r[1], Collectors.mapping(r -> r[2], Collectors.toSet()))).values().stream().mapToInt(Set::size).max().orElse(0)) : 0).max().getAsInt() : "");
     }
 }
+
+
 

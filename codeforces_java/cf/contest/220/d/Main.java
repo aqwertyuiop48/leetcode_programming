@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -20,3 +21,6 @@ public class Main {
             ? String.valueOf(Math.floorMod(IntStream.range(0, 64).filter(k -> par.applyAsInt(new int[]{k / 16, k / 4 % 4, k % 4}) == 0).mapToLong(k -> c[k / 16] * c[k / 4 % 4] % P * c[k % 4] % P).sum() - N - 3 * N * (N - 1) % P - 6 * T, P)) : "");
     }
 }
+
+
+

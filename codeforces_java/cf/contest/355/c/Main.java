@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.rangeClosed(0, n).mapToLong(k -> l * P[k] + r * (P[n] - P[k]) + (k > n - k ? (k - (n - k) - 1) * ql : n - k > k ? ((n - k) - k - 1) * qr : 0)).min().getAsLong() : "");
     }
 }
+
+
+

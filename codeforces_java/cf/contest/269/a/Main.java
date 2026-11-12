@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? LongStream.range(0, n).map(i -> Long.valueOf(it.nextLong()) instanceof Long k && Long.valueOf(it.nextLong()) instanceof Long a ? k + IntStream.rangeClosed(1, 16).filter(t -> (1L << (2 * t)) >= a).findFirst().getAsInt() : 0).max().getAsLong() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -26,4 +27,6 @@ public class Main {
                         && (--s[1] >= s[0] ? init.test(0) && false : (++s[0] > k || ((s[1] = n) == n && init.test(0) && false)))) ? String.valueOf(dp[k][n]) : "" : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -22,4 +23,6 @@ public class Main {
                 : String.valueOf(cnt[(nm[3 + 2 * i] + R) * W + nm[2 + 2 * i] + R])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

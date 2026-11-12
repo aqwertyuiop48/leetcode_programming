@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -12,3 +13,6 @@ public class Main {
             ? LongStream.range(0, 40).boxed().reduce(new long[]{0, 60000000000L}, (q, z) -> q[0] >= q[1] ? q : Long.valueOf((q[0] + q[1]) / 2) instanceof Long mid && ok.test(mid) ? new long[]{q[0], mid} : new long[]{(q[0] + q[1]) / 2 + 1, q[1]}, (x, y) -> x)[0] : "");
     }
 }
+
+
+
