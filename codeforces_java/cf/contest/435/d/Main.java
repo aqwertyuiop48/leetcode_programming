@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                 IntStream.rangeClosed(1, Math.min(cnt[q[2]][q[0]][q[1]], cnt[q[3]][q[0]][q[1]]) - 1).filter(L -> cnt[q[4]][q[0] + L * DI[q[2]]][q[1] + L * DJ2[q[2]]] >= q[5] * L + 1).count()).sum() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -15,4 +16,6 @@ public class Main {
             ? String.valueOf(IntStream.iterate(1, s -> s <= n, s -> s * 4).mapToLong(s -> pre[n] - pre[n - s]).sum()) : "");
     }
 }
+
+
 

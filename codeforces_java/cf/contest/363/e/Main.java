@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -34,3 +35,6 @@ public class Main {
             ? g[0] < 0 ? "0 0" : g[0] + " " + g[1] / 2 : "" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,4 +8,6 @@ public class Main {
             ? i == 0 ? c.chars().filter(x -> x == 'A').count() : i == 1 ? 1 : 0 : "");
     }
 }
+
+
 

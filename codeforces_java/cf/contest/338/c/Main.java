@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
@@ -21,4 +22,6 @@ public class Main {
             ? ref.get().apply(0, init) : "");
     }
 }
+
+
 

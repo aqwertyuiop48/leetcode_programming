@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -13,3 +14,6 @@ public class Main {
             ? Math.floorMod(LongStream.rangeClosed(0, k).map(i -> (i % 2 == 0 ? 1 : -1) * (f[k] * inv.applyAsLong(i) % M * inv.applyAsLong(k - i) % M * f[m - (int) i] % M)).sum(), M) : "");
     }
 }
+
+
+

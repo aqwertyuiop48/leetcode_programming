@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,3 +6,6 @@ public class Main {
         Optional.of(new Scanner(System.in)).ifPresent(sc -> System.out.println(Math.min(sc.nextInt(), sc.nextInt()) % 2 == 1 ? "Akshat" : "Malvika"));
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -24,3 +25,6 @@ public class Main {
                 ? (long) (a / x) * (IntStream.rangeClosed(1, Math.min(b, c)).filter(d -> g[x * W + d] == 1).mapToLong(d -> (long) mu[d] * fb[d] * fc[d]).sum() % (1L << 30)) : 0L).sum(), 1L << 30) : "");
     }
 }
+
+
+

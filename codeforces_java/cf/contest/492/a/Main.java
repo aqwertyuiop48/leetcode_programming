@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             IntStream.iterate(1, h -> h + 1).takeWhile(h -> h * (h + 1) * (h + 2) / 6 <= n).count())));
     }
 }
+
+
+

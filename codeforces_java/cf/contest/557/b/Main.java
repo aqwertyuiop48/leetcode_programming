@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? String.format(Locale.ROOT, "%.9f", 3.0 * n * Math.min(Math.min(a[0], a[n] / 2.0), w / (3.0 * n))) : "");
     }
 }
+
+
+

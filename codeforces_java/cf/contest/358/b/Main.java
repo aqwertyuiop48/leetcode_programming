@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? p[0] == t.length() ? "yes" : "no" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
@@ -13,3 +14,6 @@ public class Main {
                 .distinct().sorted().limit(m).map(v -> String.format("%08d", v)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

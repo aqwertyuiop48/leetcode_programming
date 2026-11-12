@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? "1 ".repeat(n - 2) + "2 " + (d + n) : "");
     }
 }
+
+
+

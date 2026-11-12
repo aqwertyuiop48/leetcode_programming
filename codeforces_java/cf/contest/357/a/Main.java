@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).filter(k -> P[k - 1] >= x && P[k - 1] <= y && tot - P[k - 1] >= x && tot - P[k - 1] <= y).max().orElse(0) : "");
     }
 }
+
+
+

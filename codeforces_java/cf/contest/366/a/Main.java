@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(1, 4).mapToObj(i -> new int[]{i, Math.min(it.next(), it.next()), Math.min(it.next(), it.next())}).filter(r -> r[1] + r[2] <= n).findFirst().map(r -> r[0] + " " + r[1] + " " + (n - r[1])).orElse("-1") : "");
     }
 }
+
+
+

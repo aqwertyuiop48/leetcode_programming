@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? x < 0 ? (-t) + " 0 0 " + (y < 0 ? -t : t) : "0 " + (y < 0 ? -t : t) + " " + t + " 0" : "");
     }
 }
+
+
+

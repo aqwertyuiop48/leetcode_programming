@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,8 +7,6 @@ public class Main {
             System.out.println((v[2] - 1) % v[0] * v[1] + (v[2] - 1) / v[0] + 1)));
     }
 }
-
-
 
 
 

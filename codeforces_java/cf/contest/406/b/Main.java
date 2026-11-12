@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                     .boxed().flatMap(z -> Stream.of(z, 1000001 - z))).map(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? IntStream.rangeClosed(Math.max(0, h * (h + 1) / 2 - g), Math.min(r, h * (h + 1) / 2)).mapToLong(j -> d[h & 1][j]).sum() % 1000000007L : 0);
     }
 }
+
+
+

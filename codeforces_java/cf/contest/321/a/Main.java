@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                     : ra == 0 && rb % ty == 0 && rb / ty >= 0)) ? "Yes" : "No" : "");
     }
 }
+
+
+

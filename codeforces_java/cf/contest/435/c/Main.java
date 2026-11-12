@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.range(0, IntStream.of(y).max().getAsInt() - IntStream.of(y).min().getAsInt()).map(r -> IntStream.of(y).max().getAsInt() - 1 - r).mapToObj(r -> IntStream.range(0, w).mapToObj(c -> rowOf[c] == r ? String.valueOf(chOf[c]) : " ").collect(Collectors.joining())).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

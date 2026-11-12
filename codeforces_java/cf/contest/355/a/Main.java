@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? d == 0 ? k == 1 ? "0" : "No solution" : d + "0".repeat(k - 1) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,3 +21,6 @@ public class Main {
                 ? rg.get(i)[1] >= othersMax ? "0" : rg.get(i)[0] < othersMin ? "1" : "2" : "").collect(Collectors.joining("\n")) + "\n").checkError());
     }
 }
+
+
+

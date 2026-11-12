@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? st[1] == 0 ? "Game cheated!" : st[1] == 1 ? "" + st[2] : "Data not sufficient!" : "");
     }
 }
+
+
+

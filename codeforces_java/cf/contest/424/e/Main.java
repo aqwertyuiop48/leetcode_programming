@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
@@ -60,4 +61,6 @@ public class Main {
             ? String.format("%.12f", CompletableFuture.supplyAsync(() -> e[0].applyAsDouble(0), r -> new Thread(null, r, "t", 1L << 29).start()).join()) : "");
     }
 }
+
+
 

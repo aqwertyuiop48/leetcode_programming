@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -6,3 +7,6 @@ public class Main {
         System.out.println(1);
     }
 }
+
+
+

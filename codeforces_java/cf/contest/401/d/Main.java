@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,4 +17,6 @@ public class Main {
             ? dp[(mult[10] - 1) * m] : 0);
     }
 }
+
+
 

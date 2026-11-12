@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -49,4 +50,6 @@ public class Main {
                     + IntStream.range(0, n).mapToLong(u -> ri[0] * S[u] + li[0] * Math.max(d1[u], up[u])).max().getAsLong() : 0L).max().getAsLong() : "");
     }
 }
+
+
 

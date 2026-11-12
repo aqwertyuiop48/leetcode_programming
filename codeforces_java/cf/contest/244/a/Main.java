@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.range(0, k).mapToObj(i -> IntStream.concat(IntStream.of(a[i]), Arrays.stream(rest, i * (n - 1), (i + 1) * (n - 1))).sorted().mapToObj(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -56,4 +57,6 @@ public class Main {
             ? (lay[m][0] >= 1000000 ? -1 : lay[m][0]) : 0);
     }
 }
+
+
 

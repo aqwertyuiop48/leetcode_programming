@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
             ? f3[v[0] - 1] : -1).ifPresent(System.out::println);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
                 .map(p -> Arrays.stream(p).mapToObj(String::valueOf).collect(Collectors.joining(" "))).orElse("-1") : "");
     }
 }
+
+
+

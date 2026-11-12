@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,3 +10,6 @@ public class Main {
             ? 1 + IntStream.range(1, n).filter(i -> !s.get(i).equals(s.get(i - 1))).count() : "");
     }
 }
+
+
+

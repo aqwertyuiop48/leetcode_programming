@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 && (r - st[1] + 1 <= st[2] || (st[2] = r - st[1] + 1) > 0 && (st[3] = a[r]) > Long.MIN_VALUE)) ? st[2] + " " + st[3] : "" : "");
     }
 }
+
+
+

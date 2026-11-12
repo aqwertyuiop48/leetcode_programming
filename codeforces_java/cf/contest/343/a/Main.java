@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,3 +10,6 @@ public class Main {
             ? Stream.iterate(new long[]{a, b}, p -> p[1] > 0, p -> new long[]{p[1], p[0] % p[1]}).mapToLong(p -> p[0] / p[1]).sum() : "");
     }
 }
+
+
+

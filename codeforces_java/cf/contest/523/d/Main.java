@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 && (Long) (Math.max(s, pq.poll()) + m) instanceof Long e && pq.add(e) ? String.valueOf(e) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

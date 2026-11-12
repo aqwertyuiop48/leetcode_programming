@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -9,4 +10,6 @@ public class Main {
             ? Arrays.stream(a).sum() + IntStream.range(0, a.length).map(i -> IntStream.range(i, a.length).map(j -> IntStream.rangeClosed(i, j).map(k -> 1 - 2 * a[k]).sum()).max().getAsInt()).max().getAsInt() : "");
     }
 }
+
+
 

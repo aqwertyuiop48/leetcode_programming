@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 
@@ -8,8 +9,6 @@ public class Main {
                 System.out.print(n == 0 ? 1 : BigInteger.valueOf(3).modPow(BigInteger.valueOf(n - 1), BigInteger.valueOf(1000003)))));
     }
 }
-
-
 
 
 

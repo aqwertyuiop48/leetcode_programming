@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,4 +15,6 @@ public class Main {
             ? (long) n * (n - 1) * (n - 2) / 6 - acc[0] - acc[1] / 2 : "");
     }
 }
+
+
 

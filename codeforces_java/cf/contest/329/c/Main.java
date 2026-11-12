@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -27,3 +28,6 @@ public class Main {
                 ? (res.isPresent() ? new StringBuilder() instanceof StringBuilder sb && IntStream.range(0, m).allMatch(i -> sb.append(p[i]).append(' ').append(p[(i + 1) % n]).append('\n') != null) ? sb.toString().trim() : "" : "-1") : "") : "");
     }
 }
+
+
+

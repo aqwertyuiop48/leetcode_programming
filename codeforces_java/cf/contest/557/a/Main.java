@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? d1 + " " + d2 + " " + (n - d1 - d2) : "");
     }
 }
+
+
+

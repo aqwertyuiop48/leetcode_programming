@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -13,4 +14,6 @@ public class Main {
                 .map(o -> lo.applyAsInt(p.get(o), p.get(i)[j + 1]) - hi.applyAsInt(p.get(o), p.get(i)[j])).distinct().count() > 1).count()).sum() : "");
     }
 }
+
+
 

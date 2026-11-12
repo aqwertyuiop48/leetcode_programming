@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 + IntStream.range(0, v[0]).mapToObj(i -> "" + Math.max(0, Math.min(9, v[1] - 9 * i))).collect(Collectors.joining()))));
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
                 ? pre * ((pow.apply((long) k, ge[M]) - pow.apply((long) k - 1, ge[M]) + P) % P) % P : 0).sum() % P : "");
     }
 }
+
+
+

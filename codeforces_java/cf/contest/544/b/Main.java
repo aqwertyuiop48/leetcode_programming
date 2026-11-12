@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? k > (n * n + 1) / 2 ? "NO" : "YES\n" + IntStream.range(0, n).mapToObj(i -> IntStream.range(0, n).mapToObj(j -> (i + j) % 2 == 0 && (i * n + j) / 2 < k ? "L" : "S").collect(Collectors.joining())).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

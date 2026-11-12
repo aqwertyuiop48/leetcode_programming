@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? Math.max(0, k * w * (w + 1) / 2 - n) : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? pre + perm + "0".repeat((int) s.chars().filter(c -> c == 48).count()) : "");
     }
 }
+
+
+

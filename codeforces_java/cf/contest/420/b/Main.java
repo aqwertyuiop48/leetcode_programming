@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                 ? r.size() + (r.isEmpty() ? "" : "\n" + r.stream().map(String::valueOf).collect(Collectors.joining(" "))) : "" : "");
     }
 }
+
+
+

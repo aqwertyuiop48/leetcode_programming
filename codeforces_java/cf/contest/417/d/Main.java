@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,4 +13,6 @@ public class Main {
                 ? r >= Long.MAX_VALUE / 8 ? -1 : r : 0 : 0);
     }
 }
+
+
 

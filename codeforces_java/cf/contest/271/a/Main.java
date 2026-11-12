@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.iterate(n + 1, y -> y + 1).filter(y -> String.valueOf(y).chars().distinct().count() == 4).findFirst().getAsInt() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? Math.min(Math.min(n, m), (n + m) / 3) : 0);
     }
 }
+
+
+

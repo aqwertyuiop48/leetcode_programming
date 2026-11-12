@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? x <= 0 ? m % M : (k % M * ((java.math.BigInteger.TWO.modPow(java.math.BigInteger.valueOf(x + 1), java.math.BigInteger.valueOf(M)).longValue() - 2 + M) % M) % M + (m - x * k) % M) % M : "");
     }
 }
+
+
+

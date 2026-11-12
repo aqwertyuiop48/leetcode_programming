@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
                         | (pv.applyAsInt(0, t) & pv.applyAsInt(1, t) & pv.applyAsInt(2, t) & pv.applyAsInt(3, t) & 65536)) & 65535) != 0).count() : 0L).sum() : 0);
     }
 }
+
+
+

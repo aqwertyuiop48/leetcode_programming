@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,4 +10,6 @@ public class Main {
                 ? n / a * b >= n ? "Yes" : "No" : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

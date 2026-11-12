@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.math.BigInteger;
@@ -14,3 +15,6 @@ public class Main {
             ? IntStream.range(0, n).mapToLong(i -> (t.charAt(i) - '0') * (((n - 2 - i >= 0 ? F[n - 2 - i] : 0) + p10[n - 1 - i] * C.applyAsInt(i, k)) % 1000000007L) % 1000000007L).sum() % 1000000007L : 0);
     }
 }
+
+
+

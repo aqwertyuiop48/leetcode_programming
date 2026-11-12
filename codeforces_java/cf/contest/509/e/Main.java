@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? String.format(Locale.ROOT, "%.7f", IntStream.rangeClosed(1, n).mapToDouble(l -> ((q[n] - q[l - 1]) - q[n - l]) / (double) l).sum()) : "");
     }
 }
+
+
+

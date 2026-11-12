@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -20,3 +21,6 @@ public class Main {
                 && (c[0] = c[0] * f.get().apply(0, a - 1) % P) >= 0 && cnt[a]++ >= 0 ? c[0] : 0).sum() % P : "");
     }
 }
+
+
+

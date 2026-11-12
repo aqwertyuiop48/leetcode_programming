@@ -1,3 +1,4 @@
+
 import java.util.stream.*;
 
 public class Main {
@@ -33,3 +34,6 @@ public class Main {
             ? tot[0] : 0);
     }
 }
+
+
+

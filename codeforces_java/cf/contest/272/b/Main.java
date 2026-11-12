@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> Integer.bitCount(s.nextInt())).collect(Collectors.groupingBy(x -> x, Collectors.counting())).values().stream().mapToLong(c -> c * (c - 1) / 2).sum() : "");
     }
 }
+
+
+

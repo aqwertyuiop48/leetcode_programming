@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? String.format("%.10f", IntStream.range(1, 240).mapToDouble(e -> q[k & 1][e][0]).sum()) : "");
     }
 }
+
+
+

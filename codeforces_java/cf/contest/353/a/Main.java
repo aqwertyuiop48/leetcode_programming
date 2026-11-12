@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? u == 0 && l == 0 ? 0 : u == 1 && l == 1 && d.stream().anyMatch(p -> (p[0] + p[1]) % 2 == 1) ? 1 : -1 : "");
     }
 }
+
+
+

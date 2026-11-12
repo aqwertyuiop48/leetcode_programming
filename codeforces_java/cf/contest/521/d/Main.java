@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? pick.size() + "\n" + pick.stream().map(x -> String.valueOf(x[3])).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

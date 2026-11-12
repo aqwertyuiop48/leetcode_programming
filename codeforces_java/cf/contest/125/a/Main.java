@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,4 +8,6 @@ public class Main {
             ? t / 12 + " " + t % 12 : "");
     }
 }
+
+
 

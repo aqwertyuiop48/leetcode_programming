@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? Arrays.stream(b).sum() - rem % 2 * 2 * Arrays.stream(b).min().getAsInt() : "");
     }
 }
+
+
+

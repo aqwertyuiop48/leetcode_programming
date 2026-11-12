@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 && new String(a).compareTo(t) < 0 ? new String(a) : "No such string" : "");
     }
 }
+
+
+

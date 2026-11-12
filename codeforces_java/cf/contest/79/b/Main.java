@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,8 +13,6 @@ public class Main {
                 ? (p >= 0 ? "Waste" : new String[]{"Carrots", "Kiwis", "Grapes"}[(int) ((key + p + 1) % 3)]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
-
-
 
 
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -12,3 +13,6 @@ public class Main {
             ? (f[0] ? "YES\n" + IntStream.range(0, m).map(i -> Integer.valueOf(IntStream.rangeClosed(1, 10).filter(w -> s.charAt(w - 1) == '1' && w != st[0] && w > st[1] && f[(i + 1) * 121 + w * 11 + w - st[1]]).findFirst().getAsInt()) instanceof Integer w && (st[1] = w - st[1]) > 0 && (st[0] = w) > 0 ? w : 0).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "NO") : "");
     }
 }
+
+
+

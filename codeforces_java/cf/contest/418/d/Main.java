@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
@@ -35,3 +36,6 @@ public class Main {
                     tout[cur[0]] < n - 1 ? far.applyAsInt(b, rq.applyAsLong(tout[cur[0]] + 1, n - 1)) : 0)) : "").collect(Collectors.joining("\n")) : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -10,3 +11,6 @@ public class Main {
             ? Stream.of(Collections.nCopies(c[4], "1 2 4"), Collections.nCopies(c[6] - c[3], "1 2 6"), Collections.nCopies(c[3], "1 3 6")).flatMap(List::stream).collect(Collectors.joining("\n")) : "-1");
     }
 }
+
+
+

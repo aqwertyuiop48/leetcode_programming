@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,4 +24,6 @@ public class Main {
                 + "\n" + Arrays.stream(col).map(c -> c + 1).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
 

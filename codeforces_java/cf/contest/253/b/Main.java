@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -18,4 +19,6 @@ public class Main {
             ? n - IntStream.rangeClosed(1, mx).map(x -> pre[2 * x + 1] - pre[x]).max().getAsInt() : ""));
     }
 }
+
+
 

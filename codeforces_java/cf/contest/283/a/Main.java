@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                 ? String.format("%.6f", (double) st[0] / st[1]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

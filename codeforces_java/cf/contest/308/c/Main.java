@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 .map(k -> avail[k]-- > 0 && IntStream.range(b, k).allMatch(j -> ++avail[j] > 0)).orElse(false)).count() : "");
     }
 }
+
+
+

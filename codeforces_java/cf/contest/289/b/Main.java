@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? Arrays.stream(a).anyMatch(x -> (x - a[0]) % d != 0) ? -1 : Arrays.stream(a).map(x -> Math.abs(x - a[a.length / 2]) / d).sum() : "");
     }
 }
+
+
 

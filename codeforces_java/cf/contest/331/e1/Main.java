@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
@@ -54,4 +55,6 @@ public class Main {
                 ? p.length + "\n" + Arrays.stream(p).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "" : "0") : "");
     }
 }
+
+
 

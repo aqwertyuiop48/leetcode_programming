@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? p[0] >= 1 ? "1.000000000000" : String.format("%.12f", IntStream.range(0, n).mapToDouble(i -> (st[0] *= 1 - p[i]) * (st[1] += p[i] / (1 - p[i])) * 1).max().getAsDouble()) : "");
     }
 }
+
+
+

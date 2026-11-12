@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).boxed().max(Comparator.comparingInt((Integer i) -> t[i]).thenComparing(Comparator.naturalOrder())).get() + 1 : 0);
     }
 }
+
+
+

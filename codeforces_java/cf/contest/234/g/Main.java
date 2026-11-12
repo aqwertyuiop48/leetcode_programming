@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -13,3 +14,6 @@ public class Main {
                 IntStream.range(0, n).filter(i -> (i >> j & 1) == 1).count() + IntStream.range(0, n).filter(i -> (i >> j & 1) == 1).mapToObj(i -> " " + (i + 1)).collect(Collectors.joining())).collect(Collectors.joining("\n")) + "\n").checkError());
     }
 }
+
+
+

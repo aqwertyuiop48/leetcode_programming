@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> String.valueOf(IntStream.range(0, n).filter(j -> j != i).map(j -> b.get(i)[j]).reduce(0, (x, y) -> x | y))).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

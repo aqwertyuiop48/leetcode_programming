@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
                 ? (long) (x2 - x1 + 1) * (y2 - y1 + 1) : 0L).sum() : 0);
     }
 }
+
+
+

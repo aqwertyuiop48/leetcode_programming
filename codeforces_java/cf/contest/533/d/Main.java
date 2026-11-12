@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -30,3 +31,6 @@ public class Main {
             ? (alive ? "0" : best[0] / 2 + (best[0] % 2 == 1 ? ".5" : "")) : "");
     }
 }
+
+
+

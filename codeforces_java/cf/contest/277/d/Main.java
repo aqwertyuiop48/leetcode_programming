@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
             ? String.format("%d.%06d %.9f", sc2[best] / 1000000, sc2[best] % 1000000, pen[best]) : "");
     }
 }
+
+
+

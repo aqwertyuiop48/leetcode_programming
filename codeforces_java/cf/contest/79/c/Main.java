@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -15,8 +16,6 @@ public class Main {
             ? (e[b.get()] - b.get()) + " " + b.get() : "");
     }
 }
-
-
 
 
 

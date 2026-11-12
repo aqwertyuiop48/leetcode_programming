@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -22,3 +23,6 @@ public class Main {
                 : String.valueOf(((Function<int[], Long>) ref[2]).apply(new int[]{1, 1, n, Integer.parseInt(tk.nextToken()), Integer.parseInt(tk.nextToken())}))).filter(x -> !x.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

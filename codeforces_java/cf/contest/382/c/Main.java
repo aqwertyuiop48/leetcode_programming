@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,4 +13,6 @@ public class Main {
                     : bad.length == 1 && d[bad[0]] == 2 * m ? "1\n" + (a[bad[0]] + m) : "0") : "") : "");
     }
 }
+
+
 

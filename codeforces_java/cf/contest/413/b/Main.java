@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> String.valueOf(IntStream.range(0, m).filter(c -> a[i * m + c] == 1).map(c -> tot[c] - sent[i * m + c]).sum())).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

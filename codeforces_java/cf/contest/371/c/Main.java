@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 && (IntStream.range(0, 3).mapToLong(i -> Math.max(0, need[i] * mid - v[i]) * v[3 + i]).sum() <= r ? (bs[0] = mid) >= 0 : (bs[1] = mid - 1) >= 0)) ? bs[0] : "" : "");
     }
 }
+
+
+

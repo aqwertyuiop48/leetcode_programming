@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -36,3 +37,6 @@ public class Main {
                 && (qa[0] = a) > 0 && (qb[0] = b) > 0 ? String.valueOf(rec[1].applyAsLong(N, 0) & 4095) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

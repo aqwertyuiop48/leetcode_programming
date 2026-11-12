@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,4 +24,6 @@ public class Main {
             ? ((F.apply(b) - F.apply(a)) % M + M) % M : "");
     }
 }
+
+
 

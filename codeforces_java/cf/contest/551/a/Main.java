@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? Arrays.stream(a).mapToObj(x -> String.valueOf(1 + Arrays.stream(a).filter(y -> y > x).count())).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

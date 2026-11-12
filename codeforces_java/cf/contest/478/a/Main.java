@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,3 +8,6 @@ public class Main {
             ? (t > 0 && t % 5 == 0 ? t / 5 : -1) : 0);
     }
 }
+
+
+

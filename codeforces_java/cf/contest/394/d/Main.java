@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,4 +11,6 @@ public class Main {
             ? w[d] + "\n" + (w[d] + IntStream.range(0, n).map(i -> a[i] - i * d).min().getAsInt()) + " " + d : "");
     }
 }
+
+
 

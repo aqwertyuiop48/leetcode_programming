@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
             ? IntStream.range(0, 4).filter(q -> (q & 1) == 1 || !Character.isDigit(s.charAt(n - 1)) || (q >> 1) == s.charAt(n - 1) - '0').mapToLong(q -> st[q]).sum() % 1000000007L : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -10,8 +11,6 @@ public class Main {
                 % 1000000007L - n) % 1000000007L + 1000000007L) % 1000000007L)));
     }
 }
-
-
 
 
 

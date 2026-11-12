@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             && a % 2 == 0 && (a > 0 || b % 2 == 0) ? "YES" : "NO");
     }
 }
+
+
+

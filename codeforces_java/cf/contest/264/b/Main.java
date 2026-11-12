@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 && Integer.valueOf(1 + Arrays.stream(ps).map(p -> best[p]).max().orElse(0)) instanceof Integer v && Arrays.stream(ps).allMatch(p -> (best[p] = v) > 0) ? v : 1).max().getAsInt() : "");
     }
 }
+
+
+

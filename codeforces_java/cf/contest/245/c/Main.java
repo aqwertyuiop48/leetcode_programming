@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                     && (a[j / 2] = Math.max(0, a[j / 2] - c)) >= 0 && (a[j ^ 1] = Math.max(0, a[j ^ 1] - c)) >= 0 && (a[j] = 0) == 0) || true : true) && ok[0] ? tot[0] + a[1] : -1 : "");
     }
 }
+
+
+

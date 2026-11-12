@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? Long.bitCount(t) != 1 ? 0 : IntStream.iterate(50, i -> i >= 0, i -> i - 1).mapToLong(i -> (N >> i & 1) == 1 ? (Integer.valueOf(k - ones[0]++) instanceof Integer d && d >= 0 && d <= i ? c[i][d] : 0L) : 0L).sum() + (Long.bitCount(N) == k ? 1 : 0) - (t == 1 ? 1 : 0) : "");
     }
 }
+
+
+

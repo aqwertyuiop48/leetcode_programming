@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -17,5 +18,6 @@ public class Main {
             ? LongStream.rangeClosed(0, n).map(cost).filter(x -> x >= 0).min().orElse(-1L) : "");
     }
 }
+
 
 

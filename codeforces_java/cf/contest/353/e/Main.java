@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? q < 0 ? m / 2 : IntStream.range(0, m).map(j -> len[(q + j) % m]).map(x -> x == 1 ? ++acc[0] * 0 : (acc[1] += 1 + acc[0] / 2) * 0 + (acc[0] = 0)).sum() + acc[1] + acc[0] / 2 : "");
     }
 }
+
+
+

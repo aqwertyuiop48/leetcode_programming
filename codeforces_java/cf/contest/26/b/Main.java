@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
@@ -11,7 +12,6 @@ public class Main {
             ? st[1] : 0));
     }
 }
-
 
 
 

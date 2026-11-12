@@ -1,3 +1,4 @@
+
 import java.math.*;
 import java.util.*;
 import java.util.function.*;
@@ -19,3 +20,6 @@ public class Main {
                 ? BigInteger.TWO.modPow(BigInteger.valueOf(cs[0] - 1), BigInteger.valueOf(1000000007)).toString() : "0") : "0");
     }
 }
+
+
+

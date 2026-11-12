@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     ? l.stream().mapToLong(v -> Math.abs(e.getKey() - v) - Math.abs(l.get(l.size() / 2) - v)).sum() : 0).max().orElse(0) : "");
     }
 }
+
+
+

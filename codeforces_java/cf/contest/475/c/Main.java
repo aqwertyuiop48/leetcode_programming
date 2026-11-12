@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
                 && (Integer) IntStream.concat(IntStream.rangeClosed(1, tr).map(w -> sim.applyAsInt(lr, w)), IntStream.rangeClosed(1, lr).map(h -> sim.applyAsInt(h, tr))).min().getAsInt() instanceof Integer best ? (best == Integer.MAX_VALUE ? -1 : best) : "");
     }
 }
+
+
+

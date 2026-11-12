@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? set.size() + " " + best[0] + "\n" + set.stream().map(l -> String.valueOf(l + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

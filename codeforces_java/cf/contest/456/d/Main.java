@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -23,3 +24,6 @@ public class Main {
             ? win[0] && (lose[0] || k % 2 == 1) ? "First" : "Second" : "");
     }
 }
+
+
+

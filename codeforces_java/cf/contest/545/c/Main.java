@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 : (i == n - 1 || t.get(i)[0] + t.get(i)[1] < t.get(i + 1)[0]) ? (last[0] = t.get(i)[0] + t.get(i)[1]) > Long.MIN_VALUE : (last[0] = t.get(i)[0]) < Long.MIN_VALUE).count() : 0);
     }
 }
+
+
+

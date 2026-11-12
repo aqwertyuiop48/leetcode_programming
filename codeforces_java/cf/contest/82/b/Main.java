@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -12,8 +13,6 @@ public class Main {
                 .map(g -> g.size() + " " + g.stream().map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
-
-
 
 
 

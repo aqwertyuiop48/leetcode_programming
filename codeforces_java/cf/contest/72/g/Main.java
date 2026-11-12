@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,8 +9,6 @@ public class Main {
                 Stream.iterate(new int[]{1, 1}, p -> new int[]{p[1], p[0] + p[1]}).skip(s.nextInt()).findFirst().get()[0]));
     }
 }
-
-
 
 
 

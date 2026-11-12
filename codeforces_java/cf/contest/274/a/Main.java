@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? Arrays.stream(a).filter(x -> !(x % k == 0 && ch.contains(x / k))).map(x -> ch.add(x) ? 1 : 0).sum() : "");
     }
 }
+
+
+

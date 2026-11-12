@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? Stream.iterate(3L, p -> p * 3).filter(p -> n % p != 0).findFirst().get() instanceof Long p ? n / p + 1 : "" : "");
     }
 }
+
+
+

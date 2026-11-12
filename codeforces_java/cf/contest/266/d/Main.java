@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
                     ? IntStream.range(1, n).filter(i -> d[e[1]][ord[i]] > d[e[1]][st[0]]).map(i -> Integer.valueOf(d[e[0]][ord[i]] + d[e[1]][st[0]] + e[2]) instanceof Integer cand && (st[0] = ord[i]) >= 0 ? cand : Integer.MAX_VALUE).min().orElse(Integer.MAX_VALUE) : Integer.MAX_VALUE).min().orElse(Integer.MAX_VALUE)) / 2.0) : "");
     }
 }
+
+
+

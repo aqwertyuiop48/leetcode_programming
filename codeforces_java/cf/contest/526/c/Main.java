@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 LongStream.rangeClosed(0, Math.min(c / wb, 100000)).map(y -> y * hb + (c - y * wb) / wr * hr).max().getAsLong()) : 0);
     }
 }
+
+
+

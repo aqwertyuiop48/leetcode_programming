@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -27,4 +28,6 @@ public class Main {
             ? rec.get().applyAsLong(1) : 0L : 0L);
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? d.isPresent() ? a + "" + d.getAsInt() + "0".repeat(n - 1) : "-1" : "");
     }
 }
+
+
+

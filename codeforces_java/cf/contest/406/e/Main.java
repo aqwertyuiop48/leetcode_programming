@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                     ? D == 0 ? (long) m * (m - 1) * (m - 2) / 6 : a * b * (m - a - b) + a * (a - 1) / 2 * b + a * (b * (b - 1) / 2) : 0L) : "");
     }
 }
+
+
+

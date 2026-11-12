@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? Arrays.stream(d).anyMatch(x -> x == 1 || x == n) || IntStream.range(0, m - 2).anyMatch(i -> d[i + 2] - d[i] == 2) ? "NO" : "YES" : "");
     }
 }
+
+
+

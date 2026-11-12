@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -29,4 +30,6 @@ public class Main {
                         -a[i][h] + a[i + m][h] * (1 - 2 * (1 ^ z)) + LT[((i * 2 + 1) * 2 + z) * 256 + lm] + HT[((i * 2 + 1) * 2 + z) * 256 + hm])).sum() : 0).max().getAsInt()) : "");
     }
 }
+
+
 

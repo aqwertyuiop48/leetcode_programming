@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -13,3 +14,6 @@ public class Main {
             ? lh[0] + " " + Math.max(0, Arrays.stream(P, 0, lh[0]).sum() - a) : "");
     }
 }
+
+
+

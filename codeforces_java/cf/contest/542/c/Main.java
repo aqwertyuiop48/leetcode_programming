@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.math.BigInteger;
@@ -13,3 +14,6 @@ public class Main {
             ? l.multiply(BigInteger.valueOf(Math.max(1, (t + l.min(BigInteger.valueOf(1000)).intValue() - 1) / l.min(BigInteger.valueOf(1000)).intValue() * (l.compareTo(BigInteger.valueOf(1000)) > 0 ? 0 : 1) + (l.compareTo(BigInteger.valueOf(1000)) > 0 ? 1 : 0)))) : "");
     }
 }
+
+
+

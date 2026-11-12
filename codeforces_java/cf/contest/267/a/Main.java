@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? LongStream.range(0, n).mapToObj(i -> Stream.iterate(new long[]{it.nextLong(), it.nextLong(), 0}, s -> s[1] > 0, s -> new long[]{s[1], s[0] % s[1], s[2] + s[0] / s[1]}).reduce((x, y) -> y).get() instanceof long[] s ? String.valueOf(s[2] + s[0] / s[1]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

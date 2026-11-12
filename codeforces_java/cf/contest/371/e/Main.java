@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
             ? IntStream.range(best, best + k).mapToObj(j -> String.valueOf((key[j] & 1048575) + 1)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

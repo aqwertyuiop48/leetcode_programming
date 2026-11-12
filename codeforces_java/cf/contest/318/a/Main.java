@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -7,3 +8,6 @@ public class Main {
             ? (k <= (n + 1) / 2 ? 2 * k - 1 : 2 * (k - (n + 1) / 2)) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
                 ? String.valueOf(IntStream.rangeClosed(1, n).mapToLong(l -> c[0][l]).sum()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

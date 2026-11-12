@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,4 +7,6 @@ public class Main {
             ? Arrays.stream(road.split("\\.")).mapToInt(String::length).max().orElse(0) >= k ? "NO" : "YES" : "");
     }
 }
+
+
 

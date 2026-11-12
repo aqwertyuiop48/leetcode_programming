@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
                 : Arrays.stream(ones, 0, Arrays.binarySearch(ones, k) >= 0 ? Arrays.binarySearch(ones, k) + 1 : -Arrays.binarySearch(ones, k) - 1).map(j -> a[k - j]).max().orElse(0))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

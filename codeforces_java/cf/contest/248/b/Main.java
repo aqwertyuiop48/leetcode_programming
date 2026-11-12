@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 ? n == 3 ? String.valueOf(100 + add) : "1" + "0".repeat(n - 4) + String.format("%03d", add) : "" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -20,3 +21,6 @@ public class Main {
                     : null).reduce((u, v) -> v).map(sf -> (key[(int) sf[0]] & 262143) + 1).get()).map(String::valueOf).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -28,8 +29,6 @@ public class Main {
                     ? (best[0] + k) + "\n" + IntStream.of(ans).mapToObj(c -> String.valueOf(c + 1)).collect(Collectors.joining(" ")) : "")))))))))))));
     }
 }
-
-
 
 
 

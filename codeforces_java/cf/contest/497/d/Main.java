@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -30,3 +31,6 @@ public class Main {
             ? (chk.apply(new double[][] {ax, ay, bx, by, {px, py, qx, qy}}) || chk.apply(new double[][] {bx, by, ax, ay, {qx, qy, px, py}}) ? "YES" : "NO") : "");
     }
 }
+
+
+

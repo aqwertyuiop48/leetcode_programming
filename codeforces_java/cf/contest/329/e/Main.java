@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -20,4 +21,6 @@ public class Main {
                     ? 2 * Math.min(Math.min(sx[k] - sx[k - 1], sx[k + 1] - sx[k]), Math.min(sy[k] - sy[k - 1], sy[k + 1] - sy[k])) : 0L)) : "");
     }
 }
+
+
 

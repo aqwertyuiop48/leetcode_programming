@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -24,4 +25,6 @@ public class Main {
                 ? ((long) c * w * (n - cb[c]) + bv[0]) + " " + (bv[0] > 0 ? ba[0] : 0) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

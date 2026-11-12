@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -16,4 +17,6 @@ public class Main {
                     .map(t -> t.stream().sorted(Comparator.reverseOrder()).map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

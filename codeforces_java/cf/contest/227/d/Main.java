@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,4 +16,6 @@ public class Main {
                     ? Long.valueOf(st[2]) : Long.valueOf(0))) : "").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
 

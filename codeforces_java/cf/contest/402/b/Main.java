@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 .mapToObj(i -> "\n" + (a[i] < h + i * k ? "+ " : "- ") + (i + 1) + " " + Math.abs(a[i] - h - i * k)).collect(Collectors.joining()) : "");
     }
 }
+
+
+

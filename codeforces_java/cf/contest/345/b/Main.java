@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,4 +10,6 @@ public class Main {
             ? (String.valueOf(n).contains("13") ? -1 : IntStream.rangeClosed(2, n).filter(b -> Stream.iterate(n, x -> x > 0, x -> x / b).map(x -> String.valueOf(x % b)).reduce("", (acc, d) -> d + acc).contains("13")).count()) : "");
     }
 }
+
+
 

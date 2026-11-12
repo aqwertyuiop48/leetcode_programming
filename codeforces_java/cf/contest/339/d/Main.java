@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -13,3 +14,6 @@ public class Main {
                 && IntStream.rangeClosed(1, n).allMatch(k -> (t[p >> k] = (k & 1) == 1 ? t[2 * (p >> k)] | t[2 * (p >> k) + 1] : t[2 * (p >> k)] ^ t[2 * (p >> k) + 1]) >= 0) ? String.valueOf(t[1]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

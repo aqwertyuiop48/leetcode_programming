@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,3 +26,6 @@ public class Main {
                 + IntStream.range(0, 4).mapToObj(p -> pots.get(p).remove((g < m - 1 ? (xs[0] = (xs[0] * a + b) % c) : 0) % pots.get(p).size())).collect(Collectors.joining("\n"))).collect(Collectors.joining("\n")) + "\n").checkError());
     }
 }
+
+
+

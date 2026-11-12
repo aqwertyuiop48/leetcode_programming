@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -12,3 +13,6 @@ public class Main {
                 : IntStream.range(0, 2).allMatch(o1 -> IntStream.range(0, 2).anyMatch(o2 -> w.applyAsInt(o1, o2) == -1)) ? "Team 2" : "Draw" : "");
     }
 }
+
+
+

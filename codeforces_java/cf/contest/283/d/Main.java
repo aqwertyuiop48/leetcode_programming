@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? n - Arrays.stream(dp).max().getAsInt() : "");
     }
 }
+
+
+

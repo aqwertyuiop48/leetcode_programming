@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -10,4 +11,6 @@ public class Main {
                 && (-v * v * (cx * cx + cy * cy) >= 0 || (u * u - v * v) * a * a + 2 * v * v * cx * a - v * v * (cx * cx + cy * cy) >= 0 || D > 0 && cx > 0 && v * v * cx <= a * D && v * v * cx * cx >= D * (cx * cx + cy * cy))).count() : "");
     }
 }
+
+
 

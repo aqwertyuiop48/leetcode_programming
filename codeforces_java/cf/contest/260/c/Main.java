@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
                 ? String.valueOf(i == t ? mn * n + r : a[i] - mn - (off >= 1 && off <= r ? 1 : 0)) : "").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

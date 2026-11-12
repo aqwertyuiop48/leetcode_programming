@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(c -> String.valueOf(IntStream.range(0, n).map(i -> (c - i >= 0 && g[i].charAt(c - i) == 'R' ? 1 : 0) + (c + i < m && g[i].charAt(c + i) == 'L' ? 1 : 0) + (i % 2 == 0 && g[i].charAt(c) == 'U' ? 1 : 0)).sum())).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

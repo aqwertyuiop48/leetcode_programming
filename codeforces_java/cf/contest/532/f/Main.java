@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -20,3 +21,6 @@ public class Main {
                 ? r.size() + "\n" + r.stream().map(i -> String.valueOf(i + 1)).collect(Collectors.joining(" ")) : "" : "");
     }
 }
+
+
+

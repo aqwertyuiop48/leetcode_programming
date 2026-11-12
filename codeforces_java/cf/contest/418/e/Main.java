@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -24,3 +25,6 @@ public class Main {
                             && IntStream.rangeClosed(b * B, y0).allMatch(j -> (tmp[a[j]] = 0) == 0) ? String.valueOf(r3) : "" : "").filter(z -> !z.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

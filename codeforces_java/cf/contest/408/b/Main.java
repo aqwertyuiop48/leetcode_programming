@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? b.chars().distinct().mapToLong(c -> Math.min(a.chars().filter(x -> x == c).count(), b.chars().filter(x -> x == c).count())).sum() : -1);
     }
 }
+
+
+

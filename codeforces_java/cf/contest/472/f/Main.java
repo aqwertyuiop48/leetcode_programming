@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -21,3 +22,6 @@ public class Main {
                 && IntStream.range(0, rn[0]).allMatch(t -> (Integer) (rn[0] - 1 - t) instanceof Integer u && add.applyAsInt(pos[ra[u]], pos[rb[u]]) > 0) ? cnt[0] + "\n" + sb : "-1");
     }
 }
+
+
+

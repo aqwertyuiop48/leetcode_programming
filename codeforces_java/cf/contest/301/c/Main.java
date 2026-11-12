@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             Stream.of("9?>>?0", "?<>1", ">>??")).flatMap(s -> s).collect(Collectors.joining("\n")));
     }
 }
+
+
+

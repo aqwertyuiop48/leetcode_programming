@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -21,3 +22,6 @@ public class Main {
                 .collect(Collectors.joining()).transform(t -> "" + (char) (circ[n] / 128) + t) : "NO" : "NO");
     }
 }
+
+
+

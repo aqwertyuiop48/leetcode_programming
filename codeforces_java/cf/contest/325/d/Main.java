@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -25,3 +26,6 @@ public class Main {
                 && (par[p1] = (fr[0] >= 0 ? fr[0] : p1) + 1) > 0 && (par[p2] = (fr[1] >= 0 ? fr[1] : p2) + 1) > 0).count() : "");
     }
 }
+
+
+

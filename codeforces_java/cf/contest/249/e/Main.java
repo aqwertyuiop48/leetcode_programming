@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -18,3 +19,6 @@ public class Main {
                 ? r.length() <= 10 ? r : "..." + r.substring(r.length() - 10) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

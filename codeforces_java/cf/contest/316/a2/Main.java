@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
                 + "0".repeat((int) s.chars().filter(ch -> ch == '?').count() - (s.charAt(0) == '?' ? 1 : 0)) : "");
     }
 }
+
+
+

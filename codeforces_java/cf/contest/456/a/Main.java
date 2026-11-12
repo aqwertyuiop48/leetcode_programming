@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
             ? IntStream.range(1, n).anyMatch(i -> (s[i - 1] & 1048575) > (s[i] & 1048575)) ? "Happy Alex" : "Poor Alex" : "");
     }
 }
+
+
+

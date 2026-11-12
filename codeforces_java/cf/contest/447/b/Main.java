@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, t.length()).mapToLong(i -> (i + 1L) * w[t.charAt(i) - 'a']).sum() + (long) IntStream.of(w).max().getAsInt() * ((long) (t.length() + 1 + t.length() + k) * k / 2) : 0);
     }
 }
+
+
+

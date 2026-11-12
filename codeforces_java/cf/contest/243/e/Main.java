@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.atomic.*;
 import java.util.function.*;
@@ -66,3 +67,6 @@ public class Main {
                 ? "YES\n" + IntStream.range(0, n).mapToObj(i -> ord.stream().map(c -> String.valueOf(tk[1 + i].charAt(c))).collect(Collectors.joining())).collect(Collectors.joining("\n")) : "" : ""), "", 1 << 28).start();
     }
 }
+
+
+

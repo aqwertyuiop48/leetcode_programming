@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? IntStream.rangeClosed(2, n - 1).flatMap(i -> IntStream.rangeClosed(2, m - 1).flatMap(j -> IntStream.of(d1[i][j - 1] + d2[i][j + 1] + d3[i + 1][j] + d4[i - 1][j], d1[i - 1][j] + d2[i + 1][j] + d3[i][j - 1] + d4[i][j + 1]))).max().getAsInt() : 0);
     }
 }
+
+
+

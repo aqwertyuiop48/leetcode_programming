@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -15,4 +16,6 @@ public class Main {
                     && (par[small] = big) >= 0 && (sz[big] += sz[small]) > 0 ? add : 0.0 : 0.0).sum() / (n * (n - 1L) / 2.0)) : "");
     }
 }
+
+
 

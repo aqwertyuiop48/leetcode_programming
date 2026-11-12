@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -63,3 +64,6 @@ public class Main {
             ? (n == 1 || m == 1 || dir.test(PA, PB) || dir.test(PB, PA) ? "YES" : "NO") : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? g1 <= g2 ? g1 + "\n" + "2 ".repeat(n).trim() : g2 + "\n" + IntStream.range(0, n).mapToObj(i -> i == o[0] ? "1" : "2").collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

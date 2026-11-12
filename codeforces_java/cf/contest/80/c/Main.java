@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -19,8 +20,6 @@ public class Main {
             ? key / 100 + " " + (50 - key % 100) : "");
     }
 }
-
-
 
 
 

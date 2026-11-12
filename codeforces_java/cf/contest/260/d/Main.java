@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 ? b[2] + " " + w[2] + " " + x + (b[1] == 0 && p[0] + 1 < B.size() ? (++p[0] > 0 ? "" : "") : w[1] == 0 && p[1] + 1 < W.size() ? (++p[1] > 0 ? "" : "") : "") : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

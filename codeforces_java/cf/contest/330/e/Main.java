@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -20,3 +21,6 @@ public class Main {
                 ? (res.isPresent() ? IntStream.range(0, m).mapToObj(i -> res.get()[i] + " " + res.get()[(i + 1) % n]).collect(Collectors.joining("\n")) : "-1") : "") : "");
     }
 }
+
+
+

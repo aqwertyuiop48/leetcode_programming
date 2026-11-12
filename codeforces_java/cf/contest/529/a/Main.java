@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -18,3 +19,6 @@ public class Main {
             ? "(".repeat(need) + s.substring(best) + s.substring(0, best) + ")".repeat(Math.max(0, p[n])) : "");
     }
 }
+
+
+

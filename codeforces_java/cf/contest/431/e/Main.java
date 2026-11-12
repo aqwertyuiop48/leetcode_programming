@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -27,3 +28,6 @@ public class Main {
                     ? tot / 100000 + "." + String.valueOf(100000 + tot % 100000).substring(1) : "").filter(x -> !x.isEmpty()).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

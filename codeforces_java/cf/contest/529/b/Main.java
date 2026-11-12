@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     - p.stream().filter(x -> x[1] <= h && x[0] <= h && x[1] < x[0]).map(x -> x[0] - x[1]).sorted(Comparator.reverseOrder()).limit(n / 2 - p.stream().filter(x -> x[1] > h).count()).mapToLong(d -> d).sum())).min().getAsLong() : 0);
     }
 }
+
+
+

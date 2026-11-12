@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -41,3 +42,6 @@ public class Main {
             ? cnt + "\n" + Arrays.stream(rays, 1, cnt + 1).sorted().mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

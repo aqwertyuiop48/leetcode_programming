@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -46,4 +47,6 @@ public class Main {
             ? Arrays.stream(out).mapToObj(d -> Long.valueOf(Math.round(d * 1e12)) instanceof Long sc ? (sc / 1000000000000L) + "." + ("000000000000" + (sc % 1000000000000L)).substring(String.valueOf(sc % 1000000000000L).length()) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

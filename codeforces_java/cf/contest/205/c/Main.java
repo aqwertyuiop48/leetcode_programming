@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 
@@ -9,4 +10,6 @@ public class Main {
             ? f.applyAsLong(r) - f.applyAsLong(l - 1) : "");
     }
 }
+
+
 

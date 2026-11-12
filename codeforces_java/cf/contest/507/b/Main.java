@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? LongStream.iterate(0, k -> k + 1).filter(k -> 4 * r * r * k * k >= (x - x2) * (x - x2) + (y - y2) * (y - y2)).findFirst().getAsLong() : 0);
     }
 }
+
+
+

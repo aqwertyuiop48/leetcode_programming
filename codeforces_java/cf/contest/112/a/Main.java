@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,4 +6,6 @@ public class Main {
         Optional.of(new Scanner(System.in)).map(s -> (int) Math.signum(s.next().compareToIgnoreCase(s.next()))).ifPresent(System.out::println);
     }
 }
+
+
 

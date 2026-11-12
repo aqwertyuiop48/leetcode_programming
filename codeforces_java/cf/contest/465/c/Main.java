@@ -1,3 +1,4 @@
+
 import java.util.function.IntFunction;
 import java.util.stream.IntStream;
 
@@ -22,3 +23,6 @@ public class Main {
             : "");
     }
 }
+
+
+

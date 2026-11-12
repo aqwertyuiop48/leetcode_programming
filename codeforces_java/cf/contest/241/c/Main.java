@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
                     ? hits.stream().anyMatch(x -> x < 0) || hits.stream().distinct().count() != hits.size() ? 0L : hits.stream().mapToLong(k -> (Long) mir.get(k)[0]).sum() : 0L)).mapToLong(Long::longValue).max().orElse(0)) : "");
     }
 }
+
+
+

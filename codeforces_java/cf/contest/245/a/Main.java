@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? (acc[0] >= acc[1] ? "LIVE" : "DEAD") + "\n" + (acc[2] >= acc[3] ? "LIVE" : "DEAD") : "");
     }
 }
+
+
+

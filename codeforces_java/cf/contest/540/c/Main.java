@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
                 : !seen[r2][c2] ? "NO" : g[r2][c2] == 'X' ? "YES" : cnt >= 2 || adj && cnt >= 1 ? "YES" : "NO" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
                 ? ls.size() == 1 ? String.valueOf(ls.get(0)) : "-1" : "-1" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 ? String.valueOf((t ? p1 : p2)[r] - (t ? p1 : p2)[l - 1]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

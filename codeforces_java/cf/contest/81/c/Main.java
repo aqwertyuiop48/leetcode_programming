@@ -1,3 +1,4 @@
+
 import java.util.stream.*;
 
 public class Main {
@@ -32,4 +33,6 @@ public class Main {
             ? new String(o, 0, 2 * n - 1) : "");
     }
 }
+
+
 

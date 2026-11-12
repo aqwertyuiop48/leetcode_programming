@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(q -> Integer.valueOf(it.nextInt() - 1) instanceof Integer l && Integer.valueOf(it.nextInt() - 1) instanceof Integer r && ni[nd[l]] >= r ? "Yes" : "No").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

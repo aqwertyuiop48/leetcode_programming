@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             ? rest.apply(a, 0).equals(rest.apply(b, 0)) ? IntStream.of(2, 3, 5).mapToLong(p -> Math.abs(ex.apply(a, p) - ex.apply(b, p))).sum() : -1 : "");
     }
 }
+
+
+

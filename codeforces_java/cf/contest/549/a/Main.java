@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 && "acef".equals(Stream.of(g.get(i).charAt(j), g.get(i).charAt(j + 1), g.get(i + 1).charAt(j), g.get(i + 1).charAt(j + 1)).sorted().map(String::valueOf).collect(Collectors.joining()))).count() : 0);
     }
 }
+
+
+

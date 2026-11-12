@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                     ? Math.max(0, Math.min((3L * N - t1 - t2 + s) >> 2, n - m) - Math.max((3L * N - t1 - t2 - s + 3) >> 2, m + 1) + 1) : 0)).sum()).sum() : "");
     }
 }
+
+
+

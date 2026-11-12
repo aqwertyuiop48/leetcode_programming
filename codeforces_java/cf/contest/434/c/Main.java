@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -28,3 +29,6 @@ public class Main {
             ? ((F.apply(rb)[0] - F.apply(lb)[0] + F.apply(lb)[1]) % 1000000007L + 1000000007L) % 1000000007L : 0);
     }
 }
+
+
+

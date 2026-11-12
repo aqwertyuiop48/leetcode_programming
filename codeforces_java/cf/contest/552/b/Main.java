@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, 10).mapToLong(k -> Math.max(0L, n - Long.parseLong("1" + "0".repeat(k)) + 1)).sum() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> s.next()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).values().stream().mapToLong(Long::longValue).max().getAsLong() : 0L);
     }
 }
+
+
+

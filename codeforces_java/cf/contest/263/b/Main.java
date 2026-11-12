@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? k > n ? "-1" : a[k - 1] + " 0" : "");
     }
 }
+
+
+

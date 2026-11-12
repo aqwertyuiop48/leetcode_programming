@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -62,4 +63,6 @@ public class Main {
             ? (odd / 2 + ex[0]) + " " + m + "\n" : "");
     }
 }
+
+
 

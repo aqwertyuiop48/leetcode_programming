@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? (cnt.apply(k) - cnt.apply(d - 1) + 1000000007L) % 1000000007L : 0);
     }
 }
+
+
+

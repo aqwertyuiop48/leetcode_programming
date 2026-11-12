@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
                 .mapToDouble(i -> g[0].applyAsInt((int) Math.abs(px[i] - px[i + k + 1]), (int) Math.abs(py[i] - py[i + k + 1]))).sum()).sum()) : "");
     }
 }
+
+
+

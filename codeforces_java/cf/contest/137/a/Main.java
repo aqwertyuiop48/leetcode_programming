@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             Arrays.stream(new Scanner(System.in).next().split("(?<=(.))(?!\\1)")).mapToInt(r -> (r.length() + 4) / 5).sum());
     }
 }
+
+
 

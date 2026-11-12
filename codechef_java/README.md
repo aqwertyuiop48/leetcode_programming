@@ -59,9 +59,8 @@ Log in to each site you plan to use before submitting. Submitter prompts for the
 
 ```bash
 submitter login codechef
-submitter login kattis
-submitter login toph
 submitter login yandex
+submitter login toph
 submitter login eolymp
 submitter login ucup
 submitter login uoj

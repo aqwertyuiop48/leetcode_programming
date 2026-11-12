@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -15,4 +16,6 @@ public class Main {
                 ? (sur[c] > 0 && (d < c || left == sur[c]) ? (char) ('A' + d) + "" + (--sur[c] > -1 && --need[d] > -1 ? "" : "") : String.valueOf(s[i])) : "").collect(Collectors.joining()) : ""));
     }
 }
+
+
 

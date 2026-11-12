@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? Arrays.stream(bal).filter(b -> b > 0).sum() : "");
     }
 }
+
+
+

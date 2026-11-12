@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,4 +11,6 @@ public class Main {
                 ? (d >> i & 1) == 1 ? new long[]{dbl[1], (dbl[0] + dbl[1]) % m} : dbl : st, (x, y) -> x)[0] % m : "");
     }
 }
+
+
 

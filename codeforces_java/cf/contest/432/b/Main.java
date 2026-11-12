@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? Arrays.stream(t).map(x -> (n - 1 + c[x[1]]) + " " + (n - 1 - c[x[1]])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

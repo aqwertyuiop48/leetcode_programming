@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? IntStream.range(0, st.length).map(i -> (IntStream.range(0, st.length).anyMatch(t -> !(p[0] < en.length && en[p[0]] < st[i] && ++p[0] > 0)) || true) ? i + 1 - p[0] : 0).max().orElse(0) : 0);
     }
 }
+
+
+

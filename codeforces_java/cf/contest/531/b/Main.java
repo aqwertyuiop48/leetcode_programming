@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? new StringBuilder(s.substring(0, s.length() / 2)).reverse().append(new StringBuilder(s.substring(s.length() / 2)).reverse()).toString() : "");
     }
 }
+
+
+

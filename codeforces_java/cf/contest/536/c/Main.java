@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.math.BigInteger;
@@ -17,3 +18,6 @@ public class Main {
             ? sw.stream().filter(x -> keys.contains(x[0] * 1000000007L + x[1])).map(x -> String.valueOf(x[2])).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

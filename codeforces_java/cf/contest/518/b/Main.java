@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? yay + " " + IntStream.range(0, 128).filter(c -> Character.isLowerCase(c) || Character.isUpperCase(c)).map(c -> Math.min(cs[c], ct[Character.isLowerCase(c) ? Character.toUpperCase(c) : Character.toLowerCase(c)])).sum() : "");
     }
 }
+
+
+

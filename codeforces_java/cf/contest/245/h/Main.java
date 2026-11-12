@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
             ? IntStream.range(0, q).mapToObj(i -> new StringTokenizer(ln.next()) instanceof StringTokenizer st ? String.valueOf(cnt[Integer.parseInt(st.nextToken()) - 1][Integer.parseInt(st.nextToken()) - 1]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

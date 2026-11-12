@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,8 +9,6 @@ public class Main {
                 "/" + Arrays.stream(path.split("/")).filter(part -> !part.isEmpty()).collect(Collectors.joining("/")))));
     }
 }
-
-
 
 
 

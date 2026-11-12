@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -19,3 +20,6 @@ public class Main {
                 && Stream.iterate(new int[]{bi, dp[bi] - 1}, a -> a[0] >= 0, a -> new int[]{prv[a[0]], a[1] - 1}).allMatch(a -> (out[a[1]] = a[0] + 1) > 0) ? dp[bi] + "\n" + IntStream.of(out).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

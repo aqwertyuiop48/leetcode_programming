@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? t.chars().boxed().reduce(0, (p, c) -> p + (s.charAt(p) == c ? 1 : 0), Integer::sum) + 1 : "");
     }
 }
+
+
+

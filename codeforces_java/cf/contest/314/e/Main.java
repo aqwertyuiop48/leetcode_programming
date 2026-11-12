@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -24,4 +25,6 @@ public class Main {
                 ? Integer.toUnsignedString((st[0] == 0 ? t[0] : 0) * IntStream.range(0, k).reduce(1, (a, z) -> a * 25)) : "" : "");
     }
 }
+
+
 

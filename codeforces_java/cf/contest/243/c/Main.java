@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -24,3 +25,6 @@ public class Main {
             ? (xs[W] - xs[0]) * (ys[H] - ys[0]) - IntStream.range(0, W * H).filter(v -> seen[v]).mapToLong(v -> (xs[v % W + 1] - xs[v % W]) * (ys[v / W + 1] - ys[v / W])).sum() : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,4 +11,6 @@ public class Main {
             System.out.print(k.equals(n) || (k == 1 && n < 3) ? "-1" : Integer.valueOf(a[0]) instanceof Integer x && Integer.valueOf(k >= 2 ? a[1] : um[1]) instanceof Integer y && Integer.valueOf(um[0]) instanceof Integer u && Stream.concat(IntStream.rangeClosed(1, n).filter(v -> v != u).mapToObj(v -> new int[] {Math.min(u, v), Math.max(u, v)}), IntStream.rangeClosed(1, n).flatMap(p -> IntStream.rangeClosed(p + 1, n).filter(q -> p != u && q != u && !(p == x && q == y || p == y && q == x) && !(q == y && mk[p]) && !(p == y && mk[q])).map(q -> p * 1000 + q)).mapToObj(c -> new int[] {c / 1000, c % 1000})).limit(m).collect(Collectors.toList()) instanceof List<int[]> es && es.size() == m && m >= n - 1 ? es.stream().map(e -> e[0] + " " + e[1]).collect(Collectors.joining("\n")) : "-1");
     }
 }
+
+
 

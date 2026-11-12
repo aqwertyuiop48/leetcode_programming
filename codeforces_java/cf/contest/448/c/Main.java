@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.*;
@@ -13,3 +14,6 @@ public class Main {
             ? "" + ((ToIntFunction<int[]>) ref[0]).applyAsInt(new int[]{0, n - 1, 0}) : "", r -> new Thread(null, r, "t", 1L << 29).start()).join() : "");
     }
 }
+
+
+

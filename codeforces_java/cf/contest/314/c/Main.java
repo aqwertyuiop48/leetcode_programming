@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -14,3 +15,6 @@ public class Main {
             ? String.valueOf(query.applyAsLong(M)) : "");
     }
 }
+
+
+

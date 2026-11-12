@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,4 +8,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(j -> IntStream.range(0, n / 2).boxed().flatMap(t -> Stream.of(j * (n / 2) + t + 1, n * n - (j * (n / 2) + t))).map(String::valueOf).collect(Collectors.joining(" "))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

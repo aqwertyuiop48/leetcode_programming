@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? n * IntStream.range(0, n).map(i -> s.nextInt()).reduce(0, (a, b) -> java.math.BigInteger.valueOf(a).gcd(java.math.BigInteger.valueOf(b)).intValue()) : "");
     }
 }
+
+
 

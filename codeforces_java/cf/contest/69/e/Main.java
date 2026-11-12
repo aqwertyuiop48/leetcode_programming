@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,8 +15,6 @@ public class Main {
                     ? (i >= k - 1 ? (set.isEmpty() ? "Nothing" : String.valueOf(set.last())) : null) : null).filter(Objects::nonNull).collect(Collectors.joining("\n")))))))));
     }
 }
-
-
 
 
 

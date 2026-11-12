@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? Math.max(Q[n], IntStream.range(0, n).filter(i -> m.charAt(i) == '1').map(i -> Q[n] - Q[i + 1] + P[i]).max().orElse(0)) : "");
     }
 }
+
+
+

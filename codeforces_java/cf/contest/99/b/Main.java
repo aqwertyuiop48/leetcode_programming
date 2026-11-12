@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,8 +11,6 @@ public class Main {
             : (Arrays.stream(a).sum() / a.length - Arrays.stream(a).min().getAsInt()) + " ml. from cup #" + (IntStream.range(0, a.length).boxed().min(Comparator.comparingInt(i -> a[i])).get() + 1) + " to cup #" + (IntStream.range(0, a.length).boxed().max(Comparator.comparingInt(i -> a[i])).get() + 1) + ".")));
     }
 }
-
-
 
 
 

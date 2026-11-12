@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? Math.max(n, Math.max(n / 10, n / 100 * 10 + n % 10)) : "");
     }
 }
+
+
+

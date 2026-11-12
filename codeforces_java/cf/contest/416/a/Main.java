@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? r[0] <= r[1] ? String.valueOf(r[0]) : "Impossible" : "");
     }
 }
+
+
+

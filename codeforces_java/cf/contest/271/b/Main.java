@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? Math.min(Arrays.stream(g).mapToInt(r -> Arrays.stream(r).sum()).min().getAsInt(), IntStream.range(0, m).map(j -> Arrays.stream(g).mapToInt(r -> r[j]).sum()).min().getAsInt()) : "");
     }
 }
+
+
+

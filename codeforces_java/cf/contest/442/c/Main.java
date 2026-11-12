@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? tot[0] + (sz[0] >= 2 ? Arrays.stream(stk, 0, sz[0]).sorted().limit(sz[0] - 2).sum() : 0) : 0);
     }
 }
+
+
+

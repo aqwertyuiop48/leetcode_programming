@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? (IntStream.range(0, 1 << 20).mapToLong(mask -> (Integer.bitCount(mask) % 2 == 0 ? 1 : -1) * (p2[cnt[mask]] - 1)).sum() % 1000000007L + 1000000007L) % 1000000007L : 0);
     }
 }
+
+
+

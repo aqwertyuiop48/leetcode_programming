@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
                 ? "\n" + (ord[start[l - 1] + (q - start[l]) / (l == 1 ? k : k - 1)] + 1) + " " + (ord[q] + 1) : "").collect(Collectors.joining()) : "-1");
     }
 }
+
+
+

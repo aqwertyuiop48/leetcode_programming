@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -14,3 +15,6 @@ public class Main {
                     && IntStream.range(i, e).map(x -> cnt[k[x] & 255]++).sum() >= 0 ? total - gs - top : 0).min().getAsInt() : "");
     }
 }
+
+
+

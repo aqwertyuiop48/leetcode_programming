@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 : Stream.concat(Stream.generate(() -> "" + y).limit(need), Stream.generate(() -> "1").limit(n - k - need)).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

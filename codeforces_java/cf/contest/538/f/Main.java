@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -21,3 +22,6 @@ public class Main {
             ? IntStream.range(1, n).mapToObj(k -> String.valueOf(ans[k])).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

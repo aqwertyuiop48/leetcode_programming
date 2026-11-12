@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -57,3 +58,6 @@ public class Main {
                 ? ra + " " + ca : "").collect(Collectors.joining("\n")) : ""), "", 1 << 28).start());
     }
 }
+
+
+

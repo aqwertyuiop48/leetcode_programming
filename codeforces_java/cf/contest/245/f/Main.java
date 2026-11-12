@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 ? fi.isPresent() ? ls.get(fi.getAsInt() + 1).substring(0, 19) : "-1" : "" : "");
     }
 }
+
+
+

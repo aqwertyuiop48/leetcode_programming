@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? Arrays.stream(pos).limit(Math.min(pos.length, neg.length) + (pos.length > neg.length ? 1 : 0)).sum() + Arrays.stream(neg).limit(Math.min(pos.length, neg.length) + (neg.length > pos.length ? 1 : 0)).sum() : "");
     }
 }
+
+
+

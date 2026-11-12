@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 ? LongStream.rangeClosed(1, n).reduce(B[m & 1][n][n], (u, v) -> u * v % M) : "" : "");
     }
 }
+
+
+

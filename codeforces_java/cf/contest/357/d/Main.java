@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
             ? nm[0] * A.length() - eq * (nm[0] / (B.length() / g)) : "");
     }
 }
+
+
+

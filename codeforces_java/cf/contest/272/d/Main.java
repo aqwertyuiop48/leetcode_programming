@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
                 .reduce(1 % m, (x, y) -> x * y % m) : "");
     }
 }
+
+
+

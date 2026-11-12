@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -29,3 +30,6 @@ public class Main {
             ? IntStream.range(0, n).mapToObj(i -> "" + (char) ('A' + rank[i])).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

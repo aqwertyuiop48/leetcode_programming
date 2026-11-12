@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? IntStream.range(0, q).mapToObj(i -> String.valueOf(C[((Integer.parseInt(t[3 + n + 4 * i]) * D + Integer.parseInt(t[4 + n + 4 * i])) * D + Integer.parseInt(t[5 + n + 4 * i])) * D + Integer.parseInt(t[6 + n + 4 * i])])).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

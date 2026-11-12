@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             ? m == 0 ? "3 " + (long) n * (n - 1) * (n - 2) / 6 : st[1] == 1 ? "0 1" : st[2] == 0 ? "2 " + (long) m * (n - 2) : "1 " + w : "");
     }
 }
+
+
+

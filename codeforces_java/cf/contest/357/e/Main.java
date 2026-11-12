@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 .map(x -> 4 * x - P[(int) x] + G[(int) (x + (P[n] - 4 * x) / 3)] - G[(int) x]).min().stream().boxed().findFirst().map(String::valueOf).orElse("-1") : "");
     }
 }
+
+
+

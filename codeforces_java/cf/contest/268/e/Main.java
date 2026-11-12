@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? String.format("%.9f", s.stream().mapToDouble(x -> x[0] + (1 - x[1]) * acc[0] + 0 * (acc[0] += x[0] * x[1])).sum()) : "");
     }
 }
+
+
+

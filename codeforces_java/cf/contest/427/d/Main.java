@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -22,4 +23,6 @@ public class Main {
             ? IntStream.rangeClosed(2, st[1]).filter(v -> cs[v] == 1 && ct[v] == 1).map(v -> len[link[v]] + 1).min().orElse(-1) : 0);
     }
 }
+
+
 

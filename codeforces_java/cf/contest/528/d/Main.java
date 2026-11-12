@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? IntStream.range(0, n - m + 1).filter(p -> ((rs[p >> 6] >>> (p & 63)) & 1) != 0).count() : 0);
     }
 }
+
+
+

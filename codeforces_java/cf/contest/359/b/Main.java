@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToObj(i -> i <= k ? 2 * i + " " + (2 * i - 1) : (2 * i - 1) + " " + 2 * i).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

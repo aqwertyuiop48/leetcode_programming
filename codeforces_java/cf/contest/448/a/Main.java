@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             && (Integer) s.nextInt() instanceof Integer n && (c + 4) / 5 + (m + 9) / 10 <= n ? "YES" : "NO");
     }
 }
+
+
+

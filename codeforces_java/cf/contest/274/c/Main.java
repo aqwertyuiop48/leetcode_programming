@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
             ? ans < 0 ? "-1" : String.format("%.9f", ans) : "");
     }
 }
+
+
+

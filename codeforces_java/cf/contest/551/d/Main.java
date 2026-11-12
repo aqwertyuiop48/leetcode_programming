@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -12,3 +13,6 @@ public class Main {
             ? (l < 63 && k >> l != 0 ? 0 : pw.applyAsLong((pw.applyAsLong(2, n) - fs[0] + m) % m, Long.bitCount(k)) * pw.applyAsLong(fs[0], l - Long.bitCount(k)) % m) : 0);
     }
 }
+
+
+

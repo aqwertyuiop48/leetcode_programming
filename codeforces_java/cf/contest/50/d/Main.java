@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,8 +17,6 @@ public class Main {
                         ? String.format(Locale.ROOT, "%.17f", st[1]) : ""))))));
     }
 }
-
-
 
 
 

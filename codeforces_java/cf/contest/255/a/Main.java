@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? List.of("chest", "biceps", "back").get(IntStream.range(0, 3).boxed().max(Comparator.comparingInt(i -> t[i])).get()) : "");
     }
 }
+
+
+

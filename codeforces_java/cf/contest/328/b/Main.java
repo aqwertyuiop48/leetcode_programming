@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -11,4 +12,6 @@ public class Main {
             ? IntStream.range(0, 10).filter(d -> need[d] > 0).map(d -> have[d] / need[d]).min().getAsInt() : "");
     }
 }
+
+
 

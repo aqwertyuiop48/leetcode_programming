@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
@@ -31,4 +32,6 @@ public class Main {
                     ? IntStream.range(0, 2).mapToLong(o -> cur[o] * C.applyAsLong(n - vs[m - 1], LL[2 * (m - 1) + o] - 1) % MOD).sum() % MOD : 0) : 0);
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.rangeClosed(0, m).filter(k -> (k % 2 == 1 ? (long) k * (k - 1) / 2 + 1 : (long) k * k / 2) <= n).mapToLong(k -> pre[k]).max().getAsLong() : "");
     }
 }
+
+
+

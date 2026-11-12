@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -15,4 +16,6 @@ public class Main {
                 ? "" + f[(int) LongStream.iterate(n, x -> x % 2 == 1 && x > 1, x -> (x - 1) / 2).count() + 1][k] : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

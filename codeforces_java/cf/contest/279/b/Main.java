@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, n).map(i -> Integer.valueOf(Arrays.binarySearch(pre, pre[i] + t)) instanceof Integer ix ? (ix >= 0 ? ix : -ix - 2) - i : 0).max().getAsInt() : "");
     }
 }
+
+
+

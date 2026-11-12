@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -8,8 +9,6 @@ public class Main {
             ? (h % 1 == 0 ? "" + h.longValue() : "" + h) + " " + hm[1] * 6 : "");
     }
 }
-
-
 
 
 

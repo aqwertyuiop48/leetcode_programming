@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,4 +20,6 @@ public class Main {
                     ? "YES\n" + IntStream.range(0, h).mapToObj(i -> new String(IntStream.range(0, 2 * w - 1).map(j -> j % 2 == 1 ? 32 : 49 + (tr ? c[j / 2][i] : c[i][j / 2])).toArray(), 0, 2 * w - 1)).collect(Collectors.joining("\n")) : "" : "");
     }
 }
+
+
 

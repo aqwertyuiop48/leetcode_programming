@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -40,3 +41,6 @@ public class Main {
                     + fmt.apply(IntStream.concat(Arrays.stream(rev.apply(up.apply(u2, vk))), Arrays.stream(rev.apply(up.apply(z, a2)))).toArray()) : "") : "");
     }
 }
+
+
+

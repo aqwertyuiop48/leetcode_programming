@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 + (st[0] > (1L << (i - 1)) ? (st[0] -= 1L << (i - 1)) & 0L : 0L)).sum() : 0);
     }
 }
+
+
+

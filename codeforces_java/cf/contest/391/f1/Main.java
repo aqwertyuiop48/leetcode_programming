@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -24,4 +25,6 @@ public class Main {
             ? Arrays.stream(pr, 0, s[3]).sorted().skip(Math.max(0L, s[3] - k)).sum() : "");
     }
 }
+
+
 

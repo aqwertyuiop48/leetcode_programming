@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -28,3 +29,6 @@ public class Main {
                 : 1.0 / (dep[u] + dep[v] + 1 + Math.abs(pos[root[u]] - pos[root[v]])) + 1.0 / (dep[u] + dep[v] + 1 + L - Math.abs(pos[root[u]] - pos[root[v]])) - 1.0 / (dep[u] + dep[v] + L)).sum()).sum()) : "");
     }
 }
+
+
+

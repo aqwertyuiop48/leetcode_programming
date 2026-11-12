@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 ? String.format(Locale.ROOT, "%.6f %.6f %.6f", real, ap[p], Math.abs(ap[p] - real) / real) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -9,3 +10,6 @@ public class Main {
                 ? IntStream.range(0, n / 2).mapToObj(i -> s.charAt(i) == 'R' && s.charAt(i + n / 2) == 'L' ? (i + n / 2 + 1) + " " + (i + 1) : (i + 1) + " " + (i + n / 2 + 1)).collect(Collectors.joining("\n")) : ""));
     }
 }
+
+
+

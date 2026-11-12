@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,4 +11,6 @@ public class Main {
                 ? b >= 2 && b <= 2 * a[i] ? (long) (b / 2) * (b - b / 2) : -1L : 0L).sum() : "");
     }
 }
+
+
 

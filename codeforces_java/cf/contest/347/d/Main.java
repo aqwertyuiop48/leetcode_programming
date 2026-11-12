@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -14,3 +15,6 @@ public class Main {
             System.out.print(f[0][0][0] == 0 ? "0" : Stream.iterate(new int[] {0, 0, 0}, s -> f[s[0]][s[1]][s[2]] > 0, nx::apply).map(s -> nx.apply(s) instanceof int[] t && t[0] == s[0] + 1 && t[1] == s[1] + 1 ? String.valueOf(s1.charAt(s[0])) : "").collect(Collectors.joining()));
     }
 }
+
+
+

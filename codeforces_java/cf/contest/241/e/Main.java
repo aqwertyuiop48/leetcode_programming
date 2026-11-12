@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? changed[0] ? "No" : "Yes\n" + IntStream.range(0, m).mapToObj(i -> String.valueOf(rel.get(i) ? d[es.get(i)[1]] - d[es.get(i)[0]] : 1)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

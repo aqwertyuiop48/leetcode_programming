@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,3 +6,6 @@ public class Main {
         System.out.print(new Scanner(System.in).next().contains("666") ? "YES" : "NO");
     }
 }
+
+
+

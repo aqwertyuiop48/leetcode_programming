@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -52,3 +53,6 @@ public class Main {
                 ? String.valueOf(p2[cy[comp[x]] + cy[comp[y]] - 2 * cy[l] + (l > n ? 1 : 0)]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

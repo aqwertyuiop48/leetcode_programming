@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.rangeClosed(1, 100000).filter(v -> (up[v] & 1048575) + (pk[0][v] & 1048575) == n).mapToLong(v -> (up[v] >> 20) + (pk[0][v] >> 20)).min().getAsLong() : "");
     }
 }
+
+
+

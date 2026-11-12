@@ -1,3 +1,4 @@
+
 import java.math.*;
 import java.util.*;
 import java.util.function.*;
@@ -25,4 +26,6 @@ public class Main {
             ? IntStream.range(0, n).map(k -> n - 1 - k).map(i -> (fg[i] - fs[0] < 0 && (fs[0] = fg[i]) > -1000000 ? 0 : 0) + fa[i] - fs[0]).sum() : 0);
     }
 }
+
+
 

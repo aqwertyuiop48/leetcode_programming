@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? IntStream.range(0, m).mapToObj(i -> String.valueOf(n / m + (i >= m - n % m ? 1 : 0))).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

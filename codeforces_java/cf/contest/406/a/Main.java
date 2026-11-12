@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, Integer.parseInt(tk.nextToken())).mapToObj(q -> tk.nextToken() instanceof String ty && ty.equals("3") ? "" + p[1] : tk.nextToken() != null && (p[1] ^= 1) >= 0 ? "" : "").collect(Collectors.joining()) : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.stream.*;
 
 public class Main {
@@ -25,3 +26,6 @@ public class Main {
             ? String.format(java.util.Locale.ROOT, "%.12f", n * (n - 1) / 4.0 + Math.pow((n - 1.0) / (n + 1), Long.parseLong(tk[1]) - K) * IntStream.rangeClosed(1, n).mapToDouble(j -> IntStream.range(1, j).mapToDouble(i -> (v[i] > v[j] ? 1 : -1) * d[j * W + i]).sum()).sum()) : "");
     }
 }
+
+
+

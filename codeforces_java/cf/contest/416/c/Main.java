@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? res.size() + " " + res.stream().mapToInt(x -> x[2]).sum() + res.stream().map(x -> "\n" + x[0] + " " + x[1]).collect(Collectors.joining()) : "");
     }
 }
+
+
+

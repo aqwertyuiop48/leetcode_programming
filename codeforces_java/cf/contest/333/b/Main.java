@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.rangeClosed(2, n - 1).map(i -> (r[i] ? 0 : 1) + (c[i] ? 0 : 1) - (n % 2 == 1 && i == n / 2 + 1 && !r[i] && !c[i] ? 1 : 0)).sum() : "");
     }
 }
+
+
+

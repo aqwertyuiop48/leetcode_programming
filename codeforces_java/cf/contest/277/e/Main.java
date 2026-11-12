@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -23,3 +24,6 @@ public class Main {
             ? fl[0] == n - 1 ? String.format("%.9f", tot[0]) : "-1" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 || a.charAt(1) != b.charAt(1) && ((m >> 5 + a.charAt(1) - '1' & 1) == 1 || (m >> 5 + b.charAt(1) - '1' & 1) == 1)))).map(Integer::bitCount).min().getAsInt() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
                 && x <= mx[k] + 1 && (mx[k] = Math.max(mx[k], x)) >= 0) ? "YES" : "NO");
     }
 }
+
+
+

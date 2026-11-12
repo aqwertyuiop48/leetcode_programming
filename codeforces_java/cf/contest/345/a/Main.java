@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,4 +10,6 @@ public class Main {
             ? String.format(Locale.US, "%.5f", s.chars().mapToDouble(c -> c == '1' ? 1.0 : c == '?' ? p : 0.0).sum() / s.length()) : "");
     }
 }
+
+
 

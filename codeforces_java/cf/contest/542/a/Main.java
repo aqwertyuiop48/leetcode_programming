@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -36,3 +37,6 @@ public class Main {
             ? best[0] <= 0 ? "0" : best[0] + "\n" + (best[1] + 1) + " " + (best[2] + 1) : "");
     }
 }
+
+
+

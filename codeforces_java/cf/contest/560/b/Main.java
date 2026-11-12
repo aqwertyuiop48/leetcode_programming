@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
                 && (w1 + w2 <= v[0] && Math.max(h1, h2) <= v[1] || h1 + h2 <= v[1] && Math.max(w1, w2) <= v[0])) ? "YES" : "NO" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,4 +6,6 @@ public class Main {
         System.out.print(new Scanner(System.in).nextLine().trim().replaceAll(" +", " ").replaceAll(" ([,.!?])", "$1").replaceAll("([,.!?])([^ ])", "$1 $2"));
     }
 }
+
+
 

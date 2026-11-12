@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.concurrent.atomic.*;
@@ -9,3 +10,6 @@ public class Main {
             ? 2 * (h / r) + (4 * k * k >= 3 * r * r ? 3 : 2 * k >= r ? 2 : 1) : "");
     }
 }
+
+
+

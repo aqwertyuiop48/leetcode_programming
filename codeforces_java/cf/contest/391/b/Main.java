@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
                 ? (int) IntStream.range(0, s.length()).filter(i -> s.charAt(i) == ch && i % 2 != st[0] && (st[0] = i % 2) >= 0).count() : 0).max().getAsInt() : "");
     }
 }
+
+
 

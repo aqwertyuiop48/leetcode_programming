@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,4 +12,6 @@ public class Main {
                 && r * r == x && r >= 2 && !comp[r.intValue()] ? "YES" : "NO").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
 

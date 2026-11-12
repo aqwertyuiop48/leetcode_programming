@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
                 ? q >= k && (len % p == 0 ? (q + k) / (k + 1) <= q / k : q % k <= q / k - 1) ? "1" : "0" : "").collect(Collectors.joining()) : "");
     }
 }
+
+
+

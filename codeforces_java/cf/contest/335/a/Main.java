@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     ? ok.getAsInt() + "\n" + sheet + "a".repeat(n - sheet.length()) : "") : "-1" : "");
     }
 }
+
+
+

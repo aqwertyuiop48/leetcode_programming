@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,8 +20,6 @@ public class Main {
             ? IntStream.of(ans).filter(v -> v > 0).count() + "\n" + IntStream.of(ans).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
-
-
 
 
 

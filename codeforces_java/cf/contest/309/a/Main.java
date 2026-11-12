@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,4 +13,6 @@ public class Main {
                 + IntStream.range(0, n).mapToLong(j -> Integer.valueOf(Arrays.binarySearch(v, 3, 3 + n, (int) (v[3 + j] - (l - r) + 1))) instanceof Integer b ? (b >= 3 ? b - 3 : -b - 1 - 3) : 0).sum()) / 4) : "");
     }
 }
+
+
 

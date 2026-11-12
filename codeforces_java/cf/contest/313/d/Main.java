@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -17,3 +18,6 @@ public class Main {
             ? String.valueOf(IntStream.rangeClosed(k, n).mapToLong(j -> dp[n][j]).min().getAsLong() >= INF ? -1 : IntStream.rangeClosed(k, n).mapToLong(j -> dp[n][j]).min().getAsLong()) : "");
     }
 }
+
+
+

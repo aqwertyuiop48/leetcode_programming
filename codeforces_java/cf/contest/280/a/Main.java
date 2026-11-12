@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -15,3 +16,6 @@ public class Main {
             ? String.format("%.9f", Math.abs(IntStream.range(0, res.size()).mapToDouble(i -> res.get(i)[0] * res.get((i + 1) % res.size())[1] - res.get((i + 1) % res.size())[0] * res.get(i)[1]).sum()) / 2) : "");
     }
 }
+
+
+

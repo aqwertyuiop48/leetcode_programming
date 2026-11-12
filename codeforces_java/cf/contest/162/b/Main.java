@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 
@@ -6,4 +7,6 @@ public class Main {
         System.out.println(new Scanner(System.in) instanceof Scanner s ? new BigInteger(s.next()).toString(2) : "");
     }
 }
+
+
 

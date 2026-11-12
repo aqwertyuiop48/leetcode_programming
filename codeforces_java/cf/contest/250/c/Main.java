@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
             ? IntStream.rangeClosed(1, k).filter(g -> pr[g] == 1).boxed().min(Comparator.comparingInt((Integer g) -> cost[g]).thenComparingInt(g -> g)).get() : "");
     }
 }
+
+
+

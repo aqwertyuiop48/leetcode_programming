@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -32,4 +33,6 @@ public class Main {
             ? Arrays.stream(pr, 0, z[2]).sorted().skip(Math.max(0L, z[2] - k)).sum() : "");
     }
 }
+
+
 

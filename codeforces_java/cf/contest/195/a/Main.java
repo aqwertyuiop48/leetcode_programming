@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -9,4 +10,6 @@ public class Main {
             ? Math.max(0, (a * c + b - 1) / b - c) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -41,4 +42,6 @@ public class Main {
             ? IntStream.range(0, 16).mapToLong(mask -> cur[0][mask << 8 | k]).sum() % M * LongStream.rangeClosed(1, k).reduce(1, (x, y) -> x * y % M) % M : "");
     }
 }
+
+
 

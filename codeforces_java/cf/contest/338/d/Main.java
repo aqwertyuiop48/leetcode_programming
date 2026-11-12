@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -16,3 +17,6 @@ public class Main {
             ? j + k - 1 <= m && IntStream.range(0, k).allMatch(l -> BigInteger.valueOf(st[1]).gcd(BigInteger.valueOf(j + l)).longValue() == t[3 + l]) ? "YES" : "NO" : "NO");
     }
 }
+
+
+

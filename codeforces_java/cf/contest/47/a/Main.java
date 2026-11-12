@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,8 +7,6 @@ public class Main {
             System.out.println(Math.sqrt(v) % 1 == 0 ? "YES" : "NO")));
     }
 }
-
-
 
 
 

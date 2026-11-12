@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 && Integer.valueOf(b >= 0 ? b : -b - 1) instanceof Integer lo ? (long) (k - lo) * (k - lo - 1) / 2 : 0).sum() : "");
     }
 }
+
+
+

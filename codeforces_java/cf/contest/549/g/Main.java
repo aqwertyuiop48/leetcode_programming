@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(1, n).allMatch(i -> r[i] >= r[i - 1]) ? Arrays.stream(r).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : ":(" : "");
     }
 }
+
+
+

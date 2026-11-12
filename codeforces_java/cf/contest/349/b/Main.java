@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             System.out.print(len == 0 ? "-1" : IntStream.range(0, len).mapToObj(p -> Integer.valueOf(IntStream.iterate(9, k -> k - 1).filter(k -> a[k] <= r[0] && r[0] - a[k] >= (len - p - 1) * mc).findFirst().getAsInt()) instanceof Integer d && (r[0] -= a[d]) >= 0 ? String.valueOf(d) : "").collect(Collectors.joining()));
     }
 }
+
+
+

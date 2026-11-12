@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.range(0, q).mapToObj(i -> Integer.valueOf(it.next()) instanceof Integer l && Integer.valueOf(it.next()) instanceof Integer r ? String.valueOf(pre[r - 1] - pre[l - 1]) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

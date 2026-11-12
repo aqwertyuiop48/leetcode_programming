@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -15,3 +16,6 @@ public class Main {
             && out.append(IntStream.range(1, n).map(i -> pre[i] + suf[i]).min().getAsInt() + "\n").checkError());
     }
 }
+
+
+

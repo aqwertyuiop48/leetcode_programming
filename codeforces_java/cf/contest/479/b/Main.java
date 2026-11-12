@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,3 +21,6 @@ public class Main {
             ? (Arrays.stream(h).max().getAsInt() - Arrays.stream(h).min().getAsInt()) + " " + cnt[0] + "\n" + sb : "");
     }
 }
+
+
+

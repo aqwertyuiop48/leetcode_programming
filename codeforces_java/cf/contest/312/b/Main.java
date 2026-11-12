@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? String.format(Locale.US, "%.12f", a / b / (1 - (1 - a / b) * (1 - c / d))) : "");
     }
 }
+
+
+

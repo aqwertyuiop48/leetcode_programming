@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
                         : (A * (2 * b + 1) == s ? W * (m - 2 * b) * (b + 1) : s % A == 0 && D4 % 2 == 1 && D4 > 2 * b + 1 && m - D4 + 1 > 0 ? W * (m - D4 + 1) : 0L)).sum() : 0L).sum() : 0);
     }
 }
+
+
+

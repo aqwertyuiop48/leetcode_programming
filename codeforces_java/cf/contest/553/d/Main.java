@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -20,3 +21,6 @@ public class Main {
             ? (nn - bs[2]) + "\n" + Arrays.stream(order, (int) bs[2], nn).mapToObj(String::valueOf).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

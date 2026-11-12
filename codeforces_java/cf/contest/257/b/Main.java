@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             ? (Math.max(n, m) - 1) + " " + Math.min(n, m) : "");
     }
 }
+
+
+

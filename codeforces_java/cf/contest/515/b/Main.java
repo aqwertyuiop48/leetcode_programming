@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? IntStream.range(0, n).allMatch(i -> bb[i]) && IntStream.range(0, m).allMatch(j -> gg[j]) ? "Yes" : "No" : "");
     }
 }
+
+
+

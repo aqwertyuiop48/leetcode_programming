@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? f[1] == 0 || g[1] == 0 ? 0 : Math.max(0, t.length() - f[1] - g[1] + 1) : 0);
     }
 }
+
+
+

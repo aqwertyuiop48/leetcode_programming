@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? new int[]{0} instanceof int[] p && s.chars().filter(c -> p[0] < t.length() && c == t.charAt(p[0]) && ++p[0] > 0).count() >= 0 && p[0] == t.length() ? "automaton" : s.length() == t.length() ? "array" : "both" : "need tree");
     }
 }
+
+
+

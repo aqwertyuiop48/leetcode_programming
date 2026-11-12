@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,3 +12,6 @@ public class Main {
             ? f.applyAsLong(st[0]) : 0);
     }
 }
+
+
+

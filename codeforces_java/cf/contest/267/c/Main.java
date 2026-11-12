@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -20,3 +21,6 @@ public class Main {
                 + IntStream.range(0, m).mapToObj(i -> "\n" + String.format("%.5f", sc * dl[i])).collect(Collectors.joining()) : "");
     }
 }
+
+
+

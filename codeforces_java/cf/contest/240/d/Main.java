@@ -1,3 +1,4 @@
+
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -36,3 +37,6 @@ public class Main {
                 + IntStream.concat(IntStream.range(1, r).map(t -> cum[t]), end == 1 ? IntStream.of(n + m) : IntStream.empty()).mapToObj(String::valueOf).collect(Collectors.joining(" ")) + "\n").checkError());
     }
 }
+
+
+

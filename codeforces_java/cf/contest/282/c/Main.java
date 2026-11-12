@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -6,3 +7,6 @@ public class Main {
             && a.length() == b.length() && a.contains("1") == b.contains("1") ? "YES" : "NO");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,3 +8,6 @@ public class Main {
             ? String.format("%.3f", 5 + IntStream.range(0, n).mapToDouble(i -> sc.nextDouble() * 0 + sc.nextDouble()).sum() / n) : "");
     }
 }
+
+
+

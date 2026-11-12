@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -52,4 +53,6 @@ public class Main {
             ? table[n + k - 2] : "");
     }
 }
+
+
 

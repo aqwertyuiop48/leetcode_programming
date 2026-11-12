@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -22,3 +23,6 @@ public class Main {
             ? IntStream.rangeClosed(1, n).mapToObj(s -> String.valueOf(perm[s])).collect(Collectors.joining(" ")) : "-1");
     }
 }
+
+
+

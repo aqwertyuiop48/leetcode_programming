@@ -1,3 +1,4 @@
+
 import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.*;
@@ -14,4 +15,6 @@ public class Main {
             ? map.values().stream().mapToLong(e -> f[e + n - 1] * BigInteger.valueOf(f[e]).modInverse(BigInteger.valueOf(P)).longValue() % P * BigInteger.valueOf(f[n - 1]).modInverse(BigInteger.valueOf(P)).longValue() % P).reduce(1L, (x, y) -> x * y % P) : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                     ? IntStream.of(in).sum() + IntStream.range(0, Math.min(k, Math.min(in.length, out.length))).map(i -> Math.max(0, out[i] - in[i])).sum() : 0)).mapToInt(x -> x).max().getAsInt() : 0);
     }
 }
+
+
+

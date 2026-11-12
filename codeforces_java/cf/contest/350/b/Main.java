@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
             System.out.print(best.get().size() + "\n" + IntStream.range(0, best.get().size()).mapToObj(i -> String.valueOf(best.get().get(best.get().size() - 1 - i))).collect(Collectors.joining(" ")));
     }
 }
+
+
+

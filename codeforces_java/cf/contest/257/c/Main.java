@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,3 +9,6 @@ public class Main {
             ? String.format(Locale.US, "%.10f", 360 - Math.toDegrees(IntStream.range(0, n).mapToDouble(i -> i + 1 < n ? a[i + 1] - a[i] : a[0] + 2 * Math.PI - a[n - 1]).max().getAsDouble())) : "");
     }
 }
+
+
+

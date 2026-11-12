@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -7,8 +8,6 @@ public class Main {
             System.out.println(Stream.generate(sc::next).limit(n).filter(w -> w.startsWith(p)).min(Comparator.naturalOrder()).orElse(p)))));
     }
 }
-
-
 
 
 

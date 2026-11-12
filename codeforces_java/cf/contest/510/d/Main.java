@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.math.BigInteger;
@@ -12,3 +13,6 @@ public class Main {
             ? "" + dp.getOrDefault(1, -1) : "");
     }
 }
+
+
+

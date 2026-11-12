@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -27,3 +28,6 @@ public class Main {
                             ? mv[0] == 0 ? mv[1] + " 0 " + mv[1] + " " + t : "0 " + mv[1] + " " + t + " " + mv[1] : "" : "").get() : "");
     }
 }
+
+
+

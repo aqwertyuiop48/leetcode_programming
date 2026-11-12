@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 .map(g -> g.stream().map(x -> "0".repeat(4 - x.length()) + x).collect(Collectors.joining(":"))).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

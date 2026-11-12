@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -11,3 +12,6 @@ public class Main {
                 ? (len == 0 ? 0L : ca == 0 && cb == 0 ? len % 2 : ca == 0 || cb == 0 ? len : ca.equals(cb) ? len % 2 : (len + 1) % 2) : 0L).reduce(0L, (x, y) -> x ^ y) != 0 ? "WIN" : "LOSE") : "");
     }
 }
+
+
+

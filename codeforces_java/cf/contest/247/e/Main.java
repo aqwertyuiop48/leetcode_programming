@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -18,3 +19,6 @@ public class Main {
             ? fin[0] == 2 ? "Never" : String.valueOf(tt[0]) : "");
     }
 }
+
+
+

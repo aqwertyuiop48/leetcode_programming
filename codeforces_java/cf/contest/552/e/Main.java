@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,3 +11,6 @@ public class Main {
                 .mapToLong(r -> ev.apply(s.substring(0, l) + ev.apply(s.substring(l, r)) + s.substring(r)))).max().getAsLong() : 0);
     }
 }
+
+
+

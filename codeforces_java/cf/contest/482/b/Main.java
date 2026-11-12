@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.*;
@@ -29,3 +30,6 @@ public class Main {
             ? "YES\n" + IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf(a[i])).collect(Collectors.joining(" ")) : "NO");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.range(0, k).map(r -> Integer.valueOf((int) IntStream.range(0, n / k).filter(j -> a[r + j * k] == 1).count()) instanceof Integer c ? Math.min(c, n / k - c) : 0).sum() : "");
     }
 }
+
+
+

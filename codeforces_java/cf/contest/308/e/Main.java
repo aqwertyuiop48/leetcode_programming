@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -14,3 +15,6 @@ public class Main {
             ? Arrays.stream(path.apply(fin[0])).mapToObj(i -> String.valueOf(s[i][2])).collect(Collectors.joining(" ")) : "");
     }
 }
+
+
+

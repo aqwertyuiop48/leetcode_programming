@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,8 +9,6 @@ public class Main {
                 (v[2] >= v[1] - 1 && v[2] <= 2 * (v[1] + 1)) || (v[3] >= v[0] - 1 && v[3] <= 2 * (v[0] + 1)) ? "YES" : "NO")));
     }
 }
-
-
 
 
 

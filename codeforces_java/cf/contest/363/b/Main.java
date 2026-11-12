@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
             ? IntStream.rangeClosed(0, n - k).boxed().min(Comparator.comparingLong(i -> pre[i + k] - pre[i])).get() + 1 : "");
     }
 }
+
+
+

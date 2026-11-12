@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -13,3 +14,6 @@ public class Main {
             ? IntStream.range(1, x).map(i -> u[i] ? (p[1] = 0) : (++p[1]) % 2).sum() + " " + IntStream.range(1, x).filter(i -> !u[i]).count() : "");
     }
 }
+
+
+

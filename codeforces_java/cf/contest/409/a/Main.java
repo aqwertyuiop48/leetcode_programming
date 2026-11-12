@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? r > 0 ? "TEAM 1 WINS" : r < 0 ? "TEAM 2 WINS" : "TIE" : "");
     }
 }
+
+
+

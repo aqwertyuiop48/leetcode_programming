@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -5,4 +6,6 @@ public class Main {
         Optional.of(new Scanner(System.in).nextLine()).ifPresent(s -> System.out.print(s.toUpperCase()));
     }
 }
+
+
 

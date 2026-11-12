@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -26,3 +27,6 @@ public class Main {
             ? Arrays.stream(ans).mapToObj(x -> x == Integer.MAX_VALUE ? "-1" : String.valueOf(x)).collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

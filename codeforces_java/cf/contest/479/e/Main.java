@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -19,3 +20,6 @@ public class Main {
             ? Arrays.stream(w[k & 1]).asLongStream().sum() % 1000000007L : 0);
     }
 }
+
+
+

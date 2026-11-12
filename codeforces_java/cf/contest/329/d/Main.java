@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -14,4 +15,6 @@ public class Main {
                 : IntStream.range(0, n).mapToObj(r -> IntStream.range(0, n).mapToObj(c -> String.valueOf((char) cell.applyAsInt(r, c))).collect(Collectors.joining())).collect(Collectors.joining("\n")) + "\n1 1") : "");
     }
 }
+
+
 

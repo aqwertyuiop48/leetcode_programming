@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Main {
@@ -39,4 +40,6 @@ public class Main {
             "111111101101000101001101110010001").get(r).charAt(c) : "");
     }
 }
+
+
 

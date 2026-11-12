@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -12,3 +13,6 @@ public class Main {
                 ? IntStream.rangeClosed(0, n).filter(v -> seen[v]).map(v -> Math.abs(pts.get(v)[0]) + Math.abs(pts.get(v)[1])).max().getAsInt() : 0).max().getAsInt() : 0);
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                 ? Arrays.stream(p).map(q -> String.format(Locale.US, "%.9f %.9f", q[0], q[1])).collect(Collectors.joining("\n")) : "" : "");
     }
 }
+
+
+

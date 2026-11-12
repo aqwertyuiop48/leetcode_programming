@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -16,3 +17,6 @@ public class Main {
                 ? new String(IntStream.rangeClosed(1, k).map(e -> p < m - 1 && z[b + 1 + e] - cb[e] <= up && ct[e] == cb[e] || z[b + 1 + e] - ct[e] <= ut - mn ? 'Y' : 'N').toArray(), 0, k) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

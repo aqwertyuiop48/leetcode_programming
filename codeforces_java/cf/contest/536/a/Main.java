@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -10,3 +11,6 @@ public class Main {
                 ? a + (l - 1) * b > t ? "-1" : String.valueOf(LongStream.iterate(1L << 21, d -> d > 0, d -> d >> 1).reduce(l, (r, d) -> r + d <= rmax && (r + d - l + 1) * (2 * a + (l - 1 + r + d - 1) * b) / 2 <= t * m ? r + d : r)) : "").collect(Collectors.joining("\n")) : "");
     }
 }
+
+
+

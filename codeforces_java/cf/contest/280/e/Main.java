@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -33,4 +34,6 @@ public class Main {
             ? Arrays.stream(y).mapToObj(v -> String.format("%.9f", v)).collect(Collectors.joining(" ")) + "\n" + String.format("%.9f", IntStream.range(0, n).mapToDouble(i -> (x[i] - y[i]) * (x[i] - y[i])).sum()) : "");
     }
 }
+
+
 

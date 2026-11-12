@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -8,4 +9,6 @@ public class Main {
             ? c.stream().allMatch(v -> v <= (n + 1) / 2) ? "YES" : "NO" : "");
     }
 }
+
+
 

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -9,3 +10,6 @@ public class Main {
             ? IntStream.rangeClosed(1, 9).allMatch(d -> g.chars().filter(c -> c == 48 + d).count() <= 2L * k) ? "YES" : "NO" : "");
     }
 }
+
+
+

@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -17,3 +18,6 @@ public class Main {
             ? String.format(Locale.US, "%.15f", IntStream.range(0, 1 << m).mapToDouble(mask -> Long.bitCount(d[mask]) / inv[Integer.bitCount(mask)]).sum() / n) : "");
     }
 }
+
+
+

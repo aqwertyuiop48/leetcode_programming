@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.stream.*;
 import java.util.function.*;
@@ -10,7 +11,6 @@ public class Main {
             ? IntStream.iterate(1, i -> i + 1).filter(i -> !st.contains(i)).findFirst().getAsInt() : 0));
     }
 }
-
 
 
 
