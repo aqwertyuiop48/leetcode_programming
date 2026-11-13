@@ -60,13 +60,10 @@ Log in to each site you plan to use before submitting. Submitter prompts for the
 ```bash
 submitter login codechef
 submitter login yandex
-submitter login toph
 submitter login eolymp
-submitter login ucup
 submitter login uoj
+submitter login ucup
 submitter login coderun
-submitter login kep
-submitter login repovive
 ```
 
 You only need to run the login command for the site you are submitting to. Kattis also requires a `.kattisrc` file; download it from [Kattis](https://open.kattis.com/download/kattisrc) and put it in this folder or your home directory. Submitter's saved credentials and the Kattis config are excluded from Git by this folder's `.gitignore`.
@@ -85,35 +82,28 @@ Examples:
 
 ```bash
 # CodeChef
-submitter "https://www.codechef.com/problems/TEST" "Java" "./Main.java"
-
-# Kattis
-submitter "https://open.kattis.com/problems/hello" "Java" "./Main.java"
-
-# Toph
-submitter "https://toph.co/p/add-them-up" "Java" "./Main.java"
+submitter "https://www.codechef.com/problems/TEST" "Java" "./TEST.java"
 
 # Yandex Contest
 submitter "https://contest.yandex.com/contest/3/problems/B/" "Java" "./Main.java"
 eg: submitter "https://contest.yandex.com/contest/90118/problems/A/" "Java" "./Yandex.java"
 
-# Eolymp (archive problem)
-submitter "https://eolymp.com/en/problems/1" "Java" "./Main.java"
-
-# Universal Cup
-submitter "https://contest.ucup.ac/contest/1106/problem/A" "Java" "./Main.java"
+# Eolymp (archive problem) (login using API key from https://eolymp.com/developer)
+submitter "https://eolymp.com/en/problems/2" "Java" "./Eolymp.java"
 
 # UOJ
-submitter "https://uoj.ac/problem/1" "Java" "./Main.java"
+submitter "https://uoj.ac/problem/1" "Java" "./UOJ.java"
 
-# CodeRun
-submitter "https://coderun.yandex.ru/problem/thermal-panels" "Java" "./Main.java"
+# Universal Cup (register from QOJ : https://qoj.ac/user/profile/srcode19 )
+submitter "https://contest.ucup.ac/contest/4576/problem/22881" "Java" "./UCUP.java"
 
-# KEP.uz (archive problem)
-submitter "https://kep.uz/problems/1" "Java" "./Main.java"
+# CodeRun (login with Yandex)
+'''
+- Export your Yandex cookies using the EditThisCookie browser extension on a logged-in yandex.ru tab (https://chromewebstore.google.com/detail/editthiscookie-v3/ojfebgpkimhlhcblbalbfjblapadhbol/reviews)
+- Paste the JSON cookies array when prompted in terminal
+'''
+submitter "https://coderun.yandex.ru/problem/median-out-of-three" "Java" "./CodeRun.java"
 
-# Repovive
-submitter "https://repovive.com/contests/10/problems/A" "Java" "./Main.java"
 ```
 
 For contest problems, use that contest's problem URL (for example, Eolymp or KEP.uz contest URLs). Submitter's README has current platform-specific authentication details and more URL examples: [EgorKulikov/submitter](https://github.com/EgorKulikov/submitter).
