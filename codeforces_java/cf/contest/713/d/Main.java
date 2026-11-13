@@ -15,11 +15,10 @@ public class Main {
             && IntStream.range(0, LA * LB).allMatch(x -> (T[x] = new short[(n - (1 << (x / LB)) + 1) * (m - (1 << (x % LB)) + 1)]) != null)
             && IntStream.range(0, n * m).allMatch(idx -> (T[0][idx] = (short) (all[2 + idx] == 0 ? 0
                 : idx / m == 0 || idx % m == 0 ? 1 : 1 + Math.min(T[0][idx - m - 1], Math.min(T[0][idx - m], T[0][idx - 1])))) >= 0)
-            && IntStream.range(0, LA * LB).skip(1).allMatch(x -> Integer.valueOf(x / LB) instanceof Integer a && Integer.valueOf(x % LB) instanceof Integer b
-                && Integer.valueOf(m - (1 << b) + 1) instanceof Integer cb
-                && (a == 0
-                    ? IntStream.range(0, n).parallel().allMatch(i -> IntStream.range(0, cb).allMatch(j -> (T[x][i * cb + j] = (short) Math.max(T[x - 1][i * (cb + (1 << (b - 1))) + j], T[x - 1][i * (cb + (1 << (b - 1))) + j + (1 << (b - 1))])) >= 0))
-                    : IntStream.range(0, n - (1 << a) + 1).parallel().allMatch(i -> IntStream.range(0, cb).allMatch(j -> (T[x][i * cb + j] = (short) Math.max(T[x - LB][i * cb + j], T[x - LB][(i + (1 << (a - 1))) * cb + j])) >= 0))))
+            && Stream.of(0).peek(z0 -> IntStream.range(1, LB).forEach(x -> IntStream.range(0, n).parallel().forEach(i -> IntStream.range(0, m - (1 << x) + 1).forEach(j -> T[x][i * (m - (1 << x) + 1) + j] = (short) Math.max(T[x - 1][i * (m - (1 << (x - 1)) + 1) + j], T[x - 1][i * (m - (1 << (x - 1)) + 1) + j + (1 << (x - 1))])))))
+                .findFirst().isPresent()
+            && Stream.of(0).peek(z0 -> IntStream.range(LB, LA * LB).forEach(x -> IntStream.range(0, T[x].length).parallel().forEach(c -> T[x][c] = (short) Math.max(T[x - LB][c], T[x - LB][c + (1 << (x / LB - 1)) * (m - (1 << (x % LB)) + 1)]))))
+                .findFirst().isPresent()
             && new int[Math.max(n, m) + 2] instanceof int[] lg
             && IntStream.range(2, lg.length).allMatch(i -> (lg[i] = lg[i / 2] + 1) > 0)
             && ((ToIntFunction<int[]>) q -> Integer.valueOf(lg[q[2] - q[0] + 1]) instanceof Integer a && Integer.valueOf(lg[q[3] - q[1] + 1]) instanceof Integer b

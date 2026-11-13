@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.*;
 import java.util.stream.*;
 
 public class Main {
@@ -28,6 +29,8 @@ public class Main {
             && Arrays.stream(cs).mapToInt(v -> (int) (v >> 46)).toArray() instanceof int[] cX && Arrays.stream(cs).mapToInt(v -> (int) ((v >> 34) & 2047)).toArray() instanceof int[] cY
             && Arrays.stream(cs).mapToInt(v -> (int) ((v >> 2) & 0xFFFFFFFFL)).toArray() instanceof int[] cA && Arrays.stream(cs).mapToInt(v -> 1 - 2 * (int) (v & 3)).toArray() instanceof int[] cS
             && new long[A + 1] instanceof long[] res && new int[n + 2] instanceof int[] rs && new long[2112] instanceof long[] inP && new long[40] instanceof long[] blkP
+            && ((IntBinaryOperator) (lo, hi) -> IntStream.range(lo, hi).filter(j -> Integer.valueOf((int) (sk[j] >> 30 & 2047)) instanceof Integer y && Long.valueOf(sk[j] & 1073741823L) instanceof Long w
+                        && IntStream.range(y, (y >> 6 << 6) + 64).filter(i -> (inP[i] += w) < 0).count() + IntStream.range((y >> 6) + 1, 34).filter(b -> (blkP[b] += w) < 0).count() < 0).map(j -> 0).sum()) instanceof IntBinaryOperator add
             && IntStream.range(0, k).filter(g -> IntStream.range(0, A).anyMatch(a -> stt[g][a] == 1)
                 && Integer.valueOf(gs[g]) instanceof Integer s && Integer.valueOf(gs[g + 1]) instanceof Integer e
                 && IntStream.range(0, n + 2).filter(i -> (rs[i] = 0) != 0).count() >= 0
@@ -36,11 +39,10 @@ public class Main {
                 && IntStream.range(0, 2112).filter(i -> (inP[i] = 0) != 0).count() >= 0
                 && IntStream.range(0, 40).filter(i -> (blkP[i] = 0) != 0).count() >= 0
                 && Integer.valueOf(pp[3] = s) != null
-                && IntStream.range(0, C).filter(c -> Integer.valueOf(s + rs[cX[c]]) instanceof Integer up
-                    && (pp[3] < up ? IntStream.range(pp[3], up).filter(j -> Integer.valueOf((int) (sk[j] >> 30 & 2047)) instanceof Integer y && Long.valueOf(sk[j] & 1073741823L) instanceof Long w
-                        && IntStream.range(y, (y >> 6 << 6) + 64).filter(i -> (inP[i] += w) < 0).count() + IntStream.range((y >> 6) + 1, 34).filter(b -> (blkP[b] += w) < 0).count() < 0).count() : 0) >= 0
-                    && Integer.valueOf(pp[3] = Math.max(pp[3], up)) != null
-                    && (stt[g][cA[c]] == 1 ? (res[cA[c]] += cS[c] * (blkP[cY[c] >> 6] + inP[cY[c]])) : 0L) == Long.MIN_VALUE).count() >= 0).count() >= 0
+                && IntStream.range(0, C).filter(c -> (pp[3] < s + rs[cX[c]] ? add.applyAsInt(pp[3], s + rs[cX[c]]) : 0) >= 0
+                    && (pp[3] = Math.max(pp[3], s + rs[cX[c]])) >= 0
+                    && (stt[g][cA[c]] == 1 ? (res[cA[c]] += cS[c] * (blkP[cY[c] >> 6] + inP[cY[c]])) : 0L) == Long.MIN_VALUE).count() >= 0
+                && Boolean.TRUE).count() >= 0
             ? LongStream.range(0, A).mapToObj(a -> String.valueOf(res[(int) a])).collect(Collectors.joining("\n")) : "");
     }
 }

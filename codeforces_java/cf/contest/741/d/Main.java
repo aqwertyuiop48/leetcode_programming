@@ -1,0 +1,21 @@
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        System.out.println(new StringTokenizer(new String(System.in.readAllBytes())) instanceof StringTokenizer st && (Integer) Integer.parseInt(st.nextToken()) instanceof Integer n && new int[n + 1] instanceof int[] par && new int[n + 1] instanceof int[] wb && new int[n + 1] instanceof int[] head && new int[n + 1] instanceof int[] nxt && new int[n + 1] instanceof int[] q && new int[n + 1] instanceof int[] dep && new int[n + 1] instanceof int[] val && new int[n + 1] instanceof int[] sz && new int[n + 1] instanceof int[] hv && new int[n + 1] instanceof int[] tin && new int[n + 1] instanceof int[] vo && new int[n + 1] instanceof int[] dO && new int[n + 1] instanceof int[] ord && new int[n + 1] instanceof int[] seq && new int[n + 1] instanceof int[] ans && new int[1 << 22] instanceof int[] tb && new int[]{1} instanceof int[] cnt && new int[1] instanceof int[] off && new int[1] instanceof int[] cd && new IntBinaryOperator[1] instanceof IntBinaryOperator[] ph
+                && IntStream.rangeClosed(2, n).filter(v -> (par[v] = Integer.parseInt(st.nextToken())) > 0 && (wb[v] = 1 << (st.nextToken().charAt(0) - 'a')) > 0 && (nxt[v] = head[par[v]]) >= 0 && (head[par[v]] = v) > 0).count() >= 0
+                && (q[0] = 1) > 0
+                && IntStream.range(0, n).filter(i -> IntStream.iterate(head[q[i]], c -> nxt[c]).takeWhile(c -> c != 0).filter(c -> (dep[c] = dep[q[i]] + 1) >= 0 && (val[c] = val[q[i]] ^ wb[c]) >= 0 && (q[cnt[0]++] = c) > 0).count() >= 0).count() >= 0
+                && IntStream.rangeClosed(1, n).filter(i -> (sz[i] = 1) > 0).count() >= 0
+                && IntStream.range(1, n).filter(k -> (Integer) q[n - k] instanceof Integer x && (sz[par[x]] += sz[x]) > 0 && (sz[x] > sz[hv[par[x]]] ? (hv[par[x]] = x) > 0 : true)).count() >= 0
+                && (ord[0] = 1) > 0
+                && IntStream.range(0, n).filter(i -> (Integer) q[i] instanceof Integer x && (off[0] = tin[x] + 1) > 0 && IntStream.iterate(head[x], c -> nxt[c]).takeWhile(c -> c != 0).filter(c -> c != hv[x]).filter(c -> (tin[c] = off[0]) >= 0 && (off[0] += sz[c]) > 0 && (ord[tin[c]] = c) > 0 && (vo[tin[c]] = val[c]) >= 0 && (dO[tin[c]] = dep[c]) >= 0).count() >= 0 && (hv[x] == 0 || ((tin[hv[x]] = tin[x] + sz[x] - sz[hv[x]]) >= 0 && (ord[tin[hv[x]]] = hv[x]) > 0 && (vo[tin[hv[x]]] = val[hv[x]]) >= 0 && (dO[tin[hv[x]]] = dep[hv[x]]) >= 0))).count() >= 0
+                && IntStream.rangeClosed(1, n).filter(v -> (seq[tin[v] - dep[v] + sz[v] - 1] = v) > 0).count() >= 0
+                && IntStream.range(0, 1 << 22).filter(i -> (tb[i] = -1000000000) < 0).count() >= 0
+                && (ph[0] = (v, c) -> (Integer) (c == v ? 1 : sz[c]) instanceof Integer len && (ans[v] = Math.max(ans[v], (cd[0] = dep[v]) >= 0 ? IntStream.range(tin[c], tin[c] + len).map(i -> Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(Math.max(tb[vo[i]], tb[vo[i] ^ 1]), tb[vo[i] ^ 2]), tb[vo[i] ^ 4]), tb[vo[i] ^ 8]), tb[vo[i] ^ 16]), tb[vo[i] ^ 32]), tb[vo[i] ^ 64]), tb[vo[i] ^ 128]), tb[vo[i] ^ 256]), tb[vo[i] ^ 512]), tb[vo[i] ^ 1024]), tb[vo[i] ^ 2048]), tb[vo[i] ^ 4096]), tb[vo[i] ^ 8192]), tb[vo[i] ^ 16384]), tb[vo[i] ^ 32768]), tb[vo[i] ^ 65536]), tb[vo[i] ^ 131072]), tb[vo[i] ^ 262144]), tb[vo[i] ^ 524288]), tb[vo[i] ^ 1048576]), tb[vo[i] ^ 2097152]) + dO[i] - 2 * cd[0]).max().orElse(0) : 0)) >= 0 && IntStream.range(tin[c], tin[c] + len).filter(i -> (tb[vo[i]] = Math.max(tb[vo[i]], dO[i])) >= 0).count() >= 0 ? 1 : 0) instanceof IntBinaryOperator
+                && IntStream.range(0, n).filter(i -> (Integer) seq[i + 1 - 1] instanceof Integer v && ph[0].applyAsInt(v, v) >= 0 && IntStream.iterate(head[v], c -> nxt[c]).takeWhile(c -> c != 0).filter(c -> c != hv[v] && ph[0].applyAsInt(v, c) >= 0).count() >= 0 && (v == 1 || (ans[par[v]] = Math.max(ans[par[v]], ans[v])) >= 0) && (v == 1 || hv[par[v]] == v || IntStream.range(tin[v], tin[v] + sz[v]).filter(z -> (tb[vo[z]] = -1000000000) < 0).count() >= 0)).count() >= 0
+                ? IntStream.rangeClosed(1, n).mapToObj(i -> "" + ans[i]).collect(Collectors.joining(" ")) : "");
+    }
+}
