@@ -7,8 +7,8 @@ public class Main {
             && Integer.valueOf(st.nextToken()) instanceof Integer n
             && Integer.valueOf(st.nextToken()) instanceof Integer k
             && new long[2 * n] instanceof long[] ev
-            && IntStream.range(0, n).allMatch(i -> (ev[2 * i] = 2L * Long.parseLong(st.nextToken()) + 1) > 0
-                && (ev[2 * i + 1] = 2L * (Long.parseLong(st.nextToken()) + 1)) > 0)
+            && IntStream.range(0, n).allMatch(i -> (ev[2 * i] = 2L * Long.parseLong(st.nextToken()) + 1) != 0
+                && (ev[2 * i + 1] = 2L * (Long.parseLong(st.nextToken()) + 1)) > Long.MIN_VALUE)
             && Arrays.stream(ev).sorted().toArray() instanceof long[] so
             && new long[n + 1] instanceof long[] fact
             && new long[n + 1] instanceof long[] ifact
@@ -24,7 +24,7 @@ public class Main {
                 && (s[2] = (s[2] + (s[1] >= k
                     ? fact[(int) s[1]] * ifact[k] % 1000000007L * ifact[(int) s[1] - k] % 1000000007L * ((pos - s[0]) % 1000000007L) % 1000000007L
                     : 0)) % 1000000007L) >= 0
-                && (s[0] = pos) >= 0
+                && (s[0] = pos) > Long.MIN_VALUE
                 && (s[1] += (so[i] & 1) == 1 ? 1 : -1) >= 0)
             ? s[2] : "");
     }

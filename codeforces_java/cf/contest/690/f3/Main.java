@@ -12,9 +12,9 @@ public class Main {
             ? IntStream.range(0, zz).mapToObj(tc -> Integer.valueOf(st.nextToken()) instanceof Integer n
                 && Integer.valueOf(st.nextToken()) instanceof Integer kk
                 && Integer.valueOf(st.nextToken()) instanceof Integer m1
-                && IntStream.range(0, 2 * m1).map(q -> Integer.parseInt(st.nextToken()) - 1).toArray() instanceof int[] ed1
+                && IntStream.range(0, 2 * m1).map(q -> Integer.parseInt(st.nextToken()) - 1).toArray() instanceof int[] rw1 && IntStream.range(0, n).map(q -> -1).toArray() instanceof int[] mq1 && new int[1] instanceof int[] cq1 && Arrays.stream(rw1).map(x -> mq1[x] >= 0 ? mq1[x] : (mq1[x] = cq1[0]++)).toArray() instanceof int[] ed1
                 && Integer.valueOf(st.nextToken()) instanceof Integer m2
-                && IntStream.range(0, 2 * m2).map(q -> Integer.parseInt(st.nextToken()) - 1).toArray() instanceof int[] ed2
+                && IntStream.range(0, 2 * m2).map(q -> Integer.parseInt(st.nextToken()) - 1).toArray() instanceof int[] rw2 && IntStream.range(0, n).map(q -> -1).toArray() instanceof int[] mq2 && new int[1] instanceof int[] cq2 && Arrays.stream(rw2).map(x -> mq2[x] >= 0 ? mq2[x] : (mq2[x] = cq2[0]++)).toArray() instanceof int[] ed2
                 && Integer.valueOf(n - 1) instanceof Integer vv
                 ? (vv == 0 ? "YES"
                 : ((Function<int[], int[][]>) ed -> new int[vv] instanceof int[] dg

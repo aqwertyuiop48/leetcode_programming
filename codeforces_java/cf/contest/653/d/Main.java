@@ -21,7 +21,7 @@ public class Main {
                         && IntStream.iterate(n - 1, v -> v != 0, v -> prev[v]).peek(v -> cap[v][prev[v]] += (cap[prev[v]][v] -= bn) * 0 + bn).count() + (fl[0] += bn) < 0).count() == 0
                 && fl[0] >= x) instanceof DoublePredicate ok
             && new double[]{0, 1000001} instanceof double[] d
-            && IntStream.range(0, 50).filter(i -> Double.valueOf((d[0] + d[1]) / 2) instanceof Double mid && (ok.test(mid) ? (d[0] = mid) < 0 : (d[1] = mid) < 0)).count() == 0
+            && IntStream.range(0, 64).filter(i -> Double.valueOf((d[0] + d[1]) / 2) instanceof Double mid && (ok.test(mid) ? (d[0] = mid) < 0 : (d[1] = mid) < 0)).count() == 0
             ? String.format(Locale.ROOT, "%.9f", x * d[0]) : "");
     }
 }
