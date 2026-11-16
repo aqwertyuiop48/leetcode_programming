@@ -29,7 +29,7 @@ public class Main {
             && new int[2 * n + 5] instanceof int[] stack && new int[]{1} instanceof int[] sp && (stack[0] = 0) == 0
             && ((IntUnaryOperator) r -> (ord[0] = r) >= 0 && (par[r] = -1) < 0 && (sz[r] = 1) > 0 && (len[r] = 0) == 0 && (dn[r] = 0) == 0 && (up[r] = 0) == 0
                 && (br[r] = r) >= 0 && (tl[0] = 1) > 0
-                && IntStream.range(0, n).takeWhile(i -> i < tl[0]).allMatch(i -> IntStream.iterate(head[ord[i]], e -> e >= 0, e -> nxt[e])
+                && IntStream.iterate(0, i -> i < tl[0], i -> i + 1).allMatch(i -> IntStream.iterate(head[ord[i]], e -> e >= 0, e -> nxt[e])
                     .filter(e -> to[e] != par[ord[i]] && !removed[to[e]])
                     .allMatch(e -> (par[to[e]] = ord[i]) >= 0 && (sz[to[e]] = 1) > 0 && (len[to[e]] = len[ord[i]] + 1) > 0
                         && (dn[to[e]] = (dn[ord[i]] * 10 + dg[e >> 1]) % M) >= 0 && (up[to[e]] = (dg[e >> 1] * pw[len[ord[i]]] + up[ord[i]]) % M) >= 0

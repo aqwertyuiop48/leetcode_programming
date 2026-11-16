@@ -31,18 +31,18 @@ public class Main {
             && IntStream.range(0, NB).filter(t -> (T[NB + t] = build.apply(IntStream.range(t * B, Math.min(m, t * B + B)).map(i -> sPos[i]).sorted().toArray())) == null).count() == 0
             && IntStream.range(1, NB).map(i -> NB - i).filter(nd -> (T[nd] = build.apply(IntStream.concat(Arrays.stream(T[2 * nd]), Arrays.stream(T[2 * nd + 1])).sorted().toArray())) == null).count() == 0
             && Integer.valueOf((m + 63) / 64 + 1) instanceof Integer W
-            ? IntStream.range(0, 4).parallel().mapToObj(ch -> mk.get() instanceof IntUnaryOperator[] qp && new long[W] instanceof long[] bits && new int[2] instanceof int[] st
+            ? IntStream.range(0, 4).parallel().mapToObj(ch -> mk.get() instanceof IntUnaryOperator[] qp && new long[W] instanceof long[] bits && new long[(W >> 6) + 1] instanceof long[] sm && new int[2] instanceof int[] st
                 ? IntStream.range(q * ch / 4, q * (ch + 1) / 4).mapToObj(j -> Integer.valueOf(v[3 + 3 * m + 2 * j] - 1) instanceof Integer l && Integer.valueOf(v[4 + 3 * m + 2 * j] - 1) instanceof Integer r
                     && qp[0].applyAsInt(0) >= 0 && Integer.valueOf(l / B) instanceof Integer bl && Integer.valueOf(r / B) instanceof Integer br
-                    && IntStream.rangeClosed(l, bl == br ? r : bl * B + B - 1).filter(i -> (bits[sPos[i] >> 6] |= 1L << sPos[i]) == 0).count() == 0
-                    && IntStream.rangeClosed(br * B, bl == br ? -1 : r).filter(i -> (bits[sPos[i] >> 6] |= 1L << sPos[i]) == 0).count() == 0
+                    && IntStream.rangeClosed(l, bl.equals(br) ? r : bl * B + B - 1).filter(i -> ((bits[sPos[i] >> 6] |= 1L << sPos[i]) | (sm[sPos[i] >> 12] |= 1L << (sPos[i] >> 6))) == 0).count() == 0
+                    && IntStream.rangeClosed(br * B, bl.equals(br) ? -1 : r).filter(i -> ((bits[sPos[i] >> 6] |= 1L << sPos[i]) | (sm[sPos[i] >> 12] |= 1L << (sPos[i] >> 6))) == 0).count() == 0
                     && (st[0] = NB + bl + 1) > 0 && (st[1] = NB + br) > 0
-                    && IntStream.generate(() -> 0).takeWhile(z -> st[0] < st[1] && ((st[0] & 1) == 1 ? Arrays.stream(T[st[0]++]).filter(s -> (bits[s >> 6] |= 1L << s) == 0).count() == 0 : true)
-                        && ((st[1] & 1) == 1 ? Arrays.stream(T[--st[1]]).filter(s -> (bits[s >> 6] |= 1L << s) == 0).count() == 0 : true)
+                    && IntStream.generate(() -> 0).takeWhile(z -> st[0] < st[1] && ((st[0] & 1) == 1 ? Arrays.stream(T[st[0]++]).filter(s -> ((bits[s >> 6] |= 1L << s) | (sm[s >> 12] |= 1L << (s >> 6))) == 0).count() == 0 : true)
+                        && ((st[1] & 1) == 1 ? Arrays.stream(T[--st[1]]).filter(s -> ((bits[s >> 6] |= 1L << s) | (sm[s >> 12] |= 1L << (s >> 6))) == 0).count() == 0 : true)
                         && (st[0] >>= 1) >= 0 && (st[1] >>= 1) >= 0).count() >= 0
-                    && Integer.valueOf(IntStream.range(0, W).flatMap(w -> LongStream.iterate(bits[w], bb -> bb != 0, bb -> bb & (bb - 1)).mapToInt(bb -> (w << 6) + Long.numberOfTrailingZeros(bb)))
+                    && Integer.valueOf(IntStream.range(0, sm.length).flatMap(u -> LongStream.iterate(sm[u], bb -> bb != 0, bb -> bb & (bb - 1)).mapToInt(bb -> (u << 6) + Long.numberOfTrailingZeros(bb))).flatMap(w -> LongStream.iterate(bits[w], bb -> bb != 0, bb -> bb & (bb - 1)).mapToInt(bb -> (w << 6) + Long.numberOfTrailingZeros(bb)))
                         .filter(c -> qp[1].applyAsInt(c) == 2).map(c -> ew[c]).findFirst().orElse(-1)) instanceof Integer ans
-                    && IntStream.range(0, W).filter(w -> (bits[w] = 0L) < 0).count() == 0 ? String.valueOf(ans) : "").collect(Collectors.joining(String.valueOf((char) 10))) : "")
+                    && IntStream.range(0, sm.length).filter(u -> LongStream.iterate(sm[u], bb -> bb != 0, bb -> bb & (bb - 1)).filter(bb -> (bits[(u << 6) + Long.numberOfTrailingZeros(bb)] = 0L) < 0).count() > 0 || (sm[u] = 0L) < 0).count() == 0 ? String.valueOf(ans) : "").collect(Collectors.joining(String.valueOf((char) 10))) : "")
                 .filter(s -> s.length() > 0).collect(Collectors.joining(String.valueOf((char) 10))) : "");
     }
 }

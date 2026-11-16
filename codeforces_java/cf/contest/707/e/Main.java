@@ -6,9 +6,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(System.in.readAllBytes() instanceof byte[] raw && Integer.valueOf(raw.length) instanceof Integer len
             && new int[len / 2 + 2] instanceof int[] t && new int[4] instanceof int[] f
-            && IntStream.range(0, len + 1).map(i -> Integer.valueOf(i < len ? raw[i] : 32) instanceof Integer c
-                ? (c >= 48 && c <= 57 ? (f[3] = f[3] * 10 + c - 48) + (f[1] = 1) : (f[1] == 1 ? (t[f[2]++] = f[0] == 1 ? -f[3] : f[3]) + (f[3] = 0) + (f[0] = 0) + (f[1] = 0) : 0)
-                    + (c == 45 ? (f[0] = 1) : 0) + (c == 65 ? (t[f[2]++] = -1) : 0) + (c == 87 ? (t[f[2]++] = -2) : 0)) * 0 : 0).sum() == 0
+            && IntStream.range(0, len + 1).map(i -> i < len ? raw[i] : 32).map(c -> (c >= 48 && c <= 57 ? (f[3] = f[3] * 10 + c - 48) + (f[1] = 1) : (f[1] == 1 ? (t[f[2]++] = f[0] == 1 ? -f[3] : f[3]) + (f[3] = 0) + (f[0] = 0) + (f[1] = 0) : 0)
+                    + (c == 45 ? (f[0] = 1) : 0) + (c == 65 ? (t[f[2]++] = -1) : 0) + (c == 87 ? (t[f[2]++] = -2) : 0)) * 0).sum() == 0
             && Integer.valueOf(f[2]) instanceof Integer N && Integer.valueOf(t[0]) instanceof Integer n && Integer.valueOf(t[1]) instanceof Integer m && Integer.valueOf(t[2]) instanceof Integer k
             && new int[k + 1] instanceof int[] gs && new long[N / 3 + 2] instanceof long[] keys && new int[4] instanceof int[] pp && Integer.valueOf(pp[0] = 3) != null
             && IntStream.range(0, k).filter(g -> Integer.valueOf(t[pp[0]]) instanceof Integer ln && (gs[g + 1] = gs[g] + ln) >= 0

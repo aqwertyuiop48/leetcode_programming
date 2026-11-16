@@ -25,13 +25,13 @@ public class Main {
             && new int[n + 2] instanceof int[] endn && new int[raw.length] instanceof int[] tinAt
             && IntStream.rangeClosed(1, n).filter(i -> (endn[i] = pnAt[ts[1 + i] + tl[1 + i] - 1]) < 0).count() == 0
             && IntStream.range(0, raw.length).filter(p -> (tinAt[p] = tin[pnAt[p]]) < 0).count() == 0
-            && new int[q] instanceof int[] qL && new int[q] instanceof int[] qR && new int[q] instanceof int[] qK && new int[q] instanceof int[] ans
+            && new int[q] instanceof int[] qL && new int[q] instanceof int[] qR && new int[q] instanceof int[] qK && new long[q] instanceof long[] ans
             && new int[n + 2] instanceof int[] head && new int[2 * q] instanceof int[] nxt && new int[n + 2] instanceof int[] headK && new int[q] instanceof int[] nxtQ
             && IntStream.range(0, q).filter(j -> (qL[j] = num.applyAsInt(n + 2 + 3 * j)) < 0 | (qR[j] = num.applyAsInt(n + 3 + 3 * j)) < 0 | (qK[j] = num.applyAsInt(n + 4 + 3 * j)) < 0).count() == 0
             && IntStream.range(0, q).filter(j -> tl[1 + qK[j]] > B
                 ? (nxtQ[j] = headK[qK[j]]) >= 0 & (headK[qK[j]] = j + 1) > 0
                 : (nxt[2 * j] = head[qR[j]]) >= 0 & (head[qR[j]] = 2 * j + 1) > 0 & (qL[j] == 1 || (nxt[2 * j + 1] = head[qL[j] - 1]) >= 0 & (head[qL[j] - 1] = 2 * j + 2) > 0)).count() >= 0
-            && new int[T] instanceof int[] c2 && new int[n + 2] instanceof int[] pref
+            && new int[T] instanceof int[] c2 && new long[n + 2] instanceof long[] pref
             && IntStream.rangeClosed(1, n).filter(k -> tl[1 + k] > B && headK[k] != 0
                 && Stream.of(0).peek(z -> Arrays.fill(c2, 0)).findFirst().isPresent()
                 && IntStream.range(ts[1 + k], ts[1 + k] + tl[1 + k]).filter(p -> ++c2[pnAt[p]] < 0).count() == 0

@@ -17,14 +17,14 @@ public class Main {
                 && Integer.valueOf(tail[0]) instanceof Integer c0 && (vis[s] = true) && (q[tail[0]++] = s) > 0 && (tail[1] = c0) >= 0
                 && (IntStream.iterate(0, z -> tail[1] < tail[0], z -> z + 1).allMatch(z -> Integer.valueOf(q[tail[1]++]) instanceof Integer u
                     && IntStream.iterate(head[u], ed -> ed >= 0, ed -> nxt[ed]).allMatch(ed -> Integer.valueOf(to[ed]) instanceof Integer v
-                        && (vis[v] ? new long[]{d[u] ^ d[v] ^ wt[ed]} instanceof long[] x
-                            && (x[0] == 0 || IntStream.iterate(59, b -> b >= 0, b -> b - 1).allMatch(b -> ((x[0] >> b & 1) == 0)
+                        && (vis[v] ? (ed & 1) == 1 || new long[]{d[u] ^ d[v] ^ wt[ed]} instanceof long[] x
+                            && (x[0] == 0 || IntStream.iterate(59, b -> b >= 0 && x[0] != 0, b -> b - 1).allMatch(b -> ((x[0] >> b & 1) == 0)
                                 || (bs[b] != 0 ? (x[0] ^= bs[b]) >= 0 : !((bs[b] = x[0]) >= 0 && ++r[0] > 0 && (orr[0] |= x[0]) >= 0))) || true)
                             : (vis[v] = true) && (d[v] = d[u] ^ wt[ed]) >= 0 && (q[tail[0]++] = v) > 0))) || true)
                 && Long.valueOf(tail[0] - c0) instanceof Long sz
-                && ((IntToLongFunction) b -> IntStream.range(c0, tail[0]).filter(i -> (d[q[i]] >> b & 1) == 1).count()) instanceof IntToLongFunction ones
-                && (ans[0] = (ans[0] + IntStream.range(0, 60).mapToLong(b -> ((orr[0] >> b & 1) == 1 ? (sz * (sz - 1) / 2 % 1000000007L) * ((1L << (r[0] - 1)) % 1000000007L) % 1000000007L
-                    : ones.applyAsLong(b) * (sz - ones.applyAsLong(b)) % 1000000007L * ((1L << r[0]) % 1000000007L) % 1000000007L) * ((1L << b) % 1000000007L) % 1000000007L).sum()) % 1000000007L) >= 0)
+                && new long[60] instanceof long[] cn && (sz < 2 || IntStream.range(c0, tail[0]).allMatch(i -> IntStream.range(0, 60).allMatch(b -> (cn[b] += d[q[i]] >> b & 1) >= 0)))
+                && (sz < 2 || (ans[0] = (ans[0] + IntStream.range(0, 60).mapToLong(b -> ((orr[0] >> b & 1) == 1 ? (sz * (sz - 1) / 2 % 1000000007L) * ((1L << (r[0] - 1)) % 1000000007L) % 1000000007L
+                    : Long.valueOf(cn[b]) instanceof Long o1 ? o1 * (sz - o1) % 1000000007L * ((1L << r[0]) % 1000000007L) % 1000000007L : 0L) * ((1L << b) % 1000000007L) % 1000000007L).sum()) % 1000000007L) >= 0))
                 )
             ? ans[0] : "");
     }

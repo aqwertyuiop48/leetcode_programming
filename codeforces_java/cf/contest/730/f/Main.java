@@ -21,7 +21,7 @@ public class Main {
                 && Stream.of(0).peek(z -> Arrays.fill(cur, 1 << 29)).findFirst().isPresent()
                 && IntStream.rangeClosed(0, Math.min(cap, jr)).filter(j -> (cur[j] = Math.min(cur[j], a - j + prev[Math.min((a - j) / 10, jn)])) >= 0).count() >= 0
                 && IntStream.rangeClosed(cap + 1, jr).filter(j -> (cur[j] = Math.min(cur[j], a - cap + prev[Math.min(j - cap + (a - cap) / 10, jn)])) >= 0).count() >= 0
-                && (a < 10 || IntStream.iterate(s, x -> x <= cap, x -> x + 10).filter(x -> IntStream.rangeClosed(x, jr).filter(j -> (cur[j] = Math.min(cur[j], a - x + prev[Math.min(j - x + (a - x) / 10, jn)])) >= 0).count() >= 0).count() >= 0)
+                && (a < 10 || IntStream.iterate(s, x -> x <= cap, x -> x + 10).filter(x -> (jr > 8192 ? IntStream.rangeClosed(x, jr).parallel() : IntStream.rangeClosed(x, jr)).filter(j -> (cur[j] = Math.min(cur[j], a - x + prev[Math.min(j - x + (a - x) / 10, jn)])) >= 0).count() >= 0).count() >= 0)
                 && pack.test(i, cur) && (hold[0] = cur) != null)
             && ((IntBinaryOperator) ((row, idx) -> g0[row] - (cum[row][idx >> 6] + Long.bitCount(bits[row][idx >> 6] & ((1L << (idx & 63)) - 1))))) instanceof IntBinaryOperator gv
             && new int[]{b} instanceof int[] st && new StringBuilder() instanceof StringBuilder sb && new long[]{0} instanceof long[] tot

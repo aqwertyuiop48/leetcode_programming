@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -10,6 +11,7 @@ public class Main {
             && Long.valueOf(Math.min(ca, cb)) instanceof Long c0 && Long.valueOf(Math.max(ca, cb)) instanceof Long c1
             && ((LongBinaryOperator) (m, k) -> m < k ? 0L : Stream.of(new long[]{1}).peek(res -> LongStream.range(0, Math.min(k, m - k)).allMatch(t ->
                 (res[0] = Math.min(res[0] * (m - t) / (t + 1), 400000000L)) >= 0 || true)).findFirst().get()[0]) instanceof LongBinaryOperator bin
+            && ((LongBinaryOperator) (m, k) -> m < k ? 0L : LongStream.range(0, Math.min(k, m - k)).boxed().reduce(BigInteger.ONE, (r, t) -> r.multiply(BigInteger.valueOf(m - t)).divide(BigInteger.valueOf(t + 1)), BigInteger::multiply).longValue()) instanceof LongBinaryOperator binx
             && ((LongUnaryOperator) tt -> LongStream.range(0, 40).filter(j -> j * c1 < tt).map(j -> bin.applyAsLong((tt - j * c1 - 1) / c0 + j + 1, j + 1)).sum()) instanceof LongUnaryOperator cnt
             && new long[]{0, 40 * c1} instanceof long[] bs
             && IntStream.range(0, 50).allMatch(z -> Long.valueOf((bs[0] + bs[1]) / 2) instanceof Long mid
@@ -17,7 +19,7 @@ public class Main {
             && Long.valueOf(bs[0]) instanceof Long tT
             && Long.valueOf(cnt.applyAsLong(tT)) instanceof Long full
             ? LongStream.range(0, 40).filter(j -> j * c1 < tT).map(j -> Long.valueOf((tT - j * c1 - 1) / c0) instanceof Long im
-                ? c0 * (j + 1) * bin.applyAsLong(im + j + 1, j + 2) + j * c1 * bin.applyAsLong(im + j + 1, j + 1) : 0L).sum()
+                ? c0 * (j + 1) * binx.applyAsLong(im + j + 1, j + 2) + j * c1 * binx.applyAsLong(im + j + 1, j + 1) : 0L).sum()
                 + (c0 + c1) * full + (n - 1 - full) * (tT + c0 + c1) : "");
     }
 }

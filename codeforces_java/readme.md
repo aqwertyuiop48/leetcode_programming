@@ -70,6 +70,8 @@ Steps: (To do in Github codespace)
  470:A 470:B 470:C 470:D 470:E 470:F 470:G 470:H
  530:A 530:B 530:C 530:D 530:E 530:F 530:G 530:H 530:I
  531:A 531:B 531:C 531:D 531:E 531:F 531:G 531:H 531:I
+ 661
+ 683
 
  ### Not able to submit now / Not allowed to view the contest
  206:A1 206:A2 206:A3 206:B1 206:B2 206:B3 206:C1 206:C2 206:C3
