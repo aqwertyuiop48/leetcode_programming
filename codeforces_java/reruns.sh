@@ -9,3 +9,6 @@ for spec in 653:D 655:G 656:A 656:G 663:D 679:D 679:E 685:E 687:D 689:E 690:A2 6
 
 # 690 E1/E2 (Photographs, previously missing Main.java; image-input problems, data from assets.codeforces.com/files/690/*_contestant_package.zip)
 for spec in 690:E1 690:E2; do contest=${spec%:*}; problem=${spec#*:}; source="cf/contest/$contest/$(echo "$problem" | tr "[:upper:]" "[:lower:]")/Main.java"; [ -f "$source" ] || continue; ./cf_java.sh "$contest" "$problem" all 87; done
+
+# final pass: fixed from pyforces_737_to_750 + newly added Main.java files
+for spec in 741:E 744:E 746:G 642:A 2092:B 2092:C 2092:D 2092:E 2092:F 532:A 532:D 541:B 541:D 541:F 562:C 562:G; do contest=${spec%:*}; problem=${spec#*:}; source="cf/contest/$contest/$(echo "$problem" | tr "[:upper:]" "[:lower:]")/Main.java"; [ -f "$source" ] || continue; ./cf_java.sh "$contest" "$problem" all 87; done

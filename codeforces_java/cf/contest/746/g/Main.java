@@ -8,8 +8,8 @@ public class Main {
             && new int[t + 2] instanceof int[] a && Integer.valueOf(a[0] = 1) instanceof Integer one
             && IntStream.rangeClosed(1, t).filter(i -> (a[i] = Integer.parseInt(tk.nextToken())) < 0).count() >= 0
             && new int[t + 1] instanceof int[] p && IntStream.range(0, t).filter(i -> (p[i] = Math.min(a[i], a[i + 1])) < 0).count() >= 0
-            && Long.valueOf(IntStream.range(1, t).mapToLong(i -> a[i] - p[i]).sum() + a[t] + (a[1] == 1 ? 1 : 0)) instanceof Long lo
-            && Long.valueOf(IntStream.range(1, t).mapToLong(i -> a[i] - 1).sum() + a[t] + (a[1] == 1 ? 1 : 0)) instanceof Long hi
+            && Long.valueOf(IntStream.range(1, t).mapToLong(i -> a[i] - p[i]).sum() + a[t]) instanceof Long lo
+            && Long.valueOf(IntStream.range(1, t).mapToLong(i -> a[i] - 1).sum() + a[t]) instanceof Long hi
             && k >= lo && k <= hi
             && new long[]{k - lo} instanceof long[] ex
             && IntStream.range(1, t).filter(i -> Integer.valueOf((int) Math.min(ex[0], p[i] - 1)) instanceof Integer d && (p[i] -= d) < 0 | (ex[0] -= d) < 0).count() >= 0
