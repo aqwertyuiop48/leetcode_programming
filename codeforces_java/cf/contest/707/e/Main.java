@@ -5,7 +5,7 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(System.in.readAllBytes() instanceof byte[] raw && Integer.valueOf(raw.length) instanceof Integer len
-            && new int[len / 2 + 2] instanceof int[] t && new int[4] instanceof int[] f
+            && new int[2 + (int) IntStream.range(0, len).filter(i -> raw[i] == 65 || raw[i] == 87 || (raw[i] >= 48 && raw[i] <= 57 && (i == 0 || raw[i - 1] < 48 || raw[i - 1] > 57))).count()] instanceof int[] t && new int[4] instanceof int[] f
             && IntStream.range(0, len + 1).map(i -> i < len ? raw[i] : 32).map(c -> (c >= 48 && c <= 57 ? (f[3] = f[3] * 10 + c - 48) + (f[1] = 1) : (f[1] == 1 ? (t[f[2]++] = f[0] == 1 ? -f[3] : f[3]) + (f[3] = 0) + (f[0] = 0) + (f[1] = 0) : 0)
                     + (c == 45 ? (f[0] = 1) : 0) + (c == 65 ? (t[f[2]++] = -1) : 0) + (c == 87 ? (t[f[2]++] = -2) : 0)) * 0).sum() == 0
             && Integer.valueOf(f[2]) instanceof Integer N && Integer.valueOf(t[0]) instanceof Integer n && Integer.valueOf(t[1]) instanceof Integer m && Integer.valueOf(t[2]) instanceof Integer k
@@ -20,7 +20,7 @@ public class Main {
             && IntStream.range(0, q).map(e -> (t[pp[1]] == -2 ? (on[t[pp[1] + 1] - 1] ^= 1) * 0 + (pp[1] += 2) * 0
                 : (x1[pp[2]] = t[pp[1] + 1]) * 0 + (y1[pp[2]] = t[pp[1] + 2]) * 0 + (x2[pp[2]] = t[pp[1] + 3]) * 0 + (y2[pp[2]] = t[pp[1] + 4]) * 0
                     + IntStream.range(0, k).map(g -> stt[g][pp[2]] = (byte) on[g]).sum() * 0 + (pp[2]++) * 0 + (pp[1] += 5) * 0)).sum() == 0
-            && Arrays.stream(keys, 0, gs[k]).sorted().toArray() instanceof long[] sk
+            && IntStream.of(0).peek(z -> Arrays.sort(keys, 0, gs[k])).sum() == 0 && keys instanceof long[] sk
             && IntStream.range(0, 4 * A).mapToLong(c -> Integer.valueOf(c / 4) instanceof Integer a && Integer.valueOf((c & 1) == 0 ? x2[a] : x1[a] - 1) instanceof Integer X
                 && Integer.valueOf((c & 2) == 0 ? y2[a] : y1[a] - 1) instanceof Integer Y
                 ? (X <= 0 || Y <= 0 ? -1L : ((long) X << 46) | ((long) Y << 34) | ((long) a << 2) | ((c & 1) ^ ((c >> 1) & 1))) : -1L).filter(v -> v >= 0).sorted().toArray() instanceof long[] cs

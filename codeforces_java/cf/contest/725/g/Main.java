@@ -53,7 +53,9 @@ public class Main {
                 ? fres[0] : -1) instanceof IntSupplier fl
             // processing order: by (T, sender, index)
             && IntStream.range(0, m).mapToLong(j0 -> a[3 + n + 2 * j0] + depth[(int) a[2 + n + 2 * j0]]).toArray() instanceof long[] Tarr
-            && IntStream.range(0, m).mapToLong(j1 -> ((Tarr[j1] - (1L << 29)) << 34) | (a[2 + n + 2 * j1] << 17) | j1).sorted().mapToInt(kk -> (int) (kk & 131071)).toArray() instanceof int[] srt
+            && IntStream.range(0, m).mapToLong(j1 -> (a[2 + n + 2 * j1] << 22) | j1).sorted().toArray() instanceof long[] s1 && new int[m] instanceof int[] rk
+            && IntStream.range(0, m).filter(r1 -> (rk[(int) (s1[r1] & 4194303)] = r1) < 0).count() == 0
+            && IntStream.range(0, m).mapToLong(j1 -> ((Tarr[j1] + (1L << 30)) << 23) | rk[j1]).sorted().mapToInt(kk -> (int) (s1[(int) (kk & 8388607)] & 4194303)).toArray() instanceof int[] srt
             && new long[m] instanceof long[] res && new int[1] instanceof int[] cv && new int[1] instanceof int[] cu
             && Arrays.stream(srt).filter(j -> Integer.valueOf((int) a[2 + n + 2 * j]) instanceof Integer x && Long.valueOf(Tarr[j]) instanceof Long T
                 && (tq[0] = T) > Long.MIN_VALUE && (fres[0] = -1) < 0 && (cv[0] = x) > 0

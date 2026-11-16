@@ -18,7 +18,7 @@ public class Main {
             && IntStream.range(0, w).filter(j -> (sc[j] = (int) (raw[ord[j]] >> 40)) > 0 & (sk[j] = (int) ((raw[ord[j]] >> 20) & 1048575L)) > 0 & (sp[j] = (int) (raw[ord[j]] & 1048575L)) > 0).count() >= 0
             && Integer.valueOf(nx.getAsInt()) instanceof Integer q
             && IntStream.range(0, q).mapToObj(i -> new int[]{nx.getAsInt(), nx.getAsInt(), nx.getAsInt()}).toArray(int[][]::new) instanceof int[][] qs
-            ? IntStream.range(0, q).parallel().mapToObj(qi -> Integer.valueOf(qs[qi][0]) instanceof Integer g && Integer.valueOf(qs[qi][1]) instanceof Integer r && Integer.valueOf(qs[qi][2]) instanceof Integer a
+            ? IntStream.range(0, q).mapToObj(qi -> Integer.valueOf(qs[qi][0]) instanceof Integer g && Integer.valueOf(qs[qi][1]) instanceof Integer r && Integer.valueOf(qs[qi][2]) instanceof Integer a
                 && IntStream.generate(() -> -1).limit(n + 1).toArray() instanceof int[] dist && new int[n + 1] instanceof int[] qu && new int[]{0, 1} instanceof int[] h && (dist[g] = 0) == 0 && (qu[0] = g) > 0
                 && new int[]{0, sx[g]} instanceof int[] cur
                 && IntStream.iterate(0, t -> cur[0] < h[1], t -> t + 1).filter(t -> cur[1] < sx[qu[cur[0]] + 1]

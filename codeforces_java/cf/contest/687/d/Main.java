@@ -8,8 +8,8 @@ public class Main {
             && new int[raw.length / 2 + 4] instanceof int[] v && new int[2] instanceof int[] ix && new int[1] instanceof int[] cu
             && IntStream.range(0, raw.length).filter(p -> (v[ix[0] += (raw[p] < 48 && p > 0 && raw[p - 1] >= 48 ? 1 : 0)] = cu[0] = raw[p] >= 48 ? cu[0] * 10 + raw[p] - 48 : 0) < 0).count() == 0
             && Integer.valueOf(v[0]) instanceof Integer n && Integer.valueOf(v[1]) instanceof Integer m && Integer.valueOf(v[2]) instanceof Integer q
-            && IntStream.range(0, m).mapToLong(i -> ((long) v[5 + 3 * i] << 17) | i).sorted().toArray() instanceof long[] keys
-            && IntStream.range(0, m).map(s -> (int) (keys[m - 1 - s] & 131071)).toArray() instanceof int[] eid
+            && IntStream.range(0, m).mapToLong(i -> ((long) v[5 + 3 * i] << 20) | i).sorted().toArray() instanceof long[] keys
+            && IntStream.range(0, m).map(s -> (int) (keys[m - 1 - s] & 1048575)).toArray() instanceof int[] eid
             && IntStream.range(0, m).map(s -> v[3 + 3 * eid[s]] - 1).toArray() instanceof int[] ea
             && IntStream.range(0, m).map(s -> v[4 + 3 * eid[s]] - 1).toArray() instanceof int[] eb
             && IntStream.range(0, m).map(s -> v[5 + 3 * eid[s]]).toArray() instanceof int[] ew
