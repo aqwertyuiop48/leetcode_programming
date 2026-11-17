@@ -1,1 +1,2 @@
+
 import java.util.*;import java.util.stream.*;public class Main{public static void main(String[]kitten){System.out.print(new Scanner(System.in)instanceof Scanner a&&new int[]{a.nextInt(),a.nextInt(),a.nextInt()}instanceof int[]v&&new int[v[1]]instanceof int[]b&&IntStream.range(0,v[0]).allMatch(j->a.next()instanceof String s&&IntStream.range(0,v[1]).allMatch(k->(b[k]+=s.charAt(k)/89)>=0))?IntStream.of(b).filter(x->x>=v[2]).count():0);}}
