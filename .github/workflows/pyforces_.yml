@@ -110,7 +110,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           CODESPACE: ${{ steps.codespace.outputs.name }}
+          REPO: ${{ github.repository }}
         run: |
+          # Non-interactive ssh sessions have no git credentials, so push with the token
+          printf -v REMOTE_TOKEN '%q' "$GH_TOKEN"
+
           gh codespace ssh -c "$CODESPACE" -- \
             bash -lc "
               set -e
@@ -120,15 +124,16 @@ jobs:
               git add codeforces_java/reruns_1_executed.ipynb
 
               if git diff --cached --quiet; then
-                echo 'No changes to commit.'
-                exit 0
+                echo 'No new changes to commit (pushing any existing local commits).'
+              else
+                git -c user.name='github-actions' -c user.email='github-actions@users.noreply.github.com' \
+                  commit -m 'Add executed reruns_1 notebook'
               fi
 
-              git -c user.name='github-actions' -c user.email='github-actions@users.noreply.github.com' \
-                commit -m 'Add executed reruns_1 notebook'
+              PUSH_URL=https://x-access-token:$REMOTE_TOKEN@github.com/$REPO.git
 
-              git pull --rebase
-              git push
+              git pull --rebase \$PUSH_URL main
+              git push \$PUSH_URL HEAD:main
             "
 
       # 8. Stop the Codespace (runs even if an earlier step failed)
