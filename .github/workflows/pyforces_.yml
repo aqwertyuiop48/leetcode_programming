@@ -85,6 +85,9 @@ jobs:
         run: |
           mkdir -p output
 
+          gh codespace ssh -c "$CODESPACE" -- \
+            "ls -la /workspaces/leetcode_programming/codeforces_java/ | grep -i reruns || echo 'NO reruns files found'"
+
           gh codespace cp -c "$CODESPACE" \
             remote:/workspaces/leetcode_programming/codeforces_java/reruns_1.executed.ipynb \
             output/reruns_1.executed.ipynb
