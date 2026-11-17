@@ -14,6 +14,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
+          gh auth login
           gh auth status
 
       # 2. Dynamically find the existing Codespace
