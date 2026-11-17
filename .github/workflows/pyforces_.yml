@@ -1,0 +1,97 @@
+
+name: Run Pyforces Notebook in Codespace
+
+on:
+  workflow_dispatch:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Authenticate GitHub CLI
+      - name: Authenticate GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          gh auth status
+
+      # 2. Dynamically find the existing Codespace
+      - name: Find Codespace
+        id: codespace
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          CODESPACE=$(gh codespace list \
+            --repo "$GITHUB_REPOSITORY" \
+            --json name \
+            --jq '.[0].name')
+
+          if [ -z "$CODESPACE" ]; then
+            echo "No Codespace found!"
+            exit 1
+          fi
+
+          echo "Found Codespace: $CODESPACE"
+
+          echo "name=$CODESPACE" >> "$GITHUB_OUTPUT"
+
+      # 3. Start the existing Codespace
+      - name: Start Codespace
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CODESPACE: ${{ steps.codespace.outputs.name }}
+        run: |
+          gh codespace start -c "$CODESPACE"
+
+      # # 4. Pull repository and execute notebook
+      # - name: Pull and execute notebook remotely
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      #     CODESPACE: ${{ steps.codespace.outputs.name }}
+      #     PYFORCES_HEADER_JSON: ${{ secrets.PYFORCES_HEADER_JSON }}
+      #   run: |
+      #     printf -v REMOTE_HEADER '%q' "$PYFORCES_HEADER_JSON"
+
+      #     gh codespace ssh -c "$CODESPACE" -- \
+      #       bash -lc "
+      #         set -e
+
+      #         cd /workspaces/leetcode_programming
+
+      #         echo 'Pulling latest changes...'
+      #         git pull
+
+      #         cd codeforces_java
+
+      #         echo 'Installing Papermill...'
+      #         python -m pip install papermill
+
+      #         export CHOICE=0
+      #         export PYFORCES_HEADER_JSON=$REMOTE_HEADER
+
+      #         echo 'Executing Jupyter Notebook...'
+      #         papermill reruns_1.ipynb reruns_1.executed.ipynb
+
+      #         echo 'Notebook execution completed!'
+      #       "
+
+      # # 5. Download executed notebook
+      # - name: Download executed notebook
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      #     CODESPACE: ${{ steps.codespace.outputs.name }}
+      #   run: |
+      #     mkdir -p output
+
+      #     gh codespace cp -c "$CODESPACE" \
+      #       remote:/workspaces/leetcode_programming/codeforces_java/reruns_1.executed.ipynb \
+      #       output/reruns_1.executed.ipynb
+
+      # # 6. Upload executed notebook
+      # - name: Upload executed notebook
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: executed-notebook
+      #     path: output/reruns_1.executed.ipynb
+      #     retention-days: 7
