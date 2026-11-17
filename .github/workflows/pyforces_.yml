@@ -42,7 +42,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           CODESPACE: ${{ steps.codespace.outputs.name }}
         run: |
-          gh codespace start -c "$CODESPACE"
+          # `gh codespace start` doesn't exist in this gh version; use the REST API
+          gh api -X POST "/user/codespaces/$CODESPACE/start" --silent
 
       # # 4. Pull repository and execute notebook
       # - name: Pull and execute notebook remotely
