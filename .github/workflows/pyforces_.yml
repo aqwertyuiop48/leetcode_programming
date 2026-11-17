@@ -72,7 +72,7 @@ jobs:
               export PYFORCES_HEADER_JSON=$REMOTE_HEADER
 
               echo 'Executing Jupyter Notebook...'
-              papermill reruns_1.ipynb reruns_1.executed.ipynb
+              papermill reruns_1.ipynb reruns_1_executed.ipynb
 
               echo 'Notebook execution completed!'
             "
@@ -88,14 +88,19 @@ jobs:
           gh codespace ssh -c "$CODESPACE" -- \
             "ls -la /workspaces/leetcode_programming/codeforces_java/ | grep -i reruns || echo 'NO reruns files found'"
 
-          gh codespace cp -c "$CODESPACE" \
-            remote:/workspaces/leetcode_programming/codeforces_java/reruns_1.executed.ipynb \
-            output/reruns_1.executed.ipynb
+          # scp-based `gh codespace cp` reports "No such file" for a file that exists,
+          # so stream it over ssh instead
+          gh codespace ssh -c "$CODESPACE" -- \
+            cat /workspaces/leetcode_programming/codeforces_java/reruns_1_executed.ipynb \
+            > output/reruns_1_executed.ipynb
+
+          ls -la output/
+          python3 -c "import json; json.load(open('output/reruns_1_executed.ipynb'))"
 
       # 6. Upload executed notebook
       - name: Upload executed notebook
         uses: actions/upload-artifact@v4
         with:
           name: executed-notebook
-          path: output/reruns_1.executed.ipynb
+          path: output/reruns_1_executed.ipynb
           retention-days: 7
