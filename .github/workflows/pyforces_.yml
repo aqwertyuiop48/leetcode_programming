@@ -104,3 +104,29 @@ jobs:
           name: executed-notebook
           path: output/reruns_1_executed.ipynb
           retention-days: 7
+
+      # 7. Commit and push the executed notebook from the Codespace
+      - name: Push executed notebook
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CODESPACE: ${{ steps.codespace.outputs.name }}
+        run: |
+          gh codespace ssh -c "$CODESPACE" -- \
+            bash -lc "
+              set -e
+
+              cd /workspaces/leetcode_programming
+
+              git add codeforces_java/reruns_1_executed.ipynb
+
+              if git diff --cached --quiet; then
+                echo 'No changes to commit.'
+                exit 0
+              fi
+
+              git -c user.name='github-actions' -c user.email='github-actions@users.noreply.github.com' \
+                commit -m 'Add executed reruns_1 notebook'
+
+              git pull --rebase
+              git push
+            "
