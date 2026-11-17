@@ -130,3 +130,12 @@ jobs:
               git pull --rebase
               git push
             "
+
+      # 8. Stop the Codespace (runs even if an earlier step failed)
+      - name: Stop Codespace
+        if: always() && steps.codespace.outputs.name != ''
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CODESPACE: ${{ steps.codespace.outputs.name }}
+        run: |
+          gh codespace stop -c "$CODESPACE"
