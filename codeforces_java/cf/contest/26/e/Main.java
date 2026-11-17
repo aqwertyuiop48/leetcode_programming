@@ -18,7 +18,7 @@ public class Main {
             && ((IntFunction<Integer>) i -> IntStream.range(0, i).filter(j -> j != z).map(j -> a[j]).sum()) instanceof IntFunction<Integer> before
             && ((IntFunction<Integer>) i -> Math.max(0, Math.min(a[i], w - a[z] - before.apply(i)))) instanceof IntFunction<Integer> take
             ? w > sum || w < 1 ? "No"
-            : w == sum ? "Yes\n" + IntStream.range(0, n).flatMap(i -> g.apply(i, a[i])).mapToObj(String::valueOf).collect(Collectors.joining(" "))
+            : w.equals(sum) ? "Yes\n" + IntStream.range(0, n).flatMap(i -> g.apply(i, a[i])).mapToObj(String::valueOf).collect(Collectors.joining(" "))
             : n == 1 ? "No"
             : w >= a[z] ? "Yes\n" + Stream.of(
                     g.apply(z, a[z] - 1),
