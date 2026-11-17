@@ -24,12 +24,12 @@ public class Main {
             && Integer.valueOf(cnt[3]) instanceof Integer c
             && new long[251][251] instanceof long[][] s && new long[251][251] instanceof long[][] C && new long[252] instanceof long[] fact && new long[n + 2] instanceof long[] rs
             && (s[0][0] = 1) == 1 && (C[0][0] = 1) == 1 && (fact[0] = 1) == 1 && (rs[0] = 1) == 1
-            && IntStream.rangeClosed(1, 250).allMatch(i -> (fact[i] = fact[i - 1] * i % 1000000007L) > 0 && (C[i][0] = 1) == 1
-                && IntStream.rangeClosed(1, i).allMatch(k -> (s[i][k] = (s[i - 1][k - 1] + (i - 1) * s[i - 1][k]) % 1000000007L) >= 0 && (C[i][k] = (C[i - 1][k - 1] + C[i - 1][k]) % 1000000007L) >= 0))
-            && IntStream.rangeClosed(1, n + 1).allMatch(e -> (rs[e] = rs[e - 1] * (c + e - 1) % 1000000007L) >= 0)
-            && ((IntFunction<long[]>) a -> IntStream.rangeClosed(0, a).mapToLong(i -> IntStream.rangeClosed(i, a).mapToLong(t -> C[a][t] * s[t][i] % 1000000007L * rs[a - t] % 1000000007L).sum() % 1000000007L).toArray()) instanceof IntFunction<long[]> F
-            && ((BinaryOperator<long[]>) (x, y) -> IntStream.range(0, x.length + y.length - 1).mapToLong(k -> IntStream.rangeClosed(Math.max(0, k - y.length + 1), Math.min(k, x.length - 1)).mapToLong(i -> x[i] * y[k - i] % 1000000007L).sum() % 1000000007L).toArray()) instanceof BinaryOperator<long[]> conv
-            && conv.apply(conv.apply(F.apply(cnt[1]), F.apply(cnt[2])), IntStream.rangeClosed(0, c).mapToLong(l -> fact[c] * s[c][l] % 1000000007L).toArray()) instanceof long[] tot
+            && IntStream.rangeClosed(1, 250).allMatch(i -> (fact[i] = fact[i - 1] * i % 998244353L) > 0 && (C[i][0] = 1) == 1
+                && IntStream.rangeClosed(1, i).allMatch(k -> (s[i][k] = (s[i - 1][k - 1] + (i - 1) * s[i - 1][k]) % 998244353L) >= 0 && (C[i][k] = (C[i - 1][k - 1] + C[i - 1][k]) % 998244353L) >= 0))
+            && IntStream.rangeClosed(1, n + 1).allMatch(e -> (rs[e] = rs[e - 1] * (c + e - 1) % 998244353L) >= 0)
+            && ((IntFunction<long[]>) a -> IntStream.rangeClosed(0, a).mapToLong(i -> IntStream.rangeClosed(i, a).mapToLong(t -> C[a][t] * s[t][i] % 998244353L * rs[a - t] % 998244353L).sum() % 998244353L).toArray()) instanceof IntFunction<long[]> F
+            && ((BinaryOperator<long[]>) (x, y) -> IntStream.range(0, x.length + y.length - 1).mapToLong(k -> IntStream.rangeClosed(Math.max(0, k - y.length + 1), Math.min(k, x.length - 1)).mapToLong(i -> x[i] * y[k - i] % 998244353L).sum() % 998244353L).toArray()) instanceof BinaryOperator<long[]> conv
+            && conv.apply(conv.apply(F.apply(cnt[1]), F.apply(cnt[2])), IntStream.rangeClosed(0, c).mapToLong(l -> fact[c] * s[c][l] % 998244353L).toArray()) instanceof long[] tot
             ? IntStream.rangeClosed(1, n).mapToObj(i -> String.valueOf(n - i + 1 - cyc0 >= 0 && n - i + 1 - cyc0 < tot.length ? tot[(int) (n - i + 1 - cyc0)] : 0)).collect(Collectors.joining(" "))
             : "");
     }

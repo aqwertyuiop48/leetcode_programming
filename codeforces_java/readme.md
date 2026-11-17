@@ -93,7 +93,8 @@ Steps: (To do in Github codespace)
  642
  646
  647
-
+ 575:C (4MB memory limit , JVM cannot start in below 4MB)
+ 656:G (Actually passing, wrong error message)
 
  - { for contest in {231..250}; do for source in "cf/contest/$contest"/*/Main.java; do [ -f "$source" ] || continue; problem=$(basename "$(dirname "$source")" | tr '[:lower:]' '[:upper:]'); ./cf_java.sh "$contest" "$problem" all 87; done; done && python codeforces_api.py; } > "outputs/$(TZ=Asia/Kolkata date +%F).txt"
  

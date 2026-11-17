@@ -5,54 +5,50 @@ import java.util.stream.*;
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.print(new Scanner(System.in) instanceof Scanner sc
-            && Integer.valueOf(sc.nextInt()) instanceof Integer h && Integer.valueOf(sc.nextInt()) instanceof Integer w && Integer.valueOf(sc.nextInt()) instanceof Integer q
-            && Integer.valueOf(w + 2) instanceof Integer W && Integer.valueOf((h + 2) * (w + 2)) instanceof Integer N && new boolean[N] instanceof boolean[] blk
-            && IntStream.rangeClosed(1, h).allMatch(r -> sc.next() instanceof String row && IntStream.range(0, w).allMatch(c -> (blk[r * W + c + 1] = row.charAt(c) == '#') || true))
-            && new int[]{-W - 1, -W, -W + 1, 1, W + 1, W, W - 1, -1} instanceof int[] off
-            && new int[N] instanceof int[] comp && IntStream.range(0, N).allMatch(i -> (comp[i] = -1) < 0)
-            && new int[N] instanceof int[] st && new int[]{0, 2} instanceof int[] sp
-            && ((IntBinaryOperator) (seed, lab) -> (comp[seed] = lab) >= 0 && (st[0] = seed) >= 0 && (sp[0] = 1) == 1
-                && IntStream.iterate(0, k -> sp[0] > 0, k -> k + 1).allMatch(k -> Integer.valueOf(st[--sp[0]]) instanceof Integer cur
-                    && IntStream.range(0, 8).allMatch(d -> !blk[cur + off[d]] || comp[cur + off[d]] >= 0 || ((comp[cur + off[d]] = lab) >= 0 && (st[sp[0]++] = cur + off[d]) >= 0))) ? 1 : 0) instanceof IntBinaryOperator fill
-            && IntStream.rangeClosed(1, h).allMatch(r -> IntStream.rangeClosed(1, w).allMatch(c -> !blk[r * W + c] || comp[r * W + c] >= 0 || !(r == 1 || c == w) || fill.applyAsInt(r * W + c, 0) >= 0))
-            && IntStream.rangeClosed(1, h).allMatch(r -> IntStream.rangeClosed(1, w).allMatch(c -> !blk[r * W + c] || comp[r * W + c] >= 0 || !(r == h || c == 1) || fill.applyAsInt(r * W + c, 1) >= 0))
-            && IntStream.range(0, N).allMatch(p -> !blk[p] || comp[p] >= 0 || fill.applyAsInt(p, sp[1]++) >= 0)
-            && new long[h * w * 6 + 1024] instanceof long[] keys && new int[1] instanceof int[] kn && IntStream.range(0, 100).filter(t -> t / 10 < t % 10).toArray() instanceof int[] pt
-            && IntStream.range(0, 64).filter(t -> t / 8 < t % 8).toArray() instanceof int[] p8
-            && IntStream.rangeClosed(1, h).allMatch(r -> IntStream.rangeClosed(1, w).allMatch(c -> Integer.valueOf(r * W + c) instanceof Integer p
-                && (blk[p] || (r == 1 && c == 1) || (r == h && c == w)
-                    || (r > 1 && r < h && c > 1 && c < w
-                        ? IntStream.range(0, 8).filter(d -> blk[p + off[d]] && !blk[p + off[(d + 7) & 7]]).count() < 2
-                            || IntStream.of(p8).allMatch(t -> comp[p + off[t / 8]] < 0 || comp[p + off[t % 8]] < 0 || comp[p + off[t / 8]] == comp[p + off[t % 8]]
-                                || comp[p + off[t / 8]] == comp[p + off[(t / 8 + 7) & 7]] || comp[p + off[t % 8]] == comp[p + off[(t % 8 + 7) & 7]]
-                                || (keys[kn[0]++] = ((long) Math.min(comp[p + off[t / 8]], comp[p + off[t % 8]]) << 20) | Math.max(comp[p + off[t / 8]], comp[p + off[t % 8]])) >= 0)
-                        : IntStream.range(0, 10).map(d -> d < 8 ? comp[p + off[d]] : d == 8 ? (r == 1 || c == w ? 0 : -1) : (r == h || c == 1 ? 1 : -1)).toArray() instanceof int[] a
-                            && IntStream.range(0, 10).map(i -> i == 0 ? (a[0] == a[7] ? -1 : a[0]) : i < 8 && a[i] == a[i - 1] ? -1 : a[i]).toArray() instanceof int[] b
-                            && IntStream.of(pt).allMatch(t -> b[t / 10] < 0 || b[t % 10] < 0 || b[t / 10] == b[t % 10] || (keys[kn[0]++] = ((long) Math.min(b[t / 10], b[t % 10]) << 20) | Math.max(b[t / 10], b[t % 10])) >= 0)))))
-            && IntStream.of(0).peek(z -> Arrays.parallelSort(keys, 0, kn[0])).findFirst().isPresent()
-            && new int[sp[1]] instanceof int[] slot && IntStream.range(0, sp[1]).allMatch(i -> (slot[i] = i < 2 ? i : -1) < 100000000)
-            && new int[N] instanceof int[] tmark && new int[128] instanceof int[] par && new int[128] instanceof int[] cid && new int[]{0} instanceof int[] cn
-            && IntStream.range(0, 2).allMatch(i -> (cid[i] = i) >= 0)
-            && ((IntUnaryOperator) x -> IntStream.iterate(x, y -> par[y] != y, y -> par[y]).reduce((a, b) -> b) instanceof OptionalInt o && o.isPresent() ? par[o.getAsInt()] : x) instanceof IntUnaryOperator find
-            && ((IntBinaryOperator) (a, b) -> par[find.applyAsInt(a)] = find.applyAsInt(b)) instanceof IntBinaryOperator uni
-            && ((IntUnaryOperator) z -> tmark[z] > 0 ? find.applyAsInt(tmark[z]) : blk[z] && slot[comp[z]] >= 0 ? find.applyAsInt(slot[comp[z]]) : -1) instanceof IntUnaryOperator grp
-            && IntStream.range(0, q).allMatch(qi -> Integer.valueOf(sc.nextInt()) instanceof Integer k && new int[k] instanceof int[] tp
-                && IntStream.range(0, k).allMatch(i -> Integer.valueOf(sc.nextInt()) instanceof Integer rr && Integer.valueOf(sc.nextInt()) instanceof Integer cc && (tp[i] = rr * W + cc) > 0 && (tmark[tp[i]] = 2 + i) > 0)
-                && IntStream.range(0, k + 2).allMatch(i -> (par[i] = i) >= 0) && (cn[0] = k + 2) > 0
-                && IntStream.range(0, k).allMatch(i -> Integer.valueOf(tp[i] / W) instanceof Integer r && Integer.valueOf(tp[i] % W) instanceof Integer c
-                    && (!(r == 1 || c == w) || uni.applyAsInt(2 + i, 0) >= 0) && (!(r == h || c == 1) || uni.applyAsInt(2 + i, 1) >= 0)
-                    && IntStream.range(0, 8).allMatch(d -> Integer.valueOf(tp[i] + off[d]) instanceof Integer z
-                        && (tmark[z] > 0 ? uni.applyAsInt(2 + i, tmark[z]) >= 0
-                            : !blk[z] || ((slot[comp[z]] >= 0 || ((slot[comp[z]] = cn[0]) >= 0 && (cid[cn[0]] = comp[z]) >= 0 && (par[cn[0]] = cn[0]) >= 0 && ++cn[0] > 0)) && uni.applyAsInt(2 + i, slot[comp[z]]) >= 0))))
-                && Boolean.valueOf(find.applyAsInt(0) != find.applyAsInt(1)
-                    && IntStream.range(0, k * 8).allMatch(t -> Integer.valueOf(tp[t / 8] + off[t % 8]) instanceof Integer v && Integer.valueOf(v / W) instanceof Integer vr && Integer.valueOf(v % W) instanceof Integer vc
-                        && (vr < 1 || vr > h || vc < 1 || vc > w || blk[v] || tmark[v] > 0 || v == W + 1 || v == h * W + w
-                            || !((vr == 1 || vc == w || IntStream.range(0, 8).anyMatch(d -> grp.applyAsInt(v + off[d]) == find.applyAsInt(0)))
-                                && (vr == h || vc == 1 || IntStream.range(0, 8).anyMatch(d -> grp.applyAsInt(v + off[d]) == find.applyAsInt(1))))))
-                    && !IntStream.range(0, cn[0]).filter(i -> (i < 2 || i >= k + 2) && find.applyAsInt(i) == find.applyAsInt(0))
-                        .anyMatch(i -> IntStream.range(0, cn[0]).filter(j -> (j < 2 || j >= k + 2) && find.applyAsInt(j) == find.applyAsInt(1))
-                            .anyMatch(j -> cid[i] != cid[j] && Arrays.binarySearch(keys, 0, kn[0], ((long) Math.min(cid[i], cid[j]) << 20) | Math.max(cid[i], cid[j])) >= 0))) instanceof Boolean ok
-                && IntStream.range(k + 2, cn[0]).allMatch(i -> (slot[cid[i]] = -1) < 0) && IntStream.range(0, k).allMatch(i -> (tmark[tp[i]] = 0) == 0)
-                && System.out.append(ok ? "YES\n" : "NO\n") != null) ? "" : "");
+            && Integer.valueOf(sc.nextInt()) instanceof Integer h && Integer.valueOf(sc.nextInt()) instanceof Integer w0 && Integer.valueOf(sc.nextInt()) instanceof Integer q
+            && Integer.valueOf(w0 + 2) instanceof Integer W && Integer.valueOf((h + 2) * W) instanceof Integer NN && Integer.valueOf(2 + h * w0) instanceof Integer cnt
+            && new int[NN] instanceof int[] bk && new int[NN] instanceof int[] idm && new int[cnt + 1] instanceof int[] fa && new int[cnt + 1] instanceof int[] rt
+            && IntStream.rangeClosed(1, h).allMatch(r -> sc.next() instanceof String row
+                && IntStream.range(0, w0).allMatch(c -> (bk[r * W + c + 1] = row.charAt(c) == '#' ? 1 : 0) >= 0 && (idm[r * W + c + 1] = 2 + (r - 1) * w0 + c + 1) > 0))
+            && IntStream.rangeClosed(1, h).allMatch(r -> (bk[r * W] = 1) == 1 && (bk[r * W + w0 + 1] = 1) == 1 && (idm[r * W] = 1) == 1 && (idm[r * W + w0 + 1] = 2) == 2)
+            && IntStream.rangeClosed(1, w0).allMatch(c -> (bk[c] = 1) == 1 && (bk[(h + 1) * W + c] = 1) == 1 && (idm[c] = 2) == 2 && (idm[(h + 1) * W + c] = 1) == 1)
+            && new int[]{-W, -W + 1, 1, W + 1, W, W - 1, -1, -W - 1} instanceof int[] off
+            && new int[NN] instanceof int[] lab && new int[NN] instanceof int[] qu && new int[NN + 2] instanceof int[] tS && new int[NN + 2] instanceof int[] tT && new int[NN + 2] instanceof int[] fid && new int[6] instanceof int[] fs
+            && (fs[0] = -1) < 0 && IntStream.iterate(0, z -> fs[0] < NN || fs[1] < fs[2], z -> z + 1).filter(z -> fs[1] < fs[2]
+                ? (fs[3] < 8
+                    ? Integer.valueOf(qu[fs[1]] + off[fs[3]++]) instanceof Integer nb && (idm[nb] == 1 ? (tS[fs[4]] = 1) : idm[nb] == 2 ? (tT[fs[4]] = 1) : 0) >= 0
+                        && idm[nb] >= 3 && bk[nb] == 1 && lab[nb] == 0 && (lab[nb] = fs[4]) > 0 && (qu[fs[2]++] = nb) < 0
+                    : ++fs[1] < 0 || (fs[3] = 0) < 0)
+                : ++fs[0] < NN && idm[fs[0]] >= 3 && bk[fs[0]] == 1 && lab[fs[0]] == 0 && (lab[fs[0]] = ++fs[4]) > 0 && (fid[fs[4]] = idm[fs[0]]) > 0
+                    && (fs[1] = 0) == 0 && (fs[2] = 1) == 1 && (qu[0] = fs[0]) >= 0 && (fs[3] = 0) < 0).count() == 0
+            && Boolean.valueOf(IntStream.rangeClosed(1, fs[4]).anyMatch(c -> tS[c] == 1 && tT[c] == 1)) instanceof Boolean both
+            && (rt[1] = 1) == 1 && (rt[2] = both ? 1 : 2) > 0
+            && IntStream.range(0, NN).allMatch(pp -> idm[pp] < 3 || (rt[idm[pp]] = lab[pp] == 0 ? idm[pp] : tS[lab[pp]] == 1 ? 1 : tT[lab[pp]] == 1 ? (both ? 1 : 2) : fid[lab[pp]]) > 0)
+            && IntStream.range(0, 64).filter(z -> z / 8 < z % 8).toArray() instanceof int[] pz
+            && IntStream.range(0, rt[1] == rt[2] ? 0 : NN).filter(p -> idm[p] >= 3 && p != W + 1 && p != h * W + w0 && bk[p + off[0]] + bk[p + off[1]] + bk[p + off[2]] + bk[p + off[3]] + bk[p + off[4]] + bk[p + off[5]] + bk[p + off[6]] + bk[p + off[7]] >= 2).toArray() instanceof int[] cand
+            && IntStream.range(0, NN).map(pp -> rt[idm[pp]]).toArray() instanceof int[] rc && new int[]{-1, -1, 0, 1, 1, 1, 0, -1} instanceof int[] DX && new int[]{0, 1, 1, 1, 0, -1, -1, -1} instanceof int[] DY
+            && IntStream.range(0, 64).filter(z -> z / 8 < z % 8 && Math.max(Math.abs(DX[z / 8] - DX[z % 8]), Math.abs(DY[z / 8] - DY[z % 8])) >= 2).boxed().flatMapToLong(z -> Arrays.stream(cand).filter(p -> bk[p + off[z / 8]] == 1 && bk[p + off[z % 8]] == 1 && rc[p + off[z / 8]] != rc[p + off[z % 8]])
+                .mapToLong(p -> ((long) Math.min(rc[p + off[z / 8]], rc[p + off[z % 8]]) << 32) | Math.max(rc[p + off[z / 8]], rc[p + off[z % 8]]))).sorted().toArray() instanceof long[] keys
+            && Boolean.valueOf(rt[1] == rt[2] || Arrays.binarySearch(keys, ((long) Math.min(rt[1], rt[2]) << 32) | Math.max(rt[1], rt[2])) >= 0) instanceof Boolean flag
+            && IntStream.range(0, q).allMatch(qi -> Integer.valueOf(sc.nextInt()) instanceof Integer k
+                && IntStream.range(0, k).map(i -> sc.nextInt() * W + sc.nextInt()).toArray() instanceof int[] pos
+                && (flag ? System.out.append("NO\n") != null
+                    : IntStream.range(0, k).allMatch(i -> (bk[pos[i]] = 1) == 1)
+                    && IntStream.concat(IntStream.of(rt[1], rt[2]), Arrays.stream(pos).flatMap(u -> IntStream.concat(IntStream.of(idm[u]), IntStream.range(0, 8).map(d -> u + off[d]).filter(nb -> bk[nb] == 1).map(nb -> rt[idm[nb]])))).sorted().distinct().toArray() instanceof int[] stk
+                    && IntStream.range(0, stk.length).toArray() instanceof int[] dd
+                    && ((IntUnaryOperator) x -> IntStream.iterate(x, r -> dd[r] != r, r -> dd[r]).reduce(x, (a, b) -> dd[b])) instanceof IntUnaryOperator dfind
+                    && Arrays.stream(pos).allMatch(u -> IntStream.range(0, 8).map(d -> u + off[d]).filter(nb -> bk[nb] == 1)
+                        .allMatch(nb -> (dd[dfind.applyAsInt(Arrays.binarySearch(stk, rt[idm[nb]]))] = dfind.applyAsInt(Arrays.binarySearch(stk, idm[u]))) >= 0))
+                    && Integer.valueOf(dfind.applyAsInt(Arrays.binarySearch(stk, rt[1]))) instanceof Integer ps && Integer.valueOf(dfind.applyAsInt(Arrays.binarySearch(stk, rt[2]))) instanceof Integer pt
+                    && IntStream.range(0, stk.length).map(i -> dfind.applyAsInt(i) == ps ? 1 : dfind.applyAsInt(i) == pt ? 2 : 0).toArray() instanceof int[] g
+                    && new boolean[stk.length] instanceof boolean[] nw && Arrays.stream(pos).allMatch(u -> (nw[Arrays.binarySearch(stk, idm[u])] = true))
+                    && IntStream.range(0, stk.length).filter(i -> g[i] == 1 && !nw[i]).toArray() instanceof int[] s0 && IntStream.range(0, stk.length).filter(i -> g[i] == 2 && !nw[i]).toArray() instanceof int[] t0
+                    && System.out.append(ps.intValue() == pt || Arrays.stream(s0).anyMatch(i -> Arrays.stream(t0).anyMatch(j -> Arrays.binarySearch(keys, ((long) Math.min(stk[i], stk[j]) << 32) | Math.max(stk[i], stk[j])) >= 0))
+                        || Arrays.stream(pos).anyMatch(u -> Integer.valueOf(g[Arrays.binarySearch(stk, idm[u])]) instanceof Integer gu && gu != 0
+                            && IntStream.range(0, 8).map(d -> u + off[d]).anyMatch(c -> idm[c] >= 3 && c != W + 1 && c != h * W + w0
+                                && IntStream.range(0, 8).map(d -> c + off[d]).anyMatch(pn -> pn != u && Integer.valueOf(Arrays.binarySearch(stk, rt[idm[pn]])) instanceof Integer ix && ix >= 0 && g[ix] == 3 - gu)))
+                        ? "NO\n" : "YES\n") != null
+                    && IntStream.range(0, k).allMatch(i -> (bk[pos[i]] = 0) == 0)))
+            ? "" : "");
     }
 }

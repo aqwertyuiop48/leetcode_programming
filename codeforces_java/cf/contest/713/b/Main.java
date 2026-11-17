@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println(new Scanner(System.in) instanceof Scanner sc && Integer.valueOf(sc.nextInt()) instanceof Integer n && new boolean[1] instanceof boolean[] sw
             && ((Function<int[], Integer>) q -> !System.out.printf("? %d %d %d %d\n", sw[0] ? q[1] : q[0], sw[0] ? q[0] : q[1], sw[0] ? q[3] : q[2], sw[0] ? q[2] : q[3]).checkError() ? Integer.valueOf(sc.nextInt()) : 0) instanceof Function<int[], Integer> ask
-            && ((BiFunction<int[], IntPredicate, Integer>) (b, p) -> IntStream.range(0, 9).allMatch(z -> b[0] >= b[1]
+            && ((BiFunction<int[], IntPredicate, Integer>) (b, p) -> IntStream.range(0, 18).allMatch(z -> b[0] >= b[1]
                 || (p.test((b[0] + b[1]) / 2) ? (b[1] = (b[0] + b[1]) / 2) >= 0 : (b[0] = (b[0] + b[1]) / 2 + 1) >= 0)) ? b[0] : -1) instanceof BiFunction<int[], IntPredicate, Integer> sm
             && ((Supplier<Integer>) () -> sm.apply(new int[]{1, n}, x -> ask.apply(new int[]{1, 1, x, n}) >= 1)) instanceof Supplier<Integer> P1
             && P1.get() instanceof Integer p1 && ask.apply(new int[]{1, 1, p1, n}) instanceof Integer c
