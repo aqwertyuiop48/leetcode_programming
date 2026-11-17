@@ -45,54 +45,54 @@ jobs:
           # `gh codespace start` doesn't exist in this gh version; use the REST API
           gh api -X POST "/user/codespaces/$CODESPACE/start" --silent
 
-      # # 4. Pull repository and execute notebook
-      # - name: Pull and execute notebook remotely
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      #     CODESPACE: ${{ steps.codespace.outputs.name }}
-      #     PYFORCES_HEADER_JSON: ${{ secrets.PYFORCES_HEADER_JSON }}
-      #   run: |
-      #     printf -v REMOTE_HEADER '%q' "$PYFORCES_HEADER_JSON"
+      # 4. Pull repository and execute notebook
+      - name: Pull and execute notebook remotely
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CODESPACE: ${{ steps.codespace.outputs.name }}
+          PYFORCES_HEADER_JSON: ${{ secrets.PYFORCES_HEADER_JSON }}
+        run: |
+          printf -v REMOTE_HEADER '%q' "$PYFORCES_HEADER_JSON"
 
-      #     gh codespace ssh -c "$CODESPACE" -- \
-      #       bash -lc "
-      #         set -e
+          gh codespace ssh -c "$CODESPACE" -- \
+            bash -lc "
+              set -e
 
-      #         cd /workspaces/leetcode_programming
+              cd /workspaces/leetcode_programming
 
-      #         echo 'Pulling latest changes...'
-      #         git pull
+              echo 'Pulling latest changes...'
+              git pull
 
-      #         cd codeforces_java
+              cd codeforces_java
 
-      #         echo 'Installing Papermill...'
-      #         python -m pip install papermill
+              echo 'Installing Papermill...'
+              python -m pip install papermill
 
-      #         export CHOICE=0
-      #         export PYFORCES_HEADER_JSON=$REMOTE_HEADER
+              export CHOICE=0
+              export PYFORCES_HEADER_JSON=$REMOTE_HEADER
 
-      #         echo 'Executing Jupyter Notebook...'
-      #         papermill reruns_1.ipynb reruns_1.executed.ipynb
+              echo 'Executing Jupyter Notebook...'
+              papermill reruns_1.ipynb reruns_1.executed.ipynb
 
-      #         echo 'Notebook execution completed!'
-      #       "
+              echo 'Notebook execution completed!'
+            "
 
-      # # 5. Download executed notebook
-      # - name: Download executed notebook
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      #     CODESPACE: ${{ steps.codespace.outputs.name }}
-      #   run: |
-      #     mkdir -p output
+      # 5. Download executed notebook
+      - name: Download executed notebook
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CODESPACE: ${{ steps.codespace.outputs.name }}
+        run: |
+          mkdir -p output
 
-      #     gh codespace cp -c "$CODESPACE" \
-      #       remote:/workspaces/leetcode_programming/codeforces_java/reruns_1.executed.ipynb \
-      #       output/reruns_1.executed.ipynb
+          gh codespace cp -c "$CODESPACE" \
+            remote:/workspaces/leetcode_programming/codeforces_java/reruns_1.executed.ipynb \
+            output/reruns_1.executed.ipynb
 
-      # # 6. Upload executed notebook
-      # - name: Upload executed notebook
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: executed-notebook
-      #     path: output/reruns_1.executed.ipynb
-      #     retention-days: 7
+      # 6. Upload executed notebook
+      - name: Upload executed notebook
+        uses: actions/upload-artifact@v4
+        with:
+          name: executed-notebook
+          path: output/reruns_1.executed.ipynb
+          retention-days: 7
