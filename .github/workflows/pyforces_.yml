@@ -3,12 +3,30 @@ name: Run Pyforces Notebook in Codespace
 
 on:
   workflow_dispatch:
+    inputs:
+      notebook:
+        description: 'Notebook file name in codeforces_java (e.g. reruns_1 or pyforces_41_to_80.ipynb)'
+        required: true
+        default: 'reruns_1'
 
 jobs:
   execute:
     runs-on: ubuntu-latest
 
     steps:
+      # 0. Normalise the notebook name (strip optional .ipynb) and validate it
+      - name: Resolve notebook name
+        id: nb
+        env:
+          NOTEBOOK_INPUT: ${{ inputs.notebook }}
+        run: |
+          NB="${NOTEBOOK_INPUT%.ipynb}"
+          if ! [[ "$NB" =~ ^[A-Za-z0-9._-]+$ ]]; then
+            echo "Invalid notebook name: $NOTEBOOK_INPUT"
+            exit 1
+          fi
+          echo "base=$NB" >> "$GITHUB_OUTPUT"
+
       # 1. Authenticate GitHub CLI
       - name: Authenticate GitHub CLI
         env:
@@ -51,6 +69,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           CODESPACE: ${{ steps.codespace.outputs.name }}
           PYFORCES_HEADER_JSON: ${{ secrets.PYFORCES_HEADER_JSON }}
+          NB: ${{ steps.nb.outputs.base }}
         run: |
           printf -v REMOTE_HEADER '%q' "$PYFORCES_HEADER_JSON"
 
@@ -73,7 +92,10 @@ jobs:
               export PYFORCES_HEADER_JSON=$REMOTE_HEADER
 
               echo 'Executing Jupyter Notebook...'
-              papermill reruns_1.ipynb reruns_1_executed.ipynb
+              papermill $NB.ipynb ${NB}_executed.ipynb
+
+              echo 'Replacing input notebook with executed one...'
+              mv -f ${NB}_executed.ipynb $NB.ipynb
 
               echo 'Notebook execution completed!'
             "
@@ -83,27 +105,28 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           CODESPACE: ${{ steps.codespace.outputs.name }}
+          NB: ${{ steps.nb.outputs.base }}
         run: |
           mkdir -p output
 
           gh codespace ssh -c "$CODESPACE" -- \
-            "ls -la /workspaces/leetcode_programming/codeforces_java/ | grep -i reruns || echo 'NO reruns files found'"
+            "ls -la /workspaces/leetcode_programming/codeforces_java/ | grep -i $NB || echo 'NO matching files found'"
 
           # scp-based `gh codespace cp` reports "No such file" for a file that exists,
           # so stream it over ssh instead
           gh codespace ssh -c "$CODESPACE" -- \
-            cat /workspaces/leetcode_programming/codeforces_java/reruns_1_executed.ipynb \
-            > output/reruns_1_executed.ipynb
+            cat /workspaces/leetcode_programming/codeforces_java/$NB.ipynb \
+            > output/$NB.ipynb
 
           ls -la output/
-          python3 -c "import json; json.load(open('output/reruns_1_executed.ipynb'))"
+          python3 -c "import json; json.load(open('output/$NB.ipynb'))"
 
       # 6. Upload executed notebook
       - name: Upload executed notebook
         uses: actions/upload-artifact@v4
         with:
           name: executed-notebook
-          path: output/reruns_1_executed.ipynb
+          path: output/${{ steps.nb.outputs.base }}.ipynb
           retention-days: 7
 
       # 7. Commit and push the executed notebook from the Codespace
@@ -112,6 +135,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           CODESPACE: ${{ steps.codespace.outputs.name }}
           REPO: ${{ github.repository }}
+          NB: ${{ steps.nb.outputs.base }}
         run: |
           # Non-interactive ssh sessions have no git credentials, so push with the token
           printf -v REMOTE_TOKEN '%q' "$GH_TOKEN"
@@ -122,13 +146,13 @@ jobs:
 
               cd /workspaces/leetcode_programming
 
-              git add codeforces_java/reruns_1_executed.ipynb
+              git add codeforces_java/$NB.ipynb
 
               if git diff --cached --quiet; then
                 echo 'No new changes to commit (pushing any existing local commits).'
               else
                 git -c user.name='github-actions' -c user.email='github-actions@users.noreply.github.com' \
-                  commit -m 'Add executed reruns_1 notebook'
+                  commit -m 'Add executed $NB notebook'
               fi
 
               PUSH_URL=https://x-access-token:$REMOTE_TOKEN@github.com/$REPO.git
