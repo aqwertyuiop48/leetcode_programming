@@ -157,7 +157,7 @@ jobs:
 
               PUSH_URL=https://x-access-token:$REMOTE_TOKEN@github.com/$REPO.git
 
-              git pull --rebase \$PUSH_URL main
+              git pull --rebase --autostash \$PUSH_URL main
               git push \$PUSH_URL HEAD:main
 
               # Pushing to a URL doesn't update origin/main, so the codespace would keep
