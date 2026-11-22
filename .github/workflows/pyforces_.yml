@@ -30,7 +30,8 @@ jobs:
       # 1. Authenticate GitHub CLI
       - name: Authenticate GitHub CLI
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
         run: |
           gh auth status
 
@@ -38,7 +39,8 @@ jobs:
       - name: Find Codespace
         id: codespace
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
         run: |
           CODESPACE=$(gh codespace list \
             --repo "$GITHUB_REPOSITORY" \
@@ -57,7 +59,8 @@ jobs:
       # 3. Start the existing Codespace
       - name: Start Codespace
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
           CODESPACE: ${{ steps.codespace.outputs.name }}
         run: |
           # `gh codespace start` doesn't exist in this gh version; use the REST API
@@ -66,7 +69,8 @@ jobs:
       # 4. Pull repository and execute notebook
       - name: Pull and execute notebook remotely
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
           CODESPACE: ${{ steps.codespace.outputs.name }}
           PYFORCES_HEADER_JSON: ${{ secrets.PYFORCES_HEADER_JSON }}
           NB: ${{ steps.nb.outputs.base }}
@@ -103,7 +107,8 @@ jobs:
       # 5. Download executed notebook
       - name: Download executed notebook
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
           CODESPACE: ${{ steps.codespace.outputs.name }}
           NB: ${{ steps.nb.outputs.base }}
         run: |
@@ -132,7 +137,8 @@ jobs:
       # 7. Commit and push the executed notebook from the Codespace
       - name: Push executed notebook
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
           CODESPACE: ${{ steps.codespace.outputs.name }}
           REPO: ${{ github.repository }}
           NB: ${{ steps.nb.outputs.base }}
@@ -169,7 +175,8 @@ jobs:
       - name: Stop Codespace
         if: always() && steps.codespace.outputs.name != ''
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48}}
           CODESPACE: ${{ steps.codespace.outputs.name }}
         run: |
           gh codespace stop -c "$CODESPACE"
